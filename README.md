@@ -1,4 +1,4 @@
 # MP_for_ENG
-mojipittan for english
+mp for english
 
 explain about souce chord
