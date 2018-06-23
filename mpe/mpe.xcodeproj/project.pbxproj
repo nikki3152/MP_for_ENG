@@ -89,6 +89,115 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54CFB41020DE3E5300057F08 /* 01_Home */ = {
+			isa = PBXGroup;
+			children = (
+				54CFB3DA20DE162B00057F08 /* HomeViewController.swift */,
+				54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */,
+			);
+			path = 01_Home;
+			sourceTree = "<group>";
+		};
+		54CFB41120DE3E7F00057F08 /* 02_Waiting */ = {
+			isa = PBXGroup;
+			children = (
+				54CFB3E020DE229E00057F08 /* WaitingViewController.swift */,
+				54CFB3E220DE22AF00057F08 /* WaitingViewController.storyboard */,
+			);
+			path = 02_Waiting;
+			sourceTree = "<group>";
+		};
+		54CFB41220DE3E9200057F08 /* 03_StageSelect */ = {
+			isa = PBXGroup;
+			children = (
+				54CFB3E420DE25E300057F08 /* StageSelectViewController.swift */,
+				54CFB3E620DE25EB00057F08 /* StageSelectViewController.storyboard */,
+			);
+			path = 03_StageSelect;
+			sourceTree = "<group>";
+		};
+		54CFB41320DE3EA700057F08 /* 04_Game */ = {
+			isa = PBXGroup;
+			children = (
+				54CFB3E820DE293C00057F08 /* GameViewController.swift */,
+				54CFB3EA20DE294700057F08 /* GameViewController.storyboard */,
+			);
+			path = 04_Game;
+			sourceTree = "<group>";
+		};
+		54CFB41420DE3EB800057F08 /* 05_StudyMode */ = {
+			isa = PBXGroup;
+			children = (
+				54CFB3EC20DE2E4D00057F08 /* StudyModeViewController.swift */,
+				54CFB3EE20DE2E5E00057F08 /* StudyModeViewController.storyboard */,
+			);
+			path = 05_StudyMode;
+			sourceTree = "<group>";
+		};
+		54CFB41520DE3ED400057F08 /* 06_QuickQuest */ = {
+			isa = PBXGroup;
+			children = (
+				54CFB3F020DE303800057F08 /* QuickQuestIntoroViewController.swift */,
+				54CFB3F420DE31CE00057F08 /* QuickQuestViewController.swift */,
+				54CFB3F620DE31DB00057F08 /* QuickQuestViewController.storyboard */,
+			);
+			path = 06_QuickQuest;
+			sourceTree = "<group>";
+		};
+		54CFB41620DE3EF300057F08 /* 08_Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				54CFB3F820DE334600057F08 /* DictViewController.swift */,
+				54CFB3FA20DE335A00057F08 /* DictViewController.storyboard */,
+			);
+			path = 08_Dictionary;
+			sourceTree = "<group>";
+		};
+		54CFB41720DE3F0400057F08 /* 09_Custom */ = {
+			isa = PBXGroup;
+			children = (
+				54CFB3FC20DE360700057F08 /* CustomViewController.swift */,
+				54CFB3FE20DE361300057F08 /* CustomViewController.storyboard */,
+			);
+			path = 09_Custom;
+			sourceTree = "<group>";
+		};
+		54CFB41820DE3F1500057F08 /* 10_Setting */ = {
+			isa = PBXGroup;
+			children = (
+				54CFB40020DE370A00057F08 /* SettingViewController.swift */,
+				54CFB40220DE371700057F08 /* SettingViewController.storyboard */,
+			);
+			path = 10_Setting;
+			sourceTree = "<group>";
+		};
+		54CFB41920DE3F2400057F08 /* 11_Data */ = {
+			isa = PBXGroup;
+			children = (
+				54CFB40420DE389200057F08 /* DataAggregateViewController.swift */,
+				54CFB40620DE38B300057F08 /* DataAggregateViewController.storyboard */,
+			);
+			path = 11_Data;
+			sourceTree = "<group>";
+		};
+		54CFB41A20DE3F3500057F08 /* 12_Sound */ = {
+			isa = PBXGroup;
+			children = (
+				54CFB40820DE39B300057F08 /* SoundViewController.swift */,
+				54CFB40A20DE39D400057F08 /* SoundViewController.storyboard */,
+			);
+			path = 12_Sound;
+			sourceTree = "<group>";
+		};
+		54CFB41B20DE3F4100057F08 /* 99_Purchase */ = {
+			isa = PBXGroup;
+			children = (
+				54CFB40C20DE3B1F00057F08 /* PurchaseViewController.swift */,
+				54CFB40E20DE3B3100057F08 /* PurchaseViewController.storyboard */,
+			);
+			path = 99_Purchase;
+			sourceTree = "<group>";
+		};
 		54D9AEA720CF6185004FEBA2 = {
 			isa = PBXGroup;
 			children = (
@@ -112,31 +221,18 @@
 				54D9AEB520CF6185004FEBA2 /* ViewController.swift */,
 				54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */,
 				54D9AEB720CF6185004FEBA2 /* Main.storyboard */,
-				54CFB3DA20DE162B00057F08 /* HomeViewController.swift */,
-				54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */,
-				54CFB3E020DE229E00057F08 /* WaitingViewController.swift */,
-				54CFB3E220DE22AF00057F08 /* WaitingViewController.storyboard */,
-				54CFB3E420DE25E300057F08 /* StageSelectViewController.swift */,
-				54CFB3E620DE25EB00057F08 /* StageSelectViewController.storyboard */,
-				54CFB3E820DE293C00057F08 /* GameViewController.swift */,
-				54CFB3EA20DE294700057F08 /* GameViewController.storyboard */,
-				54CFB3EC20DE2E4D00057F08 /* StudyModeViewController.swift */,
-				54CFB3EE20DE2E5E00057F08 /* StudyModeViewController.storyboard */,
-				54CFB3F020DE303800057F08 /* QuickQuestIntoroViewController.swift */,
-				54CFB3F420DE31CE00057F08 /* QuickQuestViewController.swift */,
-				54CFB3F620DE31DB00057F08 /* QuickQuestViewController.storyboard */,
-				54CFB3F820DE334600057F08 /* DictViewController.swift */,
-				54CFB3FA20DE335A00057F08 /* DictViewController.storyboard */,
-				54CFB3FC20DE360700057F08 /* CustomViewController.swift */,
-				54CFB3FE20DE361300057F08 /* CustomViewController.storyboard */,
-				54CFB40020DE370A00057F08 /* SettingViewController.swift */,
-				54CFB40220DE371700057F08 /* SettingViewController.storyboard */,
-				54CFB40420DE389200057F08 /* DataAggregateViewController.swift */,
-				54CFB40620DE38B300057F08 /* DataAggregateViewController.storyboard */,
-				54CFB40820DE39B300057F08 /* SoundViewController.swift */,
-				54CFB40A20DE39D400057F08 /* SoundViewController.storyboard */,
-				54CFB40C20DE3B1F00057F08 /* PurchaseViewController.swift */,
-				54CFB40E20DE3B3100057F08 /* PurchaseViewController.storyboard */,
+				54CFB41020DE3E5300057F08 /* 01_Home */,
+				54CFB41120DE3E7F00057F08 /* 02_Waiting */,
+				54CFB41220DE3E9200057F08 /* 03_StageSelect */,
+				54CFB41320DE3EA700057F08 /* 04_Game */,
+				54CFB41420DE3EB800057F08 /* 05_StudyMode */,
+				54CFB41520DE3ED400057F08 /* 06_QuickQuest */,
+				54CFB41620DE3EF300057F08 /* 08_Dictionary */,
+				54CFB41720DE3F0400057F08 /* 09_Custom */,
+				54CFB41820DE3F1500057F08 /* 10_Setting */,
+				54CFB41920DE3F2400057F08 /* 11_Data */,
+				54CFB41A20DE3F3500057F08 /* 12_Sound */,
+				54CFB41B20DE3F4100057F08 /* 99_Purchase */,
 				54D9AEBA20CF6186004FEBA2 /* Assets.xcassets */,
 				54D9AEBC20CF6186004FEBA2 /* LaunchScreen.storyboard */,
 				54D9AEC520CF6200004FEBA2 /* InfoPlist.strings */,
