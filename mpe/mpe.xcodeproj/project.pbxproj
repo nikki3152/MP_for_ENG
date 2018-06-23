@@ -7,6 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54CFB3DB20DE162B00057F08 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DA20DE162B00057F08 /* HomeViewController.swift */; };
+		54CFB3DD20DE164000057F08 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */; };
+		54CFB3DF20DE1F0B00057F08 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */; };
+		54CFB3E120DE229E00057F08 /* WaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3E020DE229E00057F08 /* WaitingViewController.swift */; };
+		54CFB3E320DE22AF00057F08 /* WaitingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB3E220DE22AF00057F08 /* WaitingViewController.storyboard */; };
+		54CFB3E520DE25E300057F08 /* StageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3E420DE25E300057F08 /* StageSelectViewController.swift */; };
+		54CFB3E720DE25EB00057F08 /* StageSelectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB3E620DE25EB00057F08 /* StageSelectViewController.storyboard */; };
+		54CFB3E920DE293C00057F08 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3E820DE293C00057F08 /* GameViewController.swift */; };
+		54CFB3EB20DE294700057F08 /* GameViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB3EA20DE294700057F08 /* GameViewController.storyboard */; };
+		54CFB3ED20DE2E4D00057F08 /* StudyModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3EC20DE2E4D00057F08 /* StudyModeViewController.swift */; };
+		54CFB3EF20DE2E5E00057F08 /* StudyModeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB3EE20DE2E5E00057F08 /* StudyModeViewController.storyboard */; };
+		54CFB3F120DE303800057F08 /* QuickQuestIntoroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3F020DE303800057F08 /* QuickQuestIntoroViewController.swift */; };
+		54CFB3F520DE31CE00057F08 /* QuickQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3F420DE31CE00057F08 /* QuickQuestViewController.swift */; };
+		54CFB3F720DE31DB00057F08 /* QuickQuestViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB3F620DE31DB00057F08 /* QuickQuestViewController.storyboard */; };
+		54CFB3F920DE334600057F08 /* DictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3F820DE334600057F08 /* DictViewController.swift */; };
+		54CFB3FB20DE335A00057F08 /* DictViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB3FA20DE335A00057F08 /* DictViewController.storyboard */; };
+		54CFB3FD20DE360700057F08 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3FC20DE360700057F08 /* CustomViewController.swift */; };
+		54CFB3FF20DE361300057F08 /* CustomViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB3FE20DE361300057F08 /* CustomViewController.storyboard */; };
+		54CFB40120DE370A00057F08 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB40020DE370A00057F08 /* SettingViewController.swift */; };
+		54CFB40320DE371700057F08 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB40220DE371700057F08 /* SettingViewController.storyboard */; };
+		54CFB40520DE389200057F08 /* DataAggregateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB40420DE389200057F08 /* DataAggregateViewController.swift */; };
+		54CFB40720DE38B300057F08 /* DataAggregateViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB40620DE38B300057F08 /* DataAggregateViewController.storyboard */; };
+		54CFB40920DE39B300057F08 /* SoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB40820DE39B300057F08 /* SoundViewController.swift */; };
+		54CFB40B20DE39D400057F08 /* SoundViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB40A20DE39D400057F08 /* SoundViewController.storyboard */; };
+		54CFB40D20DE3B1F00057F08 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB40C20DE3B1F00057F08 /* PurchaseViewController.swift */; };
+		54CFB40F20DE3B3100057F08 /* PurchaseViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB40E20DE3B3100057F08 /* PurchaseViewController.storyboard */; };
 		54D9AEB420CF6185004FEBA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9AEB320CF6185004FEBA2 /* AppDelegate.swift */; };
 		54D9AEB620CF6185004FEBA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9AEB520CF6185004FEBA2 /* ViewController.swift */; };
 		54D9AEB920CF6185004FEBA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D9AEB720CF6185004FEBA2 /* Main.storyboard */; };
@@ -16,6 +42,32 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54CFB3DA20DE162B00057F08 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
+		54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		54CFB3E020DE229E00057F08 /* WaitingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingViewController.swift; sourceTree = "<group>"; };
+		54CFB3E220DE22AF00057F08 /* WaitingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaitingViewController.storyboard; sourceTree = "<group>"; };
+		54CFB3E420DE25E300057F08 /* StageSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageSelectViewController.swift; sourceTree = "<group>"; };
+		54CFB3E620DE25EB00057F08 /* StageSelectViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StageSelectViewController.storyboard; sourceTree = "<group>"; };
+		54CFB3E820DE293C00057F08 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		54CFB3EA20DE294700057F08 /* GameViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameViewController.storyboard; sourceTree = "<group>"; };
+		54CFB3EC20DE2E4D00057F08 /* StudyModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyModeViewController.swift; sourceTree = "<group>"; };
+		54CFB3EE20DE2E5E00057F08 /* StudyModeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudyModeViewController.storyboard; sourceTree = "<group>"; };
+		54CFB3F020DE303800057F08 /* QuickQuestIntoroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickQuestIntoroViewController.swift; sourceTree = "<group>"; };
+		54CFB3F420DE31CE00057F08 /* QuickQuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickQuestViewController.swift; sourceTree = "<group>"; };
+		54CFB3F620DE31DB00057F08 /* QuickQuestViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuickQuestViewController.storyboard; sourceTree = "<group>"; };
+		54CFB3F820DE334600057F08 /* DictViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictViewController.swift; sourceTree = "<group>"; };
+		54CFB3FA20DE335A00057F08 /* DictViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DictViewController.storyboard; sourceTree = "<group>"; };
+		54CFB3FC20DE360700057F08 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		54CFB3FE20DE361300057F08 /* CustomViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomViewController.storyboard; sourceTree = "<group>"; };
+		54CFB40020DE370A00057F08 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		54CFB40220DE371700057F08 /* SettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
+		54CFB40420DE389200057F08 /* DataAggregateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAggregateViewController.swift; sourceTree = "<group>"; };
+		54CFB40620DE38B300057F08 /* DataAggregateViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DataAggregateViewController.storyboard; sourceTree = "<group>"; };
+		54CFB40820DE39B300057F08 /* SoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundViewController.swift; sourceTree = "<group>"; };
+		54CFB40A20DE39D400057F08 /* SoundViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SoundViewController.storyboard; sourceTree = "<group>"; };
+		54CFB40C20DE3B1F00057F08 /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
+		54CFB40E20DE3B3100057F08 /* PurchaseViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PurchaseViewController.storyboard; sourceTree = "<group>"; };
 		54D9AEB020CF6185004FEBA2 /* mpe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mpe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D9AEB320CF6185004FEBA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54D9AEB520CF6185004FEBA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +110,33 @@
 			children = (
 				54D9AEB320CF6185004FEBA2 /* AppDelegate.swift */,
 				54D9AEB520CF6185004FEBA2 /* ViewController.swift */,
+				54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */,
 				54D9AEB720CF6185004FEBA2 /* Main.storyboard */,
+				54CFB3DA20DE162B00057F08 /* HomeViewController.swift */,
+				54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */,
+				54CFB3E020DE229E00057F08 /* WaitingViewController.swift */,
+				54CFB3E220DE22AF00057F08 /* WaitingViewController.storyboard */,
+				54CFB3E420DE25E300057F08 /* StageSelectViewController.swift */,
+				54CFB3E620DE25EB00057F08 /* StageSelectViewController.storyboard */,
+				54CFB3E820DE293C00057F08 /* GameViewController.swift */,
+				54CFB3EA20DE294700057F08 /* GameViewController.storyboard */,
+				54CFB3EC20DE2E4D00057F08 /* StudyModeViewController.swift */,
+				54CFB3EE20DE2E5E00057F08 /* StudyModeViewController.storyboard */,
+				54CFB3F020DE303800057F08 /* QuickQuestIntoroViewController.swift */,
+				54CFB3F420DE31CE00057F08 /* QuickQuestViewController.swift */,
+				54CFB3F620DE31DB00057F08 /* QuickQuestViewController.storyboard */,
+				54CFB3F820DE334600057F08 /* DictViewController.swift */,
+				54CFB3FA20DE335A00057F08 /* DictViewController.storyboard */,
+				54CFB3FC20DE360700057F08 /* CustomViewController.swift */,
+				54CFB3FE20DE361300057F08 /* CustomViewController.storyboard */,
+				54CFB40020DE370A00057F08 /* SettingViewController.swift */,
+				54CFB40220DE371700057F08 /* SettingViewController.storyboard */,
+				54CFB40420DE389200057F08 /* DataAggregateViewController.swift */,
+				54CFB40620DE38B300057F08 /* DataAggregateViewController.storyboard */,
+				54CFB40820DE39B300057F08 /* SoundViewController.swift */,
+				54CFB40A20DE39D400057F08 /* SoundViewController.storyboard */,
+				54CFB40C20DE3B1F00057F08 /* PurchaseViewController.swift */,
+				54CFB40E20DE3B3100057F08 /* PurchaseViewController.storyboard */,
 				54D9AEBA20CF6186004FEBA2 /* Assets.xcassets */,
 				54D9AEBC20CF6186004FEBA2 /* LaunchScreen.storyboard */,
 				54D9AEC520CF6200004FEBA2 /* InfoPlist.strings */,
@@ -125,8 +203,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54CFB3E320DE22AF00057F08 /* WaitingViewController.storyboard in Resources */,
+				54CFB3DD20DE164000057F08 /* HomeViewController.storyboard in Resources */,
 				54D9AEBE20CF6186004FEBA2 /* LaunchScreen.storyboard in Resources */,
+				54CFB3FB20DE335A00057F08 /* DictViewController.storyboard in Resources */,
+				54CFB3FF20DE361300057F08 /* CustomViewController.storyboard in Resources */,
+				54CFB40720DE38B300057F08 /* DataAggregateViewController.storyboard in Resources */,
+				54CFB40F20DE3B3100057F08 /* PurchaseViewController.storyboard in Resources */,
+				54CFB40B20DE39D400057F08 /* SoundViewController.storyboard in Resources */,
+				54CFB3F720DE31DB00057F08 /* QuickQuestViewController.storyboard in Resources */,
+				54CFB3EF20DE2E5E00057F08 /* StudyModeViewController.storyboard in Resources */,
 				54D9AEC620CF6200004FEBA2 /* InfoPlist.strings in Resources */,
+				54CFB40320DE371700057F08 /* SettingViewController.storyboard in Resources */,
+				54CFB3E720DE25EB00057F08 /* StageSelectViewController.storyboard in Resources */,
+				54CFB3EB20DE294700057F08 /* GameViewController.storyboard in Resources */,
 				54D9AEBB20CF6186004FEBA2 /* Assets.xcassets in Resources */,
 				54D9AEB920CF6185004FEBA2 /* Main.storyboard in Resources */,
 			);
@@ -139,8 +229,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54CFB3E920DE293C00057F08 /* GameViewController.swift in Sources */,
+				54CFB40D20DE3B1F00057F08 /* PurchaseViewController.swift in Sources */,
+				54CFB3E120DE229E00057F08 /* WaitingViewController.swift in Sources */,
+				54CFB40520DE389200057F08 /* DataAggregateViewController.swift in Sources */,
 				54D9AEB620CF6185004FEBA2 /* ViewController.swift in Sources */,
+				54CFB40920DE39B300057F08 /* SoundViewController.swift in Sources */,
+				54CFB40120DE370A00057F08 /* SettingViewController.swift in Sources */,
+				54CFB3FD20DE360700057F08 /* CustomViewController.swift in Sources */,
+				54CFB3DF20DE1F0B00057F08 /* BaseViewController.swift in Sources */,
 				54D9AEB420CF6185004FEBA2 /* AppDelegate.swift in Sources */,
+				54CFB3ED20DE2E4D00057F08 /* StudyModeViewController.swift in Sources */,
+				54CFB3DB20DE162B00057F08 /* HomeViewController.swift in Sources */,
+				54CFB3F920DE334600057F08 /* DictViewController.swift in Sources */,
+				54CFB3E520DE25E300057F08 /* StageSelectViewController.swift in Sources */,
+				54CFB3F120DE303800057F08 /* QuickQuestIntoroViewController.swift in Sources */,
+				54CFB3F520DE31CE00057F08 /* QuickQuestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fDl-of-gCg">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Waiting View Controller-->
+        <scene sceneID="bUc-7j-dXL">
+            <objects>
+                <viewController storyboardIdentifier="WaitingView" id="fDl-of-gCg" customClass="WaitingViewController" customModule="mpe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hg8-nk-IpR">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2z-xo-33f">
+                                <rect key="frame" x="0.0" y="61" width="167" height="314"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                <state key="normal" title="ひとりでパズル"/>
+                                <connections>
+                                    <action selector="stageSelectButtpnAction:" destination="fDl-of-gCg" eventType="touchUpInside" id="YwV-Sz-aCK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYX-XU-YWh">
+                                <rect key="frame" x="167" y="61" width="167" height="314"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                <state key="normal" title="勉強モード"/>
+                                <connections>
+                                    <action selector="studyModeButtpnAction:" destination="fDl-of-gCg" eventType="touchUpInside" id="p1d-lw-JFE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moz-to-uX4">
+                                <rect key="frame" x="334" y="61" width="167" height="314"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                <state key="normal" title="カスタム"/>
+                                <connections>
+                                    <action selector="customButtpnAction:" destination="fDl-of-gCg" eventType="touchUpInside" id="JYj-og-hlJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdK-Fk-IO2">
+                                <rect key="frame" x="501" y="61" width="167" height="314"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
+                                <state key="normal" title="設定"/>
+                                <connections>
+                                    <action selector="settingButtpnAction:" destination="fDl-of-gCg" eventType="touchUpInside" id="JM6-x4-pio"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="02 待機" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urj-cM-p82">
+                                <rect key="frame" x="199" y="20" width="268" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avu-8d-83k">
+                                <rect key="frame" x="524" y="15" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ポイント課金"/>
+                                <connections>
+                                    <action selector="purchaseButtonAction:" destination="fDl-of-gCg" eventType="touchUpInside" id="5ed-ii-okT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wnD-Zn-FfT"/>
+                    </view>
+                    <connections>
+                        <outlet property="customButton" destination="moz-to-uX4" id="ErF-V6-Scx"/>
+                        <outlet property="purchaseButton" destination="Avu-8d-83k" id="Rb1-Mo-c8Y"/>
+                        <outlet property="settingButton" destination="PdK-Fk-IO2" id="Xo1-Za-uUr"/>
+                        <outlet property="stageSelectButton" destination="y2z-xo-33f" id="q9O-V2-LR1"/>
+                        <outlet property="studyModeButton" destination="NYX-XU-YWh" id="pS6-27-TGQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGF-P7-H5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33.733133433283363" y="205.59999999999999"/>
+        </scene>
+    </scenes>
+</document>
