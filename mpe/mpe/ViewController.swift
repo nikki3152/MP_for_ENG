@@ -40,6 +40,11 @@ class ViewController: UIViewController {
 				}
 			}
 		}
+		
+		let gameView = GameViewController.gameViewController()
+		gameView.present(self) { 
+			
+		}
 	}
 	
 	// >> Skip
