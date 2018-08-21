@@ -87,7 +87,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate {
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
 		
-		self.remove()
+		//self.remove()
 	}
 	
 	private func updateScrollInset() {
