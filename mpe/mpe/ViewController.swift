@@ -10,9 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+	let dataMrg = MPEDataManager()
+	//var db: [String:[String]] = [:]
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		
+		if dataMrg.checkFileExists(name: "database", dir: "") == false {
+			dataMrg.makeDB()
+		}
+		//self.db = dataMrg.loadDB()
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -22,6 +28,18 @@ class ViewController: UIViewController {
 
 	override func viewWillLayoutSubviews() {
 		
+		let word = "apple"
+		let list = dataMrg.search(word: word, mode: 1)
+		for dic in list {
+			let keys = dic.keys
+			for key in keys {
+				print("【\(key)】")
+				let values = dic[key]!
+				for value in values {
+					print(" >\(value)")
+				}
+			}
+		}
 	}
 	
 	// >> Skip

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5489AF5D212B007A00A7D275 /* ejdic-hand-utf8.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */; };
+		5489AF5F212B00B500A7D275 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF5E212B00B500A7D275 /* DataManager.swift */; };
+		5489AF61212B010B00A7D275 /* MPEDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF60212B010B00A7D275 /* MPEDataManager.swift */; };
 		54CFB3DB20DE162B00057F08 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DA20DE162B00057F08 /* HomeViewController.swift */; };
 		54CFB3DD20DE164000057F08 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */; };
 		54CFB3DF20DE1F0B00057F08 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */; };
@@ -42,6 +45,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ejdic-hand-utf8.txt"; sourceTree = "<group>"; };
+		5489AF5E212B00B500A7D275 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		5489AF60212B010B00A7D275 /* MPEDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPEDataManager.swift; sourceTree = "<group>"; };
 		54CFB3DA20DE162B00057F08 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +223,8 @@
 		54D9AEB220CF6185004FEBA2 /* mpe */ = {
 			isa = PBXGroup;
 			children = (
+				5489AF60212B010B00A7D275 /* MPEDataManager.swift */,
+				5489AF5E212B00B500A7D275 /* DataManager.swift */,
 				54D9AEB320CF6185004FEBA2 /* AppDelegate.swift */,
 				54D9AEB520CF6185004FEBA2 /* ViewController.swift */,
 				54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */,
@@ -235,6 +243,7 @@
 				54CFB41B20DE3F4100057F08 /* 99_Purchase */,
 				54D9AEBA20CF6186004FEBA2 /* Assets.xcassets */,
 				54D9AEBC20CF6186004FEBA2 /* LaunchScreen.storyboard */,
+				5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */,
 				54D9AEC520CF6200004FEBA2 /* InfoPlist.strings */,
 				54D9AEBF20CF6186004FEBA2 /* Info.plist */,
 			);
@@ -300,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54CFB3E320DE22AF00057F08 /* WaitingViewController.storyboard in Resources */,
+				5489AF5D212B007A00A7D275 /* ejdic-hand-utf8.txt in Resources */,
 				54CFB3DD20DE164000057F08 /* HomeViewController.storyboard in Resources */,
 				54D9AEBE20CF6186004FEBA2 /* LaunchScreen.storyboard in Resources */,
 				54CFB3FB20DE335A00057F08 /* DictViewController.storyboard in Resources */,
@@ -329,11 +339,13 @@
 				54CFB40D20DE3B1F00057F08 /* PurchaseViewController.swift in Sources */,
 				54CFB3E120DE229E00057F08 /* WaitingViewController.swift in Sources */,
 				54CFB40520DE389200057F08 /* DataAggregateViewController.swift in Sources */,
+				5489AF61212B010B00A7D275 /* MPEDataManager.swift in Sources */,
 				54D9AEB620CF6185004FEBA2 /* ViewController.swift in Sources */,
 				54CFB40920DE39B300057F08 /* SoundViewController.swift in Sources */,
 				54CFB40120DE370A00057F08 /* SettingViewController.swift in Sources */,
 				54CFB3FD20DE360700057F08 /* CustomViewController.swift in Sources */,
 				54CFB3DF20DE1F0B00057F08 /* BaseViewController.swift in Sources */,
+				5489AF5F212B00B500A7D275 /* DataManager.swift in Sources */,
 				54D9AEB420CF6185004FEBA2 /* AppDelegate.swift in Sources */,
 				54CFB3ED20DE2E4D00057F08 /* StudyModeViewController.swift in Sources */,
 				54CFB3DB20DE162B00057F08 /* HomeViewController.swift in Sources */,
