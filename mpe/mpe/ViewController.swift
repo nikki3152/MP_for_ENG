@@ -28,8 +28,8 @@ class ViewController: UIViewController {
 
 	override func viewWillLayoutSubviews() {
 		
-		let word = "apple"
-		let list = dataMrg.search(word: word, mode: 1)
+		let word = "English"
+		let list = dataMrg.search(word: word, match: .perfect)
 		for dic in list {
 			let keys = dic.keys
 			for key in keys {

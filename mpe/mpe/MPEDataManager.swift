@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum MatchType: Int {
+	case perfect			//完全一致
+	case foward				//前方一致
+	case contains			//単語を含む
+}
+
 class MPEDataManager: DataManager {
 	
 	func loadJsonDB() -> [String:[String]] {
@@ -58,22 +64,23 @@ class MPEDataManager: DataManager {
 		}
 	}
 	// mode: 0=完全一致 1=前方一致 2=wordを含む 
-	func search(word: String, mode: Int) -> [[String:[String]]] {
+	func search(word: String, match: MatchType) -> [[String:[String]]] {
 		
+		let searchWord = word.lowercased()
 		var ret: [[String:[String]]] = []
 		//先頭１文字
-		let moji = String(word.prefix(1))
+		let moji = String(searchWord.prefix(1))
 		if let dic = self.load(name: "\(moji).plist", dir: "database") {
-			if mode == 0 {
-				if let value = dic[word] as? [String] {
+			if match == .perfect {
+				if let value = dic[searchWord] as? [String] {
 					var d: [String:[String]] = [:]
-					d[word] = value
+					d[searchWord] = value
 					ret.append(d)
 				}
 			} else {
 				let keys = dic.keys
 				for key in keys {
-					if mode == 1 {
+					if match == .foward {
 						//wordが先頭
 						if key.hasPrefix(word) {
 							if let value = dic[key] as? [String] {
@@ -82,7 +89,7 @@ class MPEDataManager: DataManager {
 								ret.append(d)
 							}
 						}
-					} else if mode == 2 {
+					} else if match == .contains {
 						//wordを含む
 						if key.contains(word) {
 							if let value = dic[key] as? [String] {
