@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 		}
 		//self.db = dataMrg.loadDB()
 	}
-
+	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
@@ -28,8 +28,8 @@ class ViewController: UIViewController {
 
 	override func viewWillLayoutSubviews() {
 		
-		let word = "English"
-		let list = dataMrg.search(word: word, match: .perfect)
+		let word = "Apple"
+		let list = dataMrg.search(word: word, match: .contains)
 		for dic in list {
 			let keys = dic.keys
 			for key in keys {

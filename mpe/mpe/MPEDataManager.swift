@@ -91,7 +91,7 @@ class MPEDataManager: DataManager {
 						}
 					} else if match == .contains {
 						//wordを含む
-						if key.contains(word) {
+						if key.contains(searchWord) {
 							if let value = dic[key] as? [String] {
 								var d: [String:[String]] = [:]
 								d[key] = value
