@@ -10,10 +10,11 @@ import UIKit
 
 class TableKomaView: UIView {
 	
-	class func tableKomaView() -> TableKomaView {
+	class func tableKomaView(frame: CGRect) -> TableKomaView {
 		
 		let vc = UIViewController(nibName: "TableKomaView", bundle: nil)
 		let v = vc.view as! TableKomaView
+		v.frame = frame
 		return v
 	}
 	

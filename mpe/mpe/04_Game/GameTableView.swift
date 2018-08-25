@@ -18,7 +18,7 @@ class GameTableView: UIView {
 		table.komaBaseView.center = CGPoint(x: table.frame.size.width / 2, y: table.frame.size.height / 2)
 		let subviews = table.komaBaseView.subviews
 		for v in subviews {
-			let koma = TableKomaView.tableKomaView()
+			let koma = TableKomaView.tableKomaView(frame: CGRect(x: 0, y: 0, width: v.frame.size.width, height: v.frame.size.height))
 			v.addSubview(koma)
 			koma.center = CGPoint(x: v.frame.size.width / 2, y: v.frame.size.height / 2)
 		}
