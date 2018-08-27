@@ -44,15 +44,15 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1cO-p3-EVK">
-                                <rect key="frame" x="5" y="44" width="71" height="275"/>
+                                <rect key="frame" x="5" y="48" width="71" height="271"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quest_base" translatesAutoresizingMaskIntoConstraints="NO" id="tae-oi-Zh4">
-                                        <rect key="frame" x="4" y="0.0" width="64" height="275"/>
+                                        <rect key="frame" x="4" y="0.0" width="64" height="271"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ViA-KF-CoJ">
-                                        <rect key="frame" x="16" y="49" width="38" height="199"/>
+                                        <rect key="frame" x="16" y="49" width="38" height="195"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                 </subviews>
