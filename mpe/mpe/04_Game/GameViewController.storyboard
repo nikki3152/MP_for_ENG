@@ -34,7 +34,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="46-01_4" translatesAutoresizingMaskIntoConstraints="NO" id="Cwi-8a-QQW">
-                                        <rect key="frame" x="9" y="10" width="101" height="167"/>
+                                        <rect key="frame" x="9" y="18" width="101" height="159"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="15-14" translatesAutoresizingMaskIntoConstraints="NO" id="hlP-yQ-Ocs">
@@ -44,15 +44,15 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1cO-p3-EVK">
-                                <rect key="frame" x="5" y="39" width="71" height="280"/>
+                                <rect key="frame" x="5" y="44" width="71" height="275"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quest_base" translatesAutoresizingMaskIntoConstraints="NO" id="tae-oi-Zh4">
-                                        <rect key="frame" x="4" y="5" width="64" height="270"/>
+                                        <rect key="frame" x="4" y="0.0" width="64" height="275"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ViA-KF-CoJ">
-                                        <rect key="frame" x="17" y="59" width="38" height="175"/>
+                                        <rect key="frame" x="16" y="49" width="38" height="199"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                 </subviews>
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SsC-t5-QhI">
-                                <rect key="frame" x="443" y="10" width="123" height="43"/>
+                                <rect key="frame" x="443" y="35" width="123" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="21-01_0" translatesAutoresizingMaskIntoConstraints="NO" id="lfJ-dK-yxr">
@@ -172,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhC-Eo-4Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-62" y="161"/>
+            <point key="canvasLocation" x="-63.380281690140848" y="157.5"/>
         </scene>
     </scenes>
     <resources>
@@ -183,6 +183,6 @@
         <image name="21-01_0" width="40" height="40"/>
         <image name="46-01_4" width="150" height="150"/>
         <image name="bt_back" width="28" height="33"/>
-        <image name="quest_base" width="106" height="540"/>
+        <image name="quest_base" width="106" height="488"/>
     </resources>
 </document>
