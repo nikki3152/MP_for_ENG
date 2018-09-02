@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="table_koma" translatesAutoresizingMaskIntoConstraints="NO" id="4Ld-xJ-jP1">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="table" translatesAutoresizingMaskIntoConstraints="NO" id="4Ld-xJ-jP1">
                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -39,6 +39,6 @@
         </view>
     </objects>
     <resources>
-        <image name="table_koma" width="75" height="75"/>
+        <image name="table" width="150" height="150"/>
     </resources>
 </document>

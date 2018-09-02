@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="01-2" translatesAutoresizingMaskIntoConstraints="NO" id="u3i-2l-VVr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stage_01" translatesAutoresizingMaskIntoConstraints="NO" id="u3i-2l-VVr">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -33,11 +33,11 @@
                                 <rect key="frame" x="452" y="48" width="120" height="258"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="46-01_4" translatesAutoresizingMaskIntoConstraints="NO" id="Cwi-8a-QQW">
-                                        <rect key="frame" x="9" y="18" width="101" height="159"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="char_fukidashi" translatesAutoresizingMaskIntoConstraints="NO" id="Cwi-8a-QQW">
+                                        <rect key="frame" x="9" y="18" width="101" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="15-14" translatesAutoresizingMaskIntoConstraints="NO" id="hlP-yQ-Ocs">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mojikun_a_01" translatesAutoresizingMaskIntoConstraints="NO" id="hlP-yQ-Ocs">
                                         <rect key="frame" x="10" y="147" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                     </imageView>
@@ -58,9 +58,10 @@
                                 </subviews>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-yj-Dfs">
-                                <rect key="frame" x="5" y="9" width="28" height="33"/>
+                                <rect key="frame" x="5" y="5" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="bt_back"/>
+                                <state key="normal" backgroundImage="bt_stop"/>
+                                <state key="highlighted" backgroundImage="bt_stop_tap"/>
                                 <connections>
                                     <action selector="backButtonAction:" destination="vVe-zF-H2F" eventType="touchUpInside" id="Ucx-x5-E98"/>
                                 </connections>
@@ -69,22 +70,6 @@
                                 <rect key="frame" x="443" y="35" width="123" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="21-01_0" translatesAutoresizingMaskIntoConstraints="NO" id="lfJ-dK-yxr">
-                                        <rect key="frame" x="100" y="20" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="21-01_0" translatesAutoresizingMaskIntoConstraints="NO" id="rJa-91-V8k">
-                                        <rect key="frame" x="80" y="20" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="21-01_0" translatesAutoresizingMaskIntoConstraints="NO" id="Mpw-Qt-EQ7">
-                                        <rect key="frame" x="60" y="20" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="21-01_0" translatesAutoresizingMaskIntoConstraints="NO" id="tYN-EB-fKw">
-                                        <rect key="frame" x="40" y="20" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyU-WO-WkY">
                                         <rect key="frame" x="5" y="2" width="83" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -92,7 +77,23 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="21-01_0" translatesAutoresizingMaskIntoConstraints="NO" id="op7-Kn-p5b">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="lfJ-dK-yxr">
+                                        <rect key="frame" x="100" y="20" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="rJa-91-V8k">
+                                        <rect key="frame" x="80" y="20" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="Mpw-Qt-EQ7">
+                                        <rect key="frame" x="60" y="20" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="tYN-EB-fKw">
+                                        <rect key="frame" x="40" y="20" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="op7-Kn-p5b">
                                         <rect key="frame" x="20" y="20" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                     </imageView>
@@ -105,7 +106,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQv-xA-cRO">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="20-01_re"/>
+                                        <state key="normal" backgroundImage="orange_right"/>
                                         <connections>
                                             <action selector="cardLeftButtonAction:" destination="vVe-zF-H2F" eventType="touchUpInside" id="o0r-r3-JBW"/>
                                         </connections>
@@ -113,7 +114,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8k-C1-wdl">
                                         <rect key="frame" x="350" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="20-01_ne"/>
+                                        <state key="normal" backgroundImage="orange_left"/>
                                         <connections>
                                             <action selector="cardRightButtonAction:" destination="vVe-zF-H2F" eventType="touchUpInside" id="zRK-IP-vF6"/>
                                         </connections>
@@ -176,13 +177,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="01-2" width="1920" height="1080"/>
-        <image name="15-14" width="300" height="300"/>
-        <image name="20-01_ne" width="75" height="75"/>
-        <image name="20-01_re" width="75" height="75"/>
-        <image name="21-01_0" width="40" height="40"/>
-        <image name="46-01_4" width="150" height="150"/>
-        <image name="bt_back" width="28" height="33"/>
-        <image name="quest_base" width="106" height="488"/>
+        <image name="0" width="80" height="80"/>
+        <image name="bt_stop" width="120" height="120"/>
+        <image name="bt_stop_tap" width="120" height="120"/>
+        <image name="char_fukidashi" width="300" height="603"/>
+        <image name="mojikun_a_01" width="300" height="300"/>
+        <image name="orange_left" width="150" height="150"/>
+        <image name="orange_right" width="150" height="150"/>
+        <image name="quest_base" width="106" height="540"/>
+        <image name="stage_01" width="1920" height="1080"/>
     </resources>
 </document>

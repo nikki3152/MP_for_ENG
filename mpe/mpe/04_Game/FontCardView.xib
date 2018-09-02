@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="20-01_1" translatesAutoresizingMaskIntoConstraints="NO" id="OhL-Vk-2JC">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orange_1" translatesAutoresizingMaskIntoConstraints="NO" id="OhL-Vk-2JC">
                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -35,7 +35,7 @@
         </view>
     </objects>
     <resources>
-        <image name="20-01_1" width="75" height="75"/>
         <image name="A" width="150" height="150"/>
+        <image name="orange_1" width="150" height="150"/>
     </resources>
 </document>
