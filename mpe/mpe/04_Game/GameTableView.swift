@@ -8,8 +8,15 @@
 
 import UIKit
 
-class GameTableView: UIView {
+protocol GameTableViewDelegate {
+	func gameTableViewToucheDown(table: GameTableView, koma: TableKomaView)
+	func gameTableViewToucheUp(table: GameTableView, koma: TableKomaView)
+}
 
+class GameTableView: UIView, TableKomaViewDelegate {
+
+	var delegate: GameTableViewDelegate?
+	
 	class func gameTableView(size: CGSize, width: Int, height: Int) -> GameTableView {
 		
 		let vc = UIViewController(nibName: "GameTableView", bundle: nil)
@@ -19,6 +26,7 @@ class GameTableView: UIView {
 		let subviews = table.komaBaseView.subviews
 		for v in subviews {
 			let koma = TableKomaView.tableKomaView(frame: CGRect(x: 0, y: 0, width: v.frame.size.width, height: v.frame.size.height))
+			koma.delegate = table
 			v.addSubview(koma)
 			koma.center = CGPoint(x: v.frame.size.width / 2, y: v.frame.size.height / 2)
 		}
@@ -27,4 +35,14 @@ class GameTableView: UIView {
 	}
 	
 	@IBOutlet weak var komaBaseView: UIView!
+	
+	//MARK: - TableKomaViewDelegate
+	func tableKomaViewToucheDown(koma: TableKomaView) {
+		
+		self.delegate?.gameTableViewToucheDown(table: self, koma: koma)
+	}	
+	func tableKomaViewToucheUp(koma: TableKomaView) {
+		
+		self.delegate?.gameTableViewToucheUp(table: self, koma: koma)
+	}
 }

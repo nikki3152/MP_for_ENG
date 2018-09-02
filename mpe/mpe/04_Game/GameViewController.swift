@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameViewController: BaseViewController, UIScrollViewDelegate {
+class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableViewDelegate {
 	
 	class func gameViewController() -> GameViewController {
 		
@@ -35,6 +35,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate {
 		//ゲームテーブル
 		let size = CGSize(width: self.mainScrollView.frame.size.width * 2, height: self.mainScrollView.frame.size.height * 2)
 		self.gameTable = GameTableView.gameTableView(size: size, width: 8, height: 8)
+		self.gameTable.delegate = self
 		self.mainScrollView.addSubview(self.gameTable)
 		self.mainScrollView.contentSize = CGSize(width: self.gameTable.frame.size.width, height: self.gameTable.frame.size.height)
 		self.mainScrollView.maximumZoomScale = 2.0
@@ -110,5 +111,16 @@ class GameViewController: BaseViewController, UIScrollViewDelegate {
 	func scrollViewDidZoom(_ scrollView: UIScrollView) {
 		
 		updateScrollInset()
+	}
+	
+	
+	//MARK: - GameTableViewDelegate
+	func gameTableViewToucheDown(table: GameTableView, koma: TableKomaView) {
+		
+		self.mainScrollView.isScrollEnabled = false
+	}
+	func gameTableViewToucheUp(table: GameTableView, koma: TableKomaView) {
+		
+		self.mainScrollView.isScrollEnabled = true
 	}
 }
