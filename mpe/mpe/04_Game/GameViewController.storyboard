@@ -184,7 +184,7 @@
         <image name="mojikun_a_01" width="300" height="300"/>
         <image name="orange_left" width="150" height="150"/>
         <image name="orange_right" width="150" height="150"/>
-        <image name="quest_base" width="106" height="540"/>
+        <image name="quest_base" width="106" height="487"/>
         <image name="stage_01" width="1920" height="1080"/>
     </resources>
 </document>
