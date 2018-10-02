@@ -26,23 +26,27 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
 		
-		//手札
-		for v in self.cardList {
-			let card1 = FontCardView.fontCardView()
-			v.addSubview(card1)
-			card1.center = CGPoint(x: v.frame.size.width / 2, y: v.frame.size.height / 2)
+		if self.gameTable == nil {
+			//手札
+			for v in self.cardList {
+				let card1 = FontCardView.fontCardView()
+				v.addSubview(card1)
+				card1.center = CGPoint(x: v.frame.size.width / 2, y: v.frame.size.height / 2)
+			}
+			//ゲームテーブル
+			let size = CGSize(width: self.mainScrollView.frame.size.width * 2, height: self.mainScrollView.frame.size.height * 2)
+			self.gameTable = GameTableView.gameTableView(size: size, width: 8, height: 8)
+			self.gameTable.delegate = self
+			self.mainScrollView.addSubview(self.gameTable)
+			self.mainScrollView.contentSize = CGSize(width: self.gameTable.frame.size.width, height: self.gameTable.frame.size.height)
+			self.mainScrollView.maximumZoomScale = 2.0
+			self.mainScrollView.minimumZoomScale = 1.0
+			self.mainScrollView.zoomScale = 1.0
+			self.mainScrollView.contentOffset = CGPoint(x: size.width / 4, y: size.height / 4)
+			updateScrollInset()
+			self.view.sendSubview(toBack: self.mainScrollView)
+			self.view.sendSubview(toBack: self.backImageView)
 		}
-		//ゲームテーブル
-		let size = CGSize(width: self.mainScrollView.frame.size.width * 2, height: self.mainScrollView.frame.size.height * 2)
-		self.gameTable = GameTableView.gameTableView(size: size, width: 8, height: 8)
-		self.gameTable.delegate = self
-		self.mainScrollView.addSubview(self.gameTable)
-		self.mainScrollView.contentSize = CGSize(width: self.gameTable.frame.size.width, height: self.gameTable.frame.size.height)
-		self.mainScrollView.maximumZoomScale = 2.0
-		self.mainScrollView.minimumZoomScale = 1.0
-		self.mainScrollView.zoomScale = 1.0
-		self.mainScrollView.contentOffset = CGPoint(x: size.width / 4, y: size.height / 4)
-		updateScrollInset()
 	}
 	
 	//背景

@@ -25,11 +25,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vs0-Kc-bLJ">
-                                <rect key="frame" x="20" y="20" width="40" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vs0-Kc-bLJ">
+                                <rect key="frame" x="15" y="5" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="&lt;"/>
+                                <state key="normal" backgroundImage="bt_back"/>
                                 <connections>
                                     <action selector="backButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="8xS-EU-TaA"/>
                                 </connections>
@@ -47,4 +46,7 @@
             <point key="canvasLocation" x="310" y="56"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bt_back" width="28" height="33"/>
+    </resources>
 </document>
