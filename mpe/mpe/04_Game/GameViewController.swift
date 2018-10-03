@@ -269,18 +269,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			var list: [[String:[String]]] = []
 			//横の検索
 			let wordHline = self.checkWordH(startIndex: koma.tag)
-			if wordHline.count > 1 {
-				let ward = wordHline.lowercased()
-				let listH = dataMrg.search(word: ward, match: .perfect)
-				list += listH
-			}
+			let listH = dataMrg.search(word: wordHline.lowercased(), match: .perfect)
+			list += listH
 			//縦の検索
 			let wordVline = self.checkWordV(startIndex: koma.tag)
-			if wordVline.count > 1 {
-				let ward = wordVline.lowercased()
-				let listV = dataMrg.search(word: ward, match: .perfect)
-				list += listV
-			}
+			let listV = dataMrg.search(word: wordVline.lowercased(), match: .perfect)
+			list += listV
 			
 			for dic in list {
 				let keys = dic.keys
