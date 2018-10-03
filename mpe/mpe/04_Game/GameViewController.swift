@@ -8,7 +8,23 @@
 
 import UIKit
 
-class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableViewDelegate {
+class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableViewDelegate, FontCardViewDelegate {
+	
+	var tableWCount: Int = 8
+	var tableHCount: Int = 8
+	var tableCellTypes: [String] = [
+		" "," "," "," "," "," "," ","A",
+		"I","0","0","0","0","0","0","0",
+		" "," "," "," "," "," "," ","0",
+		"U","0","0","0","0","0","0","0",
+		" "," "," "," "," "," "," ","0",
+		"E","0","0","0","0","0","0","0",
+		" "," "," "," "," "," "," ","0",
+		"O","0","0","0","0","0","0","0",
+	]
+	
+	var cardList: [String] = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+	var cardSelectIndex: Int!
 	
 	class func gameViewController() -> GameViewController {
 		
@@ -20,22 +36,21 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.cardList = [cardBaseView1,cardBaseView2,cardBaseView3,cardBaseView4,cardBaseView5,cardBaseView6]
     }
 	
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
 		
 		if self.gameTable == nil {
+			
 			//手札
-			for v in self.cardList {
-				let card1 = FontCardView.fontCardView()
-				v.addSubview(card1)
-				card1.center = CGPoint(x: v.frame.size.width / 2, y: v.frame.size.height / 2)
-			}
+			self.updateCardScroll()
 			//ゲームテーブル
-			let size = CGSize(width: self.mainScrollView.frame.size.width * 2, height: self.mainScrollView.frame.size.height * 2)
-			self.gameTable = GameTableView.gameTableView(size: size, width: 8, height: 8)
+			self.gameTable = GameTableView.gameTableView(size: CGSize(width: self.mainScrollView.frame.size.width, height: self.mainScrollView.frame.size.height), 
+														 width: self.tableWCount, 
+														 height: self.tableHCount,
+														 cellTypes: self.tableCellTypes)
+			let size = self.gameTable.frame.size
 			self.gameTable.delegate = self
 			self.mainScrollView.addSubview(self.gameTable)
 			self.mainScrollView.contentSize = CGSize(width: self.gameTable.frame.size.width, height: self.gameTable.frame.size.height)
@@ -63,19 +78,17 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	
 	
 	//手札
-	var cardList: [UIView] = []
+	var cardViewList: [FontCardView] = []
+	@IBOutlet weak var cardScrolliew: UIScrollView!
 	@IBOutlet weak var cardBaseView: UIView!
+	
 	@IBOutlet weak var cardLeftButton: UIButton!
-	@IBOutlet weak var cardBaseView1: UIView!
-	@IBOutlet weak var cardBaseView2: UIView!
-	@IBOutlet weak var cardBaseView3: UIView!
-	@IBOutlet weak var cardBaseView4: UIView!
-	@IBOutlet weak var cardBaseView5: UIView!
-	@IBOutlet weak var cardBaseView6: UIView!
 	@IBAction func cardLeftButtonAction(_ sender: UIButton) {
+		
 	}
 	@IBOutlet weak var cardRightButton: UIButton!
 	@IBAction func cardRightButtonAction(_ sender: UIButton) {
+		
 	}
 	
 	//キャラクター
@@ -92,7 +105,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
 		
-		//self.remove()
+		self.remove()
 	}
 	
 	private func updateScrollInset() {
@@ -105,6 +118,41 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 //		)
 	}
 	
+	func updateCardScroll() {
+		
+		for v in self.cardScrolliew.subviews {
+			v.removeFromSuperview()
+		}
+		for i in 0 ..< self.cardList.count {
+			let moji = self.cardList[i]
+			let cardView = FontCardView.fontCardView(moji: moji)
+			cardView.delegate = self
+			cardView.tag = i
+			self.cardScrolliew.addSubview(cardView)
+			//card1.backImageView.image = UIImage(named: "orange_\(i+1)")
+			cardView.center = CGPoint(x: (cardView.frame.size.width / 2) + (CGFloat(i) * cardView.frame.size.width), y: self.cardScrolliew.frame.size.height / 2)
+			self.cardViewList.append(cardView)
+		}
+		self.cardScrolliew.contentSize = CGSize(width: CGFloat(self.cardList.count) * 50, height: self.cardScrolliew.frame.size.height / 2)
+		
+	}
+	
+	
+	//MARK:- FontCardViewDelegate
+	
+	func fontCardViewTap(font: FontCardView) {
+		
+		self.cardSelectIndex = font.tag
+		let moji = self.cardList[self.cardSelectIndex]
+		print("\(moji)")
+		for cardView in self.cardViewList {
+			if cardView.tag == self.cardSelectIndex {
+				cardView.isSelected = true
+			} else {
+				cardView.isSelected = false
+			}
+		}
+	}
 	
 	//MARK:- UIScrollViewDelegate
 	
@@ -126,5 +174,15 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	func gameTableViewToucheUp(table: GameTableView, koma: TableKomaView) {
 		
 		self.mainScrollView.isScrollEnabled = true
+		if let index = self.cardSelectIndex {
+			let moji = self.cardList[index]
+			koma.setFont(moji: moji)
+			self.cardList.remove(at: index)
+			for v in self.cardScrolliew.subviews {
+				v.removeFromSuperview()
+			}
+			self.updateCardScroll()
+			self.cardSelectIndex = nil
+		}
 	}
 }

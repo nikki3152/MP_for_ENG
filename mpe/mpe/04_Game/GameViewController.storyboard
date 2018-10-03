@@ -51,7 +51,7 @@
                                 </subviews>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-yj-Dfs">
-                                <rect key="frame" x="15" y="5" width="40" height="40"/>
+                                <rect key="frame" x="15" y="8" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="bt_stop"/>
                                 <state key="highlighted" backgroundImage="bt_stop_tap"/>
@@ -106,36 +106,16 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8k-C1-wdl">
                                         <rect key="frame" x="350" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="orange_left"/>
                                         <connections>
                                             <action selector="cardRightButtonAction:" destination="vVe-zF-H2F" eventType="touchUpInside" id="zRK-IP-vF6"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rfi-nq-RfV">
-                                        <rect key="frame" x="50" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gbg-Cp-mMW">
-                                        <rect key="frame" x="100" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c2V-g3-hMK">
-                                        <rect key="frame" x="150" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nRS-7U-0P0">
-                                        <rect key="frame" x="200" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQk-hS-fF9">
-                                        <rect key="frame" x="250" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kvx-vA-dz2">
-                                        <rect key="frame" x="300" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Fx-g4-br3">
+                                        <rect key="frame" x="50" y="0.0" width="300" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </scrollView>
                                 </subviews>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="Epb-1z-iO6">
@@ -154,14 +134,9 @@
                         <outlet property="backImageView" destination="u3i-2l-VVr" id="SaV-Ad-ds0"/>
                         <outlet property="ballonImageView" destination="Cwi-8a-QQW" id="bCg-wo-ptL"/>
                         <outlet property="cardBaseView" destination="ddX-NF-YT9" id="mkG-i0-IgS"/>
-                        <outlet property="cardBaseView1" destination="Rfi-nq-RfV" id="kge-6f-jvo"/>
-                        <outlet property="cardBaseView2" destination="Gbg-Cp-mMW" id="TwD-R8-t3v"/>
-                        <outlet property="cardBaseView3" destination="c2V-g3-hMK" id="uVX-9I-Emx"/>
-                        <outlet property="cardBaseView4" destination="nRS-7U-0P0" id="DOO-Mz-jX0"/>
-                        <outlet property="cardBaseView5" destination="gQk-hS-fF9" id="YJ4-iH-Nyz"/>
-                        <outlet property="cardBaseView6" destination="Kvx-vA-dz2" id="rid-fz-pYn"/>
                         <outlet property="cardLeftButton" destination="XQv-xA-cRO" id="abu-zA-JOQ"/>
                         <outlet property="cardRightButton" destination="h8k-C1-wdl" id="rtw-Oh-Ddg"/>
+                        <outlet property="cardScrolliew" destination="5Fx-g4-br3" id="bJv-i4-ltZ"/>
                         <outlet property="charaBaseView" destination="vbm-bN-Ql4" id="0sE-AE-Jz1"/>
                         <outlet property="charaImageView" destination="hlP-yQ-Ocs" id="sJq-qL-C3j"/>
                         <outlet property="mainScrollView" destination="Epb-1z-iO6" id="Y1N-Po-MOg"/>

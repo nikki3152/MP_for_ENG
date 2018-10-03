@@ -8,13 +8,54 @@
 
 import UIKit
 
+protocol FontCardViewDelegate {
+	func fontCardViewTap(font: FontCardView)
+}
+
 class FontCardView: UIView {
 	
-	class func fontCardView() -> FontCardView {
+	var delegate: FontCardViewDelegate?
+	
+	var _isSelected: Bool = false
+	var isSelected: Bool {
+		get {
+			return _isSelected
+		}
+		set {
+			_isSelected = newValue
+			if _isSelected {
+				self.backImageView.image = UIImage(named: "pink_1")
+			} else {
+				self.backImageView.image = UIImage(named: "orange_1")
+			}
+		}
+	}
+	
+	var _moji: String!
+	var moji: String! {
+		get {
+			return _moji
+		}
+		set {
+			_moji = newValue
+			self.frontImageView.image = UIImage(named: moji)
+		}
+	}
+	
+	class func fontCardView(moji: String) -> FontCardView {
 		
 		let vc = UIViewController(nibName: "FontCardView", bundle: nil)
 		let v = vc.view as! FontCardView
+		v.moji = moji
+		let tap = UITapGestureRecognizer(target: v, action: #selector(FontCardView.tap(_:)))
+		v.addGestureRecognizer(tap)
 		return v
 	}
+	@IBOutlet weak var backImageView: UIImageView!
+	@IBOutlet weak var frontImageView: UIImageView!
 	
+	@objc func tap(_ tap: UITapGestureRecognizer) {
+		
+		self.delegate?.fontCardViewTap(font: self)
+	}
 }

@@ -24,18 +24,21 @@
                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A" translatesAutoresizingMaskIntoConstraints="NO" id="PGY-F1-Ik6">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGY-F1-Ik6">
                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
             </subviews>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="hnH-wR-TNy"/>
+            <connections>
+                <outlet property="backImageView" destination="OhL-Vk-2JC" id="9Pn-tt-EG2"/>
+                <outlet property="frontImageView" destination="PGY-F1-Ik6" id="bBa-kp-Izn"/>
+            </connections>
             <point key="canvasLocation" x="-41" y="-224"/>
         </view>
     </objects>
     <resources>
-        <image name="A" width="150" height="150"/>
         <image name="orange_1" width="150" height="150"/>
     </resources>
 </document>

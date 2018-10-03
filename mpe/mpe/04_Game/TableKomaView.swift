@@ -17,16 +17,25 @@ class TableKomaView: UIView {
 	
 	var delegate: TableKomaViewDelegate?
 	
-	class func tableKomaView(frame: CGRect) -> TableKomaView {
+	class func tableKomaView(frame: CGRect, moji: String) -> TableKomaView {
 		
 		let vc = UIViewController(nibName: "TableKomaView", bundle: nil)
 		let v = vc.view as! TableKomaView
 		v.frame = frame
+		v.isExclusiveTouch = false
+		v.setFont(moji: moji)
 		return v
 	}
 	
 	@IBOutlet weak var backImageView: UIImageView!
 	@IBOutlet weak var frontImageView: UIImageView!
+	
+	func setFont(moji: String) {
+		if moji != "0" && moji != " " && moji != "" {
+			self.frontImageView.image = UIImage(named: moji)
+			self.isUserInteractionEnabled = false
+		}
+	}
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		super.touchesBegan(touches, with: event)

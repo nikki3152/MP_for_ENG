@@ -28,18 +28,18 @@ class ViewController: UIViewController {
 
 	override func viewWillLayoutSubviews() {
 		
-		let word = "Apple"
-		let list = dataMrg.search(word: word, match: .contains)
-		for dic in list {
-			let keys = dic.keys
-			for key in keys {
-				print("【\(key)】")
-				let values = dic[key]!
-				for value in values {
-					print(" >\(value)")
-				}
-			}
-		}
+//		let word = "Apple"
+//		let list = dataMrg.search(word: word, match: .contains)
+//		for dic in list {
+//			let keys = dic.keys
+//			for key in keys {
+//				print("【\(key)】")
+//				let values = dic[key]!
+//				for value in values {
+//					print(" >\(value)")
+//				}
+//			}
+//		}
 		
 //		let gameView = GameViewController.gameViewController()
 //		gameView.present(self) { 
