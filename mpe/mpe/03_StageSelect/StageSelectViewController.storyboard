@@ -48,6 +48,9 @@
                                         <rect key="frame" x="98" y="0.0" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <state key="normal" title="Q1">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="stageButtonAction:" destination="YQ3-LM-bGR" eventType="touchUpInside" id="hXN-bO-N5f"/>
                                         </connections>
@@ -56,6 +59,9 @@
                                         <rect key="frame" x="185" y="0.0" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <state key="normal" title="Q2">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="stageButtonAction:" destination="YQ3-LM-bGR" eventType="touchUpInside" id="5na-89-Zdb"/>
                                         </connections>
@@ -64,6 +70,9 @@
                                         <rect key="frame" x="273" y="0.0" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <state key="normal" title="Q3">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="stageButtonAction:" destination="YQ3-LM-bGR" eventType="touchUpInside" id="bge-tt-UwK"/>
                                         </connections>
@@ -72,6 +81,9 @@
                                         <rect key="frame" x="361" y="0.0" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <state key="normal" title="Q4">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="stageButtonAction:" destination="YQ3-LM-bGR" eventType="touchUpInside" id="5oR-hk-pDf"/>
                                         </connections>
@@ -80,6 +92,9 @@
                                         <rect key="frame" x="449" y="0.0" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <state key="normal" title="Q5">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="stageButtonAction:" destination="YQ3-LM-bGR" eventType="touchUpInside" id="UGO-1R-KVF"/>
                                         </connections>

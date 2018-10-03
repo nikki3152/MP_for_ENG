@@ -299,7 +299,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			
 			
 			if let ward = hitWard, let info = infoText {
-				let alert = UIAlertController(title: ward, message: info, preferredStyle: .alert)
+				let alert = UIAlertController(title: ward.uppercased(), message: info, preferredStyle: .alert)
 				alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
 				self.present(alert, animated: true, completion: nil)
 			}
