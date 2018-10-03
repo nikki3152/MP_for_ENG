@@ -8,28 +8,41 @@
 
 import UIKit
 
+struct QuestData {
+	var width: Int = 8
+	var height: Int = 8
+	var table: [String] = [
+		"0","0","0","0","0","0","0","0",
+		"0","0","0","0","0","0","0","0",
+		"0","0","0","0","0","0","0","0",
+		"0","0","0","0","0","0","0","0",
+		"0","0","0","0","0","0","0","0",
+		"0","0","0","0","0","0","0","0",
+		"0","0","0","0","0","0","0","0",
+		"0","0","0","0","0","0","0","0",]
+	var cards: [String] = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+	init() {
+		
+	}
+	init(w: Int, h: Int, table: [String], cards: [String]) {
+		self.width = w
+		self.height = h
+		self.table = table
+		self.cards = cards
+	}
+}
+
 class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableViewDelegate, FontCardViewDelegate {
 	
-	var tableWCount: Int = 8
-	var tableHCount: Int = 8
-	var tableCellTypes: [String] = [
-		" "," "," "," "," "," "," ","A",
-		"I","0","0","0","0","0","0","0",
-		" "," "," "," "," "," "," ","0",
-		"U","0","0","0","0","0","0","0",
-		" "," "," "," "," "," "," ","0",
-		"E","0","0","0","0","0","0","0",
-		" "," "," "," "," "," "," ","0",
-		"O","0","0","0","0","0","0","0",
-	]
-	
-	var cardList: [String] = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+	let dataMrg = MPEDataManager()
+	var questData: QuestData!
 	var cardSelectIndex: Int!
 	
-	class func gameViewController() -> GameViewController {
+	class func gameViewController(questData: QuestData) -> GameViewController {
 		
 		let storyboard = UIStoryboard(name: "GameViewController", bundle: nil)
 		let baseCnt = storyboard.instantiateInitialViewController() as! GameViewController
+		baseCnt.questData = questData 
 		return baseCnt
 	}
 	
@@ -47,9 +60,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			self.updateCardScroll()
 			//ゲームテーブル
 			self.gameTable = GameTableView.gameTableView(size: CGSize(width: self.mainScrollView.frame.size.width, height: self.mainScrollView.frame.size.height), 
-														 width: self.tableWCount, 
-														 height: self.tableHCount,
-														 cellTypes: self.tableCellTypes)
+														 width: self.questData.width, 
+														 height: self.questData.height,
+														 cellTypes: self.questData.table)
 			let size = self.gameTable.frame.size
 			self.gameTable.delegate = self
 			self.mainScrollView.addSubview(self.gameTable)
@@ -123,8 +136,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		for v in self.cardScrolliew.subviews {
 			v.removeFromSuperview()
 		}
-		for i in 0 ..< self.cardList.count {
-			let moji = self.cardList[i]
+		for i in 0 ..< self.questData.cards.count {
+			let moji = self.questData.cards[i]
 			let cardView = FontCardView.fontCardView(moji: moji)
 			cardView.delegate = self
 			cardView.tag = i
@@ -133,18 +146,84 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			cardView.center = CGPoint(x: (cardView.frame.size.width / 2) + (CGFloat(i) * cardView.frame.size.width), y: self.cardScrolliew.frame.size.height / 2)
 			self.cardViewList.append(cardView)
 		}
-		self.cardScrolliew.contentSize = CGSize(width: CGFloat(self.cardList.count) * 50, height: self.cardScrolliew.frame.size.height / 2)
+		self.cardScrolliew.contentSize = CGSize(width: CGFloat(self.questData.cards.count) * 50, height: self.cardScrolliew.frame.size.height / 2)
 		
 	}
 	
+	//横方向の単語検索
+	func checkWordH(startIndex: Int) -> String {
+		
+		var ward: String = ""
+		let moji = self.questData.table[startIndex]
+		if moji != "" && moji != " " && moji != "0" {
+			let x = startIndex % self.questData.width
+			let y = startIndex / self.questData.width
+			var startX: Int = x
+			while startX != 0 {
+				startX -= 1
+				let idx = startX + (self.questData.width * y)
+				let moji = self.questData.table[idx]
+				if moji == "" || moji == " " || moji == "0" {
+					startX += 1
+					break
+				}
+			}
+			
+			while startX < self.questData.width {
+				let idx = startX + (self.questData.width * y)
+				let moji = self.questData.table[idx]
+				if moji != "" && moji != " " && moji != "0" {
+					ward.append(moji)
+					startX += 1
+				} else {
+					break
+				}
+			}
+		} 
+		
+		return ward
+	}
+	//縦方向の単語検索
+	func checkWordV(startIndex: Int) -> String {
+		
+		var ward: String = ""
+		let moji = self.questData.table[startIndex]
+		if moji != "" && moji != " " && moji != "0" {
+			let x = startIndex % self.questData.width
+			let y = startIndex / self.questData.width
+			var startY: Int = y
+			while startY != 0 {
+				startY -= 1
+				let idx = x + (self.questData.width * startY)
+				let moji = self.questData.table[idx]
+				if moji == "" || moji == " " || moji == "0" {
+					startY += 1
+					break
+				}
+			}
+			
+			while startY < self.questData.height {
+				let idx = x + (self.questData.width * startY)
+				let moji = self.questData.table[idx]
+				if moji != "" && moji != " " && moji != "0" {
+					ward.append(moji)
+					startY += 1
+				} else {
+					break
+				}
+			}
+		} 
+		
+		return ward
+	}
 	
 	//MARK:- FontCardViewDelegate
 	
 	func fontCardViewTap(font: FontCardView) {
 		
 		self.cardSelectIndex = font.tag
-		let moji = self.cardList[self.cardSelectIndex]
-		print("\(moji)")
+		//let moji = self.questData.cards[self.cardSelectIndex]
+		//print("\(moji)")
 		for cardView in self.cardViewList {
 			if cardView.tag == self.cardSelectIndex {
 				cardView.isSelected = true
@@ -175,14 +254,55 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		self.mainScrollView.isScrollEnabled = true
 		if let index = self.cardSelectIndex {
-			let moji = self.cardList[index]
+			let moji = self.questData.cards[index]
 			koma.setFont(moji: moji)
-			self.cardList.remove(at: index)
+			self.questData.table[koma.tag] = moji
+			self.questData.cards.remove(at: index)
 			for v in self.cardScrolliew.subviews {
 				v.removeFromSuperview()
 			}
 			self.updateCardScroll()
 			self.cardSelectIndex = nil
+			
+			var hitWard: String?
+			var infoText: String?
+			var list: [[String:[String]]] = []
+			//横の検索
+			let wordHline = self.checkWordH(startIndex: koma.tag)
+			if wordHline.count > 1 {
+				let ward = wordHline.lowercased()
+				let listH = dataMrg.search(word: ward, match: .perfect)
+				list += listH
+			}
+			//縦の検索
+			let wordVline = self.checkWordV(startIndex: koma.tag)
+			if wordVline.count > 1 {
+				let ward = wordVline.lowercased()
+				let listV = dataMrg.search(word: ward, match: .perfect)
+				list += listV
+			}
+			
+			for dic in list {
+				let keys = dic.keys
+				for key in keys {
+					hitWard = key
+					print("【\(key)】")
+					let values = dic[key]!
+					for value in values {
+						print(" >\(value)")
+						infoText = value
+						break
+					}
+				}
+				break
+			}
+			
+			
+			if let ward = hitWard, let info = infoText {
+				let alert = UIAlertController(title: ward, message: info, preferredStyle: .alert)
+				alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
+				self.present(alert, animated: true, completion: nil)
+			}
 		}
 	}
 }

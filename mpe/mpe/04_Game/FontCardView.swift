@@ -23,11 +23,7 @@ class FontCardView: UIView {
 		}
 		set {
 			_isSelected = newValue
-			if _isSelected {
-				self.backImageView.image = UIImage(named: "pink_1")
-			} else {
-				self.backImageView.image = UIImage(named: "orange_1")
-			}
+			self.frameImageView.isHidden = !_isSelected
 		}
 	}
 	
@@ -53,6 +49,7 @@ class FontCardView: UIView {
 	}
 	@IBOutlet weak var backImageView: UIImageView!
 	@IBOutlet weak var frontImageView: UIImageView!
+	@IBOutlet weak var frameImageView: UIImageView!
 	
 	@objc func tap(_ tap: UITapGestureRecognizer) {
 		

@@ -26,17 +26,18 @@ class GameTableView: UIView, TableKomaViewDelegate {
 		table = GameTableView(frame: CGRect(x: 0, y: 0, width: tableW, height: tableH))
 		let baseView = UIView(frame: CGRect(x: 0, y: 0, width: CGFloat(width) * komaSize, height: CGFloat(height) * komaSize))
 		table.addSubview(baseView)
+		table.tableBaseView = baseView
 		baseView.center = CGPoint(x: table.frame.size.width / 2, y: table.frame.size.height / 2)
 		var count: Int = 0
 		for y in 0 ..< height {
 			for x in 0 ..< width {
 				let moji = cellTypes[count]
-				let koma = TableKomaView.tableKomaView(frame: CGRect(x: 0, y: 0, width: komaSize, height: komaSize), moji: moji)
-				koma.delegate = table
-				baseView.addSubview(koma)
-				koma.center = CGPoint(x: (CGFloat(x) * komaSize) + (komaSize / 2), y: (CGFloat(y) * komaSize) + (komaSize / 2))
-				if moji == "" || moji == " " {
-					koma.isHidden = true
+				if moji != "" && moji != " " {
+					let koma = TableKomaView.tableKomaView(frame: CGRect(x: 0, y: 0, width: komaSize, height: komaSize), moji: moji)
+					koma.tag = count
+					koma.delegate = table
+					baseView.addSubview(koma)
+					koma.center = CGPoint(x: (CGFloat(x) * komaSize) + (komaSize / 2), y: (CGFloat(y) * komaSize) + (komaSize / 2))
 				}
 				count += 1
 			}
@@ -45,7 +46,18 @@ class GameTableView: UIView, TableKomaViewDelegate {
 		return table
 	}
 	
+	var tableBaseView: UIView!
 	@IBOutlet weak var komaBaseView: UIView!
+	
+	func getTableKomaView(index: Int) -> TableKomaView? {
+		
+		var ret: TableKomaView?
+		if let v = self.tableBaseView.viewWithTag(index) as? TableKomaView {
+			ret = v
+		}
+		return ret
+	}
+	
 	
 	//MARK: - TableKomaViewDelegate
 	func tableKomaViewToucheDown(koma: TableKomaView) {
