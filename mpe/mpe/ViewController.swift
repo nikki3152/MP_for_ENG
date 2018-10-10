@@ -15,6 +15,29 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		//バージョン情報
+		let info = Bundle.main.infoDictionary! as Dictionary
+		let ver = info["CFBundleShortVersionString"] as! String
+		let build = info["CFBundleVersion"] as! String
+		print("Ver.\(ver) (\(build))")
+		if let buildNo = UserDefaults.standard.object(forKey: "build") as? String {
+			if buildNo != build {
+				UserDefaults.standard.set(build, forKey: "build")
+				if dataMrg.deleteDir(dir: "database") {
+					print("DB deleted!!")
+				} else {
+					print("DB cannot deleted!!")	
+				}
+			}
+		} else {
+			UserDefaults.standard.set(build, forKey: "build")
+			if dataMrg.deleteDir(dir: "database") {
+				print("DB deleted!!")
+			} else {
+				print("DB cannot deleted!!")	
+			}
+		}
+		
 		if dataMrg.checkFileExists(name: "database", dir: "") == false {
 			dataMrg.makeDB()
 		}
