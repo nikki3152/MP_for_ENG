@@ -49,6 +49,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		self.answeBaseView.alpha = 0
     }
 	
 	override func viewWillLayoutSubviews() {
@@ -120,6 +121,10 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		self.remove()
 	}
+	
+	@IBOutlet weak var answeBaseView: UIView!
+	@IBOutlet weak var answeTitleLabel: UILabel!
+	@IBOutlet weak var answeLabel: UILabel!
 	
 	private func updateScrollInset() {
 		
@@ -293,9 +298,20 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			
 			
 			if let ward = hitWard, let info = infoText {
-				let alert = UIAlertController(title: ward.uppercased(), message: info, preferredStyle: .alert)
-				alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
-				self.present(alert, animated: true, completion: nil)
+				self.answeBaseView.center = CGPoint(x: self.view.frame.size.width / 2, y: -(self.answeBaseView.frame.size.height / 2))
+				self.answeTitleLabel.text = ward.uppercased()
+				self.answeLabel.text = info
+				UIView.animate(withDuration: 0.3, delay: 0, options: .curveLinear, animations: { 
+					self.answeBaseView.alpha = 1
+					self.answeBaseView.center = CGPoint(x: self.view.frame.size.width / 2, y: (self.answeBaseView.frame.size.height / 2))
+				}) { (stop) in
+					UIView.animate(withDuration: 0.3, delay: 1.8, options: .curveLinear, animations: { 
+						self.answeBaseView.alpha = 0
+						self.answeBaseView.center = CGPoint(x: self.view.frame.size.width / 2, y: -(self.answeBaseView.frame.size.height / 2))
+					}) { (stop) in
+						
+					}
+				}
 			}
 		}
 	}

@@ -96,18 +96,27 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="setting_button_off"/>
                                         <state key="selected" backgroundImage="setting_button_on"/>
+                                        <connections>
+                                            <action selector="switchBGMAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="2C0-Sp-z40"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJz-EU-cWG">
                                         <rect key="frame" x="111" y="62" width="100" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="setting_button_off"/>
                                         <state key="selected" backgroundImage="setting_button_on"/>
+                                        <connections>
+                                            <action selector="switchSEAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="2fH-C8-CVu"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tga-uY-EEu">
                                         <rect key="frame" x="111" y="115" width="100" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="setting_button_off"/>
                                         <state key="selected" backgroundImage="setting_button_on"/>
+                                        <connections>
+                                            <action selector="switchVoiceAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="Sjo-2T-TxR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </view>
@@ -120,6 +129,9 @@
                         <outlet property="dataAggregateButton" destination="U5B-Df-28f" id="FVX-kQ-EeA"/>
                         <outlet property="purchaseButton" destination="nMq-Hj-HdZ" id="ItS-IV-QeI"/>
                         <outlet property="soundButton" destination="DV1-PO-hR6" id="GbW-p5-Zdr"/>
+                        <outlet property="switchBGM" destination="yQh-mr-CIu" id="jia-J9-U60"/>
+                        <outlet property="switchSE" destination="FJz-EU-cWG" id="tvt-gJ-tSs"/>
+                        <outlet property="switchVoice" destination="Tga-uY-EEu" id="cTL-Fx-b6X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gt-zF-oNF" userLabel="First Responder" sceneMemberID="firstResponder"/>

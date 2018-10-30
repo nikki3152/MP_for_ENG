@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZI4-CW-ktZ">
-                                <rect key="frame" x="15" y="5" width="40" height="40"/>
+                                <rect key="frame" x="15" y="15" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="bt_back"/>
                                 <connections>
@@ -78,6 +78,13 @@
                                     </button>
                                 </subviews>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFa-BG-0Gm">
+                                <rect key="frame" x="611" y="15" width="116" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BB1-wd-zH6"/>
@@ -88,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcE-OV-EOa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53.523238380809602" y="840.79999999999995"/>
+            <point key="canvasLocation" x="52.989130434782609" y="840.57971014492762"/>
         </scene>
         <!--Quick Quest Intoro View Controller-->
         <scene sceneID="TlO-9M-bUB">
@@ -168,6 +175,22 @@
                                     </button>
                                 </subviews>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01" translatesAutoresizingMaskIntoConstraints="NO" id="pzF-wv-6xD">
+                                <rect key="frame" x="111" y="139" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01" translatesAutoresizingMaskIntoConstraints="NO" id="qBR-fn-11G">
+                                <rect key="frame" x="0.0" y="234" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01" translatesAutoresizingMaskIntoConstraints="NO" id="93K-cp-eL3">
+                                <rect key="frame" x="676" y="267" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01" translatesAutoresizingMaskIntoConstraints="NO" id="qqo-qa-TGh">
+                                <rect key="frame" x="570" y="119" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.89803921568627454" green="0.29411764705882354" blue="0.18431372549019609" alpha="1" colorSpace="deviceRGB"/>
                         <viewLayoutGuide key="safeArea" id="VbJ-q0-Gph"/>
@@ -191,6 +214,7 @@
         <image name="quizdonyu_button_03" width="639" height="110"/>
         <image name="quizdonyu_button_04" width="639" height="110"/>
         <image name="quizdonyu_button_05" width="639" height="110"/>
+        <image name="quizdonyu_fire_01" width="120" height="180"/>
         <image name="quizdonyu_mojikun" width="454" height="454"/>
         <image name="quizdonyu_object_sword" width="300" height="300"/>
         <image name="quizdonyu_title" width="676" height="120"/>

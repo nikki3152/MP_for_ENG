@@ -59,4 +59,25 @@ class SettingViewController: BaseViewController {
 		}
 	}
 	
+	// BGM
+	@IBOutlet weak var switchBGM: UIButton!
+	@IBAction func switchBGMAction(_ sender: UIButton) {
+		
+		sender.isSelected = !sender.isSelected
+	}
+	
+	// SE
+	@IBOutlet weak var switchSE: UIButton!
+	@IBAction func switchSEAction(_ sender: UIButton) {
+		
+		sender.isSelected = !sender.isSelected
+	}
+	
+	// Voice
+	@IBOutlet weak var switchVoice: UIButton!
+	@IBAction func switchVoiceAction(_ sender: UIButton) {
+		
+		sender.isSelected = !sender.isSelected
+	}
+	
 }
