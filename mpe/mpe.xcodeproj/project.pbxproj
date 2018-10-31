@@ -13,6 +13,7 @@
 		54140F22212BB302007C753B /* GameTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54140F21212BB302007C753B /* GameTableView.xib */; };
 		54140F24212BB3E3007C753B /* TableKomaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F23212BB3E3007C753B /* TableKomaView.swift */; };
 		54140F26212BB3EF007C753B /* TableKomaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54140F25212BB3EF007C753B /* TableKomaView.xib */; };
+		54433BDB2189D0C600CDBD3D /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54433BDA2189D0C600CDBD3D /* EditViewController.swift */; };
 		5489AF5D212B007A00A7D275 /* ejdic-hand-utf8.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */; };
 		5489AF5F212B00B500A7D275 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF5E212B00B500A7D275 /* DataManager.swift */; };
 		5489AF61212B010B00A7D275 /* MPEDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF60212B010B00A7D275 /* MPEDataManager.swift */; };
@@ -57,6 +58,7 @@
 		54140F21212BB302007C753B /* GameTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableView.xib; sourceTree = "<group>"; };
 		54140F23212BB3E3007C753B /* TableKomaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableKomaView.swift; sourceTree = "<group>"; };
 		54140F25212BB3EF007C753B /* TableKomaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableKomaView.xib; sourceTree = "<group>"; };
+		54433BDA2189D0C600CDBD3D /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ejdic-hand-utf8.txt"; sourceTree = "<group>"; };
 		5489AF5E212B00B500A7D275 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5489AF60212B010B00A7D275 /* MPEDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPEDataManager.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				54CFB3EA20DE294700057F08 /* GameViewController.storyboard */,
 				54CFB3E820DE293C00057F08 /* GameViewController.swift */,
+				54433BDA2189D0C600CDBD3D /* EditViewController.swift */,
 				54140F1B212BAFAB007C753B /* FontCardView.swift */,
 				54140F1D212BAFBC007C753B /* FontCardView.xib */,
 				54140F1F212BB2F6007C753B /* GameTableView.swift */,
@@ -376,6 +379,7 @@
 				54CFB3E520DE25E300057F08 /* StageSelectViewController.swift in Sources */,
 				54CFB3F120DE303800057F08 /* QuickQuestIntoroViewController.swift in Sources */,
 				54140F1C212BAFAB007C753B /* FontCardView.swift in Sources */,
+				54433BDB2189D0C600CDBD3D /* EditViewController.swift in Sources */,
 				54CFB3F520DE31CE00057F08 /* QuickQuestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

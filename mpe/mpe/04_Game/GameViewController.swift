@@ -63,7 +63,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			self.gameTable = GameTableView.gameTableView(size: CGSize(width: self.mainScrollView.frame.size.width, height: self.mainScrollView.frame.size.height), 
 														 width: self.questData.width, 
 														 height: self.questData.height,
-														 cellTypes: self.questData.table)
+														 cellTypes: self.questData.table,
+														 edit: false)
 			let size = self.gameTable.frame.size
 			self.gameTable.delegate = self
 			self.mainScrollView.addSubview(self.gameTable)
@@ -221,6 +222,19 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		return ward
 	}
+	
+	
+	//MARK: 編集（デバッグ）
+	@IBOutlet weak var editButton: UIButton!
+	@IBAction func editButtonAction(_ sender: UIButton) {
+		
+		let edit = EditViewController.editViewController(questData: self.questData)
+		self.present(edit, animated: true) { 
+			
+		}
+	}
+	
+	
 	
 	//MARK:- FontCardViewDelegate
 	

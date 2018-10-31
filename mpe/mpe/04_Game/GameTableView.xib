@@ -18,7 +18,7 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="zhg-Fy-9Yn" customClass="GameTableView" customModule="mpe" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iGD-ct-XiL">
                     <rect key="frame" x="140" y="17" width="283" height="283"/>
@@ -290,7 +290,7 @@
             <connections>
                 <outlet property="komaBaseView" destination="iGD-ct-XiL" id="end-IN-aEz"/>
             </connections>
-            <point key="canvasLocation" x="-222" y="-411"/>
+            <point key="canvasLocation" x="-485" y="-386"/>
         </view>
     </objects>
 </document>

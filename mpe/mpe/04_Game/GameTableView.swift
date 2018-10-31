@@ -15,15 +15,18 @@ protocol GameTableViewDelegate {
 
 class GameTableView: UIView, TableKomaViewDelegate {
 
+	var isEditing: Bool = false
+	
 	var delegate: GameTableViewDelegate?
 	
-	class func gameTableView(size: CGSize, width: Int, height: Int, cellTypes: [String]) -> GameTableView {
+	class func gameTableView(size: CGSize, width: Int, height: Int, cellTypes: [String], edit: Bool) -> GameTableView {
 		
 		let komaSize: CGFloat = 30
 		let tableW: CGFloat = size.width * 2
 		let tableH: CGFloat = size.height * 2
 		var table: GameTableView
 		table = GameTableView(frame: CGRect(x: 0, y: 0, width: tableW, height: tableH))
+		table.isEditing = edit
 		let baseView = UIView(frame: CGRect(x: 0, y: 0, width: CGFloat(width) * komaSize, height: CGFloat(height) * komaSize))
 		table.addSubview(baseView)
 		table.tableBaseView = baseView
@@ -38,6 +41,17 @@ class GameTableView: UIView, TableKomaViewDelegate {
 					koma.delegate = table
 					baseView.addSubview(koma)
 					koma.center = CGPoint(x: (CGFloat(x) * komaSize) + (komaSize / 2), y: (CGFloat(y) * komaSize) + (komaSize / 2))
+					if edit {
+						koma.isUserInteractionEnabled = true
+					}
+				} else if edit {
+					//編集モード(デバッグ)空枠
+					let koma = TableKomaView.tableKomaView(frame: CGRect(x: 0, y: 0, width: komaSize, height: komaSize), moji: " ")
+					koma.tag = count
+					koma.delegate = table
+					baseView.addSubview(koma)
+					koma.center = CGPoint(x: (CGFloat(x) * komaSize) + (komaSize / 2), y: (CGFloat(y) * komaSize) + (komaSize / 2))
+					koma.alpha = 0.5
 				}
 				count += 1
 			}

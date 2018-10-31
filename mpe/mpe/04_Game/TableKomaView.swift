@@ -34,6 +34,8 @@ class TableKomaView: UIView {
 		if moji != "0" && moji != " " && moji != "" {
 			self.frontImageView.image = UIImage(named: moji)
 			self.isUserInteractionEnabled = false
+		} else {
+			
 		}
 	}
 	
