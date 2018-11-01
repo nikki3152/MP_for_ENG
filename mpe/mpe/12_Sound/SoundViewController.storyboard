@@ -18,19 +18,138 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12 音楽" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bga-H3-EIk">
-                                <rect key="frame" x="199" y="20" width="268" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vs0-Kc-bLJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="music_background" translatesAutoresizingMaskIntoConstraints="NO" id="6h0-Km-ipt">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="music_cd" translatesAutoresizingMaskIntoConstraints="NO" id="Xxd-LF-6Ab">
+                                <rect key="frame" x="416" y="-63" width="500" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m88-4N-uYJ">
+                                <rect key="frame" x="20" y="20" width="410" height="335"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="music_title" translatesAutoresizingMaskIntoConstraints="NO" id="oYJ-a3-bQO">
+                                        <rect key="frame" x="140" y="0.0" width="130" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8C-vu-5yO">
+                                        <rect key="frame" x="3" y="51" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="MUSIC 1" backgroundImage="music_selectbox"/>
+                                        <state key="selected" title="MUSIC1" backgroundImage="music_selectbox_tap">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="ZXJ-Xs-oP3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Br-kM-9Ik">
+                                        <rect key="frame" x="209" y="51" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="MUSIC 2" backgroundImage="music_selectbox"/>
+                                        <state key="selected" backgroundImage="music_selectbox_tap"/>
+                                        <connections>
+                                            <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="IcK-jL-ZuK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5d-qH-6zy">
+                                        <rect key="frame" x="3" y="95" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="MUSIC 3" backgroundImage="music_selectbox"/>
+                                        <state key="selected" backgroundImage="music_selectbox_tap"/>
+                                        <connections>
+                                            <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="txm-cS-iWl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqb-Up-KfV">
+                                        <rect key="frame" x="209" y="95" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="MUSIC 4" backgroundImage="music_selectbox"/>
+                                        <state key="selected" backgroundImage="music_selectbox_tap"/>
+                                        <connections>
+                                            <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="Iax-Qx-n6u"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ov2-S6-q7r">
+                                        <rect key="frame" x="1" y="140" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="MUSIC 5" backgroundImage="music_selectbox"/>
+                                        <state key="selected" backgroundImage="music_selectbox_tap"/>
+                                        <connections>
+                                            <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="VPW-84-A7E"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ua1-Dh-rJF">
+                                        <rect key="frame" x="207" y="140" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="MUSIC 6" backgroundImage="music_selectbox"/>
+                                        <state key="selected" backgroundImage="music_selectbox_tap"/>
+                                        <connections>
+                                            <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="K0i-vX-90T"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRI-hM-Zht">
+                                        <rect key="frame" x="1" y="186" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="MUSIC 7" backgroundImage="music_selectbox"/>
+                                        <state key="selected" backgroundImage="music_selectbox_tap"/>
+                                        <connections>
+                                            <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="5or-Gd-yLc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxf-Mo-Nmf">
+                                        <rect key="frame" x="207" y="186" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="MUSIC 8" backgroundImage="music_selectbox"/>
+                                        <state key="selected" backgroundImage="music_selectbox_tap"/>
+                                        <connections>
+                                            <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="fe8-VA-giI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4h-ma-TRa">
+                                        <rect key="frame" x="1" y="229" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="MUSIC 9" backgroundImage="music_selectbox"/>
+                                        <state key="selected" backgroundImage="music_selectbox_tap"/>
+                                        <connections>
+                                            <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="3yV-Od-mKp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7S-0Q-lnY">
+                                        <rect key="frame" x="207" y="229" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="MUSIC 10" backgroundImage="music_selectbox"/>
+                                        <state key="selected" backgroundImage="music_selectbox_tap"/>
+                                        <connections>
+                                            <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="Tof-X6-ppH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vs0-Kc-bLJ">
+                                        <rect key="frame" x="339" y="276" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        <state key="normal" backgroundImage="music_start"/>
+                                        <state key="selected" backgroundImage="music_stop"/>
+                                        <connections>
+                                            <action selector="playButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="LaH-p9-R86"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00 / 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8t-bE-wff">
+                                        <rect key="frame" x="209" y="286" width="119" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cI-jD-Mge">
                                 <rect key="frame" x="15" y="15" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="bt_back"/>
                                 <connections>
-                                    <action selector="backButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="8xS-EU-TaA"/>
+                                    <action selector="backButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="qxT-A7-xRw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -38,15 +157,25 @@
                         <viewLayoutGuide key="safeArea" id="qX7-og-2Yy"/>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="Vs0-Kc-bLJ" id="XHf-wU-CIB"/>
+                        <outlet property="backButton" destination="8cI-jD-Mge" id="40q-fE-zbO"/>
+                        <outlet property="baseView" destination="m88-4N-uYJ" id="jle-vR-nys"/>
+                        <outlet property="cdImageView" destination="Xxd-LF-6Ab" id="pct-gv-HbC"/>
+                        <outlet property="playButton" destination="Vs0-Kc-bLJ" id="xFJ-vU-JF4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jkv-9r-fNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310" y="56"/>
+            <point key="canvasLocation" x="309.89505247376314" y="55.200000000000003"/>
         </scene>
     </scenes>
     <resources>
         <image name="bt_back" width="28" height="33"/>
+        <image name="music_background" width="1920" height="1080"/>
+        <image name="music_cd" width="1000" height="1000"/>
+        <image name="music_selectbox" width="600" height="118"/>
+        <image name="music_selectbox_tap" width="600" height="118"/>
+        <image name="music_start" width="117" height="116"/>
+        <image name="music_stop" width="117" height="116"/>
+        <image name="music_title" width="260" height="90"/>
     </resources>
 </document>

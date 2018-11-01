@@ -8,9 +8,41 @@
 
 import UIKit
 
-class EditViewController: UIViewController, GameTableViewDelegate, FontCardViewDelegate {
+class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewDelegate, FontCardViewDelegate, UITableViewDataSource, UITableViewDelegate {
+	
+	let mojiList: [String] = [
+		"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
+	]
+	
+	//MARK: - UITableViewDataSource
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return mojiList.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		
+		var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell")
+		if cell == nil {
+			cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+		}
+		let moji = self.mojiList[indexPath.row]
+		cell.imageView?.image = UIImage(named: moji)
+		
+		return cell
+	}
+	
+	//MARK: - UITableViewDelegate
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		
+		tableView.deselectRow(at: indexPath, animated: true)
+		
+		
+	}
 
 	var questData: QuestData!
+	var cardSelectIndex: Int!
 	var gameTable: GameTableView!
 	
 	class func editViewController(questData: QuestData) -> EditViewController {
@@ -24,7 +56,7 @@ class EditViewController: UIViewController, GameTableViewDelegate, FontCardViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.segment.tintColor = UIColor.white
     }
 	
 	override func viewWillLayoutSubviews() {
@@ -38,10 +70,27 @@ class EditViewController: UIViewController, GameTableViewDelegate, FontCardViewD
 													 height: self.questData.height,
 													 cellTypes: self.questData.table,
 													 edit: true)
+		let size = self.gameTable.frame.size
 		self.gameTable.delegate = self
-		self.view.addSubview(self.gameTable)
-		self.view.sendSubview(toBack: self.gameTable)
-		self.gameTable.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 2)
+		self.mainScrollView.addSubview(self.gameTable)
+		self.mainScrollView.contentSize = CGSize(width: self.gameTable.frame.size.width, height: self.gameTable.frame.size.height)
+		self.mainScrollView.maximumZoomScale = 2.0
+		self.mainScrollView.minimumZoomScale = 1.0
+		self.mainScrollView.zoomScale = 1.0
+		self.mainScrollView.contentOffset = CGPoint(x: size.width / 4, y: size.height / 4)
+		self.view.sendSubview(toBack: self.mainScrollView)
+	}
+	
+	
+	@IBOutlet weak var mojiTableView: UITableView!
+	@IBOutlet weak var mainScrollView: UIScrollView!
+	
+	@IBOutlet weak var doneButton: UIButton!
+	@IBAction func doneButtonAction(_ sender: Any) {
+		
+		self.dismiss(animated: true) { 
+			
+		}
 	}
 	
 	@IBOutlet weak var closeButton: UIButton!
@@ -76,12 +125,41 @@ class EditViewController: UIViewController, GameTableViewDelegate, FontCardViewD
 	}
 	
 	
+	@IBOutlet weak var segment: UISegmentedControl!
+	
+	@IBOutlet weak var addButton: UIButton!
+	@IBAction func addButtonAction(_ sender: Any) {
+	}
+	
+	
+	//MARK:- UIScrollViewDelegate
+	
+	func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+		
+		return self.gameTable
+	}
+	func scrollViewDidZoom(_ scrollView: UIScrollView) {
+		
+		
+	}
+	
+	
+	
 	
 	//MARK:- FontCardViewDelegate
 	
 	func fontCardViewTap(font: FontCardView) {
 		
-		print("\(font.moji)")
+		self.cardSelectIndex = font.tag
+		//let moji = self.questData.cards[self.cardSelectIndex]
+		//print("\(moji)")
+		for cardView in self.cardViewList {
+			if cardView.tag == self.cardSelectIndex {
+				cardView.isSelected = true
+			} else {
+				cardView.isSelected = false
+			}
+		}
 	}
 	
 	//MARK: - GameTableViewDelegate
@@ -102,4 +180,6 @@ class EditViewController: UIViewController, GameTableViewDelegate, FontCardViewD
 			koma.alpha = 0.5
 		}
 	}
+	
+	
 }
