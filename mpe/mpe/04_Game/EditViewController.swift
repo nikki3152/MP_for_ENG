@@ -10,8 +10,9 @@ import UIKit
 
 class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewDelegate, FontCardViewDelegate, UITableViewDataSource, UITableViewDelegate {
 	
+	var finishedHandler: ((_ questData: QuestData) -> Void)?
+	
 	var mojiSelectIndex: Int = 0
-	//var chks: [Bool] = [true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 	let mojiList: [String] = [
 		"null","table","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
 	]
@@ -170,6 +171,61 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 		}
 	}
 	
+	//MARK: 完了
+	@IBOutlet weak var doneButton: UIButton!
+	@IBAction func doneButtonAction(_ sender: Any) {
+		
+		self.finishedHandler?(self.questData)
+		self.finishedHandler = nil
+		self.dismiss(animated: true) { 
+			
+		}
+	}
+	
+	//MARK: 初期化
+	@IBOutlet weak var clearButton: UIButton!
+	@IBAction func clearButtonAction(_ sender: Any) {
+		
+		self.mojiSelectIndex = 0
+		self.cardSelectIndex = nil
+		
+		self.questData.width = 8
+		self.questData.height = 8
+		self.questData.table = [
+			"0","0","0","0","0","0","0","0",
+			"0","0","0","0","0","0","0","0",
+			"0","0","0","0","0","0","0","0",
+			"0","0","0","0","0","0","0","0",
+			"0","0","0","0","0","0","0","0",
+			"0","0","0","0","0","0","0","0",
+			"0","0","0","0","0","0","0","0",
+			"0","0","0","0","0","0","0","0",]
+		self.questData.cards = []
+		
+		//手札
+		self.updateCardScroll()
+		//ゲームテーブル
+		for v in self.mainScrollView.subviews {
+			v.removeFromSuperview()
+		}
+		self.gameTable = GameTableView.gameTableView(size: CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height), 
+													 width: self.questData.width, 
+													 height: self.questData.height,
+													 cellTypes: self.questData.table,
+													 edit: true)
+		let size = self.gameTable.frame.size
+		self.gameTable.delegate = self
+		self.mainScrollView.addSubview(self.gameTable)
+		self.mainScrollView.contentSize = CGSize(width: self.gameTable.frame.size.width, height: self.gameTable.frame.size.height)
+		self.mainScrollView.maximumZoomScale = 2.0
+		self.mainScrollView.minimumZoomScale = 1.0
+		self.mainScrollView.zoomScale = 1.0
+		self.mainScrollView.contentOffset = CGPoint(x: size.width / 4, y: size.height / 4)
+		self.view.sendSubview(toBack: self.mainScrollView)
+	}
+	
+	
+	
 	//MARK: 手札
 	var cardSelectIndex: Int!
 	var cardViewList: [FontCardView] = []
@@ -196,7 +252,7 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	}
 	
 	
-	@IBOutlet weak var segment: UISegmentedControl!
+	
 	
 	//MARK: 追加
 	@IBOutlet weak var addButton: UIButton!
@@ -283,15 +339,21 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	}
 	func gameTableViewToucheUp(table: GameTableView, koma: TableKomaView) {
 		
-		let moji = self.questData.table[koma.tag]
-		print("\(moji)")
-		if moji == " " {
+		let mojiTbl = self.mojiList[self.mojiSelectIndex]
+		if mojiTbl == "null" {
+			koma.frontImageView.image = nil
+			self.questData.table[koma.tag] = " "
+			koma.alpha = 0.5
+		}
+		else if mojiTbl == "table" {
+			koma.frontImageView.image = nil
 			self.questData.table[koma.tag] = "0"
 			koma.alpha = 1.0
 		}
-		else if moji == "0" {
-			self.questData.table[koma.tag] = " "
-			koma.alpha = 0.5
+		else {
+			koma.frontImageView.image = UIImage(named: mojiTbl)
+			self.questData.table[koma.tag] = mojiTbl
+			koma.alpha = 1.0
 		}
 	}
 	

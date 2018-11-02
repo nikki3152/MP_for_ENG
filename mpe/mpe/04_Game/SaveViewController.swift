@@ -48,7 +48,7 @@ class SaveViewController: UIViewController, UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		
 		if let name = textField.text, name.count > 0 {
-			self.handler?(name + ".plist")
+			self.handler?(name)
 			self.handler = nil
 			self.view.removeFromSuperview()
 			self.removeFromParentViewController()

@@ -76,22 +76,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			//手札
 			self.updateCardScroll()
 			//ゲームテーブル
-			self.gameTable = GameTableView.gameTableView(size: CGSize(width: self.mainScrollView.frame.size.width, height: self.mainScrollView.frame.size.height), 
-														 width: self.questData.width, 
-														 height: self.questData.height,
-														 cellTypes: self.questData.table,
-														 edit: false)
-			let size = self.gameTable.frame.size
-			self.gameTable.delegate = self
-			self.mainScrollView.addSubview(self.gameTable)
-			self.mainScrollView.contentSize = CGSize(width: self.gameTable.frame.size.width, height: self.gameTable.frame.size.height)
-			self.mainScrollView.maximumZoomScale = 2.0
-			self.mainScrollView.minimumZoomScale = 1.0
-			self.mainScrollView.zoomScale = 1.0
-			self.mainScrollView.contentOffset = CGPoint(x: size.width / 4, y: size.height / 4)
-			updateScrollInset()
-			self.view.sendSubview(toBack: self.mainScrollView)
-			self.view.sendSubview(toBack: self.backImageView)
+			self.updateGametable()
 		}
 	}
 	
@@ -158,6 +143,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		for v in self.cardScrolliew.subviews {
 			v.removeFromSuperview()
 		}
+		self.cardViewList = []
 		for i in 0 ..< self.questData.cards.count {
 			let moji = self.questData.cards[i]
 			let cardView = FontCardView.fontCardView(moji: moji)
@@ -170,6 +156,29 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		self.cardScrolliew.contentSize = CGSize(width: CGFloat(self.questData.cards.count) * 50, height: self.cardScrolliew.frame.size.height / 2)
 		
+	}
+	
+	func updateGametable() {
+		
+		//ゲームテーブル
+		for v in self.mainScrollView.subviews {
+			v.removeFromSuperview()
+		}
+		self.gameTable = GameTableView.gameTableView(size: CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height), 
+													 width: self.questData.width, 
+													 height: self.questData.height,
+													 cellTypes: self.questData.table,
+													 edit: true)
+		let size = self.gameTable.frame.size
+		self.gameTable.delegate = self
+		self.mainScrollView.addSubview(self.gameTable)
+		self.mainScrollView.contentSize = CGSize(width: self.gameTable.frame.size.width, height: self.gameTable.frame.size.height)
+		self.mainScrollView.maximumZoomScale = 2.0
+		self.mainScrollView.minimumZoomScale = 1.0
+		self.mainScrollView.zoomScale = 1.0
+		self.mainScrollView.contentOffset = CGPoint(x: size.width / 4, y: size.height / 4)
+		self.view.sendSubview(toBack: self.mainScrollView)
+		self.view.sendSubview(toBack: self.backImageView)
 	}
 	
 	//横方向の単語検索
@@ -247,6 +256,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		let edit = EditViewController.editViewController(questData: self.questData)
 		self.present(edit, animated: true) { 
 			
+		}
+		edit.finishedHandler = {(data) in
+			self.questData = data
+			//手札
+			self.updateCardScroll()
+			//ゲームテーブル
+			self.updateGametable()
 		}
 	}
 	
