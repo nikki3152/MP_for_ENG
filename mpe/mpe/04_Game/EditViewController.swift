@@ -10,8 +10,10 @@ import UIKit
 
 class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewDelegate, FontCardViewDelegate, UITableViewDataSource, UITableViewDelegate {
 	
+	var mojiSelectIndex: Int = 0
+	//var chks: [Bool] = [true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 	let mojiList: [String] = [
-		"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
+		"null","table","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
 	]
 	
 	//MARK: - UITableViewDataSource
@@ -28,7 +30,11 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 		}
 		let moji = self.mojiList[indexPath.row]
 		cell.imageView?.image = UIImage(named: moji)
-		
+		if mojiSelectIndex == indexPath.row {
+			cell.accessoryType = .checkmark
+		} else {
+			cell.accessoryType = .none
+		}
 		return cell
 	}
 	
@@ -38,11 +44,24 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 		
 		tableView.deselectRow(at: indexPath, animated: true)
 		
+		self.mojiSelectIndex = indexPath.row
+		tableView.reloadData()
+		
+		let moji = self.mojiList[self.mojiSelectIndex]
+		if moji == "table" || moji == "null" {
+			self.addButton.isEnabled = false
+			self.addButton.alpha = 0.25
+		} else {
+			self.addButton.isEnabled = true
+			self.addButton.alpha = 1.0
+		}
 		
 	}
-
+	
+	//MARK: -
+	
+	
 	var questData: QuestData!
-	var cardSelectIndex: Int!
 	var gameTable: GameTableView!
 	
 	class func editViewController(questData: QuestData) -> EditViewController {
@@ -55,9 +74,13 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.segment.tintColor = UIColor.white
-    }
+		
+        self.deleteButton.isEnabled = false
+		self.deleteButton.alpha = 0.25
+		
+		self.addButton.isEnabled = false
+		self.addButton.alpha = 0.25
+   }
 	
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
@@ -85,14 +108,60 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	@IBOutlet weak var mojiTableView: UITableView!
 	@IBOutlet weak var mainScrollView: UIScrollView!
 	
-	@IBOutlet weak var doneButton: UIButton!
-	@IBAction func doneButtonAction(_ sender: Any) {
+	//MARK: 保存
+	@IBOutlet weak var saveButton: UIButton!
+	@IBAction func saveButtonAction(_ sender: Any) {
 		
-		self.dismiss(animated: true) { 
-			
+		let saveView = SaveViewController.saveViewController()
+		saveView.view.bounds = UIScreen.main.bounds
+		self.view.addSubview(saveView.view)
+		self.addChildViewController(saveView)
+		saveView.handler = {(name) in
+			let dict = self.questData.dict()
+			let base_path = DataManager().docPath!
+			let path = base_path + "/" + name + ".plist"
+			if (dict as NSDictionary).write(toFile: path, atomically: true) {
+				print("問題保存成功！")
+			} else {
+				print("問題保存失敗！")
+			}
 		}
 	}
-	
+	//MARK: 読み込み
+	@IBOutlet weak var loadButton: UIButton!
+	@IBAction func loadButtonAction(_ sender: Any) {
+		
+		let loadView = LoadViewController.loadViewController()
+		self.present(loadView, animated: true, completion: nil)
+		loadView.handler = {(path) in
+			if let dic = NSDictionary(contentsOfFile: path) as? [String:Any] {
+				self.questData = QuestData(dict: dic)
+				//手札
+				self.updateCardScroll()
+				//ゲームテーブル
+				for v in self.mainScrollView.subviews {
+					v.removeFromSuperview()
+				}
+				self.gameTable = GameTableView.gameTableView(size: CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height), 
+															 width: self.questData.width, 
+															 height: self.questData.height,
+															 cellTypes: self.questData.table,
+															 edit: true)
+				let size = self.gameTable.frame.size
+				self.gameTable.delegate = self
+				self.mainScrollView.addSubview(self.gameTable)
+				self.mainScrollView.contentSize = CGSize(width: self.gameTable.frame.size.width, height: self.gameTable.frame.size.height)
+				self.mainScrollView.maximumZoomScale = 2.0
+				self.mainScrollView.minimumZoomScale = 1.0
+				self.mainScrollView.zoomScale = 1.0
+				self.mainScrollView.contentOffset = CGPoint(x: size.width / 4, y: size.height / 4)
+				self.view.sendSubview(toBack: self.mainScrollView)
+			} else {
+				print("問題読み込み失敗！")
+			}
+		}
+	}
+	//MARK: 閉じる
 	@IBOutlet weak var closeButton: UIButton!
 	@IBAction func closeButtonAction(_ sender: Any) {
 		
@@ -101,7 +170,8 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 		}
 	}
 	
-	//手札
+	//MARK: 手札
+	var cardSelectIndex: Int!
 	var cardViewList: [FontCardView] = []
 	@IBOutlet weak var cardScrolliew: UIScrollView!
 	
@@ -110,6 +180,7 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 		for v in self.cardScrolliew.subviews {
 			v.removeFromSuperview()
 		}
+		self.cardViewList = []
 		for i in 0 ..< self.questData.cards.count {
 			let moji = self.questData.cards[i]
 			let cardView = FontCardView.fontCardView(moji: moji)
@@ -127,8 +198,38 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	
 	@IBOutlet weak var segment: UISegmentedControl!
 	
+	//MARK: 追加
 	@IBOutlet weak var addButton: UIButton!
 	@IBAction func addButtonAction(_ sender: Any) {
+		
+		let moji = self.mojiList[self.mojiSelectIndex]
+		if moji != "table" && moji != "null" {
+			if let index = cardSelectIndex {
+				self.questData.cards.insert(moji, at: index)
+				self.updateCardScroll()
+				let card = cardViewList[index]
+				card.isSelected = true
+				
+			} else {
+				self.questData.cards.append(moji)
+				self.updateCardScroll()
+				let x = self.cardScrolliew.contentSize.width - self.cardScrolliew.bounds.size.width
+				self.cardScrolliew.setContentOffset(CGPoint(x: x, y: 0), animated: true)
+			}
+		}
+		
+	}
+	//MARK: 削除
+	@IBOutlet weak var deleteButton: UIButton!
+	@IBAction func deleteButtonAction(_ sender: Any) {
+		
+		if let index = cardSelectIndex {
+			self.questData.cards.remove(at: index)
+			self.updateCardScroll()
+			self.cardSelectIndex = nil
+			self.deleteButton.isEnabled = false
+			self.deleteButton.alpha = 0.25
+		}
 	}
 	
 	
@@ -150,15 +251,28 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	
 	func fontCardViewTap(font: FontCardView) {
 		
-		self.cardSelectIndex = font.tag
-		//let moji = self.questData.cards[self.cardSelectIndex]
-		//print("\(moji)")
+		if self.cardSelectIndex != nil && self.cardSelectIndex == font.tag {
+			self.cardSelectIndex = nil
+		} else {
+			self.cardSelectIndex = font.tag
+		}
 		for cardView in self.cardViewList {
-			if cardView.tag == self.cardSelectIndex {
-				cardView.isSelected = true
+			if self.cardSelectIndex != nil {
+				if cardView.tag == self.cardSelectIndex {
+					cardView.isSelected = true
+				} else {
+					cardView.isSelected = false
+				}
 			} else {
 				cardView.isSelected = false
 			}
+		}
+		if self.cardSelectIndex == nil {
+			self.deleteButton.isEnabled = false
+			self.deleteButton.alpha = 0.25
+		} else {
+			self.deleteButton.isEnabled = true
+			self.deleteButton.alpha = 1.0
 		}
 	}
 	

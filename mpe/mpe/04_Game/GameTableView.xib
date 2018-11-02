@@ -290,7 +290,7 @@
             <connections>
                 <outlet property="komaBaseView" destination="iGD-ct-XiL" id="end-IN-aEz"/>
             </connections>
-            <point key="canvasLocation" x="-485" y="-386"/>
+            <point key="canvasLocation" x="-479" y="-492"/>
         </view>
     </objects>
 </document>

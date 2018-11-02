@@ -24,11 +24,27 @@ struct QuestData {
 	init() {
 		
 	}
+	init(dict: [String:Any]) {
+		self.width = dict["width"] as! Int
+		self.height = dict["height"] as! Int
+		self.table = dict["table"] as! [String]
+		self.cards = dict["cards"] as! [String]
+	}
 	init(w: Int, h: Int, table: [String], cards: [String]) {
 		self.width = w
 		self.height = h
 		self.table = table
 		self.cards = cards
+	}
+	func dict() -> [String:Any] {
+		
+		let dict: [String:Any] = [
+			"width":self.width,
+			"height":self.height,
+			"table":self.table,
+			"cards":self.cards,
+		]
+		return dict
 	}
 }
 

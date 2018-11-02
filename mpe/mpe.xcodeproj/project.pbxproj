@@ -13,6 +13,9 @@
 		54140F22212BB302007C753B /* GameTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54140F21212BB302007C753B /* GameTableView.xib */; };
 		54140F24212BB3E3007C753B /* TableKomaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F23212BB3E3007C753B /* TableKomaView.swift */; };
 		54140F26212BB3EF007C753B /* TableKomaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54140F25212BB3EF007C753B /* TableKomaView.xib */; };
+		544271CA218BCC6F00622897 /* GameTableView-15.xib in Resources */ = {isa = PBXBuildFile; fileRef = 544271C9218BCC6F00622897 /* GameTableView-15.xib */; };
+		544271CC218C196B00622897 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544271CB218C196B00622897 /* LoadViewController.swift */; };
+		544271CE218C1CA800622897 /* SaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544271CD218C1CA800622897 /* SaveViewController.swift */; };
 		54433BDB2189D0C600CDBD3D /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54433BDA2189D0C600CDBD3D /* EditViewController.swift */; };
 		5489AF5D212B007A00A7D275 /* ejdic-hand-utf8.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */; };
 		5489AF5F212B00B500A7D275 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF5E212B00B500A7D275 /* DataManager.swift */; };
@@ -58,6 +61,9 @@
 		54140F21212BB302007C753B /* GameTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableView.xib; sourceTree = "<group>"; };
 		54140F23212BB3E3007C753B /* TableKomaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableKomaView.swift; sourceTree = "<group>"; };
 		54140F25212BB3EF007C753B /* TableKomaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableKomaView.xib; sourceTree = "<group>"; };
+		544271C9218BCC6F00622897 /* GameTableView-15.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GameTableView-15.xib"; sourceTree = "<group>"; };
+		544271CB218C196B00622897 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
+		544271CD218C1CA800622897 /* SaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveViewController.swift; sourceTree = "<group>"; };
 		54433BDA2189D0C600CDBD3D /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ejdic-hand-utf8.txt"; sourceTree = "<group>"; };
 		5489AF5E212B00B500A7D275 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -142,10 +148,13 @@
 				54CFB3EA20DE294700057F08 /* GameViewController.storyboard */,
 				54CFB3E820DE293C00057F08 /* GameViewController.swift */,
 				54433BDA2189D0C600CDBD3D /* EditViewController.swift */,
+				544271CD218C1CA800622897 /* SaveViewController.swift */,
+				544271CB218C196B00622897 /* LoadViewController.swift */,
 				54140F1B212BAFAB007C753B /* FontCardView.swift */,
 				54140F1D212BAFBC007C753B /* FontCardView.xib */,
 				54140F1F212BB2F6007C753B /* GameTableView.swift */,
 				54140F21212BB302007C753B /* GameTableView.xib */,
+				544271C9218BCC6F00622897 /* GameTableView-15.xib */,
 				54140F23212BB3E3007C753B /* TableKomaView.swift */,
 				54140F25212BB3EF007C753B /* TableKomaView.xib */,
 			);
@@ -339,6 +348,7 @@
 				54CFB40720DE38B300057F08 /* DataAggregateViewController.storyboard in Resources */,
 				54CFB40F20DE3B3100057F08 /* PurchaseViewController.storyboard in Resources */,
 				54140F26212BB3EF007C753B /* TableKomaView.xib in Resources */,
+				544271CA218BCC6F00622897 /* GameTableView-15.xib in Resources */,
 				54CFB40B20DE39D400057F08 /* SoundViewController.storyboard in Resources */,
 				54CFB3F720DE31DB00057F08 /* QuickQuestViewController.storyboard in Resources */,
 				54CFB3EF20DE2E5E00057F08 /* StudyModeViewController.storyboard in Resources */,
@@ -360,6 +370,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				54CFB3E920DE293C00057F08 /* GameViewController.swift in Sources */,
+				544271CE218C1CA800622897 /* SaveViewController.swift in Sources */,
+				544271CC218C196B00622897 /* LoadViewController.swift in Sources */,
 				54CFB40D20DE3B1F00057F08 /* PurchaseViewController.swift in Sources */,
 				54CFB3E120DE229E00057F08 /* WaitingViewController.swift in Sources */,
 				54CFB40520DE389200057F08 /* DataAggregateViewController.swift in Sources */,
