@@ -168,7 +168,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 													 width: self.questData.width, 
 													 height: self.questData.height,
 													 cellTypes: self.questData.table,
-													 edit: true)
+													 edit: false)
 		let size = self.gameTable.frame.size
 		self.gameTable.delegate = self
 		self.mainScrollView.addSubview(self.gameTable)

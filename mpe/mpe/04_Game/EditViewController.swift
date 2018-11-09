@@ -61,6 +61,7 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	
 	//MARK: -
 	
+	var isLaunch = false
 	
 	var questData: QuestData!
 	var gameTable: GameTableView!
@@ -86,23 +87,10 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
 		
-		//手札
-		self.updateCardScroll()
-		//ゲームテーブル
-		self.gameTable = GameTableView.gameTableView(size: CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height), 
-													 width: self.questData.width, 
-													 height: self.questData.height,
-													 cellTypes: self.questData.table,
-													 edit: true)
-		let size = self.gameTable.frame.size
-		self.gameTable.delegate = self
-		self.mainScrollView.addSubview(self.gameTable)
-		self.mainScrollView.contentSize = CGSize(width: self.gameTable.frame.size.width, height: self.gameTable.frame.size.height)
-		self.mainScrollView.maximumZoomScale = 2.0
-		self.mainScrollView.minimumZoomScale = 1.0
-		self.mainScrollView.zoomScale = 1.0
-		self.mainScrollView.contentOffset = CGPoint(x: size.width / 4, y: size.height / 4)
-		self.view.sendSubview(toBack: self.mainScrollView)
+		if isLaunch == false {
+			isLaunch = true
+			self.update()
+		}
 	}
 	
 	
@@ -137,26 +125,7 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 		loadView.handler = {(path) in
 			if let dic = NSDictionary(contentsOfFile: path) as? [String:Any] {
 				self.questData = QuestData(dict: dic)
-				//手札
-				self.updateCardScroll()
-				//ゲームテーブル
-				for v in self.mainScrollView.subviews {
-					v.removeFromSuperview()
-				}
-				self.gameTable = GameTableView.gameTableView(size: CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height), 
-															 width: self.questData.width, 
-															 height: self.questData.height,
-															 cellTypes: self.questData.table,
-															 edit: true)
-				let size = self.gameTable.frame.size
-				self.gameTable.delegate = self
-				self.mainScrollView.addSubview(self.gameTable)
-				self.mainScrollView.contentSize = CGSize(width: self.gameTable.frame.size.width, height: self.gameTable.frame.size.height)
-				self.mainScrollView.maximumZoomScale = 2.0
-				self.mainScrollView.minimumZoomScale = 1.0
-				self.mainScrollView.zoomScale = 1.0
-				self.mainScrollView.contentOffset = CGPoint(x: size.width / 4, y: size.height / 4)
-				self.view.sendSubview(toBack: self.mainScrollView)
+				self.update()
 			} else {
 				print("問題読み込み失敗！")
 			}
@@ -184,44 +153,27 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	
 	//MARK: 初期化
 	@IBOutlet weak var clearButton: UIButton!
-	@IBAction func clearButtonAction(_ sender: Any) {
+	@IBAction func clearButtonAction(_ sender: UIButton) {
 		
-		self.mojiSelectIndex = 0
-		self.cardSelectIndex = nil
-		
-		self.questData.width = 8
-		self.questData.height = 8
-		self.questData.table = [
-			"0","0","0","0","0","0","0","0",
-			"0","0","0","0","0","0","0","0",
-			"0","0","0","0","0","0","0","0",
-			"0","0","0","0","0","0","0","0",
-			"0","0","0","0","0","0","0","0",
-			"0","0","0","0","0","0","0","0",
-			"0","0","0","0","0","0","0","0",
-			"0","0","0","0","0","0","0","0",]
-		self.questData.cards = []
-		
-		//手札
-		self.updateCardScroll()
-		//ゲームテーブル
-		for v in self.mainScrollView.subviews {
-			v.removeFromSuperview()
+		let picker = EditPickerView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+		self.view.addSubview(picker)
+		picker.leftPicker.selectRow(self.questData.width - 8, inComponent: 0, animated: false)
+		picker.rightPicker.selectRow(self.questData.height - 8, inComponent: 0, animated: false)
+		picker.handler = {(w,h) in
+			self.mojiSelectIndex = 0
+			self.cardSelectIndex = nil
+			
+			self.questData.width = w
+			self.questData.height = h
+			let count = w * h
+			self.questData.table = []
+			for _ in 0 ..< count {
+				self.questData.table.append(" ")
+			}
+			self.questData.cards = []
+			
+			self.update()
 		}
-		self.gameTable = GameTableView.gameTableView(size: CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height), 
-													 width: self.questData.width, 
-													 height: self.questData.height,
-													 cellTypes: self.questData.table,
-													 edit: true)
-		let size = self.gameTable.frame.size
-		self.gameTable.delegate = self
-		self.mainScrollView.addSubview(self.gameTable)
-		self.mainScrollView.contentSize = CGSize(width: self.gameTable.frame.size.width, height: self.gameTable.frame.size.height)
-		self.mainScrollView.maximumZoomScale = 2.0
-		self.mainScrollView.minimumZoomScale = 1.0
-		self.mainScrollView.zoomScale = 1.0
-		self.mainScrollView.contentOffset = CGPoint(x: size.width / 4, y: size.height / 4)
-		self.view.sendSubview(toBack: self.mainScrollView)
 	}
 	
 	
@@ -286,6 +238,32 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 			self.deleteButton.isEnabled = false
 			self.deleteButton.alpha = 0.25
 		}
+	}
+	
+	
+	func update() {
+		
+		//手札
+		self.updateCardScroll()
+		//ゲームテーブル
+		for v in self.mainScrollView.subviews {
+			v.removeFromSuperview()
+		}
+		self.gameTable = GameTableView.gameTableView(size: CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height), 
+													 width: self.questData.width, 
+													 height: self.questData.height,
+													 cellTypes: self.questData.table,
+													 edit: true)
+		let size = self.gameTable.frame.size
+		self.gameTable.delegate = self
+		self.mainScrollView.addSubview(self.gameTable)
+		self.mainScrollView.contentSize = CGSize(width: self.gameTable.frame.size.width, height: self.gameTable.frame.size.height)
+		self.mainScrollView.maximumZoomScale = 2.0
+		self.mainScrollView.minimumZoomScale = 1.0
+		self.mainScrollView.zoomScale = 1.0
+		self.mainScrollView.contentOffset = CGPoint(x: size.width / 4, y: size.height / 4)
+		self.view.sendSubview(toBack: self.mainScrollView)
+		
 	}
 	
 	

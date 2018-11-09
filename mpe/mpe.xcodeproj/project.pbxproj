@@ -52,6 +52,8 @@
 		54D9AEBB20CF6186004FEBA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54D9AEBA20CF6186004FEBA2 /* Assets.xcassets */; };
 		54D9AEBE20CF6186004FEBA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D9AEBC20CF6186004FEBA2 /* LaunchScreen.storyboard */; };
 		54D9AEC620CF6200004FEBA2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54D9AEC520CF6200004FEBA2 /* InfoPlist.strings */; };
+		54F3A6D521955AD200A1E01F /* EditPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3A6D421955AD200A1E01F /* EditPickerView.swift */; };
+		54F3A6D721955B3800A1E01F /* EditPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F3A6D621955B3800A1E01F /* EditPickerView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +104,8 @@
 		54D9AEBD20CF6186004FEBA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54D9AEBF20CF6186004FEBA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54D9AEC520CF6200004FEBA2 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		54F3A6D421955AD200A1E01F /* EditPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPickerView.swift; sourceTree = "<group>"; };
+		54F3A6D621955B3800A1E01F /* EditPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPickerView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 				54CFB3EA20DE294700057F08 /* GameViewController.storyboard */,
 				54CFB3E820DE293C00057F08 /* GameViewController.swift */,
 				54433BDA2189D0C600CDBD3D /* EditViewController.swift */,
+				54F3A6D421955AD200A1E01F /* EditPickerView.swift */,
+				54F3A6D621955B3800A1E01F /* EditPickerView.xib */,
 				544271CD218C1CA800622897 /* SaveViewController.swift */,
 				544271CB218C196B00622897 /* LoadViewController.swift */,
 				54140F1B212BAFAB007C753B /* FontCardView.swift */,
@@ -352,6 +358,7 @@
 				54CFB40B20DE39D400057F08 /* SoundViewController.storyboard in Resources */,
 				54CFB3F720DE31DB00057F08 /* QuickQuestViewController.storyboard in Resources */,
 				54CFB3EF20DE2E5E00057F08 /* StudyModeViewController.storyboard in Resources */,
+				54F3A6D721955B3800A1E01F /* EditPickerView.xib in Resources */,
 				54D9AEC620CF6200004FEBA2 /* InfoPlist.strings in Resources */,
 				54CFB40320DE371700057F08 /* SettingViewController.storyboard in Resources */,
 				54CFB3E720DE25EB00057F08 /* StageSelectViewController.storyboard in Resources */,
@@ -373,6 +380,7 @@
 				544271CE218C1CA800622897 /* SaveViewController.swift in Sources */,
 				544271CC218C196B00622897 /* LoadViewController.swift in Sources */,
 				54CFB40D20DE3B1F00057F08 /* PurchaseViewController.swift in Sources */,
+				54F3A6D521955AD200A1E01F /* EditPickerView.swift in Sources */,
 				54CFB3E120DE229E00057F08 /* WaitingViewController.swift in Sources */,
 				54CFB40520DE389200057F08 /* DataAggregateViewController.swift in Sources */,
 				5489AF61212B010B00A7D275 /* MPEDataManager.swift in Sources */,
