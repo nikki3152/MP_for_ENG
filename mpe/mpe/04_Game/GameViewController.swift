@@ -289,14 +289,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			if let superview = koma.superview {
 				superview.bringSubview(toFront: koma)
 			}
-			let fontImage = koma.frontImageView.image!
 			
 			let backImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: koma.frame.size.width, height: koma.frame.size.height))
 			backImageView.image = UIImage(named: "orange_0")
 			koma.addSubview(backImageView)
 			//フォント
 			let fontImageView =  UIImageView(frame: CGRect(x: 0, y: 0, width: koma.frame.size.width, height: koma.frame.size.height))
-			fontImageView.image = fontImage
+			fontImageView.image = UIImage(named: "anim_\(koma.moji)")
 			koma.addSubview(fontImageView)
 			fontImageView.center = CGPoint(x: koma.frame.size.width / 2, y: koma.frame.size.height / 2)
 			

@@ -26,12 +26,14 @@ class TableKomaView: UIView {
 		v.setFont(moji: moji, type: type)
 		return v
 	}
-	
+	var moji: String = ""
 	@IBOutlet weak var backImageView: UIImageView!
 	@IBOutlet weak var frontImageView: UIImageView!
 	@IBOutlet weak var typeImageView: UIImageView!
 	
 	func setFont(moji: String, type: String?) {
+		
+		self.moji = moji
 		if moji != "0" && moji != " " && moji != "" {
 			self.frontImageView.image = UIImage(named: moji)
 			self.isUserInteractionEnabled = false
