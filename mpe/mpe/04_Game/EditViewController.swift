@@ -203,7 +203,8 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 		
 	}
 	
-	
+	//テーブルタイプ選択セグメント
+	@IBOutlet weak var typeSegment: UISegmentedControl!
 	
 	
 	//MARK: 追加
@@ -253,6 +254,7 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 													 width: self.questData.width, 
 													 height: self.questData.height,
 													 cellTypes: self.questData.table,
+													 types: self.questData.tableType,
 													 edit: true)
 		let size = self.gameTable.frame.size
 		self.gameTable.delegate = self
@@ -317,21 +319,55 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	}
 	func gameTableViewToucheUp(table: GameTableView, koma: TableKomaView) {
 		
+		var type: String = " "
+		if self.typeSegment.selectedSegmentIndex == 1 {
+			type = "DL"
+		}
+		else if self.typeSegment.selectedSegmentIndex == 2 {
+			type = "TL"
+		}
+		else if self.typeSegment.selectedSegmentIndex == 3 {
+			type = "DW"
+		}
+		else if self.typeSegment.selectedSegmentIndex == 4 {
+			type = "TW"
+		}
 		let mojiTbl = self.mojiList[self.mojiSelectIndex]
 		if mojiTbl == "null" {
 			koma.frontImageView.image = nil
+			koma.typeImageView.image = nil
 			self.questData.table[koma.tag] = " "
+			self.questData.tableType[koma.tag] = " "
 			koma.alpha = 0.5
 		}
 		else if mojiTbl == "table" {
 			koma.frontImageView.image = nil
 			self.questData.table[koma.tag] = "0"
+			self.questData.tableType[koma.tag] = type
 			koma.alpha = 1.0
 		}
 		else {
 			koma.frontImageView.image = UIImage(named: mojiTbl)
 			self.questData.table[koma.tag] = mojiTbl
+			self.questData.tableType[koma.tag] = type
 			koma.alpha = 1.0
+		}
+		
+		if mojiTbl != "null" {
+			var image: UIImage?
+			if type == "DL" {
+				image = UIImage(named: "double_letter_score")
+			}
+			else if type == "TL" {
+				image = UIImage(named: "triple_letter_score")
+			}
+			else if type == "DW" {
+				image = UIImage(named: "double_word_score")
+			}
+			else if type == "TW" {
+				image = UIImage(named: "triple_word_score")
+			}
+			koma.typeImageView.image = image
 		}
 	}
 	

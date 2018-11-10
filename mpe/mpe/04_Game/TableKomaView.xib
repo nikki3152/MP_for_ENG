@@ -24,6 +24,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="62r-C5-piL">
+                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f0v-YD-ipZ">
                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,8 +38,9 @@
             <connections>
                 <outlet property="backImageView" destination="4Ld-xJ-jP1" id="BDH-VY-VPf"/>
                 <outlet property="frontImageView" destination="f0v-YD-ipZ" id="2Zq-6N-S9e"/>
+                <outlet property="typeImageView" destination="62r-C5-piL" id="70c-q9-Svq"/>
             </connections>
-            <point key="canvasLocation" x="-45" y="-110"/>
+            <point key="canvasLocation" x="-162" y="-166"/>
         </view>
     </objects>
     <resources>

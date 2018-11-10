@@ -20,6 +20,19 @@ struct QuestData {
 		"0","0","0","0","0","0","0","0",
 		"0","0","0","0","0","0","0","0",
 		"0","0","0","0","0","0","0","0",]
+	//DL: マス目の上に置かれたコマの点数が２倍になります。
+	//TL: マス目の上に置かれたコマの点数が３倍になります。
+	//DW: マス目にかかる単語全体の点数が２倍になります。
+	//TW: マス目にかかる単語全体の点数が３倍になります。
+	var tableType: [String] = [
+		" "," "," "," "," "," "," "," ",
+		" "," "," "," "," "," "," "," ",
+		" "," "," "," "," "," "," "," ",
+		" "," "," "," "," "," "," "," ",
+		" "," "," "," "," "," "," "," ",
+		" "," "," "," "," "," "," "," ",
+		" "," "," "," "," "," "," "," ",
+		" "," "," "," "," "," "," "," ",]
 	var cards: [String] = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 	init() {
 		
@@ -28,13 +41,29 @@ struct QuestData {
 		self.width = dict["width"] as! Int
 		self.height = dict["height"] as! Int
 		self.table = dict["table"] as! [String]
+		if let type = dict["tableType"] as? [String] {
+			self.tableType = type
+		} else {
+			self.tableType = []
+			for _ in 0 ..<  table.count {
+				self.tableType.append(" ")
+			}
+		}
 		self.cards = dict["cards"] as! [String]
 	}
-	init(w: Int, h: Int, table: [String], cards: [String]) {
+	init(w: Int, h: Int, table: [String], cards: [String], tableType: [String]?) {
 		self.width = w
 		self.height = h
 		self.table = table
 		self.cards = cards
+		if let types = tableType {
+			self.tableType = types
+		} else {
+			self.tableType = []
+			for _ in 0 ..<  table.count {
+				self.tableType.append(" ")
+			}
+		}
 	}
 	func dict() -> [String:Any] {
 		
@@ -42,6 +71,7 @@ struct QuestData {
 			"width":self.width,
 			"height":self.height,
 			"table":self.table,
+			"tableType":self.tableType,
 			"cards":self.cards,
 		]
 		return dict
@@ -169,6 +199,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 													 width: self.questData.width, 
 													 height: self.questData.height,
 													 cellTypes: self.questData.table,
+													 types: self.questData.tableType,
 													 edit: false)
 		let size = self.gameTable.frame.size
 		self.gameTable.delegate = self
@@ -263,6 +294,11 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			let backImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: koma.frame.size.width, height: koma.frame.size.height))
 			backImageView.image = UIImage(named: "orange_0")
 			koma.addSubview(backImageView)
+			//フォント
+			let fontImageView =  UIImageView(frame: CGRect(x: 0, y: 0, width: koma.frame.size.width, height: koma.frame.size.height))
+			fontImageView.image = fontImage
+			koma.addSubview(fontImageView)
+			fontImageView.center = CGPoint(x: koma.frame.size.width / 2, y: koma.frame.size.height / 2)
 			
 			DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) { 
 				let effectImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
@@ -289,10 +325,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				effectImageView.animationDuration = 0.5
 				effectImageView.animationRepeatCount = 1
 				//数字を乗せて拡大縮小アニメーション
-				let fontImageView =  UIImageView(frame: CGRect(x: 0, y: 0, width: koma.frame.size.width, height: koma.frame.size.height))
-				fontImageView.image = fontImage
-				koma.addSubview(fontImageView)
-				fontImageView.center = CGPoint(x: koma.frame.size.width / 2, y: koma.frame.size.height / 2)
 				UIView.animate(withDuration: 0.2, animations: { 
 					fontImageView.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
 				}, completion: { (stop) in
@@ -370,7 +402,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.mainScrollView.isScrollEnabled = true
 		if let index = self.cardSelectIndex {
 			let moji = self.questData.cards[index]
-			koma.setFont(moji: moji)
+			koma.setFont(moji: moji, type: nil)
 			self.questData.table[koma.tag] = moji
 			self.questData.cards.remove(at: index)
 			for v in self.cardScrolliew.subviews {

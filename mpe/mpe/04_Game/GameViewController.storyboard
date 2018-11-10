@@ -204,7 +204,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAR-6P-UX2">
-                                        <rect key="frame" x="63" y="5" width="59" height="34"/>
+                                        <rect key="frame" x="54" y="5" width="50" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="保存">
@@ -215,7 +215,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHn-he-koe">
-                                        <rect key="frame" x="133" y="5" width="81" height="34"/>
+                                        <rect key="frame" x="112" y="5" width="71" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="読み込み">
@@ -226,7 +226,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGq-oh-OK7">
-                                        <rect key="frame" x="485" y="5" width="75" height="34"/>
+                                        <rect key="frame" x="501" y="5" width="59" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="完了">
@@ -248,7 +248,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVs-Vk-pwe">
-                                        <rect key="frame" x="228" y="5" width="81" height="34"/>
+                                        <rect key="frame" x="191" y="5" width="77" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="初期化">
@@ -258,6 +258,17 @@
                                             <action selector="clearButtonAction:" destination="Heo-wK-58r" eventType="touchUpInside" id="I0u-ed-hg3"/>
                                         </connections>
                                     </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="znw-1t-yWt">
+                                        <rect key="frame" x="308" y="9" width="185" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="N"/>
+                                            <segment title="DL"/>
+                                            <segment title="TL"/>
+                                            <segment title="DW"/>
+                                            <segment title="TW"/>
+                                        </segments>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -308,6 +319,7 @@
                         <outlet property="mainScrollView" destination="d4O-H9-BKf" id="je7-Fs-gAC"/>
                         <outlet property="mojiTableView" destination="kXQ-NI-Hwe" id="MP7-qr-Gh2"/>
                         <outlet property="saveButton" destination="LAR-6P-UX2" id="8ej-uP-8tn"/>
+                        <outlet property="typeSegment" destination="znw-1t-yWt" id="Vfb-fV-vez"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEW-y2-QAJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

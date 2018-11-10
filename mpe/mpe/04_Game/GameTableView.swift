@@ -21,7 +21,7 @@ class GameTableView: UIView, TableKomaViewDelegate {
 	
 	var komas: [TableKomaView] = []
 	
-	class func gameTableView(size: CGSize, width: Int, height: Int, cellTypes: [String], edit: Bool) -> GameTableView {
+	class func gameTableView(size: CGSize, width: Int, height: Int, cellTypes: [String], types: [String], edit: Bool) -> GameTableView {
 		
 		let komaSize: CGFloat = 30
 		let tableW: CGFloat = size.width * 2
@@ -38,8 +38,9 @@ class GameTableView: UIView, TableKomaViewDelegate {
 			for x in 0 ..< width {
 				var koma: TableKomaView!
 				let moji = cellTypes[count]
+				let type = types[count]
 				if moji != "" && moji != " " {
-					koma = TableKomaView.tableKomaView(frame: CGRect(x: 0, y: 0, width: komaSize, height: komaSize), moji: moji)
+					koma = TableKomaView.tableKomaView(frame: CGRect(x: 0, y: 0, width: komaSize, height: komaSize), moji: moji, type: type)
 					koma.tag = count
 					koma.delegate = table
 					baseView.addSubview(koma)
@@ -49,7 +50,7 @@ class GameTableView: UIView, TableKomaViewDelegate {
 					}
 				} else {
 					//編集モード(デバッグ)空枠
-					koma = TableKomaView.tableKomaView(frame: CGRect(x: 0, y: 0, width: komaSize, height: komaSize), moji: " ")
+					koma = TableKomaView.tableKomaView(frame: CGRect(x: 0, y: 0, width: komaSize, height: komaSize), moji: " ", type: type)
 					koma.tag = count
 					koma.delegate = table
 					baseView.addSubview(koma)

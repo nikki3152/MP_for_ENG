@@ -17,25 +17,38 @@ class TableKomaView: UIView {
 	
 	var delegate: TableKomaViewDelegate?
 	
-	class func tableKomaView(frame: CGRect, moji: String) -> TableKomaView {
+	class func tableKomaView(frame: CGRect, moji: String, type: String?) -> TableKomaView {
 		
 		let vc = UIViewController(nibName: "TableKomaView", bundle: nil)
 		let v = vc.view as! TableKomaView
 		v.frame = frame
 		v.isExclusiveTouch = false
-		v.setFont(moji: moji)
+		v.setFont(moji: moji, type: type)
 		return v
 	}
 	
 	@IBOutlet weak var backImageView: UIImageView!
 	@IBOutlet weak var frontImageView: UIImageView!
+	@IBOutlet weak var typeImageView: UIImageView!
 	
-	func setFont(moji: String) {
+	func setFont(moji: String, type: String?) {
 		if moji != "0" && moji != " " && moji != "" {
 			self.frontImageView.image = UIImage(named: moji)
 			self.isUserInteractionEnabled = false
-		} else {
-			
+		}
+		if let type = type {
+			if type == "DL" {
+				self.typeImageView.image = UIImage(named: "double_letter_score")
+			}
+			else if type == "TL" {
+				self.typeImageView.image = UIImage(named: "triple_letter_score")
+			}
+			else if type == "DW" {
+				self.typeImageView.image = UIImage(named: "double_word_score")
+			}
+			else if type == "TW" {
+				self.typeImageView.image = UIImage(named: "triple_word_score")
+			}
 		}
 	}
 	
