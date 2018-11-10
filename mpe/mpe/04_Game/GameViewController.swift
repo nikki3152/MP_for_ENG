@@ -91,7 +91,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	//テーブル
 	var gameTable: GameTableView!
 	@IBOutlet weak var mainScrollView: UIScrollView!
-	
+	var checkKomaSet: Set<TableKomaView> = []
+
 	
 	//手札
 	var cardViewList: [FontCardView] = []
@@ -205,6 +206,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				let moji = self.questData.table[idx]
 				if moji != "" && moji != " " && moji != "0" {
 					ward.append(moji)
+					self.checkKomaSet.insert(self.gameTable.komas[idx])
 					startX += 1
 				} else {
 					break
@@ -238,6 +240,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				let moji = self.questData.table[idx]
 				if moji != "" && moji != " " && moji != "0" {
 					ward.append(moji)
+					self.checkKomaSet.insert(self.gameTable.komas[idx])
 					startY += 1
 				} else {
 					break
@@ -363,6 +366,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	}
 	func gameTableViewToucheUp(table: GameTableView, koma: TableKomaView) {
 		
+		self.checkKomaSet = []
 		self.mainScrollView.isScrollEnabled = true
 		if let index = self.cardSelectIndex {
 			let moji = self.questData.cards[index]
@@ -403,7 +407,11 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			}
 			
 			if let ward = hitWard, let info = infoText {
-				self.tableTapEffect(komas: [koma])	//エフェクト
+				var komas: [TableKomaView] = []
+				for koma in self.checkKomaSet {
+					komas.append(koma)
+				}
+				self.tableTapEffect(komas: komas)	//エフェクト
 				self.answeBaseView.center = CGPoint(x: self.view.frame.size.width / 2, y: -(self.answeBaseView.frame.size.height / 2))
 				self.answeTitleLabel.text = ward.uppercased()
 				self.answeLabel.text = info
