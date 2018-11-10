@@ -248,6 +248,66 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		return ward
 	}
 	
+	//テーブルタップエフェクト
+	func tableTapEffect(komas: [TableKomaView]) {
+		
+		for koma in komas {
+			if let superview = koma.superview {
+				superview.bringSubview(toFront: koma)
+			}
+			let fontImage = koma.frontImageView.image!
+			
+			let backImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: koma.frame.size.width, height: koma.frame.size.height))
+			backImageView.image = UIImage(named: "orange_0")
+			koma.addSubview(backImageView)
+			
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) { 
+				let effectImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+				koma.addSubview(effectImageView)
+				effectImageView.center = CGPoint(x: koma.frame.size.width / 2, y: koma.frame.size.height / 2)
+				effectImageView.animationImages = [
+					UIImage(named: "cell_anime1")!,
+					UIImage(named: "cell_anime2")!,
+					UIImage(named: "cell_anime3")!,
+					UIImage(named: "cell_anime4")!,
+					UIImage(named: "cell_anime5")!,
+					UIImage(named: "cell_anime6")!,
+					UIImage(named: "cell_anime7")!,
+					UIImage(named: "cell_anime8")!,
+					UIImage(named: "cell_anime9")!,
+					UIImage(named: "cell_anime10")!,
+					UIImage(named: "cell_anime11")!,
+					UIImage(named: "cell_anime12")!,
+					UIImage(named: "cell_anime13")!,
+					UIImage(named: "cell_anime14")!,
+					UIImage(named: "cell_anime15")!,
+				]
+				
+				effectImageView.animationDuration = 0.5
+				effectImageView.animationRepeatCount = 1
+				//数字を乗せて拡大縮小アニメーション
+				let fontImageView =  UIImageView(frame: CGRect(x: 0, y: 0, width: koma.frame.size.width, height: koma.frame.size.height))
+				fontImageView.image = fontImage
+				koma.addSubview(fontImageView)
+				fontImageView.center = CGPoint(x: koma.frame.size.width / 2, y: koma.frame.size.height / 2)
+				UIView.animate(withDuration: 0.2, animations: { 
+					fontImageView.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+				}, completion: { (stop) in
+					UIView.animate(withDuration: 0.25, animations: { 
+						fontImageView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+					}, completion: { (stop) in
+					})
+				})
+				effectImageView.startAnimating()
+				
+				DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { 
+					fontImageView.removeFromSuperview()
+					effectImageView.removeFromSuperview()
+					backImageView.removeFromSuperview()
+				}
+			}
+		}
+	}
 	
 	//MARK: 編集（デバッグ）
 	@IBOutlet weak var editButton: UIButton!
@@ -342,8 +402,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				break
 			}
 			
-			
 			if let ward = hitWard, let info = infoText {
+				self.tableTapEffect(komas: [koma])	//エフェクト
 				self.answeBaseView.center = CGPoint(x: self.view.frame.size.width / 2, y: -(self.answeBaseView.frame.size.height / 2))
 				self.answeTitleLabel.text = ward.uppercased()
 				self.answeLabel.text = info
