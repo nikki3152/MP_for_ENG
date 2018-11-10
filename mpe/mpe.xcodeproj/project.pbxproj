@@ -54,6 +54,8 @@
 		54D9AEC620CF6200004FEBA2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54D9AEC520CF6200004FEBA2 /* InfoPlist.strings */; };
 		54F3A6D521955AD200A1E01F /* EditPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3A6D421955AD200A1E01F /* EditPickerView.swift */; };
 		54F3A6D721955B3800A1E01F /* EditPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F3A6D621955B3800A1E01F /* EditPickerView.xib */; };
+		54F3A6D92196C9F000A1E01F /* HitInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3A6D82196C9F000A1E01F /* HitInfoView.swift */; };
+		54F3A6DB2196CA0400A1E01F /* HitInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F3A6DA2196CA0400A1E01F /* HitInfoView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +108,8 @@
 		54D9AEC520CF6200004FEBA2 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		54F3A6D421955AD200A1E01F /* EditPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPickerView.swift; sourceTree = "<group>"; };
 		54F3A6D621955B3800A1E01F /* EditPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPickerView.xib; sourceTree = "<group>"; };
+		54F3A6D82196C9F000A1E01F /* HitInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitInfoView.swift; sourceTree = "<group>"; };
+		54F3A6DA2196CA0400A1E01F /* HitInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HitInfoView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 			children = (
 				54CFB3EA20DE294700057F08 /* GameViewController.storyboard */,
 				54CFB3E820DE293C00057F08 /* GameViewController.swift */,
+				54F3A6D82196C9F000A1E01F /* HitInfoView.swift */,
+				54F3A6DA2196CA0400A1E01F /* HitInfoView.xib */,
 				54433BDA2189D0C600CDBD3D /* EditViewController.swift */,
 				54F3A6D421955AD200A1E01F /* EditPickerView.swift */,
 				54F3A6D621955B3800A1E01F /* EditPickerView.xib */,
@@ -366,6 +372,7 @@
 				54140F1E212BAFBC007C753B /* FontCardView.xib in Resources */,
 				54D9AEBB20CF6186004FEBA2 /* Assets.xcassets in Resources */,
 				54D9AEB920CF6185004FEBA2 /* Main.storyboard in Resources */,
+				54F3A6DB2196CA0400A1E01F /* HitInfoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +391,7 @@
 				54CFB3E120DE229E00057F08 /* WaitingViewController.swift in Sources */,
 				54CFB40520DE389200057F08 /* DataAggregateViewController.swift in Sources */,
 				5489AF61212B010B00A7D275 /* MPEDataManager.swift in Sources */,
+				54F3A6D92196C9F000A1E01F /* HitInfoView.swift in Sources */,
 				54D9AEB620CF6185004FEBA2 /* ViewController.swift in Sources */,
 				54CFB40920DE39B300057F08 /* SoundViewController.swift in Sources */,
 				54CFB40120DE370A00057F08 /* SettingViewController.swift in Sources */,

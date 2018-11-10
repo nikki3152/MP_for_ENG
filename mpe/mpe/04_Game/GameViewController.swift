@@ -95,7 +95,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		self.answeBaseView.alpha = 0
     }
 	
 	override func viewWillLayoutSubviews() {
@@ -155,18 +154,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.remove()
 	}
 	
-	@IBOutlet weak var answeBaseView: UIView!
-	@IBOutlet weak var answeTitleLabel: UILabel!
-	@IBOutlet weak var answeLabel: UILabel!
 	
 	private func updateScrollInset() {
 		
-//		mainScrollView.contentInset = UIEdgeInsetsMake(
-//			max((mainScrollView.frame.height - self.gameTable.frame.height)/2, 0),
-//			max((mainScrollView.frame.width - self.gameTable.frame.width)/2, 0),
-//			0,
-//			0
-//		)
 	}
 	
 	func updateCardScroll() {
@@ -443,20 +433,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					komas.append(koma)
 				}
 				self.tableTapEffect(komas: komas)	//エフェクト
-				self.answeBaseView.center = CGPoint(x: self.view.frame.size.width / 2, y: -(self.answeBaseView.frame.size.height / 2))
-				self.answeTitleLabel.text = ward.uppercased()
-				self.answeLabel.text = info
-				UIView.animate(withDuration: 0.3, delay: 0, options: .curveLinear, animations: { 
-					self.answeBaseView.alpha = 1
-					self.answeBaseView.center = CGPoint(x: self.view.frame.size.width / 2, y: (self.answeBaseView.frame.size.height / 2))
-				}) { (stop) in
-					UIView.animate(withDuration: 0.3, delay: 1.8, options: .curveLinear, animations: { 
-						self.answeBaseView.alpha = 0
-						self.answeBaseView.center = CGPoint(x: self.view.frame.size.width / 2, y: -(self.answeBaseView.frame.size.height / 2))
-					}) { (stop) in
-						
-					}
-				}
+				
+				let hitView = HitInfoView.hitInfoView()
+				hitView.open(title: ward.uppercased(), info: info, parent: self.view)
 			}
 		}
 	}

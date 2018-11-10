@@ -134,35 +134,11 @@
                                     <action selector="editButtonAction:" destination="vVe-zF-H2F" eventType="touchUpInside" id="aKa-f9-KYw"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MWa-mH-Nxh">
-                                <rect key="frame" x="15" y="0.0" width="538" height="65"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="O2U-tQ-oCX">
-                                        <rect key="frame" x="8" y="14" width="73" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="e8k-0L-zjq">
-                                        <rect key="frame" x="89" y="14" width="441" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.74853515625" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iap-VV-fMB"/>
                     </view>
                     <connections>
-                        <outlet property="answeBaseView" destination="MWa-mH-Nxh" id="iBa-IX-rTd"/>
-                        <outlet property="answeLabel" destination="e8k-0L-zjq" id="i0S-g8-cQ0"/>
-                        <outlet property="answeTitleLabel" destination="O2U-tQ-oCX" id="3zW-pM-GBM"/>
                         <outlet property="backButton" destination="JSe-yj-Dfs" id="Qwk-Lt-hc6"/>
                         <outlet property="backImageView" destination="u3i-2l-VVr" id="SaV-Ad-ds0"/>
                         <outlet property="ballonImageView" destination="Cwi-8a-QQW" id="bCg-wo-ptL"/>
