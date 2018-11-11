@@ -67,8 +67,12 @@ struct QuestData {
 				self.tableType.append(" ")
 			}
 		}
-		self.questType = QuestType(rawValue: dict["questType"] as! Int)!
-		self.questData = dict["questData"] as! [String:Any]
+		if let type = dict["questType"] as? Int {
+			self.questType = QuestType(rawValue: type)!
+		}
+		if let data = dict["questData"] as? [String:Any] {
+			self.questData = data
+		}
 		self.cards = dict["cards"] as! [String]
 	}
 	init(w: Int, h: Int, table: [String], cards: [String], tableType: [String]?, questType: QuestType, questData: [String:Any]?) {
