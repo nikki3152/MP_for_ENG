@@ -8,7 +8,25 @@
 
 import UIKit
 
+enum QuestType: Int {
+	case makeWords			= 0 		//ことばを指定の数作る
+	case fillAll			= 1 		//全てのマスを埋める
+	case useBloks			= 2 		//ブロックを指定数使う
+	func info(value1: Int, value2: Int) -> String {
+		switch self {
+		case .makeWords:
+			return "英単語を\(value1)個作れ!"
+		case .fillAll:
+			return "全てのマスを埋めろ！"
+		case .useBloks:
+			return "\(value1)ブロックを使え！"
+		}
+	}
+}
+
 struct QuestData {
+	var questType: QuestType = .makeWords
+	var questData: [String:Any] = ["count":1]
 	var width: Int = 8
 	var height: Int = 8
 	var table: [String] = [
@@ -49,9 +67,11 @@ struct QuestData {
 				self.tableType.append(" ")
 			}
 		}
+		self.questType = QuestType(rawValue: dict["questType"] as! Int)!
+		self.questData = dict["questData"] as! [String:Any]
 		self.cards = dict["cards"] as! [String]
 	}
-	init(w: Int, h: Int, table: [String], cards: [String], tableType: [String]?) {
+	init(w: Int, h: Int, table: [String], cards: [String], tableType: [String]?, questType: QuestType, questData: [String:Any]?) {
 		self.width = w
 		self.height = h
 		self.table = table
@@ -64,6 +84,10 @@ struct QuestData {
 				self.tableType.append(" ")
 			}
 		}
+		self.questType = questType
+		if let data = questData {
+			self.questData = data
+		}
 	}
 	func dict() -> [String:Any] {
 		
@@ -73,6 +97,8 @@ struct QuestData {
 			"table":self.table,
 			"tableType":self.tableType,
 			"cards":self.cards,
+			"questType":self.questType.rawValue,
+			"questData":self.questData,
 		]
 		return dict
 	}
@@ -106,6 +132,10 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			self.updateCardScroll()
 			//ゲームテーブル
 			self.updateGametable()
+			//問題
+			self.updateQuestString()
+			//文字くんメッセージ
+			self.updateMojikunString()
 		}
 	}
 	
@@ -116,6 +146,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	@IBOutlet weak var questBaseView: UIView!
 	@IBOutlet weak var questBaseImageView: UIImageView!
 	@IBOutlet weak var questDisplayImageView: UIImageView!
+	var questMainLabel: TTTAttributedLabel!
 	
 	//テーブル
 	var gameTable: GameTableView!
@@ -141,6 +172,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	@IBOutlet weak var charaBaseView: UIView!
 	@IBOutlet weak var charaImageView: UIImageView!
 	@IBOutlet weak var ballonImageView: UIImageView!
+	@IBOutlet weak var ballonDisplayImageView: UIImageView!
+	var ballonMainLabel: TTTAttributedLabel!
+	
 	
 	//スコア
 	@IBOutlet weak var scoreBaseView: UIView!
@@ -201,6 +235,33 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.mainScrollView.contentOffset = CGPoint(x: size.width / 4, y: size.height / 4)
 		self.view.sendSubview(toBack: self.mainScrollView)
 		self.view.sendSubview(toBack: self.backImageView)
+	}
+	
+	func updateQuestString() {
+		
+		self.questMainLabel?.removeFromSuperview()
+		var val: Int = 0
+		if let v = self.questData.questData["count"] as? Int {
+			val = v
+		}
+		let qText = self.questData.questType.info(value1: val, value2: 0)
+		let qLabel = self.makeVerticalLabel(size: self.questDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 16), text: qText)
+		qLabel.textAlignment = .left
+		qLabel.numberOfLines = 2
+		self.questDisplayImageView.addSubview(qLabel)
+		qLabel.center = CGPoint(x: self.questDisplayImageView.frame.size.width / 2, y: self.questDisplayImageView.frame.size.height / 2)
+		self.questMainLabel = qLabel
+	}
+	
+	func updateMojikunString() {
+		
+		self.ballonMainLabel?.removeFromSuperview()
+		let bText = "もじぴったん！"
+		let bLabel = self.makeVerticalLabel(size: self.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 14), text: bText)
+		bLabel.textAlignment = .left
+		self.ballonDisplayImageView.addSubview(bLabel)
+		bLabel.center = CGPoint(x: self.ballonDisplayImageView.frame.size.width / 2, y: self.ballonDisplayImageView.frame.size.height / 2)
+		self.ballonMainLabel = bLabel
 	}
 	
 	//横方向の単語検索
@@ -347,10 +408,31 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			self.updateCardScroll()
 			//ゲームテーブル
 			self.updateGametable()
+			//問題
+			self.updateQuestString()
+			//文字くんメッセージ
+			self.updateMojikunString()
 		}
 	}
 	
 	
+	func makeVerticalLabel(size: CGSize, font: UIFont, text: String?) -> TTTAttributedLabel {
+		
+		let label: TTTAttributedLabel = TTTAttributedLabel(frame: CGRect(x: 0, y: 0, width: size.height, height: size.width))
+		label.backgroundColor = UIColor.clear
+		label.textColor = UIColor.black
+		label.numberOfLines = 0
+		label.font = font
+		label.textAlignment = .center
+		label.contentScaleFactor = 0.5
+		let angle = Double.pi / 2
+		label.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+		label.setText(text) { (mutableAttributedString) -> NSMutableAttributedString? in
+			mutableAttributedString?.addAttribute(NSAttributedStringKey(rawValue: kCTVerticalFormsAttributeName as String as String), value: true, range: NSMakeRange(0,(mutableAttributedString?.length)!))
+			return mutableAttributedString
+		}
+		return label
+	}
 	
 	//MARK:- FontCardViewDelegate
 	

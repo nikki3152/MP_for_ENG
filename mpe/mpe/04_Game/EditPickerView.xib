@@ -35,7 +35,7 @@
                             </connections>
                         </pickerView>
                         <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rK3-yk-JAs">
-                            <rect key="frame" x="332" y="55" width="335" height="162"/>
+                            <rect key="frame" x="333" y="55" width="334" height="162"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>

@@ -176,6 +176,19 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 		}
 	}
 	
+	//MARK: クリア条件
+	@IBOutlet weak var conditionsButton: UIButton!
+	@IBAction func conditionsButtonAction(_ sender: Any) {
+		
+		let picker = ConditionsPickerView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+		self.view.addSubview(picker)
+		picker.leftPicker.selectRow(self.questData.questType.rawValue, inComponent: 0, animated: false)
+		picker.updateRightPicker(row: self.questData.questType.rawValue)
+		picker.handler = {(type, data) in
+			self.questData.questType = QuestType(rawValue: type)!
+			self.questData.questData = data
+		}
+	}
 	
 	
 	//MARK: 手札
@@ -240,6 +253,7 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 			self.deleteButton.alpha = 0.25
 		}
 	}
+	
 	
 	
 	func update() {

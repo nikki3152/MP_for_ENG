@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vVe-zF-H2F">
-    <device id="retina4_0" orientation="landscape">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,26 +15,30 @@
             <objects>
                 <viewController storyboardIdentifier="GameView" id="vVe-zF-H2F" customClass="GameViewController" customModule="mpe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9tw-X6-JQz">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stage_01" translatesAutoresizingMaskIntoConstraints="NO" id="u3i-2l-VVr">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="Epb-1z-iO6">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="293"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="348"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="vVe-zF-H2F" id="bah-w7-etG"/>
                                 </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vbm-bN-Ql4">
-                                <rect key="frame" x="452" y="48" width="120" height="258"/>
+                                <rect key="frame" x="551" y="103" width="120" height="258"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="char_fukidashi" translatesAutoresizingMaskIntoConstraints="NO" id="Cwi-8a-QQW">
                                         <rect key="frame" x="8" y="18" width="102" height="145"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sGA-J1-tgK">
+                                        <rect key="frame" x="32" y="32" width="58" height="102"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mojikun_a_01" translatesAutoresizingMaskIntoConstraints="NO" id="hlP-yQ-Ocs">
@@ -44,15 +48,15 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1cO-p3-EVK">
-                                <rect key="frame" x="13" y="48" width="71" height="271"/>
+                                <rect key="frame" x="13" y="48" width="84" height="326"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quest_base" translatesAutoresizingMaskIntoConstraints="NO" id="tae-oi-Zh4">
-                                        <rect key="frame" x="4" y="0.0" width="64" height="271"/>
+                                        <rect key="frame" x="4" y="0.0" width="77" height="326"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ViA-KF-CoJ">
-                                        <rect key="frame" x="17" y="45" width="38" height="195"/>
+                                        <rect key="frame" x="13" y="49" width="67" height="242"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                 </subviews>
@@ -67,7 +71,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SsC-t5-QhI">
-                                <rect key="frame" x="443" y="35" width="123" height="43"/>
+                                <rect key="frame" x="542" y="34" width="123" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyU-WO-WkY">
@@ -100,7 +104,7 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddX-NF-YT9">
-                                <rect key="frame" x="84" y="269" width="400" height="50"/>
+                                <rect key="frame" x="134" y="324" width="400" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQv-xA-cRO">
@@ -126,7 +130,7 @@
                                 </subviews>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLx-ej-Tbt">
-                                <rect key="frame" x="518" y="8" width="46" height="30"/>
+                                <rect key="frame" x="617" y="8" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="編集"/>
@@ -141,6 +145,7 @@
                     <connections>
                         <outlet property="backButton" destination="JSe-yj-Dfs" id="Qwk-Lt-hc6"/>
                         <outlet property="backImageView" destination="u3i-2l-VVr" id="SaV-Ad-ds0"/>
+                        <outlet property="ballonDisplayImageView" destination="sGA-J1-tgK" id="hUx-Q4-dy9"/>
                         <outlet property="ballonImageView" destination="Cwi-8a-QQW" id="bCg-wo-ptL"/>
                         <outlet property="cardBaseView" destination="ddX-NF-YT9" id="mkG-i0-IgS"/>
                         <outlet property="cardLeftButton" destination="XQv-xA-cRO" id="abu-zA-JOQ"/>
@@ -158,25 +163,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhC-Eo-4Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-63.380281690140848" y="157.5"/>
+            <point key="canvasLocation" x="-63.418290854572717" y="156"/>
         </scene>
         <!--Edit View Controller-->
         <scene sceneID="zmU-fU-cL1">
             <objects>
                 <viewController storyboardIdentifier="EditView" id="Heo-wK-58r" customClass="EditViewController" customModule="mpe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="keu-JE-8p7">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d4O-H9-BKf">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="355"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="Heo-wK-58r" id="tHs-KQ-1EG"/>
                                 </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EOr-BW-KMG">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAR-6P-UX2">
@@ -202,7 +207,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGq-oh-OK7">
-                                        <rect key="frame" x="501" y="5" width="59" height="34"/>
+                                        <rect key="frame" x="600" y="5" width="59" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="完了">
@@ -235,7 +240,7 @@
                                         </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="znw-1t-yWt">
-                                        <rect key="frame" x="308" y="9" width="185" height="29"/>
+                                        <rect key="frame" x="407" y="9" width="185" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <segments>
                                             <segment title="N"/>
@@ -245,16 +250,27 @@
                                             <segment title="TW"/>
                                         </segments>
                                     </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htN-tW-un8">
+                                        <rect key="frame" x="322" y="5" width="77" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="条件">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="conditionsButtonAction:" destination="Heo-wK-58r" eventType="touchUpInside" id="wVZ-se-qQ5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4QA-xJ-Z9E">
-                                <rect key="frame" x="74" y="264" width="363" height="50"/>
+                                <rect key="frame" x="74" y="319" width="462" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.99124461206896552" blue="1" alpha="0.49640447443181818" colorSpace="calibratedRGB"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y74-fL-Cnf">
-                                <rect key="frame" x="12" y="241" width="54" height="34"/>
+                                <rect key="frame" x="12" y="296" width="54" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="追加"/>
@@ -263,7 +279,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9v-zT-55T">
-                                <rect key="frame" x="12" y="278" width="54" height="34"/>
+                                <rect key="frame" x="12" y="333" width="54" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="削除"/>
@@ -272,7 +288,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kXQ-NI-Hwe">
-                                <rect key="frame" x="445" y="44" width="123" height="276"/>
+                                <rect key="frame" x="544" y="44" width="123" height="331"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -289,6 +305,7 @@
                         <outlet property="cardScrolliew" destination="4QA-xJ-Z9E" id="ddP-IH-fsD"/>
                         <outlet property="clearButton" destination="hVs-Vk-pwe" id="EWm-TM-fOt"/>
                         <outlet property="closeButton" destination="2Y9-ci-ibg" id="ZdU-zF-6T4"/>
+                        <outlet property="conditionsButton" destination="htN-tW-un8" id="J3z-HJ-Lzd"/>
                         <outlet property="deleteButton" destination="c9v-zT-55T" id="WuL-FH-GAz"/>
                         <outlet property="doneButton" destination="mGq-oh-OK7" id="ekE-uK-MhT"/>
                         <outlet property="loadButton" destination="nHn-he-koe" id="dVZ-mr-DEr"/>
@@ -307,7 +324,7 @@
             <objects>
                 <viewController storyboardIdentifier="LoadView" id="uwL-PB-mgW" customClass="LoadViewController" customModule="mpe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J6o-NB-BLf">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1G-E8-n9O">
@@ -322,7 +339,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMS-n8-44r">
-                                <rect key="frame" x="8" y="281" width="64" height="30"/>
+                                <rect key="frame" x="8" y="336" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="共有">
@@ -333,7 +350,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ohg-EI-Wrd">
-                                <rect key="frame" x="0.0" y="47" width="568" height="226"/>
+                                <rect key="frame" x="0.0" y="47" width="667" height="281"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -342,14 +359,14 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="問題" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePK-RR-TBQ">
-                                <rect key="frame" x="253" y="9" width="62" height="32"/>
+                                <rect key="frame" x="253" y="9" width="161" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uam-OH-Hnm">
-                                <rect key="frame" x="509" y="9" width="46" height="30"/>
+                                <rect key="frame" x="608" y="9" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="編集">
@@ -360,7 +377,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jd7-MD-TrC">
-                                <rect key="frame" x="220" y="281" width="128" height="30"/>
+                                <rect key="frame" x="270" y="336" width="128" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <state key="normal" title="OK">
@@ -391,11 +408,11 @@
             <objects>
                 <viewController storyboardIdentifier="SaveView" id="Ays-n9-A6J" customClass="SaveViewController" customModule="mpe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fjZ-z8-Q7z">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xYX-3P-miF">
-                                <rect key="frame" x="20" y="3" width="528" height="119"/>
+                                <rect key="frame" x="70" y="3" width="528" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="保存する問題" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RU2-CG-vEG">
