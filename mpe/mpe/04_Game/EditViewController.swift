@@ -82,6 +82,8 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 		
 		self.addButton.isEnabled = false
 		self.addButton.alpha = 0.25
+		
+		self.updateInfo()
    }
 	
 	override func viewWillLayoutSubviews() {
@@ -96,6 +98,7 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	
 	@IBOutlet weak var mojiTableView: UITableView!
 	@IBOutlet weak var mainScrollView: UIScrollView!
+	@IBOutlet weak var infoLabel: UILabel!
 	
 	//MARK: 保存
 	@IBOutlet weak var saveButton: UIButton!
@@ -131,6 +134,7 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 				let filename = (path as NSString).lastPathComponent
 				let name = filename.split(separator: ".")[0]
 				self.questData.filename = String(name)
+				self.updateInfo()
 			} else {
 				print("問題読み込み失敗！")
 			}
@@ -180,6 +184,7 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 			self.questData.cards = []
 			
 			self.update()
+			
 		}
 	}
 	
@@ -192,6 +197,7 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 		picker.handler = {(type, data) in
 			self.questData.questType = QuestType(rawValue: type)!
 			self.questData.questData = data
+			self.updateInfo()
 		}
 		
 		
@@ -318,8 +324,27 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 		self.mainScrollView.contentOffset = CGPoint(x: size.width / 4, y: size.height / 4)
 		self.view.sendSubview(toBack: self.mainScrollView)
 		
+		self.updateInfo()
 	}
 	
+	
+	func updateInfo() {
+		
+		var count: Int = 0
+		if let v = self.questData.questData["count"] as? Int {
+			count = v
+		}
+		var words: Int = 0
+		if let v = self.questData.questData["words"] as? Int {
+			words = v
+		}
+		var font: String = ""
+		if let v = self.questData.questData["font"] as? String {
+			font = v
+		}
+		let text = self.questData.questType.info(count: count, words: words, font: font)
+		self.infoLabel.text = text
+	}
 	
 	//MARK:- UIScrollViewDelegate
 	
