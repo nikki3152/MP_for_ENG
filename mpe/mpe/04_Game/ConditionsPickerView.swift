@@ -11,6 +11,7 @@ import UIKit
 typealias ConditionsPickerViewHandler = ((Int, [String:Any]) -> Void)
 
 class ConditionsPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
+	
 
 	var handler: ConditionsPickerViewHandler?
 	
@@ -47,12 +48,28 @@ class ConditionsPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate
 	@IBAction func okAction(_ sender: Any) {
 		
 		let type = self.leftPicker.selectedRow(inComponent: 0)
-		var data: [String:Any]
-		if self.rightItemList.count == 0 {
-			data = [:]
-		} else {
-			data = ["count":self.rightItemList[self.rightPicker.selectedRow(inComponent: 0)]]
+		var data: [String:Any] = [:]
+		if type == 1 || type == 2 {
+			
 		}
+		else if type == 3  {
+			let row1 = self.rightPicker.selectedRow(inComponent: 0)
+			let val1 = self.rightItemList1[row1]
+			let row2 = self.rightPicker.selectedRow(inComponent: 1)
+			let val2 = self.rightItemList2[row2]
+			data = ["words":val1, "count":val2]
+		} else if type == 5 {
+			let row1 = self.rightPicker.selectedRow(inComponent: 0)
+			let val1 = self.rightItemList1[row1]
+			let row2 = self.rightPicker.selectedRow(inComponent: 1)
+			let val2 = self.rightItemList2[row2]
+			data = ["font":val1, "count":val2]
+		} else {
+			let row1 = self.rightPicker.selectedRow(inComponent: 0)
+			let val = self.rightItemList1[row1]
+			data = ["count":val]
+		}
+		print("type:\(type) data:\(data)")
 		self.handler?(type, data)
 		self.handler = nil
 		self.removeFromSuperview()
@@ -61,17 +78,41 @@ class ConditionsPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate
 	
 	func updateRightPicker(row: Int) {
 		
+		self.rightItemList1 = []
+		self.rightItemList2 = []
 		if row == 0 {
-			//ことばを指定の数作る
-			self.rightItemList = [1,2,3,4,5,6,7,8,9,10]
+			//英単語を◯個作る
+			for i in 1 ... 99 {
+				self.rightItemList1.append(i)
+			}
 		}
 		else if row == 1 {
 			//全てのマスを埋める
-			self.rightItemList = []
 		}
 		else if row == 2 {
-			//ブロックを指定数使う
-			self.rightItemList = [1,2,3,4,5,6,7,8,9,10]
+			//すべてのアルファベットを使う
+		}
+		else if row == 3 {
+			//◯字数以上の英単語を◯個作る
+			for i in 1 ... 15 {
+				self.rightItemList1.append(i)
+			}
+			for i in 1 ... 15 {
+				self.rightItemList2.append(i)
+			}
+		}
+		else if row == 4 {
+			//スコアを○点以上
+			for i in 1 ... 1000 {
+				self.rightItemList1.append(i * 1000)
+			}
+		}
+		else if row == 5 {
+			//◯がつく英単語を○個作る
+			self.rightItemList1 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+			for i in 1 ... 15 {
+				self.rightItemList2.append(i)
+			}
 		}
 		self.rightPicker.reloadAllComponents()
 	}
@@ -83,27 +124,45 @@ class ConditionsPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate
 		self.removeFromSuperview()
 	}
 	
+	let leftItemList: [String] = [
+		"英単語を◯個作る",
+		"全てのマスを埋める",
+		"すべてのアルファベットを使う",
+		"◯字数以上の英単語を◯個作る",
+		"スコアを○点以上",
+		"◯がつく英単語を○個作る",
+	]
+	var rightItemList1: [Any] = []
+	var rightItemList2: [Any] = []
+	
+	
 	//MARK: - UIPickerViewDataSource
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
 		
-		return 1
+		if pickerView.tag == 0 {
+			return 1
+		} else {
+			let row = self.leftPicker.selectedRow(inComponent: 0)
+			if row == 1 || row == 2 {
+				return 0
+			} else if row == 3 || row == 5 {
+				return 2
+			} else {
+				return 1
+			}
+		}
 	}
-	
-	let leftItemList: [String] = [
-		"英単語を指定の数作る",
-		"全てのマスを埋める",
-		"ブロックを指定数使う",
-	]
-	var rightItemList: [Int] = []
-	
-	
 	// returns the # of rows in each component..
 	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
 		
 		if pickerView.tag == 0 {
 			return self.leftItemList.count
 		} else {
-			return self.rightItemList.count
+			if component == 0 {
+				return self.rightItemList1.count
+			} else {
+				return self.rightItemList2.count
+			}
 		}
 	}
 	
@@ -117,8 +176,32 @@ class ConditionsPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate
 			let value = self.leftItemList[row]
 			text = "\(value)"
 		} else {
-			let value = self.rightItemList[row]
+			let row = self.rightPicker.selectedRow(inComponent: 0)
+			let value = self.rightItemList1[row]
 			text = "\(value)"
+			let row_left = self.leftPicker.selectedRow(inComponent: 0)
+			if row_left == 1 || row_left == 2 {
+				return nil
+			} else if row_left == 3 || row_left == 5 {
+				let row_right = self.rightPicker.selectedRow(inComponent: component)
+				if component == 0 {
+					if row_left == 5 {
+						let value = self.rightItemList1[row_right] as! String
+						text = "\(value)"
+					} else {
+						let value = self.rightItemList1[row_right] as! Int
+						text = "\(value)"
+					}
+				} else {
+					let value = self.rightItemList2[row_right] as! Int
+					text = "\(value)"
+				}
+			} else {
+				let row = self.rightPicker.selectedRow(inComponent: 0)
+				let value = self.rightItemList1[row]
+				text = "\(value)"
+			}
+			
 		}
 		return text
 	}

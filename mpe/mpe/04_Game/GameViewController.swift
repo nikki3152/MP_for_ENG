@@ -9,22 +9,38 @@
 import UIKit
 
 enum QuestType: Int {
-	case makeWords			= 0 		//ことばを指定の数作る
-	case fillAll			= 1 		//全てのマスを埋める
-	case useBloks			= 2 		//ブロックを指定数使う
-	func info(value1: Int, value2: Int) -> String {
+//	"英単語を◯個作る",
+//	"全てのマスを埋める",
+//	"すべてのアルファベットを使う",
+//	"◯字数以上の英単語を◯個作る",
+//	"スコアを○点以上",
+//	"◯がつく英単語を○個作る",
+	case makeWords				= 0 		//英単語を◯個作る
+	case fillAllCell			= 1 		//全てのマスを埋める
+	case useAllFont				= 2 		//すべてのアルファベットを使う
+	case makeWoredsCount		= 3 		//◯字数以上の英単語を◯個作る
+	case hiScore				= 4 		//スコアを○点以上
+	case useFontMakeCount		= 5 		//◯がつく英単語を○個作る
+	func info(count: Int, words: Int, font: String) -> String {
 		switch self {
 		case .makeWords:
-			return "英単語を\(value1)個作れ!"
-		case .fillAll:
+			return "英単語を\(count)個作れ!"
+		case .fillAllCell:
 			return "全てのマスを埋めろ！"
-		case .useBloks:
-			return "\(value1)ブロックを使え！"
+		case .useAllFont:
+			return "すべてのアルファベットを使え！"
+		case .makeWoredsCount:
+			return "\(words)字数以上の英単語を\(count)個作る"
+		case .hiScore:
+			return "スコアを\(count)点以上"
+		case .useFontMakeCount:
+			return "\(font)がつく英単語を\(count)個作れ！"
 		}
 	}
 }
 
 struct QuestData {
+	var filename: String = ""
 	var questType: QuestType = .makeWords
 	var questData: [String:Any] = ["count":1]
 	var width: Int = 8
@@ -244,11 +260,19 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	func updateQuestString() {
 		
 		self.questMainLabel?.removeFromSuperview()
-		var val: Int = 0
+		var count: Int = 0
 		if let v = self.questData.questData["count"] as? Int {
-			val = v
+			count = v
 		}
-		let qText = self.questData.questType.info(value1: val, value2: 0)
+		var words: Int = 0
+		if let v = self.questData.questData["words"] as? Int {
+			words = v
+		}
+		var font: String = ""
+		if let v = self.questData.questData["font"] as? String {
+			font = v
+		}
+		let qText = self.questData.questType.info(count: count, words: words, font: font)
 		let qLabel = self.makeVerticalLabel(size: self.questDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 16), text: qText)
 		qLabel.textAlignment = .left
 		qLabel.numberOfLines = 2

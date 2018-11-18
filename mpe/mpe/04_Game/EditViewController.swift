@@ -115,6 +115,8 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 				print("問題保存失敗！")
 			}
 		}
+		saveView.textField.text = self.questData.filename
+		
 	}
 	//MARK: 読み込み
 	@IBOutlet weak var loadButton: UIButton!
@@ -126,6 +128,9 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 			if let dic = NSDictionary(contentsOfFile: path) as? [String:Any] {
 				self.questData = QuestData(dict: dic)
 				self.update()
+				let filename = (path as NSString).lastPathComponent
+				let name = filename.split(separator: ".")[0]
+				self.questData.filename = String(name)
 			} else {
 				print("問題読み込み失敗！")
 			}
@@ -167,8 +172,10 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 			self.questData.height = h
 			let count = w * h
 			self.questData.table = []
+			self.questData.tableType = []
 			for _ in 0 ..< count {
 				self.questData.table.append(" ")
+				self.questData.tableType.append(" ")
 			}
 			self.questData.cards = []
 			
@@ -182,11 +189,42 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 		
 		let picker = ConditionsPickerView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
 		self.view.addSubview(picker)
-		picker.leftPicker.selectRow(self.questData.questType.rawValue, inComponent: 0, animated: false)
-		picker.updateRightPicker(row: self.questData.questType.rawValue)
 		picker.handler = {(type, data) in
 			self.questData.questType = QuestType(rawValue: type)!
 			self.questData.questData = data
+		}
+		
+		
+		let type = self.questData.questType.rawValue
+		picker.leftPicker.selectRow(type, inComponent: 0, animated: false)
+		picker.updateRightPicker(row: type)
+		if type == 0 {
+			let count = self.questData.questData["count"] as! Int
+			picker.rightPicker.selectRow(count - 1, inComponent: 0, animated: false)
+		}
+		else if type == 3 {
+			let words = self.questData.questData["words"] as! Int
+			let count = self.questData.questData["count"] as! Int
+			picker.rightPicker.selectRow(words - 1, inComponent: 0, animated: false)
+			picker.rightPicker.selectRow(count - 1, inComponent: 1, animated: false)
+		}
+		else if type == 4 {
+			let score = self.questData.questData["count"] as! Int / 1000
+			picker.rightPicker.selectRow(score - 1, inComponent: 0, animated: false)
+		}
+		else if type == 5 {
+			var fontIndex = 0
+			let fonts = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+			let font = self.questData.questData["font"] as! String
+			for f in fonts {
+				if font == f {
+					break
+				}
+				fontIndex += 1
+			}
+			let count = self.questData.questData["count"] as! Int
+			picker.rightPicker.selectRow(fontIndex, inComponent: 0, animated: false)
+			picker.rightPicker.selectRow(count - 1, inComponent: 1, animated: false)
 		}
 	}
 	
