@@ -100,6 +100,8 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	@IBOutlet weak var mainScrollView: UIScrollView!
 	@IBOutlet weak var infoLabel: UILabel!
 	
+	@IBOutlet weak var cardTypeSegment: UISegmentedControl!
+	
 	//MARK: 保存
 	@IBOutlet weak var saveButton: UIButton!
 	@IBAction func saveButtonAction(_ sender: Any) {
@@ -254,6 +256,9 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 			self.cardScrolliew.addSubview(cardView)
 			//card1.backImageView.image = UIImage(named: "orange_\(i+1)")
 			cardView.center = CGPoint(x: (cardView.frame.size.width / 2) + (CGFloat(i) * cardView.frame.size.width), y: self.cardScrolliew.frame.size.height / 2)
+			if self.questData.wildCardLen > i {
+				cardView.isWildCard = true
+			}
 			self.cardViewList.append(cardView)
 		}
 		self.cardScrolliew.contentSize = CGSize(width: CGFloat(self.questData.cards.count) * 50, height: self.cardScrolliew.frame.size.height / 2)
@@ -268,19 +273,32 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	@IBOutlet weak var addButton: UIButton!
 	@IBAction func addButtonAction(_ sender: Any) {
 		
-		let moji = self.mojiList[self.mojiSelectIndex]
-		if moji != "table" && moji != "null" {
-			if let index = cardSelectIndex {
-				self.questData.cards.insert(moji, at: index)
+		if self.cardTypeSegment.selectedSegmentIndex == 0 {
+			//通常
+			let moji = self.mojiList[self.mojiSelectIndex]
+			if moji != "table" && moji != "null" {
+				if let index = cardSelectIndex {
+					self.questData.cards.insert(moji, at: index)
+					self.updateCardScroll()
+					let card = cardViewList[index]
+					card.isSelected = true
+					
+				} else {
+					self.questData.cards.append(moji)
+					self.updateCardScroll()
+					let x = self.cardScrolliew.contentSize.width - self.cardScrolliew.bounds.size.width
+					self.cardScrolliew.setContentOffset(CGPoint(x: x, y: 0), animated: true)
+				}
+			}
+		} else {
+			//ワイルドカード
+			let moji = self.mojiList[self.mojiSelectIndex]
+			if moji != "table" && moji != "null" {
+				self.questData.cards.insert(moji, at: 0)
+				self.questData.wildCardLen += 1
 				self.updateCardScroll()
-				let card = cardViewList[index]
+				let card = cardViewList[0]
 				card.isSelected = true
-				
-			} else {
-				self.questData.cards.append(moji)
-				self.updateCardScroll()
-				let x = self.cardScrolliew.contentSize.width - self.cardScrolliew.bounds.size.width
-				self.cardScrolliew.setContentOffset(CGPoint(x: x, y: 0), animated: true)
 			}
 		}
 		

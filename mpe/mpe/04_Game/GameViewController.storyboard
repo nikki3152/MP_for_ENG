@@ -288,7 +288,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kXQ-NI-Hwe">
-                                <rect key="frame" x="544" y="44" width="123" height="331"/>
+                                <rect key="frame" x="544" y="44" width="123" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -303,6 +303,21 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jdv-eg-4Xs">
+                                <rect key="frame" x="544" y="314" width="123" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="udx-JL-Npb">
+                                        <rect key="frame" x="8" y="16" width="107" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Normal"/>
+                                            <segment title="WC"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.50196078431372548" green="0.71764705882352942" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="jid-te-Oct"/>
@@ -310,6 +325,7 @@
                     <connections>
                         <outlet property="addButton" destination="Y74-fL-Cnf" id="fUd-H8-DaZ"/>
                         <outlet property="cardScrolliew" destination="4QA-xJ-Z9E" id="ddP-IH-fsD"/>
+                        <outlet property="cardTypeSegment" destination="udx-JL-Npb" id="WuM-mX-gAx"/>
                         <outlet property="clearButton" destination="hVs-Vk-pwe" id="EWm-TM-fOt"/>
                         <outlet property="closeButton" destination="2Y9-ci-ibg" id="ZdU-zF-6T4"/>
                         <outlet property="conditionsButton" destination="htN-tW-un8" id="J3z-HJ-Lzd"/>

@@ -41,6 +41,7 @@ enum QuestType: Int {
 
 struct QuestData {
 	var filename: String = ""
+	var questName: String = ""
 	var questType: QuestType = .makeWords
 	var questData: [String:Any] = ["count":1]
 	var width: Int = 8
@@ -68,6 +69,7 @@ struct QuestData {
 		" "," "," "," "," "," "," "," ",
 		" "," "," "," "," "," "," "," ",]
 	var cards: [String] = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+	var wildCardLen: Int = 0
 	init() {
 		
 	}
@@ -89,7 +91,13 @@ struct QuestData {
 		if let data = dict["questData"] as? [String:Any] {
 			self.questData = data
 		}
+		if let name = dict["questData"] as? String {
+			self.questName = name
+		}
 		self.cards = dict["cards"] as! [String]
+		if let wildCardLen = dict["wildCardLen"] as? Int {
+			self.wildCardLen = wildCardLen
+		}
 	}
 	init(w: Int, h: Int, table: [String], cards: [String], tableType: [String]?, questType: QuestType, questData: [String:Any]?) {
 		self.width = w
@@ -119,6 +127,8 @@ struct QuestData {
 			"cards":self.cards,
 			"questType":self.questType.rawValue,
 			"questData":self.questData,
+			"questName":self.questName,
+			"wildCardLen":self.wildCardLen,
 		]
 		return dict
 	}
@@ -227,6 +237,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			self.cardScrolliew.addSubview(cardView)
 			//card1.backImageView.image = UIImage(named: "orange_\(i+1)")
 			cardView.center = CGPoint(x: (cardView.frame.size.width / 2) + (CGFloat(i) * cardView.frame.size.width), y: self.cardScrolliew.frame.size.height / 2)
+			if self.questData.wildCardLen > i {
+				cardView.isWildCard = true
+			}
 			self.cardViewList.append(cardView)
 		}
 		self.cardScrolliew.contentSize = CGSize(width: CGFloat(self.questData.cards.count) * 50, height: self.cardScrolliew.frame.size.height / 2)
@@ -503,13 +516,15 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			let moji = self.questData.cards[index]
 			koma.setFont(moji: moji, type: nil)
 			self.questData.table[koma.tag] = moji
-			self.questData.cards.remove(at: index)
-			for v in self.cardScrolliew.subviews {
-				v.removeFromSuperview()
+			if self.questData.wildCardLen < index + 1 {
+				//ワイルドカード使用
+				self.questData.cards.remove(at: index)
+				for v in self.cardScrolliew.subviews {
+					v.removeFromSuperview()
+				}
+				self.updateCardScroll()
+				self.cardSelectIndex = nil
 			}
-			self.updateCardScroll()
-			self.cardSelectIndex = nil
-			
 			var hitWard: String?
 			var infoText: String?
 			var list: [[String:[String]]] = []
