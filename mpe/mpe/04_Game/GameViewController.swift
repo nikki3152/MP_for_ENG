@@ -140,6 +140,46 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	var questData: QuestData!
 	var cardSelectIndex: Int!
 	
+	var _questCount: Int = 2
+	var questCount: Int {
+		get {
+			return _questCount
+		}
+		set {
+//			case makeWords				= 0 		//英単語を◯個作る
+//			case fillAllCell			= 1 		//全てのマスを埋める
+//			case useAllFont				= 2 		//すべてのアルファベットを使う
+//			case makeWoredsCount		= 3 		//◯字数以上の英単語を◯個作る
+//			case hiScore				= 4 		//スコアを○点以上
+//			case useFontMakeCount		= 5 		//◯がつく英単語を○個作る
+			_questCount = newValue
+			self.questSubLabel?.removeFromSuperview()
+			var unit: String = ""
+			if self.questData.questType == .fillAllCell {
+				unit = "マス"
+			}
+			else if self.questData.questType == .hiScore {
+				unit = "点"
+			}
+			else {
+				unit = "個"
+			}
+			let qTextSub = "残り\(_questCount)\(unit)"
+			let qSubLabel = self.makeVerticalLabel(size: self.questDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 16), text: qTextSub)
+			qSubLabel.textAlignment = .left
+			qSubLabel.numberOfLines = 1
+			self.questDisplay2ImageView.addSubview(qSubLabel)
+			qSubLabel.center = CGPoint(x: self.questDisplayImageView.frame.size.width / 2, y: self.questDisplayImageView.frame.size.height / 2)
+			self.questSubLabel = qSubLabel
+			
+			if _questCount == 0 {
+				//クリア
+				
+				
+			}
+		}
+	}
+	
 	class func gameViewController(questData: QuestData) -> GameViewController {
 		
 		let storyboard = UIStoryboard(name: "GameViewController", bundle: nil)
@@ -176,7 +216,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	@IBOutlet weak var questBaseView: UIView!
 	@IBOutlet weak var questBaseImageView: UIImageView!
 	@IBOutlet weak var questDisplayImageView: UIImageView!
+	@IBOutlet weak var questDisplay2ImageView: UIImageView!
 	var questMainLabel: TTTAttributedLabel!
+	var questSubLabel: TTTAttributedLabel!
 	
 	//テーブル
 	var gameTable: GameTableView!
@@ -292,6 +334,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.questDisplayImageView.addSubview(qLabel)
 		qLabel.center = CGPoint(x: self.questDisplayImageView.frame.size.width / 2, y: self.questDisplayImageView.frame.size.height / 2)
 		self.questMainLabel = qLabel
+		
+		self.questCount = count
+		
 	}
 	
 	func updateMojikunString() {
@@ -561,6 +606,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				
 				let hitView = HitInfoView.hitInfoView()
 				hitView.open(title: ward.uppercased(), info: info, parent: self.view)
+				
+				self.questCount -= 1
 			}
 		}
 	}

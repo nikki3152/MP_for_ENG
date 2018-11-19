@@ -56,15 +56,19 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ViA-KF-CoJ">
-                                        <rect key="frame" x="13" y="49" width="67" height="242"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <rect key="frame" x="44" y="49" width="31" height="242"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="72F-JO-kSd">
+                                        <rect key="frame" x="20" y="142" width="28" height="157"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                     </imageView>
                                 </subviews>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-yj-Dfs">
-                                <rect key="frame" x="15" y="8" width="40" height="40"/>
+                                <rect key="frame" x="15" y="6" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="bt_stop"/>
+                                <state key="normal" backgroundImage="bt_back"/>
                                 <state key="highlighted" backgroundImage="bt_stop_tap"/>
                                 <connections>
                                     <action selector="backButtonAction:" destination="vVe-zF-H2F" eventType="touchUpInside" id="Ucx-x5-E98"/>
@@ -157,6 +161,7 @@
                         <outlet property="mainScrollView" destination="Epb-1z-iO6" id="Y1N-Po-MOg"/>
                         <outlet property="questBaseImageView" destination="tae-oi-Zh4" id="PxA-Ur-ADd"/>
                         <outlet property="questBaseView" destination="1cO-p3-EVK" id="tl5-37-OX9"/>
+                        <outlet property="questDisplay2ImageView" destination="72F-JO-kSd" id="bLf-Ue-gL3"/>
                         <outlet property="questDisplayImageView" destination="ViA-KF-CoJ" id="R2U-jV-95i"/>
                         <outlet property="scoreBaseView" destination="SsC-t5-QhI" id="yXt-ji-boF"/>
                     </connections>
@@ -502,7 +507,7 @@
     </scenes>
     <resources>
         <image name="0" width="80" height="80"/>
-        <image name="bt_stop" width="120" height="120"/>
+        <image name="bt_back" width="28" height="33"/>
         <image name="bt_stop_tap" width="120" height="120"/>
         <image name="bt_x" width="32" height="32"/>
         <image name="char_fukidashi" width="300" height="603"/>
