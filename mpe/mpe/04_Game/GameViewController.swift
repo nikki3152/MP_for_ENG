@@ -206,6 +206,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			self.updateQuestString()
 			//文字くんメッセージ
 			self.updateMojikunString()
+			
+			if UIDevice.current.userInterfaceIdiom == .phone {
+				let size = UIScreen.main.bounds
+				if size.width >= 812 {
+					self.cardBaseView.center = CGPoint(x: self.cardBaseView.center.x, y: self.cardBaseView.center.y - 22)
+				}
+			}
 		}
 	}
 	
