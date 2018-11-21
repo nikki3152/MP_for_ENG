@@ -46,6 +46,8 @@
 		54CFB40B20DE39D400057F08 /* SoundViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB40A20DE39D400057F08 /* SoundViewController.storyboard */; };
 		54CFB40D20DE3B1F00057F08 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB40C20DE3B1F00057F08 /* PurchaseViewController.swift */; };
 		54CFB40F20DE3B3100057F08 /* PurchaseViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB40E20DE3B3100057F08 /* PurchaseViewController.storyboard */; };
+		54D03E0E21A4EF1D00FD1CC4 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D03E0D21A4EF1D00FD1CC4 /* TimePickerView.swift */; };
+		54D03E1021A4EF3100FD1CC4 /* TimePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D03E0F21A4EF3100FD1CC4 /* TimePickerView.xib */; };
 		54D9AEB420CF6185004FEBA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9AEB320CF6185004FEBA2 /* AppDelegate.swift */; };
 		54D9AEB620CF6185004FEBA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9AEB520CF6185004FEBA2 /* ViewController.swift */; };
 		54D9AEB920CF6185004FEBA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D9AEB720CF6185004FEBA2 /* Main.storyboard */; };
@@ -101,6 +103,8 @@
 		54CFB40A20DE39D400057F08 /* SoundViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SoundViewController.storyboard; sourceTree = "<group>"; };
 		54CFB40C20DE3B1F00057F08 /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		54CFB40E20DE3B3100057F08 /* PurchaseViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PurchaseViewController.storyboard; sourceTree = "<group>"; };
+		54D03E0D21A4EF1D00FD1CC4 /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
+		54D03E0F21A4EF3100FD1CC4 /* TimePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimePickerView.xib; sourceTree = "<group>"; };
 		54D9AEB020CF6185004FEBA2 /* mpe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mpe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D9AEB320CF6185004FEBA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54D9AEB520CF6185004FEBA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 				54433BDA2189D0C600CDBD3D /* EditViewController.swift */,
 				54F3A6E02197CDAF00A1E01F /* ConditionsPickerView.swift */,
 				54F3A6E22197CDC400A1E01F /* ConditionsPickerView.xib */,
+				54D03E0D21A4EF1D00FD1CC4 /* TimePickerView.swift */,
+				54D03E0F21A4EF3100FD1CC4 /* TimePickerView.xib */,
 				54F3A6D421955AD200A1E01F /* EditPickerView.swift */,
 				54F3A6D621955B3800A1E01F /* EditPickerView.xib */,
 				544271CD218C1CA800622897 /* SaveViewController.swift */,
@@ -372,6 +378,7 @@
 				54CFB3FB20DE335A00057F08 /* DictViewController.storyboard in Resources */,
 				54CFB3FF20DE361300057F08 /* CustomViewController.storyboard in Resources */,
 				54CFB40720DE38B300057F08 /* DataAggregateViewController.storyboard in Resources */,
+				54D03E1021A4EF3100FD1CC4 /* TimePickerView.xib in Resources */,
 				54CFB40F20DE3B3100057F08 /* PurchaseViewController.storyboard in Resources */,
 				54140F26212BB3EF007C753B /* TableKomaView.xib in Resources */,
 				544271CA218BCC6F00622897 /* GameTableView-15.xib in Resources */,
@@ -412,6 +419,7 @@
 				54CFB40120DE370A00057F08 /* SettingViewController.swift in Sources */,
 				54F3A6E12197CDAF00A1E01F /* ConditionsPickerView.swift in Sources */,
 				54CFB3FD20DE360700057F08 /* CustomViewController.swift in Sources */,
+				54D03E0E21A4EF1D00FD1CC4 /* TimePickerView.swift in Sources */,
 				54CFB3DF20DE1F0B00057F08 /* BaseViewController.swift in Sources */,
 				5489AF5F212B00B500A7D275 /* DataManager.swift in Sources */,
 				54140F20212BB2F6007C753B /* GameTableView.swift in Sources */,

@@ -42,6 +42,7 @@ enum QuestType: Int {
 struct QuestData {
 	var filename: String = ""
 	var questName: String = ""
+	var time: Double = 0
 	var questType: QuestType = .makeWords
 	var questData: [String:Any] = ["count":1]
 	var width: Int = 8
@@ -91,8 +92,11 @@ struct QuestData {
 		if let data = dict["questData"] as? [String:Any] {
 			self.questData = data
 		}
-		if let name = dict["questData"] as? String {
+		if let name = dict["questName"] as? String {
 			self.questName = name
+		}
+		if let time = dict["time"] as? Double {
+			self.time = time
 		}
 		self.cards = dict["cards"] as! [String]
 		if let wildCardLen = dict["wildCardLen"] as? Int {
@@ -129,6 +133,7 @@ struct QuestData {
 			"questData":self.questData,
 			"questName":self.questName,
 			"wildCardLen":self.wildCardLen,
+			"time":self.time,
 		]
 		return dict
 	}
@@ -349,9 +354,15 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	func updateMojikunString() {
 		
 		self.ballonMainLabel?.removeFromSuperview()
-		let bText = "もじぴったん！"
+		var bText: String
+		if self.questData.questName == "" {
+			bText = "もじぴったん"
+		} else {
+			bText = self.questData.questName 
+		}
 		let bLabel = self.makeVerticalLabel(size: self.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 14), text: bText)
-		bLabel.textAlignment = .left
+		bLabel.textAlignment = .center
+		bLabel.numberOfLines = 2
 		self.ballonDisplayImageView.addSubview(bLabel)
 		bLabel.center = CGPoint(x: self.ballonDisplayImageView.frame.size.width / 2, y: self.ballonDisplayImageView.frame.size.height / 2)
 		self.ballonMainLabel = bLabel

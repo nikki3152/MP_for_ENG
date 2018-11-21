@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewDelegate, FontCardViewDelegate, UITableViewDataSource, UITableViewDelegate {
+class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewDelegate, FontCardViewDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 	
 	var finishedHandler: ((_ questData: QuestData) -> Void)?
 	
@@ -92,6 +92,8 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 		if isLaunch == false {
 			isLaunch = true
 			self.update()
+			self.titleTextField.text = self.questData.questName
+			self.set(time: self.questData.time)
 		}
 	}
 	
@@ -99,8 +101,34 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	@IBOutlet weak var mojiTableView: UITableView!
 	@IBOutlet weak var mainScrollView: UIScrollView!
 	@IBOutlet weak var infoLabel: UILabel!
+	@IBOutlet weak var titleTextField: UITextField!
+	@IBOutlet weak var timeLabel: UILabel!
 	
 	@IBOutlet weak var cardTypeSegment: UISegmentedControl!
+	
+	func set(time: Double) {
+		
+		let t = Int(time)
+		let m = t / 60
+		let s = t - (m * 60)
+		let min = NSString(format: "%02d", m) 
+		let sec = NSString(format: "%02d", s) 
+		self.timeLabel.text = "\(min):\(sec)"
+	}
+	
+	//MARK: 時間
+	@IBOutlet weak var timeButton: UIButton!
+	@IBAction func timeButtonAction(_ sender: Any) {
+		
+		let picker = TimePickerView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+		self.view.addSubview(picker)
+		picker.handler = {(time) in
+			self.questData.time = time
+			self.set(time: time)
+		}
+		picker.set(time: self.questData.time)
+	}
+	
 	
 	//MARK: 保存
 	@IBOutlet weak var saveButton: UIButton!
@@ -133,6 +161,8 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 			if let dic = NSDictionary(contentsOfFile: path) as? [String:Any] {
 				self.questData = QuestData(dict: dic)
 				self.update()
+				self.titleTextField.text = self.questData.questName
+				self.set(time: self.questData.time)
 				let filename = (path as NSString).lastPathComponent
 				let name = filename.split(separator: ".")[0]
 				self.questData.filename = String(name)
@@ -155,6 +185,9 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	@IBOutlet weak var doneButton: UIButton!
 	@IBAction func doneButtonAction(_ sender: Any) {
 		
+		if let txt = self.titleTextField.text {
+			self.questData.questName = txt
+		}
 		self.finishedHandler?(self.questData)
 		self.finishedHandler = nil
 		self.dismiss(animated: true) { 
@@ -376,7 +409,12 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	}
 	
 	
-	
+	//MARK: - UITextFieldDelegate
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		
+		textField.resignFirstResponder()
+		return true
+	}
 	
 	//MARK:- FontCardViewDelegate
 	
