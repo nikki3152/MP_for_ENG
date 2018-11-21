@@ -106,15 +106,6 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	
 	@IBOutlet weak var cardTypeSegment: UISegmentedControl!
 	
-	func set(time: Double) {
-		
-		let t = Int(time)
-		let m = t / 60
-		let s = t - (m * 60)
-		let min = NSString(format: "%02d", m) 
-		let sec = NSString(format: "%02d", s) 
-		self.timeLabel.text = "\(min):\(sec)"
-	}
 	
 	//MARK: 時間
 	@IBOutlet weak var timeButton: UIButton!
@@ -127,6 +118,19 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 			self.set(time: time)
 		}
 		picker.set(time: self.questData.time)
+	}
+	func set(time: Double) {
+		
+		let t = Int(time)
+		if t == 0 {
+			self.timeLabel.text = "無制限"
+		} else {
+			let m = t / 60
+			let s = t - (m * 60)
+			let min = NSString(format: "%02d", m) 
+			let sec = NSString(format: "%02d", s) 
+			self.timeLabel.text = "\(min):\(sec)"
+		}
 	}
 	
 	
