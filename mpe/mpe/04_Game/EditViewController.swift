@@ -273,6 +273,19 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 		}
 	}
 	
+	//MARK: セリフ設定
+	@IBOutlet weak var messageButton: UIButton!
+	@IBAction func messageButtonAction(_ sender: Any) {
+		
+		let msgEdit = MessageEditViewController.messageEditViewController(messages: self.questData.messages)
+		self.present(msgEdit, animated: true, completion: nil)
+		msgEdit.handler = {(messages) in
+			self.questData.messages = messages
+		}
+	}
+	
+	
+	
 	
 	//MARK: 手札
 	var cardSelectIndex: Int!
@@ -315,11 +328,17 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 			let moji = self.mojiList[self.mojiSelectIndex]
 			if moji != "table" && moji != "null" {
 				if let index = cardSelectIndex {
-					self.questData.cards.insert(moji, at: index)
-					self.updateCardScroll()
-					let card = cardViewList[index]
-					card.isSelected = true
-					
+					if self.questData.wildCardLen > 0 && self.questData.wildCardLen >= index + 1 {
+						self.questData.cards.insert(moji, at: self.questData.wildCardLen)
+						self.updateCardScroll()
+						let card = cardViewList[index]
+						card.isSelected = true
+					} else {
+						self.questData.cards.insert(moji, at: index)
+						self.updateCardScroll()
+						let card = cardViewList[index]
+						card.isSelected = true
+					}
 				} else {
 					self.questData.cards.append(moji)
 					self.updateCardScroll()
@@ -345,6 +364,10 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	@IBAction func deleteButtonAction(_ sender: Any) {
 		
 		if let index = cardSelectIndex {
+			if self.questData.wildCardLen > index {
+				//ワイルドカード
+				self.questData.wildCardLen -= 1
+			}
 			self.questData.cards.remove(at: index)
 			self.updateCardScroll()
 			self.cardSelectIndex = nil

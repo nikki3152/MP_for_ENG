@@ -47,6 +47,7 @@ struct QuestData {
 	var questData: [String:Any] = ["count":1]
 	var width: Int = 8
 	var height: Int = 8
+	var messages: [String] = ["もじぴったん"]
 	var table: [String] = [
 		"0","0","0","0","0","0","0","0",
 		"0","0","0","0","0","0","0","0",
@@ -78,6 +79,9 @@ struct QuestData {
 		self.width = dict["width"] as! Int
 		self.height = dict["height"] as! Int
 		self.table = dict["table"] as! [String]
+		if let msgs = dict["messages"] as? [String] {
+			self.messages = msgs
+		}
 		if let type = dict["tableType"] as? [String] {
 			self.tableType = type
 		} else {
@@ -134,6 +138,7 @@ struct QuestData {
 			"questName":self.questName,
 			"wildCardLen":self.wildCardLen,
 			"time":self.time,
+			"messages":self.messages,
 		]
 		return dict
 	}
@@ -356,7 +361,11 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.ballonMainLabel?.removeFromSuperview()
 		var bText: String
 		if self.questData.questName == "" {
-			bText = "もじぴったん"
+			if self.questData.messages.count > 0 {
+				bText = self.questData.messages[0]
+			} else {
+				bText = ""
+			}
 		} else {
 			bText = self.questData.questName 
 		}

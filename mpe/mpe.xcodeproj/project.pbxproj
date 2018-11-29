@@ -13,6 +13,7 @@
 		54140F22212BB302007C753B /* GameTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54140F21212BB302007C753B /* GameTableView.xib */; };
 		54140F24212BB3E3007C753B /* TableKomaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F23212BB3E3007C753B /* TableKomaView.swift */; };
 		54140F26212BB3EF007C753B /* TableKomaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54140F25212BB3EF007C753B /* TableKomaView.xib */; };
+		542F441E21AF59D400C51AD6 /* MessageEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542F441D21AF59D400C51AD6 /* MessageEditViewController.swift */; };
 		544271CA218BCC6F00622897 /* GameTableView-15.xib in Resources */ = {isa = PBXBuildFile; fileRef = 544271C9218BCC6F00622897 /* GameTableView-15.xib */; };
 		544271CC218C196B00622897 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544271CB218C196B00622897 /* LoadViewController.swift */; };
 		544271CE218C1CA800622897 /* SaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544271CD218C1CA800622897 /* SaveViewController.swift */; };
@@ -70,6 +71,7 @@
 		54140F21212BB302007C753B /* GameTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableView.xib; sourceTree = "<group>"; };
 		54140F23212BB3E3007C753B /* TableKomaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableKomaView.swift; sourceTree = "<group>"; };
 		54140F25212BB3EF007C753B /* TableKomaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableKomaView.xib; sourceTree = "<group>"; };
+		542F441D21AF59D400C51AD6 /* MessageEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageEditViewController.swift; sourceTree = "<group>"; };
 		544271C9218BCC6F00622897 /* GameTableView-15.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GameTableView-15.xib"; sourceTree = "<group>"; };
 		544271CB218C196B00622897 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		544271CD218C1CA800622897 /* SaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				54F3A6D621955B3800A1E01F /* EditPickerView.xib */,
 				544271CD218C1CA800622897 /* SaveViewController.swift */,
 				544271CB218C196B00622897 /* LoadViewController.swift */,
+				542F441D21AF59D400C51AD6 /* MessageEditViewController.swift */,
 				54140F1B212BAFAB007C753B /* FontCardView.swift */,
 				54140F1D212BAFBC007C753B /* FontCardView.xib */,
 				54140F1F212BB2F6007C753B /* GameTableView.swift */,
@@ -433,6 +436,7 @@
 				54CFB3F120DE303800057F08 /* QuickQuestIntoroViewController.swift in Sources */,
 				54140F1C212BAFAB007C753B /* FontCardView.swift in Sources */,
 				54433BDB2189D0C600CDBD3D /* EditViewController.swift in Sources */,
+				542F441E21AF59D400C51AD6 /* MessageEditViewController.swift in Sources */,
 				54CFB3F520DE31CE00057F08 /* QuickQuestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
