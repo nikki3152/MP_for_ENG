@@ -104,4 +104,16 @@ class MPEDataManager: DataManager {
 		}
 		return ret
 	}
+	
+	func questList() -> [[String:String]] {
+		
+		var ret:  [[String:String]] = []
+		
+		if let path = Bundle.main.path(forResource: "QuestList", ofType: "plist") {
+			if let ary = NSArray(contentsOfFile: path) {
+				ret = ary as! [[String : String]]
+			}
+		}
+		return ret
+	}
 }

@@ -10,107 +10,38 @@ import UIKit
 
 class StageSelectViewController: BaseViewController {
 
-	let questDatas: [QuestData] = [
-		QuestData(),
-		QuestData(w: 8, h: 8, 
-				  table: [
-					" "," "," "," "," "," "," ","A",
-					"I","0","0","0","0","0","0","0",
-					" "," "," "," "," "," "," ","0",
-					"U","0","0","0","0","0","0","0",
-					" "," "," "," "," "," "," ","0",
-					"E","0","0","0","0","0","0","0",
-					" "," "," "," "," "," "," ","0",
-					"O","0","0","0","0","0","0","0",
-					], 
-				  cards: ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
-				  tableType: nil,
-				  questType: .makeWords,
-				  questData: ["count":2]),
-		QuestData(w: 8, h: 6, 
-				  table: [
-					" "," ","B","0","0","0"," "," ",
-					" "," "," "," "," ","0"," "," ",
-					"C","0","0"," "," ","0","0","B",
-					"T","0","0","0","0","0","0","0",
-					"T","0","0","0","0","0","0","0",
-					" ","0"," "," "," "," ","0"," ",
-					], 
-				  cards: ["A","C","C","I","I","K","K","N","R","S","U","U","X"],
-				  tableType: nil,
-				  questType: .makeWords,
-				  questData: ["count":2]),
-		QuestData(w: 7, h: 7, 
-				  table: [
-					" "," ","A","R","M"," "," ",
-					" "," ","L","E","G"," "," ",
-					" "," "," ","N"," "," "," ",
-					"0","0","F","E","H","0","0",
-					" "," ","O","E","A"," "," ",
-					" "," ","O"," ","N"," "," ",
-					" "," ","T"," ","D"," "," ",
-					], 
-				  cards: ["A","E","I","L","N","O","R","S","T","U","D","D","G","M","F","H"],
-				  tableType: nil,
-				  questType: .makeWords,
-				  questData: ["count":2]),
-		QuestData(w: 8, h: 9, 
-				  table: [
-					" ","A"," "," "," "," "," "," ",
-					" ","P","0","0","C","0"," ","B",
-					" ","0"," "," ","0"," "," ","0",
-					" ","0"," ","0","E","0","O","N",
-					" ","0"," "," ","0"," ","0","0",
-					"0"," "," "," ","0"," ","0","0",
-					"I"," "," "," ","0"," ","0","0",
-					"0"," "," "," "," "," ","0"," ",
-					"I"," ","G","0","0","0","E","0",
-					], 
-				  cards: ["A","E","E","G","H","H","K","L","L","M","M","N","N","P","P","R","S","W","Y"],
-				  tableType: nil,
-				  questType: .makeWords,
-				  questData: ["count":2]),
-		QuestData(w: 7, h: 7, 
-				  table: [
-					" ","0"," "," "," "," "," ",
-					"0","O","0"," "," ","0","M",
-					" ","0"," "," "," ","0","0",
-					" "," ","B","0","0","R","0",
-					" "," ","0"," "," ","0","0",
-					" "," ","0"," "," ","0","0",
-					" "," ","D"," "," "," ","0",
-					], 
-				  cards: ["A","C","D","E","F","G","H","I","K","N","O","P","R","S","U","W","X","Y"], 
-				  tableType: nil,
-				  questType: .makeWords,
-				  questData: ["count":2]),
-		QuestData(w: 15, h: 15, 
-				  table: [
-					" "," "," "," "," "," "," "," "," "," "," "," "," "," "," ",
-					" "," "," "," "," "," "," "," "," "," "," "," "," "," "," ",
-					" "," "," "," "," "," "," "," "," "," "," "," "," "," "," ",
-					" "," "," "," "," ","A"," "," "," "," "," "," "," "," "," ",
-					" "," "," "," "," ","P","0","0","C","0"," ","B"," "," "," ",
-					" "," "," "," "," ","0"," "," ","0"," "," ","0"," "," "," ",
-					" "," "," "," "," ","0"," ","0","E","0","O","N"," "," "," ",
-					" "," "," "," "," ","0"," "," ","0"," ","0","0"," "," "," ",
-					" "," "," "," ","0"," "," "," ","0"," ","0","0"," "," "," ",
-					" "," "," "," ","I"," "," "," ","0"," ","0","0"," "," "," ",
-					" "," "," "," ","0"," "," "," "," "," ","0"," "," "," "," ",
-					" "," "," "," ","I"," ","G","0","0","0","E","0"," "," "," ",
-					" "," "," "," "," "," "," "," "," "," "," "," "," "," "," ",
-					" "," "," "," "," "," "," "," "," "," "," "," "," "," "," ",
-					" "," "," "," "," "," "," "," "," "," "," "," "," "," "," ",
-					], 
-				  cards: ["A","E","E","G","H","H","K","L","L","M","M","N","N","P","P","R","S","W","Y"],
-				  tableType: nil,
-				  questType: .makeWords,
-				  questData: ["count":2]),
-		QuestData(),
-		QuestData(),
-		QuestData(),
-		QuestData(),
-	]
+	let dataMrg: MPEDataManager = MPEDataManager()
+	var questNames: [String] = []
+	var questDatas: [QuestData] = []
+	var startIndex: Int = 0
+	var _currentPage: Int = 1
+	var currentPage: Int {
+		get {
+			return _currentPage
+		}
+		set {
+			_currentPage = newValue
+			self.startIndex = (_currentPage - 1) * 10
+			for i in 0 ..< self.stageButtons.count {
+				let bt = self.stageButtons[i]
+				bt.setTitle("\(self.startIndex + i + 1)", for: .normal)
+			}
+			if _currentPage == 1 {
+				self.leftButton.isHidden = true
+				self.rightButton.isHidden = false
+			}
+			else if _currentPage == self.maxPage {
+				self.leftButton.isHidden = false
+				self.rightButton.isHidden = true
+			}
+			else {
+				self.leftButton.isHidden = false
+				self.rightButton.isHidden = false
+			}
+		}
+	}
+	var maxPage: Int = 0
+	
 	
 	class func stageSelectViewController() -> StageSelectViewController {
 		
@@ -121,9 +52,39 @@ class StageSelectViewController: BaseViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+		self.stageButtons = [
+			self.stageButton1,
+			self.stageButton2,
+			self.stageButton3,
+			self.stageButton4,
+			self.stageButton5,
+			self.stageButton6,
+			self.stageButton7,
+			self.stageButton8,
+			self.stageButton9,
+			self.stageButton10,
+		]
+		self.questDatas = []
+		let list = self.dataMrg.questList()
+		for dic in list {
+			let filename = dic["filename"]!
+			self.questNames.append(filename)
+			if let path = Bundle.main.path(forResource: filename, ofType: "plist") {
+				if let dic = NSDictionary(contentsOfFile: path) as? [String:Any] {
+					let questData = QuestData(dict: dic)
+					self.questDatas.append(questData)
+				}
+			}
+		}
+		self.maxPage = (self.questDatas.count / 10) + (self.questDatas.count % 10)
+		self.currentPage = 1
     }
+	
+	override func viewWillLayoutSubviews() {
+		super.viewWillLayoutSubviews()
+		
+		
+	}
 	
 	//戻る
 	@IBOutlet weak var backButton: UIButton!
@@ -132,7 +93,56 @@ class StageSelectViewController: BaseViewController {
 		self.remove()
 	}
 	
+	//左ボタン
+	@IBOutlet weak var leftButton: UIButton!
+	@IBAction func leftButtonAction(_ sender: UIButton) {
+		
+		sender.isUserInteractionEnabled = false
+		let x = self.buttonBaseView.center.x
+		UIView.animate(withDuration: 0.25, animations: { 
+			self.buttonBaseView.center = CGPoint(x: x + (self.buttonBaseView.frame.size.width/2), y: self.buttonBaseView.center.y)
+			self.buttonBaseView.alpha = 0
+		}) { (stop) in
+			
+			self.currentPage -= 1
+			
+			self.buttonBaseView.center = CGPoint(x: -(self.buttonBaseView.frame.size.width/2), y: self.buttonBaseView.center.y)
+			UIView.animate(withDuration: 0.25, animations: { 
+				self.buttonBaseView.center = CGPoint(x: x, y: self.buttonBaseView.center.y)
+				self.buttonBaseView.alpha = 1
+			}) { (stop) in
+				sender.isUserInteractionEnabled = true
+			}
+		}
+	}
+	//右ボタン
+	@IBOutlet weak var rightButton: UIButton!
+	@IBAction func rightButtonAction(_ sender: UIButton) {
+		
+		sender.isUserInteractionEnabled = false
+		let x = self.buttonBaseView.center.x
+		UIView.animate(withDuration: 0.25, animations: { 
+			self.buttonBaseView.center = CGPoint(x: -(self.buttonBaseView.frame.size.width/2), y: self.buttonBaseView.center.y)
+			self.buttonBaseView.alpha = 0
+		}) { (stop) in
+			
+			self.currentPage += 1
+			
+			self.buttonBaseView.center = CGPoint(x: x + (self.buttonBaseView.frame.size.width/2), y: self.buttonBaseView.center.y)
+			UIView.animate(withDuration: 0.25, animations: { 
+				self.buttonBaseView.center = CGPoint(x: x, y: self.buttonBaseView.center.y)
+				self.buttonBaseView.alpha = 1
+			}) { (stop) in
+				sender.isUserInteractionEnabled = true
+			}
+		}
+	}
+	
+	
+	@IBOutlet weak var buttonBaseView: UIView!
+	
 	//ステージ
+	var stageButtons: [UIButton] = []
 	@IBOutlet weak var stageButton1: UIButton!
 	@IBOutlet weak var stageButton2: UIButton!
 	@IBOutlet weak var stageButton3: UIButton!
@@ -145,7 +155,7 @@ class StageSelectViewController: BaseViewController {
 	@IBOutlet weak var stageButton10: UIButton!
 	@IBAction func stageButtonAction(_ sender: UIButton) {
 		
-		let tag = sender.tag
+		let tag = sender.tag + self.startIndex
 		let questData: QuestData = self.questDatas[tag]
 		let gameView = GameViewController.gameViewController(questData: questData)
 		gameView.present(self) { 
