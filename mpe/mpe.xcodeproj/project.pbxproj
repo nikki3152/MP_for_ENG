@@ -35,6 +35,28 @@
 		542F444821B300DC00C51AD6 /* food（食べ物）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F443421B300DB00C51AD6 /* food（食べ物）.plist */; };
 		542F444921B300DC00C51AD6 /* number（数字）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F443521B300DC00C51AD6 /* number（数字）.plist */; };
 		542F444A21B300DC00C51AD6 /* crossword（クロスワード）②.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F443621B300DC00C51AD6 /* crossword（クロスワード）②.plist */; };
+		542F444F21B57DA900C51AD6 /* QuestList_easy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F444E21B57DA900C51AD6 /* QuestList_easy.plist */; };
+		542F445121B57F9E00C51AD6 /* QuestList_normal.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F445021B57F9E00C51AD6 /* QuestList_normal.plist */; };
+		542F446621B57FAD00C51AD6 /* animal（動物）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F445221B57FA800C51AD6 /* animal（動物）.plist */; };
+		542F446721B57FAD00C51AD6 /* standard（基本）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F445321B57FA800C51AD6 /* standard（基本）.plist */; };
+		542F446821B57FAD00C51AD6 /* cup（コップ）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F445421B57FA900C51AD6 /* cup（コップ）.plist */; };
+		542F446921B57FAD00C51AD6 /* ordinal numbers（序数）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F445521B57FA900C51AD6 /* ordinal numbers（序数）.plist */; };
+		542F446A21B57FAD00C51AD6 /* used up（使い切り）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F445621B57FA900C51AD6 /* used up（使い切り）.plist */; };
+		542F446B21B57FAD00C51AD6 /* crossword（クロスワード）④.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F445721B57FA900C51AD6 /* crossword（クロスワード）④.plist */; };
+		542F446C21B57FAD00C51AD6 /* body（体）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F445821B57FAA00C51AD6 /* body（体）.plist */; };
+		542F446D21B57FAD00C51AD6 /* grow grass（草生える）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F445921B57FAA00C51AD6 /* grow grass（草生える）.plist */; };
+		542F446E21B57FAD00C51AD6 /* stationery（文房具）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F445A21B57FAA00C51AD6 /* stationery（文房具）.plist */; };
+		542F446F21B57FAD00C51AD6 /* cross（十字）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F445B21B57FAA00C51AD6 /* cross（十字）.plist */; };
+		542F447021B57FAD00C51AD6 /* b.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F445C21B57FAA00C51AD6 /* b.plist */; };
+		542F447121B57FAD00C51AD6 /* fruit（果物）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F445D21B57FAB00C51AD6 /* fruit（果物）.plist */; };
+		542F447221B57FAD00C51AD6 /* vegetable（野菜）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F445E21B57FAB00C51AD6 /* vegetable（野菜）.plist */; };
+		542F447321B57FAD00C51AD6 /* cards（トランプ）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F445F21B57FAB00C51AD6 /* cards（トランプ）.plist */; };
+		542F447421B57FAD00C51AD6 /* dog（犬）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F446021B57FAB00C51AD6 /* dog（犬）.plist */; };
+		542F447521B57FAD00C51AD6 /* dessert（デザート）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F446121B57FAC00C51AD6 /* dessert（デザート）.plist */; };
+		542F447621B57FAD00C51AD6 /* halloween（ハロウィン）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F446221B57FAC00C51AD6 /* halloween（ハロウィン）.plist */; };
+		542F447721B57FAD00C51AD6 /* TTT（T縛り）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F446321B57FAC00C51AD6 /* TTT（T縛り）.plist */; };
+		542F447821B57FAD00C51AD6 /* behavior（行動）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F446421B57FAD00C51AD6 /* behavior（行動）.plist */; };
+		542F447921B57FAD00C51AD6 /* crossword（クロスワード）③.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F446521B57FAD00C51AD6 /* crossword（クロスワード）③.plist */; };
 		544271CA218BCC6F00622897 /* GameTableView-15.xib in Resources */ = {isa = PBXBuildFile; fileRef = 544271C9218BCC6F00622897 /* GameTableView-15.xib */; };
 		544271CC218C196B00622897 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544271CB218C196B00622897 /* LoadViewController.swift */; };
 		544271CE218C1CA800622897 /* SaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544271CD218C1CA800622897 /* SaveViewController.swift */; };
@@ -114,6 +136,28 @@
 		542F443421B300DB00C51AD6 /* food（食べ物）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "food（食べ物）.plist"; sourceTree = "<group>"; };
 		542F443521B300DC00C51AD6 /* number（数字）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "number（数字）.plist"; sourceTree = "<group>"; };
 		542F443621B300DC00C51AD6 /* crossword（クロスワード）②.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "crossword（クロスワード）②.plist"; sourceTree = "<group>"; };
+		542F444E21B57DA900C51AD6 /* QuestList_easy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuestList_easy.plist; sourceTree = "<group>"; };
+		542F445021B57F9E00C51AD6 /* QuestList_normal.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuestList_normal.plist; sourceTree = "<group>"; };
+		542F445221B57FA800C51AD6 /* animal（動物）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "animal（動物）.plist"; sourceTree = "<group>"; };
+		542F445321B57FA800C51AD6 /* standard（基本）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "standard（基本）.plist"; sourceTree = "<group>"; };
+		542F445421B57FA900C51AD6 /* cup（コップ）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cup（コップ）.plist"; sourceTree = "<group>"; };
+		542F445521B57FA900C51AD6 /* ordinal numbers（序数）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ordinal numbers（序数）.plist"; sourceTree = "<group>"; };
+		542F445621B57FA900C51AD6 /* used up（使い切り）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "used up（使い切り）.plist"; sourceTree = "<group>"; };
+		542F445721B57FA900C51AD6 /* crossword（クロスワード）④.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "crossword（クロスワード）④.plist"; sourceTree = "<group>"; };
+		542F445821B57FAA00C51AD6 /* body（体）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "body（体）.plist"; sourceTree = "<group>"; };
+		542F445921B57FAA00C51AD6 /* grow grass（草生える）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "grow grass（草生える）.plist"; sourceTree = "<group>"; };
+		542F445A21B57FAA00C51AD6 /* stationery（文房具）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "stationery（文房具）.plist"; sourceTree = "<group>"; };
+		542F445B21B57FAA00C51AD6 /* cross（十字）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cross（十字）.plist"; sourceTree = "<group>"; };
+		542F445C21B57FAA00C51AD6 /* b.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = b.plist; sourceTree = "<group>"; };
+		542F445D21B57FAB00C51AD6 /* fruit（果物）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "fruit（果物）.plist"; sourceTree = "<group>"; };
+		542F445E21B57FAB00C51AD6 /* vegetable（野菜）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "vegetable（野菜）.plist"; sourceTree = "<group>"; };
+		542F445F21B57FAB00C51AD6 /* cards（トランプ）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cards（トランプ）.plist"; sourceTree = "<group>"; };
+		542F446021B57FAB00C51AD6 /* dog（犬）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dog（犬）.plist"; sourceTree = "<group>"; };
+		542F446121B57FAC00C51AD6 /* dessert（デザート）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dessert（デザート）.plist"; sourceTree = "<group>"; };
+		542F446221B57FAC00C51AD6 /* halloween（ハロウィン）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "halloween（ハロウィン）.plist"; sourceTree = "<group>"; };
+		542F446321B57FAC00C51AD6 /* TTT（T縛り）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TTT（T縛り）.plist"; sourceTree = "<group>"; };
+		542F446421B57FAD00C51AD6 /* behavior（行動）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "behavior（行動）.plist"; sourceTree = "<group>"; };
+		542F446521B57FAD00C51AD6 /* crossword（クロスワード）③.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "crossword（クロスワード）③.plist"; sourceTree = "<group>"; };
 		544271C9218BCC6F00622897 /* GameTableView-15.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GameTableView-15.xib"; sourceTree = "<group>"; };
 		544271CB218C196B00622897 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		544271CD218C1CA800622897 /* SaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +226,8 @@
 		542F444B21B305EA00C51AD6 /* quest */ = {
 			isa = PBXGroup;
 			children = (
+				542F444E21B57DA900C51AD6 /* QuestList_easy.plist */,
+				542F445021B57F9E00C51AD6 /* QuestList_normal.plist */,
 				542F442121B2FC3900C51AD6 /* QuestList.plist */,
 				542F442921B300DA00C51AD6 /* calender（暦）①.plist */,
 				542F442E21B300DB00C51AD6 /* calender（暦）②.plist */,
@@ -203,6 +249,26 @@
 				542F442721B300D900C51AD6 /* weather（天候）.plist */,
 				542F442C21B300DA00C51AD6 /* week（曜日）.plist */,
 				542F443121B300DB00C51AD6 /* チュートリアル.plist */,
+				542F445221B57FA800C51AD6 /* animal（動物）.plist */,
+				542F445C21B57FAA00C51AD6 /* b.plist */,
+				542F446421B57FAD00C51AD6 /* behavior（行動）.plist */,
+				542F445821B57FAA00C51AD6 /* body（体）.plist */,
+				542F445F21B57FAB00C51AD6 /* cards（トランプ）.plist */,
+				542F445B21B57FAA00C51AD6 /* cross（十字）.plist */,
+				542F446521B57FAD00C51AD6 /* crossword（クロスワード）③.plist */,
+				542F445721B57FA900C51AD6 /* crossword（クロスワード）④.plist */,
+				542F445421B57FA900C51AD6 /* cup（コップ）.plist */,
+				542F446121B57FAC00C51AD6 /* dessert（デザート）.plist */,
+				542F446021B57FAB00C51AD6 /* dog（犬）.plist */,
+				542F445D21B57FAB00C51AD6 /* fruit（果物）.plist */,
+				542F445921B57FAA00C51AD6 /* grow grass（草生える）.plist */,
+				542F446221B57FAC00C51AD6 /* halloween（ハロウィン）.plist */,
+				542F445521B57FA900C51AD6 /* ordinal numbers（序数）.plist */,
+				542F445321B57FA800C51AD6 /* standard（基本）.plist */,
+				542F445A21B57FAA00C51AD6 /* stationery（文房具）.plist */,
+				542F446321B57FAC00C51AD6 /* TTT（T縛り）.plist */,
+				542F445621B57FA900C51AD6 /* used up（使い切り）.plist */,
+				542F445E21B57FAB00C51AD6 /* vegetable（野菜）.plist */,
 			);
 			path = quest;
 			sourceTree = "<group>";
@@ -444,6 +510,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				542F446E21B57FAD00C51AD6 /* stationery（文房具）.plist in Resources */,
 				54140F22212BB302007C753B /* GameTableView.xib in Resources */,
 				54CFB3E320DE22AF00057F08 /* WaitingViewController.storyboard in Resources */,
 				542F443B21B300DC00C51AD6 /* weather（天候）.plist in Resources */,
@@ -451,29 +518,48 @@
 				542F443E21B300DC00C51AD6 /* nature（自然）.plist in Resources */,
 				54CFB3DD20DE164000057F08 /* HomeViewController.storyboard in Resources */,
 				542F444021B300DC00C51AD6 /* week（曜日）.plist in Resources */,
+				542F446A21B57FAD00C51AD6 /* used up（使い切り）.plist in Resources */,
 				542F444721B300DC00C51AD6 /* direction（方角）.plist in Resources */,
+				542F447721B57FAD00C51AD6 /* TTT（T縛り）.plist in Resources */,
+				542F447821B57FAD00C51AD6 /* behavior（行動）.plist in Resources */,
 				54D9AEBE20CF6186004FEBA2 /* LaunchScreen.storyboard in Resources */,
 				54CFB3FB20DE335A00057F08 /* DictViewController.storyboard in Resources */,
 				54CFB3FF20DE361300057F08 /* CustomViewController.storyboard in Resources */,
+				542F444F21B57DA900C51AD6 /* QuestList_easy.plist in Resources */,
 				542F443921B300DC00C51AD6 /* furniture（家具）.plist in Resources */,
 				54CFB40720DE38B300057F08 /* DataAggregateViewController.storyboard in Resources */,
 				54D03E1021A4EF3100FD1CC4 /* TimePickerView.xib in Resources */,
+				542F447321B57FAD00C51AD6 /* cards（トランプ）.plist in Resources */,
+				542F447021B57FAD00C51AD6 /* b.plist in Resources */,
+				542F447421B57FAD00C51AD6 /* dog（犬）.plist in Resources */,
 				542F443C21B300DC00C51AD6 /* crossword（クロスワード）①.plist in Resources */,
 				54CFB40F20DE3B3100057F08 /* PurchaseViewController.storyboard in Resources */,
 				542F444821B300DC00C51AD6 /* food（食べ物）.plist in Resources */,
 				542F444321B300DC00C51AD6 /* personality（人称）.plist in Resources */,
+				542F446621B57FAD00C51AD6 /* animal（動物）.plist in Resources */,
+				542F446F21B57FAD00C51AD6 /* cross（十字）.plist in Resources */,
+				542F446721B57FAD00C51AD6 /* standard（基本）.plist in Resources */,
 				542F444921B300DC00C51AD6 /* number（数字）.plist in Resources */,
 				542F443D21B300DC00C51AD6 /* calender（暦）①.plist in Resources */,
 				54140F26212BB3EF007C753B /* TableKomaView.xib in Resources */,
+				542F446921B57FAD00C51AD6 /* ordinal numbers（序数）.plist in Resources */,
+				542F447121B57FAD00C51AD6 /* fruit（果物）.plist in Resources */,
+				542F445121B57F9E00C51AD6 /* QuestList_normal.plist in Resources */,
+				542F446D21B57FAD00C51AD6 /* grow grass（草生える）.plist in Resources */,
 				542F443821B300DC00C51AD6 /* emotion（感情）.plist in Resources */,
+				542F447221B57FAD00C51AD6 /* vegetable（野菜）.plist in Resources */,
 				544271CA218BCC6F00622897 /* GameTableView-15.xib in Resources */,
+				542F446C21B57FAD00C51AD6 /* body（体）.plist in Resources */,
 				54CFB40B20DE39D400057F08 /* SoundViewController.storyboard in Resources */,
 				54F3A6E32197CDC400A1E01F /* ConditionsPickerView.xib in Resources */,
 				54CFB3F720DE31DB00057F08 /* QuickQuestViewController.storyboard in Resources */,
 				542F442221B2FC3900C51AD6 /* QuestList.plist in Resources */,
 				542F444521B300DC00C51AD6 /* チュートリアル.plist in Resources */,
+				542F447921B57FAD00C51AD6 /* crossword（クロスワード）③.plist in Resources */,
+				542F447521B57FAD00C51AD6 /* dessert（デザート）.plist in Resources */,
 				54CFB3EF20DE2E5E00057F08 /* StudyModeViewController.storyboard in Resources */,
 				542F443F21B300DC00C51AD6 /* sports（スポーツ）①.plist in Resources */,
+				542F447621B57FAD00C51AD6 /* halloween（ハロウィン）.plist in Resources */,
 				542F444121B300DC00C51AD6 /* season（季節）.plist in Resources */,
 				54F3A6D721955B3800A1E01F /* EditPickerView.xib in Resources */,
 				542F443721B300DC00C51AD6 /* family（家族）.plist in Resources */,
@@ -484,8 +570,10 @@
 				54CFB3E720DE25EB00057F08 /* StageSelectViewController.storyboard in Resources */,
 				54CFB3EB20DE294700057F08 /* GameViewController.storyboard in Resources */,
 				54140F1E212BAFBC007C753B /* FontCardView.xib in Resources */,
+				542F446B21B57FAD00C51AD6 /* crossword（クロスワード）④.plist in Resources */,
 				542F444A21B300DC00C51AD6 /* crossword（クロスワード）②.plist in Resources */,
 				542F443A21B300DC00C51AD6 /* time zone（時間帯）.plist in Resources */,
+				542F446821B57FAD00C51AD6 /* cup（コップ）.plist in Resources */,
 				54D9AEBB20CF6186004FEBA2 /* Assets.xcassets in Resources */,
 				54D9AEB920CF6185004FEBA2 /* Main.storyboard in Resources */,
 				54F3A6DB2196CA0400A1E01F /* HitInfoView.xib in Resources */,

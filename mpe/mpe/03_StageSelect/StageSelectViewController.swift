@@ -65,13 +65,16 @@ class StageSelectViewController: BaseViewController {
 			self.stageButton10,
 		]
 		self.questDatas = []
-		let list = self.dataMrg.questList()
+		let easy = self.dataMrg.questList(mode: "easy")
+		let normal = self.dataMrg.questList(mode: "normal")
+		let list = easy + normal 
 		for dic in list {
 			let filename = dic["filename"]!
 			self.questNames.append(filename)
 			if let path = Bundle.main.path(forResource: filename, ofType: "plist") {
 				if let dic = NSDictionary(contentsOfFile: path) as? [String:Any] {
-					let questData = QuestData(dict: dic)
+					var questData = QuestData(dict: dic)
+					questData.filename = filename
 					self.questDatas.append(questData)
 				}
 			}

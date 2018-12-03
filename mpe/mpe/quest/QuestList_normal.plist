@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>filename</key>
+		<string>body（体）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>fruit（果物）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>animal（動物）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>stationery（文房具）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>dessert（デザート）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>vegetable（野菜）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>ordinal numbers（序数）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>used up（使い切り）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>standard（基本）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>crossword（クロスワード）③</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>dog（犬）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>b</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>grow grass（草生える）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>cup（コップ）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>cross（十字）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>cards（トランプ）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>halloween（ハロウィン）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>behavior（行動）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>TTT（T縛り）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>crossword（クロスワード）④</string>
+	</dict>
+</array>
+</plist>
