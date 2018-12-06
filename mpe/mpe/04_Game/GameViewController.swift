@@ -261,7 +261,17 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	
 	//スコア
 	@IBOutlet weak var scoreBaseView: UIView!
-	
+	@IBOutlet weak var scoreLabel: UILabel!
+	var _totalScore: Int = 0
+	var totalScore: Int {
+		get {
+			return _totalScore
+		}
+		set {
+			_totalScore = newValue
+			self.scoreLabel.text = NSString(format: "%05d", _totalScore) as String
+		}
+	}
 	
 	
 	//戻る
@@ -541,6 +551,38 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		return label
 	}
 	
+	//単語から得点計算
+	func score(word: String) -> Int {
+		
+		var score = 0
+		for i in 0 ..< word.count {
+			let c = word[word.index(word.startIndex, offsetBy: i)]
+			if c == "a" || c == "e" || c == "i" || c == "l" || c == "n" || c == "o" || c == "r" || c == "s" || c == "t" || c == "u" {
+				score += 1
+			}
+			else if c == "d" || c == "g" {
+				score += 2
+			}
+			else if c == "b" || c == "c" || c == "m" || c == "p" {
+				score += 3 
+			}
+			else if c == "f" || c == "h" || c == "v" || c == "m" || c == "y" {
+				score += 4 
+			}
+			else if c == "k" {
+				score += 5 
+			}
+			else if c == "j" || c == "x" {
+				score += 8 
+			}
+			else if c == "q" || c == "z" {
+				score += 10 
+			}
+		}
+		return score * 10
+	}
+	
+	
 	//MARK:- FontCardViewDelegate
 	
 	func fontCardViewTap(font: FontCardView) {
@@ -575,7 +617,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.mainScrollView.isScrollEnabled = false
 	}
 	func gameTableViewToucheUp(table: GameTableView, koma: TableKomaView) {
-		
+		//MARK: 得点
 		self.checkKomaSet = []
 		self.mainScrollView.isScrollEnabled = true
 		if let index = self.cardSelectIndex {
@@ -619,20 +661,30 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			}
 			
 			if hitWords.count > 0 {
+				print("単語数: \(hitWords.count)")
+				var delay: Double = 0
 				for hitWord in hitWords {
+					
+					//スコア計算
+					let score = self.score(word: hitWord)
+					self.totalScore += score
+					
 					if let info = infoText {
 						if nil == self.answerWords[hitWord] {
 							var komas: [TableKomaView] = []
 							for koma in self.checkKomaSet {
 								komas.append(koma)
 							}
-							self.tableTapEffect(komas: komas)	//エフェクト
 							
-							let hitView = HitInfoView.hitInfoView()
-							hitView.open(title: hitWord.uppercased(), info: info, parent: self.view)
+							DispatchQueue.main.asyncAfter(deadline: .now() + delay) { 
+								self.tableTapEffect(komas: komas)	//エフェクト
+								let hitView = HitInfoView.hitInfoView()
+								hitView.open(title: hitWord.uppercased(), info: info, parent: self.view)
+							}
+							delay += 4.0
 							self.questCount -= 1
 							
-							self.answerWords[hitWord] = true
+							self.answerWords[hitWord] = true	//回答済み単語入り
 						}
 					}
 				}
