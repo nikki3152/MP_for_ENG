@@ -149,19 +149,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	let dataMrg = MPEDataManager()
 	var questData: QuestData!
 	var cardSelectIndex: Int!
-	
+	var answerWords: [String:Bool] = [:]
 	var _questCount: Int = 2
 	var questCount: Int {
 		get {
 			return _questCount
 		}
 		set {
-//			case makeWords				= 0 		//英単語を◯個作る
-//			case fillAllCell			= 1 		//全てのマスを埋める
-//			case useAllFont				= 2 		//すべてのアルファベットを使う
-//			case makeWoredsCount		= 3 		//◯字数以上の英単語を◯個作る
-//			case hiScore				= 4 		//スコアを○点以上
-//			case useFontMakeCount		= 5 		//◯がつく英単語を○個作る
 			_questCount = newValue
 			self.questSubLabel?.removeFromSuperview()
 			var unit: String = ""
@@ -597,7 +591,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				self.updateCardScroll()
 				self.cardSelectIndex = nil
 			}
-			var hitWard: String?
+			var hitWords: [String] = []
 			var infoText: String?
 			var list: [[String:[String]]] = []
 			//横の検索
@@ -612,7 +606,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			for dic in list {
 				let keys = dic.keys
 				for key in keys {
-					hitWard = key
+					hitWords.append(key)
 					print("【\(key)】")
 					let values = dic[key]!
 					for value in values {
@@ -624,17 +618,24 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				break
 			}
 			
-			if let ward = hitWard, let info = infoText {
-				var komas: [TableKomaView] = []
-				for koma in self.checkKomaSet {
-					komas.append(koma)
+			if hitWords.count > 0 {
+				for hitWord in hitWords {
+					if let info = infoText {
+						if nil == self.answerWords[hitWord] {
+							var komas: [TableKomaView] = []
+							for koma in self.checkKomaSet {
+								komas.append(koma)
+							}
+							self.tableTapEffect(komas: komas)	//エフェクト
+							
+							let hitView = HitInfoView.hitInfoView()
+							hitView.open(title: hitWord.uppercased(), info: info, parent: self.view)
+							self.questCount -= 1
+							
+							self.answerWords[hitWord] = true
+						}
+					}
 				}
-				self.tableTapEffect(komas: komas)	//エフェクト
-				
-				let hitView = HitInfoView.hitInfoView()
-				hitView.open(title: ward.uppercased(), info: info, parent: self.view)
-				
-				self.questCount -= 1
 			}
 		}
 	}
