@@ -582,6 +582,24 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		return score * 10
 	}
 	
+	//２文字以上の単語を複数のサブテキストに分割
+	func separate(word: String) -> [String] {
+		
+		var ret: [String] = []
+		if word.count > 2 {
+			for i in 0 ..< word.count {
+				for ii in i + 1 ... word.count {
+					let c = word[word.index(word.startIndex, offsetBy: i) ..< word.index(word.startIndex, offsetBy: ii)]
+					let s = String(c)
+					if s.count > 1 {
+						ret.append(s)
+					}
+				}
+			}
+		}
+		return ret
+	}
+	
 	
 	//MARK:- FontCardViewDelegate
 	
@@ -633,18 +651,23 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				self.updateCardScroll()
 				self.cardSelectIndex = nil
 			}
-			var hitWords: [String] = []
-			var infoText: String?
 			var list: [[String:[String]]] = []
 			//横の検索
 			let wordHline = self.checkWordH(startIndex: koma.tag)
-			let listH = dataMrg.search(word: wordHline.lowercased(), match: .perfect)
-			list += listH
 			//縦の検索
 			let wordVline = self.checkWordV(startIndex: koma.tag)
-			let listV = dataMrg.search(word: wordVline.lowercased(), match: .perfect)
-			list += listV
 			
+			let hWords: [String] = self.separate(word: wordHline)
+			let vWords: [String] = self.separate(word: wordVline)
+			let allWords: [String] = hWords + vWords
+			for word in allWords {
+				print("> \(word)")
+				let listH = dataMrg.search(word: word.lowercased(), match: .perfect)
+				list += listH
+			}
+			
+			var hitWords: [String] = []
+			var infoText: [String] = []
 			for dic in list {
 				let keys = dic.keys
 				for key in keys {
@@ -653,7 +676,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					let values = dic[key]!
 					for value in values {
 						print(" >\(value)")
-						infoText = value
+						infoText.append(value)
 						break
 					}
 				}
@@ -663,29 +686,28 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			if hitWords.count > 0 {
 				print("単語数: \(hitWords.count)")
 				var delay: Double = 0
-				for hitWord in hitWords {
-					
-					//スコア計算
-					let score = self.score(word: hitWord)
-					self.totalScore += score
-					
-					if let info = infoText {
-						if nil == self.answerWords[hitWord] {
-							var komas: [TableKomaView] = []
-							for koma in self.checkKomaSet {
-								komas.append(koma)
-							}
-							
-							DispatchQueue.main.asyncAfter(deadline: .now() + delay) { 
-								self.tableTapEffect(komas: komas)	//エフェクト
-								let hitView = HitInfoView.hitInfoView()
-								hitView.open(title: hitWord.uppercased(), info: info, parent: self.view)
-							}
-							delay += 4.0
-							self.questCount -= 1
-							
-							self.answerWords[hitWord] = true	//回答済み単語入り
+				for i in 0 ..< hitWords.count {
+					let hitWord = hitWords[i]
+					let info = infoText[i]
+					if nil == self.answerWords[hitWord] {
+						//スコア計算
+						let score = self.score(word: hitWord)
+						self.totalScore += score
+						
+						var komas: [TableKomaView] = []
+						for koma in self.checkKomaSet {
+							komas.append(koma)
 						}
+						
+						DispatchQueue.main.asyncAfter(deadline: .now() + delay) { 
+							self.tableTapEffect(komas: komas)	//エフェクト
+							let hitView = HitInfoView.hitInfoView()
+							hitView.open(title: hitWord.uppercased(), info: info, parent: self.view)
+						}
+						delay += 4.0
+						self.questCount -= 1
+						
+						self.answerWords[hitWord] = true	//回答済み単語入り
 					}
 				}
 			}
