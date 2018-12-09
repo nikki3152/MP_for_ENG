@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quiz_background" translatesAutoresizingMaskIntoConstraints="NO" id="FVb-38-J0k">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quiz_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="FVb-38-J0k">
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZI4-CW-ktZ">
                                 <rect key="frame" x="15" y="15" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="bt_back"/>
+                                <state key="normal" backgroundImage="bt_back.png"/>
                                 <connections>
                                     <action selector="backButtonAction:" destination="KUr-P2-9j5" eventType="touchUpInside" id="4eW-g2-Ud4"/>
                                     <action selector="backButtonAction:" destination="oHg-Ix-I7b" eventType="touchUpInside" id="uqi-DV-aMW"/>
@@ -35,7 +34,7 @@
                                 <rect key="frame" x="209" y="20" width="318" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quiz_question" translatesAutoresizingMaskIntoConstraints="NO" id="mJj-mV-Kzl">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quiz_question.png" translatesAutoresizingMaskIntoConstraints="NO" id="mJj-mV-Kzl">
                                         <rect key="frame" x="0.0" y="0.0" width="318" height="70"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
@@ -56,25 +55,25 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <state key="normal" title="ANSWER" backgroundImage="quiz_answer"/>
+                                        <state key="normal" title="ANSWER" backgroundImage="quiz_answer.png"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1O-5n-Zpn">
                                         <rect key="frame" x="327" y="0.0" width="298" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <state key="normal" title="ANSWER" backgroundImage="quiz_answer"/>
+                                        <state key="normal" title="ANSWER" backgroundImage="quiz_answer.png"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCB-qR-zG3">
                                         <rect key="frame" x="0.0" y="142" width="300" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <state key="normal" title="ANSWER" backgroundImage="quiz_answer"/>
+                                        <state key="normal" title="ANSWER" backgroundImage="quiz_answer.png"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKM-pV-9nb">
                                         <rect key="frame" x="327" y="142" width="298" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <state key="normal" title="ANSWER" backgroundImage="quiz_answer"/>
+                                        <state key="normal" title="ANSWER" backgroundImage="quiz_answer.png"/>
                                     </button>
                                 </subviews>
                             </view>
@@ -112,20 +111,20 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0P-Qz-tt3">
                                 <rect key="frame" x="15" y="15" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="bt_back"/>
+                                <state key="normal" backgroundImage="bt_back.png"/>
                                 <connections>
                                     <action selector="backButtonAction:" destination="KUr-P2-9j5" eventType="touchUpInside" id="lZr-8Z-OaR"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_title" translatesAutoresizingMaskIntoConstraints="NO" id="Qrw-76-kX1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_title.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qrw-76-kX1">
                                 <rect key="frame" x="236" y="13" width="266" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_mojikun" translatesAutoresizingMaskIntoConstraints="NO" id="ado-cL-l7v">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_mojikun.png" translatesAutoresizingMaskIntoConstraints="NO" id="ado-cL-l7v">
                                 <rect key="frame" x="576" y="166" width="140" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_object_sword" translatesAutoresizingMaskIntoConstraints="NO" id="dbI-z6-9fo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_object_sword.png" translatesAutoresizingMaskIntoConstraints="NO" id="dbI-z6-9fo">
                                 <rect key="frame" x="20" y="166" width="140" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -136,7 +135,7 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnj-Kg-UJ0">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="quizdonyu_button_01"/>
+                                        <state key="normal" backgroundImage="quizdonyu_button_01.png"/>
                                         <connections>
                                             <action selector="startButtonAction:" destination="KUr-P2-9j5" eventType="touchUpInside" id="0nM-X5-hGu"/>
                                         </connections>
@@ -144,7 +143,7 @@
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKv-k5-KU5">
                                         <rect key="frame" x="0.0" y="60" width="250" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="quizdonyu_button_02"/>
+                                        <state key="normal" backgroundImage="quizdonyu_button_02.png"/>
                                         <connections>
                                             <action selector="startButtonAction:" destination="KUr-P2-9j5" eventType="touchUpInside" id="Hzs-tN-9GH"/>
                                         </connections>
@@ -152,7 +151,7 @@
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyC-Z6-nOp">
                                         <rect key="frame" x="0.0" y="120" width="250" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="quizdonyu_button_03"/>
+                                        <state key="normal" backgroundImage="quizdonyu_button_03.png"/>
                                         <connections>
                                             <action selector="startButtonAction:" destination="KUr-P2-9j5" eventType="touchUpInside" id="o1I-TS-3aO"/>
                                         </connections>
@@ -160,7 +159,7 @@
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8X-bo-0XD">
                                         <rect key="frame" x="0.0" y="180" width="250" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="quizdonyu_button_04"/>
+                                        <state key="normal" backgroundImage="quizdonyu_button_04.png"/>
                                         <connections>
                                             <action selector="startButtonAction:" destination="KUr-P2-9j5" eventType="touchUpInside" id="7fU-za-wVf"/>
                                         </connections>
@@ -168,26 +167,26 @@
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UX-LQ-4Rs">
                                         <rect key="frame" x="0.0" y="240" width="250" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="quizdonyu_button_05"/>
+                                        <state key="normal" backgroundImage="quizdonyu_button_05.png"/>
                                         <connections>
                                             <action selector="startButtonAction:" destination="KUr-P2-9j5" eventType="touchUpInside" id="0AC-tV-UCC"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01" translatesAutoresizingMaskIntoConstraints="NO" id="pzF-wv-6xD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="pzF-wv-6xD">
                                 <rect key="frame" x="111" y="139" width="60" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01" translatesAutoresizingMaskIntoConstraints="NO" id="qBR-fn-11G">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="qBR-fn-11G">
                                 <rect key="frame" x="0.0" y="234" width="60" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01" translatesAutoresizingMaskIntoConstraints="NO" id="93K-cp-eL3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="93K-cp-eL3">
                                 <rect key="frame" x="676" y="267" width="60" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01" translatesAutoresizingMaskIntoConstraints="NO" id="qqo-qa-TGh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="qqo-qa-TGh">
                                 <rect key="frame" x="570" y="119" width="60" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -205,18 +204,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bt_back" width="28" height="33"/>
-        <image name="quiz_answer" width="639" height="110"/>
-        <image name="quiz_background" width="1920" height="1080"/>
-        <image name="quiz_question" width="637" height="140"/>
-        <image name="quizdonyu_button_01" width="639" height="110"/>
-        <image name="quizdonyu_button_02" width="639" height="110"/>
-        <image name="quizdonyu_button_03" width="639" height="110"/>
-        <image name="quizdonyu_button_04" width="639" height="110"/>
-        <image name="quizdonyu_button_05" width="639" height="110"/>
-        <image name="quizdonyu_fire_01" width="120" height="180"/>
-        <image name="quizdonyu_mojikun" width="454" height="454"/>
-        <image name="quizdonyu_object_sword" width="300" height="300"/>
-        <image name="quizdonyu_title" width="676" height="120"/>
+        <image name="bt_back.png" width="70" height="70"/>
+        <image name="quiz_answer.png" width="639" height="110"/>
+        <image name="quiz_background.png" width="1920" height="1080"/>
+        <image name="quiz_question.png" width="637" height="140"/>
+        <image name="quizdonyu_button_01.png" width="639" height="110"/>
+        <image name="quizdonyu_button_02.png" width="639" height="110"/>
+        <image name="quizdonyu_button_03.png" width="639" height="110"/>
+        <image name="quizdonyu_button_04.png" width="639" height="110"/>
+        <image name="quizdonyu_button_05.png" width="639" height="110"/>
+        <image name="quizdonyu_fire_01.png" width="120" height="180"/>
+        <image name="quizdonyu_mojikun.png" width="454" height="454"/>
+        <image name="quizdonyu_object_sword.png" width="300" height="300"/>
+        <image name="quizdonyu_title.png" width="676" height="120"/>
     </resources>
 </document>

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_background" translatesAutoresizingMaskIntoConstraints="NO" id="B1a-fv-KMv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="B1a-fv-KMv">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smd-g9-ifB">
                                 <rect key="frame" x="15" y="15" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="bt_back"/>
+                                <state key="normal" backgroundImage="bt_back.png"/>
                                 <connections>
                                     <action selector="backButtonAction:" destination="HDP-pU-hVK" eventType="touchUpInside" id="ppt-Ob-zUz"/>
                                 </connections>
@@ -37,68 +36,78 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obl-yl-0Xi">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="custom_box_01"/>
+                                        <state key="normal" backgroundImage="custom_box_01.png"/>
+                                        <state key="disabled" backgroundImage="custom_box_inactive1.png"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8J-Ea-dHF">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8J-Ea-dHF">
                                         <rect key="frame" x="110" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="custom_box_02"/>
+                                        <state key="normal" backgroundImage="custom_box_02.png"/>
+                                        <state key="disabled" backgroundImage="custom_box_inactive1.png"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JD-GE-rXu">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JD-GE-rXu">
                                         <rect key="frame" x="220" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="custom_box_03"/>
+                                        <state key="normal" backgroundImage="custom_box_03.png"/>
+                                        <state key="disabled" backgroundImage="custom_box_inactive1.png"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbW-W7-eBF">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbW-W7-eBF">
                                         <rect key="frame" x="330" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="custom_box_04"/>
+                                        <state key="normal" backgroundImage="custom_box_04.png"/>
+                                        <state key="disabled" backgroundImage="custom_box_inactive2.png"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEw-3M-vm9">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEw-3M-vm9">
                                         <rect key="frame" x="440" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="custom_box_05"/>
+                                        <state key="normal" backgroundImage="custom_box_05.png"/>
+                                        <state key="disabled" backgroundImage="custom_box_inactive2.png"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHZ-Gz-1fL">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHZ-Gz-1fL">
                                         <rect key="frame" x="0.0" y="110" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <state key="normal" backgroundImage="custom_box_06"/>
+                                        <state key="normal" backgroundImage="custom_box_06.png"/>
+                                        <state key="disabled" backgroundImage="custom_box_inactive3.png"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpD-2v-dIV">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpD-2v-dIV">
                                         <rect key="frame" x="110" y="110" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <state key="normal" backgroundImage="custom_box_07"/>
+                                        <state key="normal" backgroundImage="custom_box_07.png"/>
+                                        <state key="disabled" backgroundImage="custom_box_inactive3.png"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhu-3a-C6s">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhu-3a-C6s">
                                         <rect key="frame" x="220" y="110" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <state key="normal" backgroundImage="custom_box_08"/>
+                                        <state key="normal" backgroundImage="custom_box_08.png"/>
+                                        <state key="disabled" backgroundImage="custom_box_inactive4.png"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYz-hP-3um">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYz-hP-3um">
                                         <rect key="frame" x="330" y="110" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <state key="normal" backgroundImage="custom_box_09"/>
+                                        <state key="normal" backgroundImage="custom_box_09.png"/>
+                                        <state key="disabled" backgroundImage="custom_box_inactive4.png"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXr-9W-bKG">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXr-9W-bKG">
                                         <rect key="frame" x="440" y="110" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <state key="normal" backgroundImage="custom_box_10"/>
+                                        <state key="normal" backgroundImage="custom_box_10.png"/>
+                                        <state key="disabled" backgroundImage="custom_box_inactive4.png"/>
                                     </button>
                                 </subviews>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_01" translatesAutoresizingMaskIntoConstraints="NO" id="UWQ-qd-5tR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="UWQ-qd-5tR">
                                 <rect key="frame" x="35" y="68" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_02" translatesAutoresizingMaskIntoConstraints="NO" id="meU-3m-GHb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="meU-3m-GHb">
                                 <rect key="frame" x="113" y="20" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_02" translatesAutoresizingMaskIntoConstraints="NO" id="IJC-bq-gOa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="IJC-bq-gOa">
                                 <rect key="frame" x="579" y="61" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_01" translatesAutoresizingMaskIntoConstraints="NO" id="qY7-9C-yf9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="qY7-9C-yf9">
                                 <rect key="frame" x="504" y="13" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -116,19 +125,23 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bt_back" width="28" height="33"/>
-        <image name="custom_background" width="1931" height="901"/>
-        <image name="custom_box_01" width="200" height="200"/>
-        <image name="custom_box_02" width="200" height="200"/>
-        <image name="custom_box_03" width="200" height="200"/>
-        <image name="custom_box_04" width="200" height="200"/>
-        <image name="custom_box_05" width="200" height="200"/>
-        <image name="custom_box_06" width="200" height="200"/>
-        <image name="custom_box_07" width="200" height="200"/>
-        <image name="custom_box_08" width="200" height="200"/>
-        <image name="custom_box_09" width="200" height="200"/>
-        <image name="custom_box_10" width="200" height="200"/>
-        <image name="custom_object_01" width="120" height="120"/>
-        <image name="custom_object_02" width="120" height="120"/>
+        <image name="bt_back.png" width="70" height="70"/>
+        <image name="custom_background.png" width="1931" height="901"/>
+        <image name="custom_box_01.png" width="200" height="200"/>
+        <image name="custom_box_02.png" width="200" height="200"/>
+        <image name="custom_box_03.png" width="200" height="200"/>
+        <image name="custom_box_04.png" width="200" height="200"/>
+        <image name="custom_box_05.png" width="200" height="200"/>
+        <image name="custom_box_06.png" width="200" height="200"/>
+        <image name="custom_box_07.png" width="200" height="200"/>
+        <image name="custom_box_08.png" width="200" height="200"/>
+        <image name="custom_box_09.png" width="200" height="200"/>
+        <image name="custom_box_10.png" width="200" height="200"/>
+        <image name="custom_box_inactive1.png" width="200" height="200"/>
+        <image name="custom_box_inactive2.png" width="200" height="200"/>
+        <image name="custom_box_inactive3.png" width="200" height="200"/>
+        <image name="custom_box_inactive4.png" width="200" height="200"/>
+        <image name="custom_object_01.png" width="120" height="120"/>
+        <image name="custom_object_02.png" width="120" height="120"/>
     </resources>
 </document>

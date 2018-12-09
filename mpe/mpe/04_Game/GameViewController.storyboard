@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stage_01" translatesAutoresizingMaskIntoConstraints="NO" id="u3i-2l-VVr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stage_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="u3i-2l-VVr">
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -33,7 +32,7 @@
                                 <rect key="frame" x="620" y="78" width="120" height="322"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="char_fukidashi" translatesAutoresizingMaskIntoConstraints="NO" id="Cwi-8a-QQW">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="char_fukidashi.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cwi-8a-QQW">
                                         <rect key="frame" x="7" y="0.0" width="103" height="227"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
@@ -41,7 +40,7 @@
                                         <rect key="frame" x="31" y="12" width="59" height="186"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mojikun_a_01" translatesAutoresizingMaskIntoConstraints="NO" id="hlP-yQ-Ocs">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mojikun_a_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="hlP-yQ-Ocs">
                                         <rect key="frame" x="10" y="211" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                     </imageView>
@@ -51,7 +50,7 @@
                                 <rect key="frame" x="13" y="48" width="92" height="365"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quest_base" translatesAutoresizingMaskIntoConstraints="NO" id="tae-oi-Zh4">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quest_base.png" translatesAutoresizingMaskIntoConstraints="NO" id="tae-oi-Zh4">
                                         <rect key="frame" x="4" y="0.0" width="85" height="365"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
@@ -68,8 +67,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-yj-Dfs">
                                 <rect key="frame" x="15" y="6" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="bt_stop"/>
-                                <state key="highlighted" backgroundImage="bt_stop_tap"/>
+                                <state key="normal" backgroundImage="bt_stop.png"/>
+                                <state key="highlighted" backgroundImage="bt_stop_tap.png"/>
                                 <connections>
                                     <action selector="backButtonAction:" destination="vVe-zF-H2F" eventType="touchUpInside" id="Ucx-x5-E98"/>
                                 </connections>
@@ -77,8 +76,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3W-PF-kYR">
                                 <rect key="frame" x="64" y="9" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="bt_playback"/>
-                                <state key="highlighted" backgroundImage="bt_playback_tap"/>
+                                <state key="normal" backgroundImage="bt_playback.png"/>
+                                <state key="highlighted" backgroundImage="bt_playback_tap.png"/>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SsC-t5-QhI">
                                 <rect key="frame" x="611" y="34" width="123" height="43"/>
@@ -107,7 +106,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQv-xA-cRO">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="orange_right"/>
+                                        <state key="normal" backgroundImage="orange_right.png"/>
                                         <connections>
                                             <action selector="cardLeftButtonAction:" destination="vVe-zF-H2F" eventType="touchUpInside" id="o0r-r3-JBW"/>
                                         </connections>
@@ -115,7 +114,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8k-C1-wdl">
                                         <rect key="frame" x="350" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="orange_left"/>
+                                        <state key="normal" backgroundImage="orange_left.png"/>
                                         <connections>
                                             <action selector="cardRightButtonAction:" destination="vVe-zF-H2F" eventType="touchUpInside" id="zRK-IP-vF6"/>
                                         </connections>
@@ -617,16 +616,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bt_playback" width="70" height="70"/>
-        <image name="bt_playback_tap" width="70" height="70"/>
-        <image name="bt_stop" width="120" height="120"/>
-        <image name="bt_stop_tap" width="120" height="120"/>
+        <image name="bt_playback.png" width="70" height="70"/>
+        <image name="bt_playback_tap.png" width="70" height="70"/>
+        <image name="bt_stop.png" width="120" height="120"/>
+        <image name="bt_stop_tap.png" width="120" height="120"/>
         <image name="bt_x" width="32" height="32"/>
-        <image name="char_fukidashi" width="300" height="603"/>
-        <image name="mojikun_a_01" width="300" height="300"/>
-        <image name="orange_left" width="150" height="150"/>
-        <image name="orange_right" width="150" height="150"/>
-        <image name="quest_base" width="106" height="487"/>
-        <image name="stage_01" width="1920" height="1080"/>
+        <image name="char_fukidashi.png" width="300" height="603"/>
+        <image name="mojikun_a_01.png" width="300" height="300"/>
+        <image name="orange_left.png" width="150" height="150"/>
+        <image name="orange_right.png" width="150" height="150"/>
+        <image name="quest_base.png" width="213" height="974"/>
+        <image name="stage_01.png" width="1920" height="1080"/>
     </resources>
 </document>

@@ -24,9 +24,9 @@ class FontCardView: UIView {
 		set {
 			_isWildCard = newValue
 			if _isWildCard {
-				self.backImageView.image = UIImage(named: "pink_1")
+				self.backImageView.image = UIImage(named: "pink_0")
 			} else {
-				self.backImageView.image = UIImage(named: "orange_1")
+				self.backImageView.image = UIImage(named: "orange_0")
 			}
 		}
 	}

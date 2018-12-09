@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_background" translatesAutoresizingMaskIntoConstraints="NO" id="YIq-Wo-hgh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="YIq-Wo-hgh">
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cei-QI-1Eh">
                                 <rect key="frame" x="15" y="15" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="bt_back"/>
+                                <state key="normal" backgroundImage="bt_back.png"/>
                                 <connections>
                                     <action selector="backButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="fmV-Hz-0cP"/>
                                 </connections>
@@ -34,7 +33,7 @@
                                 <rect key="frame" x="142" y="56" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_numberbox" translatesAutoresizingMaskIntoConstraints="NO" id="0Cq-Uo-jFK">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_numberbox.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Cq-Uo-jFK">
                                         <rect key="frame" x="5" y="5" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -43,12 +42,12 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjv-f5-Uq0">
                                 <rect key="frame" x="46" y="344" width="390" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" backgroundImage="charge_button_"/>
+                                <state key="normal" backgroundImage="charge_button.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpF-M1-wxY">
                                 <rect key="frame" x="46" y="271" width="390" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" backgroundImage="charge_button_movie"/>
+                                <state key="normal" backgroundImage="charge_button_movie.png"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,10 +63,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bt_back" width="28" height="33"/>
-        <image name="charge_background" width="1920" height="1080"/>
-        <image name="charge_button_" width="1102" height="138"/>
-        <image name="charge_button_movie" width="1102" height="138"/>
-        <image name="charge_numberbox" width="500" height="500"/>
+        <image name="bt_back.png" width="70" height="70"/>
+        <image name="charge_background.png" width="1920" height="1080"/>
+        <image name="charge_button.png" width="1102" height="138"/>
+        <image name="charge_button_movie.png" width="1102" height="138"/>
+        <image name="charge_numberbox.png" width="500" height="500"/>
     </resources>
 </document>

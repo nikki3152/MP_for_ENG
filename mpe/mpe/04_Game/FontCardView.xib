@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orange_1" translatesAutoresizingMaskIntoConstraints="NO" id="OhL-Vk-2JC">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orange_0.png" translatesAutoresizingMaskIntoConstraints="NO" id="OhL-Vk-2JC">
                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -28,7 +27,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="table_frame" translatesAutoresizingMaskIntoConstraints="NO" id="lHI-is-cM0">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="table_frame.png" translatesAutoresizingMaskIntoConstraints="NO" id="lHI-is-cM0">
                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -40,11 +39,11 @@
                 <outlet property="frameImageView" destination="lHI-is-cM0" id="jzU-Fy-Rvo"/>
                 <outlet property="frontImageView" destination="PGY-F1-Ik6" id="bBa-kp-Izn"/>
             </connections>
-            <point key="canvasLocation" x="-41" y="-224"/>
+            <point key="canvasLocation" x="-177" y="-199"/>
         </view>
     </objects>
     <resources>
-        <image name="orange_1" width="150" height="150"/>
-        <image name="table_frame" width="150" height="150"/>
+        <image name="orange_0.png" width="150" height="150"/>
+        <image name="table_frame.png" width="150" height="150"/>
     </resources>
 </document>

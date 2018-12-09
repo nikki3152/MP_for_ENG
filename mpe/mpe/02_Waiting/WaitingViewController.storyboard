@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,8 +20,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2z-xo-33f">
                                 <rect key="frame" x="0.0" y="0.0" width="167" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                <state key="normal" image="taiki_icon_01" backgroundImage="taiki_panel_01"/>
-                                <state key="highlighted" backgroundImage="taiki_panel_01_tap"/>
+                                <state key="normal" image="taiki_icon_01.png" backgroundImage="taiki_panel_01.png"/>
+                                <state key="highlighted" backgroundImage="taiki_panel_01_tap.png"/>
                                 <connections>
                                     <action selector="stageSelectButtpnAction:" destination="fDl-of-gCg" eventType="touchUpInside" id="YwV-Sz-aCK"/>
                                 </connections>
@@ -30,8 +29,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYX-XU-YWh">
                                 <rect key="frame" x="165" y="0.0" width="170" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                <state key="normal" image="taiki_icon_02" backgroundImage="taiki_panel_02"/>
-                                <state key="highlighted" backgroundImage="taiki_panel_02_tap"/>
+                                <state key="normal" image="taiki_icon_02.png" backgroundImage="taiki_panel_02.png"/>
+                                <state key="highlighted" backgroundImage="taiki_panel_02_tap.png"/>
                                 <connections>
                                     <action selector="studyModeButtpnAction:" destination="fDl-of-gCg" eventType="touchUpInside" id="p1d-lw-JFE"/>
                                 </connections>
@@ -39,8 +38,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moz-to-uX4">
                                 <rect key="frame" x="335" y="0.0" width="168" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                <state key="normal" image="taiki_icon_03" backgroundImage="taiki_panel_03"/>
-                                <state key="highlighted" backgroundImage="taiki_panel_03_tap"/>
+                                <state key="normal" image="taiki_icon_03.png" backgroundImage="taiki_panel_03.png"/>
+                                <state key="highlighted" backgroundImage="taiki_panel_03_tap.png"/>
                                 <connections>
                                     <action selector="customButtpnAction:" destination="fDl-of-gCg" eventType="touchUpInside" id="JYj-og-hlJ"/>
                                 </connections>
@@ -48,8 +47,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdK-Fk-IO2">
                                 <rect key="frame" x="503" y="0.0" width="164" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
-                                <state key="normal" image="taiki_icon_04" backgroundImage="taiki_panel_04"/>
-                                <state key="highlighted" backgroundImage="taiki_panel_04_tap"/>
+                                <state key="normal" image="taiki_icon_04.png" backgroundImage="taiki_panel_04.png"/>
+                                <state key="highlighted" backgroundImage="taiki_panel_04_tap.png"/>
                                 <connections>
                                     <action selector="settingButtpnAction:" destination="fDl-of-gCg" eventType="touchUpInside" id="JM6-x4-pio"/>
                                 </connections>
@@ -57,17 +56,17 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilt-Rd-VgJ">
                                 <rect key="frame" x="10" y="10" width="100" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="taiki_movie_button"/>
-                                <state key="highlighted" backgroundImage="taiki_movie_button_tap"/>
+                                <state key="normal" backgroundImage="taiki_movie_button.png"/>
+                                <state key="highlighted" backgroundImage="taiki_movie_button_tap.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avu-8d-83k">
                                 <rect key="frame" x="547" y="10" width="100" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="85" backgroundImage="taiki_pp_button">
+                                <state key="normal" title="85" backgroundImage="taiki_pp_button.png">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <state key="highlighted" title="85" backgroundImage="taiki_pp_button_tap"/>
+                                <state key="highlighted" title="85" backgroundImage="taiki_pp_button_tap.png"/>
                                 <connections>
                                     <action selector="purchaseButtonAction:" destination="fDl-of-gCg" eventType="touchUpInside" id="5ed-ii-okT"/>
                                 </connections>
@@ -118,21 +117,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="taiki_icon_01" width="150" height="152"/>
-        <image name="taiki_icon_02" width="150" height="152"/>
-        <image name="taiki_icon_03" width="150" height="152"/>
-        <image name="taiki_icon_04" width="150" height="152"/>
-        <image name="taiki_movie_button" width="200" height="120"/>
-        <image name="taiki_movie_button_tap" width="200" height="120"/>
-        <image name="taiki_panel_01" width="480" height="1080"/>
-        <image name="taiki_panel_01_tap" width="480" height="1080"/>
-        <image name="taiki_panel_02" width="480" height="1080"/>
-        <image name="taiki_panel_02_tap" width="480" height="1080"/>
-        <image name="taiki_panel_03" width="480" height="1080"/>
-        <image name="taiki_panel_03_tap" width="480" height="1080"/>
-        <image name="taiki_panel_04" width="480" height="1080"/>
-        <image name="taiki_panel_04_tap" width="480" height="1080"/>
-        <image name="taiki_pp_button" width="200" height="120"/>
-        <image name="taiki_pp_button_tap" width="200" height="120"/>
+        <image name="taiki_icon_01.png" width="150" height="152"/>
+        <image name="taiki_icon_02.png" width="150" height="152"/>
+        <image name="taiki_icon_03.png" width="150" height="152"/>
+        <image name="taiki_icon_04.png" width="150" height="152"/>
+        <image name="taiki_movie_button.png" width="200" height="120"/>
+        <image name="taiki_movie_button_tap.png" width="200" height="120"/>
+        <image name="taiki_panel_01.png" width="480" height="1080"/>
+        <image name="taiki_panel_01_tap.png" width="480" height="1080"/>
+        <image name="taiki_panel_02.png" width="480" height="1080"/>
+        <image name="taiki_panel_02_tap.png" width="480" height="1080"/>
+        <image name="taiki_panel_03.png" width="480" height="1080"/>
+        <image name="taiki_panel_03_tap.png" width="480" height="1080"/>
+        <image name="taiki_panel_04.png" width="480" height="1080"/>
+        <image name="taiki_panel_04_tap.png" width="480" height="1080"/>
+        <image name="taiki_pp_button.png" width="200" height="120"/>
+        <image name="taiki_pp_button_tap.png" width="200" height="120"/>
     </resources>
 </document>

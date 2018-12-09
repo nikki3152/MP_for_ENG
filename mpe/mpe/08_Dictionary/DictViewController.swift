@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DictViewController: BaseViewController {
+class DictViewController: BaseViewController, UITextFieldDelegate {
 
 	class func dictViewController() -> DictViewController {
 		
@@ -30,4 +30,15 @@ class DictViewController: BaseViewController {
 		self.remove()
 	}
 	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		
+		textField.resignFirstResponder()
+		
+		return true
+	}
+	
+	func textFieldDidEndEditing(_ textField: UITextField) {
+		
+		
+	}
 }

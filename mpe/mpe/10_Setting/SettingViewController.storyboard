@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="222" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.025098778735632182" green="0.0" blue="0.73347701149425293" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" image="setting_icon_01"/>
+                                <state key="normal" image="setting_icon_01.png"/>
                                 <connections>
                                     <action selector="dataAggregateButtonAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="c3K-1n-VPh"/>
                                 </connections>
@@ -35,7 +34,7 @@
                                 <rect key="frame" x="222" y="0.0" width="222" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.025098778735632182" green="0.58818247126436785" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" image="setting_icon_02"/>
+                                <state key="normal" image="setting_icon_02.png"/>
                                 <connections>
                                     <action selector="soundButtonAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="mTD-yN-Wtb"/>
                                 </connections>
@@ -43,7 +42,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzT-9k-2qR">
                                 <rect key="frame" x="15" y="15" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="bt_back"/>
+                                <state key="normal" backgroundImage="bt_back.png"/>
                                 <connections>
                                     <action selector="backButtonAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="UJs-ob-m4q"/>
                                 </connections>
@@ -55,17 +54,17 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtF-4f-GUT">
                                         <rect key="frame" x="1" y="164" width="220" height="66"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <state key="normal" backgroundImage="setting_button_01"/>
+                                        <state key="normal" backgroundImage="setting_button_01.png"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0X7-uJ-JZI">
                                         <rect key="frame" x="1" y="230" width="220" height="66"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <state key="normal" backgroundImage="setting_button_02"/>
+                                        <state key="normal" backgroundImage="setting_button_02.png"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMq-Hj-HdZ">
                                         <rect key="frame" x="1" y="296" width="220" height="66"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <state key="normal" backgroundImage="setting_button_03"/>
+                                        <state key="normal" backgroundImage="setting_button_03.png"/>
                                         <connections>
                                             <action selector="purchaseButtonAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="84I-T2-3Vh"/>
                                         </connections>
@@ -94,8 +93,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQh-mr-CIu">
                                         <rect key="frame" x="111" y="13" width="100" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="setting_button_off"/>
-                                        <state key="selected" backgroundImage="setting_button_on"/>
+                                        <state key="normal" backgroundImage="setting_button_off.png"/>
+                                        <state key="selected" backgroundImage="setting_button_on.png"/>
                                         <connections>
                                             <action selector="switchBGMAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="2C0-Sp-z40"/>
                                         </connections>
@@ -103,8 +102,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJz-EU-cWG">
                                         <rect key="frame" x="111" y="62" width="100" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="setting_button_off"/>
-                                        <state key="selected" backgroundImage="setting_button_on"/>
+                                        <state key="normal" backgroundImage="setting_button_off.png"/>
+                                        <state key="selected" backgroundImage="setting_button_on.png"/>
                                         <connections>
                                             <action selector="switchSEAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="2fH-C8-CVu"/>
                                         </connections>
@@ -112,8 +111,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tga-uY-EEu">
                                         <rect key="frame" x="111" y="115" width="100" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="setting_button_off"/>
-                                        <state key="selected" backgroundImage="setting_button_on"/>
+                                        <state key="normal" backgroundImage="setting_button_off.png"/>
+                                        <state key="selected" backgroundImage="setting_button_on.png"/>
                                         <connections>
                                             <action selector="switchVoiceAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="Sjo-2T-TxR"/>
                                         </connections>
@@ -140,13 +139,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bt_back" width="28" height="33"/>
-        <image name="setting_button_01" width="500" height="150"/>
-        <image name="setting_button_02" width="500" height="150"/>
-        <image name="setting_button_03" width="500" height="150"/>
-        <image name="setting_button_off" width="300" height="120"/>
-        <image name="setting_button_on" width="300" height="120"/>
-        <image name="setting_icon_01" width="200" height="249"/>
-        <image name="setting_icon_02" width="150" height="150"/>
+        <image name="bt_back.png" width="70" height="70"/>
+        <image name="setting_button_01.png" width="500" height="150"/>
+        <image name="setting_button_02.png" width="500" height="150"/>
+        <image name="setting_button_03.png" width="500" height="150"/>
+        <image name="setting_button_off.png" width="300" height="120"/>
+        <image name="setting_button_on.png" width="300" height="120"/>
+        <image name="setting_icon_01.png" width="200" height="249"/>
+        <image name="setting_icon_02.png" width="150" height="150"/>
     </resources>
 </document>
