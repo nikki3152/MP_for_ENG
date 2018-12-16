@@ -705,7 +705,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 							let hitView = HitInfoView.hitInfoView()
 							hitView.open(title: hitWord.uppercased(), info: info, parent: self.view)
 						}
-						delay += 2.0
+						delay += 1.3
 						self.questCount -= 1
 						
 						self.answerWords[hitWord] = true	//回答済み単語入り

@@ -31,7 +31,7 @@ class HitInfoView: UIView {
 			self.alpha = 1
 			self.center = CGPoint(x: parent.frame.size.width / 2, y: (self.frame.size.height / 2))
 		}) { (stop) in
-			UIView.animate(withDuration: 0.2, delay: 2.8, options: .curveLinear, animations: { 
+			UIView.animate(withDuration: 0.2, delay: 1.2, options: .curveLinear, animations: { 
 				self.alpha = 0
 				self.center = CGPoint(x: parent.frame.size.width / 2, y: -(self.frame.size.height / 2))
 			}) { (stop) in
