@@ -42,7 +42,7 @@ class ViewController: UIViewController {
 			dataMrg.makeDB()
 		}
 		
-		self.timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { (t) in
+		self.timer = Timer.scheduledTimer(withTimeInterval: 7.0, repeats: true, block: { (t) in
 			
 			self.imageIndex += 1
 			self.backImageView.image = UIImage(named: "story_0\(self.imageIndex)")
@@ -55,6 +55,8 @@ class ViewController: UIViewController {
 		self.baseView.alpha = 0
 	}
 	
+	var isFirst = false
+	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
@@ -62,17 +64,37 @@ class ViewController: UIViewController {
 
 	override func viewWillLayoutSubviews() {
 		
-		UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations: { 
-			self.baseView.alpha = 1.0
-		}) { (stop) in
-			
+		if isFirst == false {
+			isFirst = true
+			//起動画面
+			let size = UIScreen.main.bounds
+			let launchView = UIView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+			launchView.backgroundColor = UIColor.white
+			launchView.contentMode = .scaleAspectFit
+			self.view.addSubview(launchView)
+			launchView.center = CGPoint(x: size.width / 2, y: size.height / 2)
+			let imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: 280, height: 240))
+			launchView.addSubview(imageview)
+			imageview.image = UIImage(named: "flowerpost_logo")
+			imageview.center = CGPoint(x: launchView.frame.size.width / 2, y: launchView.frame.size.height / 2)
+			UIView.animate(withDuration: 0.5, delay: 2.0, options: .curveLinear, animations: { 
+				launchView.alpha = 0
+			}) { (stop) in
+				launchView.removeFromSuperview()
+				UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations: { 
+					self.baseView.alpha = 1.0
+				}) { (stop) in
+					
+				}
+				self.textView.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height + (self.textView.frame.size.height / 2))
+				UIView.animate(withDuration: 20.0, delay: 0, options: .curveLinear, animations: { 
+					self.textView.center = CGPoint(x: self.view.frame.size.width / 2, y: (self.view.frame.size.height / 2))
+				}) { (stop) in
+					
+				}
+			}
 		}
-		self.textView.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height + (self.textView.frame.size.height / 2))
-		UIView.animate(withDuration: 20.0, delay: 0, options: .curveLinear, animations: { 
-			self.textView.center = CGPoint(x: self.view.frame.size.width / 2, y: (self.view.frame.size.height / 2))
-		}) { (stop) in
-			
-		}
+		
 	}
 	
 	// >> Skip

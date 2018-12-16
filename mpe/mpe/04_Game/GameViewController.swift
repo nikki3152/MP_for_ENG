@@ -586,7 +586,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	func separate(word: String) -> [String] {
 		
 		var ret: [String] = []
-		if word.count > 2 {
+		if word.count >= 2 {
 			for i in 0 ..< word.count {
 				for ii in i + 1 ... word.count {
 					let c = word[word.index(word.startIndex, offsetBy: i) ..< word.index(word.startIndex, offsetBy: ii)]
@@ -674,13 +674,14 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					hitWords.append(key)
 					print("【\(key)】")
 					let values = dic[key]!
-					for value in values {
+					if values.count > 0 {
+						let value = values[0]
 						print(" >\(value)")
 						infoText.append(value)
-						break
+					} else {
+						infoText.append("なし")
 					}
 				}
-				break
 			}
 			
 			if hitWords.count > 0 {
@@ -704,7 +705,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 							let hitView = HitInfoView.hitInfoView()
 							hitView.open(title: hitWord.uppercased(), info: info, parent: self.view)
 						}
-						delay += 4.0
+						delay += 2.0
 						self.questCount -= 1
 						
 						self.answerWords[hitWord] = true	//回答済み単語入り

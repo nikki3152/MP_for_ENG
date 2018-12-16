@@ -24,6 +24,9 @@ class HomeViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
 	
+	override func viewWillLayoutSubviews() {
+		super.viewWillLayoutSubviews()
+	}
 	//スタート
 	@IBOutlet weak var startButton: UIButton!
 	@IBAction func startButtonAction(_ sender: Any) {
