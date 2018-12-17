@@ -144,6 +144,17 @@ struct QuestData {
 	}
 }
 
+struct TableInfo {
+	var index: Int		//テーブルのインデックス
+	var moji: String	//文字
+	var type: String	//得点タイプ
+	init(index: Int, moji: String, type: String) {
+		self.index = index
+		self.moji = moji
+		self.type = type
+	}
+}
+
 class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableViewDelegate, FontCardViewDelegate {
 	
 	let dataMrg = MPEDataManager()
@@ -234,7 +245,10 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	//テーブル
 	var gameTable: GameTableView!
 	@IBOutlet weak var mainScrollView: UIScrollView!
-	var checkKomaSet: Set<TableKomaView> = []
+	var checkKomaSet: Set<TableKomaView> = []	//テーブルのビューを保存する
+	//var checkTableInfo: [TableInfo] = []		//文字とインデックスを保存する
+	var checkTableInfoH: [TableInfo] = []		//横方向の文字とインデックスを保存する
+	var checkTableInfoV: [TableInfo] = []		//縦方向の文字とインデックスを保存する
 
 	
 	//手札
@@ -381,7 +395,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.ballonMainLabel = bLabel
 	}
 	
-	//横方向の単語検索
+	
+	//MARK: 横方向の単語検索
 	func checkWordH(startIndex: Int) -> String {
 		
 		var ward: String = ""
@@ -406,6 +421,20 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				if moji != "" && moji != " " && moji != "0" {
 					ward.append(moji)
 					self.checkKomaSet.insert(self.gameTable.komas[idx])
+					
+					//テーブル情報取得
+					var infoAdd = true
+					for info in self.checkTableInfoH {
+						if info.index == idx {
+							infoAdd = false
+							break
+						}
+					}
+					if infoAdd {
+						let type = self.questData.tableType[idx]
+						self.checkTableInfoH.append(TableInfo(index: idx, moji: moji, type: type)) 
+					}
+					
 					startX += 1
 				} else {
 					break
@@ -415,7 +444,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		return ward
 	}
-	//縦方向の単語検索
+	//MARK: 縦方向の単語検索
 	func checkWordV(startIndex: Int) -> String {
 		
 		var ward: String = ""
@@ -440,6 +469,20 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				if moji != "" && moji != " " && moji != "0" {
 					ward.append(moji)
 					self.checkKomaSet.insert(self.gameTable.komas[idx])
+					
+					//テーブル情報取得
+					var infoAdd = true
+					for info in self.checkTableInfoV {
+						if info.index == idx {
+							infoAdd = false
+							break
+						}
+					}
+					if infoAdd {
+						let type = self.questData.tableType[idx]
+						self.checkTableInfoV.append(TableInfo(index: idx, moji: moji, type: type)) 
+					}
+					
 					startY += 1
 				} else {
 					break
@@ -551,7 +594,63 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		return label
 	}
 	
-	//単語から得点計算
+	func buildWord(moji: [TableInfo]) -> String {
+		
+		var word: String = ""
+		for info in moji {
+			word.append(info.moji)
+		}
+		return word.lowercased()
+	}
+	
+	//MARK: - スコア計算
+	//文字から得点計算
+	func score(moji: [TableInfo]) -> Int {
+		
+		var score = 0
+		var bw: Int = 1
+		for info in moji {
+			let c = info.moji.lowercased()
+			let t = info.type
+			//テーブル値による加算
+			var bc: Int = 1
+			if t == "DL" {
+				bc = 2
+			}
+			else if t == "TL" {
+				bc = 3
+			}
+			if t == "DL" {
+				bw = 2
+			}
+			else if t == "TL" {
+				bw = 3
+			}
+			
+			if c == "a" || c == "e" || c == "i" || c == "l" || c == "n" || c == "o" || c == "r" || c == "s" || c == "t" || c == "u" {
+				score += 1 * bc
+			}
+			else if c == "d" || c == "g" {
+				score += 2 * bc
+			}
+			else if c == "b" || c == "c" || c == "m" || c == "p" {
+				score += 3 * bc
+			}
+			else if c == "f" || c == "h" || c == "v" || c == "m" || c == "y" {
+				score += 4 * bc 
+			}
+			else if c == "k" {
+				score += 5 * bc 
+			}
+			else if c == "j" || c == "x" {
+				score += 8 * bc 
+			}
+			else if c == "q" || c == "z" {
+				score += 10 * bc 
+			}
+		}
+		return score * bw * 10
+	}
 	func score(word: String) -> Int {
 		
 		var score = 0
@@ -581,23 +680,53 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		return score * 10
 	}
+	//MARK: -
+	
 	
 	//２文字以上の単語を複数のサブテキストに分割
-	func separate(word: String) -> [String] {
+	func separate(word: String, info: [TableInfo]) -> [[TableInfo]] {
 		
-		var ret: [String] = []
-		if word.count >= 2 {
-			for i in 0 ..< word.count {
-				for ii in i + 1 ... word.count {
-					let c = word[word.index(word.startIndex, offsetBy: i) ..< word.index(word.startIndex, offsetBy: ii)]
-					let s = String(c)
-					if s.count > 1 {
-						ret.append(s)
+		var ret_info: [[TableInfo]] = []
+		if info.count >= 2 {
+			for startIndex in 0 ..< info.count - 1 {
+				for endIndex in startIndex + 1 ..< info.count {
+					var mojiCount = 0
+					var ret: [TableInfo] = []
+					for _ in startIndex ... endIndex {
+						let index = startIndex + mojiCount
+						let infoData = info[index]
+						ret.append(infoData)
+						mojiCount += 1
+					}
+					if ret.count > 1 {
+						ret_info.append(ret)
 					}
 				}
 			}
 		}
-		return ret
+		
+		for infos in ret_info {
+			print("------------------------------------------------------------")
+			for info in infos {
+				print("[\(info)")
+			}
+		}
+		return ret_info
+		
+		//文字をセパレート
+//		var ret: [String] = []
+//		if word.count >= 2 {
+//			for i in 0 ..< word.count {
+//				for ii in i + 1 ... word.count {
+//					let c = word[word.index(word.startIndex, offsetBy: i) ..< word.index(word.startIndex, offsetBy: ii)]
+//					let s = String(c)
+//					if s.count > 1 {
+//						ret.append(s)
+//					}
+//				}
+//			}
+//		}
+//		return ret
 	}
 	
 	
@@ -635,13 +764,16 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.mainScrollView.isScrollEnabled = false
 	}
 	func gameTableViewToucheUp(table: GameTableView, koma: TableKomaView) {
-		//MARK: 得点
+		//MARK: 得点計算
+		let tableIndex = koma.tag
 		self.checkKomaSet = []
+		self.checkTableInfoH = []
+		self.checkTableInfoV = []
 		self.mainScrollView.isScrollEnabled = true
 		if let index = self.cardSelectIndex {
 			let moji = self.questData.cards[index]
 			koma.setFont(moji: moji, type: nil)
-			self.questData.table[koma.tag] = moji
+			self.questData.table[tableIndex] = moji
 			if self.questData.wildCardLen < index + 1 {
 				//ワイルドカード使用
 				self.questData.cards.remove(at: index)
@@ -651,18 +783,27 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				self.updateCardScroll()
 				self.cardSelectIndex = nil
 			}
+			
+			var infoList: [[TableInfo]] = []
 			var list: [[String:[String]]] = []
 			//横の検索
-			let wordHline = self.checkWordH(startIndex: koma.tag)
+			let wordHline = self.checkWordH(startIndex: tableIndex)
 			//縦の検索
-			let wordVline = self.checkWordV(startIndex: koma.tag)
-			
-			let hWords: [String] = self.separate(word: wordHline)
-			let vWords: [String] = self.separate(word: wordVline)
-			let allWords: [String] = hWords + vWords
-			for word in allWords {
-				print("> \(word)")
+			let wordVline = self.checkWordV(startIndex: tableIndex)
+			//ワードを２文字以上に分割する
+			let hWords: [[TableInfo]] = self.separate(word: wordHline, info: self.checkTableInfoH)
+			let vWords: [[TableInfo]] = self.separate(word: wordVline, info: self.checkTableInfoV)
+			let allWords: [[TableInfo]] = hWords + vWords
+			for wordInfos in allWords {
+				var word: String = ""
+				for info in wordInfos {
+					let c = info.moji
+					word.append(c)
+				}
 				let listH = dataMrg.search(word: word.lowercased(), match: .perfect)
+				if listH.count > 0 {
+					infoList.append(wordInfos)
+				}
 				list += listH
 			}
 			
@@ -672,17 +813,18 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				let keys = dic.keys
 				for key in keys {
 					hitWords.append(key)
-					print("【\(key)】")
 					let values = dic[key]!
 					if values.count > 0 {
 						let value = values[0]
-						print(" >\(value)")
+						print(" >【\(key)】\(value)")
 						infoText.append(value)
 					} else {
-						infoText.append("なし")
+						infoText.append("【\(key)】---")
 					}
 				}
 			}
+			
+			
 			
 			if hitWords.count > 0 {
 				print("単語数: \(hitWords.count)")
@@ -690,13 +832,15 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				for i in 0 ..< hitWords.count {
 					let hitWord = hitWords[i]
 					let info = infoText[i]
+					let infoData = infoList[i]
 					if nil == self.answerWords[hitWord] {
 						//スコア計算
-						let score = self.score(word: hitWord)
+						let score = self.score(moji: infoData)
 						self.totalScore += score
-						
+						//コマの特定
 						var komas: [TableKomaView] = []
-						for koma in self.checkKomaSet {
+						for info in infoData {
+							let koma = self.gameTable.komas[info.index]
 							komas.append(koma)
 						}
 						
