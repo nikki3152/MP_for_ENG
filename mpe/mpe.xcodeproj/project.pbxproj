@@ -147,6 +147,14 @@
 		5489AF5D212B007A00A7D275 /* ejdic-hand-utf8.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */; };
 		5489AF5F212B00B500A7D275 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF5E212B00B500A7D275 /* DataManager.swift */; };
 		5489AF61212B010B00A7D275 /* MPEDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF60212B010B00A7D275 /* MPEDataManager.swift */; };
+		548FF96321DF816E007CD3B0 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548FF96221DF816E007CD3B0 /* GameOverView.swift */; };
+		548FF96521DF8189007CD3B0 /* GameOverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548FF96421DF8189007CD3B0 /* GameOverView.xib */; };
+		548FF96721DF8230007CD3B0 /* GameClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548FF96621DF8230007CD3B0 /* GameClearView.swift */; };
+		548FF96921DF823E007CD3B0 /* GameClearView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548FF96821DF823E007CD3B0 /* GameClearView.xib */; };
+		548FF96B21DF843B007CD3B0 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548FF96A21DF843B007CD3B0 /* PauseView.swift */; };
+		548FF96D21DF8448007CD3B0 /* PauseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548FF96C21DF8448007CD3B0 /* PauseView.xib */; };
+		548FF97021DF873B007CD3B0 /* game_list_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FF96E21DF873B007CD3B0 /* game_list_head.png */; };
+		548FF97121DF873B007CD3B0 /* game_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FF96F21DF873B007CD3B0 /* game_over.png */; };
 		54CFB3DB20DE162B00057F08 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DA20DE162B00057F08 /* HomeViewController.swift */; };
 		54CFB3DD20DE164000057F08 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */; };
 		54CFB3DF20DE1F0B00057F08 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */; };
@@ -708,6 +716,14 @@
 		5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ejdic-hand-utf8.txt"; sourceTree = "<group>"; };
 		5489AF5E212B00B500A7D275 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5489AF60212B010B00A7D275 /* MPEDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPEDataManager.swift; sourceTree = "<group>"; };
+		548FF96221DF816E007CD3B0 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		548FF96421DF8189007CD3B0 /* GameOverView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameOverView.xib; sourceTree = "<group>"; };
+		548FF96621DF8230007CD3B0 /* GameClearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameClearView.swift; sourceTree = "<group>"; };
+		548FF96821DF823E007CD3B0 /* GameClearView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameClearView.xib; sourceTree = "<group>"; };
+		548FF96A21DF843B007CD3B0 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
+		548FF96C21DF8448007CD3B0 /* PauseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauseView.xib; sourceTree = "<group>"; };
+		548FF96E21DF873B007CD3B0 /* game_list_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_list_head.png; sourceTree = "<group>"; };
+		548FF96F21DF873B007CD3B0 /* game_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_over.png; sourceTree = "<group>"; };
 		54CFB3DA20DE162B00057F08 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -1329,6 +1345,12 @@
 			children = (
 				54CFB3EA20DE294700057F08 /* GameViewController.storyboard */,
 				54CFB3E820DE293C00057F08 /* GameViewController.swift */,
+				548FF96221DF816E007CD3B0 /* GameOverView.swift */,
+				548FF96421DF8189007CD3B0 /* GameOverView.xib */,
+				548FF96621DF8230007CD3B0 /* GameClearView.swift */,
+				548FF96821DF823E007CD3B0 /* GameClearView.xib */,
+				548FF96A21DF843B007CD3B0 /* PauseView.swift */,
+				548FF96C21DF8448007CD3B0 /* PauseView.xib */,
 				54F3A6D82196C9F000A1E01F /* HitInfoView.swift */,
 				54F3A6DA2196CA0400A1E01F /* HitInfoView.xib */,
 				54433BDA2189D0C600CDBD3D /* EditViewController.swift */,
@@ -1538,6 +1560,8 @@
 				54D5509521BCA66200980B92 /* pink_4.png */,
 				54D550A121BCA66200980B92 /* pink_5.png */,
 				54D5509821BCA66200980B92 /* blue_8.png */,
+				548FF96E21DF873B007CD3B0 /* game_list_head.png */,
+				548FF96F21DF873B007CD3B0 /* game_over.png */,
 				54D5508721BCA66200980B92 /* gameover_button_retry.png */,
 				54D5508821BCA66200980B92 /* K.png */,
 				54D5508921BCA66200980B92 /* stage_08.png */,
@@ -2087,6 +2111,7 @@
 				5429F3E421CF06E400E0E50F /* chain9.png in Resources */,
 				5429F3B121CF06B600E0E50F /* countup_7.png in Resources */,
 				54D5531221BCA66300980B92 /* data_next.png in Resources */,
+				548FF97121DF873B007CD3B0 /* game_over.png in Resources */,
 				54D5531321BCA66300980B92 /* data_line.png in Resources */,
 				542F446A21B57FAD00C51AD6 /* used up（使い切り）.plist in Resources */,
 				54D552FF21BCA66300980B92 /* custom_box_04.png in Resources */,
@@ -2221,6 +2246,7 @@
 				54D552B521BCA66300980B92 /* tsukikun_03.png in Resources */,
 				5429F3E721CF06E400E0E50F /* chain3_anim.png in Resources */,
 				54CFB40F20DE3B3100057F08 /* PurchaseViewController.storyboard in Resources */,
+				548FF97021DF873B007CD3B0 /* game_list_head.png in Resources */,
 				54D551E521BCA66300980B92 /* select_pleview_center.png in Resources */,
 				54D5528521BCA66300980B92 /* anim_U.png in Resources */,
 				54D552EC21BCA66300980B92 /* music_start.png in Resources */,
@@ -2336,6 +2362,7 @@
 				54D5527D21BCA66300980B92 /* gameclear_button_review_tap.png in Resources */,
 				5429F3AF21CF06B600E0E50F /* score_get_2.png in Resources */,
 				54D552F921BCA66300980B92 /* custom_box_07_tap.png in Resources */,
+				548FF96921DF823E007CD3B0 /* GameClearView.xib in Resources */,
 				54D552F721BCA66300980B92 /* custom_box_inactive1.png in Resources */,
 				54D5524F21BCA66300980B92 /* cell_anime13.png in Resources */,
 				54D5534C21BCA66300980B92 /* quiz_incorrect.png in Resources */,
@@ -2462,6 +2489,7 @@
 				54D551F421BCA66300980B92 /* select_pleview_right.png in Resources */,
 				54D5523421BCA66300980B92 /* taiyokun_shippo_02.png in Resources */,
 				54D551DF21BCA66300980B92 /* quizdonyu_fire_01.png in Resources */,
+				548FF96D21DF8448007CD3B0 /* PauseView.xib in Resources */,
 				54D5531F21BCA66300980B92 /* taiki_panel_02_tap.png in Resources */,
 				54D5530921BCA66300980B92 /* custom_box_10_tap.png in Resources */,
 				54D5532B21BCA66300980B92 /* taiki_movie_button.png in Resources */,
@@ -2547,6 +2575,7 @@
 				54D9AEB920CF6185004FEBA2 /* Main.storyboard in Resources */,
 				54D5527921BCA66300980B92 /* cell_anime3.png in Resources */,
 				5429F3B521CF06B600E0E50F /* score_get_7.png in Resources */,
+				548FF96521DF8189007CD3B0 /* GameOverView.xib in Resources */,
 				54D5527121BCA66300980B92 /* triple_letter_score.png in Resources */,
 				54D5534921BCA66300980B92 /* home_taiyokun_sippo.png in Resources */,
 				54D5523721BCA66300980B92 /* orange_4.png in Resources */,
@@ -2581,7 +2610,9 @@
 				54CFB40520DE389200057F08 /* DataAggregateViewController.swift in Sources */,
 				5489AF61212B010B00A7D275 /* MPEDataManager.swift in Sources */,
 				54F3A6D92196C9F000A1E01F /* HitInfoView.swift in Sources */,
+				548FF96B21DF843B007CD3B0 /* PauseView.swift in Sources */,
 				54D9AEB620CF6185004FEBA2 /* ViewController.swift in Sources */,
+				548FF96721DF8230007CD3B0 /* GameClearView.swift in Sources */,
 				54CFB40920DE39B300057F08 /* SoundViewController.swift in Sources */,
 				54CFB40120DE370A00057F08 /* SettingViewController.swift in Sources */,
 				54F3A6E12197CDAF00A1E01F /* ConditionsPickerView.swift in Sources */,
@@ -2595,6 +2626,7 @@
 				54CFB3ED20DE2E4D00057F08 /* StudyModeViewController.swift in Sources */,
 				54140F24212BB3E3007C753B /* TableKomaView.swift in Sources */,
 				54CFB3DB20DE162B00057F08 /* HomeViewController.swift in Sources */,
+				548FF96321DF816E007CD3B0 /* GameOverView.swift in Sources */,
 				54CFB3F920DE334600057F08 /* DictViewController.swift in Sources */,
 				54CFB3E520DE25E300057F08 /* StageSelectViewController.swift in Sources */,
 				54CFB3F120DE303800057F08 /* QuickQuestIntoroViewController.swift in Sources */,

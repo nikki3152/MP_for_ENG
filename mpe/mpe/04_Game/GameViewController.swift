@@ -187,11 +187,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			qSubLabel.center = CGPoint(x: self.questDisplayImageView.frame.size.width / 2, y: self.questDisplayImageView.frame.size.height / 2)
 			self.questSubLabel = qSubLabel
 			
-			if _questCount == 0 {
-				//クリア
-				
-				
-			}
 		}
 	}
 	
@@ -350,14 +345,25 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	func updateQuestString() {
 		
 		self.questMainLabel?.removeFromSuperview()
+		
 		var count: Int = 0
-		if let v = self.questData.questData["count"] as? Int {
-			count = v
+		if self.questData.questType == .fillAllCell {
+			for koma in self.gameTable.komas {
+				if koma.moji == "0" {
+					count += 1
+				}
+			}
+		} else {
+			if let v = self.questData.questData["count"] as? Int {
+				count = v
+			}
 		}
+		
 		var words: Int = 0
 		if let v = self.questData.questData["words"] as? Int {
 			words = v
 		}
+		
 		var font: String = ""
 		if let v = self.questData.questData["font"] as? String {
 			font = v
@@ -827,6 +833,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			
 			
 			if hitWords.count > 0 {
+				//あたり
 				print("単語数: \(hitWords.count)")
 				var delay: Double = 0
 				for i in 0 ..< hitWords.count {
@@ -850,12 +857,198 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 							hitView.open(title: hitWord.uppercased(), info: info, parent: self.view)
 						}
 						delay += 1.3
-						self.questCount -= 1
 						
 						self.answerWords[hitWord] = true	//回答済み単語入り
+						let mojiCount = hitWord.count
+						print("文字数: \(mojiCount)")
+						
+						//MARK: クリア判定
+						if self.questData.questType == .makeWords {
+							//+++++++++++++++++++++++++
+							//英単語を◯個作る
+							//+++++++++++++++++++++++++
+							self.questCount -= 1
+							if self.questCount <= 0 {
+								//クリア
+								self.gameClear()
+								
+							} else {
+								if emptyTableCount() == 0 || cardViewList.count == 0 {
+									//ゲームオーバー
+									self.gameOver()
+								}
+							}
+						}
+						else if self.questData.questType == .fillAllCell {
+							//+++++++++++++++++++++++++
+							//全てのマスを埋める
+							//+++++++++++++++++++++++++
+							var count = 0
+							for koma in self.gameTable.komas {
+								if koma.moji == "0" {
+									count += 1
+								}
+							}
+							self.questCount = count
+							if self.questCount <= 0 {
+								//クリア
+								self.gameClear()
+							} else {
+								if cardViewList.count == 0 {
+									//ゲームオーバー
+									self.gameOver()
+								}
+							}
+						}
+						else if self.questData.questType == .useAllFont {
+							//+++++++++++++++++++++++++
+							//すべてのアルファベットを使う
+							//+++++++++++++++++++++++++
+							print("cardViewList count: \(cardViewList.count)")
+							//手札が空
+							if cardViewList.count == 0 {
+								//クリア
+								self.gameClear()
+							} else {
+								var wc = 0
+								for t in cardViewList {
+									if t.isWildCard {
+										wc += 1
+									}
+								}
+								//ワイルドカードだけが残っている
+								if wc == cardViewList.count {
+									//クリア
+									self.gameClear()
+								} else {
+									if emptyTableCount() == 0 {
+										//ゲームオーバー
+										self.gameOver()
+									}
+								}
+							}
+						}
+						else if self.questData.questType == .makeWoredsCount {
+							//+++++++++++++++++++++++++
+							//◯字数以上の英単語を◯個作る
+							//+++++++++++++++++++++++++
+							var words: Int = 0
+							if let v = self.questData.questData["words"] as? Int {
+								words = v
+							}
+							if mojiCount >= words {
+								self.questCount -= 1
+								if self.questCount <= 0 {
+									//クリア
+									self.gameClear()
+								} else {
+									if emptyTableCount() == 0 || cardViewList.count == 0 {
+										//ゲームオーバー
+										self.gameOver()
+									}
+								}
+							} else {
+								if emptyTableCount() == 0 || cardViewList.count == 0 {
+									//ゲームオーバー
+									self.gameOver()
+								}
+							}
+						}
+						else if self.questData.questType == .hiScore {
+							//+++++++++++++++++++++++++
+							//スコアを○点以上
+							//+++++++++++++++++++++++++
+							var count: Int = 0
+							if let v = self.questData.questData["count"] as? Int {
+								count = v
+							}
+							if self.totalScore <= count {
+								//クリア
+								self.gameClear()
+							} else {
+								if emptyTableCount() == 0 || cardViewList.count == 0 {
+									//ゲームオーバー
+									self.gameOver()
+								}
+							}
+						}
+						else if self.questData.questType == .useFontMakeCount {
+							//+++++++++++++++++++++++++
+							//◯がつく英単語を○個作る
+							//+++++++++++++++++++++++++
+							var font: String = ""
+							if let v = self.questData.questData["font"] as? String {
+								font = v
+							}
+							if hitWord.contains(font) {
+								self.questCount -= 1
+								if self.questCount <= 0 {
+									//クリア
+									self.gameClear()
+								} else {
+									if emptyTableCount() == 0 || cardViewList.count == 0 {
+										//ゲームオーバー
+										self.gameOver()
+									}
+								}
+							} else {
+								if emptyTableCount() == 0 || cardViewList.count == 0 {
+									//ゲームオーバー
+									self.gameOver()
+								}
+							}
+						}
+					} else {
+						if emptyTableCount() == 0 || cardViewList.count == 0 {
+							//ゲームオーバー
+							self.gameOver()
+						}
 					}
 				}
+			} else {
+				//ハズレ
+				if emptyTableCount() == 0 || cardViewList.count == 0 {
+					//ゲームオーバー
+					self.gameOver()
+				}
 			}
+		}
+	}
+	
+	//空きテーブル数
+	func emptyTableCount() -> Int {
+		
+		var count = 0
+		for koma in self.gameTable.komas {
+			if koma.moji == "0" {
+				count += 1
+			}
+		}
+		return count
+	}
+	
+	//ゲームクリア
+	func gameClear() {
+		
+		print("クリア！！！")
+		let clear = GameClearView.gameClearView()
+		self.view.addSubview(clear)
+		clear.bounds = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+		clear.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 2)
+		clear.closeHandler = {() in
+			
+		}
+	}
+	//ゲームオーバー
+	func gameOver() {
+		
+		print("ゲームオーバー！！！")
+		let over = GameClearView.gameClearView()
+		self.view.addSubview(over)
+		over.bounds = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+		over.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 2)
+		over.closeHandler = {() in
+			
 		}
 	}
 }
