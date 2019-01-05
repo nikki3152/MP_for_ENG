@@ -166,6 +166,11 @@
 		548FF98521E08FA1007CD3B0 /* pauce_button_continue_tap.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FF97F21E08FA0007CD3B0 /* pauce_button_continue_tap.png */; };
 		548FF98621E08FA1007CD3B0 /* pauce_button_retry_tap.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FF98021E08FA0007CD3B0 /* pauce_button_retry_tap.png */; };
 		548FF98721E08FA1007CD3B0 /* pauce_button_continue.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FF98121E08FA0007CD3B0 /* pauce_button_continue.png */; };
+		548FF98921E0BEFE007CD3B0 /* OutlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548FF98821E0BEFE007CD3B0 /* OutlineLabel.swift */; };
+		548FF98B21E1638D007CD3B0 /* gameover_anim_word.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FF98A21E1638D007CD3B0 /* gameover_anim_word.png */; };
+		548FF98F21E164EE007CD3B0 /* gameclear_anim_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FF98C21E164EE007CD3B0 /* gameclear_anim_logo.png */; };
+		548FF99021E164EE007CD3B0 /* new_record_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FF98D21E164EE007CD3B0 /* new_record_red.png */; };
+		548FF99121E164EE007CD3B0 /* new_record_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FF98E21E164EE007CD3B0 /* new_record_white.png */; };
 		54CFB3DB20DE162B00057F08 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DA20DE162B00057F08 /* HomeViewController.swift */; };
 		54CFB3DD20DE164000057F08 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */; };
 		54CFB3DF20DE1F0B00057F08 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */; };
@@ -746,6 +751,11 @@
 		548FF97F21E08FA0007CD3B0 /* pauce_button_continue_tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pauce_button_continue_tap.png; path = "../../../../../../../../../Dropbox/もじぴったん_for_ENGLISH/デザイン/デザインデータ/04_プレイ画面/ポップアップ_pauce/pauce_button_continue_tap.png"; sourceTree = "<group>"; };
 		548FF98021E08FA0007CD3B0 /* pauce_button_retry_tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pauce_button_retry_tap.png; path = "../../../../../../../../../Dropbox/もじぴったん_for_ENGLISH/デザイン/デザインデータ/04_プレイ画面/ポップアップ_pauce/pauce_button_retry_tap.png"; sourceTree = "<group>"; };
 		548FF98121E08FA0007CD3B0 /* pauce_button_continue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pauce_button_continue.png; path = "../../../../../../../../../Dropbox/もじぴったん_for_ENGLISH/デザイン/デザインデータ/04_プレイ画面/ポップアップ_pauce/pauce_button_continue.png"; sourceTree = "<group>"; };
+		548FF98821E0BEFE007CD3B0 /* OutlineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineLabel.swift; sourceTree = "<group>"; };
+		548FF98A21E1638D007CD3B0 /* gameover_anim_word.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameover_anim_word.png; sourceTree = "<group>"; };
+		548FF98C21E164EE007CD3B0 /* gameclear_anim_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_logo.png; sourceTree = "<group>"; };
+		548FF98D21E164EE007CD3B0 /* new_record_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_record_red.png; sourceTree = "<group>"; };
+		548FF98E21E164EE007CD3B0 /* new_record_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_record_white.png; sourceTree = "<group>"; };
 		54CFB3DA20DE162B00057F08 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -1589,6 +1599,7 @@
 				548FF98021E08FA0007CD3B0 /* pauce_button_retry_tap.png */,
 				548FF97D21E08FA0007CD3B0 /* pauce_button_retry.png */,
 				548FF96E21DF873B007CD3B0 /* game_list_head.png */,
+				548FF98A21E1638D007CD3B0 /* gameover_anim_word.png */,
 				548FF96F21DF873B007CD3B0 /* game_over.png */,
 				548FF97621E08A8F007CD3B0 /* game_clear.png */,
 				548FF97A21E08E8E007CD3B0 /* game_pause.png */,
@@ -1624,6 +1635,9 @@
 				54D550AB21BCA66200980B92 /* L.png */,
 				54D550AE21BCA66200980B92 /* ouji_03.png */,
 				54D550AF21BCA66200980B92 /* ouji_01.png */,
+				548FF98C21E164EE007CD3B0 /* gameclear_anim_logo.png */,
+				548FF98D21E164EE007CD3B0 /* new_record_red.png */,
+				548FF98E21E164EE007CD3B0 /* new_record_white.png */,
 				54D550B021BCA66200980B92 /* gameover_button_movie_tap.png */,
 				54D550B121BCA66200980B92 /* gameover_button_giveup_tap.png */,
 				548FF97221E07B49007CD3B0 /* gameover_button_next_tap.png */,
@@ -2000,6 +2014,7 @@
 		54D9AEB220CF6185004FEBA2 /* mpe */ = {
 			isa = PBXGroup;
 			children = (
+				548FF98821E0BEFE007CD3B0 /* OutlineLabel.swift */,
 				54F3A6DD2196D53B00A1E01F /* TTTAttributedLabel.h */,
 				54F3A6DE2196D53C00A1E01F /* TTTAttributedLabel.m */,
 				5489AF60212B010B00A7D275 /* MPEDataManager.swift */,
@@ -2182,8 +2197,10 @@
 				54D551EC21BCA66300980B92 /* select_mapchange_right.png in Resources */,
 				54CFB3FF20DE361300057F08 /* CustomViewController.storyboard in Resources */,
 				5429F3BF21CF06B600E0E50F /* countup_1.png in Resources */,
+				548FF99121E164EE007CD3B0 /* new_record_white.png in Resources */,
 				5429F3E821CF06E400E0E50F /* chain3.png in Resources */,
 				54D5534821BCA66300980B92 /* home_main_logo.png in Resources */,
+				548FF99021E164EE007CD3B0 /* new_record_red.png in Resources */,
 				54D552BD21BCA66300980B92 /* obj_star_01.png in Resources */,
 				54D5525421BCA66300980B92 /* gameover_button_review.png in Resources */,
 				54D5520921BCA66300980B92 /* select_mapchange_right_intermediate.png in Resources */,
@@ -2459,6 +2476,7 @@
 				54D5528921BCA66300980B92 /* anim_C.png in Resources */,
 				54D552ED21BCA66300980B92 /* music_stop.png in Resources */,
 				54D5523B21BCA66300980B92 /* gameover_button_giveup_tap.png in Resources */,
+				548FF98B21E1638D007CD3B0 /* gameover_anim_word.png in Resources */,
 				54D5530A21BCA66300980B92 /* custom_box_08.png in Resources */,
 				54D551D521BCA66300980B92 /* quizdonyu_object_sword.png in Resources */,
 				542F444521B300DC00C51AD6 /* チュートリアル.plist in Resources */,
@@ -2595,6 +2613,7 @@
 				54D5526E21BCA66300980B92 /* anim_O.png in Resources */,
 				54D5532821BCA66300980B92 /* taiki_pp_button_tap.png in Resources */,
 				54D5532621BCA66300980B92 /* taiki_panel_02.png in Resources */,
+				548FF98F21E164EE007CD3B0 /* gameclear_anim_logo.png in Resources */,
 				54D5528121BCA66300980B92 /* gameover_background.png in Resources */,
 				54D5525921BCA66300980B92 /* cell_anime11.png in Resources */,
 				5429F3E321CF06E400E0E50F /* chain7_anim.png in Resources */,
@@ -2654,6 +2673,7 @@
 				54CFB40520DE389200057F08 /* DataAggregateViewController.swift in Sources */,
 				5489AF61212B010B00A7D275 /* MPEDataManager.swift in Sources */,
 				54F3A6D92196C9F000A1E01F /* HitInfoView.swift in Sources */,
+				548FF98921E0BEFE007CD3B0 /* OutlineLabel.swift in Sources */,
 				548FF96B21DF843B007CD3B0 /* PauseView.swift in Sources */,
 				54D9AEB620CF6185004FEBA2 /* ViewController.swift in Sources */,
 				548FF96721DF8230007CD3B0 /* GameClearView.swift in Sources */,

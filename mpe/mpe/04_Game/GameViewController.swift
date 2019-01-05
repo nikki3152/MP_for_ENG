@@ -162,7 +162,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		set {
 			_isInEffect = newValue
-			self.mainScrollView.isUserInteractionEnabled = !_isInEffect
+			//self.mainScrollView.isUserInteractionEnabled = !_isInEffect
 		}
 	}
 	
@@ -171,7 +171,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	var questData: QuestData!
 	var questDataDef: QuestData!
 	var cardSelectIndex: Int!
-	var answerWords: [String:Bool] = [:]
+	var answerWords: [String:String] = [:]
 	var _questCount: Int = 2
 	var questCount: Int {
 		get {
@@ -215,7 +215,11 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		self.scoreLabel.outlineColor = UIColor.black
+		self.scoreLabel.outlineWidth = 3
+		
+		self.timeLabel.outlineColor = UIColor.black
+		self.timeLabel.outlineWidth = 3
     }
 	
 	override func viewWillLayoutSubviews() {
@@ -238,6 +242,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					self.cardBaseView.center = CGPoint(x: self.cardBaseView.center.x, y: self.cardBaseView.center.y - 22)
 				}
 			}
+			
+			self.startGameTimer()
+
 		}
 	}
 	
@@ -285,7 +292,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	
 	//スコア
 	@IBOutlet weak var scoreBaseView: UIView!
-	@IBOutlet weak var scoreLabel: UILabel!
+	@IBOutlet weak var scoreLabel: OutlineLabel!
 	var _totalScore: Int = 0
 	var totalScore: Int {
 		get {
@@ -297,10 +304,74 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 	}
 	
+	//タイム
+	@IBOutlet weak var timeLabel: OutlineLabel!
+	var gameTimer: Timer!
+	var _time: Double = 99
+	var time: Double {
+		get {
+			return _time
+		}
+		set {
+			_time = newValue
+			self.timeLabel.text = "\(Int(_time))"
+		}
+	}
+	
+	func startGameTimer() {
+		
+		self.time = 99
+		
+		let base = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+		self.view.addSubview(base)
+		base.center = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2)
+		base.backgroundColor = UIColor.clear
+		// Ready!!
+		let ready = UIImageView(frame: CGRect(x: 0, y: 0, width: 390, height: 118))
+		ready.contentMode = .scaleAspectFit
+		ready.image = UIImage(named: "Ready_")
+		base.addSubview(ready)
+		ready.center = CGPoint(x: base.frame.size.width/2, y: base.frame.size.height/2)
+		
+		UIView.animate(withDuration: 0.25, delay: 1.0, options: .curveEaseIn, animations: { 
+			ready.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+			ready.alpha = 0
+		}) { (stop) in
+			ready.removeFromSuperview()
+			// Go!!
+			let go = UIImageView(frame: CGRect(x: 0, y: 0, width: 257, height: 100))
+			go.contentMode = .scaleAspectFit
+			go.image = UIImage(named: "GO!!")
+			base.addSubview(go)
+			go.center = CGPoint(x: base.frame.size.width/2, y: base.frame.size.height/2)
+			UIView.animate(withDuration: 0.25, delay: 0.5, options: .curveEaseIn, animations: { 
+				go.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+				go.alpha = 0
+			}) { [weak self](stop) in
+				base.removeFromSuperview()
+				
+				self?.gameTimer?.invalidate()
+				self?.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self](t) in
+					guard let s = self else {
+						return
+					}
+					if s.isGamePause == false {
+						s.time -= 0.1
+						if s.time <= 0 {
+							s.gameOver()
+						}
+					}
+				})
+			}
+		}
+		
+	}
 	
 	
 	//MARK: やりなおし
 	func retry() {
+		
+		self.startGameTimer()
 		
 		self.answerWords = [:]
 		self.totalScore = 0
@@ -318,7 +389,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	//MARK: 次の問題
 	func nextQuest() {
 		
-		if self.selectCnt.questDatas.count - 1 < self.questIndex {
+		if self.selectCnt.questDatas.count - 1 > self.questIndex {
 			self.questIndex += 1
 			self.questDataDef = self.selectCnt.questDatas[self.questIndex]
 			self.retry()
@@ -867,16 +938,15 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			for dic in list {
 				let keys = dic.keys
 				for key in keys {
-					if nil == self.answerWords[key] {
-						hitWords.append(key)
-						let values = dic[key]!
-						if values.count > 0 {
-							let value = values[0]
-							print(" >【\(key)】\(value)")
-							infoText.append(value)
-						} else {
-							infoText.append("【\(key)】---")
-						}
+					hitWords.append(key)
+					let values = dic[key]!
+					var value: String = "---"
+					if values.count > 0 {
+						value = values[0]
+						print(" >【\(key)】\(value)")
+						infoText.append(value)
+					} else {
+						infoText.append("【\(key)】---")
 					}
 				}
 			}
@@ -887,77 +957,90 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				//あたり
 				print("単語数: \(hitWords.count)")
 				var delay: Double = 0
-				self.isInEffect = true
+				//self.isInEffect = true
 				var effectCount = 0
+				var okWords = 0
 				for i in 0 ..< hitWords.count {
 					let hitWord = hitWords[i]
 					let info = infoText[i]
 					let infoData = infoList[i]
-					//スコア計算
-					let score = self.score(moji: infoData)
-					self.totalScore += score
-					//コマの特定
-					var komas: [TableKomaView] = []
-					for info in infoData {
-						let koma = self.gameTable.komas[info.index]
-						komas.append(koma)
-					}
-					
-					self.answerWords[hitWord] = true	//回答済み単語入り
-					let mojiCount = hitWord.count
-					print("文字数: \(mojiCount)[\(hitWord)]")
-					
-					DispatchQueue.main.asyncAfter(deadline: .now() + delay) { 
-						self.tableTapEffect(komas: komas)	//エフェクト
-						let hitView = HitInfoView.hitInfoView()
-						hitView.open(title: hitWord.uppercased(), info: info, parent: self.view, finished: {[weak self]() in
-							effectCount += 1
-							print("effectCount: \(effectCount)")
-							guard let s = self else {
-								return
-							}
-							if s.questData.questType == .makeWoredsCount {
-								//+++++++++++++++++++++++++
-								//◯字数以上の英単語を◯個作る
-								//+++++++++++++++++++++++++
-								var words: Int = 0
-								if let v = s.questData.questData["words"] as? Int {
-									words = v
-								}
-								if mojiCount >= words {
-									s.questCount -= 1
-									print("\(words)字数以上の英単語を\(s.questCount)個作る")
-								}
-							}
-							else if s.questData.questType == .useFontMakeCount {
-								//+++++++++++++++++++++++++
-								//◯がつく英単語を○個作る
-								//+++++++++++++++++++++++++
-								var font: String = ""
-								if let v = s.questData.questData["font"] as? String {
-									font = v
-								}
-								if hitWord.contains(font) {
-									s.questCount -= 1
-								}
-							}
-							else {
-								s.questCount -= 1
-								print("残り\(s.questCount)個")
-							}
-							if effectCount >= hitWords.count {
-								s.isInEffect = false
-								//MARK: クリア判定
-								if s.checkGame() {
+					if nil == self.answerWords[hitWord] {
+						okWords += 1
+						self.answerWords[hitWord] = info	//回答済み単語入り
+						//スコア計算
+						let score = self.score(moji: infoData)
+						self.totalScore += score
+						//コマの特定
+						var komas: [TableKomaView] = []
+						for info in infoData {
+							let koma = self.gameTable.komas[info.index]
+							komas.append(koma)
+						}
+						
+						let mojiCount = hitWord.count
+						print("文字数: \(mojiCount)[\(hitWord)]")
+						
+						DispatchQueue.main.asyncAfter(deadline: .now() + delay) { 
+							self.tableTapEffect(komas: komas)	//エフェクト
+							let hitView = HitInfoView.hitInfoView()
+							hitView.open(title: hitWord.uppercased(), info: info, parent: self.view, finished: {[weak self]() in
+								effectCount += 1
+								print("effectCount: \(effectCount)")
+								guard let s = self else {
 									return
 								}
+								if s.questData.questType == .makeWoredsCount {
+									//+++++++++++++++++++++++++
+									//◯字数以上の英単語を◯個作る
+									//+++++++++++++++++++++++++
+									var words: Int = 0
+									if let v = s.questData.questData["words"] as? Int {
+										words = v
+									}
+									if mojiCount >= words {
+										s.questCount -= 1
+										print("\(words)字数以上の英単語を\(s.questCount)個作る")
+									}
+								}
+								else if s.questData.questType == .useFontMakeCount {
+									//+++++++++++++++++++++++++
+									//◯がつく英単語を○個作る
+									//+++++++++++++++++++++++++
+									var font: String = ""
+									if let v = s.questData.questData["font"] as? String {
+										font = v
+									}
+									if hitWord.contains(font) {
+										s.questCount -= 1
+									}
+								}
+								else {
+									s.questCount -= 1
+									print("残り\(s.questCount)個")
+								}
+								s.isInEffect = false
+								if effectCount >= okWords {
+									//MARK: クリア判定
+									if s.checkGame() {
+										return
+									}
+								}
+							})
+						}
+						delay += 1.3
+					} else {
+						if i == hitWords.count - 1 {
+							self.isInEffect = false
+							//ハズレ
+							//MARK: クリア判定
+							if self.checkGame() {
+								return
 							}
-						})
+						}
 					}
-					delay += 1.3
-					
 				}
 			} else {
+				self.isInEffect = false
 				//ハズレ
 				//MARK: クリア判定
 				if self.checkGame() {
@@ -1112,58 +1195,138 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	}
 	
 	//MARK: ゲームポーズ
+	var isGamePause: Bool = false
 	func gamePause() {
 		
+		self.isGamePause = true
 		let pause = PauseView.pauseView()
 		self.view.addSubview(pause)
 		pause.closeHandler = {(res) in
+			self.isGamePause = false
 			switch res {
 			case .continueGame:		//続ける
 				print("ゲームをつづける")
 			case .retry:			//やりなおす
+				self.gameTimer?.invalidate()
+				self.gameTimer = nil
 				self.retry()
 			case .giveup:			//あきらめる
+				self.gameTimer?.invalidate()
+				self.gameTimer = nil
 				self.remove()
 			}
 		}
 	}
 	
 	//MARK: ゲームクリア
+	var isGameEnd = false
 	func gameClear() {
+		if isGameEnd {
+			return
+		}
+		isGameEnd = true
+		self.gameTimer?.invalidate()
+		self.gameTimer = nil
 		
-		self.charaBaseView.isHidden = true
-		let clear = GameClearView.gameClearView()
-		self.view.addSubview(clear)
-		clear.closeHandler = {(res) in
-			self.charaBaseView.isHidden = false
-			switch res {
-			case .next:				//次の問題へ進む
-				self.nextQuest()
-			case .select:			//セレクト画面に戻る
-				self.remove()
-			case .dict:				//辞書モードで復習！
-				print("辞書モードで復習！")
+		let base = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+		self.view.addSubview(base)
+		base.center = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2)
+		base.backgroundColor = UIColor.clear
+		
+		let gameclear = UIImageView(frame: CGRect(x: 0, y: 0, width: 539, height: 277))
+		gameclear.contentMode = .scaleAspectFit
+		gameclear.image = UIImage(named: "gameclear_anim_logo.png")
+		base.addSubview(gameclear)
+		gameclear.center = CGPoint(x: base.frame.size.width/2, y: base.frame.size.height/2)
+		gameclear.transform = CGAffineTransform(scaleX: 0, y: 0)
+		UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveEaseInOut, animations: { 
+			gameclear.transform = CGAffineTransform(scaleX: 1, y: 1)
+		}) { (stop) in
+			UIView.animate(withDuration: 0.25, delay: 3.0, options: .curveEaseInOut, animations: { 
+				gameclear.alpha = 0
+			}) { (stop) in
+				base.removeFromSuperview()
+				
+				self.charaBaseView.isHidden = true
+				let clear = GameClearView.gameClearView()
+				self.view.addSubview(clear)
+				clear.closeHandler = {[weak self](res) in
+					self?.isGameEnd = false
+					self?.charaBaseView.isHidden = false
+					switch res {
+					case .next:				//次の問題へ進む
+						self?.nextQuest()
+					case .select:			//セレクト画面に戻る
+						self?.remove()
+					case .dict:				//辞書モードで復習！
+						print("辞書モードで復習！")
+					}
+				}
 			}
 		}
+		
 	}
 	//MARK: ゲームオーバー
 	func gameOver() {
+		if isGameEnd {
+			return
+		}
+		isGameEnd = true
+		self.gameTimer?.invalidate()
+		self.gameTimer = nil
 		
-		self.charaBaseView.isHidden = true
-		let over = GameOverView.gameOverView()
-		self.view.addSubview(over)
-		over.closeHandler = {(res) in
-			self.charaBaseView.isHidden = false
-			switch res {
-			case .retry:				//やりなおす
-				self.retry()
-			case .timeDouble:			//Timeを倍にする（動画）
-				print("Timeを倍にする（動画）")
-			case .next:					//次の問題へ進む（動画）
-				print("Timeを倍にする（動画）")
-			case .giveup:				//諦める
-				self.remove()
+		let base = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+		self.view.addSubview(base)
+		base.center = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2)
+		base.backgroundColor = UIColor.clear
+		
+		let gameover = UIImageView(frame: CGRect(x: 0, y: 0, width: 590, height: 87))
+		gameover.contentMode = .scaleAspectFit
+		gameover.image = UIImage(named: "gameover_anim_word.png")
+		base.addSubview(gameover)
+		gameover.center = CGPoint(x: base.frame.size.width/2, y: -gameover.frame.size.height)
+		
+		UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveEaseInOut, animations: { 
+			gameover.center = CGPoint(x: base.frame.size.width/2, y: base.frame.size.height/2)
+		}) { (stop) in
+			UIView.animate(withDuration: 0.25, delay: 3.0, options: .curveEaseInOut, animations: {
+				gameover.alpha = 0
+			}) { [weak self](stop) in
+				base.removeFromSuperview()
+				guard let s = self else {
+					return
+				}
+				s.charaBaseView.isHidden = true
+				let over = GameOverView.gameOverView()
+				s.view.addSubview(over)
+				over.closeHandler = {[weak self](res) in
+					self?.isGameEnd = false
+					self?.charaBaseView.isHidden = false
+					switch res {
+					case .retry:				//やりなおす
+						self?.retry()
+					case .timeDouble:			//Timeを倍にする（動画）
+						print("Timeを倍にする（動画）")
+					case .next:					//次の問題へ進む（動画）
+						print("Timeを倍にする（動画）")
+					case .giveup:				//諦める
+						self?.remove()
+					}
+				}
 			}
 		}
+		
+//		let animation = CAKeyframeAnimation(keyPath: "position.y")
+//		animation.duration = 0.75
+//		animation.keyTimes = [0.0, 0.5, 0.85, 0.95]
+//		animation.values = [
+//			base.frame.size.height/2,
+//			base.frame.size.height/2 + 10,
+//			base.frame.size.height/2,
+//			base.frame.size.height/2 + 5,
+//			base.frame.size.height/2,
+//		]
+//		gameover.layer.add(animation, forKey: nil)
+		
 	}
 }
