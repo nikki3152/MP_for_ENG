@@ -20,7 +20,7 @@ class HitInfoView: UIView {
 	@IBOutlet weak var answeTitleLabel: UILabel!
 	@IBOutlet weak var answeLabel: UILabel!
 	
-	func open(title: String, info: String, parent: UIView) {
+	func open(title: String, info: String, parent: UIView, finished: @escaping (() -> Void)) {
 		
 		self.answeTitleLabel.text = title
 		self.answeLabel.text = info
@@ -36,6 +36,7 @@ class HitInfoView: UIView {
 				self.center = CGPoint(x: parent.frame.size.width / 2, y: -(self.frame.size.height / 2))
 			}) { (stop) in
 				self.removeFromSuperview()
+				finished()
 			}
 		}
 	}

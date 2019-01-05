@@ -8,9 +8,17 @@
 
 import UIKit
 
+enum GamePauseResType: Int {
+	case continueGame		= 1		//続ける
+	case retry				= 2		//やりなおす
+	case giveup				= 3		//あきらめる
+}
+
+
+
 class PauseView: UIView {
 	
-	var closeHandler: (() -> Void)?
+	var closeHandler: ((GamePauseResType) -> Void)?
 	
 	class func pauseView() -> PauseView {
 		
@@ -23,5 +31,13 @@ class PauseView: UIView {
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
+	}
+	
+	@IBAction func buttonAction(_ sender: UIButton) {
+		
+		let res = GamePauseResType(rawValue: sender.tag)!
+		self.closeHandler?(res)
+		self.closeHandler = nil
+		self.removeFromSuperview()
 	}
 }

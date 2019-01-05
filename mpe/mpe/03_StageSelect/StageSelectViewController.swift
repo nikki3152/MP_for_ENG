@@ -161,6 +161,8 @@ class StageSelectViewController: BaseViewController {
 		let tag = sender.tag + self.startIndex
 		let questData: QuestData = self.questDatas[tag]
 		let gameView = GameViewController.gameViewController(questData: questData)
+		gameView.questIndex = tag
+		gameView.selectCnt = self
 		gameView.present(self) { 
 			
 		}

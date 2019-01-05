@@ -19,9 +19,87 @@
         <view contentMode="scaleToFill" id="ZSb-By-7dv" customClass="GameClearView" customModule="mpe" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_clear.png" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-v9-H8e">
+                    <rect key="frame" x="184" y="4" width="300" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_list_head_clear.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sax-le-Sb3">
+                    <rect key="frame" x="2" y="8" width="185" height="15"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfp-mG-naY">
+                    <rect key="frame" x="156" y="77" width="355" height="251"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aof-lX-awU">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="gameclear_button_next.png"/>
+                            <state key="highlighted" backgroundImage="gameclear_button_next_tap.png"/>
+                            <connections>
+                                <action selector="buttonAction:" destination="ZSb-By-7dv" eventType="touchUpInside" id="ZmO-9F-Ar3"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPo-Ke-VSS">
+                            <rect key="frame" x="0.0" y="201" width="355" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="gameclear_button_review.png"/>
+                            <state key="highlighted" backgroundImage="gameclear_button_review_tap.png"/>
+                            <connections>
+                                <action selector="buttonAction:" destination="ZSb-By-7dv" eventType="touchUpInside" id="Kyz-jR-rfA"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1v8-ao-0aQ">
+                            <rect key="frame" x="0.0" y="100" width="355" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="gameclear_button_backtoselect.png"/>
+                            <state key="highlighted" backgroundImage="gameclear_button_backtoselect_tap.png"/>
+                            <connections>
+                                <action selector="buttonAction:" destination="ZSb-By-7dv" eventType="touchUpInside" id="3ad-9x-skY"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="19Z-ml-b2L">
+                    <rect key="frame" x="0.0" y="31" width="155" height="344"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vr0-uZ-kXW">
+                    <rect key="frame" x="517" y="0.0" width="150" height="375"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fukidashi" translatesAutoresizingMaskIntoConstraints="NO" id="C93-0r-n9G">
+                            <rect key="frame" x="13" y="8" width="125" height="253"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4RH-0T-c0P">
+                            <rect key="frame" x="52" y="39" width="45" height="166"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mojikun_b_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="74h-1W-kbo">
+                            <rect key="frame" x="15" y="247" width="120" height="120"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        </imageView>
+                    </subviews>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="0.70294744318181823" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="TiE-vj-8dO"/>
-            <point key="canvasLocation" x="198" y="-158"/>
+            <point key="canvasLocation" x="618" y="118"/>
         </view>
     </objects>
+    <resources>
+        <image name="fukidashi" width="150" height="129"/>
+        <image name="game_clear.png" width="720" height="100"/>
+        <image name="game_list_head_clear.png" width="370" height="30"/>
+        <image name="gameclear_button_backtoselect.png" width="709" height="119"/>
+        <image name="gameclear_button_backtoselect_tap.png" width="709" height="119"/>
+        <image name="gameclear_button_next.png" width="709" height="119"/>
+        <image name="gameclear_button_next_tap.png" width="709" height="119"/>
+        <image name="gameclear_button_review.png" width="709" height="119"/>
+        <image name="gameclear_button_review_tap.png" width="709" height="119"/>
+        <image name="mojikun_b_01.png" width="300" height="300"/>
+    </resources>
 </document>

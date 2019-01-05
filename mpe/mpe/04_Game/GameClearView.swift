@@ -8,9 +8,16 @@
 
 import UIKit
 
+enum GameClearResType: Int {
+	case next				= 1		//次の問題へ進む
+	case select				= 2		//セレクト画面に戻る
+	case dict				= 3		//辞書モードで復習！
+}
+
+
 class GameClearView: UIView {
 	
-	var closeHandler: (() -> Void)?
+	var closeHandler: ((GameClearResType) -> Void)?
 	
 	class func gameClearView() -> GameClearView {
 		
@@ -23,5 +30,13 @@ class GameClearView: UIView {
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
+	}
+	
+	@IBAction func buttonAction(_ sender: UIButton) {
+		
+		let res = GameClearResType(rawValue: sender.tag)!
+		self.closeHandler?(res)
+		self.closeHandler = nil
+		self.removeFromSuperview()
 	}
 }

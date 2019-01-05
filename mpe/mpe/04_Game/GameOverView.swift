@@ -8,9 +8,16 @@
 
 import UIKit
 
+enum GameOverResType: Int {
+	case retry				= 1		//やりなおす
+	case timeDouble			= 2		//Timeを倍にする（動画）
+	case next				= 3		//次の問題へ進む（動画）
+	case giveup				= 4		//諦める
+}
+
 class GameOverView: UIView {
 	
-	var closeHandler: (() -> Void)?
+	var closeHandler: ((GameOverResType) -> Void)?
 	
 	class func gameOverView() -> GameOverView {
 		
@@ -25,4 +32,11 @@ class GameOverView: UIView {
 		super.awakeFromNib()
 	}
 	
+	@IBAction func buttonAction(_ sender: UIButton) {
+		
+		let res = GameOverResType(rawValue: sender.tag)!
+		self.closeHandler?(res)
+		self.closeHandler = nil
+		self.removeFromSuperview()
+	}
 }
