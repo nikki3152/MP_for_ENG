@@ -979,46 +979,45 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						
 						let mojiCount = hitWord.count
 						print("文字数: \(mojiCount)[\(hitWord)]")
-						
+						effectCount += 1
 						DispatchQueue.main.asyncAfter(deadline: .now() + delay) { 
+							if self.questData.questType == .makeWoredsCount {
+								//+++++++++++++++++++++++++
+								//◯字数以上の英単語を◯個作る
+								//+++++++++++++++++++++++++
+								var words: Int = 0
+								if let v = self.questData.questData["words"] as? Int {
+									words = v
+								}
+								if mojiCount >= words {
+									self.questCount -= 1
+									print("\(words)字数以上の英単語を\(self.questCount)個作る")
+								}
+							}
+							else if self.questData.questType == .useFontMakeCount {
+								//+++++++++++++++++++++++++
+								//◯がつく英単語を○個作る
+								//+++++++++++++++++++++++++
+								var font: String = ""
+								if let v = self.questData.questData["font"] as? String {
+									font = v
+								}
+								if hitWord.contains(font) {
+									self.questCount -= 1
+								}
+							}
+							else {
+								self.questCount -= 1
+								print("残り\(self.questCount)個")
+							}
+							self.isInEffect = false
 							self.tableTapEffect(komas: komas)	//エフェクト
 							let hitView = HitInfoView.hitInfoView()
 							hitView.open(title: hitWord.uppercased(), info: info, parent: self.view, finished: {[weak self]() in
-								effectCount += 1
 								print("effectCount: \(effectCount)")
 								guard let s = self else {
 									return
 								}
-								if s.questData.questType == .makeWoredsCount {
-									//+++++++++++++++++++++++++
-									//◯字数以上の英単語を◯個作る
-									//+++++++++++++++++++++++++
-									var words: Int = 0
-									if let v = s.questData.questData["words"] as? Int {
-										words = v
-									}
-									if mojiCount >= words {
-										s.questCount -= 1
-										print("\(words)字数以上の英単語を\(s.questCount)個作る")
-									}
-								}
-								else if s.questData.questType == .useFontMakeCount {
-									//+++++++++++++++++++++++++
-									//◯がつく英単語を○個作る
-									//+++++++++++++++++++++++++
-									var font: String = ""
-									if let v = s.questData.questData["font"] as? String {
-										font = v
-									}
-									if hitWord.contains(font) {
-										s.questCount -= 1
-									}
-								}
-								else {
-									s.questCount -= 1
-									print("残り\(s.questCount)個")
-								}
-								s.isInEffect = false
 								if effectCount >= okWords {
 									//MARK: クリア判定
 									if s.checkGame() {
@@ -1032,8 +1031,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						if i == hitWords.count - 1 {
 							self.isInEffect = false
 							//ハズレ
-							//MARK: クリア判定
-							if self.checkGame() {
+							if emptyTableCount() == 0 || cardViewList.count == 0 {
+								//ゲームオーバー
+								self.gameOver()
 								return
 							}
 						}
@@ -1042,9 +1042,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			} else {
 				self.isInEffect = false
 				//ハズレ
-				//MARK: クリア判定
-				if self.checkGame() {
-					return
+				if emptyTableCount() == 0 || cardViewList.count == 0 {
+					//ゲームオーバー
+					self.gameOver()
 				}
 			}
 		}
