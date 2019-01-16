@@ -320,7 +320,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	
 	func startGameTimer() {
 		
-		self.time = 99
+		self.time = self.questData.time
 		
 		let base = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
 		self.view.addSubview(base)
