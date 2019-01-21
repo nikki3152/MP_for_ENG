@@ -97,7 +97,6 @@
 		5429F3F021CF06E400E0E50F /* chain5_anim.png in Resources */ = {isa = PBXBuildFile; fileRef = 5429F3DF21CF06E400E0E50F /* chain5_anim.png */; };
 		5429F3F121CF06E400E0E50F /* chain4_anim.png in Resources */ = {isa = PBXBuildFile; fileRef = 5429F3E021CF06E400E0E50F /* chain4_anim.png */; };
 		542F441E21AF59D400C51AD6 /* MessageEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542F441D21AF59D400C51AD6 /* MessageEditViewController.swift */; };
-		542F442221B2FC3900C51AD6 /* QuestList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F442121B2FC3900C51AD6 /* QuestList.plist */; };
 		542F443721B300DC00C51AD6 /* family（家族）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F442321B300D900C51AD6 /* family（家族）.plist */; };
 		542F443821B300DC00C51AD6 /* emotion（感情）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F442421B300D900C51AD6 /* emotion（感情）.plist */; };
 		542F443921B300DC00C51AD6 /* furniture（家具）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F442521B300D900C51AD6 /* furniture（家具）.plist */; };
@@ -759,7 +758,6 @@
 		5429F3DF21CF06E400E0E50F /* chain5_anim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chain5_anim.png; sourceTree = "<group>"; };
 		5429F3E021CF06E400E0E50F /* chain4_anim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chain4_anim.png; sourceTree = "<group>"; };
 		542F441D21AF59D400C51AD6 /* MessageEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageEditViewController.swift; sourceTree = "<group>"; };
-		542F442121B2FC3900C51AD6 /* QuestList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = QuestList.plist; sourceTree = "<group>"; };
 		542F442321B300D900C51AD6 /* family（家族）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "family（家族）.plist"; sourceTree = "<group>"; };
 		542F442421B300D900C51AD6 /* emotion（感情）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "emotion（感情）.plist"; sourceTree = "<group>"; };
 		542F442521B300D900C51AD6 /* furniture（家具）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "furniture（家具）.plist"; sourceTree = "<group>"; };
@@ -1456,7 +1454,6 @@
 				542F445021B57F9E00C51AD6 /* QuestList_normal.plist */,
 				546764C221EF21350025A5A9 /* QuestList_hard.plist */,
 				5467651321F555F10025A5A9 /* QuestList_god.plist */,
-				542F442121B2FC3900C51AD6 /* QuestList.plist */,
 				542F442921B300DA00C51AD6 /* calender（暦）①.plist */,
 				542F442E21B300DB00C51AD6 /* calender（暦）②.plist */,
 				542F443221B300DB00C51AD6 /* county（国）.plist */,
@@ -2759,7 +2756,6 @@
 				5429F3EB21CF06E400E0E50F /* chain4.png in Resources */,
 				54D5520021BCA66300980B92 /* select_stagemap_01.png in Resources */,
 				5429F3AE21CF06B600E0E50F /* score_get_3.png in Resources */,
-				542F442221B2FC3900C51AD6 /* QuestList.plist in Resources */,
 				54D5526521BCA66300980B92 /* bt_playback_tap.png in Resources */,
 				54D5528921BCA66300980B92 /* anim_C.png in Resources */,
 				54D552ED21BCA66300980B92 /* music_stop.png in Resources */,
