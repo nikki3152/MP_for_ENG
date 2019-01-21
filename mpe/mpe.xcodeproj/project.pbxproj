@@ -199,6 +199,7 @@
 		5467650621EF24300025A5A9 /* BGM_一問一答モード_loop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 546764E521EF242F0025A5A9 /* BGM_一問一答モード_loop.wav */; };
 		5467650721EF24300025A5A9 /* BGM_待機画面_hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 546764E621EF242F0025A5A9 /* BGM_待機画面_hit.wav */; };
 		5467650821EF24300025A5A9 /* SE_コンボ③.wav in Resources */ = {isa = PBXBuildFile; fileRef = 546764E721EF24300025A5A9 /* SE_コンボ③.wav */; };
+		5467650A21EF30EF0025A5A9 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467650921EF30EF0025A5A9 /* SoundPlayer.swift */; };
 		5489AF5D212B007A00A7D275 /* ejdic-hand-utf8.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */; };
 		5489AF5F212B00B500A7D275 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF5E212B00B500A7D275 /* DataManager.swift */; };
 		5489AF61212B010B00A7D275 /* MPEDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF60212B010B00A7D275 /* MPEDataManager.swift */; };
@@ -839,6 +840,7 @@
 		546764E521EF242F0025A5A9 /* BGM_一問一答モード_loop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "BGM_一問一答モード_loop.wav"; sourceTree = "<group>"; };
 		546764E621EF242F0025A5A9 /* BGM_待機画面_hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "BGM_待機画面_hit.wav"; sourceTree = "<group>"; };
 		546764E721EF24300025A5A9 /* SE_コンボ③.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "SE_コンボ③.wav"; sourceTree = "<group>"; };
+		5467650921EF30EF0025A5A9 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ejdic-hand-utf8.txt"; sourceTree = "<group>"; };
 		5489AF5E212B00B500A7D275 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5489AF60212B010B00A7D275 /* MPEDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPEDataManager.swift; sourceTree = "<group>"; };
@@ -2186,6 +2188,7 @@
 		54D9AEB220CF6185004FEBA2 /* mpe */ = {
 			isa = PBXGroup;
 			children = (
+				5467650921EF30EF0025A5A9 /* SoundPlayer.swift */,
 				548FF98821E0BEFE007CD3B0 /* OutlineLabel.swift */,
 				54F3A6DD2196D53B00A1E01F /* TTTAttributedLabel.h */,
 				54F3A6DE2196D53C00A1E01F /* TTTAttributedLabel.m */,
@@ -2907,6 +2910,7 @@
 				548FF96721DF8230007CD3B0 /* GameClearView.swift in Sources */,
 				54CFB40920DE39B300057F08 /* SoundViewController.swift in Sources */,
 				54CFB40120DE370A00057F08 /* SettingViewController.swift in Sources */,
+				5467650A21EF30EF0025A5A9 /* SoundPlayer.swift in Sources */,
 				54F3A6E12197CDAF00A1E01F /* ConditionsPickerView.swift in Sources */,
 				54CFB3FD20DE360700057F08 /* CustomViewController.swift in Sources */,
 				54D03E0E21A4EF1D00FD1CC4 /* TimePickerView.swift in Sources */,
