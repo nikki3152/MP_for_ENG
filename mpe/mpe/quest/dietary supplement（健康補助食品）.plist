@@ -4,13 +4,33 @@
 <dict>
 	<key>cards</key>
 	<array>
+		<string>A</string>
+		<string>C</string>
+		<string>C</string>
+		<string>E</string>
+		<string>E</string>
+		<string>G</string>
+		<string>I</string>
+		<string>I</string>
+		<string>I</string>
+		<string>I</string>
+		<string>I</string>
+		<string>L</string>
+		<string>M</string>
+		<string>N</string>
 		<string>O</string>
-		<string>O</string>
-		<string>O</string>
-		<string>O</string>
+		<string>R</string>
+		<string>R</string>
+		<string>S</string>
+		<string>S</string>
+		<string>T</string>
+		<string>T</string>
+		<string>T</string>
+		<string>T</string>
+		<string>Z</string>
 	</array>
 	<key>height</key>
-	<integer>8</integer>
+	<integer>10</integer>
 	<key>messages</key>
 	<array>
 		<string>もじぴったん</string>
@@ -18,61 +38,69 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>7</integer>
+		<integer>8</integer>
+		<key>words</key>
+		<integer>4</integer>
 	</dict>
 	<key>questName</key>
 	<string></string>
 	<key>questType</key>
-	<integer>0</integer>
+	<integer>3</integer>
 	<key>table</key>
 	<array>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string>W</string>
+		<string>M</string>
+		<string>A</string>
 		<string>0</string>
-		<string>R</string>
-		<string>D</string>
-		<string> </string>
-		<string>W</string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string>W</string>
 		<string>0</string>
-		<string>R</string>
-		<string>D</string>
-		<string>W</string>
 		<string>0</string>
-		<string>R</string>
-		<string>D</string>
-		<string> </string>
-		<string>R</string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string>D</string>
-		<string> </string>
-		<string>W</string>
-		<string>W</string>
 		<string>0</string>
+		<string>0</string>
+		<string>U</string>
+		<string>M</string>
+		<string> </string>
+		<string> </string>
+		<string>C</string>
+		<string>A</string>
+		<string>0</string>
+		<string>0</string>
+		<string>0</string>
+		<string>U</string>
+		<string>M</string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string>V</string>
+		<string>I</string>
+		<string>0</string>
+		<string>0</string>
+		<string>0</string>
+		<string>I</string>
+		<string>N</string>
+		<string> </string>
+		<string> </string>
+		<string>P</string>
 		<string>R</string>
-		<string>D</string>
+		<string>0</string>
+		<string>0</string>
+		<string>0</string>
+		<string>I</string>
+		<string>N</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string>0</string>
+		<string>I</string>
+		<string>N</string>
 		<string>0</string>
 		<string> </string>
 		<string> </string>
@@ -81,15 +109,35 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>R</string>
-		<string>W</string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
 		<string>0</string>
-		<string>R</string>
-		<string>D</string>
+		<string>0</string>
+		<string>0</string>
+		<string>N</string>
+		<string>N</string>
+		<string>U</string>
+		<string>0</string>
+		<string>0</string>
+		<string>0</string>
+		<string>0</string>
+		<string>0</string>
+		<string>0</string>
+		<string>N</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>D</string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string>0</string>
+		<string>0</string>
+		<string>Y</string>
 	</array>
 	<key>tableType</key>
 	<array>
@@ -102,7 +150,32 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>DL</string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -134,7 +207,6 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>DW</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -150,7 +222,9 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>TW</string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -159,10 +233,10 @@
 		<string> </string>
 	</array>
 	<key>time</key>
-	<real>0.0</real>
+	<real>360</real>
 	<key>width</key>
-	<integer>8</integer>
+	<integer>9</integer>
 	<key>wildCardLen</key>
-	<integer>1</integer>
+	<integer>0</integer>
 </dict>
 </plist>

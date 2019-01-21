@@ -68,7 +68,8 @@ class StageSelectViewController: BaseViewController {
 		let easy = self.dataMrg.questList(mode: "easy")
 		let normal = self.dataMrg.questList(mode: "normal")
 		let hard = self.dataMrg.questList(mode: "hard")
-		let list = easy + normal + hard 
+		let god = self.dataMrg.questList(mode: "god")
+		let list = easy + normal + hard + god
 		for dic in list {
 			let filename = dic["filename"]!
 			self.questNames.append(filename)

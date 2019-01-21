@@ -112,7 +112,6 @@
 		542F444221B300DC00C51AD6 /* calender（暦）②.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F442E21B300DB00C51AD6 /* calender（暦）②.plist */; };
 		542F444321B300DC00C51AD6 /* personality（人称）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F442F21B300DB00C51AD6 /* personality（人称）.plist */; };
 		542F444421B300DC00C51AD6 /* vehicle（陸用車）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F443021B300DB00C51AD6 /* vehicle（陸用車）.plist */; };
-		542F444521B300DC00C51AD6 /* チュートリアル.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F443121B300DB00C51AD6 /* チュートリアル.plist */; };
 		542F444621B300DC00C51AD6 /* county（国）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F443221B300DB00C51AD6 /* county（国）.plist */; };
 		542F444721B300DC00C51AD6 /* direction（方角）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F443321B300DB00C51AD6 /* direction（方角）.plist */; };
 		542F444821B300DC00C51AD6 /* food（食べ物）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F443421B300DB00C51AD6 /* food（食べ物）.plist */; };
@@ -200,6 +199,28 @@
 		5467650721EF24300025A5A9 /* BGM_待機画面_hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 546764E621EF242F0025A5A9 /* BGM_待機画面_hit.wav */; };
 		5467650821EF24300025A5A9 /* SE_コンボ③.wav in Resources */ = {isa = PBXBuildFile; fileRef = 546764E721EF24300025A5A9 /* SE_コンボ③.wav */; };
 		5467650A21EF30EF0025A5A9 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467650921EF30EF0025A5A9 /* SoundPlayer.swift */; };
+		5467651221F554E50025A5A9 /* tutorial（チュートリアル）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467651121F554E50025A5A9 /* tutorial（チュートリアル）.plist */; };
+		5467651421F555F10025A5A9 /* QuestList_god.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467651321F555F10025A5A9 /* QuestList_god.plist */; };
+		5467652921F556E00025A5A9 /* K（K縛り）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467651521F556DD0025A5A9 /* K（K縛り）.plist */; };
+		5467652A21F556E00025A5A9 /* Q（Q縛り）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467651621F556DE0025A5A9 /* Q（Q縛り）.plist */; };
+		5467652B21F556E00025A5A9 /* crossword（クロスワード）⑦.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467651721F556DE0025A5A9 /* crossword（クロスワード）⑦.plist */; };
+		5467652C21F556E00025A5A9 /* biology（生物学）①.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467651821F556DE0025A5A9 /* biology（生物学）①.plist */; };
+		5467652D21F556E00025A5A9 /* politics（政治）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467651921F556DE0025A5A9 /* politics（政治）.plist */; };
+		5467652E21F556E00025A5A9 /* school caste（スクールカースト）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467651A21F556DE0025A5A9 /* school caste（スクールカースト）.plist */; };
+		5467652F21F556E00025A5A9 /* anthropology（人類学）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467651B21F556DE0025A5A9 /* anthropology（人類学）.plist */; };
+		5467653021F556E00025A5A9 /* environmental problem（環境問題）②.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467651C21F556DE0025A5A9 /* environmental problem（環境問題）②.plist */; };
+		5467653121F556E00025A5A9 /* horoscope（星占い）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467651D21F556DE0025A5A9 /* horoscope（星占い）.plist */; };
+		5467653221F556E00025A5A9 /* ten（10文字縛り）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467651E21F556DE0025A5A9 /* ten（10文字縛り）.plist */; };
+		5467653321F556E00025A5A9 /* biology（生物学）②.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467651F21F556DF0025A5A9 /* biology（生物学）②.plist */; };
+		5467653421F556E00025A5A9 /* crossword（クロスワード）⑧.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467652021F556DF0025A5A9 /* crossword（クロスワード）⑧.plist */; };
+		5467653521F556E00025A5A9 /* character（キャラクター）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467652121F556DF0025A5A9 /* character（キャラクター）.plist */; };
+		5467653621F556E00025A5A9 /* meteorology（気象学）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467652221F556DF0025A5A9 /* meteorology（気象学）.plist */; };
+		5467653721F556E00025A5A9 /* planet（惑星）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467652321F556DF0025A5A9 /* planet（惑星）.plist */; };
+		5467653821F556E00025A5A9 /* universe（宇宙）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467652421F556DF0025A5A9 /* universe（宇宙）.plist */; };
+		5467653921F556E00025A5A9 /* Z（Z縛り）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467652521F556DF0025A5A9 /* Z（Z縛り）.plist */; };
+		5467653A21F556E00025A5A9 /* dietary supplement（健康補助食品）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467652621F556DF0025A5A9 /* dietary supplement（健康補助食品）.plist */; };
+		5467653B21F556E00025A5A9 /* environmental problem（環境問題）①.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467652721F556DF0025A5A9 /* environmental problem（環境問題）①.plist */; };
+		5467653C21F556E00025A5A9 /* earth（地球）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467652821F556E00025A5A9 /* earth（地球）.plist */; };
 		5489AF5D212B007A00A7D275 /* ejdic-hand-utf8.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */; };
 		5489AF5F212B00B500A7D275 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF5E212B00B500A7D275 /* DataManager.swift */; };
 		5489AF61212B010B00A7D275 /* MPEDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF60212B010B00A7D275 /* MPEDataManager.swift */; };
@@ -753,7 +774,6 @@
 		542F442E21B300DB00C51AD6 /* calender（暦）②.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "calender（暦）②.plist"; sourceTree = "<group>"; };
 		542F442F21B300DB00C51AD6 /* personality（人称）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "personality（人称）.plist"; sourceTree = "<group>"; };
 		542F443021B300DB00C51AD6 /* vehicle（陸用車）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "vehicle（陸用車）.plist"; sourceTree = "<group>"; };
-		542F443121B300DB00C51AD6 /* チュートリアル.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "チュートリアル.plist"; sourceTree = "<group>"; };
 		542F443221B300DB00C51AD6 /* county（国）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "county（国）.plist"; sourceTree = "<group>"; };
 		542F443321B300DB00C51AD6 /* direction（方角）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "direction（方角）.plist"; sourceTree = "<group>"; };
 		542F443421B300DB00C51AD6 /* food（食べ物）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "food（食べ物）.plist"; sourceTree = "<group>"; };
@@ -841,6 +861,28 @@
 		546764E621EF242F0025A5A9 /* BGM_待機画面_hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "BGM_待機画面_hit.wav"; sourceTree = "<group>"; };
 		546764E721EF24300025A5A9 /* SE_コンボ③.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "SE_コンボ③.wav"; sourceTree = "<group>"; };
 		5467650921EF30EF0025A5A9 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		5467651121F554E50025A5A9 /* tutorial（チュートリアル）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "tutorial（チュートリアル）.plist"; sourceTree = "<group>"; };
+		5467651321F555F10025A5A9 /* QuestList_god.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuestList_god.plist; sourceTree = "<group>"; };
+		5467651521F556DD0025A5A9 /* K（K縛り）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "K（K縛り）.plist"; sourceTree = "<group>"; };
+		5467651621F556DE0025A5A9 /* Q（Q縛り）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Q（Q縛り）.plist"; sourceTree = "<group>"; };
+		5467651721F556DE0025A5A9 /* crossword（クロスワード）⑦.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "crossword（クロスワード）⑦.plist"; sourceTree = "<group>"; };
+		5467651821F556DE0025A5A9 /* biology（生物学）①.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "biology（生物学）①.plist"; sourceTree = "<group>"; };
+		5467651921F556DE0025A5A9 /* politics（政治）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "politics（政治）.plist"; sourceTree = "<group>"; };
+		5467651A21F556DE0025A5A9 /* school caste（スクールカースト）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "school caste（スクールカースト）.plist"; sourceTree = "<group>"; };
+		5467651B21F556DE0025A5A9 /* anthropology（人類学）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "anthropology（人類学）.plist"; sourceTree = "<group>"; };
+		5467651C21F556DE0025A5A9 /* environmental problem（環境問題）②.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "environmental problem（環境問題）②.plist"; sourceTree = "<group>"; };
+		5467651D21F556DE0025A5A9 /* horoscope（星占い）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "horoscope（星占い）.plist"; sourceTree = "<group>"; };
+		5467651E21F556DE0025A5A9 /* ten（10文字縛り）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ten（10文字縛り）.plist"; sourceTree = "<group>"; };
+		5467651F21F556DF0025A5A9 /* biology（生物学）②.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "biology（生物学）②.plist"; sourceTree = "<group>"; };
+		5467652021F556DF0025A5A9 /* crossword（クロスワード）⑧.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "crossword（クロスワード）⑧.plist"; sourceTree = "<group>"; };
+		5467652121F556DF0025A5A9 /* character（キャラクター）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "character（キャラクター）.plist"; sourceTree = "<group>"; };
+		5467652221F556DF0025A5A9 /* meteorology（気象学）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "meteorology（気象学）.plist"; sourceTree = "<group>"; };
+		5467652321F556DF0025A5A9 /* planet（惑星）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "planet（惑星）.plist"; sourceTree = "<group>"; };
+		5467652421F556DF0025A5A9 /* universe（宇宙）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "universe（宇宙）.plist"; sourceTree = "<group>"; };
+		5467652521F556DF0025A5A9 /* Z（Z縛り）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Z（Z縛り）.plist"; sourceTree = "<group>"; };
+		5467652621F556DF0025A5A9 /* dietary supplement（健康補助食品）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dietary supplement（健康補助食品）.plist"; sourceTree = "<group>"; };
+		5467652721F556DF0025A5A9 /* environmental problem（環境問題）①.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "environmental problem（環境問題）①.plist"; sourceTree = "<group>"; };
+		5467652821F556E00025A5A9 /* earth（地球）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "earth（地球）.plist"; sourceTree = "<group>"; };
 		5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ejdic-hand-utf8.txt"; sourceTree = "<group>"; };
 		5489AF5E212B00B500A7D275 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5489AF60212B010B00A7D275 /* MPEDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPEDataManager.swift; sourceTree = "<group>"; };
@@ -1413,6 +1455,7 @@
 				542F444E21B57DA900C51AD6 /* QuestList_easy.plist */,
 				542F445021B57F9E00C51AD6 /* QuestList_normal.plist */,
 				546764C221EF21350025A5A9 /* QuestList_hard.plist */,
+				5467651321F555F10025A5A9 /* QuestList_god.plist */,
 				542F442121B2FC3900C51AD6 /* QuestList.plist */,
 				542F442921B300DA00C51AD6 /* calender（暦）①.plist */,
 				542F442E21B300DB00C51AD6 /* calender（暦）②.plist */,
@@ -1433,7 +1476,7 @@
 				542F443021B300DB00C51AD6 /* vehicle（陸用車）.plist */,
 				542F442721B300D900C51AD6 /* weather（天候）.plist */,
 				542F442C21B300DA00C51AD6 /* week（曜日）.plist */,
-				542F443121B300DB00C51AD6 /* チュートリアル.plist */,
+				5467651121F554E50025A5A9 /* tutorial（チュートリアル）.plist */,
 				542F445221B57FA800C51AD6 /* animal（動物）.plist */,
 				542F445C21B57FAA00C51AD6 /* b.plist */,
 				542F446421B57FAD00C51AD6 /* behavior（行動）.plist */,
@@ -1474,6 +1517,26 @@
 				546764A221EF1F6E0025A5A9 /* stem（語幹）②.plist */,
 				546764A821EF1F6F0025A5A9 /* suffix（接尾辞）①.plist */,
 				546764AA21EF1F6F0025A5A9 /* suffix（接尾辞）②.plist */,
+				5467651B21F556DE0025A5A9 /* anthropology（人類学）.plist */,
+				5467651821F556DE0025A5A9 /* biology（生物学）①.plist */,
+				5467651F21F556DF0025A5A9 /* biology（生物学）②.plist */,
+				5467652121F556DF0025A5A9 /* character（キャラクター）.plist */,
+				5467651721F556DE0025A5A9 /* crossword（クロスワード）⑦.plist */,
+				5467652021F556DF0025A5A9 /* crossword（クロスワード）⑧.plist */,
+				5467652621F556DF0025A5A9 /* dietary supplement（健康補助食品）.plist */,
+				5467652821F556E00025A5A9 /* earth（地球）.plist */,
+				5467652721F556DF0025A5A9 /* environmental problem（環境問題）①.plist */,
+				5467651C21F556DE0025A5A9 /* environmental problem（環境問題）②.plist */,
+				5467651D21F556DE0025A5A9 /* horoscope（星占い）.plist */,
+				5467651521F556DD0025A5A9 /* K（K縛り）.plist */,
+				5467652221F556DF0025A5A9 /* meteorology（気象学）.plist */,
+				5467652321F556DF0025A5A9 /* planet（惑星）.plist */,
+				5467651921F556DE0025A5A9 /* politics（政治）.plist */,
+				5467651621F556DE0025A5A9 /* Q（Q縛り）.plist */,
+				5467651A21F556DE0025A5A9 /* school caste（スクールカースト）.plist */,
+				5467651E21F556DE0025A5A9 /* ten（10文字縛り）.plist */,
+				5467652421F556DF0025A5A9 /* universe（宇宙）.plist */,
+				5467652521F556DF0025A5A9 /* Z（Z縛り）.plist */,
 			);
 			path = quest;
 			sourceTree = "<group>";
@@ -2315,6 +2378,7 @@
 				54D551DC21BCA66300980B92 /* quizdonyu_button_01.png in Resources */,
 				5429F37521CF052800E0E50F /* time9.png in Resources */,
 				5429F3BD21CF06B600E0E50F /* score_count_1.png in Resources */,
+				5467652C21F556E00025A5A9 /* biology（生物学）①.plist in Resources */,
 				5489AF5D212B007A00A7D275 /* ejdic-hand-utf8.txt in Resources */,
 				54D5535B21BCBE2500980B92 /* table_frame.png in Resources */,
 				54D5523621BCA66300980B92 /* pink_0.png in Resources */,
@@ -2324,6 +2388,7 @@
 				54CFB3DD20DE164000057F08 /* HomeViewController.storyboard in Resources */,
 				5429F3B721CF06B600E0E50F /* countup_2.png in Resources */,
 				54D551ED21BCA66300980B92 /* select_erabukun.png in Resources */,
+				5467653921F556E00025A5A9 /* Z（Z縛り）.plist in Resources */,
 				542F444021B300DC00C51AD6 /* week（曜日）.plist in Resources */,
 				54D551E421BCA66300980B92 /* select_stagemap_09.png in Resources */,
 				54D5523A21BCA66300980B92 /* gameover_button_movie_tap.png in Resources */,
@@ -2342,6 +2407,7 @@
 				5429F3B121CF06B600E0E50F /* countup_7.png in Resources */,
 				54D5531221BCA66300980B92 /* data_next.png in Resources */,
 				548FF97121DF873B007CD3B0 /* game_over.png in Resources */,
+				5467652F21F556E00025A5A9 /* anthropology（人類学）.plist in Resources */,
 				54D5531321BCA66300980B92 /* data_line.png in Resources */,
 				542F446A21B57FAD00C51AD6 /* used up（使い切り）.plist in Resources */,
 				54D552FF21BCA66300980B92 /* custom_box_04.png in Resources */,
@@ -2360,6 +2426,7 @@
 				54D551EF21BCA66300980B92 /* select_pleview_center_inactive.png in Resources */,
 				54D5529C21BCA66300980B92 /* gameclear_button_next_tap.png in Resources */,
 				54D5528A21BCA66300980B92 /* cell_anime1.png in Resources */,
+				5467653C21F556E00025A5A9 /* earth（地球）.plist in Resources */,
 				54D9AEBE20CF6186004FEBA2 /* LaunchScreen.storyboard in Resources */,
 				5429F3CC21CF06B600E0E50F /* score_count_8.png in Resources */,
 				5429F3F021CF06E400E0E50F /* chain5_anim.png in Resources */,
@@ -2398,6 +2465,7 @@
 				5429F3B021CF06B600E0E50F /* score_count_7.png in Resources */,
 				54D552B121BCA66300980B92 /* C.png in Resources */,
 				54D552A221BCA66300980B92 /* mojikun_a_01.png in Resources */,
+				5467651421F555F10025A5A9 /* QuestList_god.plist in Resources */,
 				54D551E821BCA66300980B92 /* select_mapchange_right_god.png in Resources */,
 				54D552BC21BCA66300980B92 /* A.png in Resources */,
 				54D5522721BCA66300980B92 /* table_tap.png in Resources */,
@@ -2485,6 +2553,7 @@
 				54D5531D21BCA66300980B92 /* taiki_panel_01_tap.png in Resources */,
 				54D5526021BCA66300980B92 /* taiyokun_01.png in Resources */,
 				54D552D021BCA66300980B92 /* quest_base.png in Resources */,
+				5467651221F554E50025A5A9 /* tutorial（チュートリアル）.plist in Resources */,
 				54D5530421BCA66300980B92 /* custom_background.png in Resources */,
 				54D5535121BCA66300980B92 /* quiz_result_incorrect.png in Resources */,
 				54D552B521BCA66300980B92 /* tsukikun_03.png in Resources */,
@@ -2495,6 +2564,8 @@
 				54D5528521BCA66300980B92 /* anim_U.png in Resources */,
 				54D552EC21BCA66300980B92 /* music_start.png in Resources */,
 				54D5523E21BCA66300980B92 /* Y.png in Resources */,
+				5467653621F556E00025A5A9 /* meteorology（気象学）.plist in Resources */,
+				5467653521F556E00025A5A9 /* character（キャラクター）.plist in Resources */,
 				54D5528D21BCA66300980B92 /* obj_flower_04.png in Resources */,
 				5429F36521CF052800E0E50F /* time3_danger.png in Resources */,
 				54D551D721BCA66300980B92 /* quizdonyu_title.png in Resources */,
@@ -2545,6 +2616,7 @@
 				5429F3AC21CF06B600E0E50F /* countup_6.png in Resources */,
 				54D5521221BCA66300980B92 /* K.png in Resources */,
 				54D5527F21BCA66300980B92 /* anim_W.png in Resources */,
+				5467652D21F556E00025A5A9 /* politics（政治）.plist in Resources */,
 				5429F3E921CF06E400E0E50F /* chain8_anim.png in Resources */,
 				54D552F421BCA66300980B92 /* study_star.png in Resources */,
 				54D5527E21BCA66300980B92 /* driller_01.png in Resources */,
@@ -2577,6 +2649,7 @@
 				546764F121EF24300025A5A9 /* BGM_ステージクリアジングル_shot.wav in Resources */,
 				54D5520121BCA66300980B92 /* select_background_02.png in Resources */,
 				54D5534121BCA66300980B92 /* home_catalog_ip.png in Resources */,
+				5467653721F556E00025A5A9 /* planet（惑星）.plist in Resources */,
 				54D5525C21BCA66300980B92 /* pack_02.png in Resources */,
 				542F443D21B300DC00C51AD6 /* calender（暦）①.plist in Resources */,
 				546764C121EF1F6F0025A5A9 /* stem（語幹）①.plist in Resources */,
@@ -2614,6 +2687,7 @@
 				54D552EE21BCA66300980B92 /* music_background.png in Resources */,
 				54D5530E21BCA66300980B92 /* custom_object_02.png in Resources */,
 				54D5522921BCA66300980B92 /* pauce_button_continue.png in Resources */,
+				5467653121F556E00025A5A9 /* horoscope（星占い）.plist in Resources */,
 				542F446921B57FAD00C51AD6 /* ordinal numbers（序数）.plist in Resources */,
 				5429F3CE21CF06B600E0E50F /* countup_8.png in Resources */,
 				54D5527D21BCA66300980B92 /* gameclear_button_review_tap.png in Resources */,
@@ -2632,6 +2706,7 @@
 				542F447121B57FAD00C51AD6 /* fruit（果物）.plist in Resources */,
 				54D5520221BCA66300980B92 /* select_background_03.png in Resources */,
 				5429F3E521CF06E400E0E50F /* chain2.png in Resources */,
+				5467653A21F556E00025A5A9 /* dietary supplement（健康補助食品）.plist in Resources */,
 				54D5531A21BCA66300980B92 /* petit_mojikun.png in Resources */,
 				54D5527B21BCA66300980B92 /* anim_A.png in Resources */,
 				54D5520621BCA66300980B92 /* select_stagemap_07.png in Resources */,
@@ -2648,6 +2723,7 @@
 				542F447221B57FAD00C51AD6 /* vegetable（野菜）.plist in Resources */,
 				54D5528821BCA66300980B92 /* anim_T.png in Resources */,
 				54D551FB21BCA66300980B92 /* select_stagemap_02.png in Resources */,
+				5467652A21F556E00025A5A9 /* Q（Q縛り）.plist in Resources */,
 				54D5534521BCA66300980B92 /* home_mojikun.png in Resources */,
 				54D551EA21BCA66300980B92 /* select_mapchange_right_random.png in Resources */,
 				544271CA218BCC6F00622897 /* GameTableView-15.xib in Resources */,
@@ -2675,9 +2751,11 @@
 				54D5523921BCA66300980B92 /* ouji_01.png in Resources */,
 				54CFB40B20DE39D400057F08 /* SoundViewController.storyboard in Resources */,
 				54F3A6E32197CDC400A1E01F /* ConditionsPickerView.xib in Resources */,
+				5467652E21F556E00025A5A9 /* school caste（スクールカースト）.plist in Resources */,
 				54CFB3F720DE31DB00057F08 /* QuickQuestViewController.storyboard in Resources */,
 				54D5522A21BCA66300980B92 /* I.png in Resources */,
 				546764F321EF24300025A5A9 /* BGM_ランダムステージ_loop.wav in Resources */,
+				5467652921F556E00025A5A9 /* K（K縛り）.plist in Resources */,
 				5429F3EB21CF06E400E0E50F /* chain4.png in Resources */,
 				54D5520021BCA66300980B92 /* select_stagemap_01.png in Resources */,
 				5429F3AE21CF06B600E0E50F /* score_get_3.png in Resources */,
@@ -2689,7 +2767,6 @@
 				548FF98B21E1638D007CD3B0 /* gameover_anim_word.png in Resources */,
 				54D5530A21BCA66300980B92 /* custom_box_08.png in Resources */,
 				54D551D521BCA66300980B92 /* quizdonyu_object_sword.png in Resources */,
-				542F444521B300DC00C51AD6 /* チュートリアル.plist in Resources */,
 				54D5530521BCA66300980B92 /* custom_box_02.png in Resources */,
 				542F447921B57FAD00C51AD6 /* crossword（クロスワード）③.plist in Resources */,
 				542F447521B57FAD00C51AD6 /* dessert（デザート）.plist in Resources */,
@@ -2699,6 +2776,7 @@
 				54D5521A21BCA66300980B92 /* gameover_button_movie.png in Resources */,
 				54D552A421BCA66300980B92 /* anim_R.png in Resources */,
 				546764B521EF1F6F0025A5A9 /* ocupation③（職業）.plist in Resources */,
+				5467653B21F556E00025A5A9 /* environmental problem（環境問題）①.plist in Resources */,
 				5429F37921CF052800E0E50F /* time8_danger.png in Resources */,
 				54D552CF21BCA66300980B92 /* bt_stop.png in Resources */,
 				54CFB3EF20DE2E5E00057F08 /* StudyModeViewController.storyboard in Resources */,
@@ -2725,6 +2803,7 @@
 				54D5520321BCA66300980B92 /* select_stagemap_04.png in Resources */,
 				54D5522B21BCA66300980B92 /* pink_5.png in Resources */,
 				54F3A6D721955B3800A1E01F /* EditPickerView.xib in Resources */,
+				5467652B21F556E00025A5A9 /* crossword（クロスワード）⑦.plist in Resources */,
 				54D552FA21BCA66300980B92 /* custom_box_inactive2.png in Resources */,
 				54D5522621BCA66300980B92 /* mojichan_03.png in Resources */,
 				54D5524E21BCA66300980B92 /* anim_I.png in Resources */,
@@ -2776,6 +2855,7 @@
 				5429F36C21CF052800E0E50F /* time0.png in Resources */,
 				54CFB3E720DE25EB00057F08 /* StageSelectViewController.storyboard in Resources */,
 				546764B621EF1F6F0025A5A9 /* stem（語幹）②.plist in Resources */,
+				5467653221F556E00025A5A9 /* ten（10文字縛り）.plist in Resources */,
 				54D552D521BCA66300980B92 /* orange_right.png in Resources */,
 				5429F36B21CF052800E0E50F /* time6.png in Resources */,
 				54CFB3EB20DE294700057F08 /* GameViewController.storyboard in Resources */,
@@ -2800,15 +2880,18 @@
 				54D5524021BCA66300980B92 /* gameclear_button_next.png in Resources */,
 				54D5532421BCA66300980B92 /* taiki_movie_button_tap.png in Resources */,
 				5429F3E121CF06E400E0E50F /* chain8.png in Resources */,
+				5467653321F556E00025A5A9 /* biology（生物学）②.plist in Resources */,
 				542F444A21B300DC00C51AD6 /* crossword（クロスワード）②.plist in Resources */,
 				54D5534D21BCA66300980B92 /* quiz_background.png in Resources */,
 				54D5522F21BCA66300980B92 /* gameover_button_retry_tap.png in Resources */,
 				546764BB21EF1F6F0025A5A9 /* prefix（接頭辞）①.plist in Resources */,
 				54D5532C21BCA66300980B92 /* setting_icon_02.png in Resources */,
+				5467653021F556E00025A5A9 /* environmental problem（環境問題）②.plist in Resources */,
 				54D5529121BCA66300980B92 /* anim_G.png in Resources */,
 				54D5532221BCA66300980B92 /* taiki_icon_04.png in Resources */,
 				548FF97521E07B4A007CD3B0 /* gameover_button_next.png in Resources */,
 				5429F36621CF052800E0E50F /* timecolon.png in Resources */,
+				5467653821F556E00025A5A9 /* universe（宇宙）.plist in Resources */,
 				5429F37421CF052800E0E50F /* time7.png in Resources */,
 				54D5521521BCA66300980B92 /* mojikun_b_02.png in Resources */,
 				54D5521821BCA66300980B92 /* pink_right.png in Resources */,
@@ -2824,6 +2907,7 @@
 				54D5534021BCA66300980B92 /* setting_button_01.png in Resources */,
 				5429F3B921CF06B600E0E50F /* 8.png in Resources */,
 				542F443A21B300DC00C51AD6 /* time zone（時間帯）.plist in Resources */,
+				5467653421F556E00025A5A9 /* crossword（クロスワード）⑧.plist in Resources */,
 				546764AF21EF1F6F0025A5A9 /* fish（魚）.plist in Resources */,
 				54D5520721BCA66300980B92 /* select_background_04.png in Resources */,
 				54D552CB21BCA66300980B92 /* blue_4.png in Resources */,

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>cards</key>
+	<array>
+		<string>A</string>
+		<string>A</string>
+		<string>A</string>
+		<string>A</string>
+		<string>A</string>
+		<string>E</string>
+		<string>F</string>
+		<string>G</string>
+		<string>G</string>
+		<string>H</string>
+		<string>H</string>
+		<string>I</string>
+		<string>I</string>
+		<string>L</string>
+		<string>M</string>
+		<string>N</string>
+		<string>O</string>
+		<string>O</string>
+		<string>P</string>
+		<string>P</string>
+		<string>R</string>
+		<string>R</string>
+		<string>S</string>
+		<string>S</string>
+		<string>S</string>
+		<string>T</string>
+		<string>T</string>
+		<string>T</string>
+		<string>U</string>
+		<string>X</string>
+	</array>
+	<key>height</key>
+	<integer>9</integer>
+	<key>messages</key>
+	<array>
+		<string>もじぴったん</string>
+	</array>
+	<key>questData</key>
+	<dict>
+		<key>count</key>
+		<integer>10</integer>
+		<key>words</key>
+		<integer>6</integer>
+	</dict>
+	<key>questName</key>
+	<string></string>
+	<key>questType</key>
+	<integer>3</integer>
+	<key>table</key>
+	<array>
+		<string>M</string>
+		<string>E</string>
+		<string>0</string>
+		<string>A</string>
+		<string>0</string>
+		<string>O</string>
+		<string>0</string>
+		<string>P</string>
+		<string>0</string>
+		<string>O</string>
+		<string>0</string>
+		<string>0</string>
+		<string>S</string>
+		<string>U</string>
+		<string>V</string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string>F</string>
+		<string> </string>
+		<string>R</string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string> </string>
+		<string>A</string>
+		<string>0</string>
+		<string>O</string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string>O</string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string> </string>
+		<string>M</string>
+		<string>0</string>
+		<string>0</string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string>P</string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string> </string>
+		<string>0</string>
+		<string>T</string>
+		<string>0</string>
+		<string> </string>
+		<string>U</string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string>N</string>
+		<string> </string>
+		<string> </string>
+		<string>0</string>
+		<string>I</string>
+		<string>T</string>
+		<string> </string>
+		<string>A</string>
+		<string> </string>
+		<string>R</string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string>I</string>
+		<string> </string>
+		<string> </string>
+		<string>0</string>
+		<string>O</string>
+		<string>I</string>
+		<string> </string>
+		<string>L</string>
+		<string> </string>
+		<string>I</string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string>S</string>
+		<string> </string>
+		<string> </string>
+		<string>B</string>
+		<string>N</string>
+		<string>O</string>
+		<string> </string>
+		<string> </string>
+		<string>A</string>
+		<string>N</string>
+		<string>0</string>
+		<string>0</string>
+		<string>0</string>
+		<string>M</string>
+		<string>Y</string>
+		<string> </string>
+		<string>I</string>
+		<string> </string>
+		<string>N</string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string>G</string>
+		<string>G</string>
+		<string>E</string>
+		<string>0</string>
+		<string>0</string>
+		<string>M</string>
+		<string>E</string>
+		<string>N</string>
+	</array>
+	<key>tableType</key>
+	<array>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+	</array>
+	<key>time</key>
+	<real>480</real>
+	<key>width</key>
+	<integer>13</integer>
+	<key>wildCardLen</key>
+	<integer>0</integer>
+</dict>
+</plist>

@@ -4,83 +4,83 @@
 <array>
 	<dict>
 		<key>filename</key>
-		<string>tutorial（チュートリアル）</string>
+		<string>anthropology（人類学）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>number（数字）</string>
+		<string>biology（生物学）①</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>calender（暦）①</string>
+		<string>biology（生物学）②</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>calender（暦）②</string>
+		<string>character（キャラクター）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>week（曜日）</string>
+		<string>crossword（クロスワード）⑦</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>season（季節）</string>
+		<string>crossword（クロスワード）⑧</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>time zone（時間帯）</string>
+		<string>dietary supplement（健康補助食品）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>weather（天候）</string>
+		<string>earth（地球）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>direction（方角）</string>
+		<string>environmental problem（環境問題）①</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>crossword（クロスワード）①</string>
+		<string>environmental problem（環境問題）②</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>personality（人称）</string>
+		<string>horoscope（星占い）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>family（家族）</string>
+		<string>K（K縛り）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>emotion（感情）</string>
+		<string>meteorology（気象学）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>nature（自然）</string>
+		<string>planet（惑星）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>furniture（家具）</string>
+		<string>politics（政治）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>sports（スポーツ）①</string>
+		<string>Q（Q縛り）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>county（国）</string>
+		<string>school caste（スクールカースト）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>food（食べ物）</string>
+		<string>ten（10文字縛り）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>vehicle（陸用車）</string>
+		<string>universe（宇宙）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>crossword（クロスワード）②</string>
+		<string>Z（Z縛り）</string>
 	</dict>
 </array>
 </plist>
