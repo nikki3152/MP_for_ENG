@@ -53,6 +53,8 @@ class ViewController: UIViewController {
 		})
 		
 		self.baseView.alpha = 0
+		
+		SoundManager.shared.startBGM(type: .bgmTop)		//BGM再生
 	}
 	
 	var isFirst = false

@@ -320,6 +320,19 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	
 	func startGameTimer() {
 		
+		if self.questIndex >= 0 || self.questIndex <= 19 {
+			SoundManager.shared.startBGM(type: .bgmEasy)		//BGM再生
+		}
+		else if self.questIndex >= 20 || self.questIndex <= 29 {
+			SoundManager.shared.startBGM(type: .bgmNormal)		//BGM再生
+		}
+		else if self.questIndex >= 30 || self.questIndex <= 39 {
+			SoundManager.shared.startBGM(type: .bgmHard)		//BGM再生
+		}
+		else if self.questIndex >= 40 || self.questIndex <= 49 {
+			SoundManager.shared.startBGM(type: .bgmGod)			//BGM再生
+		}
+		
 		self.time = self.questData.time
 		
 		let base = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
@@ -1198,6 +1211,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	var isGamePause: Bool = false
 	func gamePause() {
 		
+		SoundManager.shared.pauseBGM()		//BGMポーズ（停止）
+
 		self.isGamePause = true
 		let pause = PauseView.pauseView()
 		self.view.addSubview(pause)
@@ -1206,6 +1221,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			switch res {
 			case .continueGame:		//続ける
 				print("ゲームをつづける")
+				SoundManager.shared.pauseBGM()		//BGMポーズ（解除）
 			case .retry:			//やりなおす
 				self.gameTimer?.invalidate()
 				self.gameTimer = nil
@@ -1214,6 +1230,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				self.gameTimer?.invalidate()
 				self.gameTimer = nil
 				self.remove()
+				SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
 			}
 		}
 	}

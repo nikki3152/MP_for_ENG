@@ -166,7 +166,6 @@ class StageSelectViewController: BaseViewController {
 		gameView.questIndex = tag
 		gameView.selectCnt = self
 		gameView.present(self) { 
-			
 		}
 		gameView.baseDelegate = self
 	}

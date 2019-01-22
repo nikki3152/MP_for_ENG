@@ -20,7 +20,7 @@ class WaitingViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+		SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
     }
 	
 	//ひとりでパズル

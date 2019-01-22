@@ -220,6 +220,7 @@
 		5467653A21F556E00025A5A9 /* dietary supplement（健康補助食品）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467652621F556DF0025A5A9 /* dietary supplement（健康補助食品）.plist */; };
 		5467653B21F556E00025A5A9 /* environmental problem（環境問題）①.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467652721F556DF0025A5A9 /* environmental problem（環境問題）①.plist */; };
 		5467653C21F556E00025A5A9 /* earth（地球）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467652821F556E00025A5A9 /* earth（地球）.plist */; };
+		5467654021F69E0D0025A5A9 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467653F21F69E0D0025A5A9 /* SoundManager.swift */; };
 		5489AF5D212B007A00A7D275 /* ejdic-hand-utf8.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */; };
 		5489AF5F212B00B500A7D275 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF5E212B00B500A7D275 /* DataManager.swift */; };
 		5489AF61212B010B00A7D275 /* MPEDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF60212B010B00A7D275 /* MPEDataManager.swift */; };
@@ -881,6 +882,7 @@
 		5467652621F556DF0025A5A9 /* dietary supplement（健康補助食品）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dietary supplement（健康補助食品）.plist"; sourceTree = "<group>"; };
 		5467652721F556DF0025A5A9 /* environmental problem（環境問題）①.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "environmental problem（環境問題）①.plist"; sourceTree = "<group>"; };
 		5467652821F556E00025A5A9 /* earth（地球）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "earth（地球）.plist"; sourceTree = "<group>"; };
+		5467653F21F69E0D0025A5A9 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ejdic-hand-utf8.txt"; sourceTree = "<group>"; };
 		5489AF5E212B00B500A7D275 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5489AF60212B010B00A7D275 /* MPEDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPEDataManager.swift; sourceTree = "<group>"; };
@@ -1543,25 +1545,24 @@
 			children = (
 				546764C421EF24020025A5A9 /* BGM_TOP画面_hit.wav */,
 				546764CF21EF24280025A5A9 /* BGM_TOP画面_loop.wav */,
-				546764D021EF24280025A5A9 /* BGM_ステージクリアジングル_shot.wav */,
-				546764D221EF24290025A5A9 /* BGM_ランダムステージ_loop.wav */,
+				546764E621EF242F0025A5A9 /* BGM_待機画面_hit.wav */,
+				546764D921EF242C0025A5A9 /* BGM_待機画面_loop.wav */,
 				546764CD21EF24270025A5A9 /* BGM_一問一答モード_hit.wav */,
 				546764E521EF242F0025A5A9 /* BGM_一問一答モード_loop.wav */,
-				546764C921EF24260025A5A9 /* BGM_失敗ジングル_loop.wav */,
 				546764DF21EF242D0025A5A9 /* BGM_初級ステージ_hit.wav */,
 				546764D321EF242A0025A5A9 /* BGM_初級ステージ_loop.wav */,
+				546764E221EF242E0025A5A9 /* BGM_中級ステージ_hit.wav */,
+				546764D621EF242C0025A5A9 /* BGM_中級ステージ_loop.wav */,
 				546764E021EF242E0025A5A9 /* BGM_上級ステージ_hit.wav */,
 				546764D421EF242A0025A5A9 /* BGM_上級ステージ_loop.wav */,
 				546764E121EF242E0025A5A9 /* BGM_神級ステージ_hit.wav */,
 				546764D521EF242B0025A5A9 /* BGM_神級ステージ_loop.wav */,
-				546764E621EF242F0025A5A9 /* BGM_待機画面_hit.wav */,
-				546764D921EF242C0025A5A9 /* BGM_待機画面_loop.wav */,
-				546764E221EF242E0025A5A9 /* BGM_中級ステージ_hit.wav */,
-				546764D621EF242C0025A5A9 /* BGM_中級ステージ_loop.wav */,
+				546764D021EF24280025A5A9 /* BGM_ステージクリアジングル_shot.wav */,
+				546764D221EF24290025A5A9 /* BGM_ランダムステージ_loop.wav */,
+				546764C921EF24260025A5A9 /* BGM_失敗ジングル_loop.wav */,
 				546764DB21EF242D0025A5A9 /* SE_PRESS_to_START.wav */,
 				546764E421EF242E0025A5A9 /* SE_コマ配置音_通常.wav */,
 				546764E321EF242E0025A5A9 /* SE_コンボ①.wav */,
-				546764CC21EF24270025A5A9 /* SE_コンボ⑩以降.wav */,
 				546764DE21EF242D0025A5A9 /* SE_コンボ②.wav */,
 				546764E721EF24300025A5A9 /* SE_コンボ③.wav */,
 				546764C721EF24260025A5A9 /* SE_コンボ④.wav */,
@@ -1570,6 +1571,7 @@
 				546764D821EF242C0025A5A9 /* SE_コンボ⑦.wav */,
 				546764DA21EF242C0025A5A9 /* SE_コンボ⑧.wav */,
 				546764CE21EF24270025A5A9 /* SE_コンボ⑨.wav */,
+				546764CC21EF24270025A5A9 /* SE_コンボ⑩以降.wav */,
 				546764C821EF24260025A5A9 /* SE_一時停止ボタン選択音.wav */,
 				546764DD21EF242D0025A5A9 /* SE_決定音.wav */,
 				546764D721EF242C0025A5A9 /* SE_正解音.wav */,
@@ -2249,6 +2251,7 @@
 			isa = PBXGroup;
 			children = (
 				5467650921EF30EF0025A5A9 /* SoundPlayer.swift */,
+				5467653F21F69E0D0025A5A9 /* SoundManager.swift */,
 				548FF98821E0BEFE007CD3B0 /* OutlineLabel.swift */,
 				54F3A6DD2196D53B00A1E01F /* TTTAttributedLabel.h */,
 				54F3A6DE2196D53C00A1E01F /* TTTAttributedLabel.m */,
@@ -2992,6 +2995,7 @@
 				54CFB40120DE370A00057F08 /* SettingViewController.swift in Sources */,
 				5467650A21EF30EF0025A5A9 /* SoundPlayer.swift in Sources */,
 				54F3A6E12197CDAF00A1E01F /* ConditionsPickerView.swift in Sources */,
+				5467654021F69E0D0025A5A9 /* SoundManager.swift in Sources */,
 				54CFB3FD20DE360700057F08 /* CustomViewController.swift in Sources */,
 				54D03E0E21A4EF1D00FD1CC4 /* TimePickerView.swift in Sources */,
 				54CFB3DF20DE1F0B00057F08 /* BaseViewController.swift in Sources */,
