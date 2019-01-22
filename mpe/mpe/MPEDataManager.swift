@@ -8,6 +8,11 @@
 
 import UIKit
 
+//初期設定お
+let kBGMOn: String = "kBGMOn"
+let kSEOn: String = "kSEOn"
+let kVoiceOn: String = "kVoiceOn"
+
 enum MatchType: Int {
 	case perfect			//完全一致
 	case foward				//前方一致

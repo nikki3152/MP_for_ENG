@@ -27,6 +27,7 @@ class DictViewController: BaseViewController, UITextFieldDelegate {
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.remove()
 	}
 	

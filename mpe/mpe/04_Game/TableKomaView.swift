@@ -65,6 +65,7 @@ class TableKomaView: UIView {
 		
 	}
 	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+		
 		super.touchesEnded(touches, with: event)
 		self.delegate?.tableKomaViewToucheUp(koma: self)
 		self.backImageView.image = UIImage(named: "table")

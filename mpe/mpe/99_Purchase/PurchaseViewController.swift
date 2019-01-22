@@ -27,7 +27,18 @@ class PurchaseViewController: BaseViewController {
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.remove()
+	}
+	
+	@IBOutlet weak var videoAdButton: UIButton!
+	@IBAction func videoAdButtonAction(_ sender: Any) {
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
+	}
+	
+	@IBOutlet weak var ppPurchaseButton: UIButton!
+	@IBAction func ppPurchaseButtonAction(_ sender: UIButton) {
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 	}
 	
 }

@@ -34,9 +34,8 @@ class GameOverView: UIView {
 	
 	@IBAction func buttonAction(_ sender: UIButton) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		let res = GameOverResType(rawValue: sender.tag)!
 		self.closeHandler?(res)
-		self.closeHandler = nil
-		self.removeFromSuperview()
 	}
 }

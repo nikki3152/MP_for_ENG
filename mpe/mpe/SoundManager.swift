@@ -60,11 +60,13 @@ class SoundManager: NSObject, SoundPlayerDelegate {
 	var bgmPlayState: Int = 0		//0:未再生 1:Hit再生中 2:Loop再生中
 	var currentBGM: BGMType!
 	func startBGM(type: BGMType) {
-		
+		if UserDefaults.standard.bool(forKey: kBGMOn) == false {
+			return
+		}
 		self.stopBGM()
 		if type == .bgmStageClear || type == .bgmStageRundom || type == .bgmFail {
 			//ジングル
-			self.currentBGM = nil
+			self.currentBGM = type
 			self.bgmPlayState = 0
 			self.soundPlayer.voicePlay(name: self.currentBGM.rawValue, type: "wav")
 		} else {
@@ -76,7 +78,9 @@ class SoundManager: NSObject, SoundPlayerDelegate {
 		}
 	}
 	func stopBGM() {
-		
+		if UserDefaults.standard.bool(forKey: kBGMOn) == false {
+			return
+		}
 		if self.bgmPlayState == 1 {
 			self.bgmPlayState = 0
 			self.soundPlayer.voiceStop()
@@ -91,7 +95,9 @@ class SoundManager: NSObject, SoundPlayerDelegate {
 		self.currentBGM = nil
 	}
 	func pauseBGM() {
-		
+		if UserDefaults.standard.bool(forKey: kBGMOn) == false {
+			return
+		}
 		if self.bgmPlayState == 1 {
 			if self.isBGMPause {
 				self.isBGMPause = false
@@ -112,7 +118,9 @@ class SoundManager: NSObject, SoundPlayerDelegate {
 	//SE
 	//-----------------------------------------
 	func startSE(type: SEType) {
-		
+		if UserDefaults.standard.bool(forKey: kSEOn) == false {
+			return
+		}
 		self.soundPlayer.sePlay(name: type.rawValue, type: "wav")
 	}
 	
@@ -127,6 +135,9 @@ class SoundManager: NSObject, SoundPlayerDelegate {
 				print("LOOP: \(self.currentBGM.rawValue)")
 				self.soundPlayer.setBGMSound(filepath: path)
 			}
+		}
+		else if self.bgmPlayState == 0 {
+			self.currentBGM = nil
 		}
 	}
 }

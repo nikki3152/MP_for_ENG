@@ -27,7 +27,17 @@ class QuickQuestViewController: BaseViewController {
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.remove()
+	}
+	
+	
+	@IBOutlet weak var answerButton1: UIButton!
+	@IBOutlet weak var answerButton2: UIButton!
+	@IBOutlet weak var answerButton3: UIButton!
+	@IBOutlet weak var answerButton4: UIButton!
+	@IBAction func answerButtonAction(_ sender: UIButton) {
+		SoundManager.shared.startSE(type: .seDone)	//SE再生
 	}
 	
 }

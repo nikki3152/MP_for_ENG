@@ -42,6 +42,7 @@ class SoundViewController: BaseViewController {
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.remove()
 	}
 	
@@ -49,6 +50,7 @@ class SoundViewController: BaseViewController {
 	@IBOutlet weak var playButton: UIButton!
 	@IBAction func playButtonAction(_ sender: UIButton) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		sender.isSelected = !sender.isSelected
 		if sender.isSelected {
 			cdImageView.layer.removeAnimation(forKey: "ImageViewRotation")
@@ -70,6 +72,7 @@ class SoundViewController: BaseViewController {
 	//曲選択
 	@IBAction func musicSelectButtonAction(_ sender: UIButton) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		sender.isSelected = !sender.isSelected 
 		for bt in self.buttonList {
 			if sender.isSelected {

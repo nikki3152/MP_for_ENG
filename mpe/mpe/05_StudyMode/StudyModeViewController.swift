@@ -27,6 +27,7 @@ class StudyModeViewController: BaseViewController {
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.remove()
 	}
 	
@@ -34,6 +35,7 @@ class StudyModeViewController: BaseViewController {
 	@IBOutlet weak var dictModeButton: UIButton!
 	@IBAction func dictModeButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let dictView = DictViewController.dictViewController()
 		dictView.present(self) { 
 			
@@ -44,6 +46,7 @@ class StudyModeViewController: BaseViewController {
 	@IBOutlet weak var quickQuestModeButton: UIButton!
 	@IBAction func quickQuestModeButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let quickIntroView = QuickQuestIntoroViewController.quickQuestIntoroViewController()
 		quickIntroView.present(self) { 
 			

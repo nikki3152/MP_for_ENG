@@ -27,7 +27,21 @@ class CustomViewController: BaseViewController {
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.remove()
 	}
 	
+	
+	@IBOutlet weak var charCustomButton1: UIButton!
+	@IBOutlet weak var charCustomButton2: UIButton!
+	@IBOutlet weak var charCustomButton3: UIButton!
+	@IBOutlet weak var charCustomButton4: UIButton!
+	@IBOutlet weak var charCustomButton5: UIButton!
+	@IBOutlet weak var charCustomButton6: UIButton!
+	@IBOutlet weak var charCustomButton7: UIButton!
+	@IBOutlet weak var charCustomButton8: UIButton!
+	@IBOutlet weak var charCustomButton9: UIButton!
+	@IBAction func charCustomButtonAction(_ sender: UIButton) {
+		SoundManager.shared.startSE(type: .seDone)	//SE再生
+	}
 }

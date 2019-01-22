@@ -27,12 +27,14 @@ class QuickQuestIntoroViewController: BaseViewController {
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.remove()
 	}
 	
 	//スタート
 	@IBAction func startButtonAction(_ sender: UIButton) {
 		
+		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let quickView = QuickQuestViewController.quickQuestViewController()
 		quickView.present(self) { 
 			

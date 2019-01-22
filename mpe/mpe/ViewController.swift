@@ -15,6 +15,12 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		UserDefaults.standard.register(defaults: [
+			kBGMOn:true,
+			kSEOn:true,
+			kVoiceOn:true,
+		])
+		
 		//バージョン情報
 		let info = Bundle.main.infoDictionary! as Dictionary
 		let ver = info["CFBundleShortVersionString"] as! String
@@ -54,7 +60,6 @@ class ViewController: UIViewController {
 		
 		self.baseView.alpha = 0
 		
-		SoundManager.shared.startBGM(type: .bgmTop)		//BGM再生
 	}
 	
 	var isFirst = false
@@ -86,13 +91,12 @@ class ViewController: UIViewController {
 				UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations: { 
 					self.baseView.alpha = 1.0
 				}) { (stop) in
-					
+					SoundManager.shared.startBGM(type: .bgmTop)		//BGM再生
 				}
 				self.textView.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height + (self.textView.frame.size.height / 2))
 				UIView.animate(withDuration: 20.0, delay: 0, options: .curveLinear, animations: { 
 					self.textView.center = CGPoint(x: self.view.frame.size.width / 2, y: (self.view.frame.size.height / 2))
 				}) { (stop) in
-					
 				}
 			}
 		}
@@ -103,6 +107,7 @@ class ViewController: UIViewController {
 	@IBOutlet weak var skipButton: UIButton!
 	@IBAction func skipButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.timer?.invalidate()
 		self.timer = nil
 		let homeView = HomeViewController.homeViewController()

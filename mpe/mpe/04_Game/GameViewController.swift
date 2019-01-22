@@ -273,13 +273,17 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	@IBOutlet weak var cardScrolliew: UIScrollView!
 	@IBOutlet weak var cardBaseView: UIView!
 	
+	//MARK: 手札左
 	@IBOutlet weak var cardLeftButton: UIButton!
 	@IBAction func cardLeftButtonAction(_ sender: UIButton) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 	}
+	//MARK: 手札右
 	@IBOutlet weak var cardRightButton: UIButton!
 	@IBAction func cardRightButtonAction(_ sender: UIButton) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 	}
 	
 	//キャラクター
@@ -412,11 +416,19 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	}
 	
 	
-	//戻る
-	@IBOutlet weak var backButton: UIButton!
-	@IBAction func backButtonAction(_ sender: Any) {
+	//MARK: 戻る
+	@IBOutlet weak var pauseButton: UIButton!
+	@IBAction func pauseButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .sePause)	//SE再生
 		self.gamePause()
+	}
+	
+	//MARK: アンドゥ
+	@IBOutlet weak var undoButton: UIButton!
+	@IBAction func undoButtonAction(_ sender: Any) {
+		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 	}
 	
 	
@@ -967,6 +979,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			
 			
 			if hitWords.count > 0 {
+				SoundManager.shared.startSE(type: .seCorrect)	//SE再生
 				//あたり
 				print("単語数: \(hitWords.count)")
 				var delay: Double = 0
@@ -992,8 +1005,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						
 						let mojiCount = hitWord.count
 						print("文字数: \(mojiCount)[\(hitWord)]")
-						effectCount += 1
 						DispatchQueue.main.asyncAfter(deadline: .now() + delay) { 
+							effectCount += 1
 							if self.questData.questType == .makeWoredsCount {
 								//+++++++++++++++++++++++++
 								//◯字数以上の英単語を◯個作る
@@ -1026,8 +1039,38 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 							self.isInEffect = false
 							self.tableTapEffect(komas: komas)	//エフェクト
 							let hitView = HitInfoView.hitInfoView()
+							if effectCount == 1 {
+								SoundManager.shared.startSE(type: .seCombo1)	//SE再生
+							}
+							else if effectCount == 2 {
+								SoundManager.shared.startSE(type: .seCombo2)	//SE再生
+							}
+							else if effectCount == 3 {
+								SoundManager.shared.startSE(type: .seCombo3)	//SE再生
+							}
+							else if effectCount == 4 {
+								SoundManager.shared.startSE(type: .seCombo4)	//SE再生
+							}
+							else if effectCount == 5 {
+								SoundManager.shared.startSE(type: .seCombo5)	//SE再生
+							}
+							else if effectCount == 6 {
+								SoundManager.shared.startSE(type: .seCombo6)	//SE再生
+							}
+							else if effectCount == 7 {
+								SoundManager.shared.startSE(type: .seCombo7)	//SE再生
+							}
+							else if effectCount == 8 {
+								SoundManager.shared.startSE(type: .seCombo8)	//SE再生
+							}
+							else if effectCount == 9 {
+								SoundManager.shared.startSE(type: .seCombo9)	//SE再生
+							}
+							else {
+								SoundManager.shared.startSE(type: .seCombo10)	//SE再生
+							}
+							print("effectCount: \(effectCount)")
 							hitView.open(title: hitWord.uppercased(), info: info, parent: self.view, finished: {[weak self]() in
-								print("effectCount: \(effectCount)")
 								guard let s = self else {
 									return
 								}
@@ -1044,6 +1087,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						if i == hitWords.count - 1 {
 							self.isInEffect = false
 							//ハズレ
+							SoundManager.shared.startSE(type: .seFail)	//SE再生
 							if emptyTableCount() == 0 || cardViewList.count == 0 {
 								//ゲームオーバー
 								self.gameOver()
@@ -1055,6 +1099,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			} else {
 				self.isInEffect = false
 				//ハズレ
+				SoundManager.shared.startSE(type: .seKomaPut)	//SE再生
 				if emptyTableCount() == 0 || cardViewList.count == 0 {
 					//ゲームオーバー
 					self.gameOver()
@@ -1241,6 +1286,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		if isGameEnd {
 			return
 		}
+		
+		SoundManager.shared.startBGM(type: .bgmStageClear)	//ジングル再生
+		
 		isGameEnd = true
 		self.gameTimer?.invalidate()
 		self.gameTimer = nil
@@ -1272,8 +1320,14 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					self?.charaBaseView.isHidden = false
 					switch res {
 					case .next:				//次の問題へ進む
+						clear.closeHandler = nil
+						clear.removeFromSuperview()
 						self?.nextQuest()
 					case .select:			//セレクト画面に戻る
+						self?.gameTimer?.invalidate()
+						self?.gameTimer = nil
+						clear.closeHandler = nil
+						clear.removeFromSuperview()
 						self?.remove()
 					case .dict:				//辞書モードで復習！
 						print("辞書モードで復習！")
@@ -1288,6 +1342,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		if isGameEnd {
 			return
 		}
+		
+		SoundManager.shared.startBGM(type: .bgmFail)	//ジングル再生
+		
 		isGameEnd = true
 		self.gameTimer?.invalidate()
 		self.gameTimer = nil
@@ -1321,12 +1378,18 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					self?.charaBaseView.isHidden = false
 					switch res {
 					case .retry:				//やりなおす
+						over.closeHandler = nil
+						over.removeFromSuperview()
 						self?.retry()
 					case .timeDouble:			//Timeを倍にする（動画）
 						print("Timeを倍にする（動画）")
 					case .next:					//次の問題へ進む（動画）
 						print("Timeを倍にする（動画）")
 					case .giveup:				//諦める
+						self?.gameTimer?.invalidate()
+						self?.gameTimer = nil
+						over.closeHandler = nil
+						over.removeFromSuperview()
 						self?.remove()
 					}
 				}

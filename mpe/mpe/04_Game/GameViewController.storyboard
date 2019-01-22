@@ -80,7 +80,7 @@
                                 <state key="normal" backgroundImage="bt_stop.png"/>
                                 <state key="highlighted" backgroundImage="bt_stop_tap.png"/>
                                 <connections>
-                                    <action selector="backButtonAction:" destination="vVe-zF-H2F" eventType="touchUpInside" id="Ucx-x5-E98"/>
+                                    <action selector="pauseButtonAction:" destination="vVe-zF-H2F" eventType="touchUpInside" id="8fB-Ae-ZQt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3W-PF-kYR">
@@ -88,6 +88,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="bt_playback.png"/>
                                 <state key="highlighted" backgroundImage="bt_playback_tap.png"/>
+                                <connections>
+                                    <action selector="undoButtonAction:" destination="vVe-zF-H2F" eventType="touchUpInside" id="Po6-eG-AmU"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SsC-t5-QhI">
                                 <rect key="frame" x="477" y="8" width="256" height="28"/>
@@ -154,7 +157,6 @@
                         <viewLayoutGuide key="safeArea" id="iap-VV-fMB"/>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="JSe-yj-Dfs" id="Qwk-Lt-hc6"/>
                         <outlet property="backImageView" destination="u3i-2l-VVr" id="SaV-Ad-ds0"/>
                         <outlet property="ballonDisplayImageView" destination="sGA-J1-tgK" id="hUx-Q4-dy9"/>
                         <outlet property="ballonImageView" destination="Cwi-8a-QQW" id="bCg-wo-ptL"/>
@@ -166,6 +168,7 @@
                         <outlet property="charaImageView" destination="hlP-yQ-Ocs" id="sJq-qL-C3j"/>
                         <outlet property="editButton" destination="MLx-ej-Tbt" id="JAI-4k-oWR"/>
                         <outlet property="mainScrollView" destination="Epb-1z-iO6" id="Y1N-Po-MOg"/>
+                        <outlet property="pauseButton" destination="JSe-yj-Dfs" id="fbp-O2-QzD"/>
                         <outlet property="questBaseImageView" destination="tae-oi-Zh4" id="PxA-Ur-ADd"/>
                         <outlet property="questBaseView" destination="1cO-p3-EVK" id="tl5-37-OX9"/>
                         <outlet property="questDisplay2ImageView" destination="72F-JO-kSd" id="bLf-Ue-gL3"/>
@@ -173,6 +176,7 @@
                         <outlet property="scoreBaseView" destination="SsC-t5-QhI" id="yXt-ji-boF"/>
                         <outlet property="scoreLabel" destination="UIh-yc-cei" id="egI-Yb-M7Q"/>
                         <outlet property="timeLabel" destination="pVv-bz-7zf" id="UEr-Hf-ENa"/>
+                        <outlet property="undoButton" destination="s3W-PF-kYR" id="0gg-fu-Ty7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhC-Eo-4Be" userLabel="First Responder" sceneMemberID="firstResponder"/>

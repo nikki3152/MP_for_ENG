@@ -67,7 +67,7 @@ class FontCardView: UIView {
 	@IBOutlet weak var frameImageView: UIImageView!
 	
 	@objc func tap(_ tap: UITapGestureRecognizer) {
-		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.delegate?.fontCardViewTap(font: self)
 	}
 }

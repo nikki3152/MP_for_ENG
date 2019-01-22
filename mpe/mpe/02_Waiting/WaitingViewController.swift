@@ -27,6 +27,7 @@ class WaitingViewController: BaseViewController {
 	@IBOutlet weak var stageSelectButton: UIButton!
 	@IBAction func stageSelectButtpnAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let stageSelView = StageSelectViewController.stageSelectViewController()
 		stageSelView.present(self) { 
 			
@@ -37,6 +38,7 @@ class WaitingViewController: BaseViewController {
 	@IBOutlet weak var studyModeButton: UIButton!
 	@IBAction func studyModeButtpnAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let studyView = StudyModeViewController.studyModeViewController()
 		studyView.present(self) { 
 			
@@ -47,6 +49,7 @@ class WaitingViewController: BaseViewController {
 	@IBOutlet weak var customButton: UIButton!
 	@IBAction func customButtpnAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let customView = CustomViewController.customViewController()
 		customView.present(self) { 
 			
@@ -57,6 +60,7 @@ class WaitingViewController: BaseViewController {
 	@IBOutlet weak var settingButton: UIButton!
 	@IBAction func settingButtpnAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let settingView = SettingViewController.settingViewController()
 		settingView.present(self) { 
 			
@@ -67,6 +71,7 @@ class WaitingViewController: BaseViewController {
 	@IBOutlet weak var purchaseButton: UIButton!
 	@IBAction func purchaseButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		let purchaseView = PurchaseViewController.purchaseViewController()
 		purchaseView.present(self) { 
 			

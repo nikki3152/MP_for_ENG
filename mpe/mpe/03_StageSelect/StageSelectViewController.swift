@@ -95,6 +95,7 @@ class StageSelectViewController: BaseViewController {
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.remove()
 	}
 	
@@ -102,6 +103,7 @@ class StageSelectViewController: BaseViewController {
 	@IBOutlet weak var leftButton: UIButton!
 	@IBAction func leftButtonAction(_ sender: UIButton) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		sender.isUserInteractionEnabled = false
 		let x = self.buttonBaseView.center.x
 		UIView.animate(withDuration: 0.25, animations: { 
@@ -124,6 +126,7 @@ class StageSelectViewController: BaseViewController {
 	@IBOutlet weak var rightButton: UIButton!
 	@IBAction func rightButtonAction(_ sender: UIButton) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		sender.isUserInteractionEnabled = false
 		let x = self.buttonBaseView.center.x
 		UIView.animate(withDuration: 0.25, animations: { 
@@ -160,6 +163,7 @@ class StageSelectViewController: BaseViewController {
 	@IBOutlet weak var stageButton10: UIButton!
 	@IBAction func stageButtonAction(_ sender: UIButton) {
 		
+		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let tag = sender.tag + self.startIndex
 		let questData: QuestData = self.questDatas[tag]
 		let gameView = GameViewController.gameViewController(questData: questData)

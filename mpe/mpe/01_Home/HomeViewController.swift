@@ -30,6 +30,8 @@ class HomeViewController: BaseViewController {
 	@IBOutlet weak var startButton: UIButton!
 	@IBAction func startButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .sePressStart)	//SE再生
+		
 		let waitView = WaitingViewController.waitingViewController()
 		waitView.present(self) { 
 			

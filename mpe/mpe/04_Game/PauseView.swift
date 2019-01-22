@@ -35,6 +35,7 @@ class PauseView: UIView {
 	
 	@IBAction func buttonAction(_ sender: UIButton) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		let res = GamePauseResType(rawValue: sender.tag)!
 		self.closeHandler?(res)
 		self.closeHandler = nil

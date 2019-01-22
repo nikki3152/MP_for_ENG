@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hbe-z7-lxC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hbe-z7-lxC">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,11 +56,17 @@
                                         <rect key="frame" x="1" y="164" width="220" height="66"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" backgroundImage="setting_button_01.png"/>
+                                        <connections>
+                                            <action selector="howToPlayButtonAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="qhh-PL-SzF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0X7-uJ-JZI">
                                         <rect key="frame" x="1" y="230" width="220" height="66"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" backgroundImage="setting_button_02.png"/>
+                                        <connections>
+                                            <action selector="reviewButtonAcgtion:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="nYm-MR-UIc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMq-Hj-HdZ">
                                         <rect key="frame" x="1" y="296" width="220" height="66"/>
@@ -90,7 +97,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQh-mr-CIu">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQh-mr-CIu">
                                         <rect key="frame" x="111" y="13" width="100" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="setting_button_off.png"/>
@@ -99,7 +106,7 @@
                                             <action selector="switchBGMAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="2C0-Sp-z40"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJz-EU-cWG">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJz-EU-cWG">
                                         <rect key="frame" x="111" y="62" width="100" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="setting_button_off.png"/>
@@ -108,7 +115,7 @@
                                             <action selector="switchSEAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="2fH-C8-CVu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tga-uY-EEu">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tga-uY-EEu">
                                         <rect key="frame" x="111" y="115" width="100" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="setting_button_off.png"/>
@@ -126,7 +133,9 @@
                     <connections>
                         <outlet property="backButton" destination="PzT-9k-2qR" id="tJo-Lu-hEW"/>
                         <outlet property="dataAggregateButton" destination="U5B-Df-28f" id="FVX-kQ-EeA"/>
+                        <outlet property="howToPlayButton" destination="XtF-4f-GUT" id="x0H-gU-qvw"/>
                         <outlet property="purchaseButton" destination="nMq-Hj-HdZ" id="ItS-IV-QeI"/>
+                        <outlet property="reviewButton" destination="0X7-uJ-JZI" id="6pZ-1L-mlA"/>
                         <outlet property="soundButton" destination="DV1-PO-hR6" id="GbW-p5-Zdr"/>
                         <outlet property="switchBGM" destination="yQh-mr-CIu" id="jia-J9-U60"/>
                         <outlet property="switchSE" destination="FJz-EU-cWG" id="tvt-gJ-tSs"/>
