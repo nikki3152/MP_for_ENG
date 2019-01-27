@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_over.png" translatesAutoresizingMaskIntoConstraints="NO" id="uPY-hY-9I2">
-                    <rect key="frame" x="184" y="4" width="300" height="50"/>
+                    <rect key="frame" x="183" y="15" width="300" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_list_head.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ng7-vG-Efg">
@@ -70,9 +70,9 @@
                         </button>
                     </subviews>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xXp-dS-cCi">
-                    <rect key="frame" x="0.0" y="31" width="155" height="344"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xXp-dS-cCi">
+                    <rect key="frame" x="0.0" y="31" width="154" height="344"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTd-KL-9gU">
@@ -80,11 +80,11 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fukidashi" translatesAutoresizingMaskIntoConstraints="NO" id="lnb-9J-ybf">
-                            <rect key="frame" x="13" y="8" width="125" height="253"/>
+                            <rect key="frame" x="12" y="8" width="126" height="253"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d3u-cB-0bL">
-                            <rect key="frame" x="52" y="39" width="45" height="166"/>
+                            <rect key="frame" x="52" y="39" width="44" height="166"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mojikun_b_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="6mF-aU-qI3">
@@ -96,7 +96,11 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="1q8-XN-Qqv"/>
-            <point key="canvasLocation" x="46" y="-324"/>
+            <connections>
+                <outlet property="buttonBaseView" destination="UqL-zQ-c6g" id="dAJ-Mv-zfe"/>
+                <outlet property="wordTableView" destination="xXp-dS-cCi" id="bHx-cj-Xhm"/>
+            </connections>
+            <point key="canvasLocation" x="110" y="-351"/>
         </view>
     </objects>
     <resources>

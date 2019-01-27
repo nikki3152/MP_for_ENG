@@ -64,17 +64,26 @@ class SoundManager: NSObject, SoundPlayerDelegate {
 			return
 		}
 		self.stopBGM()
-		if type == .bgmStageClear || type == .bgmStageRundom || type == .bgmFail {
+		if type == .bgmStageClear || type == .bgmStageRundom {
 			//ジングル
 			self.currentBGM = type
 			self.bgmPlayState = 0
 			self.soundPlayer.voicePlay(name: self.currentBGM.rawValue, type: "wav")
 		} else {
 			//ループBGM
-			self.currentBGM = type
-			self.bgmPlayState = 1
-			self.soundPlayer.voicePlay(name: self.currentBGM.rawValue + "_hit", type: "wav")
-			print("HIT: \(self.currentBGM.rawValue)")
+			if type == .bgmFail {
+				self.currentBGM = type
+				self.bgmPlayState = 2
+				if let path = Bundle.main.path(forResource: self.currentBGM.rawValue, ofType: "wav") {
+					print("LOOP: \(self.currentBGM.rawValue)")
+					self.soundPlayer.setBGMSound(filepath: path)
+				}
+			} else {
+				self.currentBGM = type
+				self.bgmPlayState = 1
+				self.soundPlayer.voicePlay(name: self.currentBGM.rawValue + "_hit", type: "wav")
+				print("HIT: \(self.currentBGM.rawValue)")
+			}
 		}
 	}
 	func stopBGM() {

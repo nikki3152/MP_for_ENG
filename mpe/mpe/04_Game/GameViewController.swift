@@ -412,11 +412,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			self.retry()
 		} else {
 			self.remove()
+			SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
 		}
 	}
 	
 	
-	//MARK: 戻る
+	//MARK: ゲームポーズ
 	@IBOutlet weak var pauseButton: UIButton!
 	@IBAction func pauseButtonAction(_ sender: Any) {
 		
@@ -1086,13 +1087,15 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					} else {
 						if i == hitWords.count - 1 {
 							self.isInEffect = false
-							//ハズレ
-							SoundManager.shared.startSE(type: .seFail)	//SE再生
-							if emptyTableCount() == 0 || cardViewList.count == 0 {
-								//ゲームオーバー
-								self.gameOver()
-								return
-							}
+//							DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { 
+//								//ハズレ
+//								//SoundManager.shared.startSE(type: .seFail)	//SE再生
+//								if self.emptyTableCount() == 0 || self.cardViewList.count == 0 {
+//									//ゲームオーバー
+//									self.gameOver()
+//									return
+//								}
+//							}
 						}
 					}
 				}
@@ -1260,21 +1263,30 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 
 		self.isGamePause = true
 		let pause = PauseView.pauseView()
+		var wordList: [[String:String]] = []
+		let keys = self.answerWords.keys
+		for key in keys {
+			if let info = self.answerWords[key] {
+				let dic = ["word":key,"info":info]
+				wordList.append(dic)
+			}
+		}
+		pause.wordList = wordList
 		self.view.addSubview(pause)
-		pause.closeHandler = {(res) in
-			self.isGamePause = false
+		pause.closeHandler = {[weak self](res) in
+			self?.isGamePause = false
 			switch res {
 			case .continueGame:		//続ける
 				print("ゲームをつづける")
 				SoundManager.shared.pauseBGM()		//BGMポーズ（解除）
 			case .retry:			//やりなおす
-				self.gameTimer?.invalidate()
-				self.gameTimer = nil
-				self.retry()
+				self?.gameTimer?.invalidate()
+				self?.gameTimer = nil
+				self?.retry()
 			case .giveup:			//あきらめる
-				self.gameTimer?.invalidate()
-				self.gameTimer = nil
-				self.remove()
+				self?.gameTimer?.invalidate()
+				self?.gameTimer = nil
+				self?.remove()
 				SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
 			}
 		}
@@ -1309,12 +1321,24 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}) { (stop) in
 			UIView.animate(withDuration: 0.25, delay: 3.0, options: .curveEaseInOut, animations: { 
 				gameclear.alpha = 0
-			}) { (stop) in
+			}) { [weak self](stop) in
+				guard let s = self else {
+					return
+				}
 				base.removeFromSuperview()
 				
-				self.charaBaseView.isHidden = true
+				s.charaBaseView.isHidden = true
 				let clear = GameClearView.gameClearView()
-				self.view.addSubview(clear)
+				var wordList: [[String:String]] = []
+				let keys = s.answerWords.keys
+				for key in keys {
+					if let info = s.answerWords[key] {
+						let dic = ["word":key,"info":info]
+						wordList.append(dic)
+					}
+				}
+				clear.wordList = wordList
+				s.view.addSubview(clear)
 				clear.closeHandler = {[weak self](res) in
 					self?.isGameEnd = false
 					self?.charaBaseView.isHidden = false
@@ -1329,6 +1353,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						clear.closeHandler = nil
 						clear.removeFromSuperview()
 						self?.remove()
+						SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
 					case .dict:				//辞書モードで復習！
 						print("辞書モードで復習！")
 					}
@@ -1343,7 +1368,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			return
 		}
 		
-		SoundManager.shared.startBGM(type: .bgmFail)	//ジングル再生
+		SoundManager.shared.startBGM(type: .bgmFail)	//BGM再生
 		
 		isGameEnd = true
 		self.gameTimer?.invalidate()
@@ -1372,6 +1397,15 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				}
 				s.charaBaseView.isHidden = true
 				let over = GameOverView.gameOverView()
+				var wordList: [[String:String]] = []
+				let keys = s.answerWords.keys
+				for key in keys {
+					if let info = s.answerWords[key] {
+						let dic = ["word":key,"info":info]
+						wordList.append(dic)
+					}
+				}
+				over.wordList = wordList
 				s.view.addSubview(over)
 				over.closeHandler = {[weak self](res) in
 					self?.isGameEnd = false
@@ -1391,6 +1425,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						over.closeHandler = nil
 						over.removeFromSuperview()
 						self?.remove()
+						SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
 					}
 				}
 			}

@@ -61,9 +61,9 @@
                         </button>
                     </subviews>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xbv-Zw-wuQ">
-                    <rect key="frame" x="0.0" y="31" width="155" height="344"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xbv-Zw-wuQ">
+                    <rect key="frame" x="0.0" y="31" width="154" height="344"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DiE-MP-xtY">
@@ -71,11 +71,11 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fukidashi" translatesAutoresizingMaskIntoConstraints="NO" id="epn-Zh-gko">
-                            <rect key="frame" x="12" y="8" width="126" height="253"/>
+                            <rect key="frame" x="11" y="8" width="127" height="253"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="plf-nq-hPR">
-                            <rect key="frame" x="52" y="39" width="44" height="166"/>
+                            <rect key="frame" x="51" y="39" width="45" height="166"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mojikun_b_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="Aib-hn-TBT">
@@ -87,7 +87,11 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="SIN-VN-lHG"/>
-            <point key="canvasLocation" x="623" y="-294"/>
+            <connections>
+                <outlet property="buttonBaseView" destination="A6X-Q2-q7u" id="y8Z-8g-8LY"/>
+                <outlet property="wordTableView" destination="xbv-Zw-wuQ" id="XfC-FK-18C"/>
+            </connections>
+            <point key="canvasLocation" x="537" y="-303"/>
         </view>
     </objects>
     <resources>
