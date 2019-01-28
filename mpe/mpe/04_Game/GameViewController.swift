@@ -324,6 +324,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	
 	func startGameTimer() {
 		
+		self.isEnablePause = false
+		
 		if self.questIndex >= 0 || self.questIndex <= 19 {
 			SoundManager.shared.startBGM(type: .bgmEasy)		//BGM再生
 		}
@@ -366,7 +368,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				go.alpha = 0
 			}) { [weak self](stop) in
 				base.removeFromSuperview()
-				
+				DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {[weak self]() -> Void in
+					self?.isEnablePause = true
+				})
 				self?.gameTimer?.invalidate()
 				self?.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self](t) in
 					guard let s = self else {
@@ -416,11 +420,14 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 	}
 	
+	var isEnablePause: Bool = false
 	
 	//MARK: ゲームポーズ
 	@IBOutlet weak var pauseButton: UIButton!
 	@IBAction func pauseButtonAction(_ sender: Any) {
-		
+		if isEnablePause == false {
+			return
+		}
 		SoundManager.shared.startSE(type: .sePause)	//SE再生
 		self.gamePause()
 	}
@@ -428,7 +435,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	//MARK: アンドゥ
 	@IBOutlet weak var undoButton: UIButton!
 	@IBAction func undoButtonAction(_ sender: Any) {
-		
+		if isEnablePause == false {
+			return
+		}
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 	}
 	
@@ -1259,7 +1268,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	var isGamePause: Bool = false
 	func gamePause() {
 		
-		SoundManager.shared.pauseBGM()		//BGMポーズ（停止）
+		SoundManager.shared.pauseBGM(true)		//BGMポーズ（停止）
 
 		self.isGamePause = true
 		let pause = PauseView.pauseView()
@@ -1278,7 +1287,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			switch res {
 			case .continueGame:		//続ける
 				print("ゲームをつづける")
-				SoundManager.shared.pauseBGM()		//BGMポーズ（解除）
+				SoundManager.shared.pauseBGM(false)		//BGMポーズ（解除）
 			case .retry:			//やりなおす
 				self?.gameTimer?.invalidate()
 				self?.gameTimer = nil
@@ -1298,7 +1307,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		if isGameEnd {
 			return
 		}
-		
+		isEnablePause = false
 		SoundManager.shared.startBGM(type: .bgmStageClear)	//ジングル再生
 		
 		isGameEnd = true
@@ -1367,7 +1376,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		if isGameEnd {
 			return
 		}
-		
+		isEnablePause = false
 		SoundManager.shared.startBGM(type: .bgmFail)	//BGM再生
 		
 		isGameEnd = true

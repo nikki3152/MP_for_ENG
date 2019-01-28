@@ -103,22 +103,27 @@ class SoundManager: NSObject, SoundPlayerDelegate {
 		}
 		self.currentBGM = nil
 	}
-	func pauseBGM() {
+	func pauseBGM(_ pause: Bool) {
 		if UserDefaults.standard.bool(forKey: kBGMOn) == false {
 			return
 		}
+		self.isBGMPause = pause
 		if self.bgmPlayState == 1 {
 			if self.isBGMPause {
-				self.isBGMPause = false
-				self.soundPlayer.voicePlayer?.play()
-			} else {
-				self.isBGMPause = true
+				print("一時停止")
 				self.soundPlayer.voicePlayer?.pause()
+			} else {
+				print("再生")
+				self.soundPlayer.voicePlayer?.play()
 			}
 		}
 		else if self.bgmPlayState == 2 {
-			self.soundPlayer.bgmPause(pause: !self.soundPlayer.isBGMPause)
-			self.isBGMPause = self.soundPlayer.isBGMPause
+			if self.isBGMPause {
+				print("一時停止")
+			} else {
+				print("再生")
+			}
+			self.soundPlayer.bgmPause(pause: self.isBGMPause)
 		}
 	}
 	
