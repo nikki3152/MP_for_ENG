@@ -34,8 +34,10 @@ class QuickQuestIntoroViewController: BaseViewController {
 	//スタート
 	@IBAction func startButtonAction(_ sender: UIButton) {
 		
+		let tag = sender.tag
 		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let quickView = QuickQuestViewController.quickQuestViewController()
+		quickView.mode = tag
 		quickView.present(self) { 
 			
 		}

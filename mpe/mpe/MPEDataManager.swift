@@ -21,6 +21,24 @@ enum MatchType: Int {
 
 class MPEDataManager: DataManager {
 	
+	func loadQuickQuest(name: String) -> [String] {
+		
+		var ret: [String] = []
+		if let path = Bundle.main.path(forResource: name, ofType: "txt") {
+			let url = URL(fileURLWithPath: path)
+			guard let data = try? Data(contentsOf: url) else { return ret}
+			if let t = String(bytes: data, encoding: .utf8) {
+				let records = t.components(separatedBy: .newlines)
+				for str in records {
+					if str.count > 0 {
+						ret.append(str)
+					}
+				}
+			}
+		}
+		return ret
+	}
+	
 	func loadJsonDB() -> [String:[String]] {
 		
 		var db: [String:[String]] = [:]

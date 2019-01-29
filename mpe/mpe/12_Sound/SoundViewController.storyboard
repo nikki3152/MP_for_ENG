@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1ff-uz-MIj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1ff-uz-MIj">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,7 +38,8 @@
                                         <rect key="frame" x="3" y="51" width="200" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="MUSIC 1" backgroundImage="music_selectbox.png"/>
-                                        <state key="selected" title="MUSIC1" backgroundImage="music_selectbox_tap">
+                                        <state key="disabled" backgroundImage="music_selectbox_tap.png"/>
+                                        <state key="selected" title="MUSIC 1" backgroundImage="music_selectbox_tap">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -48,6 +50,7 @@
                                         <rect key="frame" x="209" y="51" width="200" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="MUSIC 2" backgroundImage="music_selectbox.png"/>
+                                        <state key="disabled" backgroundImage="music_selectbox_tap.png"/>
                                         <state key="selected" backgroundImage="music_selectbox_tap"/>
                                         <connections>
                                             <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="IcK-jL-ZuK"/>
@@ -57,6 +60,7 @@
                                         <rect key="frame" x="3" y="95" width="200" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="MUSIC 3" backgroundImage="music_selectbox.png"/>
+                                        <state key="disabled" backgroundImage="music_selectbox_tap.png"/>
                                         <state key="selected" backgroundImage="music_selectbox_tap"/>
                                         <connections>
                                             <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="txm-cS-iWl"/>
@@ -66,6 +70,7 @@
                                         <rect key="frame" x="209" y="95" width="200" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="MUSIC 4" backgroundImage="music_selectbox.png"/>
+                                        <state key="disabled" backgroundImage="music_selectbox_tap.png"/>
                                         <state key="selected" backgroundImage="music_selectbox_tap"/>
                                         <connections>
                                             <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="Iax-Qx-n6u"/>
@@ -75,6 +80,7 @@
                                         <rect key="frame" x="1" y="140" width="200" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="MUSIC 5" backgroundImage="music_selectbox.png"/>
+                                        <state key="disabled" backgroundImage="music_selectbox_tap.png"/>
                                         <state key="selected" backgroundImage="music_selectbox_tap"/>
                                         <connections>
                                             <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="VPW-84-A7E"/>
@@ -84,6 +90,7 @@
                                         <rect key="frame" x="207" y="140" width="200" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="MUSIC 6" backgroundImage="music_selectbox.png"/>
+                                        <state key="disabled" backgroundImage="music_selectbox_tap.png"/>
                                         <state key="selected" backgroundImage="music_selectbox_tap"/>
                                         <connections>
                                             <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="K0i-vX-90T"/>
@@ -93,6 +100,7 @@
                                         <rect key="frame" x="1" y="186" width="200" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="MUSIC 7" backgroundImage="music_selectbox.png"/>
+                                        <state key="disabled" backgroundImage="music_selectbox_tap.png"/>
                                         <state key="selected" backgroundImage="music_selectbox_tap"/>
                                         <connections>
                                             <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="5or-Gd-yLc"/>
@@ -102,6 +110,7 @@
                                         <rect key="frame" x="207" y="186" width="200" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="MUSIC 8" backgroundImage="music_selectbox.png"/>
+                                        <state key="disabled" backgroundImage="music_selectbox_tap.png"/>
                                         <state key="selected" backgroundImage="music_selectbox_tap"/>
                                         <connections>
                                             <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="fe8-VA-giI"/>
@@ -111,6 +120,7 @@
                                         <rect key="frame" x="1" y="229" width="200" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="MUSIC 9" backgroundImage="music_selectbox.png"/>
+                                        <state key="disabled" backgroundImage="music_selectbox_tap.png"/>
                                         <state key="selected" backgroundImage="music_selectbox_tap"/>
                                         <connections>
                                             <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="3yV-Od-mKp"/>
@@ -120,6 +130,7 @@
                                         <rect key="frame" x="207" y="229" width="200" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="MUSIC 10" backgroundImage="music_selectbox.png"/>
+                                        <state key="disabled" backgroundImage="music_selectbox_tap.png"/>
                                         <state key="selected" backgroundImage="music_selectbox_tap"/>
                                         <connections>
                                             <action selector="musicSelectButtonAction:" destination="1ff-uz-MIj" eventType="touchUpInside" id="Tof-X6-ppH"/>
@@ -173,6 +184,7 @@
         <image name="music_cd.png" width="1000" height="1000"/>
         <image name="music_selectbox.png" width="600" height="118"/>
         <image name="music_selectbox_tap" width="600" height="118"/>
+        <image name="music_selectbox_tap.png" width="600" height="118"/>
         <image name="music_start.png" width="117" height="116"/>
         <image name="music_stop" width="117" height="116"/>
         <image name="music_title.png" width="260" height="90"/>

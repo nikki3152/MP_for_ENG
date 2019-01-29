@@ -18,16 +18,18 @@ class SoundViewController: BaseViewController {
 	}
 	
 	var buttonList: [UIButton] = []
+	var selectedButtonTag: Int!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		for bt in self.baseView.subviews {
-			if let bt = bt as? UIButton, bt.tag > 1 {
+			if let bt = bt as? UIButton, bt.tag >= 1 {
 				buttonList.append(bt)
 			}
 		}
 		self.playButton.isEnabled = false
+		SoundManager.shared.stopBGM()		//BGM停止
 	}
 	
 	override func viewWillLayoutSubviews() {
@@ -44,6 +46,7 @@ class SoundViewController: BaseViewController {
 		
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.remove()
+		SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
 	}
 	
 	//再生
@@ -73,16 +76,20 @@ class SoundViewController: BaseViewController {
 	@IBAction func musicSelectButtonAction(_ sender: UIButton) {
 		
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
-		sender.isSelected = !sender.isSelected 
+		self.selectedButtonTag = sender.tag
+		sender.isEnabled = false 
 		for bt in self.buttonList {
-			if sender.isSelected {
-				if bt !== sender && bt.isSelected {
-					bt.isSelected = false
+			if sender.isEnabled == false {
+				if bt !== sender && bt.isEnabled == false {
+					bt.isEnabled = true
 				}
 			}
 		}
-		self.playButton.isEnabled = sender.isSelected
-
+		self.playButton.isEnabled = true
+		if self.playButton.isSelected {
+			self.playButton.isSelected = false
+			cdImageView.layer.speed = 0.0
+		}
 	}
 	
 }

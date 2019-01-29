@@ -10,6 +10,30 @@ import UIKit
 
 class QuickQuestViewController: BaseViewController {
 	
+	let dataMrg: MPEDataManager = MPEDataManager()
+	var max: Int = 10
+	var _count: Int = 0
+	var count: Int {
+		get {
+			return _count
+		}
+		set {
+			_count = newValue
+			self.stateLabel.text = "\(_count)/\(max)"
+		}
+	}
+	var mode: Int = 0
+	var quest: String = ""
+	var answer1: String = ""
+	var answer2: String = ""
+	var answer3: String = ""
+	var answer4: String = ""
+	var correct: Int = 1
+	var correctWord: String = ""
+	var resultList: [[String:Any]] = []
+	var time: Double = 0
+	var timer: Timer!
+	
 	class func quickQuestViewController() -> QuickQuestViewController {
 		
 		let storyboard = UIStoryboard(name: "QuickQuestViewController", bundle: nil)
@@ -19,25 +43,161 @@ class QuickQuestViewController: BaseViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.setQuest()
+		SoundManager.shared.startBGM(type: .bgmOneQuest)		//BGM再生
 		
-		// Do any additional setup after loading the view.
 	}
 	
 	//戻る
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
 		
+		self.timer?.invalidate()
+		self.timer = nil
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.remove()
+		SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
+	}
+	//MARK: 問題設定
+	func setQuest() {
+		
+		var name = ""
+		if mode == 1 {
+			name = "quiz_bigginer"
+		}
+		else if mode == 2 {
+			name = "quiz_intermediate"
+		}
+		else if mode == 3 {
+			name = "quiz_advanced"
+		}
+		else if mode == 4 {
+			name = "quiz_god"
+		}
+		else if mode == 5 {
+			name = "quiz_random"
+		}
+		var answers: [String] = []
+		let wordList = dataMrg.loadQuickQuest(name: name)
+		for _ in 0 ..< 4 {
+			let index = Int.random(in: 0 ..< wordList.count)
+			let word = wordList[index]
+			answers.append(word)
+		}
+		
+		self.correct = Int.random(in: 1 ... 4)
+		correctWord = answers[self.correct - 1]
+		let listH = dataMrg.search(word: correctWord.lowercased(), match: .perfect)
+		if listH.count == 0 {
+			self.setQuest()
+			return
+		}
+		let dic = listH[0]
+		let info = dic[correctWord]!
+		self.quest = info[0]
+		print("\([correct])\(correctWord):\(self.quest)")
+		
+		self.answer1 = answers[0]
+		self.answer2 = answers[1]
+		self.answer3 = answers[2]
+		self.answer4 = answers[3]
+		
+		questLabel.text = quest
+		answerButton1.setTitle(answer1, for: .normal)
+		answerButton2.setTitle(answer2, for: .normal)
+		answerButton3.setTitle(answer3, for: .normal)
+		answerButton4.setTitle(answer4, for: .normal)
+		
+		answerButton1.isEnabled = true
+		answerButton2.isEnabled = true
+		answerButton3.isEnabled = true
+		answerButton4.isEnabled = true
+		
+		self.count += 1
+		
+		self.time = 0.0
+		self.timer?.invalidate()
+		self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [weak self](t) in
+			self?.time += 0.01
+		})
+
 	}
 	
-	
+	@IBOutlet weak var stateLabel: UILabel!
+	@IBOutlet weak var questLabel: UILabel!
 	@IBOutlet weak var answerButton1: UIButton!
 	@IBOutlet weak var answerButton2: UIButton!
 	@IBOutlet weak var answerButton3: UIButton!
 	@IBOutlet weak var answerButton4: UIButton!
 	@IBAction func answerButtonAction(_ sender: UIButton) {
-		SoundManager.shared.startSE(type: .seDone)	//SE再生
+		
+		self.timer?.invalidate()
+		self.timer = nil
+
+		sender.isEnabled = false
+		let tag = sender.tag
+		var isCorrect: Bool
+		if tag == correct {
+			//正解
+			print("正解")
+			SoundManager.shared.startSE(type: .seCorrect)	//SE再生
+			isCorrect = true
+		} else {
+			//不正解
+			print("不正解")
+			SoundManager.shared.startSE(type: .seFail)		//SE再生
+			isCorrect = false
+		}
+		let dic: [String : Any] = ["word":correctWord, "time":self.time, "info":quest, "correct":isCorrect]
+		self.resultList.append(dic)
+		self.openResult(correct: isCorrect)
+	}
+	
+	//MARK: 結果表示
+	func openResult(correct: Bool) {
+		
+		//正解／不正解
+		var image: UIImage!
+		if correct {
+			image = UIImage(named: "quiz_correct.png") 
+		} else {
+			image = UIImage(named: "quiz_incorrect.png") 
+		}
+		let resView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+		resView.image = image
+		self.view.addSubview(resView)
+		resView.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 2)
+		resView.contentMode = .scaleAspectFit
+		resView.isUserInteractionEnabled = true
+		
+		UIView.animate(withDuration: 0.25, delay: 2.0, options: .curveEaseIn, animations: { 
+			resView.alpha = 0
+		}) { [weak self](stop) in
+			guard let s = self else {
+				return
+			}
+			resView.removeFromSuperview()
+			if s.max == s.count {
+				s.openLastResult()
+			} else {
+				s.setQuest()
+			}
+		}
+	}
+	//MARK: 最終結果表示
+	func openLastResult() {
+		
+		let result = QuickQuestResultViewController.quickQuestResultViewController()
+		result.list = resultList
+		result.present(self) { 
+			
+		}
+		result.handler = {[weak self]() in
+			self?.timer?.invalidate()
+			self?.timer = nil
+			self?.remove()
+			SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
+		}
 	}
 	
 }

@@ -309,6 +309,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	}
 	
 	//タイム
+	@IBOutlet weak var timeTitleLabel: UILabel!
 	@IBOutlet weak var timeLabel: OutlineLabel!
 	var gameTimer: Timer!
 	var _time: Double = 99
@@ -318,10 +319,18 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		set {
 			_time = newValue
+			if _time == 0 {
+				self.timeTitleLabel.isHidden = true
+				self.timeLabel.isHidden = true
+			} else {
+				self.timeTitleLabel.isHidden = false
+				self.timeLabel.isHidden = false
+			}
 			self.timeLabel.text = "\(Int(_time))"
 		}
 	}
 	
+	//MARK: タイマースタート
 	func startGameTimer() {
 		
 		self.isEnablePause = false
@@ -372,17 +381,21 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					self?.isEnablePause = true
 				})
 				self?.gameTimer?.invalidate()
-				self?.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self](t) in
-					guard let s = self else {
-						return
-					}
-					if s.isGamePause == false {
-						s.time -= 0.1
-						if s.time <= 0 {
-							s.gameOver()
+				if self!.time > 0 {
+					self?.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self](t) in
+						guard let s = self else {
+							return
 						}
-					}
-				})
+						if s.isGamePause == false {
+							s.time -= 0.1
+							if s.time <= 0 {
+								s.gameOver()
+							}
+						}
+					})
+				} else {
+					self?.gameTimer = nil
+				}
 			}
 		}
 		

@@ -147,6 +147,9 @@
 		54612D4B21FE97A10091D7BD /* quiz_random.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54612D4621FE97A10091D7BD /* quiz_random.txt */; };
 		54612D4C21FE97A10091D7BD /* quiz_bigginer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54612D4721FE97A10091D7BD /* quiz_bigginer.txt */; };
 		54612D4D21FE97A10091D7BD /* quiz_intermediate.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54612D4821FE97A10091D7BD /* quiz_intermediate.txt */; };
+		54612D5021FEDAC60091D7BD /* QuickQuestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54612D4F21FEDAC60091D7BD /* QuickQuestResultViewController.swift */; };
+		54612D5321FFBEF90091D7BD /* QuickQuestResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54612D5121FFBEF90091D7BD /* QuickQuestResultCell.swift */; };
+		54612D5421FFBEF90091D7BD /* QuickQuestResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54612D5221FFBEF90091D7BD /* QuickQuestResultCell.xib */; };
 		546764AE21EF1F6F0025A5A9 /* cosmetics（化粧品）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467649A21EF1F6D0025A5A9 /* cosmetics（化粧品）.plist */; };
 		546764AF21EF1F6F0025A5A9 /* fish（魚）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467649B21EF1F6D0025A5A9 /* fish（魚）.plist */; };
 		546764B021EF1F6F0025A5A9 /* document（書類）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467649C21EF1F6E0025A5A9 /* document（書類）.plist */; };
@@ -645,13 +648,11 @@
 		54D5534821BCA66300980B92 /* home_main_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551C821BCA66200980B92 /* home_main_logo.png */; };
 		54D5534921BCA66300980B92 /* home_taiyokun_sippo.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551C921BCA66200980B92 /* home_taiyokun_sippo.png */; };
 		54D5534A21BCA66300980B92 /* home_erabukun.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551CA21BCA66200980B92 /* home_erabukun.png */; };
-		54D5534B21BCA66300980B92 /* quiz_result_correct.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551CC21BCA66200980B92 /* quiz_result_correct.png */; };
 		54D5534C21BCA66300980B92 /* quiz_incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551CD21BCA66200980B92 /* quiz_incorrect.png */; };
 		54D5534D21BCA66300980B92 /* quiz_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551CE21BCA66200980B92 /* quiz_background.png */; };
 		54D5534E21BCA66300980B92 /* quiz_answer.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551CF21BCA66200980B92 /* quiz_answer.png */; };
 		54D5534F21BCA66300980B92 /* quiz_result_erabukun.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551D021BCA66200980B92 /* quiz_result_erabukun.png */; };
 		54D5535021BCA66300980B92 /* quiz_correct.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551D121BCA66200980B92 /* quiz_correct.png */; };
-		54D5535121BCA66300980B92 /* quiz_result_incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551D221BCA66200980B92 /* quiz_result_incorrect.png */; };
 		54D5535221BCA66300980B92 /* quiz_question.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551D321BCA66200980B92 /* quiz_question.png */; };
 		54D5535321BCA66300980B92 /* quiz_answer_tap.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551D421BCA66200980B92 /* quiz_answer_tap.png */; };
 		54D5535521BCB09F00980B92 /* setting_icon_02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D5535421BCB09E00980B92 /* setting_icon_02@2x.png */; };
@@ -814,6 +815,9 @@
 		54612D4621FE97A10091D7BD /* quiz_random.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quiz_random.txt; sourceTree = "<group>"; };
 		54612D4721FE97A10091D7BD /* quiz_bigginer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quiz_bigginer.txt; sourceTree = "<group>"; };
 		54612D4821FE97A10091D7BD /* quiz_intermediate.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quiz_intermediate.txt; sourceTree = "<group>"; };
+		54612D4F21FEDAC60091D7BD /* QuickQuestResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickQuestResultViewController.swift; sourceTree = "<group>"; };
+		54612D5121FFBEF90091D7BD /* QuickQuestResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickQuestResultCell.swift; sourceTree = "<group>"; };
+		54612D5221FFBEF90091D7BD /* QuickQuestResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickQuestResultCell.xib; sourceTree = "<group>"; };
 		5467649A21EF1F6D0025A5A9 /* cosmetics（化粧品）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cosmetics（化粧品）.plist"; sourceTree = "<group>"; };
 		5467649B21EF1F6D0025A5A9 /* fish（魚）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "fish（魚）.plist"; sourceTree = "<group>"; };
 		5467649C21EF1F6E0025A5A9 /* document（書類）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "document（書類）.plist"; sourceTree = "<group>"; };
@@ -1312,13 +1316,11 @@
 		54D551C821BCA66200980B92 /* home_main_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_main_logo.png; sourceTree = "<group>"; };
 		54D551C921BCA66200980B92 /* home_taiyokun_sippo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_taiyokun_sippo.png; sourceTree = "<group>"; };
 		54D551CA21BCA66200980B92 /* home_erabukun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_erabukun.png; sourceTree = "<group>"; };
-		54D551CC21BCA66200980B92 /* quiz_result_correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quiz_result_correct.png; sourceTree = "<group>"; };
 		54D551CD21BCA66200980B92 /* quiz_incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quiz_incorrect.png; sourceTree = "<group>"; };
 		54D551CE21BCA66200980B92 /* quiz_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quiz_background.png; sourceTree = "<group>"; };
 		54D551CF21BCA66200980B92 /* quiz_answer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quiz_answer.png; sourceTree = "<group>"; };
 		54D551D021BCA66200980B92 /* quiz_result_erabukun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quiz_result_erabukun.png; sourceTree = "<group>"; };
 		54D551D121BCA66200980B92 /* quiz_correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quiz_correct.png; sourceTree = "<group>"; };
-		54D551D221BCA66200980B92 /* quiz_result_incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quiz_result_incorrect.png; sourceTree = "<group>"; };
 		54D551D321BCA66200980B92 /* quiz_question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quiz_question.png; sourceTree = "<group>"; };
 		54D551D421BCA66200980B92 /* quiz_answer_tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quiz_answer_tap.png; sourceTree = "<group>"; };
 		54D5535421BCB09E00980B92 /* setting_icon_02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_icon_02@2x.png"; sourceTree = "<group>"; };
@@ -1678,6 +1680,9 @@
 			children = (
 				54CFB3F020DE303800057F08 /* QuickQuestIntoroViewController.swift */,
 				54CFB3F420DE31CE00057F08 /* QuickQuestViewController.swift */,
+				54612D4F21FEDAC60091D7BD /* QuickQuestResultViewController.swift */,
+				54612D5121FFBEF90091D7BD /* QuickQuestResultCell.swift */,
+				54612D5221FFBEF90091D7BD /* QuickQuestResultCell.xib */,
 				54CFB3F620DE31DB00057F08 /* QuickQuestViewController.storyboard */,
 			);
 			path = 06_QuickQuest;
@@ -2240,13 +2245,11 @@
 		54D551CB21BCA66200980B92 /* 07_quiz */ = {
 			isa = PBXGroup;
 			children = (
-				54D551CC21BCA66200980B92 /* quiz_result_correct.png */,
 				54D551CD21BCA66200980B92 /* quiz_incorrect.png */,
 				54D551CE21BCA66200980B92 /* quiz_background.png */,
 				54D551CF21BCA66200980B92 /* quiz_answer.png */,
 				54D551D021BCA66200980B92 /* quiz_result_erabukun.png */,
 				54D551D121BCA66200980B92 /* quiz_correct.png */,
-				54D551D221BCA66200980B92 /* quiz_result_incorrect.png */,
 				54D551D321BCA66200980B92 /* quiz_question.png */,
 				54D551D421BCA66200980B92 /* quiz_answer_tap.png */,
 			);
@@ -2580,7 +2583,6 @@
 				54D552D021BCA66300980B92 /* quest_base.png in Resources */,
 				5467651221F554E50025A5A9 /* tutorial（チュートリアル）.plist in Resources */,
 				54D5530421BCA66300980B92 /* custom_background.png in Resources */,
-				54D5535121BCA66300980B92 /* quiz_result_incorrect.png in Resources */,
 				54D552B521BCA66300980B92 /* tsukikun_03.png in Resources */,
 				5429F3E721CF06E400E0E50F /* chain3_anim.png in Resources */,
 				54CFB40F20DE3B3100057F08 /* PurchaseViewController.storyboard in Resources */,
@@ -2680,7 +2682,6 @@
 				54D5525C21BCA66300980B92 /* pack_02.png in Resources */,
 				542F443D21B300DC00C51AD6 /* calender（暦）①.plist in Resources */,
 				546764C121EF1F6F0025A5A9 /* stem（語幹）①.plist in Resources */,
-				54D5534B21BCA66300980B92 /* quiz_result_correct.png in Resources */,
 				54140F26212BB3EF007C753B /* TableKomaView.xib in Resources */,
 				54D5529321BCA66300980B92 /* anim_F.png in Resources */,
 				5429F3B321CF06B600E0E50F /* score_count_3.png in Resources */,
@@ -2718,6 +2719,7 @@
 				5467653121F556E00025A5A9 /* horoscope（星占い）.plist in Resources */,
 				542F446921B57FAD00C51AD6 /* ordinal numbers（序数）.plist in Resources */,
 				5429F3CE21CF06B600E0E50F /* countup_8.png in Resources */,
+				54612D5421FFBEF90091D7BD /* QuickQuestResultCell.xib in Resources */,
 				54D5527D21BCA66300980B92 /* gameclear_button_review_tap.png in Resources */,
 				5429F3AF21CF06B600E0E50F /* score_get_2.png in Resources */,
 				54D552F921BCA66300980B92 /* custom_box_07_tap.png in Resources */,
@@ -3029,9 +3031,11 @@
 				54CFB3DF20DE1F0B00057F08 /* BaseViewController.swift in Sources */,
 				5489AF5F212B00B500A7D275 /* DataManager.swift in Sources */,
 				54140F20212BB2F6007C753B /* GameTableView.swift in Sources */,
+				54612D5321FFBEF90091D7BD /* QuickQuestResultCell.swift in Sources */,
 				54D9AEB420CF6185004FEBA2 /* AppDelegate.swift in Sources */,
 				54F3A6DF2196D53C00A1E01F /* TTTAttributedLabel.m in Sources */,
 				54CFB3ED20DE2E4D00057F08 /* StudyModeViewController.swift in Sources */,
+				54612D5021FEDAC60091D7BD /* QuickQuestResultViewController.swift in Sources */,
 				54140F24212BB3E3007C753B /* TableKomaView.swift in Sources */,
 				54CFB3DB20DE162B00057F08 /* HomeViewController.swift in Sources */,
 				548FF96321DF816E007CD3B0 /* GameOverView.swift in Sources */,

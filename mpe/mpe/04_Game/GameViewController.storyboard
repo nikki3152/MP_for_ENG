@@ -176,6 +176,7 @@
                         <outlet property="scoreBaseView" destination="SsC-t5-QhI" id="yXt-ji-boF"/>
                         <outlet property="scoreLabel" destination="UIh-yc-cei" id="egI-Yb-M7Q"/>
                         <outlet property="timeLabel" destination="pVv-bz-7zf" id="UEr-Hf-ENa"/>
+                        <outlet property="timeTitleLabel" destination="5i0-Lu-GqK" id="wUk-Bb-gjf"/>
                         <outlet property="undoButton" destination="s3W-PF-kYR" id="0gg-fu-Ty7"/>
                     </connections>
                 </viewController>
