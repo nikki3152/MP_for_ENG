@@ -81,7 +81,7 @@ class StageSelectViewController: BaseViewController {
 				}
 			}
 		}
-		self.maxPage = (self.questDatas.count / 10) + (self.questDatas.count % 10)
+		self.maxPage = 8//(self.questDatas.count / 10) + (self.questDatas.count % 10)
 		self.currentPage = 1
     }
 	
