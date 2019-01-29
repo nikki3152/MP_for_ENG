@@ -105,7 +105,6 @@
 		542F443C21B300DC00C51AD6 /* crossword（クロスワード）①.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F442821B300DA00C51AD6 /* crossword（クロスワード）①.plist */; };
 		542F443D21B300DC00C51AD6 /* calender（暦）①.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F442921B300DA00C51AD6 /* calender（暦）①.plist */; };
 		542F443E21B300DC00C51AD6 /* nature（自然）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F442A21B300DA00C51AD6 /* nature（自然）.plist */; };
-		542F443F21B300DC00C51AD6 /* sports（スポーツ）①.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F442B21B300DA00C51AD6 /* sports（スポーツ）①.plist */; };
 		542F444021B300DC00C51AD6 /* week（曜日）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F442C21B300DA00C51AD6 /* week（曜日）.plist */; };
 		542F444121B300DC00C51AD6 /* season（季節）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F442D21B300DA00C51AD6 /* season（季節）.plist */; };
 		542F444221B300DC00C51AD6 /* calender（暦）②.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F442E21B300DB00C51AD6 /* calender（暦）②.plist */; };
@@ -665,6 +664,7 @@
 		54D9AEBB20CF6186004FEBA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54D9AEBA20CF6186004FEBA2 /* Assets.xcassets */; };
 		54D9AEBE20CF6186004FEBA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D9AEBC20CF6186004FEBA2 /* LaunchScreen.storyboard */; };
 		54D9AEC620CF6200004FEBA2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54D9AEC520CF6200004FEBA2 /* InfoPlist.strings */; };
+		54DEAAA121FFD7AE00509CCD /* sports（スポーツ）① .plist in Resources */ = {isa = PBXBuildFile; fileRef = 54DEAAA021FFD7AD00509CCD /* sports（スポーツ）① .plist */; };
 		54F3A6D521955AD200A1E01F /* EditPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3A6D421955AD200A1E01F /* EditPickerView.swift */; };
 		54F3A6D721955B3800A1E01F /* EditPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F3A6D621955B3800A1E01F /* EditPickerView.xib */; };
 		54F3A6D92196C9F000A1E01F /* HitInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3A6D82196C9F000A1E01F /* HitInfoView.swift */; };
@@ -773,7 +773,6 @@
 		542F442821B300DA00C51AD6 /* crossword（クロスワード）①.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "crossword（クロスワード）①.plist"; sourceTree = "<group>"; };
 		542F442921B300DA00C51AD6 /* calender（暦）①.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "calender（暦）①.plist"; sourceTree = "<group>"; };
 		542F442A21B300DA00C51AD6 /* nature（自然）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "nature（自然）.plist"; sourceTree = "<group>"; };
-		542F442B21B300DA00C51AD6 /* sports（スポーツ）①.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sports（スポーツ）①.plist"; sourceTree = "<group>"; };
 		542F442C21B300DA00C51AD6 /* week（曜日）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "week（曜日）.plist"; sourceTree = "<group>"; };
 		542F442D21B300DA00C51AD6 /* season（季節）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "season（季節）.plist"; sourceTree = "<group>"; };
 		542F442E21B300DB00C51AD6 /* calender（暦）②.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "calender（暦）②.plist"; sourceTree = "<group>"; };
@@ -1335,6 +1334,7 @@
 		54D9AEBD20CF6186004FEBA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54D9AEBF20CF6186004FEBA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54D9AEC520CF6200004FEBA2 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		54DEAAA021FFD7AD00509CCD /* sports（スポーツ）① .plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sports（スポーツ）① .plist"; sourceTree = "<group>"; };
 		54F3A6D421955AD200A1E01F /* EditPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPickerView.swift; sourceTree = "<group>"; };
 		54F3A6D621955B3800A1E01F /* EditPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPickerView.xib; sourceTree = "<group>"; };
 		54F3A6D82196C9F000A1E01F /* HitInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitInfoView.swift; sourceTree = "<group>"; };
@@ -1482,13 +1482,13 @@
 				542F443521B300DC00C51AD6 /* number（数字）.plist */,
 				542F442F21B300DB00C51AD6 /* personality（人称）.plist */,
 				542F442D21B300DA00C51AD6 /* season（季節）.plist */,
-				542F442B21B300DA00C51AD6 /* sports（スポーツ）①.plist */,
 				542F442621B300D900C51AD6 /* time zone（時間帯）.plist */,
 				542F443021B300DB00C51AD6 /* vehicle（陸用車）.plist */,
 				542F442721B300D900C51AD6 /* weather（天候）.plist */,
 				542F442C21B300DA00C51AD6 /* week（曜日）.plist */,
 				5467651121F554E50025A5A9 /* tutorial（チュートリアル）.plist */,
 				542F445221B57FA800C51AD6 /* animal（動物）.plist */,
+				54DEAAA021FFD7AD00509CCD /* sports（スポーツ）① .plist */,
 				542F445C21B57FAA00C51AD6 /* b.plist */,
 				542F446421B57FAD00C51AD6 /* behavior（行動）.plist */,
 				542F445821B57FAA00C51AD6 /* body（体）.plist */,
@@ -2409,6 +2409,7 @@
 				54D5535B21BCBE2500980B92 /* table_frame.png in Resources */,
 				54D5523621BCA66300980B92 /* pink_0.png in Resources */,
 				5429F36221CF052800E0E50F /* time6_danger.png in Resources */,
+				54DEAAA121FFD7AE00509CCD /* sports（スポーツ）① .plist in Resources */,
 				54D5526C21BCA66300980B92 /* anim_X.png in Resources */,
 				542F443E21B300DC00C51AD6 /* nature（自然）.plist in Resources */,
 				54CFB3DD20DE164000057F08 /* HomeViewController.storyboard in Resources */,
@@ -2809,7 +2810,6 @@
 				5429F37921CF052800E0E50F /* time8_danger.png in Resources */,
 				54D552CF21BCA66300980B92 /* bt_stop.png in Resources */,
 				54CFB3EF20DE2E5E00057F08 /* StudyModeViewController.storyboard in Resources */,
-				542F443F21B300DC00C51AD6 /* sports（スポーツ）①.plist in Resources */,
 				54D5533821BCA66300980B92 /* setting_button_on.png in Resources */,
 				54D552A921BCA66300980B92 /* U.png in Resources */,
 				546764EE21EF24300025A5A9 /* BGM_一問一答モード_hit.wav in Resources */,

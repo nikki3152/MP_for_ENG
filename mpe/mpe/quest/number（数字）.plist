@@ -24,7 +24,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>10</integer>
+		<integer>13</integer>
 		<key>words</key>
 		<integer>3</integer>
 	</dict>
@@ -167,7 +167,7 @@
 		<string> </string>
 	</array>
 	<key>time</key>
-	<real>300</real>
+	<real>240</real>
 	<key>width</key>
 	<integer>8</integer>
 	<key>wildCardLen</key>

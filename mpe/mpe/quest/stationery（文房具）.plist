@@ -29,7 +29,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>20000</integer>
+		<integer>4000</integer>
 	</dict>
 	<key>questName</key>
 	<string></string>

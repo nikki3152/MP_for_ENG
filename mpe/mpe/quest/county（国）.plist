@@ -27,14 +27,12 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>6</integer>
-		<key>words</key>
-		<integer>5</integer>
+		<integer>2000</integer>
 	</dict>
 	<key>questName</key>
 	<string></string>
 	<key>questType</key>
-	<integer>3</integer>
+	<integer>4</integer>
 	<key>table</key>
 	<array>
 		<string>A</string>

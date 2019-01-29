@@ -21,7 +21,6 @@
 		<string>R</string>
 		<string>R</string>
 		<string>R</string>
-		<string>S</string>
 		<string>W</string>
 		<string>Y</string>
 	</array>
@@ -34,7 +33,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>8</integer>
+		<integer>13</integer>
 		<key>words</key>
 		<integer>4</integer>
 	</dict>
@@ -115,7 +114,7 @@
 		<string>A</string>
 		<string>0</string>
 		<string>E</string>
-		<string>0</string>
+		<string> </string>
 	</array>
 	<key>tableType</key>
 	<array>
@@ -190,7 +189,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>DL</string>
+		<string> </string>
 	</array>
 	<key>time</key>
 	<real>300</real>

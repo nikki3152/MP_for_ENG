@@ -10,6 +10,7 @@
 		<string>P</string>
 		<string>R</string>
 		<string>U</string>
+		<string>U</string>
 		<string>Y</string>
 	</array>
 	<key>height</key>
@@ -21,7 +22,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>6</integer>
+		<integer>10</integer>
 		<key>words</key>
 		<integer>3</integer>
 	</dict>
@@ -70,13 +71,12 @@
 		<string> </string>
 		<string> </string>
 		<string>0</string>
-		<string> </string>
 		<string>A</string>
 		<string>U</string>
 		<string>0</string>
+		<string>0</string>
 		<string>S</string>
 		<string>T</string>
-		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -108,6 +108,7 @@
 		<string> </string>
 		<string> </string>
 		<string>L</string>
+		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>

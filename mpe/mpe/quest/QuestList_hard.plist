@@ -1,34 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
 	<dict>
 		<key>filename</key>
-		<string>crossword（クロスワード）⑥</string>
+		<string>ocupation①（職業）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>moji-kun（もじくん？）</string>
+		<string>society（社会）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>idiom（熟語）</string>
+		<string>Re</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>stem（語幹）①</string>
+		<string>ocupation②（職業）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>stem（語幹）②</string>
+		<string>meeting（集会）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>suffix（接尾辞）①</string>
+		<string>document（書類）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>suffix（接尾辞）②</string>
+		<string>ocupation③（職業）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>cosmetics（化粧品）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>fish（魚）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>crossword（クロスワード）⑤</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>seasoning（調味料）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
@@ -40,47 +56,31 @@
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>seasoning（調味料）</string>
+		<string>suffix（接尾辞）①</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>crossword（クロスワード）⑤</string>
+		<string>K（K縛り）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>fish（魚）</string>
+		<string>stem（語幹）①</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>cosmetics（化粧品）</string>
+		<string>stem（語幹）②</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>document（書類）</string>
+		<string>idiom（熟語）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>meeting（集会）</string>
+		<string>moji-kun（もじくん？）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>ocupation①（職業）</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>ocupation②（職業）</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>ocupation③（職業）</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>Re</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>society（社会）</string>
+		<string>crossword（クロスワード）⑥</string>
 	</dict>
 </array>
 </plist>

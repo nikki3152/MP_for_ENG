@@ -1,10 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
 	<dict>
 		<key>filename</key>
+		<string>dietary supplement（健康補助食品）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>politics（政治）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>earth（地球）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
 		<string>anthropology（人類学）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>meteorology（気象学）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>universe（宇宙）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
@@ -16,23 +36,15 @@
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>character（キャラクター）</string>
+		<string>planet（惑星）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>crossword（クロスワード）⑦</string>
+		<string>crossword（クロスワード）⑦</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>crossword（クロスワード）⑧</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>dietary supplement（健康補助食品）</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>earth（地球）</string>
+		<string>suffix（接尾辞）②</string>
 	</dict>
 	<dict>
 		<key>filename</key>
@@ -44,23 +56,11 @@
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>horoscope（星占い）</string>
+		<string>ten（10文字縛り）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>K（K縛り）</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>meteorology（気象学）</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>planet（惑星）</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>politics（政治）</string>
+		<string>character（キャラクター）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
@@ -68,19 +68,19 @@
 	</dict>
 	<dict>
 		<key>filename</key>
+		<string>horoscope（星占い）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
 		<string>school caste（スクールカースト）</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>ten（10文字縛り）</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>universe（宇宙）</string>
-	</dict>
-	<dict>
-		<key>filename</key>
 		<string>Z（Z縛り）</string>
+	</dict>
+	<dict>
+		<key>filename</key>
+		<string>crossword（クロスワード）⑧</string>
 	</dict>
 </array>
 </plist>
