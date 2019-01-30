@@ -1051,7 +1051,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 								if let v = self.questData.questData["font"] as? String {
 									font = v
 								}
-								if hitWord.contains(font) {
+								if hitWord.contains(font.lowercased()) {
 									self.questCount -= 1
 								}
 							}
@@ -1109,15 +1109,15 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					} else {
 						if i == hitWords.count - 1 {
 							self.isInEffect = false
-//							DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { 
-//								//ハズレ
-//								//SoundManager.shared.startSE(type: .seFail)	//SE再生
-//								if self.emptyTableCount() == 0 || self.cardViewList.count == 0 {
-//									//ゲームオーバー
-//									self.gameOver()
-//									return
-//								}
-//							}
+							DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { 
+								//ハズレ
+								//SoundManager.shared.startSE(type: .seFail)	//SE再生
+								if self.emptyTableCount() == 0 || self.cardViewList.count == 0 {
+									//ゲームオーバー
+									self.gameOver()
+									return
+								}
+							}
 						}
 					}
 				}
@@ -1233,7 +1233,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			if let v = self.questData.questData["count"] as? Int {
 				count = v
 			}
-			if self.totalScore <= count {
+			if self.totalScore >= count {
 				//クリア
 				self.gameClear()
 				ret = true
