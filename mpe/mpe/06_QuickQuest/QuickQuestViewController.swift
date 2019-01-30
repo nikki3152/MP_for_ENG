@@ -45,7 +45,11 @@ class QuickQuestViewController: BaseViewController {
 		super.viewDidLoad()
 		self.setQuest()
 		SoundManager.shared.startBGM(type: .bgmOneQuest)		//BGM再生
-		
+		self.answerButton1.isExclusiveTouch = true
+		self.answerButton2.isExclusiveTouch = true
+		self.answerButton3.isExclusiveTouch = true
+		self.answerButton4.isExclusiveTouch = true
+		self.backButton.isExclusiveTouch = true
 	}
 	
 	//戻る
@@ -123,6 +127,7 @@ class QuickQuestViewController: BaseViewController {
 
 	}
 	
+	@IBOutlet weak var buttonBaseView: UIView!
 	@IBOutlet weak var stateLabel: UILabel!
 	@IBOutlet weak var questLabel: UILabel!
 	@IBOutlet weak var answerButton1: UIButton!
@@ -134,16 +139,19 @@ class QuickQuestViewController: BaseViewController {
 		self.timer?.invalidate()
 		self.timer = nil
 
-		sender.isEnabled = false
 		let tag = sender.tag
 		var isCorrect: Bool
 		if tag == correct {
 			//正解
+			sender.isEnabled = false
 			print("正解")
 			SoundManager.shared.startSE(type: .seCorrect)	//SE再生
 			isCorrect = true
 		} else {
 			//不正解
+			if let bt = self.buttonBaseView.viewWithTag(correct) as? UIButton {
+				bt.isEnabled = false
+			}
 			print("不正解")
 			SoundManager.shared.startSE(type: .seFail)		//SE再生
 			isCorrect = false

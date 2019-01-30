@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="landscape">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="QuickQuestView" id="oHg-Ix-I7b" customClass="QuickQuestViewController" customModule="mpe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L6j-KC-wpp">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quiz_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="FVb-38-J0k">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZI4-CW-ktZ">
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SUN-8s-L5X">
-                                <rect key="frame" x="125" y="20" width="318" height="70"/>
+                                <rect key="frame" x="175" y="20" width="318" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quiz_question.png" translatesAutoresizingMaskIntoConstraints="NO" id="mJj-mV-Kzl">
@@ -48,7 +48,7 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mel-tq-tPD">
-                                <rect key="frame" x="-29" y="73" width="627" height="197"/>
+                                <rect key="frame" x="20" y="106" width="627" height="197"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l80-Wn-sRd">
@@ -94,7 +94,7 @@
                                 </subviews>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFa-BG-0Gm">
-                                <rect key="frame" x="443" y="15" width="116" height="48"/>
+                                <rect key="frame" x="542" y="15" width="116" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -110,6 +110,7 @@
                         <outlet property="answerButton3" destination="yCB-qR-zG3" id="xMS-s3-DZf"/>
                         <outlet property="answerButton4" destination="AKM-pV-9nb" id="S0L-2Y-tzJ"/>
                         <outlet property="backButton" destination="ZI4-CW-ktZ" id="eFc-jp-erU"/>
+                        <outlet property="buttonBaseView" destination="Mel-tq-tPD" id="uCR-fm-8Mr"/>
                         <outlet property="questLabel" destination="92o-Mu-tID" id="zl8-YJ-mFS"/>
                         <outlet property="stateLabel" destination="zFa-BG-0Gm" id="XlQ-d8-fob"/>
                     </connections>
@@ -123,11 +124,11 @@
             <objects>
                 <viewController storyboardIdentifier="QuickQuestResultView" id="lO7-04-jwv" customClass="QuickQuestResultViewController" customModule="mpe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uaf-dJ-4VK">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quiz_result_erabukun.png" translatesAutoresizingMaskIntoConstraints="NO" id="TzF-kb-HrQ">
-                                <rect key="frame" x="0.0" y="-55" width="568" height="375"/>
+                                <rect key="frame" x="50" y="0.0" width="568" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIZ-iA-tkt">
@@ -139,7 +140,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bft-44-xep">
-                                <rect key="frame" x="49" y="79" width="469" height="241"/>
+                                <rect key="frame" x="98" y="134" width="469" height="241"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -163,11 +164,11 @@
             <objects>
                 <viewController storyboardIdentifier="QuickQuestIntoroView" id="KUr-P2-9j5" customClass="QuickQuestIntoroViewController" customModule="mpe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t4p-QX-YPi">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RVy-9R-NIC">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0P-Qz-tt3">
@@ -179,19 +180,19 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_title.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qrw-76-kX1">
-                                <rect key="frame" x="151" y="13" width="266" height="42"/>
+                                <rect key="frame" x="201" y="13" width="266" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_mojikun.png" translatesAutoresizingMaskIntoConstraints="NO" id="ado-cL-l7v">
-                                <rect key="frame" x="408" y="109" width="140" height="140"/>
+                                <rect key="frame" x="507" y="142" width="140" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_object_sword.png" translatesAutoresizingMaskIntoConstraints="NO" id="dbI-z6-9fo">
-                                <rect key="frame" x="20" y="109" width="140" height="140"/>
+                                <rect key="frame" x="20" y="142" width="140" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XRg-dR-Kof">
-                                <rect key="frame" x="160" y="25" width="249" height="285"/>
+                                <rect key="frame" x="210" y="64" width="249" height="285"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnj-Kg-UJ0">
@@ -237,19 +238,19 @@
                                 </subviews>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="pzF-wv-6xD">
-                                <rect key="frame" x="111" y="98" width="60" height="90"/>
+                                <rect key="frame" x="111" y="121" width="60" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="qBR-fn-11G">
-                                <rect key="frame" x="0.0" y="166" width="60" height="90"/>
+                                <rect key="frame" x="0.0" y="206" width="60" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="93K-cp-eL3">
-                                <rect key="frame" x="508" y="190" width="60" height="90"/>
+                                <rect key="frame" x="607" y="235" width="60" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_fire_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="qqo-qa-TGh">
-                                <rect key="frame" x="402" y="85" width="60" height="90"/>
+                                <rect key="frame" x="501" y="105" width="60" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
