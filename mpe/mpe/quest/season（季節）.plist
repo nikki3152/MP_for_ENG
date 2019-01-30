@@ -7,7 +7,6 @@
 		<string>A</string>
 		<string>E</string>
 		<string>E</string>
-		<string>G</string>
 		<string>L</string>
 		<string>L</string>
 		<string>M</string>
@@ -16,11 +15,7 @@
 		<string>N</string>
 		<string>P</string>
 		<string>R</string>
-		<string>R</string>
-		<string>R</string>
 		<string>T</string>
-		<string>U</string>
-		<string>W</string>
 	</array>
 	<key>height</key>
 	<integer>8</integer>
@@ -29,11 +24,16 @@
 		<string>もじぴったん</string>
 	</array>
 	<key>questData</key>
-	<dict/>
+	<dict>
+		<key>count</key>
+		<integer>6</integer>
+		<key>words</key>
+		<integer>4</integer>
+	</dict>
 	<key>questName</key>
 	<string></string>
 	<key>questType</key>
-	<integer>1</integer>
+	<integer>3</integer>
 	<key>table</key>
 	<array>
 		<string> </string>
@@ -46,11 +46,11 @@
 		<string> </string>
 		<string> </string>
 		<string>S</string>
+		<string>U</string>
 		<string>0</string>
 		<string>0</string>
 		<string>0</string>
-		<string>0</string>
-		<string>0</string>
+		<string>R</string>
 		<string> </string>
 		<string> </string>
 		<string>0</string>
@@ -68,24 +68,24 @@
 		<string> </string>
 		<string>F</string>
 		<string> </string>
-		<string>0</string>
+		<string>W</string>
 		<string>I</string>
 		<string>0</string>
 		<string>0</string>
 		<string>0</string>
-		<string>0</string>
-		<string>0</string>
-		<string> </string>
-		<string> </string>
-		<string>0</string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
+		<string>R</string>
 		<string>0</string>
 		<string> </string>
 		<string> </string>
 		<string>0</string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string> </string>
+		<string>G</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>

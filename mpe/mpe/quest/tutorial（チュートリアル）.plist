@@ -19,11 +19,13 @@
 	<dict>
 		<key>count</key>
 		<integer>7</integer>
+		<key>words</key>
+		<integer>4</integer>
 	</dict>
 	<key>questName</key>
 	<string></string>
 	<key>questType</key>
-	<integer>0</integer>
+	<integer>3</integer>
 	<key>table</key>
 	<array>
 		<string> </string>
@@ -83,9 +85,9 @@
 		<string> </string>
 		<string>L</string>
 		<string>W</string>
+		<string>H</string>
 		<string>0</string>
-		<string>R</string>
-		<string>D</string>
+		<string>M</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -150,8 +152,8 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>TW</string>
 		<string> </string>
+		<string>TW</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
