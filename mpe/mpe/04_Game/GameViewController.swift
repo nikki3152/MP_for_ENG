@@ -1142,7 +1142,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			//+++++++++++++++++++++++++
 			//英単語を◯個作る
 			//+++++++++++++++++++++++++
-			self.questCount -= 1
 			if self.questCount <= 0 {
 				//クリア
 				self.gameClear()
