@@ -44,7 +44,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>10</integer>
+		<integer>15</integer>
 		<key>font</key>
 		<string>T</string>
 	</dict>

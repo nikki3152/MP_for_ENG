@@ -52,7 +52,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>50000</integer>
+		<integer>3000</integer>
 	</dict>
 	<key>questName</key>
 	<string></string>
@@ -130,7 +130,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>DL</string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -143,26 +143,13 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>DL</string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>DL</string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -176,11 +163,24 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>DL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>DL</string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string>TL</string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>

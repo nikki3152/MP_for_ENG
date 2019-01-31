@@ -37,11 +37,16 @@
 		<string>もじぴったん</string>
 	</array>
 	<key>questData</key>
-	<dict/>
+	<dict>
+		<key>count</key>
+		<integer>10</integer>
+		<key>font</key>
+		<string>T</string>
+	</dict>
 	<key>questName</key>
 	<string></string>
 	<key>questType</key>
-	<integer>1</integer>
+	<integer>5</integer>
 	<key>table</key>
 	<array>
 		<string> </string>
