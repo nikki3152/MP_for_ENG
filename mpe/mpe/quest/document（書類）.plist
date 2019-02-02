@@ -3,7 +3,30 @@
 <plist version="1.0">
 <dict>
 	<key>cards</key>
-	<array/>
+	<array>
+		<string>A</string>
+		<string>A</string>
+		<string>C</string>
+		<string>E</string>
+		<string>E</string>
+		<string>E</string>
+		<string>E</string>
+		<string>I</string>
+		<string>I</string>
+		<string>I</string>
+		<string>I</string>
+		<string>L</string>
+		<string>L</string>
+		<string>M</string>
+		<string>M</string>
+		<string>N</string>
+		<string>O</string>
+		<string>O</string>
+		<string>P</string>
+		<string>S</string>
+		<string>S</string>
+		<string>U</string>
+	</array>
 	<key>height</key>
 	<integer>9</integer>
 	<key>messages</key>
@@ -13,23 +36,21 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>8</integer>
-		<key>words</key>
-		<integer>5</integer>
+		<integer>2000</integer>
 	</dict>
 	<key>questName</key>
 	<string></string>
 	<key>questType</key>
-	<integer>3</integer>
+	<integer>4</integer>
 	<key>table</key>
 	<array>
 		<string>R</string>
 		<string>0</string>
 		<string>0</string>
 		<string>0</string>
-		<string>0</string>
 		<string>R</string>
 		<string>T</string>
+		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string>E</string>
@@ -143,6 +164,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -177,6 +199,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>DL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -184,9 +207,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
+		<string>DL</string>
 		<string> </string>
 	</array>
 	<key>time</key>
@@ -194,6 +215,6 @@
 	<key>width</key>
 	<integer>9</integer>
 	<key>wildCardLen</key>
-	<integer>1</integer>
+	<integer>0</integer>
 </dict>
 </plist>

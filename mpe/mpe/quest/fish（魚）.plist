@@ -34,14 +34,12 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>12</integer>
-		<key>words</key>
-		<integer>4</integer>
+		<integer>4000</integer>
 	</dict>
 	<key>questName</key>
 	<string></string>
 	<key>questType</key>
-	<integer>3</integer>
+	<integer>4</integer>
 	<key>table</key>
 	<array>
 		<string> </string>
@@ -156,6 +154,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>TW</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -166,14 +165,13 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>DL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
+		<string>DL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -215,13 +213,13 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>DL</string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>DL</string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>

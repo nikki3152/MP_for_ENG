@@ -12,7 +12,6 @@
 		<string>D</string>
 		<string>E</string>
 		<string>E</string>
-		<string>H</string>
 		<string>I</string>
 		<string>I</string>
 		<string>I</string>
@@ -36,7 +35,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>8</integer>
+		<integer>12</integer>
 		<key>words</key>
 		<integer>5</integer>
 	</dict>
@@ -66,7 +65,7 @@
 		<string>0</string>
 		<string>0</string>
 		<string>M</string>
-		<string>L</string>
+		<string>R</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -96,7 +95,7 @@
 		<string>C</string>
 		<string>K</string>
 		<string>0</string>
-		<string>0</string>
+		<string>H</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -106,7 +105,7 @@
 		<string> </string>
 		<string> </string>
 		<string>0</string>
-		<string>E</string>
+		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string>F</string>
@@ -116,7 +115,7 @@
 		<string> </string>
 		<string> </string>
 		<string>R</string>
-		<string>0</string>
+		<string> </string>
 		<string> </string>
 		<string>L</string>
 		<string>O</string>

@@ -15,7 +15,7 @@
 		<string>E</string>
 		<string>F</string>
 		<string>H</string>
-		<string>I</string>
+		<string>H</string>
 		<string>I</string>
 		<string>I</string>
 		<string>M</string>
@@ -39,7 +39,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>9</integer>
+		<integer>11</integer>
 		<key>words</key>
 		<integer>7</integer>
 	</dict>
@@ -131,13 +131,13 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string> </string>
 		<string>M</string>
 		<string>E</string>
 		<string>C</string>
 		<string>0</string>
 		<string>0</string>
 		<string>0</string>
+		<string>I</string>
 		<string>C</string>
 	</array>
 	<key>tableType</key>
