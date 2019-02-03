@@ -39,7 +39,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>6</integer>
+		<integer>10</integer>
 		<key>font</key>
 		<string>K</string>
 	</dict>
@@ -131,13 +131,13 @@
 		<string> </string>
 		<string>0</string>
 		<string>0</string>
+		<string> </string>
 		<string>0</string>
+		<string> </string>
 		<string>0</string>
+		<string> </string>
 		<string>0</string>
-		<string>0</string>
-		<string>0</string>
-		<string>0</string>
-		<string>0</string>
+		<string> </string>
 		<string>0</string>
 	</array>
 	<key>tableType</key>
@@ -218,18 +218,18 @@
 		<string> </string>
 		<string>TL</string>
 		<string> </string>
-		<string> </string>
+		<string>TL</string>
 		<string> </string>
 		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string>TW</string>
 		<string> </string>
+		<string>TL</string>
 		<string> </string>
+		<string>TL</string>
 		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
+		<string>TL</string>
 		<string> </string>
 		<string>TW</string>
 	</array>

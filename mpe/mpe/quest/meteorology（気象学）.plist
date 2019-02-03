@@ -44,7 +44,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>9</integer>
+		<integer>10</integer>
 		<key>words</key>
 		<integer>7</integer>
 	</dict>
@@ -201,9 +201,9 @@
 		<string> </string>
 		<string> </string>
 		<string>D</string>
-		<string> </string>
 		<string>H</string>
 		<string>U</string>
+		<string>0</string>
 		<string>0</string>
 		<string>0</string>
 		<string>C</string>
@@ -218,10 +218,10 @@
 		<string>0</string>
 		<string>0</string>
 		<string>0</string>
+		<string>0</string>
 		<string>M</string>
 		<string>A</string>
 		<string>N</string>
-		<string> </string>
 		<string> </string>
 	</array>
 	<key>tableType</key>

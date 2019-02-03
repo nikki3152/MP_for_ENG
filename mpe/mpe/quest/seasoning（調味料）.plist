@@ -36,7 +36,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>1000</integer>
+		<integer>2000</integer>
 	</dict>
 	<key>questName</key>
 	<string></string>
@@ -160,6 +160,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>TW</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -167,8 +168,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string> </string>
-		<string> </string>
+		<string>TW</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>

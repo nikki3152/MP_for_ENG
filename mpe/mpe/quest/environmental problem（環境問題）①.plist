@@ -42,7 +42,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>8</integer>
+		<integer>9</integer>
 		<key>words</key>
 		<integer>7</integer>
 	</dict>
@@ -151,17 +151,6 @@
 		<string>0</string>
 		<string> </string>
 		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string>0</string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string>0</string>
-		<string> </string>
-		<string> </string>
 		<string>S</string>
 		<string>0</string>
 		<string>0</string>
@@ -169,6 +158,17 @@
 		<string>0</string>
 		<string>0</string>
 		<string>Y</string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
 		<string> </string>
 		<string>0</string>
 		<string> </string>

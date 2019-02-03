@@ -40,7 +40,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>15</integer>
+		<integer>30</integer>
 	</dict>
 	<key>questName</key>
 	<string></string>
@@ -141,6 +141,13 @@
 	<array>
 		<string> </string>
 		<string> </string>
+		<string>TL</string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -165,6 +172,17 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>TW</string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string>TW</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -178,31 +196,13 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -229,7 +229,7 @@
 		<string> </string>
 	</array>
 	<key>time</key>
-	<real>480</real>
+	<real>360</real>
 	<key>width</key>
 	<integer>11</integer>
 	<key>wildCardLen</key>

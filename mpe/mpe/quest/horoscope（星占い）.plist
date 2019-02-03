@@ -38,12 +38,12 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>12</integer>
+		<integer>3000</integer>
 	</dict>
 	<key>questName</key>
 	<string></string>
 	<key>questType</key>
-	<integer>0</integer>
+	<integer>4</integer>
 	<key>table</key>
 	<array>
 		<string>A</string>
@@ -271,7 +271,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string> </string>
+		<string>DL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>

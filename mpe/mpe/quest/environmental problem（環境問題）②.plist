@@ -8,7 +8,6 @@
 		<string>C</string>
 		<string>C</string>
 		<string>C</string>
-		<string>C</string>
 		<string>D</string>
 		<string>F</string>
 		<string>I</string>
@@ -16,7 +15,7 @@
 		<string>I</string>
 		<string>K</string>
 		<string>L</string>
-		<string>O</string>
+		<string>L</string>
 		<string>O</string>
 		<string>P</string>
 		<string>R</string>
@@ -43,16 +42,17 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>10</integer>
+		<integer>5000</integer>
 	</dict>
 	<key>questName</key>
 	<string></string>
 	<key>questType</key>
-	<integer>0</integer>
+	<integer>4</integer>
 	<key>table</key>
 	<array>
 		<string>P</string>
 		<string>O</string>
+		<string>0</string>
 		<string>0</string>
 		<string>0</string>
 		<string>T</string>
@@ -62,8 +62,8 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string> </string>
 		<string>A</string>
+		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -74,13 +74,12 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string> </string>
 		<string>0</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>0</string>
 		<string> </string>
+		<string>0</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -88,6 +87,7 @@
 		<string>R</string>
 		<string>R</string>
 		<string>0</string>
+		<string> </string>
 		<string> </string>
 		<string>D</string>
 		<string>0</string>
@@ -95,16 +95,15 @@
 		<string>0</string>
 		<string>0</string>
 		<string>N</string>
-		<string> </string>
 		<string>E</string>
 		<string>E</string>
 		<string>E</string>
 		<string>0</string>
 		<string> </string>
-		<string>0</string>
 		<string> </string>
 		<string>0</string>
 		<string> </string>
+		<string>0</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -113,28 +112,29 @@
 		<string>0</string>
 		<string>G</string>
 		<string> </string>
+		<string> </string>
 		<string>S</string>
 		<string>0</string>
 		<string>A</string>
 		<string>0</string>
 		<string>0</string>
 		<string>E</string>
-		<string> </string>
 		<string>0</string>
 		<string>0</string>
 		<string>0</string>
 		<string>E</string>
 		<string> </string>
-		<string>0</string>
 		<string> </string>
 		<string>0</string>
 		<string> </string>
-		<string> </string>
 		<string>0</string>
+		<string> </string>
+		<string> </string>
 		<string> </string>
 		<string>C</string>
 		<string>C</string>
 		<string>E</string>
+		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string>0</string>
@@ -142,21 +142,21 @@
 		<string>A</string>
 		<string> </string>
 		<string> </string>
-		<string>0</string>
 		<string> </string>
 		<string>L</string>
 		<string>E</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>0</string>
 		<string> </string>
 		<string>0</string>
 		<string> </string>
+		<string>0</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string>E</string>
+		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -166,7 +166,6 @@
 		<string>U</string>
 		<string>0</string>
 		<string>E</string>
-		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -216,6 +215,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -226,6 +226,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -236,6 +237,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -246,10 +248,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>

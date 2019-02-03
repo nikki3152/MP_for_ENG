@@ -10,6 +10,7 @@
 		<string>E</string>
 		<string>E</string>
 		<string>F</string>
+		<string>G</string>
 		<string>H</string>
 		<string>H</string>
 		<string>I</string>
@@ -39,7 +40,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>10</integer>
+		<integer>12</integer>
 		<key>words</key>
 		<integer>6</integer>
 	</dict>

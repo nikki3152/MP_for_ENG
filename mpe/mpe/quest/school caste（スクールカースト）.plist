@@ -29,12 +29,12 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>12</integer>
+		<integer>8000</integer>
 	</dict>
 	<key>questName</key>
 	<string></string>
 	<key>questType</key>
-	<integer>0</integer>
+	<integer>4</integer>
 	<key>table</key>
 	<array>
 		<string> </string>
@@ -155,8 +155,8 @@
 		<string>E</string>
 		<string>0</string>
 		<string>D</string>
-		<string>D</string>
-		<string>D</string>
+		<string>0</string>
+		<string>0</string>
 	</array>
 	<key>tableType</key>
 	<array>
@@ -182,6 +182,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>DL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -195,6 +196,9 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>DL</string>
+		<string>DL</string>
+		<string>DL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -206,7 +210,11 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>DL</string>
+		<string>DL</string>
 		<string> </string>
+		<string>DL</string>
+		<string>DL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -216,9 +224,13 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>DL</string>
+		<string>DL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>DL</string>
+		<string>DL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -226,16 +238,22 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>TL</string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>TL</string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>TL</string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -243,9 +261,14 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>TL</string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>TL</string>
+		<string>TL</string>
+		<string>TL</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
@@ -253,33 +276,10 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
+		<string>TL</string>
 		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
+		<string>TL</string>
+		<string>TL</string>
 	</array>
 	<key>time</key>
 	<real>420</real>

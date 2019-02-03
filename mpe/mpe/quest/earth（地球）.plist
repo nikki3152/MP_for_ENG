@@ -21,14 +21,10 @@
 		<string>O</string>
 		<string>R</string>
 		<string>R</string>
-		<string>R</string>
-		<string>S</string>
 		<string>S</string>
 		<string>T</string>
 		<string>T</string>
 		<string>T</string>
-		<string>T</string>
-		<string>U</string>
 		<string>U</string>
 	</array>
 	<key>height</key>
@@ -82,7 +78,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>0</string>
+		<string> </string>
 		<string>E</string>
 		<string> </string>
 		<string> </string>
@@ -93,7 +89,7 @@
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>0</string>
+		<string> </string>
 		<string>0</string>
 		<string> </string>
 		<string>E</string>
@@ -104,18 +100,18 @@
 		<string>O</string>
 		<string>R</string>
 		<string> </string>
+		<string> </string>
+		<string>0</string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
+		<string> </string>
 		<string>0</string>
 		<string>0</string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
 		<string> </string>
-		<string>0</string>
-		<string>0</string>
-		<string> </string>
-		<string> </string>
-		<string> </string>
-		<string>0</string>
 		<string>0</string>
 		<string>L</string>
 		<string>0</string>

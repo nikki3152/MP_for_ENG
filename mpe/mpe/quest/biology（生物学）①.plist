@@ -14,15 +14,12 @@
 		<string>G</string>
 		<string>G</string>
 		<string>H</string>
-		<string>H</string>
-		<string>I</string>
 		<string>I</string>
 		<string>L</string>
 		<string>M</string>
 		<string>N</string>
 		<string>O</string>
 		<string>O</string>
-		<string>P</string>
 		<string>P</string>
 		<string>R</string>
 		<string>R</string>
@@ -44,7 +41,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>10</integer>
+		<integer>11</integer>
 		<key>words</key>
 		<integer>6</integer>
 	</dict>
@@ -79,7 +76,7 @@
 		<string>0</string>
 		<string> </string>
 		<string> </string>
-		<string>A</string>
+		<string> </string>
 		<string>0</string>
 		<string>O</string>
 		<string> </string>
@@ -92,7 +89,7 @@
 		<string>0</string>
 		<string> </string>
 		<string> </string>
-		<string>M</string>
+		<string> </string>
 		<string>0</string>
 		<string>0</string>
 		<string> </string>
@@ -105,7 +102,7 @@
 		<string>0</string>
 		<string> </string>
 		<string> </string>
-		<string>0</string>
+		<string> </string>
 		<string>T</string>
 		<string>0</string>
 		<string> </string>
@@ -118,7 +115,7 @@
 		<string>N</string>
 		<string> </string>
 		<string> </string>
-		<string>0</string>
+		<string> </string>
 		<string>I</string>
 		<string>T</string>
 		<string> </string>
@@ -131,7 +128,7 @@
 		<string>I</string>
 		<string> </string>
 		<string> </string>
-		<string>0</string>
+		<string> </string>
 		<string>O</string>
 		<string>I</string>
 		<string> </string>
@@ -144,7 +141,7 @@
 		<string>S</string>
 		<string> </string>
 		<string> </string>
-		<string>B</string>
+		<string> </string>
 		<string>N</string>
 		<string>O</string>
 		<string> </string>
@@ -157,7 +154,7 @@
 		<string>M</string>
 		<string>Y</string>
 		<string> </string>
-		<string>I</string>
+		<string> </string>
 		<string> </string>
 		<string>N</string>
 		<string> </string>
@@ -170,7 +167,7 @@
 		<string>0</string>
 		<string>M</string>
 		<string>E</string>
-		<string>N</string>
+		<string> </string>
 	</array>
 	<key>tableType</key>
 	<array>
@@ -293,7 +290,7 @@
 		<string> </string>
 	</array>
 	<key>time</key>
-	<real>480</real>
+	<real>420</real>
 	<key>width</key>
 	<integer>13</integer>
 	<key>wildCardLen</key>
