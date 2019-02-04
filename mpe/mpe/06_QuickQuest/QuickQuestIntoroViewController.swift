@@ -20,8 +20,17 @@ class QuickQuestIntoroViewController: BaseViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		// Do any additional setup after loading the view.
+		DataManager.animationFuwa(v: fire1, dy: 10, speed: 2.0)
+		DataManager.animationFuwa(v: fire2, dy: 10, speed: 2.2)
+		DataManager.animationFuwa(v: fire3, dy: 10, speed: 2.3)
+		DataManager.animationFuwa(v: fire4, dy: 10, speed: 1.8)
 	}
+	
+	
+	@IBOutlet weak var fire1: UIImageView!
+	@IBOutlet weak var fire2: UIImageView!
+	@IBOutlet weak var fire3: UIImageView!
+	@IBOutlet weak var fire4: UIImageView!
 	
 	//戻る
 	@IBOutlet weak var backButton: UIButton!

@@ -167,7 +167,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RVy-9R-NIC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizdonyu_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="RVy-9R-NIC">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -259,6 +259,10 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="D0P-Qz-tt3" id="UH6-sp-zc3"/>
+                        <outlet property="fire1" destination="qBR-fn-11G" id="mPv-fb-ra9"/>
+                        <outlet property="fire2" destination="pzF-wv-6xD" id="XhP-3v-1Ar"/>
+                        <outlet property="fire3" destination="qqo-qa-TGh" id="Rjd-ON-7bq"/>
+                        <outlet property="fire4" destination="93K-cp-eL3" id="3Vk-hE-SY0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsR-RX-Lgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -273,6 +277,7 @@
         <image name="quiz_background.png" width="1920" height="1080"/>
         <image name="quiz_question.png" width="637" height="140"/>
         <image name="quiz_result_erabukun.png" width="1920" height="1080"/>
+        <image name="quizdonyu_background.png" width="1920" height="1080"/>
         <image name="quizdonyu_button_01.png" width="639" height="110"/>
         <image name="quizdonyu_button_02.png" width="639" height="110"/>
         <image name="quizdonyu_button_03.png" width="639" height="110"/>
