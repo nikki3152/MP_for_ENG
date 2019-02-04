@@ -10,6 +10,10 @@ import UIKit
 
 class StageSelectViewController: BaseViewController {
 
+	@IBOutlet weak var leftChaImageView: UIImageView!
+	@IBOutlet weak var rightChaImageView: UIImageView!
+	
+	
 	let dataMrg: MPEDataManager = MPEDataManager()
 	var questNames: [String] = []
 	var questDatas: [QuestData] = []
@@ -29,14 +33,20 @@ class StageSelectViewController: BaseViewController {
 			if _currentPage == 1 {
 				self.leftButton.isHidden = true
 				self.rightButton.isHidden = false
+				self.leftImageView.isHidden = true
+				self.rightImageView.isHidden = false
 			}
 			else if _currentPage == self.maxPage {
 				self.leftButton.isHidden = false
 				self.rightButton.isHidden = true
+				self.leftImageView.isHidden = false
+				self.rightImageView.isHidden = true
 			}
 			else {
 				self.leftButton.isHidden = false
 				self.rightButton.isHidden = false
+				self.leftImageView.isHidden = false
+				self.rightImageView.isHidden = false
 			}
 		}
 	}
@@ -88,7 +98,11 @@ class StageSelectViewController: BaseViewController {
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
 		
+		DataManager.animationFuwa(v: leftChaImageView, dy: 10, speed: 2.0)
+		DataManager.animationFuwa(v: rightChaImageView, dy: 10, speed: 3.3)
 		
+		DataManager.animationFuwa(v: leftImageView, dx: 10, speed: 2.2)
+		DataManager.animationFuwa(v: rightImageView, dx: 10, speed: 2.0)
 	}
 	
 	//戻る
@@ -100,6 +114,7 @@ class StageSelectViewController: BaseViewController {
 	}
 	
 	//左ボタン
+	@IBOutlet weak var leftImageView: UIImageView!
 	@IBOutlet weak var leftButton: UIButton!
 	@IBAction func leftButtonAction(_ sender: UIButton) {
 		
@@ -123,6 +138,7 @@ class StageSelectViewController: BaseViewController {
 		}
 	}
 	//右ボタン
+	@IBOutlet weak var rightImageView: UIImageView!
 	@IBOutlet weak var rightButton: UIButton!
 	@IBAction func rightButtonAction(_ sender: UIButton) {
 		

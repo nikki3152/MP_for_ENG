@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YQ3-LM-bGR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YQ3-LM-bGR">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -267,18 +268,24 @@
                                 <rect key="frame" x="15" y="300" width="61" height="157"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZ2-dC-mNS">
-                                <rect key="frame" x="556" y="229" width="80" height="81"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select_stagechange_left.png" translatesAutoresizingMaskIntoConstraints="NO" id="tOF-0B-LT0">
+                                <rect key="frame" x="30" y="229" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select_stagechange_right.png" translatesAutoresizingMaskIntoConstraints="NO" id="7bY-ue-4Ps">
+                                <rect key="frame" x="556" y="229" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <state key="normal" backgroundImage="select_stagechange_right.png"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZ2-dC-mNS">
+                                <rect key="frame" x="556" y="229" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="rightButtonAction:" destination="YQ3-LM-bGR" eventType="touchUpInside" id="v7J-WF-qIu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ix-y5-OLl">
-                                <rect key="frame" x="30" y="229" width="80" height="81"/>
+                                <rect key="frame" x="30" y="229" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" backgroundImage="select_stagechange_left.png"/>
                                 <connections>
                                     <action selector="leftButtonAction:" destination="YQ3-LM-bGR" eventType="touchUpInside" id="IwK-HK-2e1"/>
                                 </connections>
@@ -291,7 +298,11 @@
                         <outlet property="backButton" destination="pqy-vn-Bre" id="Pre-kX-7c8"/>
                         <outlet property="buttonBaseView" destination="xbR-IA-sc5" id="K6b-1a-km0"/>
                         <outlet property="leftButton" destination="8ix-y5-OLl" id="xrO-dD-xe8"/>
+                        <outlet property="leftChaImageView" destination="WdI-Ya-SQc" id="Wcb-Uo-Szb"/>
+                        <outlet property="leftImageView" destination="tOF-0B-LT0" id="yHv-fa-OCp"/>
                         <outlet property="rightButton" destination="eZ2-dC-mNS" id="ucA-Kt-TqH"/>
+                        <outlet property="rightChaImageView" destination="Tm9-36-kMU" id="liR-Dc-9Pb"/>
+                        <outlet property="rightImageView" destination="7bY-ue-4Ps" id="PMH-Hb-dqJ"/>
                         <outlet property="stageButton1" destination="mdl-Za-AcZ" id="ESp-fe-2Ko"/>
                         <outlet property="stageButton10" destination="cZN-dg-dlh" id="Ocm-f6-Sjb"/>
                         <outlet property="stageButton2" destination="Twq-K8-BWX" id="i7H-Vm-Cph"/>
@@ -306,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IjS-va-6tL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-30.163043478260871" y="168.11594202898553"/>
+            <point key="canvasLocation" x="-31.03448275862069" y="167.19999999999999"/>
         </scene>
     </scenes>
     <resources>
