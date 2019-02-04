@@ -21,7 +21,14 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
+		let tap = UITapGestureRecognizer(target: self, action: #selector(self.tap(_:)))
+		self.view.addGestureRecognizer(tap)
     }
+	
+	@objc func tap(_ tap: UITapGestureRecognizer) {
+		
+		startButtonAction(startButton)
+	}
 	
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
@@ -37,8 +44,10 @@ class HomeViewController: BaseViewController {
 		DataManager.animationFuwa(v: kumoBaseView, dx: 20, speed: 10.0)
 		DataManager.animationFuwa(v: kumoImageView, dy: 10, speed: 8.0)
 		
+		DataManager.animationFadeFlash(v: startLabel, speed: 1.5)
 	}
 	//スタート
+	@IBOutlet weak var startLabel: UILabel!
 	@IBOutlet weak var startButton: UIButton!
 	@IBAction func startButtonAction(_ sender: Any) {
 		

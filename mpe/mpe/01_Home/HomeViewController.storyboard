@@ -22,15 +22,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0C-5a-7QD">
-                                <rect key="frame" x="262" y="363" width="210" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="PRESS to START"/>
-                                <connections>
-                                    <action selector="startButtonAction:" destination="nMF-L9-Vmn" eventType="touchUpInside" id="Hgb-aw-CtV"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1CW-eE-s2a">
                                 <rect key="frame" x="269" y="0.0" width="199" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -75,6 +66,21 @@
                                 <rect key="frame" x="174" y="204" width="360" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PRESS to START" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AX-qd-elJ">
+                                <rect key="frame" x="262" y="363" width="210" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0C-5a-7QD">
+                                <rect key="frame" x="262" y="363" width="210" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <connections>
+                                    <action selector="startButtonAction:" destination="nMF-L9-Vmn" eventType="touchUpInside" id="Hgb-aw-CtV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ZCo-t9-gh5"/>
@@ -86,6 +92,7 @@
                         <outlet property="mojikunBaseView" destination="1CW-eE-s2a" id="RnC-CE-SKg"/>
                         <outlet property="mojikunImageView" destination="WEy-ng-WVM" id="1jF-b7-tCL"/>
                         <outlet property="startButton" destination="e0C-5a-7QD" id="Dji-5O-Dao"/>
+                        <outlet property="startLabel" destination="7AX-qd-elJ" id="qgD-D6-lbd"/>
                         <outlet property="sunSippoImageView" destination="Qs0-wH-yMI" id="E4r-39-nkR"/>
                         <outlet property="titleLogoImageView" destination="9Lf-U1-fjL" id="niu-ZE-Slq"/>
                     </connections>
