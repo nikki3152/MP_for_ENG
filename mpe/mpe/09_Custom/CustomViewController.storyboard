@@ -122,11 +122,24 @@
                     <connections>
                         <outlet property="backButton" destination="Smd-g9-ifB" id="AtP-uR-24S"/>
                         <outlet property="charCustomButton1" destination="Obl-yl-0Xi" id="2k5-50-oFI"/>
+                        <outlet property="charCustomButton10" destination="aXr-9W-bKG" id="4dy-9V-hX9"/>
+                        <outlet property="charCustomButton2" destination="f8J-Ea-dHF" id="7mr-dx-W5G"/>
+                        <outlet property="charCustomButton3" destination="0JD-GE-rXu" id="btv-Tj-BGC"/>
+                        <outlet property="charCustomButton4" destination="jbW-W7-eBF" id="mw8-UR-5Gk"/>
+                        <outlet property="charCustomButton5" destination="rEw-3M-vm9" id="qUB-Pk-Z3I"/>
+                        <outlet property="charCustomButton6" destination="XHZ-Gz-1fL" id="TI6-6W-KlA"/>
+                        <outlet property="charCustomButton7" destination="LpD-2v-dIV" id="s0a-Ct-YlT"/>
+                        <outlet property="charCustomButton8" destination="vhu-3a-C6s" id="9NG-oo-FT6"/>
+                        <outlet property="charCustomButton9" destination="nYz-hP-3um" id="Oqt-mH-Pr9"/>
+                        <outlet property="onpu1" destination="UWQ-qd-5tR" id="tjy-Jn-oh5"/>
+                        <outlet property="onpu2" destination="meU-3m-GHb" id="KLL-pu-tce"/>
+                        <outlet property="onpu3" destination="qY7-9C-yf9" id="4BG-Ee-xbf"/>
+                        <outlet property="onpu4" destination="IJC-bq-gOa" id="ATH-LT-XEJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mk5-aL-0wH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145.27736131934034" y="168.80000000000001"/>
+            <point key="canvasLocation" x="231" y="150"/>
         </scene>
     </scenes>
     <resources>

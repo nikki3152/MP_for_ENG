@@ -20,7 +20,10 @@ class CustomViewController: BaseViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		// Do any additional setup after loading the view.
+		DataManager.animationFuwa(v: onpu1, dy: 10, speed: 2.2)
+		DataManager.animationFuwa(v: onpu2, dy: 10, speed: 2.0)
+		DataManager.animationFuwa(v: onpu3, dy: 10, speed: 1.8)
+		DataManager.animationFuwa(v: onpu4, dy: 10, speed: 2.0)
 	}
 	
 	//戻る
@@ -31,6 +34,10 @@ class CustomViewController: BaseViewController {
 		self.remove()
 	}
 	
+	@IBOutlet weak var onpu1: UIImageView!
+	@IBOutlet weak var onpu2: UIImageView!
+	@IBOutlet weak var onpu3: UIImageView!
+	@IBOutlet weak var onpu4: UIImageView!
 	
 	@IBOutlet weak var charCustomButton1: UIButton!
 	@IBOutlet weak var charCustomButton2: UIButton!
@@ -41,6 +48,7 @@ class CustomViewController: BaseViewController {
 	@IBOutlet weak var charCustomButton7: UIButton!
 	@IBOutlet weak var charCustomButton8: UIButton!
 	@IBOutlet weak var charCustomButton9: UIButton!
+	@IBOutlet weak var charCustomButton10: UIButton!
 	@IBAction func charCustomButtonAction(_ sender: UIButton) {
 		SoundManager.shared.startSE(type: .seDone)	//SE再生
 	}
