@@ -20,11 +20,23 @@ class HomeViewController: BaseViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		
     }
 	
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
+		
+		//太陽（回転）
+		DataManager.animationInfinityRotate(v: sunSippoImageView, speed: 0.1)
+		//もじくん（ふわふわ）
+		DataManager.animationFuwa(v: mojikunImageView, dx: 40, speed: 8.0)
+		DataManager.animationFuwa(v: mojikunBaseView, dy: 20, speed: 6.0)
+		//もじじちゃん（ジャンプ）
+		DataManager.animationJump(v: mojichanImageView, height: 40, speed: 1.0)
+		//雲くん（ふわふわ）
+		DataManager.animationFuwa(v: kumoBaseView, dx: 20, speed: 10.0)
+		DataManager.animationFuwa(v: kumoImageView, dy: 10, speed: 8.0)
+		
 	}
 	//スタート
 	@IBOutlet weak var startButton: UIButton!
@@ -38,4 +50,11 @@ class HomeViewController: BaseViewController {
 		}
 	}
 	
+	@IBOutlet weak var mojikunBaseView: UIView!
+	@IBOutlet weak var kumoBaseView: UIView!
+	@IBOutlet weak var titleLogoImageView: UIImageView!
+	@IBOutlet weak var sunSippoImageView: UIImageView!
+	@IBOutlet weak var mojikunImageView: UIImageView!
+	@IBOutlet weak var mojichanImageView: UIImageView!
+	@IBOutlet weak var kumoImageView: UIImageView!
 }

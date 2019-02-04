@@ -499,7 +499,82 @@ class DataManager: NSObject {
 	}
 	
 	
+	//MARK: - アニメーション
+	//無限回転
+	class func animationInfinityRotate(v: UIView, speed: Float) {
+		
+		let animation:CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation")
+		animation.toValue = .pi / 2.0
+		animation.duration = 0.5           	// 指定した秒で90度回転
+		animation.repeatCount = MAXFLOAT;   // 無限に繰り返す
+		animation.isCumulative = true;      // 効果を累積
+		v.layer.add(animation, forKey: "ImageViewRotation")
+		v.layer.speed = speed
+	}
+	//ジャンプ
+	class func animationJump(v: UIView, height: Float, speed: Float) {
+		
+		let y = v.center.y
+		UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0.0, options: [.repeat], animations: { 
+			UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.3 * Double(speed), animations: { 
+				v.center.y = y - CGFloat(height * 0.8)
+			})
+			UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.1 * Double(speed), animations: { 
+				v.center.y = y - CGFloat(height)
+			})
+			UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.2 * Double(speed), animations: { 
+				v.center.y = y
+			})
+			UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.4 * Double(speed), animations: { 
+				v.center.y = y
+			})
+		}) { (stop) in
+			
+		}
+	}
+	//ふわふわ
+	class func animationFuwa(v: UIView, dy: Float, speed: Float) {
+		
+		let y = v.center.y
+		UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0.0, options: [.repeat, .autoreverse], animations: { 
+			UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.25 * Double(speed), animations: { 
+				v.center.y = y - CGFloat(dy)
+			})
+			UIView.addKeyframe(withRelativeStartTime: 0.25, relativeDuration: 0.25 * Double(speed), animations: { 
+				v.center.y = y
+			})
+			UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.25 * Double(speed), animations: { 
+				v.center.y = y + CGFloat(dy)
+			})
+			UIView.addKeyframe(withRelativeStartTime: 0.75, relativeDuration: 0.25 * Double(speed), animations: { 
+				v.center.y = y
+			})
+		}) { (stop) in
+			
+		}
+	}
+	class func animationFuwa(v: UIView, dx: Float, speed: Float) {
+		
+		let x = v.center.x
+		UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0.0, options: [.repeat, .autoreverse], animations: { 
+			UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.25 * Double(speed), animations: { 
+				v.center.x = x - CGFloat(dx)
+			})
+			UIView.addKeyframe(withRelativeStartTime: 0.25, relativeDuration: 0.25 * Double(speed), animations: { 
+				v.center.x = x
+			})
+			UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.25 * Double(speed), animations: { 
+				v.center.x = x + CGFloat(dx)
+			})
+			UIView.addKeyframe(withRelativeStartTime: 0.75, relativeDuration: 0.25 * Double(speed), animations: { 
+				v.center.x = x
+			})
+		}) { (stop) in
+			
+		}
+	}
 }
+
 
 
 //MARK: - エクステンション

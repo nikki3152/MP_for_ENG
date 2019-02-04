@@ -31,10 +31,16 @@
                                     <action selector="startButtonAction:" destination="nMF-L9-Vmn" eventType="touchUpInside" id="Hgb-aw-CtV"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_mojikun.png" translatesAutoresizingMaskIntoConstraints="NO" id="WEy-ng-WVM">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1CW-eE-s2a">
                                 <rect key="frame" x="269" y="0.0" width="199" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_mojikun.png" translatesAutoresizingMaskIntoConstraints="NO" id="WEy-ng-WVM">
+                                        <rect key="frame" x="0.0" y="0.0" width="199" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_mojichan.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wyr-36-EGF">
                                 <rect key="frame" x="488" y="0.0" width="117" height="234"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
@@ -43,10 +49,16 @@
                                 <rect key="frame" x="127" y="179" width="480" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_kumokun.png" translatesAutoresizingMaskIntoConstraints="NO" id="0bX-YM-tVf">
-                                <rect key="frame" x="600" y="0.0" width="136" height="111"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ac7-2e-nsS">
+                                <rect key="frame" x="580" y="11" width="136" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_kumokun.png" translatesAutoresizingMaskIntoConstraints="NO" id="0bX-YM-tVf">
+                                        <rect key="frame" x="0.0" y="0.0" width="136" height="111"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_taiyokun_sippo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qs0-wH-yMI">
                                 <rect key="frame" x="0.0" y="0.0" width="175" height="163"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -68,7 +80,14 @@
                         <viewLayoutGuide key="safeArea" id="ZCo-t9-gh5"/>
                     </view>
                     <connections>
+                        <outlet property="kumoBaseView" destination="Ac7-2e-nsS" id="cda-tY-XdZ"/>
+                        <outlet property="kumoImageView" destination="0bX-YM-tVf" id="vsZ-g9-c0w"/>
+                        <outlet property="mojichanImageView" destination="Wyr-36-EGF" id="tCY-Dx-UMh"/>
+                        <outlet property="mojikunBaseView" destination="1CW-eE-s2a" id="RnC-CE-SKg"/>
+                        <outlet property="mojikunImageView" destination="WEy-ng-WVM" id="1jF-b7-tCL"/>
                         <outlet property="startButton" destination="e0C-5a-7QD" id="Dji-5O-Dao"/>
+                        <outlet property="sunSippoImageView" destination="Qs0-wH-yMI" id="E4r-39-nkR"/>
+                        <outlet property="titleLogoImageView" destination="9Lf-U1-fjL" id="niu-ZE-Slq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RBw-HN-0Ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
