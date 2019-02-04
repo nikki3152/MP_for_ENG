@@ -21,9 +21,17 @@ class WaitingViewController: BaseViewController {
         super.viewDidLoad()
 
 		SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
+		
+		DataManager.animationFuwa(v: stageSelectImgView, dy: 10, speed: 3.0)
+		DataManager.animationFuwa(v: studyModeImgView, dy: 12, speed: 2.2)
+		DataManager.animationFuwa(v: customImgView, dy: 13, speed: 3.2)
+		DataManager.animationFuwa(v: settingImgView, dy: 14, speed: 2.6)
     }
 	
+	
 	//ひとりでパズル
+	@IBOutlet weak var stageSelectBkImgView: UIImageView!
+	@IBOutlet weak var stageSelectImgView: UIImageView!
 	@IBOutlet weak var stageSelectButton: UIButton!
 	@IBAction func stageSelectButtpnAction(_ sender: Any) {
 		
@@ -35,6 +43,8 @@ class WaitingViewController: BaseViewController {
 	}
 	
 	//勉強モード
+	@IBOutlet weak var studyModeBkImgView: UIImageView!
+	@IBOutlet weak var studyModeImgView: UIImageView!
 	@IBOutlet weak var studyModeButton: UIButton!
 	@IBAction func studyModeButtpnAction(_ sender: Any) {
 		
@@ -46,6 +56,8 @@ class WaitingViewController: BaseViewController {
 	}
 	
 	//カスタム
+	@IBOutlet weak var customBkImgView: UIImageView!
+	@IBOutlet weak var customImgView: UIImageView!
 	@IBOutlet weak var customButton: UIButton!
 	@IBAction func customButtpnAction(_ sender: Any) {
 		
@@ -57,6 +69,8 @@ class WaitingViewController: BaseViewController {
 	}
 	
 	//設定
+	@IBOutlet weak var settingBkImgView: UIImageView!
+	@IBOutlet weak var settingImgView: UIImageView!
 	@IBOutlet weak var settingButton: UIButton!
 	@IBAction func settingButtpnAction(_ sender: Any) {
 		
