@@ -25,6 +25,12 @@ class SettingViewController: BaseViewController {
 		self.switchVoice.isSelected = UserDefaults.standard.bool(forKey: kVoiceOn)
 	}
 	
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		
+		self.updateMojikunString(txt: "もじピッタン")
+	}
+	
 	//戻る
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
@@ -113,4 +119,24 @@ class SettingViewController: BaseViewController {
 		UserDefaults.standard.set(sender.isSelected, forKey: kVoiceOn)
 	}
 	
+	//ポイントボタン
+	@IBOutlet weak var ppButton: UIButton!
+	@IBAction func ppButtonAction(_ sender: Any) {
+		
+	}
+	
+	
+	
+	@IBOutlet weak var ballonDisplayImageView: UIImageView!
+	var ballonMainLabel: TTTAttributedLabel!
+	func updateMojikunString(txt: String) {
+		
+		self.ballonMainLabel?.removeFromSuperview()
+		let bLabel = makeVerticalLabel(size: self.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 14), text: txt)
+		bLabel.textAlignment = .center
+		bLabel.numberOfLines = 2
+		self.ballonDisplayImageView.addSubview(bLabel)
+		bLabel.center = CGPoint(x: self.ballonDisplayImageView.frame.size.width / 2, y: self.ballonDisplayImageView.frame.size.height / 2)
+		self.ballonMainLabel = bLabel
+	}
 }

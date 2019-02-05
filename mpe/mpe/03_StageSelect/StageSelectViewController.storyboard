@@ -111,6 +111,9 @@
                                             <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <state key="highlighted" title="85" backgroundImage="taiki_pp_button_tap.png"/>
+                                        <connections>
+                                            <action selector="ppButtonAction:" destination="YQ3-LM-bGR" eventType="touchUpInside" id="NOI-N6-Lpk"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select_advertise.png" translatesAutoresizingMaskIntoConstraints="NO" id="22R-DP-Lyu">
                                         <rect key="frame" x="492" y="63" width="155" height="42"/>
@@ -300,6 +303,7 @@
                         <outlet property="leftButton" destination="8ix-y5-OLl" id="xrO-dD-xe8"/>
                         <outlet property="leftChaImageView" destination="WdI-Ya-SQc" id="Wcb-Uo-Szb"/>
                         <outlet property="leftImageView" destination="tOF-0B-LT0" id="yHv-fa-OCp"/>
+                        <outlet property="ppButton" destination="pPO-rh-ISv" id="uGu-p9-Twq"/>
                         <outlet property="rightButton" destination="eZ2-dC-mNS" id="ucA-Kt-TqH"/>
                         <outlet property="rightChaImageView" destination="Tm9-36-kMU" id="liR-Dc-9Pb"/>
                         <outlet property="rightImageView" destination="7bY-ue-4Ps" id="PMH-Hb-dqJ"/>

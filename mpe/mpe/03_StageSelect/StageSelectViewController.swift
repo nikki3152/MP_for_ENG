@@ -113,6 +113,13 @@ class StageSelectViewController: BaseViewController {
 		self.remove()
 	}
 	
+	//ポイントボタン
+	@IBOutlet weak var ppButton: UIButton!
+	@IBAction func ppButtonAction(_ sender: Any) {
+		
+	}
+	
+	
 	//左ボタン
 	@IBOutlet weak var leftImageView: UIImageView!
 	@IBOutlet weak var leftButton: UIButton!

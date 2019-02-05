@@ -620,7 +620,6 @@
 		54D5532D21BCA66300980B92 /* setting_movie_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551AC21BCA66200980B92 /* setting_movie_button.png */; };
 		54D5532E21BCA66300980B92 /* setting_icon_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551AD21BCA66200980B92 /* setting_icon_01.png */; };
 		54D5532F21BCA66300980B92 /* setting_credit.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551AE21BCA66200980B92 /* setting_credit.png */; };
-		54D5533021BCA66300980B92 /* setting_balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551AF21BCA66200980B92 /* setting_balloon.png */; };
 		54D5533121BCA66300980B92 /* setting_home_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551B021BCA66200980B92 /* setting_home_button.png */; };
 		54D5533221BCA66300980B92 /* setting_home_button_tap.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551B121BCA66200980B92 /* setting_home_button_tap.png */; };
 		54D5533321BCA66300980B92 /* setting_panel_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551B221BCA66200980B92 /* setting_panel_03.png */; };
@@ -1288,7 +1287,6 @@
 		54D551AC21BCA66200980B92 /* setting_movie_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_movie_button.png; sourceTree = "<group>"; };
 		54D551AD21BCA66200980B92 /* setting_icon_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_icon_01.png; sourceTree = "<group>"; };
 		54D551AE21BCA66200980B92 /* setting_credit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_credit.png; sourceTree = "<group>"; };
-		54D551AF21BCA66200980B92 /* setting_balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_balloon.png; sourceTree = "<group>"; };
 		54D551B021BCA66200980B92 /* setting_home_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_home_button.png; sourceTree = "<group>"; };
 		54D551B121BCA66200980B92 /* setting_home_button_tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_home_button_tap.png; sourceTree = "<group>"; };
 		54D551B221BCA66200980B92 /* setting_panel_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_panel_03.png; sourceTree = "<group>"; };
@@ -2204,7 +2202,6 @@
 				54D551AD21BCA66200980B92 /* setting_icon_01.png */,
 				54D5535621BCB0B600980B92 /* setting_icon_01@2x.png */,
 				54D551AE21BCA66200980B92 /* setting_credit.png */,
-				54D551AF21BCA66200980B92 /* setting_balloon.png */,
 				54D551B021BCA66200980B92 /* setting_home_button.png */,
 				54D551B121BCA66200980B92 /* setting_home_button_tap.png */,
 				54D551B221BCA66200980B92 /* setting_panel_03.png */,
@@ -2441,7 +2438,6 @@
 				54D552FF21BCA66300980B92 /* custom_box_04.png in Resources */,
 				54D552D121BCA66300980B92 /* R.png in Resources */,
 				5429F37221CF052800E0E50F /* timecolon_gameover.png in Resources */,
-				54D5533021BCA66300980B92 /* setting_balloon.png in Resources */,
 				54D552FB21BCA66300980B92 /* custom_box_06.png in Resources */,
 				542F444721B300DC00C51AD6 /* direction（方角）.plist in Resources */,
 				542F447721B57FAD00C51AD6 /* TTT（T縛り）.plist in Resources */,

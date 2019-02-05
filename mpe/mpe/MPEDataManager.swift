@@ -139,3 +139,22 @@ class MPEDataManager: DataManager {
 		return ret
 	}
 }
+
+func makeVerticalLabel(size: CGSize, font: UIFont, text: String?) -> TTTAttributedLabel {
+	
+	let label: TTTAttributedLabel = TTTAttributedLabel(frame: CGRect(x: 0, y: 0, width: size.height, height: size.width))
+	label.backgroundColor = UIColor.clear
+	label.textColor = UIColor.black
+	label.numberOfLines = 0
+	label.font = font
+	label.textAlignment = .center
+	label.contentScaleFactor = 0.5
+	let angle = Double.pi / 2
+	label.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+	label.setText(text) { (mutableAttributedString) -> NSMutableAttributedString? in
+		mutableAttributedString?.addAttribute(NSAttributedStringKey(rawValue: kCTVerticalFormsAttributeName as String as String), value: true, range: NSMakeRange(0,(mutableAttributedString?.length)!))
+		return mutableAttributedString
+	}
+	return label
+}
+
