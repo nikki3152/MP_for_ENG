@@ -21,14 +21,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		let tap = UITapGestureRecognizer(target: self, action: #selector(self.tap(_:)))
-		self.view.addGestureRecognizer(tap)
     }
-	
-	@objc func tap(_ tap: UITapGestureRecognizer) {
-		
-		startButtonAction(startButton)
-	}
 	
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()

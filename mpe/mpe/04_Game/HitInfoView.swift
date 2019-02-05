@@ -24,7 +24,7 @@ class HitInfoView: UIView {
 		
 		self.answeTitleLabel.text = title
 		self.answeLabel.text = info
-		self.bounds = CGRect(x: 0, y: 0, width: parent.frame.size.width - 100, height: 64)
+		self.bounds = CGRect(x: 0, y: 0, width: parent.frame.size.width - 40, height: 64)
 		parent.addSubview(self)
 		self.center = CGPoint(x: parent.frame.size.width / 2, y: -(self.frame.size.height / 2))
 		UIView.animate(withDuration: 0.25, delay: 0, options: .curveLinear, animations: { 

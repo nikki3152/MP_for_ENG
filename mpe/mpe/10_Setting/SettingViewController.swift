@@ -123,6 +123,7 @@ class SettingViewController: BaseViewController {
 	@IBOutlet weak var ppButton: UIButton!
 	@IBAction func ppButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 	}
 	
 	
