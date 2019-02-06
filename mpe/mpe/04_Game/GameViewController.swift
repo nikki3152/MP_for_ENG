@@ -386,10 +386,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						guard let s = self else {
 							return
 						}
-						if s.isGamePause == false {
-							s.time -= 0.1
-							if s.time <= 0 {
-								s.gameOver()
+						if s.isInEditMode == false {
+							if s.isGamePause == false {
+								s.time -= 0.1
+								if s.time <= 0 {
+									s.gameOver()
+								}
 							}
 						}
 					})
@@ -726,23 +728,30 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	}
 	
 	//MARK: 編集（デバッグ）
+	var isInEditMode = false
 	@IBOutlet weak var editButton: UIButton!
 	@IBAction func editButtonAction(_ sender: UIButton) {
 		
+		SoundManager.shared.pauseBGM(true)		//BGMポーズ（停止）
+		self.isInEditMode = true
 		let edit = EditViewController.editViewController(questData: self.questData)
 		self.present(edit, animated: true) { 
 			
 		}
-		edit.finishedHandler = {(data) in
-			self.questData = data
-			//手札
-			self.updateCardScroll()
-			//ゲームテーブル
-			self.updateGametable()
-			//問題
-			self.updateQuestString()
-			//文字くんメッセージ
-			self.updateMojikunString()
+		edit.finishedHandler = {[weak self](data) in
+			SoundManager.shared.pauseBGM(false)		//BGMポーズ（解除）
+			self?.isInEditMode = false
+			if let data = data {
+				self?.questData = data
+				//手札
+				self?.updateCardScroll()
+				//ゲームテーブル
+				self?.updateGametable()
+				//問題
+				self?.updateQuestString()
+				//文字くんメッセージ
+				self?.updateMojikunString()
+			}
 		}
 	}
 	

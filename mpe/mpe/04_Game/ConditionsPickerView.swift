@@ -94,23 +94,23 @@ class ConditionsPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate
 		}
 		else if row == 3 {
 			//◯字数以上の英単語を◯個作る
-			for i in 1 ... 15 {
+			for i in 1 ... 30 {
 				self.rightItemList1.append(i)
 			}
-			for i in 1 ... 15 {
+			for i in 1 ... 30 {
 				self.rightItemList2.append(i)
 			}
 		}
 		else if row == 4 {
 			//スコアを○点以上
-			for i in 1 ... 1000 {
-				self.rightItemList1.append(i * 1000)
+			for i in 1 ... 100 {
+				self.rightItemList1.append(i * 500)
 			}
 		}
 		else if row == 5 {
 			//◯がつく英単語を○個作る
 			self.rightItemList1 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-			for i in 1 ... 15 {
+			for i in 1 ... 30 {
 				self.rightItemList2.append(i)
 			}
 		}

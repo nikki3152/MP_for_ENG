@@ -10,7 +10,7 @@ import UIKit
 
 class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewDelegate, FontCardViewDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 	
-	var finishedHandler: ((_ questData: QuestData) -> Void)?
+	var finishedHandler: ((_ questData: QuestData?) -> Void)?
 	
 	var mojiSelectIndex: Int = 0
 	let mojiList: [String] = [
@@ -180,6 +180,8 @@ class EditViewController: UIViewController, UIScrollViewDelegate, GameTableViewD
 	@IBOutlet weak var closeButton: UIButton!
 	@IBAction func closeButtonAction(_ sender: Any) {
 		
+		self.finishedHandler?(nil)
+		self.finishedHandler = nil
 		self.dismiss(animated: true) { 
 			
 		}
