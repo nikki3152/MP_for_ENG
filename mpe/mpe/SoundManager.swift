@@ -137,7 +137,23 @@ class SoundManager: NSObject, SoundPlayerDelegate {
 		}
 		self.soundPlayer.sePlay(name: type.rawValue, type: "wav")
 	}
-	
+	func startComboSE(_ num: Int) {
+		if UserDefaults.standard.bool(forKey: kSEOn) == false {
+			return
+		}
+		var type: SEType
+		if num == 1 {type = .seCombo1}
+		else if num == 2 {type = .seCombo2}
+		else if num == 3 {type = .seCombo3}
+		else if num == 4 {type = .seCombo4}
+		else if num == 5 {type = .seCombo5}
+		else if num == 6 {type = .seCombo6}
+		else if num == 7 {type = .seCombo7}
+		else if num == 8 {type = .seCombo8}
+		else if num == 9 {type = .seCombo9}
+		else {type = .seCombo10}
+		self.soundPlayer.sePlay(name: type.rawValue, type: "wav")
+	}
 	
 	
 	//MARK: - SoundPlayerDelegate

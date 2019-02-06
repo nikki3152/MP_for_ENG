@@ -162,7 +162,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		set {
 			_isInEffect = newValue
-			//self.mainScrollView.isUserInteractionEnabled = !_isInEffect
+			//self.view.isUserInteractionEnabled = !_isInEffect
 		}
 	}
 	
@@ -334,6 +334,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	func startGameTimer() {
 		
 		self.isEnablePause = false
+		self.isInEffect = false
 		
 		if self.questIndex >= 0 || self.questIndex <= 19 {
 			SoundManager.shared.startBGM(type: .bgmEasy)		//BGM再生
@@ -440,7 +441,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	//MARK: ゲームポーズ
 	@IBOutlet weak var pauseButton: UIButton!
 	@IBAction func pauseButtonAction(_ sender: Any) {
-		if isEnablePause == false {
+		if isEnablePause == false || self.isInEffect {
 			return
 		}
 		SoundManager.shared.startSE(type: .sePause)	//SE再生
@@ -450,7 +451,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	//MARK: アンドゥ
 	@IBOutlet weak var undoButton: UIButton!
 	@IBAction func undoButtonAction(_ sender: Any) {
-		if isEnablePause == false {
+		if isEnablePause == false || self.isInEffect {
 			return
 		}
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
@@ -896,6 +897,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	
 	func fontCardViewTap(font: FontCardView) {
 		
+		if self.isInEffect {
+			return
+		}
 		self.cardSelectIndex = font.tag
 		//let moji = self.questData.cards[self.cardSelectIndex]
 		//print("\(moji)")
@@ -920,15 +924,14 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	}
 	
 	
+	
 	//MARK: - GameTableViewDelegate
 	func gameTableViewToucheDown(table: GameTableView, koma: TableKomaView) {
 		
 		self.mainScrollView.isScrollEnabled = false
 	}
 	func gameTableViewToucheUp(table: GameTableView, koma: TableKomaView) {
-		if self.isInEffect {
-			return
-		}
+		
 		//MARK: 得点計算
 		let tableIndex = koma.tag
 		self.checkKomaSet = []
@@ -997,7 +1000,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				//あたり
 				print("単語数: \(hitWords.count)")
 				var delay: Double = 0
-				//self.isInEffect = true
 				var effectCount = 0
 				var okWords = 0
 				for i in 0 ..< hitWords.count {
@@ -1019,91 +1021,71 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						
 						let mojiCount = hitWord.count
 						print("文字数: \(mojiCount)[\(hitWord)]")
-						DispatchQueue.main.asyncAfter(deadline: .now() + delay) { 
-							effectCount += 1
-							if self.questData.questType == .makeWoredsCount {
-								//+++++++++++++++++++++++++
-								//◯字数以上の英単語を◯個作る
-								//+++++++++++++++++++++++++
-								var words: Int = 0
-								if let v = self.questData.questData["words"] as? Int {
-									words = v
-								}
-								if mojiCount >= words {
-									self.questCount -= 1
-									print("\(words)字数以上の英単語を\(self.questCount)個作る")
-								}
-							}
-							else if self.questData.questType == .useFontMakeCount {
-								//+++++++++++++++++++++++++
-								//◯がつく英単語を○個作る
-								//+++++++++++++++++++++++++
-								var font: String = ""
-								if let v = self.questData.questData["font"] as? String {
-									font = v
-								}
-								if hitWord.contains(font.lowercased()) {
-									self.questCount -= 1
-								}
-							}
-							else {
-								self.questCount -= 1
-								print("残り\(self.questCount)個")
-							}
-							self.isInEffect = false
-							self.tableTapEffect(komas: komas)	//エフェクト
-							let hitView = HitInfoView.hitInfoView()
-							if effectCount == 1 {
-								SoundManager.shared.startSE(type: .seCombo1)	//SE再生
-							}
-							else if effectCount == 2 {
-								SoundManager.shared.startSE(type: .seCombo2)	//SE再生
-							}
-							else if effectCount == 3 {
-								SoundManager.shared.startSE(type: .seCombo3)	//SE再生
-							}
-							else if effectCount == 4 {
-								SoundManager.shared.startSE(type: .seCombo4)	//SE再生
-							}
-							else if effectCount == 5 {
-								SoundManager.shared.startSE(type: .seCombo5)	//SE再生
-							}
-							else if effectCount == 6 {
-								SoundManager.shared.startSE(type: .seCombo6)	//SE再生
-							}
-							else if effectCount == 7 {
-								SoundManager.shared.startSE(type: .seCombo7)	//SE再生
-							}
-							else if effectCount == 8 {
-								SoundManager.shared.startSE(type: .seCombo8)	//SE再生
-							}
-							else if effectCount == 9 {
-								SoundManager.shared.startSE(type: .seCombo9)	//SE再生
-							}
-							else {
-								SoundManager.shared.startSE(type: .seCombo10)	//SE再生
-							}
-							print("effectCount: \(effectCount)")
-							hitView.open(title: hitWord.uppercased(), info: info, parent: self.view, finished: {[weak self]() in
-								guard let s = self else {
-									return
-								}
-								if effectCount >= okWords {
-									//MARK: クリア判定
-									if s.checkGame() {
-										return
+						DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+							if self.isGameEnd == false {
+								effectCount += 1
+								if self.questData.questType == .makeWoredsCount {
+									//+++++++++++++++++++++++++
+									//◯字数以上の英単語を◯個作る
+									//+++++++++++++++++++++++++
+									var words: Int = 0
+									if let v = self.questData.questData["words"] as? Int {
+										words = v
+									}
+									if mojiCount >= words {
+										self.questCount -= 1
+										print("\(words)字数以上の英単語を\(self.questCount)個作る")
 									}
 								}
-							})
+								else if self.questData.questType == .useFontMakeCount {
+									//+++++++++++++++++++++++++
+									//◯がつく英単語を○個作る
+									//+++++++++++++++++++++++++
+									var font: String = ""
+									if let v = self.questData.questData["font"] as? String {
+										font = v
+									}
+									if hitWord.contains(font.lowercased()) {
+										self.questCount -= 1
+									}
+								}
+								else if self.questData.questType == .hiScore {
+									//+++++++++++++++++++++++++
+									//スコアを○点以上
+									//+++++++++++++++++++++++++
+									self.questCount -= score
+									print("残り\(self.questCount)点")
+								}
+								else {
+									self.questCount -= 1
+									print("残り\(self.questCount)個")
+								}
+								self.tableTapEffect(komas: komas)	//エフェクト
+								let hitView = HitInfoView.hitInfoView()
+								SoundManager.shared.startComboSE(effectCount)	//SE再生
+								print("effectCount: \(effectCount)")
+								self.isInEffect = true
+								//MARK: 正解単語表示
+								hitView.open(title: hitWord.uppercased(), info: info, parent: self.view, finished: {[weak self]() in
+									guard let s = self else {
+										return
+									}
+									if effectCount >= okWords {
+										self?.isInEffect = false
+										//MARK: クリア判定
+										if s.checkGame() {
+											return
+										}
+									}
+								})
+							}
 						}
-						delay += 1.3
+						delay += 1.2
 					} else {
 						if i == hitWords.count - 1 {
-							self.isInEffect = false
 							DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { 
 								//ハズレ
-								//SoundManager.shared.startSE(type: .seFail)	//SE再生
-								if self.emptyTableCount() == 0 || self.cardViewList.count == 0 {
+								if (self.emptyTableCount() == 0 || self.cardViewList.count == 0) && self.isInEffect == false {
 									//ゲームオーバー
 									self.gameOver()
 									return
@@ -1113,7 +1095,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					}
 				}
 			} else {
-				self.isInEffect = false
 				//ハズレ
 				SoundManager.shared.startSE(type: .seKomaPut)	//SE再生
 				if emptyTableCount() == 0 || cardViewList.count == 0 {
