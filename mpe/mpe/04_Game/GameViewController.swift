@@ -351,6 +351,15 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		self.time = self.questData.time
 		
+		//キャラクターアニメーション
+		self.charaImageView.animationImages = [
+			UIImage(named: "mojikun_a_01")!,
+			UIImage(named: "mojikun_a_02")!,
+			UIImage(named: "mojikun_a_03")!,
+		]
+		self.charaImageView.animationDuration = 10.5
+		self.charaImageView.startAnimating()
+		
 		let base = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
 		self.view.addSubview(base)
 		base.center = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2)
@@ -1026,6 +1035,40 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						print("文字数: \(mojiCount)[\(hitWord)]")
 						DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
 							if self.isGameEnd == false {
+								if effectCount == 0 {
+									//キャラクターアニメーション（回転ジャンプ）
+									let height = 140.0
+									let speed = 0.8
+									let x = self.charaImageView.center.x
+									let y = self.charaImageView.center.y
+									UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0.0, options: [], animations: { 
+										UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.3 * Double(speed), animations: { 
+											self.charaImageView.center.y = y - CGFloat(height * 0.8)
+											self.charaImageView.center.x = x - 10
+										})
+										UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.1 * Double(speed), animations: { 
+											self.charaImageView.center.y = y - CGFloat(height)
+											self.charaImageView.center.x = x
+										})
+										UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.2 * Double(speed), animations: { 
+											self.charaImageView.center.y = y
+											self.charaImageView.center.x = x + 10
+										})
+										UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.4 * Double(speed), animations: { 
+											self.charaImageView.center.y = y
+											self.charaImageView.center.x = x
+										})
+										
+										UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5 * Double(speed), animations: { 
+											self.charaImageView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+										})
+										UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5 * Double(speed), animations: { 
+											self.charaImageView.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 2)
+										})
+									}) { (stop) in
+									}
+								}
+								
 								effectCount += 1
 								if self.questData.questType == .makeWoredsCount {
 									//+++++++++++++++++++++++++
@@ -1301,7 +1344,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.gameTimer?.invalidate()
 		self.gameTimer = nil
 		
-		DataManager.animationJump(v: charaImageView, height: 40, speed: 1.0)
+		DataManager.animationJump(v: charaImageView, height: 40, speed: 1.0)	//ジャンプアニメーション
 		
 		let base = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
 		self.view.addSubview(base)
@@ -1405,6 +1448,11 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		base.addSubview(gameover)
 		gameover.center = CGPoint(x: base.frame.size.width/2, y: -gameover.frame.size.height)
 		
+		//キャラクターアニメーション停止
+		charaImageView.stopAnimating()
+		charaImageView.image = UIImage(named: "mojikun_a_03")
+		charaImageView.layer.removeAllAnimations()
+		
 		UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveEaseInOut, animations: { 
 			gameover.center = CGPoint(x: base.frame.size.width/2, y: base.frame.size.height/2)
 		}) { (stop) in
@@ -1416,6 +1464,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					return
 				}
 				s.charaBaseView.isHidden = true
+				s.charaImageView.transform = CGAffineTransform(rotationAngle: 0)
 				let over = GameOverView.gameOverView()
 				var wordList: [[String:String]] = []
 				let keys = s.answerWords.keys
@@ -1451,17 +1500,34 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			}
 		}
 		
-//		let animation = CAKeyframeAnimation(keyPath: "position.y")
-//		animation.duration = 0.75
-//		animation.keyTimes = [0.0, 0.5, 0.85, 0.95]
-//		animation.values = [
-//			base.frame.size.height/2,
-//			base.frame.size.height/2 + 10,
-//			base.frame.size.height/2,
-//			base.frame.size.height/2 + 5,
-//			base.frame.size.height/2,
-//		]
-//		gameover.layer.add(animation, forKey: nil)
+		//キャラクターアニメーション（ジャンプ反転）
+		let height = 140.0
+		let speed = 0.8
+		let x = self.charaImageView.center.x
+		let y = self.charaImageView.center.y
+		UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0.0, options: [], animations: { 
+			UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.3 * Double(speed), animations: { 
+				self.charaImageView.center.y = y - CGFloat(height * 0.8)
+				self.charaImageView.center.x = x - 10
+			})
+			UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.1 * Double(speed), animations: { 
+				self.charaImageView.center.y = y - CGFloat(height)
+				self.charaImageView.center.x = x
+			})
+			UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.2 * Double(speed), animations: { 
+				self.charaImageView.center.y = y
+				self.charaImageView.center.x = x + 10
+			})
+			UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.4 * Double(speed), animations: { 
+				self.charaImageView.center.y = y
+				self.charaImageView.center.x = x
+			})
+			
+			UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5 * Double(speed), animations: { 
+				self.charaImageView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+			})
+		}) { (stop) in
+		}
 		
 	}
 }
