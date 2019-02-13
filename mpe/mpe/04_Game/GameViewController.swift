@@ -932,6 +932,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	}
 	func gameTableViewToucheUp(table: GameTableView, koma: TableKomaView) {
 		
+		if self.isInEffect {
+			return
+		}
 		//MARK: 得点計算
 		let tableIndex = koma.tag
 		self.checkKomaSet = []
@@ -1298,16 +1301,18 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.gameTimer?.invalidate()
 		self.gameTimer = nil
 		
+		DataManager.animationJump(v: charaImageView, height: 40, speed: 1.0)
+		
 		let base = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
 		self.view.addSubview(base)
 		base.center = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2)
 		base.backgroundColor = UIColor.clear
 		
-		let gameclear = UIImageView(frame: CGRect(x: 0, y: 0, width: 539, height: 277))
+		let gameclear = UIImageView(frame: CGRect(x: 0, y: 0, width: 520, height: 200))
 		gameclear.contentMode = .scaleAspectFit
 		gameclear.image = UIImage(named: "gameclear_anim_logo.png")
 		base.addSubview(gameclear)
-		gameclear.center = CGPoint(x: base.frame.size.width/2, y: base.frame.size.height/2)
+		gameclear.center = CGPoint(x: base.frame.size.width/2, y: base.frame.size.height/2 - 20)
 		gameclear.transform = CGAffineTransform(scaleX: 0, y: 0)
 		UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveEaseInOut, animations: { 
 			gameclear.transform = CGAffineTransform(scaleX: 1, y: 1)
@@ -1319,6 +1324,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					return
 				}
 				base.removeFromSuperview()
+				
+				s.charaImageView.layer.removeAllAnimations()	//アニメーション停止
 				
 				s.charaBaseView.isHidden = true
 				let clear = GameClearView.gameClearView()
@@ -1351,6 +1358,26 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						print("辞書モードで復習！")
 					}
 				}
+			}
+		}
+		
+		//アンダーバー
+		let gameclear_ub = UIImageView(frame: CGRect(x: 0, y: 0, width: 520, height: 80))
+		gameclear_ub.contentMode = .scaleAspectFit
+		gameclear_ub.image = UIImage(named: "gameclear_anim_underbar")
+		base.addSubview(gameclear_ub)
+		gameclear_ub.center = CGPoint(x: base.frame.size.width/2, y: (base.frame.size.height/2) + (gameclear.frame.size.height / 2) + 40)
+		//文字(game clear!!)
+		for i in 1 ... 11 {
+			let num = NSString(format: "%02d", i)
+			let name = "gameclear_anim_word\(num)"
+			let gameclear_logo = UIImageView(frame: CGRect(x: 0, y: 0, width: 510, height: 66))
+			gameclear_logo.contentMode = .scaleAspectFit
+			gameclear_logo.image = UIImage(named: name)
+			base.addSubview(gameclear_logo)
+			gameclear_logo.center = CGPoint(x: base.frame.size.width/2, y: (base.frame.size.height/2) + (gameclear.frame.size.height / 2) + 33)
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { 
+				DataManager.animationJump(v: gameclear_logo, height: 25, speed: 0.5)
 			}
 		}
 		

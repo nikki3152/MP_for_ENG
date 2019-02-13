@@ -255,6 +255,18 @@
 		548FF99B21E18C2B007CD3B0 /* pauce_button_retry.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FF99521E18C2B007CD3B0 /* pauce_button_retry.png */; };
 		548FF99C21E18C2B007CD3B0 /* pauce_button_giveup_tap.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FF99621E18C2B007CD3B0 /* pauce_button_giveup_tap.png */; };
 		548FF99D21E18C2B007CD3B0 /* pauce_button_continue_tap.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FF99721E18C2B007CD3B0 /* pauce_button_continue_tap.png */; };
+		54BCA6BB22144B7A0054CEF4 /* gameclear_anim_underbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6AF22144B790054CEF4 /* gameclear_anim_underbar.png */; };
+		54BCA6BC22144B7A0054CEF4 /* gameclear_anim_word03.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6B022144B790054CEF4 /* gameclear_anim_word03.png */; };
+		54BCA6BD22144B7A0054CEF4 /* gameclear_anim_word07.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6B122144B790054CEF4 /* gameclear_anim_word07.png */; };
+		54BCA6BE22144B7A0054CEF4 /* gameclear_anim_word09.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6B222144B790054CEF4 /* gameclear_anim_word09.png */; };
+		54BCA6BF22144B7A0054CEF4 /* gameclear_anim_word06.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6B322144B790054CEF4 /* gameclear_anim_word06.png */; };
+		54BCA6C022144B7A0054CEF4 /* gameclear_anim_word08.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6B422144B790054CEF4 /* gameclear_anim_word08.png */; };
+		54BCA6C122144B7A0054CEF4 /* gameclear_anim_word04.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6B522144B7A0054CEF4 /* gameclear_anim_word04.png */; };
+		54BCA6C222144B7A0054CEF4 /* gameclear_anim_word10.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6B622144B7A0054CEF4 /* gameclear_anim_word10.png */; };
+		54BCA6C322144B7A0054CEF4 /* gameclear_anim_word11.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6B722144B7A0054CEF4 /* gameclear_anim_word11.png */; };
+		54BCA6C422144B7A0054CEF4 /* gameclear_anim_word01.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6B822144B7A0054CEF4 /* gameclear_anim_word01.png */; };
+		54BCA6C522144B7A0054CEF4 /* gameclear_anim_word05.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6B922144B7A0054CEF4 /* gameclear_anim_word05.png */; };
+		54BCA6C622144B7A0054CEF4 /* gameclear_anim_word02.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6BA22144B7A0054CEF4 /* gameclear_anim_word02.png */; };
 		54CFB3DB20DE162B00057F08 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DA20DE162B00057F08 /* HomeViewController.swift */; };
 		54CFB3DD20DE164000057F08 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */; };
 		54CFB3DF20DE1F0B00057F08 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */; };
@@ -922,6 +934,18 @@
 		548FF99521E18C2B007CD3B0 /* pauce_button_retry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauce_button_retry.png; sourceTree = "<group>"; };
 		548FF99621E18C2B007CD3B0 /* pauce_button_giveup_tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauce_button_giveup_tap.png; sourceTree = "<group>"; };
 		548FF99721E18C2B007CD3B0 /* pauce_button_continue_tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauce_button_continue_tap.png; sourceTree = "<group>"; };
+		54BCA6AF22144B790054CEF4 /* gameclear_anim_underbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_underbar.png; sourceTree = "<group>"; };
+		54BCA6B022144B790054CEF4 /* gameclear_anim_word03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_word03.png; sourceTree = "<group>"; };
+		54BCA6B122144B790054CEF4 /* gameclear_anim_word07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_word07.png; sourceTree = "<group>"; };
+		54BCA6B222144B790054CEF4 /* gameclear_anim_word09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_word09.png; sourceTree = "<group>"; };
+		54BCA6B322144B790054CEF4 /* gameclear_anim_word06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_word06.png; sourceTree = "<group>"; };
+		54BCA6B422144B790054CEF4 /* gameclear_anim_word08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_word08.png; sourceTree = "<group>"; };
+		54BCA6B522144B7A0054CEF4 /* gameclear_anim_word04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_word04.png; sourceTree = "<group>"; };
+		54BCA6B622144B7A0054CEF4 /* gameclear_anim_word10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_word10.png; sourceTree = "<group>"; };
+		54BCA6B722144B7A0054CEF4 /* gameclear_anim_word11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_word11.png; sourceTree = "<group>"; };
+		54BCA6B822144B7A0054CEF4 /* gameclear_anim_word01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_word01.png; sourceTree = "<group>"; };
+		54BCA6B922144B7A0054CEF4 /* gameclear_anim_word05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_word05.png; sourceTree = "<group>"; };
+		54BCA6BA22144B7A0054CEF4 /* gameclear_anim_word02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_word02.png; sourceTree = "<group>"; };
 		54CFB3DA20DE162B00057F08 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -1903,6 +1927,18 @@
 				54D550B121BCA66200980B92 /* gameover_button_giveup_tap.png */,
 				548FF97221E07B49007CD3B0 /* gameover_button_next_tap.png */,
 				548FF97321E07B49007CD3B0 /* gameover_button_next.png */,
+				54BCA6AF22144B790054CEF4 /* gameclear_anim_underbar.png */,
+				54BCA6B822144B7A0054CEF4 /* gameclear_anim_word01.png */,
+				54BCA6BA22144B7A0054CEF4 /* gameclear_anim_word02.png */,
+				54BCA6B022144B790054CEF4 /* gameclear_anim_word03.png */,
+				54BCA6B522144B7A0054CEF4 /* gameclear_anim_word04.png */,
+				54BCA6B922144B7A0054CEF4 /* gameclear_anim_word05.png */,
+				54BCA6B322144B790054CEF4 /* gameclear_anim_word06.png */,
+				54BCA6B122144B790054CEF4 /* gameclear_anim_word07.png */,
+				54BCA6B422144B790054CEF4 /* gameclear_anim_word08.png */,
+				54BCA6B222144B790054CEF4 /* gameclear_anim_word09.png */,
+				54BCA6B622144B7A0054CEF4 /* gameclear_anim_word10.png */,
+				54BCA6B722144B7A0054CEF4 /* gameclear_anim_word11.png */,
 				54D550B421BCA66200980B92 /* Y.png */,
 				54D550B521BCA66200980B92 /* N.png */,
 				54D550B621BCA66200980B92 /* gameclear_button_next.png */,
@@ -2409,6 +2445,7 @@
 				54DEAAA121FFD7AE00509CCD /* sports（スポーツ）① .plist in Resources */,
 				54D5526C21BCA66300980B92 /* anim_X.png in Resources */,
 				542F443E21B300DC00C51AD6 /* nature（自然）.plist in Resources */,
+				54BCA6BE22144B7A0054CEF4 /* gameclear_anim_word09.png in Resources */,
 				54CFB3DD20DE164000057F08 /* HomeViewController.storyboard in Resources */,
 				5429F3B721CF06B600E0E50F /* countup_2.png in Resources */,
 				54D551ED21BCA66300980B92 /* select_erabukun.png in Resources */,
@@ -2432,6 +2469,7 @@
 				5429F3B121CF06B600E0E50F /* countup_7.png in Resources */,
 				54D5531221BCA66300980B92 /* data_next.png in Resources */,
 				548FF97121DF873B007CD3B0 /* game_over.png in Resources */,
+				54BCA6C422144B7A0054CEF4 /* gameclear_anim_word01.png in Resources */,
 				5467652F21F556E00025A5A9 /* anthropology（人類学）.plist in Resources */,
 				54D5531321BCA66300980B92 /* data_line.png in Resources */,
 				542F446A21B57FAD00C51AD6 /* used up（使い切り）.plist in Resources */,
@@ -2477,8 +2515,10 @@
 				54D5534821BCA66300980B92 /* home_main_logo.png in Resources */,
 				548FF99021E164EE007CD3B0 /* new_record_red.png in Resources */,
 				54D552BD21BCA66300980B92 /* obj_star_01.png in Resources */,
+				54BCA6BD22144B7A0054CEF4 /* gameclear_anim_word07.png in Resources */,
 				54D5525421BCA66300980B92 /* gameover_button_review.png in Resources */,
 				54D5520921BCA66300980B92 /* select_mapchange_right_intermediate.png in Resources */,
+				54BCA6BC22144B7A0054CEF4 /* gameclear_anim_word03.png in Resources */,
 				54D552D821BCA66300980B92 /* gameover_button_giveup.png in Resources */,
 				54D5524321BCA66300980B92 /* GO!!.png in Resources */,
 				54D5521C21BCA66300980B92 /* orange_2.png in Resources */,
@@ -2538,6 +2578,7 @@
 				54D5529721BCA66300980B92 /* obj_flower_05.png in Resources */,
 				546764BF21EF1F6F0025A5A9 /* crossword（クロスワード）⑥.plist in Resources */,
 				54D5526721BCA66300980B92 /* gameclear_button_review.png in Resources */,
+				54BCA6C622144B7A0054CEF4 /* gameclear_anim_word02.png in Resources */,
 				54D5532A21BCA66300980B92 /* taiki_panel_04.png in Resources */,
 				54D5524B21BCA66300980B92 /* anim_H.png in Resources */,
 				54D5534E21BCA66300980B92 /* quiz_answer.png in Resources */,
@@ -2597,6 +2638,7 @@
 				54D551E121BCA66300980B92 /* select_highscore.png in Resources */,
 				54D5522C21BCA66300980B92 /* orange_1.png in Resources */,
 				54D5520C21BCA66300980B92 /* select_stagechange_left.png in Resources */,
+				54BCA6C322144B7A0054CEF4 /* gameclear_anim_word11.png in Resources */,
 				54612D4D21FE97A10091D7BD /* quiz_intermediate.txt in Resources */,
 				546764C521EF24020025A5A9 /* BGM_TOP画面_hit.wav in Resources */,
 				546764EB21EF24300025A5A9 /* SE_コンボ⑤.wav in Resources */,
@@ -2622,6 +2664,7 @@
 				54D5530121BCA66300980B92 /* custom_box_01.png in Resources */,
 				54D552DA21BCA66300980B92 /* P.png in Resources */,
 				54D552E621BCA66300980B92 /* story_02.png in Resources */,
+				54BCA6C122144B7A0054CEF4 /* gameclear_anim_word04.png in Resources */,
 				546764E821EF24300025A5A9 /* SE_コンボ④.wav in Resources */,
 				54D5524A21BCA66300980B92 /* cell_anime12.png in Resources */,
 				54D551E621BCA66300980B92 /* select_mapchange_left_god.png in Resources */,
@@ -2663,6 +2706,7 @@
 				542F446F21B57FAD00C51AD6 /* cross（十字）.plist in Resources */,
 				542F446721B57FAD00C51AD6 /* standard（基本）.plist in Resources */,
 				54D5525521BCA66300980B92 /* cell_anime9.png in Resources */,
+				54BCA6C222144B7A0054CEF4 /* gameclear_anim_word10.png in Resources */,
 				542F444921B300DC00C51AD6 /* number（数字）.plist in Resources */,
 				54D5534321BCA66300980B92 /* home_background.png in Resources */,
 				54D552C821BCA66300980B92 /* S.png in Resources */,
@@ -2763,6 +2807,7 @@
 				54D5533C21BCA66300980B92 /* setting_panel_01_tap.png in Resources */,
 				54D5520D21BCA66300980B92 /* select_stagemap_06.png in Resources */,
 				54D5528021BCA66300980B92 /* obj_flower_03.png in Resources */,
+				54BCA6C522144B7A0054CEF4 /* gameclear_anim_word05.png in Resources */,
 				54D5524221BCA66300980B92 /* orange_10.png in Resources */,
 				54D5527821BCA66300980B92 /* obj_parasol_04.png in Resources */,
 				54D551F821BCA66300980B92 /* select_box.png in Resources */,
@@ -2780,6 +2825,7 @@
 				54F3A6E32197CDC400A1E01F /* ConditionsPickerView.xib in Resources */,
 				5467652E21F556E00025A5A9 /* school caste（スクールカースト）.plist in Resources */,
 				54CFB3F720DE31DB00057F08 /* QuickQuestViewController.storyboard in Resources */,
+				54BCA6BF22144B7A0054CEF4 /* gameclear_anim_word06.png in Resources */,
 				54D5522A21BCA66300980B92 /* I.png in Resources */,
 				546764F321EF24300025A5A9 /* BGM_ランダムステージ_loop.wav in Resources */,
 				5467652921F556E00025A5A9 /* K（K縛り）.plist in Resources */,
@@ -2856,6 +2902,7 @@
 				54D552D721BCA66300980B92 /* G.png in Resources */,
 				54D5526321BCA66300980B92 /* pauce_button_retry.png in Resources */,
 				54D5535021BCA66300980B92 /* quiz_correct.png in Resources */,
+				54BCA6C022144B7A0054CEF4 /* gameclear_anim_word08.png in Resources */,
 				546764B121EF1F6F0025A5A9 /* idiom（熟語）.plist in Resources */,
 				542F444421B300DC00C51AD6 /* vehicle（陸用車）.plist in Resources */,
 				546764F021EF24300025A5A9 /* BGM_TOP画面_loop.wav in Resources */,
@@ -2865,6 +2912,7 @@
 				54CFB40320DE371700057F08 /* SettingViewController.storyboard in Resources */,
 				54D5534A21BCA66300980B92 /* home_erabukun.png in Resources */,
 				546764B721EF1F6F0025A5A9 /* moji-kun（もじくん？）.plist in Resources */,
+				54BCA6BB22144B7A0054CEF4 /* gameclear_anim_underbar.png in Resources */,
 				54D5529F21BCA66300980B92 /* blue_right.png in Resources */,
 				54D551F521BCA66300980B92 /* select_timelimit.png in Resources */,
 				54D551F421BCA66300980B92 /* select_pleview_right.png in Resources */,
