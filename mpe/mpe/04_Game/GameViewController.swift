@@ -216,10 +216,10 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.scoreLabel.outlineColor = UIColor.black
-		self.scoreLabel.outlineWidth = 3
+		self.scoreLabel.outlineWidth = 5
 		
 		self.timeLabel.outlineColor = UIColor.black
-		self.timeLabel.outlineWidth = 3
+		self.timeLabel.outlineWidth = 5
 		
 		self.ballonImageView.alpha = 0
 		self.ballonDisplayImageView.alpha = 0
@@ -312,7 +312,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	}
 	
 	//タイム
-	@IBOutlet weak var timeTitleLabel: UILabel!
+	@IBOutlet weak var timeBaseView: UIView!
+	@IBOutlet weak var timeBackImageView: UIImageView!
 	@IBOutlet weak var timeLabel: OutlineLabel!
 	var gameTimer: Timer!
 	var _time: Double = 99
@@ -323,15 +324,62 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		set {
 			_time = newValue
 			if _time == 0 {
-				self.timeTitleLabel.isHidden = true
-				self.timeLabel.isHidden = true
+				self.timeBaseView.isHidden = true
 			} else {
-				self.timeTitleLabel.isHidden = false
-				self.timeLabel.isHidden = false
+				self.timeBaseView.isHidden = false
 			}
-			self.timeLabel.text = "\(Int(_time))"
+			let m = Int(_time / 60)
+			let s = Int(_time) % 60
+			self.timeLabel?.text = "\(NSString(format: "%02d", m)) : \(NSString(format: "%02d", s))"
+			//self.timeLabel.text = "\(Int(_time))"
 		}
 	}
+	
+	//コンボ
+	@IBOutlet weak var chainImageView: UIImageView!
+	func makeChainAnimation(num: Int) {
+		
+		print("コンボ: \(num)")
+		if num >= 2 && num <= 9 {
+			chainImageView.image = UIImage(named: "chain\(num)")
+			chainImageView.alpha = 1
+			let imgView = chainImageView
+			UIView.animateKeyframes(withDuration: 0.3, delay: 0.0, options: [], animations: { 
+				UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.15, animations: { 
+					imgView!.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+				})
+				UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.15, animations: { 
+					imgView!.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+				})
+			}) {(stop) in
+				imgView!.image = UIImage(named: "chain\(num)_anim")
+				UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveLinear, animations: { 
+					imgView!.alpha = 0
+				}, completion: { (stop) in
+				})
+			}
+		}
+		else if num >= 10 {
+			chainImageView.image = UIImage(named: "chainmax")
+			chainImageView.alpha = 1
+			let imgView = chainImageView
+			UIView.animateKeyframes(withDuration: 0.3, delay: 0.0, options: [], animations: { 
+				UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.15, animations: { 
+					imgView!.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+				})
+				UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.15, animations: { 
+					imgView!.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+				})
+			}) {(stop) in
+				UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveLinear, animations: { 
+					imgView!.alpha = 0
+				}, completion: { (stop) in
+				})
+			}
+		}
+	}
+	
+	
 	
 	//MARK: タイマースタート
 	func startGameTimer() {
@@ -362,6 +410,14 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		]
 		self.charaImageView.animationDuration = 10.5
 		self.charaImageView.startAnimating()
+		
+		//雲アニメーション
+		self.timeBackImageView.animationImages = [
+			UIImage(named: "time_cloud_01")!,
+			UIImage(named: "time_cloud_02")!,
+		]
+		self.timeBackImageView.animationDuration = 2.3
+		self.timeBackImageView.startAnimating()
 		
 		let base = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
 		self.view.addSubview(base)
@@ -1123,6 +1179,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 								self.tableTapEffect(komas: komas)	//エフェクト
 								let hitView = HitInfoView.hitInfoView()
 								SoundManager.shared.startComboSE(effectCount)	//SE再生
+								self.makeChainAnimation(num: effectCount)		//コンボアニメーション
 								print("effectCount: \(effectCount)")
 								self.isInEffect = true
 								//MARK: 正解単語表示
@@ -1447,6 +1504,10 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		isEnablePause = false
 		SoundManager.shared.startBGM(type: .bgmFail)	//BGM再生
+		
+		//ゲームオーバー雲
+		self.timeBackImageView.stopAnimating()
+		self.timeBackImageView.image = UIImage(named: "time_cloud_gameover")
 		
 		isGameEnd = true
 		self.gameTimer?.invalidate()

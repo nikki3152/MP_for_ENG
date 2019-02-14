@@ -1382,6 +1382,7 @@
 		5429F37B21CF055300E0E50F /* time */ = {
 			isa = PBXGroup;
 			children = (
+				5429F35E21CF052700E0E50F /* time_cloud_01.png */,
 				5429F34F21CF052500E0E50F /* time_cloud_02.png */,
 				5429F35821CF052600E0E50F /* time_cloud_gameover.png */,
 				5429F36121CF052800E0E50F /* time0_danger.png */,
@@ -1406,7 +1407,6 @@
 				5429F35C21CF052700E0E50F /* time9.png */,
 				5429F35921CF052600E0E50F /* timecolon_gameover.png */,
 				5429F34D21CF052500E0E50F /* timecolon.png */,
-				5429F35E21CF052700E0E50F /* time_cloud_01.png */,
 			);
 			path = time;
 			sourceTree = "<group>";
@@ -1462,23 +1462,23 @@
 		5429F3CF21CF06E400E0E50F /* chain */ = {
 			isa = PBXGroup;
 			children = (
-				5429F3D021CF06E400E0E50F /* chain8.png */,
-				5429F3D121CF06E400E0E50F /* chain6_anim.png */,
-				5429F3D221CF06E400E0E50F /* chain7_anim.png */,
-				5429F3D321CF06E400E0E50F /* chain9.png */,
 				5429F3D421CF06E400E0E50F /* chain2.png */,
 				5429F3D521CF06E400E0E50F /* chain2_anim.png */,
-				5429F3D621CF06E400E0E50F /* chain3_anim.png */,
 				5429F3D721CF06E400E0E50F /* chain3.png */,
-				5429F3D821CF06E400E0E50F /* chain8_anim.png */,
-				5429F3D921CF06E400E0E50F /* chain9_anim.png */,
+				5429F3D621CF06E400E0E50F /* chain3_anim.png */,
 				5429F3DA21CF06E400E0E50F /* chain4.png */,
-				5429F3DB21CF06E400E0E50F /* chain5.png */,
-				5429F3DC21CF06E400E0E50F /* chain7.png */,
-				5429F3DD21CF06E400E0E50F /* chain6.png */,
-				5429F3DE21CF06E400E0E50F /* chainmax.png */,
-				5429F3DF21CF06E400E0E50F /* chain5_anim.png */,
 				5429F3E021CF06E400E0E50F /* chain4_anim.png */,
+				5429F3DB21CF06E400E0E50F /* chain5.png */,
+				5429F3DF21CF06E400E0E50F /* chain5_anim.png */,
+				5429F3DD21CF06E400E0E50F /* chain6.png */,
+				5429F3D121CF06E400E0E50F /* chain6_anim.png */,
+				5429F3DC21CF06E400E0E50F /* chain7.png */,
+				5429F3D221CF06E400E0E50F /* chain7_anim.png */,
+				5429F3D021CF06E400E0E50F /* chain8.png */,
+				5429F3D821CF06E400E0E50F /* chain8_anim.png */,
+				5429F3D321CF06E400E0E50F /* chain9.png */,
+				5429F3D921CF06E400E0E50F /* chain9_anim.png */,
+				5429F3DE21CF06E400E0E50F /* chainmax.png */,
 			);
 			path = chain;
 			sourceTree = "<group>";
