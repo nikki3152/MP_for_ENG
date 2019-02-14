@@ -218,6 +218,10 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.scoreLabel.outlineColor = UIColor.black
 		self.scoreLabel.outlineWidth = 5
 		
+		self.nowScoreLabel.outlineColor = UIColor.black
+		self.nowScoreLabel.outlineWidth = 5
+		self.nowScore = 0
+		
 		self.timeLabel.outlineColor = UIColor.black
 		self.timeLabel.outlineWidth = 5
 		
@@ -297,7 +301,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	var ballonMainLabel: TTTAttributedLabel!
 	
 	
-	//スコア
+	//トータルスコア
 	@IBOutlet weak var scoreBaseView: UIView!
 	@IBOutlet weak var scoreLabel: OutlineLabel!
 	var _totalScore: Int = 0
@@ -308,6 +312,33 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		set {
 			_totalScore = newValue
 			self.scoreLabel.text = NSString(format: "%05d", _totalScore) as String
+		}
+	}
+	//スコア
+	@IBOutlet weak var nowScoreBaseView: UIView!
+	@IBOutlet weak var nowScoreLabel: OutlineLabel!
+	var _nowScore: Int = 0
+	var nowScore: Int {
+		get {
+			return _nowScore
+		}
+		set {
+			_nowScore = newValue
+			self.nowScoreLabel.text = NSString(format: "%d", _nowScore) as String
+			if _nowScore == 0 {
+				nowScoreLabel.isHidden = true
+			} else {
+				nowScoreLabel.isHidden = false
+			}
+		}
+	}
+	func setNowScore(score: Int, last: Bool) {
+		
+		self.nowScore = score
+		if last {
+			nowScoreLabel.textColor = UIColor(displayP3Red: 250/255, green: 194/255, blue: 27/255, alpha: 1.0)
+		} else {
+			nowScoreLabel.textColor = UIColor.white
 		}
 	}
 	
@@ -480,6 +511,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		self.answerWords = [:]
 		self.totalScore = 0
+		self.nowScore = 0
 		self.questData = self.questDataDef
 		//手札
 		self.updateCardScroll()
@@ -878,7 +910,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	
 	//MARK: - スコア計算
 	//文字から得点計算
-	func score(moji: [TableInfo]) -> Int {
+	func makeScore(moji: [TableInfo]) -> Int {
 		
 		var score = 0
 		var bw: Int = 1
@@ -1112,19 +1144,23 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				SoundManager.shared.startSE(type: .seCorrect)	//SE再生
 				//あたり
 				print("単語数: \(hitWords.count)")
-				var delay: Double = 0
+				var delay: Double = 0.2
 				var effectCount = 0
 				var okWords = 0
+				var scores: [Int] = []
 				for i in 0 ..< hitWords.count {
 					let hitWord = hitWords[i]
 					let info = infoText[i]
 					let infoData = infoList[i]
 					if nil == self.answerWords[hitWord] {
+						//!!!!!!!!!!!!!!
+						//有効ヒット！！
+						//!!!!!!!!!!!!!!
 						okWords += 1
 						self.answerWords[hitWord] = info	//回答済み単語入り
 						//スコア計算
-						let score = self.score(moji: infoData)
-						self.totalScore += score
+						let score = self.makeScore(moji: infoData)
+						scores.append(score)
 						//コマの特定
 						var komas: [TableKomaView] = []
 						for info in infoData {
@@ -1136,10 +1172,18 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						print("文字数: \(mojiCount)[\(hitWord)]")
 						DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
 							if self.isGameEnd == false {
-								if effectCount == 0 {
-								}
 								
 								effectCount += 1
+								
+								//スコア表示更新
+								var isLast = false
+								if effectCount >= okWords {
+									isLast = true
+								}
+								let nScore = scores[effectCount - 1]
+								self.totalScore += nScore
+								self.setNowScore(score: self.nowScore + nScore, last: isLast)
+								
 								if self.questData.questType == .makeWoredsCount {
 									//+++++++++++++++++++++++++
 									//◯字数以上の英単語を◯個作る
@@ -1188,6 +1232,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 										return
 									}
 									if effectCount >= okWords {
+										self?.nowScore = 0
 										self?.isInEffect = false
 										//MARK: クリア判定
 										if s.checkGame() {

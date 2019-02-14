@@ -100,7 +100,7 @@
                                         <rect key="frame" x="5" y="19" width="119" height="25"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
-                                        <color key="textColor" red="0.97966056034482762" green="0.96181303879310343" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.97966056034482762" green="0.75899876322492155" blue="0.10582386363636363" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Score_word.png" translatesAutoresizingMaskIntoConstraints="NO" id="jCy-VO-eE2">
@@ -156,6 +156,19 @@
                                 <rect key="frame" x="553" y="114" width="166" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxe-YI-2pN">
+                                <rect key="frame" x="590" y="159" width="126" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpI-od-cYW" customClass="OutlineLabel" customModule="mpe" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="116" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
+                                        <color key="textColor" red="0.97966056030000004" green="0.75899876320000004" blue="0.1058238636" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iap-VV-fMB"/>
@@ -173,6 +186,8 @@
                         <outlet property="charaImageView" destination="hlP-yQ-Ocs" id="sJq-qL-C3j"/>
                         <outlet property="editButton" destination="MLx-ej-Tbt" id="JAI-4k-oWR"/>
                         <outlet property="mainScrollView" destination="Epb-1z-iO6" id="Y1N-Po-MOg"/>
+                        <outlet property="nowScoreBaseView" destination="gxe-YI-2pN" id="Iwy-K1-5OL"/>
+                        <outlet property="nowScoreLabel" destination="jpI-od-cYW" id="YuM-S9-xJa"/>
                         <outlet property="pauseButton" destination="JSe-yj-Dfs" id="fbp-O2-QzD"/>
                         <outlet property="questBaseImageView" destination="tae-oi-Zh4" id="PxA-Ur-ADd"/>
                         <outlet property="questBaseView" destination="1cO-p3-EVK" id="tl5-37-OX9"/>
