@@ -220,6 +220,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		self.timeLabel.outlineColor = UIColor.black
 		self.timeLabel.outlineWidth = 3
+		
+		self.ballonImageView.alpha = 0
+		self.ballonDisplayImageView.alpha = 0
     }
 	
 	override func viewWillLayoutSubviews() {
@@ -234,7 +237,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			//問題
 			self.updateQuestString()
 			//文字くんメッセージ
-			self.updateMojikunString()
+			//self.updateMojikunString()
 			
 			if UIDevice.current.userInterfaceIdiom == .phone {
 				let size = UIScreen.main.bounds
@@ -429,7 +432,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		//問題
 		self.updateQuestString()
 		//文字くんメッセージ
-		self.updateMojikunString()
+		//self.updateMojikunString()
 		
 	}
 	//MARK: 次の問題
@@ -576,6 +579,15 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.ballonDisplayImageView.addSubview(bLabel)
 		bLabel.center = CGPoint(x: self.ballonDisplayImageView.frame.size.width / 2, y: self.ballonDisplayImageView.frame.size.height / 2)
 		self.ballonMainLabel = bLabel
+		
+		self.ballonImageView.alpha = 1
+		self.ballonDisplayImageView.alpha = 1
+		UIView.animate(withDuration: 0.25, delay: 2.0, options: .curveLinear, animations: { 
+			self.ballonImageView.alpha = 0
+			self.ballonDisplayImageView.alpha = 0
+		}) { (stop) in
+			
+		}
 	}
 	
 	
@@ -760,7 +772,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				//問題
 				self?.updateQuestString()
 				//文字くんメッセージ
-				self?.updateMojikunString()
+				//self?.updateMojikunString()
 			}
 		}
 	}
@@ -773,6 +785,39 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			word.append(info.moji)
 		}
 		return word.lowercased()
+	}
+	
+	//MARK: - キャラクターアニメーション
+	func makeCharaAnimation() {
+		
+		//回転ジャンプ
+		let height = 140.0
+		let speed = 0.8
+		let y = self.charaImageView.center.y
+		UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0.0, options: [], animations: { 
+			UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.3 * Double(speed), animations: { 
+				self.charaImageView.center.y = y - CGFloat(height * 0.8)
+			})
+			UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.1 * Double(speed), animations: { 
+				self.charaImageView.center.y = y - CGFloat(height)
+			})
+			UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.2 * Double(speed), animations: { 
+				self.charaImageView.center.y = y
+			})
+			UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.4 * Double(speed), animations: { 
+				self.charaImageView.center.y = y
+			})
+			
+		}) { (stop) in
+		}
+		let animation:CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation")
+		animation.toValue = Double.pi
+		animation.duration = 0.25
+		animation.repeatCount = 2
+		animation.isCumulative = true
+		self.charaImageView.layer.add(animation, forKey: "ImageViewRotation")
+		self.charaImageView.layer.speed = 1.0
+		
 	}
 	
 	//MARK: - スコア計算
@@ -1036,37 +1081,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
 							if self.isGameEnd == false {
 								if effectCount == 0 {
-									//キャラクターアニメーション（回転ジャンプ）
-									let height = 140.0
-									let speed = 0.8
-									let x = self.charaImageView.center.x
-									let y = self.charaImageView.center.y
-									UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0.0, options: [], animations: { 
-										UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.3 * Double(speed), animations: { 
-											self.charaImageView.center.y = y - CGFloat(height * 0.8)
-											self.charaImageView.center.x = x - 10
-										})
-										UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.1 * Double(speed), animations: { 
-											self.charaImageView.center.y = y - CGFloat(height)
-											self.charaImageView.center.x = x
-										})
-										UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.2 * Double(speed), animations: { 
-											self.charaImageView.center.y = y
-											self.charaImageView.center.x = x + 10
-										})
-										UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.4 * Double(speed), animations: { 
-											self.charaImageView.center.y = y
-											self.charaImageView.center.x = x
-										})
-										
-										UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5 * Double(speed), animations: { 
-											self.charaImageView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-										})
-										UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5 * Double(speed), animations: { 
-											self.charaImageView.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 2)
-										})
-									}) { (stop) in
-									}
 								}
 								
 								effectCount += 1
@@ -1124,6 +1138,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 										}
 									}
 								})
+								self.makeCharaAnimation()	//きキャラクターアニメーション
 							}
 						}
 						delay += 1.2
