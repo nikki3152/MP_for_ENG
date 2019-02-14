@@ -8,6 +8,17 @@
 
 import UIKit
 
+enum ObjDirection: Int {
+	case up				= 0
+	case upRight		= 1
+	case right			= 2
+	case downRight		= 3
+	case down			= 4
+	case downLeft		= 5
+	case left			= 6
+	case upLeft			= 7
+}
+
 enum QuestType: Int {
 	case makeWords				= 0 		//英単語を◯個作る
 	case fillAllCell			= 1 		//全てのマスを埋める
@@ -234,15 +245,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		if self.gameTable == nil {
 			
-			//手札
-			self.updateCardScroll()
-			//ゲームテーブル
-			self.updateGametable()
-			//問題
-			self.updateQuestString()
-			//文字くんメッセージ
-			//self.updateMojikunString()
-			
 			if UIDevice.current.userInterfaceIdiom == .phone {
 				let size = UIScreen.main.bounds
 				if size.width >= 812 {
@@ -418,17 +420,27 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.isEnablePause = false
 		self.isInEffect = false
 		
+		//手札
+		self.updateCardScroll()
+		//ゲームテーブル
+		self.updateGametable()
+		//問題
+		self.updateQuestString()
+		//文字くんメッセージ
+		//self.updateMojikunString()
+		
+		//BGM再生
 		if self.questIndex >= 0 || self.questIndex <= 19 {
-			SoundManager.shared.startBGM(type: .bgmEasy)		//BGM再生
+			SoundManager.shared.startBGM(type: .bgmEasy)		
 		}
 		else if self.questIndex >= 20 || self.questIndex <= 29 {
-			SoundManager.shared.startBGM(type: .bgmNormal)		//BGM再生
+			SoundManager.shared.startBGM(type: .bgmNormal)
 		}
 		else if self.questIndex >= 30 || self.questIndex <= 39 {
-			SoundManager.shared.startBGM(type: .bgmHard)		//BGM再生
+			SoundManager.shared.startBGM(type: .bgmHard)
 		}
 		else if self.questIndex >= 40 || self.questIndex <= 49 {
-			SoundManager.shared.startBGM(type: .bgmGod)			//BGM再生
+			SoundManager.shared.startBGM(type: .bgmGod)
 		}
 		
 		self.time = self.questData.time
@@ -501,6 +513,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			}
 		}
 		
+		makeBackAnimation()
 	}
 	
 	
@@ -906,6 +919,53 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.charaImageView.layer.add(animation, forKey: "ImageViewRotation")
 		self.charaImageView.layer.speed = 1.0
 		
+	}
+	
+	//MARK: - 背景アニメーション
+	var backgroundTimer: Timer!
+	var objDirection: ObjDirection = .downLeft
+	
+	var objName: String = "obj_flower_01"
+	func makeBackAnimation() {
+		
+		for v in backImageView.subviews {
+			v.removeFromSuperview()
+		}
+		let size = self.backImageView.frame.size
+		for i in 0 ..< 15 {
+			let y = Int.random(in: 0 ..< Int(size.height))
+			let x = Int.random(in: Int(size.width / 4) ..< Int(size.width * 1.5))
+			let _ = self.makeObj(parent: backImageView, tag: i + 100, x: x, y: y, image: objName)
+		}
+		backgroundTimer?.invalidate()
+		backgroundTimer = Timer.scheduledTimer(withTimeInterval: 1.0 / 60, repeats: true, block: { [weak self](t) in
+			guard let s = self else {
+				return
+			}
+			let size = s.backImageView.frame.size
+			let stars = s.backImageView.subviews
+			for star in stars {
+				let tag = star.tag
+				star.center = CGPoint(x: star.center.x - 0.4, y: star.center.y + 0.4)
+				if star.center.y > size.height + 40 {
+					star.removeFromSuperview()
+					let x = Int.random(in: Int(size.width / 4) ..< Int(size.width * 1.5))
+					let _ = s.makeObj(parent: s.backImageView, tag: tag, x: x, y: -40, image: s.objName)
+				} 
+			}
+		})
+		
+	}
+	func makeObj(parent: UIView, tag: Int, x: Int, y: Int, image: String) -> UIImageView {
+		
+		let star = UIImageView(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
+		star.contentMode = .scaleAspectFit
+		star.tag = tag 
+		star.image = UIImage(named: image)
+		parent.addSubview(star)
+		star.center = CGPoint(x: x, y: y)
+		
+		return star
 	}
 	
 	//MARK: - スコア計算
@@ -1548,7 +1608,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			}
 		}
 		
-		//エフェクト
+		//火花エフェクト
 		let images: [UIImage] = [
 			UIImage(named: "gameclear_anim_effect0.png")!,
 			UIImage(named: "gameclear_anim_effect1.png")!,
