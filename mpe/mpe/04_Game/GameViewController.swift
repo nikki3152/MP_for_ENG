@@ -439,7 +439,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			UIImage(named: "mojikun_a_02")!,
 			UIImage(named: "mojikun_a_03")!,
 		]
-		self.charaImageView.animationDuration = 10.5
+		self.charaImageView.animationDuration = 3.5
 		self.charaImageView.startAnimating()
 		
 		//雲アニメーション
@@ -900,8 +900,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		let animation:CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation")
 		animation.toValue = Double.pi
-		animation.duration = 0.25
-		animation.repeatCount = 2
+		animation.duration = 0.125
+		animation.repeatCount = 4
 		animation.isCumulative = true
 		self.charaImageView.layer.add(animation, forKey: "ImageViewRotation")
 		self.charaImageView.layer.speed = 1.0
@@ -1461,6 +1461,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.gameTimer?.invalidate()
 		self.gameTimer = nil
 		
+		var effectTimer: Timer!
 		DataManager.animationJump(v: charaImageView, height: 40, speed: 1.0)	//ジャンプアニメーション
 		
 		let base = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
@@ -1483,8 +1484,14 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				guard let s = self else {
 					return
 				}
+				for v in base.subviews {
+					v.layer.removeAllAnimations()
+					v.removeFromSuperview()
+				}
 				base.removeFromSuperview()
 				
+				effectTimer.invalidate()
+				effectTimer = nil
 				s.charaImageView.layer.removeAllAnimations()	//アニメーション停止
 				
 				s.charaBaseView.isHidden = true
@@ -1541,6 +1548,42 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			}
 		}
 		
+		//エフェクト
+		let images: [UIImage] = [
+			UIImage(named: "gameclear_anim_effect0.png")!,
+			UIImage(named: "gameclear_anim_effect1.png")!,
+			UIImage(named: "gameclear_anim_effect2.png")!,
+			UIImage(named: "gameclear_anim_effect3.png")!,
+			UIImage(named: "gameclear_anim_effect4.png")!,
+			UIImage(named: "gameclear_anim_effect5.png")!,
+			UIImage(named: "gameclear_anim_effect6.png")!,
+			UIImage(named: "gameclear_anim_effect7.png")!,
+			UIImage(named: "gameclear_anim_effect8.png")!,
+			UIImage(named: "gameclear_anim_effect9.png")!,
+			UIImage(named: "gameclear_anim_effect10.png")!,
+			UIImage(named: "gameclear_anim_effect11.png")!,
+			UIImage(named: "gameclear_anim_effect12.png")!,
+			UIImage(named: "gameclear_anim_effect13.png")!,
+			UIImage(named: "gameclear_anim_effect14.png")!,
+			UIImage(named: "gameclear_anim_effect15.png")!,
+			UIImage(named: "gameclear_anim_effect16.png")!,
+			UIImage(named: "gameclear_anim_effect17.png")!,
+			UIImage(named: "gameclear_anim_effect18.png")!,
+			UIImage(named: "gameclear_anim_effect19.png")!,
+			UIImage(named: "gameclear_anim_effect20.png")!,
+			UIImage(named: "gameclear_anim_effect21.png")!,
+		]
+		let size = base.frame.size
+		effectTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { (t) in
+			let effect = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+			base.addSubview(effect)
+			let y = Int.random(in: 50 ..< Int(size.height - 50))
+			let x = Int.random(in: 50 ..< Int(size.width - 50))
+			effect.center = CGPoint(x: x, y: y)
+			effect.animationImages = images
+			effect.animationDuration = 1.0
+			effect.startAnimating()
+		})
 	}
 	//MARK: ゲームオーバー
 	func gameOver() {
