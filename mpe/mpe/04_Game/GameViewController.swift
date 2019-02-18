@@ -934,33 +934,43 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		let stage = questIndex + 1
 		if stage == 1 || stage == 6 || stage == 11 || stage == 16 {
 			objNames = ["obj_flower_01"]
-			dx = -0.4
-			dy = 0.4
-			direction = "LD"
+			direction = "LD"; dx = -0.4; dy = 0.4
 		}
 		else if stage == 2 || stage == 7 || stage == 12 || stage == 17 {
 			objNames = ["obj_balloon_01","obj_balloon_02","obj_balloon_03","obj_balloon_04","obj_balloon_05","obj_balloon_06"]
-			dx = 0
-			dy = -0.4
-			direction = "U"
+			direction = "U";dx = 0;dy = -0.4
 		}
-		if stage == 3 || stage == 8 || stage == 13 || stage == 18 {
+		else if stage == 3 || stage == 8 || stage == 13 || stage == 18 {
 			objNames = ["obj_egg_01"]
-			dx = -0.4
-			dy = 0
-			direction = "L"
+			direction = "L";dx = -0.4;dy = 0
 		}
-		if stage == 4 || stage == 9 || stage == 14 || stage == 19 {
+		else if stage == 4 || stage == 9 || stage == 14 || stage == 19 {
 			objNames = ["obj_mush"]
-			dx = 0.4
-			dy = 0
-			direction = "R"
+			direction = "R";dx = 0.4;dy = 0
 		}
-		if stage == 5 || stage == 10 || stage == 15 || stage == 20 {
+		else if stage == 5 || stage == 10 || stage == 15 || stage == 20 {
 			objNames = ["obj_leaf_01"]
-			dx = 0
-			dy = 0.4
-			direction = "D"
+			direction = "D";dx = 0;dy = 0.4
+		}
+		else if stage == 21 || stage == 26 || stage == 31 || stage == 36 {
+			objNames = ["obj_parasol_01","obj_parasol_02","obj_parasol_03","obj_parasol_04"]
+			direction = "U";dx = 0;dy = -0.4
+		}
+		else if stage == 22 || stage == 27 || stage == 32 || stage == 37 {
+			objNames = ["obj_fish_01","obj_fish_02"]
+			direction = "L";dx = -0.4;dy = 0
+		}
+		else if stage == 23 || stage == 28 || stage == 33 || stage == 38 {
+			objNames = ["obj_down_01","obj_down_02","obj_down_03"]
+			direction = "D";dx = 0;dy = 0.4
+		}
+		else if stage == 24 || stage == 29 || stage == 34 || stage == 39 {
+			objNames = ["obj_flowerpost_01","obj_flowerpost_02"]
+			direction = "LU";dx = -0.4;dy = -0.4
+		}
+		else if stage == 25 || stage == 30 || stage == 35 || stage == 40 {
+			objNames = ["obj_mojikun_01"]
+			direction = "LD";dx = -0.4;dy = 0.4
 		}
 		
 		for v in backImageView.subviews {
@@ -1001,6 +1011,20 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 							objName = objNames[index]
 						}
 						let _ = s.makeObj(parent: s.backImageView, tag: tag, x: x, y: -40, image: objName)
+					} 
+				}
+				else if direction == "LU" {
+					if star.center.y < -40 {
+						star.removeFromSuperview()
+						let x = Int.random(in: -Int(size.width / 4) ..< Int(size.width * 0.75))
+						var objName: String = ""
+						if objNames.count == 0 {
+							objName = objNames[0]
+						} else {
+							let index = Int.random(in: 0 ..< objNames.count)
+							objName = objNames[index]
+						}
+						let _ = s.makeObj(parent: s.backImageView, tag: tag, x: x, y: Int(size.height + 40), image: objName)
 					} 
 				}
 				else if direction == "U" {
