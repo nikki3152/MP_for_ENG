@@ -25,6 +25,14 @@
 		5404EA3D221AB808008A8B6D /* obj_flash_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA3B221AB808008A8B6D /* obj_flash_02.png */; };
 		5404EA40221ABDD6008A8B6D /* obj_ghost_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA3E221ABDD6008A8B6D /* obj_ghost_02.png */; };
 		5404EA41221ABDD6008A8B6D /* obj_ghost_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA3F221ABDD6008A8B6D /* obj_ghost_01.png */; };
+		5404EA47221AC2F1008A8B6D /* obj_up_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA42221AC2F1008A8B6D /* obj_up_01.png */; };
+		5404EA48221AC2F1008A8B6D /* obj_stone_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA43221AC2F1008A8B6D /* obj_stone_02.png */; };
+		5404EA49221AC2F1008A8B6D /* obj_stone_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA44221AC2F1008A8B6D /* obj_stone_01.png */; };
+		5404EA4A221AC2F1008A8B6D /* obj_up_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA45221AC2F1008A8B6D /* obj_up_02.png */; };
+		5404EA4B221AC2F1008A8B6D /* obj_up_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA46221AC2F1008A8B6D /* obj_up_03.png */; };
+		5404EA4F221AC342008A8B6D /* obj_fireworks_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA4C221AC342008A8B6D /* obj_fireworks_03.png */; };
+		5404EA50221AC342008A8B6D /* obj_fireworks_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA4D221AC342008A8B6D /* obj_fireworks_02.png */; };
+		5404EA51221AC342008A8B6D /* obj_fireworks_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA4E221AC342008A8B6D /* obj_fireworks_01.png */; };
 		54140F1C212BAFAB007C753B /* FontCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F1B212BAFAB007C753B /* FontCardView.swift */; };
 		54140F1E212BAFBC007C753B /* FontCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54140F1D212BAFBC007C753B /* FontCardView.xib */; };
 		54140F20212BB2F6007C753B /* GameTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F1F212BB2F6007C753B /* GameTableView.swift */; };
@@ -744,6 +752,14 @@
 		5404EA3B221AB808008A8B6D /* obj_flash_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_flash_02.png; sourceTree = "<group>"; };
 		5404EA3E221ABDD6008A8B6D /* obj_ghost_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_ghost_02.png; sourceTree = "<group>"; };
 		5404EA3F221ABDD6008A8B6D /* obj_ghost_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_ghost_01.png; sourceTree = "<group>"; };
+		5404EA42221AC2F1008A8B6D /* obj_up_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_up_01.png; sourceTree = "<group>"; };
+		5404EA43221AC2F1008A8B6D /* obj_stone_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_stone_02.png; sourceTree = "<group>"; };
+		5404EA44221AC2F1008A8B6D /* obj_stone_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_stone_01.png; sourceTree = "<group>"; };
+		5404EA45221AC2F1008A8B6D /* obj_up_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_up_02.png; sourceTree = "<group>"; };
+		5404EA46221AC2F1008A8B6D /* obj_up_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_up_03.png; sourceTree = "<group>"; };
+		5404EA4C221AC342008A8B6D /* obj_fireworks_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_fireworks_03.png; sourceTree = "<group>"; };
+		5404EA4D221AC342008A8B6D /* obj_fireworks_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_fireworks_02.png; sourceTree = "<group>"; };
+		5404EA4E221AC342008A8B6D /* obj_fireworks_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_fireworks_01.png; sourceTree = "<group>"; };
 		54140F1B212BAFAB007C753B /* FontCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCardView.swift; sourceTree = "<group>"; };
 		54140F1D212BAFBC007C753B /* FontCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontCardView.xib; sourceTree = "<group>"; };
 		54140F1F212BB2F6007C753B /* GameTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableView.swift; sourceTree = "<group>"; };
@@ -1501,6 +1517,14 @@
 				5404EA3F221ABDD6008A8B6D /* obj_ghost_01.png */,
 				5404EA3E221ABDD6008A8B6D /* obj_ghost_02.png */,
 				54D5512D21BCA66200980B92 /* obj_stripes_01.png */,
+				5404EA44221AC2F1008A8B6D /* obj_stone_01.png */,
+				5404EA43221AC2F1008A8B6D /* obj_stone_02.png */,
+				5404EA42221AC2F1008A8B6D /* obj_up_01.png */,
+				5404EA45221AC2F1008A8B6D /* obj_up_02.png */,
+				5404EA46221AC2F1008A8B6D /* obj_up_03.png */,
+				5404EA4E221AC342008A8B6D /* obj_fireworks_01.png */,
+				5404EA4D221AC342008A8B6D /* obj_fireworks_02.png */,
+				5404EA4C221AC342008A8B6D /* obj_fireworks_03.png */,
 				54D5512221BCA66200980B92 /* obj_star_02.png */,
 				54D5512621BCA66200980B92 /* obj_star_03.png */,
 				54D5513321BCA66200980B92 /* obj_star_01.png */,
@@ -2626,6 +2650,7 @@
 				54D5529C21BCA66300980B92 /* gameclear_button_next_tap.png in Resources */,
 				54D5528A21BCA66300980B92 /* cell_anime1.png in Resources */,
 				5467653C21F556E00025A5A9 /* earth（地球）.plist in Resources */,
+				5404EA4B221AC2F1008A8B6D /* obj_up_03.png in Resources */,
 				54D9AEBE20CF6186004FEBA2 /* LaunchScreen.storyboard in Resources */,
 				5429F3CC21CF06B600E0E50F /* score_count_8.png in Resources */,
 				5429F3F021CF06E400E0E50F /* chain5_anim.png in Resources */,
@@ -2754,6 +2779,7 @@
 				54D5532921BCA66300980B92 /* taiki_panel_04_tap.png in Resources */,
 				542F443C21B300DC00C51AD6 /* crossword（クロスワード）①.plist in Resources */,
 				54D552C421BCA66300980B92 /* pink_8.png in Resources */,
+				5404EA4A221AC2F1008A8B6D /* obj_up_02.png in Resources */,
 				5429F3AB21CF06B600E0E50F /* countup_4.png in Resources */,
 				54D552D621BCA66300980B92 /* triple_word_score.png in Resources */,
 				54D5522421BCA66300980B92 /* mojichan_02.png in Resources */,
@@ -2834,6 +2860,7 @@
 				54D5521221BCA66300980B92 /* K.png in Resources */,
 				54D5527F21BCA66300980B92 /* anim_W.png in Resources */,
 				5467652D21F556E00025A5A9 /* politics（政治）.plist in Resources */,
+				5404EA49221AC2F1008A8B6D /* obj_stone_01.png in Resources */,
 				5429F3E921CF06E400E0E50F /* chain8_anim.png in Resources */,
 				54D552F421BCA66300980B92 /* study_star.png in Resources */,
 				54D5527E21BCA66300980B92 /* driller_01.png in Resources */,
@@ -2912,6 +2939,7 @@
 				5467653121F556E00025A5A9 /* horoscope（星占い）.plist in Resources */,
 				54BCA6EC22153BBB0054CEF4 /* gameclear_anim_effect13.png in Resources */,
 				542F446921B57FAD00C51AD6 /* ordinal numbers（序数）.plist in Resources */,
+				5404EA51221AC342008A8B6D /* obj_fireworks_01.png in Resources */,
 				5429F3CE21CF06B600E0E50F /* countup_8.png in Resources */,
 				54612D5421FFBEF90091D7BD /* QuickQuestResultCell.xib in Resources */,
 				54D5527D21BCA66300980B92 /* gameclear_button_review_tap.png in Resources */,
@@ -2966,6 +2994,7 @@
 				54BCA6C522144B7A0054CEF4 /* gameclear_anim_word05.png in Resources */,
 				54D5524221BCA66300980B92 /* orange_10.png in Resources */,
 				54D5527821BCA66300980B92 /* obj_parasol_04.png in Resources */,
+				5404EA47221AC2F1008A8B6D /* obj_up_01.png in Resources */,
 				54D551F821BCA66300980B92 /* select_box.png in Resources */,
 				5429F3E221CF06E400E0E50F /* chain6_anim.png in Resources */,
 				5429F3C821CF06B600E0E50F /* 3.png in Resources */,
@@ -2990,10 +3019,12 @@
 				5429F3EB21CF06E400E0E50F /* chain4.png in Resources */,
 				54D5520021BCA66300980B92 /* select_stagemap_01.png in Resources */,
 				5429F3AE21CF06B600E0E50F /* score_get_3.png in Resources */,
+				5404EA50221AC342008A8B6D /* obj_fireworks_02.png in Resources */,
 				54D5526521BCA66300980B92 /* bt_playback_tap.png in Resources */,
 				54D5528921BCA66300980B92 /* anim_C.png in Resources */,
 				54D552ED21BCA66300980B92 /* music_stop.png in Resources */,
 				54D5523B21BCA66300980B92 /* gameover_button_giveup_tap.png in Resources */,
+				5404EA48221AC2F1008A8B6D /* obj_stone_02.png in Resources */,
 				548FF98B21E1638D007CD3B0 /* gameover_anim_word.png in Resources */,
 				54D5530A21BCA66300980B92 /* custom_box_08.png in Resources */,
 				54D551D521BCA66300980B92 /* quizdonyu_object_sword.png in Resources */,
@@ -3002,6 +3033,7 @@
 				542F447921B57FAD00C51AD6 /* crossword（クロスワード）③.plist in Resources */,
 				542F447521B57FAD00C51AD6 /* dessert（デザート）.plist in Resources */,
 				54D5532721BCA66300980B92 /* taiki_panel_01.png in Resources */,
+				5404EA4F221AC342008A8B6D /* obj_fireworks_03.png in Resources */,
 				5404EA2B221A5329008A8B6D /* obj_down_02.png in Resources */,
 				5467650821EF24300025A5A9 /* SE_コンボ③.wav in Resources */,
 				5429F3ED21CF06E400E0E50F /* chain7.png in Resources */,

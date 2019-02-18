@@ -959,15 +959,18 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			direction = "U"
 		}
 		else if stage == 3 || stage == 8 || stage == 13 || stage == 18 {
-			objNames = ["obj_egg_01"]
+			objNames = ["obj_egg_01","obj_egg_02"]
+			animation = true
 			direction = "L"
 		}
 		else if stage == 4 || stage == 9 || stage == 14 || stage == 19 {
-			objNames = ["obj_mush"]
+			objNames = ["obj_mush","obj_mush_01"]
+			animation = true
 			direction = "R"
 		}
 		else if stage == 5 || stage == 10 || stage == 15 || stage == 20 {
-			objNames = ["obj_leaf_01"]
+			objNames = ["obj_leaf_01","obj_leaf_02"]
+			animation = true
 			direction = "D"
 		}
 		else if stage == 21 || stage == 26 || stage == 31 || stage == 36 {
@@ -980,10 +983,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		else if stage == 23 || stage == 28 || stage == 33 || stage == 38 {
 			objNames = ["obj_down_01","obj_down_02","obj_down_03"]
+			animation = true
 			direction = "D"
 		}
-		else if stage == 24 || stage == 29 || stage == 34 || stage == 39 || stage == 55 || stage == 60 || stage == 65 || stage == 70 {
+		else if stage == 24 || stage == 29 || stage == 34 || stage == 39 || stage == 45 || stage == 50 || stage == 55 || stage == 60 || stage == 65 || stage == 70 || stage == 75 || stage == 80 {
 			objNames = ["obj_flowerpost_01","obj_flowerpost_02"]
+			animation = true
 			direction = "LU"
 		}
 		else if stage == 25 || stage == 30 || stage == 35 || stage == 40 {
@@ -992,19 +997,40 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		else if stage == 41 || stage == 46 || stage == 51 || stage == 56 {
 			objNames = ["obj_cloud_01","obj_cloud_02"]
+			animation = true
 			direction = "L"
 		}
-		else if stage == 52 || stage == 57 || stage == 62 || stage == 67 {
+		else if stage == 42 || stage == 47 || stage == 52 || stage == 57 {
 			objNames = ["obj_yurei_01","obj_yurei_02"]
+			animation = true
 			direction = "RD"
 		}
-		else if stage == 53 || stage == 58 || stage == 63 || stage == 68 {
+		else if stage == 43 || stage == 48 || stage == 53 || stage == 58 {
 			objNames = ["obj_flash_01","obj_flash_02"]
 			animation = true
 			direction = "LD"
 		}
-		else if stage == 54 || stage == 59 || stage == 64 || stage == 69 {
+		else if stage == 44 || stage == 49 || stage == 54 || stage == 59 {
 			objNames = ["obj_ghost_01","obj_ghost_02"]
+			animation = true
+			direction = "RU"
+		}
+		else if stage == 61 || stage == 66 || stage == 71 || stage == 76 {
+			objNames = ["obj_stripes_01"]
+			direction = "U"
+		}
+		else if stage == 62 || stage == 67 || stage == 72 || stage == 77 {
+			objNames = ["obj_stone_01","obj_stone_02"]
+			animation = true
+			direction = "D"
+		}
+		else if stage == 63 || stage == 68 || stage == 73 || stage == 78 {
+			objNames = ["obj_up_01","obj_up_02","obj_up_03"]
+			animation = true
+			direction = "U"
+		}
+		else if stage == 64 || stage == 69 || stage == 74 || stage == 79 {
+			objNames = ["obj_fireworks_01","obj_fireworks_02","obj_fireworks_03"]
 			animation = true
 			direction = "RU"
 		}
