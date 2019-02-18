@@ -15,6 +15,21 @@ let kVoiceOn: String = "kVoiceOn"
 let kEnableCharaArry: String = "kEnableCharaArry"
 let kSelectedCharaType: String = "kSelectedCharaType"
 
+enum CustomChara: String {
+	case mojikun_b		= "mojikun_b"		//もじくん（新）
+	case mojichan		= "mojichan"		//もじちゃん
+	case taiyokun		= "taiyokun"		//太陽
+	case tsukikun		= "tsukikun"		//月
+	case kumokun		= "kumokun"			//雲
+	case mojikun_a		= "mojikun_a"		//もじくん（旧）
+	case pack			= "pack"			//パックマン
+	case ouji			= "ouji"			//王子
+	case driller		= "driller"			//ドリラー
+	case galaga			= "galaga"			//ギャラガ
+	
+}
+
+
 enum MatchType: Int {
 	case perfect			//完全一致
 	case foward				//前方一致

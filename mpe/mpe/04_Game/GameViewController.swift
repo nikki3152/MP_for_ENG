@@ -238,6 +238,38 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		self.ballonImageView.alpha = 0
 		self.ballonDisplayImageView.alpha = 0
+		
+		let ctype = UserDefaults.standard.integer(forKey: kSelectedCharaType)
+		if ctype == 1 {
+			self.customChara = .mojikun_b
+		}
+		else if ctype == 2 {
+			self.customChara = .mojichan
+		}
+		else if ctype == 3 {
+			self.customChara = .taiyokun
+		}
+		else if ctype == 4 {
+			self.customChara = .tsukikun
+		}
+		else if ctype == 5 {
+			self.customChara = .kumokun
+		}
+		else if ctype == 6 {
+			self.customChara = .mojikun_a
+		}
+		else if ctype == 7 {
+			self.customChara = .pack
+		}
+		else if ctype == 8 {
+			self.customChara = .ouji
+		}
+		else if ctype == 9 {
+			self.customChara = .driller
+		}
+		else if ctype == 10 {
+			self.customChara = .galaga
+		}
     }
 	
 	override func viewWillLayoutSubviews() {
@@ -301,7 +333,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	@IBOutlet weak var ballonImageView: UIImageView!
 	@IBOutlet weak var ballonDisplayImageView: UIImageView!
 	var ballonMainLabel: TTTAttributedLabel!
-	
+	var customChara: CustomChara = .mojikun_b
 	
 	//トータルスコア
 	@IBOutlet weak var scoreBaseView: UIView!
@@ -447,9 +479,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		//キャラクターアニメーション
 		self.charaImageView.animationImages = [
-			UIImage(named: "mojikun_a_01")!,
-			UIImage(named: "mojikun_a_02")!,
-			UIImage(named: "mojikun_a_03")!,
+			UIImage(named: "\(self.customChara.rawValue)_01")!,
+			UIImage(named: "\(self.customChara.rawValue)_02")!,
+			UIImage(named: "\(self.customChara.rawValue)_03")!,
 		]
 		self.charaImageView.animationDuration = 3.5
 		self.charaImageView.startAnimating()
@@ -1889,7 +1921,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		//キャラクターアニメーション停止
 		charaImageView.stopAnimating()
-		charaImageView.image = UIImage(named: "mojikun_a_03")
+		charaImageView.image = UIImage(named: "\(self.customChara.rawValue)_03")
 		charaImageView.layer.removeAllAnimations()
 		
 		UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveEaseInOut, animations: { 
