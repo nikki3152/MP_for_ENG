@@ -925,8 +925,43 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	var backgroundTimer: Timer!
 	var objDirection: ObjDirection = .downLeft
 	
-	var objName: String = "obj_flower_01"
 	func makeBackAnimation() {
+		
+		var objNames: [String] = ["obj_flower_01"]
+		var direction: String = "LD"
+		var dx: CGFloat = -0.4
+		var dy: CGFloat = 0.4
+		let stage = questIndex + 1
+		if stage == 1 || stage == 6 || stage == 11 || stage == 16 {
+			objNames = ["obj_flower_01"]
+			dx = -0.4
+			dy = 0.4
+			direction = "LD"
+		}
+		else if stage == 2 || stage == 7 || stage == 12 || stage == 17 {
+			objNames = ["obj_balloon_01","obj_balloon_02","obj_balloon_03","obj_balloon_04","obj_balloon_05","obj_balloon_06"]
+			dx = 0
+			dy = -0.4
+			direction = "U"
+		}
+		if stage == 3 || stage == 8 || stage == 13 || stage == 18 {
+			objNames = ["obj_egg_01"]
+			dx = -0.4
+			dy = 0
+			direction = "L"
+		}
+		if stage == 4 || stage == 9 || stage == 14 || stage == 19 {
+			objNames = ["obj_mush"]
+			dx = 0.4
+			dy = 0
+			direction = "R"
+		}
+		if stage == 5 || stage == 10 || stage == 15 || stage == 20 {
+			objNames = ["obj_leaf_01"]
+			dx = 0
+			dy = 0.4
+			direction = "D"
+		}
 		
 		for v in backImageView.subviews {
 			v.removeFromSuperview()
@@ -935,6 +970,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		for i in 0 ..< 15 {
 			let y = Int.random(in: 0 ..< Int(size.height))
 			let x = Int.random(in: Int(size.width / 4) ..< Int(size.width * 1.5))
+			var objName: String = ""
+			if objNames.count == 0 {
+				objName = objNames[0]
+			} else {
+				let index = Int.random(in: 0 ..< objNames.count)
+				objName = objNames[index]
+			}
 			let _ = self.makeObj(parent: backImageView, tag: i + 100, x: x, y: y, image: objName)
 		}
 		backgroundTimer?.invalidate()
@@ -946,12 +988,81 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			let stars = s.backImageView.subviews
 			for star in stars {
 				let tag = star.tag
-				star.center = CGPoint(x: star.center.x - 0.4, y: star.center.y + 0.4)
-				if star.center.y > size.height + 40 {
-					star.removeFromSuperview()
-					let x = Int.random(in: Int(size.width / 4) ..< Int(size.width * 1.5))
-					let _ = s.makeObj(parent: s.backImageView, tag: tag, x: x, y: -40, image: s.objName)
-				} 
+				star.center = CGPoint(x: star.center.x + dx, y: star.center.y + dy)
+				if direction == "LD" {
+					if star.center.y > size.height + 40 {
+						star.removeFromSuperview()
+						let x = Int.random(in: Int(size.width / 4) ..< Int(size.width * 1.5))
+						var objName: String = ""
+						if objNames.count == 0 {
+							objName = objNames[0]
+						} else {
+							let index = Int.random(in: 0 ..< objNames.count)
+							objName = objNames[index]
+						}
+						let _ = s.makeObj(parent: s.backImageView, tag: tag, x: x, y: -40, image: objName)
+					} 
+				}
+				else if direction == "U" {
+					if star.center.y < -40 {
+						star.removeFromSuperview()
+						let x = Int.random(in: 80 ..< Int(size.width - 80))
+						let y = Int.random(in: 40 ..< 80)
+						var objName: String = ""
+						if objNames.count == 0 {
+							objName = objNames[0]
+						} else {
+							let index = Int.random(in: 0 ..< objNames.count)
+							objName = objNames[index]
+						}
+						let _ = s.makeObj(parent: s.backImageView, tag: tag, x: x, y: Int(size.height + CGFloat(y)), image: objName)
+					} 
+				}
+				else if direction == "D" {
+					if star.center.y > size.height + 40 {
+						star.removeFromSuperview()
+						let x = Int.random(in: 80 ..< Int(size.width - 80))
+						let y = Int.random(in: 40 ..< 80)
+						var objName: String = ""
+						if objNames.count == 0 {
+							objName = objNames[0]
+						} else {
+							let index = Int.random(in: 0 ..< objNames.count)
+							objName = objNames[index]
+						}
+						let _ = s.makeObj(parent: s.backImageView, tag: tag, x: x, y: -y, image: objName)
+					} 
+				}
+				else if direction == "R" {
+					if star.center.x > size.width + 40 {
+						star.removeFromSuperview()
+						let x = Int.random(in: 40 ..< 80)
+						let y = Int.random(in: 0 ..< Int(size.height))
+						var objName: String = ""
+						if objNames.count == 0 {
+							objName = objNames[0]
+						} else {
+							let index = Int.random(in: 0 ..< objNames.count)
+							objName = objNames[index]
+						}
+						let _ = s.makeObj(parent: s.backImageView, tag: tag, x: -x, y: y, image: objName)
+					} 
+				}
+				else if direction == "L" {
+					if star.center.x < -40 {
+						star.removeFromSuperview()
+						let x = Int.random(in: 40 ..< 80)
+						let y = Int.random(in: 0 ..< Int(size.height))
+						var objName: String = ""
+						if objNames.count == 0 {
+							objName = objNames[0]
+						} else {
+							let index = Int.random(in: 0 ..< objNames.count)
+							objName = objNames[index]
+						}
+						let _ = s.makeObj(parent: s.backImageView, tag: tag, x: Int(size.width) + x, y: y, image: objName)
+					} 
+				}
 			}
 		})
 		
