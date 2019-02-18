@@ -19,6 +19,8 @@ class ViewController: UIViewController {
 			kBGMOn:true,
 			kSEOn:true,
 			kVoiceOn:true,
+			kEnableCharaArry:[true,false,false,false,false,false,false,false,false,false],
+			kSelectedCharaType:1,
 		])
 		
 		//バージョン情報

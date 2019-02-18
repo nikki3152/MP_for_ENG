@@ -39,80 +39,146 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="custom_box_01.png"/>
                                         <state key="disabled" backgroundImage="custom_box_inactive1.png"/>
+                                        <state key="selected" image="custom_cursor.png" backgroundImage="custom_box_01_tap.png"/>
+                                        <state key="highlighted" backgroundImage="custom_box_01_tap.png"/>
                                         <connections>
                                             <action selector="charCustomButtonAction:" destination="HDP-pU-hVK" eventType="touchUpInside" id="FBB-ji-jWx"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8J-Ea-dHF">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8J-Ea-dHF">
                                         <rect key="frame" x="110" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="custom_box_02.png"/>
                                         <state key="disabled" backgroundImage="custom_box_inactive1.png"/>
+                                        <state key="selected" image="custom_cursor.png" backgroundImage="custom_box_02_tap.png"/>
+                                        <connections>
+                                            <action selector="charCustomButtonAction:" destination="HDP-pU-hVK" eventType="touchUpInside" id="pd8-xI-IHQ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JD-GE-rXu">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JD-GE-rXu">
                                         <rect key="frame" x="220" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="custom_box_03.png"/>
                                         <state key="disabled" backgroundImage="custom_box_inactive1.png"/>
+                                        <state key="selected" image="custom_cursor.png" backgroundImage="custom_box_03_tap.png"/>
+                                        <state key="highlighted" backgroundImage="custom_box_03_tap.png"/>
+                                        <connections>
+                                            <action selector="charCustomButtonAction:" destination="HDP-pU-hVK" eventType="touchUpInside" id="bFi-xv-NJD"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbW-W7-eBF">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbW-W7-eBF">
                                         <rect key="frame" x="330" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="custom_box_04.png"/>
                                         <state key="disabled" backgroundImage="custom_box_inactive2.png"/>
+                                        <state key="selected" image="custom_cursor.png" backgroundImage="custom_box_04_tap.png"/>
+                                        <state key="highlighted" backgroundImage="custom_box_04_tap.png"/>
+                                        <connections>
+                                            <action selector="charCustomButtonAction:" destination="HDP-pU-hVK" eventType="touchUpInside" id="FM6-IT-soZ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEw-3M-vm9">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEw-3M-vm9">
                                         <rect key="frame" x="440" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="custom_box_05.png"/>
                                         <state key="disabled" backgroundImage="custom_box_inactive2.png"/>
+                                        <state key="selected" image="custom_cursor.png" backgroundImage="custom_box_05_tap.png"/>
+                                        <state key="highlighted" backgroundImage="custom_box_05_tap.png"/>
+                                        <connections>
+                                            <action selector="charCustomButtonAction:" destination="HDP-pU-hVK" eventType="touchUpInside" id="dbe-8c-IgU"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHZ-Gz-1fL">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHZ-Gz-1fL">
                                         <rect key="frame" x="0.0" y="110" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" backgroundImage="custom_box_06.png"/>
                                         <state key="disabled" backgroundImage="custom_box_inactive3.png"/>
+                                        <state key="selected" image="custom_cursor.png" backgroundImage="custom_box_06_tap.png"/>
+                                        <state key="highlighted" backgroundImage="custom_box_06_tap.png"/>
+                                        <connections>
+                                            <action selector="charCustomButtonAction:" destination="HDP-pU-hVK" eventType="touchUpInside" id="ar7-Tp-qDY"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpD-2v-dIV">
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpD-2v-dIV">
                                         <rect key="frame" x="110" y="110" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" backgroundImage="custom_box_07.png"/>
                                         <state key="disabled" backgroundImage="custom_box_inactive3.png"/>
+                                        <state key="selected" image="custom_cursor.png" backgroundImage="custom_box_07_tap.png"/>
+                                        <state key="highlighted" backgroundImage="custom_box_07_tap.png"/>
+                                        <connections>
+                                            <action selector="charCustomButtonAction:" destination="HDP-pU-hVK" eventType="touchUpInside" id="vsr-BB-YiR"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhu-3a-C6s">
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhu-3a-C6s">
                                         <rect key="frame" x="220" y="110" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" backgroundImage="custom_box_08.png"/>
                                         <state key="disabled" backgroundImage="custom_box_inactive4.png"/>
+                                        <state key="selected" image="custom_cursor.png" backgroundImage="custom_box_08_tap.png"/>
+                                        <state key="highlighted" backgroundImage="custom_box_08_tap.png"/>
+                                        <connections>
+                                            <action selector="charCustomButtonAction:" destination="HDP-pU-hVK" eventType="touchUpInside" id="7Jf-OC-toU"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYz-hP-3um">
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYz-hP-3um">
                                         <rect key="frame" x="330" y="110" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" backgroundImage="custom_box_09.png"/>
                                         <state key="disabled" backgroundImage="custom_box_inactive4.png"/>
+                                        <state key="selected" image="custom_cursor.png" backgroundImage="custom_box_09_tap.png"/>
+                                        <state key="highlighted" backgroundImage="custom_box_09_tap.png"/>
+                                        <connections>
+                                            <action selector="charCustomButtonAction:" destination="HDP-pU-hVK" eventType="touchUpInside" id="TZ7-tu-Ooo"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXr-9W-bKG">
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXr-9W-bKG">
                                         <rect key="frame" x="440" y="110" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" backgroundImage="custom_box_10.png"/>
                                         <state key="disabled" backgroundImage="custom_box_inactive4.png"/>
+                                        <state key="selected" image="custom_cursor.png" backgroundImage="custom_box_10_tap.png"/>
+                                        <state key="highlighted" backgroundImage="custom_box_10_tap.png"/>
+                                        <connections>
+                                            <action selector="charCustomButtonAction:" destination="HDP-pU-hVK" eventType="touchUpInside" id="z71-TP-Sm7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="UWQ-qd-5tR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="UWQ-qd-5tR">
                                 <rect key="frame" x="35" y="68" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="meU-3m-GHb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="meU-3m-GHb">
                                 <rect key="frame" x="113" y="20" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="IJC-bq-gOa">
-                                <rect key="frame" x="579" y="61" width="60" height="60"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="IJC-bq-gOa">
+                                <rect key="frame" x="607" y="126" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="qY7-9C-yf9">
-                                <rect key="frame" x="504" y="13" width="60" height="60"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="custom_object_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="qY7-9C-yf9">
+                                <rect key="frame" x="445" y="13" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mojikun_b_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="9fw-hq-7O2">
+                                <rect key="frame" x="284" y="30" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaQ-Bf-OdB">
+                                <rect key="frame" x="549" y="13" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="85" backgroundImage="taiki_pp_button.png">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted" title="85" backgroundImage="taiki_pp_button_tap.png"/>
+                                <connections>
+                                    <action selector="ppButtonAction:" destination="HDP-pU-hVK" eventType="touchUpInside" id="eFX-fi-3wM"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select_advertise.png" translatesAutoresizingMaskIntoConstraints="NO" id="9zi-oP-2fC">
+                                <rect key="frame" x="494" y="66" width="155" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -121,6 +187,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="Smd-g9-ifB" id="AtP-uR-24S"/>
+                        <outlet property="charBtBaseView" destination="TtF-iJ-REr" id="NQQ-lI-oym"/>
                         <outlet property="charCustomButton1" destination="Obl-yl-0Xi" id="2k5-50-oFI"/>
                         <outlet property="charCustomButton10" destination="aXr-9W-bKG" id="4dy-9V-hX9"/>
                         <outlet property="charCustomButton2" destination="f8J-Ea-dHF" id="7mr-dx-W5G"/>
@@ -131,10 +198,13 @@
                         <outlet property="charCustomButton7" destination="LpD-2v-dIV" id="s0a-Ct-YlT"/>
                         <outlet property="charCustomButton8" destination="vhu-3a-C6s" id="9NG-oo-FT6"/>
                         <outlet property="charCustomButton9" destination="nYz-hP-3um" id="Oqt-mH-Pr9"/>
+                        <outlet property="charaImageView" destination="9fw-hq-7O2" id="TQe-1J-1HK"/>
+                        <outlet property="infoFukidasi" destination="9zi-oP-2fC" id="4rP-YV-hU4"/>
                         <outlet property="onpu1" destination="UWQ-qd-5tR" id="tjy-Jn-oh5"/>
                         <outlet property="onpu2" destination="meU-3m-GHb" id="KLL-pu-tce"/>
                         <outlet property="onpu3" destination="qY7-9C-yf9" id="4BG-Ee-xbf"/>
                         <outlet property="onpu4" destination="IJC-bq-gOa" id="ATH-LT-XEJ"/>
+                        <outlet property="ppButton" destination="IaQ-Bf-OdB" id="Dlz-O8-okx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mk5-aL-0wH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -146,20 +216,35 @@
         <image name="bt_back.png" width="70" height="70"/>
         <image name="custom_background.png" width="1931" height="901"/>
         <image name="custom_box_01.png" width="200" height="200"/>
+        <image name="custom_box_01_tap.png" width="200" height="200"/>
         <image name="custom_box_02.png" width="200" height="200"/>
+        <image name="custom_box_02_tap.png" width="200" height="200"/>
         <image name="custom_box_03.png" width="200" height="200"/>
+        <image name="custom_box_03_tap.png" width="200" height="200"/>
         <image name="custom_box_04.png" width="200" height="200"/>
+        <image name="custom_box_04_tap.png" width="200" height="200"/>
         <image name="custom_box_05.png" width="200" height="200"/>
+        <image name="custom_box_05_tap.png" width="200" height="200"/>
         <image name="custom_box_06.png" width="200" height="200"/>
+        <image name="custom_box_06_tap.png" width="200" height="200"/>
         <image name="custom_box_07.png" width="200" height="200"/>
+        <image name="custom_box_07_tap.png" width="200" height="200"/>
         <image name="custom_box_08.png" width="200" height="200"/>
+        <image name="custom_box_08_tap.png" width="200" height="200"/>
         <image name="custom_box_09.png" width="200" height="200"/>
+        <image name="custom_box_09_tap.png" width="200" height="200"/>
         <image name="custom_box_10.png" width="200" height="200"/>
+        <image name="custom_box_10_tap.png" width="200" height="200"/>
         <image name="custom_box_inactive1.png" width="200" height="200"/>
         <image name="custom_box_inactive2.png" width="200" height="200"/>
         <image name="custom_box_inactive3.png" width="200" height="200"/>
         <image name="custom_box_inactive4.png" width="200" height="200"/>
+        <image name="custom_cursor.png" width="100" height="100"/>
         <image name="custom_object_01.png" width="120" height="120"/>
         <image name="custom_object_02.png" width="120" height="120"/>
+        <image name="mojikun_b_01.png" width="300" height="300"/>
+        <image name="select_advertise.png" width="500" height="110"/>
+        <image name="taiki_pp_button.png" width="200" height="120"/>
+        <image name="taiki_pp_button_tap.png" width="200" height="120"/>
     </resources>
 </document>

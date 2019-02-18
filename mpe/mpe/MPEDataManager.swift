@@ -8,10 +8,12 @@
 
 import UIKit
 
-//初期設定お
+//初期設定
 let kBGMOn: String = "kBGMOn"
 let kSEOn: String = "kSEOn"
 let kVoiceOn: String = "kVoiceOn"
+let kEnableCharaArry: String = "kEnableCharaArry"
+let kSelectedCharaType: String = "kSelectedCharaType"
 
 enum MatchType: Int {
 	case perfect			//完全一致
