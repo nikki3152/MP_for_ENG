@@ -927,50 +927,119 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	
 	func makeBackAnimation() {
 		
+		func make_obj(x: Int, y: Int, tag: Int, objNames: [String], animation: Bool) {
+			
+			if animation {
+				let _ = self.makeObjAnimation(parent: backImageView, tag: tag, x: x, y: y, images: objNames)
+			} 
+			else {
+				var objName: String = ""
+				if objNames.count == 0 {
+					objName = objNames[0]
+				} else {
+					let index = Int.random(in: 0 ..< objNames.count)
+					objName = objNames[index]
+				}
+				let _ = self.makeObj(parent: backImageView, tag: tag, x: x, y: y, image: objName)
+			}
+		}
+		
 		var objNames: [String] = ["obj_flower_01"]
 		var direction: String = "LD"
 		var dx: CGFloat = -0.4
 		var dy: CGFloat = 0.4
+		var animation: Bool = false
 		let stage = questIndex + 1
 		if stage == 1 || stage == 6 || stage == 11 || stage == 16 {
 			objNames = ["obj_flower_01"]
-			direction = "LD"; dx = -0.4; dy = 0.4
+			direction = "LD"
 		}
 		else if stage == 2 || stage == 7 || stage == 12 || stage == 17 {
 			objNames = ["obj_balloon_01","obj_balloon_02","obj_balloon_03","obj_balloon_04","obj_balloon_05","obj_balloon_06"]
-			direction = "U";dx = 0;dy = -0.4
+			direction = "U"
 		}
 		else if stage == 3 || stage == 8 || stage == 13 || stage == 18 {
 			objNames = ["obj_egg_01"]
-			direction = "L";dx = -0.4;dy = 0
+			direction = "L"
 		}
 		else if stage == 4 || stage == 9 || stage == 14 || stage == 19 {
 			objNames = ["obj_mush"]
-			direction = "R";dx = 0.4;dy = 0
+			direction = "R"
 		}
 		else if stage == 5 || stage == 10 || stage == 15 || stage == 20 {
 			objNames = ["obj_leaf_01"]
-			direction = "D";dx = 0;dy = 0.4
+			direction = "D"
 		}
 		else if stage == 21 || stage == 26 || stage == 31 || stage == 36 {
 			objNames = ["obj_parasol_01","obj_parasol_02","obj_parasol_03","obj_parasol_04"]
-			direction = "U";dx = 0;dy = -0.4
+			direction = "U"
 		}
 		else if stage == 22 || stage == 27 || stage == 32 || stage == 37 {
 			objNames = ["obj_fish_01","obj_fish_02"]
-			direction = "L";dx = -0.4;dy = 0
+			direction = "L"
 		}
 		else if stage == 23 || stage == 28 || stage == 33 || stage == 38 {
 			objNames = ["obj_down_01","obj_down_02","obj_down_03"]
-			direction = "D";dx = 0;dy = 0.4
+			direction = "D"
 		}
-		else if stage == 24 || stage == 29 || stage == 34 || stage == 39 {
+		else if stage == 24 || stage == 29 || stage == 34 || stage == 39 || stage == 55 || stage == 60 || stage == 65 || stage == 70 {
 			objNames = ["obj_flowerpost_01","obj_flowerpost_02"]
-			direction = "LU";dx = -0.4;dy = -0.4
+			direction = "LU"
 		}
 		else if stage == 25 || stage == 30 || stage == 35 || stage == 40 {
 			objNames = ["obj_mojikun_01"]
-			direction = "LD";dx = -0.4;dy = 0.4
+			direction = "LD"
+		}
+		else if stage == 41 || stage == 46 || stage == 51 || stage == 56 {
+			objNames = ["obj_cloud_01","obj_cloud_02"]
+			direction = "L"
+		}
+		else if stage == 52 || stage == 57 || stage == 62 || stage == 67 {
+			objNames = ["obj_yurei_01","obj_yurei_02"]
+			direction = "RD"
+		}
+		else if stage == 53 || stage == 58 || stage == 63 || stage == 68 {
+			objNames = ["obj_flash_01","obj_flash_02"]
+			animation = true
+			direction = "LD"
+		}
+		else if stage == 54 || stage == 59 || stage == 64 || stage == 69 {
+			objNames = ["obj_ghost_01","obj_ghost_02"]
+			animation = true
+			direction = "RU"
+		}
+		
+		if direction == "LD" {
+			dx = -0.4
+			dy = 0.4
+		}
+		else if direction == "RD" {
+			dx = 0.4
+			dy = 0.4
+		}
+		else if direction == "LU" {
+			dx = -0.4
+			dy = -0.4
+		}
+		else if direction == "RU" {
+			dx = 0.4
+			dy = -0.4
+		}
+		else if direction == "L" {
+			dx = -0.4
+			dy = 0
+		}
+		else if direction == "R" {
+			dx = 0.4
+			dy = 0
+		}
+		else if direction == "U" {
+			dx = 0
+			dy = -0.4
+		}
+		else if direction == "D" {
+			dx = 0
+			dy = 0.4
 		}
 		
 		for v in backImageView.subviews {
@@ -980,14 +1049,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		for i in 0 ..< 15 {
 			let y = Int.random(in: 0 ..< Int(size.height))
 			let x = Int.random(in: Int(size.width / 4) ..< Int(size.width * 1.5))
-			var objName: String = ""
-			if objNames.count == 0 {
-				objName = objNames[0]
-			} else {
-				let index = Int.random(in: 0 ..< objNames.count)
-				objName = objNames[index]
-			}
-			let _ = self.makeObj(parent: backImageView, tag: i + 100, x: x, y: y, image: objName)
+			make_obj(x: x, y: y, tag: i + 100, objNames: objNames, animation: animation)
 		}
 		backgroundTimer?.invalidate()
 		backgroundTimer = Timer.scheduledTimer(withTimeInterval: 1.0 / 60, repeats: true, block: { [weak self](t) in
@@ -1002,29 +1064,33 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				if direction == "LD" {
 					if star.center.y > size.height + 40 {
 						star.removeFromSuperview()
-						let x = Int.random(in: Int(size.width / 4) ..< Int(size.width * 1.5))
-						var objName: String = ""
-						if objNames.count == 0 {
-							objName = objNames[0]
-						} else {
-							let index = Int.random(in: 0 ..< objNames.count)
-							objName = objNames[index]
-						}
-						let _ = s.makeObj(parent: s.backImageView, tag: tag, x: x, y: -40, image: objName)
+						let x = Int.random(in: Int(size.width / 4) ..< Int(size.width * 1.25))
+						let y = -40
+						make_obj(x: x, y: y, tag: tag, objNames: objNames, animation: animation)
 					} 
 				}
 				else if direction == "LU" {
 					if star.center.y < -40 {
 						star.removeFromSuperview()
+						let x = Int.random(in: Int(size.width / 4) ..< Int(size.width * 1.25))
+						let y = Int(size.height + 40)
+						make_obj(x: x, y: y, tag: tag, objNames: objNames, animation: animation)
+					} 
+				}
+				else if direction == "RU" {
+					if star.center.y < -40 {
+						star.removeFromSuperview()
 						let x = Int.random(in: -Int(size.width / 4) ..< Int(size.width * 0.75))
-						var objName: String = ""
-						if objNames.count == 0 {
-							objName = objNames[0]
-						} else {
-							let index = Int.random(in: 0 ..< objNames.count)
-							objName = objNames[index]
-						}
-						let _ = s.makeObj(parent: s.backImageView, tag: tag, x: x, y: Int(size.height + 40), image: objName)
+						let y = Int(size.height + 40)
+						make_obj(x: x, y: y, tag: tag, objNames: objNames, animation: animation)
+					} 
+				}
+				else if direction == "RD" {
+					if star.center.y > size.height + 40 {
+						star.removeFromSuperview()
+						let x = Int.random(in: Int(size.width / 4) ..< Int(size.width * 1.25))
+						let y = -40
+						make_obj(x: x, y: y, tag: tag, objNames: objNames, animation: animation)
 					} 
 				}
 				else if direction == "U" {
@@ -1032,14 +1098,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						star.removeFromSuperview()
 						let x = Int.random(in: 80 ..< Int(size.width - 80))
 						let y = Int.random(in: 40 ..< 80)
-						var objName: String = ""
-						if objNames.count == 0 {
-							objName = objNames[0]
-						} else {
-							let index = Int.random(in: 0 ..< objNames.count)
-							objName = objNames[index]
-						}
-						let _ = s.makeObj(parent: s.backImageView, tag: tag, x: x, y: Int(size.height + CGFloat(y)), image: objName)
+						make_obj(x: x, y: Int(size.height + CGFloat(y)), tag: tag, objNames: objNames, animation: animation)
 					} 
 				}
 				else if direction == "D" {
@@ -1047,14 +1106,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						star.removeFromSuperview()
 						let x = Int.random(in: 80 ..< Int(size.width - 80))
 						let y = Int.random(in: 40 ..< 80)
-						var objName: String = ""
-						if objNames.count == 0 {
-							objName = objNames[0]
-						} else {
-							let index = Int.random(in: 0 ..< objNames.count)
-							objName = objNames[index]
-						}
-						let _ = s.makeObj(parent: s.backImageView, tag: tag, x: x, y: -y, image: objName)
+						make_obj(x: x, y: -y, tag: tag, objNames: objNames, animation: animation)
 					} 
 				}
 				else if direction == "R" {
@@ -1062,14 +1114,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						star.removeFromSuperview()
 						let x = Int.random(in: 40 ..< 80)
 						let y = Int.random(in: 0 ..< Int(size.height))
-						var objName: String = ""
-						if objNames.count == 0 {
-							objName = objNames[0]
-						} else {
-							let index = Int.random(in: 0 ..< objNames.count)
-							objName = objNames[index]
-						}
-						let _ = s.makeObj(parent: s.backImageView, tag: tag, x: -x, y: y, image: objName)
+						make_obj(x: -x, y: y, tag: tag, objNames: objNames, animation: animation)
 					} 
 				}
 				else if direction == "L" {
@@ -1077,14 +1122,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						star.removeFromSuperview()
 						let x = Int.random(in: 40 ..< 80)
 						let y = Int.random(in: 0 ..< Int(size.height))
-						var objName: String = ""
-						if objNames.count == 0 {
-							objName = objNames[0]
-						} else {
-							let index = Int.random(in: 0 ..< objNames.count)
-							objName = objNames[index]
-						}
-						let _ = s.makeObj(parent: s.backImageView, tag: tag, x: Int(size.width) + x, y: y, image: objName)
+						make_obj(x: Int(size.width) + x, y: y, tag: tag, objNames: objNames, animation: animation)
 					} 
 				}
 			}
@@ -1100,6 +1138,22 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		parent.addSubview(star)
 		star.center = CGPoint(x: x, y: y)
 		
+		return star
+	}
+	func makeObjAnimation(parent: UIView, tag: Int, x: Int, y: Int, images: [String]) -> UIImageView {
+		
+		var imgs: [UIImage] = []
+		for name in images {
+			imgs.append(UIImage(named: name)!)
+		}
+		let star = UIImageView(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
+		star.contentMode = .scaleAspectFit
+		star.tag = tag 
+		star.animationImages = imgs
+		star.animationDuration = 1.0
+		parent.addSubview(star)
+		star.center = CGPoint(x: x, y: y)
+		star.startAnimating()
 		return star
 	}
 	
