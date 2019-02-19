@@ -334,6 +334,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	@IBOutlet weak var ballonDisplayImageView: UIImageView!
 	var ballonMainLabel: TTTAttributedLabel!
 	var customChara: CustomChara = .mojikun_b
+	var chaDefTimer: Timer!
 	
 	//トータルスコア
 	@IBOutlet weak var scoreBaseView: UIView!
@@ -477,14 +478,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		self.time = self.questData.time
 		
-		//キャラクターアニメーション
-		self.charaImageView.animationImages = [
-			UIImage(named: "\(self.customChara.rawValue)_01")!,
-			UIImage(named: "\(self.customChara.rawValue)_02")!,
-			UIImage(named: "\(self.customChara.rawValue)_03")!,
-		]
-		self.charaImageView.animationDuration = 3.5
-		self.charaImageView.startAnimating()
+		//MARK: キャラクターアニメーション（通常）
+		makeDefCharaAnimation()
 		
 		//雲アニメーション
 		self.timeBackImageView.animationImages = [
@@ -921,35 +916,156 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	}
 	
 	//MARK: - キャラクターアニメーション
-	func makeCharaAnimation() {
+	func makeDefCharaAnimation() {
 		
-		//回転ジャンプ
-		let height = 140.0
-		let speed = 0.8
-		let y = self.charaImageView.center.y
-		UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0.0, options: [], animations: { 
-			UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.3 * Double(speed), animations: { 
-				self.charaImageView.center.y = y - CGFloat(height * 0.8)
-			})
-			UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.1 * Double(speed), animations: { 
-				self.charaImageView.center.y = y - CGFloat(height)
-			})
-			UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.2 * Double(speed), animations: { 
-				self.charaImageView.center.y = y
-			})
-			UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.4 * Double(speed), animations: { 
-				self.charaImageView.center.y = y
-			})
-			
-		}) { (stop) in
+		self.charaImageView.image = UIImage(named: "\(self.customChara.rawValue)_01") 
+		if self.customChara == .mojikun_b {
+			//もじくん（新）
+			DataManager.animationFuwa(v: charaImageView, dy: 40, speed: 2)
 		}
-		let animation:CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation")
-		animation.toValue = Double.pi
-		animation.duration = 0.125
-		animation.repeatCount = 4
-		animation.isCumulative = true
-		self.charaImageView.layer.add(animation, forKey: "ImageViewRotation")
-		self.charaImageView.layer.speed = 1.0
+		else if self.customChara == .mojichan {
+			//もじちゃん
+			self.charaImageView.animationImages = [
+				UIImage(named: "\(self.customChara.rawValue)_01_a")!,
+				UIImage(named: "\(self.customChara.rawValue)_01_b")!,
+				UIImage(named: "\(self.customChara.rawValue)_01_a")!,
+				UIImage(named: "\(self.customChara.rawValue)_01_c")!,
+			]
+			self.charaImageView.animationDuration = 6.0
+			self.charaImageView.startAnimating()
+		}
+		else if self.customChara == .taiyokun {
+			//太陽
+			let shipo = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+			shipo.image = UIImage(named: "taiyokun_shippo_01")
+			charaImageView.addSubview(shipo)
+			DataManager.animationInfinityRotate(v: shipo, speed: 0.1)
+			DataManager.animationFuwa(v: charaImageView, dy: 40, speed: 4)
+		}
+		else if self.customChara == .tsukikun {
+			//月
+			DataManager.animationFuwa(v: charaImageView, dy: 40, speed: 4)
+		}
+		else if self.customChara == .kumokun {
+			//雲
+			DataManager.animationFuwa(v: charaImageView, dy: 40, speed: 4)
+		}
+		else if self.customChara == .mojikun_a {
+			//もじくん（旧）
+			self.charaImageView.animationImages = [
+				UIImage(named: "\(self.customChara.rawValue)_01")!,
+				UIImage(named: "\(self.customChara.rawValue)_02")!,
+				UIImage(named: "\(self.customChara.rawValue)_03")!,
+			]
+			self.charaImageView.animationDuration = 3.5
+			self.charaImageView.startAnimating()
+		}
+		else if self.customChara == .pack {
+			self.chaDefTimer?.invalidate()
+			self.chaDefTimer = Timer.scheduledTimer(withTimeInterval: 4.5, repeats: true, block: { [weak self](t) in
+				guard let s = self else {
+					return
+				}
+				DataManager.animationJump(v: s.charaImageView, height: 20, speed: 0.5, isRepeat: false)
+			})
+		}
+		else if self.customChara == .ouji {
+			//王子
+			self.charaImageView.animationImages = [
+				UIImage(named: "\(self.customChara.rawValue)_01")!,
+				UIImage(named: "\(self.customChara.rawValue)_02")!,
+			]
+			self.charaImageView.animationDuration = 3.5
+			self.charaImageView.startAnimating()
+		}
+		else if self.customChara == .driller {
+			//ドリラー
+			self.charaImageView.animationImages = [
+				UIImage(named: "\(self.customChara.rawValue)_01")!,
+				UIImage(named: "\(self.customChara.rawValue)_02")!,
+			]
+			self.charaImageView.animationDuration = 3.5
+			self.charaImageView.startAnimating()
+		}
+		else if self.customChara == .galaga {
+			//ギャラガ
+			let speed: Double = 4
+			let x = charaImageView.center.x
+			let y = charaImageView.center.y
+			UIView.animateKeyframes(withDuration: 1.0 * speed, delay: 0.0, options: [.repeat], animations: { 
+				UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.25 * speed, animations: { 
+					self.charaImageView.center = CGPoint(x: x+20, y: y)
+				})
+				UIView.addKeyframe(withRelativeStartTime: 0.25, relativeDuration: 0.25 * speed, animations: { 
+					self.charaImageView.center = CGPoint(x: x+20, y: y+20)
+				})
+				UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.25 * speed, animations: { 
+					self.charaImageView.center = CGPoint(x: x, y: y+20)
+				})
+				UIView.addKeyframe(withRelativeStartTime: 0.75, relativeDuration: 0.25 * speed, animations: { 
+					self.charaImageView.center = CGPoint(x: x, y: y)
+				})
+			}) { (stop) in
+				
+			}
+		}
+	}
+	func makeHitCharaAnimation() {
+		
+		if self.customChara == .mojikun_b || self.customChara == .mojikun_a {
+			//回転ジャンプ
+			let height = 140.0
+			let speed = 0.8
+			let y = self.charaImageView.center.y
+			UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0.0, options: [], animations: { 
+				UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.3 * Double(speed), animations: { 
+					self.charaImageView.center.y = y - CGFloat(height * 0.8)
+				})
+				UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.1 * Double(speed), animations: { 
+					self.charaImageView.center.y = y - CGFloat(height)
+				})
+				UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.2 * Double(speed), animations: { 
+					self.charaImageView.center.y = y
+				})
+				UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.4 * Double(speed), animations: { 
+					self.charaImageView.center.y = y
+				})
+				
+			}) { (stop) in
+			}
+			let animation:CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation")
+			animation.toValue = Double.pi
+			animation.duration = 0.125
+			animation.repeatCount = 4
+			animation.isCumulative = true
+			self.charaImageView.layer.add(animation, forKey: "ImageViewRotation")
+			self.charaImageView.layer.speed = 1.0
+			
+		}
+		else if self.customChara == .mojichan {
+			
+		}
+		else if self.customChara == .taiyokun {
+			
+		}
+		else if self.customChara == .tsukikun {
+			
+		}
+		else if self.customChara == .kumokun {
+			
+		}
+		else if self.customChara == .pack {
+			
+		}
+		else if self.customChara == .ouji {
+			
+		}
+		else if self.customChara == .driller {
+			
+		}
+		else if self.customChara == .galaga {
+			
+		}
 		
 	}
 	
@@ -978,8 +1094,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		var objNames: [String] = ["obj_flower_01"]
 		var direction: String = "LD"
-		var dx: CGFloat = -0.4
-		var dy: CGFloat = 0.4
+		var dx: CGFloat = -0.2
+		var dy: CGFloat = 0.2
 		var animation: Bool = false
 		let stage = questIndex + 1
 		if stage == 1 || stage == 6 || stage == 11 || stage == 16 {
@@ -1068,36 +1184,36 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		
 		if direction == "LD" {
-			dx = -0.4
-			dy = 0.4
+			dx = -0.2
+			dy = 0.2
 		}
 		else if direction == "RD" {
-			dx = 0.4
-			dy = 0.4
+			dx = 0.2
+			dy = 0.2
 		}
 		else if direction == "LU" {
-			dx = -0.4
-			dy = -0.4
+			dx = -0.2
+			dy = -0.2
 		}
 		else if direction == "RU" {
-			dx = 0.4
-			dy = -0.4
+			dx = 0.2
+			dy = -0.2
 		}
 		else if direction == "L" {
-			dx = -0.4
+			dx = -0.2
 			dy = 0
 		}
 		else if direction == "R" {
-			dx = 0.4
+			dx = 0.2
 			dy = 0
 		}
 		else if direction == "U" {
 			dx = 0
-			dy = -0.4
+			dy = -0.2
 		}
 		else if direction == "D" {
 			dx = 0
-			dy = 0.4
+			dy = 0.2
 		}
 		
 		for v in backImageView.subviews {
@@ -1547,7 +1663,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 										}
 									}
 								})
-								self.makeCharaAnimation()	//きキャラクターアニメーション
+								self.makeHitCharaAnimation()	//キャラクターアニメーション
 							}
 						}
 						delay += 1.2
@@ -1745,10 +1861,14 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			case .retry:			//やりなおす
 				self?.gameTimer?.invalidate()
 				self?.gameTimer = nil
+				self?.chaDefTimer?.invalidate()
+				self?.chaDefTimer = nil
 				self?.retry()
 			case .giveup:			//あきらめる
 				self?.gameTimer?.invalidate()
 				self?.gameTimer = nil
+				self?.chaDefTimer?.invalidate()
+				self?.chaDefTimer = nil
 				self?.remove()
 				SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
 			}
@@ -1767,6 +1887,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		isGameEnd = true
 		self.gameTimer?.invalidate()
 		self.gameTimer = nil
+		chaDefTimer?.invalidate()
+		chaDefTimer = nil
 		
 		var effectTimer: Timer!
 		DataManager.animationJump(v: charaImageView, height: 40, speed: 1.0)	//ジャンプアニメーション
@@ -1824,6 +1946,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					case .select:			//セレクト画面に戻る
 						self?.gameTimer?.invalidate()
 						self?.gameTimer = nil
+						self?.chaDefTimer?.invalidate()
+						self?.chaDefTimer = nil
 						clear.closeHandler = nil
 						clear.removeFromSuperview()
 						self?.remove()
@@ -1907,6 +2031,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		isGameEnd = true
 		self.gameTimer?.invalidate()
 		self.gameTimer = nil
+		chaDefTimer?.invalidate()
+		chaDefTimer = nil
 		
 		let base = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
 		self.view.addSubview(base)

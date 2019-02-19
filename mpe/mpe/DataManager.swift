@@ -512,10 +512,14 @@ class DataManager: NSObject {
 		v.layer.speed = speed
 	}
 	//ジャンプ
-	class func animationJump(v: UIView, height: Float, speed: Float) {
+	class func animationJump(v: UIView, height: Float, speed: Float, isRepeat: Bool = true) {
 		
 		let y = v.center.y
-		UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0.0, options: [.repeat], animations: { 
+		var opt: UIView.KeyframeAnimationOptions = []
+		if isRepeat {
+			 opt = [.repeat]
+		}
+		UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0, options: opt, animations: { 
 			UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.3 * Double(speed), animations: { 
 				v.center.y = y - CGFloat(height * 0.8)
 			})
