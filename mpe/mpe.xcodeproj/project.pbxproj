@@ -36,6 +36,7 @@
 		5404EA55221AD607008A8B6D /* mojichan_01_b.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA52221AD606008A8B6D /* mojichan_01_b.png */; };
 		5404EA56221AD607008A8B6D /* mojichan_01_c.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA53221AD606008A8B6D /* mojichan_01_c.png */; };
 		5404EA57221AD607008A8B6D /* mojichan_01_a.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA54221AD607008A8B6D /* mojichan_01_a.png */; };
+		5412685B221C896500CE3A35 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5412685D221C896500CE3A35 /* InfoPlist.strings */; };
 		54140F1C212BAFAB007C753B /* FontCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F1B212BAFAB007C753B /* FontCardView.swift */; };
 		54140F1E212BAFBC007C753B /* FontCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54140F1D212BAFBC007C753B /* FontCardView.xib */; };
 		54140F20212BB2F6007C753B /* GameTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F1F212BB2F6007C753B /* GameTableView.swift */; };
@@ -725,7 +726,6 @@
 		54D9AEB920CF6185004FEBA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D9AEB720CF6185004FEBA2 /* Main.storyboard */; };
 		54D9AEBB20CF6186004FEBA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54D9AEBA20CF6186004FEBA2 /* Assets.xcassets */; };
 		54D9AEBE20CF6186004FEBA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D9AEBC20CF6186004FEBA2 /* LaunchScreen.storyboard */; };
-		54D9AEC620CF6200004FEBA2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54D9AEC520CF6200004FEBA2 /* InfoPlist.strings */; };
 		54DEAAA121FFD7AE00509CCD /* sports（スポーツ）① .plist in Resources */ = {isa = PBXBuildFile; fileRef = 54DEAAA021FFD7AD00509CCD /* sports（スポーツ）① .plist */; };
 		54F3A6D521955AD200A1E01F /* EditPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3A6D421955AD200A1E01F /* EditPickerView.swift */; };
 		54F3A6D721955B3800A1E01F /* EditPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F3A6D621955B3800A1E01F /* EditPickerView.xib */; };
@@ -766,6 +766,7 @@
 		5404EA52221AD606008A8B6D /* mojichan_01_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mojichan_01_b.png; sourceTree = "<group>"; };
 		5404EA53221AD606008A8B6D /* mojichan_01_c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mojichan_01_c.png; sourceTree = "<group>"; };
 		5404EA54221AD607008A8B6D /* mojichan_01_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mojichan_01_a.png; sourceTree = "<group>"; };
+		5412685C221C896500CE3A35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		54140F1B212BAFAB007C753B /* FontCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCardView.swift; sourceTree = "<group>"; };
 		54140F1D212BAFBC007C753B /* FontCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontCardView.xib; sourceTree = "<group>"; };
 		54140F1F212BB2F6007C753B /* GameTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableView.swift; sourceTree = "<group>"; };
@@ -1457,7 +1458,6 @@
 		54D9AEBA20CF6186004FEBA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54D9AEBD20CF6186004FEBA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54D9AEBF20CF6186004FEBA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		54D9AEC520CF6200004FEBA2 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		54DEAAA021FFD7AD00509CCD /* sports（スポーツ）① .plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sports（スポーツ）① .plist"; sourceTree = "<group>"; };
 		54F3A6D421955AD200A1E01F /* EditPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPickerView.swift; sourceTree = "<group>"; };
 		54F3A6D621955B3800A1E01F /* EditPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPickerView.xib; sourceTree = "<group>"; };
@@ -2507,7 +2507,7 @@
 				54612D4E21FE97B00091D7BD /* quickquest */,
 				546764C621EF240A0025A5A9 /* sounds */,
 				5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */,
-				54D9AEC520CF6200004FEBA2 /* InfoPlist.strings */,
+				5412685D221C896500CE3A35 /* InfoPlist.strings */,
 				54D9AEBF20CF6186004FEBA2 /* Info.plist */,
 				54F3A6DC2196D53A00A1E01F /* mpe-Bridging-Header.h */,
 			);
@@ -3095,7 +3095,7 @@
 				5429F37721CF052800E0E50F /* time_cloud_01.png in Resources */,
 				542F444221B300DC00C51AD6 /* calender（暦）②.plist in Resources */,
 				5429F3C321CF06B600E0E50F /* score_get_8.png in Resources */,
-				54D9AEC620CF6200004FEBA2 /* InfoPlist.strings in Resources */,
+				5412685B221C896500CE3A35 /* InfoPlist.strings in Resources */,
 				54D5525B21BCA66300980B92 /* pack_03.png in Resources */,
 				54D551F621BCA66300980B92 /* select_stagechange_right.png in Resources */,
 				54BCA6EF22153BBB0054CEF4 /* gameclear_anim_effect18.png in Resources */,
@@ -3316,6 +3316,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		5412685D221C896500CE3A35 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5412685C221C896500CE3A35 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		54D9AEB720CF6185004FEBA2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
