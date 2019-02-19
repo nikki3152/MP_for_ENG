@@ -989,25 +989,20 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		else if self.customChara == .galaga {
 			//ギャラガ
-			let speed: Double = 4
 			let x = charaImageView.center.x
 			let y = charaImageView.center.y
-			UIView.animateKeyframes(withDuration: 1.0 * speed, delay: 0.0, options: [.repeat], animations: { 
-				UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.25 * speed, animations: { 
-					self.charaImageView.center = CGPoint(x: x+20, y: y)
-				})
-				UIView.addKeyframe(withRelativeStartTime: 0.25, relativeDuration: 0.25 * speed, animations: { 
-					self.charaImageView.center = CGPoint(x: x+20, y: y+20)
-				})
-				UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.25 * speed, animations: { 
-					self.charaImageView.center = CGPoint(x: x, y: y+20)
-				})
-				UIView.addKeyframe(withRelativeStartTime: 0.75, relativeDuration: 0.25 * speed, animations: { 
-					self.charaImageView.center = CGPoint(x: x, y: y)
-				})
-			}) { (stop) in
-				
-			}
+			let animation = CAKeyframeAnimation(keyPath: "position")
+			animation.duration = 2.0
+			animation.repeatCount = 100000
+			animation.keyTimes = [0.0, 0.25, 0.5, 0.75, 0.8]
+			animation.values = [
+				CGPoint(x: x, y: y),
+				CGPoint(x: x + 20, y: y),
+				CGPoint(x: x + 20, y: y + 20),
+				CGPoint(x: x, y: y + 20),
+				CGPoint(x: x, y: y),
+			]
+			self.charaImageView.layer.add(animation, forKey: nil)
 		}
 	}
 	func makeHitCharaAnimation() {
