@@ -936,7 +936,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		else if self.customChara == .taiyokun {
 			//太陽
+			charaImageView.image = UIImage(named: "taiyokun_01") 
+			if let shipo = charaImageView.viewWithTag(100) as? UIImageView{
+				shipo.removeFromSuperview()
+			}
 			let shipo = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+			shipo.tag = 100
 			shipo.image = UIImage(named: "taiyokun_shippo_01")
 			charaImageView.addSubview(shipo)
 			DataManager.animationInfinityRotate(v: shipo, speed: 0.1)
@@ -944,11 +949,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		else if self.customChara == .tsukikun {
 			//月
+			charaImageView.image = UIImage(named: "tsukikun_01")
 			DataManager.animationFuwa(v: charaImageView, dy: 40, speed: 4)
 		}
 		else if self.customChara == .kumokun {
 			//雲
-			DataManager.animationFuwa(v: charaImageView, dy: 40, speed: 4)
+			DataManager.animationFuwa(v: charaImageView, dy: 30, speed: 4)
 		}
 		else if self.customChara == .mojikun_a {
 			//もじくん（旧）
@@ -1008,6 +1014,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	func makeHitCharaAnimation() {
 		
 		if self.customChara == .mojikun_b || self.customChara == .mojikun_a {
+			//もじくん（新／旧）
 			//回転ジャンプ
 			let height = 140.0
 			let speed = 0.8
@@ -1038,27 +1045,57 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			
 		}
 		else if self.customChara == .mojichan {
-			
+			//もじちゃん
+			charaImageView.stopAnimating()
+			charaImageView.image = UIImage(named: "\(self.customChara.rawValue)_01_a")
+			DataManager.animationJump(v: charaImageView, height: 50, speed: 0.25, isRepeat: false)
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {[weak self]() -> Void in
+				self?.charaImageView.image = UIImage(named: "\(self!.customChara.rawValue)_02")
+			})
 		}
 		else if self.customChara == .taiyokun {
-			
+			//太陽
+			charaImageView.image = UIImage(named: "taiyokun_02")
+			if let shipo = charaImageView.viewWithTag(100) as? UIImageView{
+				shipo.image = UIImage(named: "taiyokun_shippo_02")
+				DataManager.animationInfinityRotate(v: shipo, speed: 0.3)
+			}
 		}
 		else if self.customChara == .tsukikun {
-			
+			//月
+			charaImageView.image = UIImage(named: "tsukikun_02")
 		}
 		else if self.customChara == .kumokun {
-			
+			//雲
+			//let x = charaImageView.center.x
+			//let y = charaImageView.center.y
+			// CAKeyframeAnimationオブジェクトを生成
+			let animation = CAKeyframeAnimation(keyPath: "position")
+			animation.fillMode = kCAFillModeForwards
+			animation.isRemovedOnCompletion = true
+			animation.duration = 1.0
+			// 放物線のパスを生成
+			let path = CGMutablePath()
+			path.addArc(center: charaImageView.center, radius: 20, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
+			// パスをCAKeyframeAnimationオブジェクトにセット
+			animation.path = path
+			// レイヤーにアニメーションを追加
+			charaImageView.layer.add(animation, forKey: "CircleAnimation")
 		}
 		else if self.customChara == .pack {
-			
+			//パックマン
+			MPEDataManager.animationJump(v: charaImageView, height: 50, speed: 0.25)
 		}
 		else if self.customChara == .ouji {
+			//王子
 			
 		}
 		else if self.customChara == .driller {
-			
+			//ドリラー
+			MPEDataManager.animationJump(v: charaImageView, height: 50, speed: 0.25)
 		}
 		else if self.customChara == .galaga {
+			//ギャラガー
 			
 		}
 		
@@ -1652,6 +1689,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 									if effectCount >= okWords {
 										self?.nowScore = 0
 										self?.isInEffect = false
+										self?.charaImageView.layer.removeAllAnimations()
+										self?.makeDefCharaAnimation()
 										//MARK: クリア判定
 										if s.checkGame() {
 											return

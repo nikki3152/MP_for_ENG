@@ -503,6 +503,7 @@ class DataManager: NSObject {
 	//無限回転
 	class func animationInfinityRotate(v: UIView, speed: Float) {
 		
+		v.layer.removeAnimation(forKey: "ImageViewRotation")
 		let animation:CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation")
 		animation.toValue = .pi / 2.0
 		animation.duration = 0.5           	// 指定した秒で90度回転
@@ -514,6 +515,7 @@ class DataManager: NSObject {
 	//ジャンプ
 	class func animationJump(v: UIView, height: Float, speed: Float, isRepeat: Bool = true) {
 		
+		v.layer.removeAllAnimations()
 		let y = v.center.y
 		var opt: UIView.KeyframeAnimationOptions = []
 		if isRepeat {
@@ -539,6 +541,7 @@ class DataManager: NSObject {
 	//ふわふわ
 	class func animationFuwa(v: UIView, dy: Float, speed: Float) {
 		
+		v.layer.removeAllAnimations()
 		let y = v.center.y
 		UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0.0, options: [.repeat, .autoreverse], animations: { 
 			UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.25 * Double(speed), animations: { 
@@ -559,6 +562,7 @@ class DataManager: NSObject {
 	}
 	class func animationFuwa(v: UIView, dx: Float, speed: Float) {
 		
+		v.layer.removeAllAnimations()
 		let x = v.center.x
 		UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0.0, options: [.repeat, .autoreverse], animations: { 
 			UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.25 * Double(speed), animations: { 
@@ -580,6 +584,7 @@ class DataManager: NSObject {
 	//フェード点滅
 	class func animationFadeFlash(v: UIView, speed: Float) {
 		
+		v.layer.removeAllAnimations()
 		UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0.0, options: [.repeat, .autoreverse], animations: { 
 			UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5 * Double(speed), animations: { 
 				v.alpha = 0.1
