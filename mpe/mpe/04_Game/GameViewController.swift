@@ -1049,7 +1049,17 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			charaImageView.image = UIImage(named: "\(self.customChara.rawValue)_01_a")
 			DataManager.animationJump(v: charaImageView, height: 50, speed: 0.25, isRepeat: false)
 			DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {[weak self]() -> Void in
-				self?.charaImageView.image = UIImage(named: "\(self!.customChara.rawValue)_02")
+				self?.charaImageView.image = UIImage(named: "\(self!.customChara.rawValue)_01_a")
+				let imgv = UIImageView(frame: self!.charaImageView.bounds)
+				self?.charaImageView.addSubview(imgv)
+				imgv.center = CGPoint(x: self!.charaImageView.bounds.size.width / 2, y: self!.charaImageView.bounds.size.height/2)
+				imgv.image = UIImage(named: "\(self!.customChara.rawValue)_02")
+				DataManager.animationFuwa(v: imgv, dy: 20, speed: 1.0)
+				UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveLinear, animations: { 
+					imgv.alpha = 0
+				}, completion: { (stop) in
+					imgv.removeFromSuperview()
+				})
 			})
 		}
 		else if self.customChara == .taiyokun {
