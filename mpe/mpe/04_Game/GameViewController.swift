@@ -921,7 +921,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.charaImageView.image = UIImage(named: "\(self.customChara.rawValue)_01") 
 		if self.customChara == .mojikun_b {
 			//もじくん（新）
-			DataManager.animationFuwa(v: charaImageView, dy: 40, speed: 2)
+			DataManager.animationFuwa(v: charaImageView, dy: 20, speed: 4)
 		}
 		else if self.customChara == .mojichan {
 			//もじちゃん
@@ -945,23 +945,22 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			shipo.image = UIImage(named: "taiyokun_shippo_01")
 			charaImageView.addSubview(shipo)
 			DataManager.animationInfinityRotate(v: shipo, speed: 0.1)
-			DataManager.animationFuwa(v: charaImageView, dy: 40, speed: 4)
+			DataManager.animationFuwa(v: charaImageView, dy: 20, speed: 4)
 		}
 		else if self.customChara == .tsukikun {
 			//月
 			charaImageView.image = UIImage(named: "tsukikun_01")
-			DataManager.animationFuwa(v: charaImageView, dy: 40, speed: 4)
+			DataManager.animationFuwa(v: charaImageView, dy: 20, speed: 4)
 		}
 		else if self.customChara == .kumokun {
 			//雲
-			DataManager.animationFuwa(v: charaImageView, dy: 30, speed: 4)
+			DataManager.animationFuwa(v: charaImageView, dy: 20, speed: 4)
 		}
 		else if self.customChara == .mojikun_a {
 			//もじくん（旧）
 			self.charaImageView.animationImages = [
 				UIImage(named: "\(self.customChara.rawValue)_01")!,
 				UIImage(named: "\(self.customChara.rawValue)_02")!,
-				UIImage(named: "\(self.customChara.rawValue)_03")!,
 			]
 			self.charaImageView.animationDuration = 3.5
 			self.charaImageView.startAnimating()
@@ -1126,8 +1125,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		var objNames: [String] = ["obj_flower_01"]
 		var direction: String = "LD"
-		var dx: CGFloat = -0.2
-		var dy: CGFloat = 0.2
+		var dx: CGFloat = -0.1
+		var dy: CGFloat = 0.1
 		var animation: Bool = false
 		let stage = questIndex + 1
 		if stage == 1 || stage == 6 || stage == 11 || stage == 16 {
