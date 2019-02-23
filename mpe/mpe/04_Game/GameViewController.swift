@@ -1191,6 +1191,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		var objNames: [String] = ["obj_flower_01"]
 		var direction: String = "LD"
+		let dd: CGFloat = 0.1
 		var dx: CGFloat = -0.1
 		var dy: CGFloat = 0.1
 		var animation: Bool = false
@@ -1281,36 +1282,36 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		
 		if direction == "LD" {
-			dx = -0.2
-			dy = 0.2
+			dx = -dd
+			dy = dd
 		}
 		else if direction == "RD" {
-			dx = 0.2
-			dy = 0.2
+			dx = dd
+			dy = dd
 		}
 		else if direction == "LU" {
-			dx = -0.2
-			dy = -0.2
+			dx = -dd
+			dy = -dd
 		}
 		else if direction == "RU" {
-			dx = 0.2
-			dy = -0.2
+			dx = dd
+			dy = -dd
 		}
 		else if direction == "L" {
-			dx = -0.2
+			dx = -dd
 			dy = 0
 		}
 		else if direction == "R" {
-			dx = 0.2
+			dx = dd
 			dy = 0
 		}
 		else if direction == "U" {
 			dx = 0
-			dy = -0.2
+			dy = -dd
 		}
 		else if direction == "D" {
 			dx = 0
-			dy = 0.2
+			dy = dd
 		}
 		
 		for v in backImageView.subviews {
@@ -1319,7 +1320,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		let size = self.backImageView.frame.size
 		for i in 0 ..< 15 {
 			let y = Int.random(in: 0 ..< Int(size.height))
-			let x = Int.random(in: Int(size.width / 4) ..< Int(size.width * 1.5))
+			let x = Int.random(in: 0 ..< Int(size.width))
 			make_obj(x: x, y: y, tag: i + 100, objNames: objNames, animation: animation)
 		}
 		backgroundTimer?.invalidate()
