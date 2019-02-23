@@ -14,6 +14,7 @@ let kSEOn: String = "kSEOn"
 let kVoiceOn: String = "kVoiceOn"
 let kEnableCharaArry: String = "kEnableCharaArry"
 let kSelectedCharaType: String = "kSelectedCharaType"
+let kHiscore: String = "kHiscore"
 
 enum CustomChara: String {
 	case mojikun_b		= "mojikun_b"		//もじくん（新）

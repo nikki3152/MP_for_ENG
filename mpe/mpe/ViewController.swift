@@ -21,6 +21,7 @@ class ViewController: UIViewController {
 			kVoiceOn:true,
 			kEnableCharaArry:[true,false,false,false,false,false,false,false,false,false],
 			kSelectedCharaType:1,
+			kHiscore:0,
 		])
 		
 		//バージョン情報

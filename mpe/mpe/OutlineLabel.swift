@@ -8,13 +8,13 @@
 
 import UIKit
 
-class OutlineLabel: UILabel {
+@IBDesignable public class OutlineLabel: UILabel {
 
 	/*==========================
 	プロパティ
 	==========================*/
-	var outlineColor: UIColor = UIColor.white
-	var outlineWidth: CGFloat = 1.0
+	@IBInspectable var outlineColor: UIColor = UIColor.white
+	@IBInspectable var outlineWidth: CGFloat = 1.0
 
 	
 	/*==========================
@@ -27,7 +27,7 @@ class OutlineLabel: UILabel {
 		super.init(coder: aDecoder)!
 	}
 	
-	override func drawText(in rect: CGRect) {
+	override public func drawText(in rect: CGRect) {
 		
 		
 		let shadowOffset = self.shadowOffset

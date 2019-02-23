@@ -14,10 +14,19 @@ class StageSelectViewController: BaseViewController {
 	@IBOutlet weak var rightChaImageView: UIImageView!
 	
 	
+	@IBOutlet weak var stageSumbImageView: UIImageView!
+	@IBOutlet weak var backImageView: UIImageView!
+	@IBOutlet weak var timeLimitLabel: UILabel!
+	@IBOutlet weak var targetScoreLabel: UILabel!
+	@IBOutlet weak var hiScoreLabel: UILabel!
+	@IBOutlet weak var stageTitleLabel: UILabel!
+	
 	let dataMrg: MPEDataManager = MPEDataManager()
 	var questNames: [String] = []
 	var questDatas: [QuestData] = []
 	var startIndex: Int = 0
+	
+	//MARK: ページ
 	var _currentPage: Int = 1
 	var currentPage: Int {
 		get {
@@ -28,7 +37,13 @@ class StageSelectViewController: BaseViewController {
 			self.startIndex = (_currentPage - 1) * 10
 			for i in 0 ..< self.stageButtons.count {
 				let bt = self.stageButtons[i]
-				bt.setTitle("\(self.startIndex + i + 1)", for: .normal)
+				if bt.isSelected {
+					bt.setImage(nil, for: .normal)
+				} else {
+					let stageNum = "\(NSString(format: "%02d", self.startIndex + i + 1))"
+					let image = UIImage(named: "select_icon_\(stageNum)")
+					bt.setImage(image, for: .normal)
+				}
 			}
 			if _currentPage == 1 {
 				self.leftButton.isHidden = true
@@ -48,6 +63,47 @@ class StageSelectViewController: BaseViewController {
 				self.leftImageView.isHidden = false
 				self.rightImageView.isHidden = false
 			}
+			
+			let num = NSString(format: "%02d", _currentPage)
+			let pageImage = UIImage(named: "select_stagemap_\(num)")
+			self.stagePageImgView.image = pageImage
+			
+			if _currentPage == 1 || _currentPage == 2 {
+				self.stageLeftButton.isHidden = true
+				self.stageRightButton.isHidden = false
+				self.stageLeftButton.setBackgroundImage(UIImage(named: "select_mapchange_left"), for: .normal)
+				self.stageRightButton.setBackgroundImage(UIImage(named: "select_mapchange_right_intermediate"), for: .normal)
+				self.backImageView.image = UIImage(named: "select_background_01")
+			}
+			else if _currentPage == 3 || _currentPage == 4 {
+				self.stageLeftButton.isHidden = false
+				self.stageRightButton.isHidden = false
+				self.stageLeftButton.setBackgroundImage(UIImage(named: "select_mapchange_left_biginner"), for: .normal)
+				self.stageRightButton.setBackgroundImage(UIImage(named: "select_mapchange_right_advanced"), for: .normal)
+				self.backImageView.image = UIImage(named: "select_background_02")
+			}
+			else if _currentPage == 5 || _currentPage == 6 {
+				self.stageLeftButton.isHidden = false
+				self.stageRightButton.isHidden = false
+				self.stageLeftButton.setBackgroundImage(UIImage(named: "select_mapchange_left_intermediate"), for: .normal)
+				self.stageRightButton.setBackgroundImage(UIImage(named: "select_mapchange_right_god"), for: .normal)
+				self.backImageView.image = UIImage(named: "select_background_03")
+			}
+			else if _currentPage == 7 || _currentPage == 8 {
+				self.stageLeftButton.isHidden = false
+				self.stageRightButton.isHidden = false
+				self.stageLeftButton.setBackgroundImage(UIImage(named: "select_mapchange_left_advanced"), for: .normal)
+				self.stageRightButton.setBackgroundImage(UIImage(named: "select_mapchange_right_random"), for: .normal)
+				self.backImageView.image = UIImage(named: "select_background_04")
+			}
+			else if _currentPage == 9  {
+				self.stageLeftButton.isHidden = false
+				self.stageRightButton.isHidden = true
+				self.stageLeftButton.setBackgroundImage(UIImage(named: "select_mapchange_left_god"), for: .normal)
+				self.stageRightButton.setBackgroundImage(UIImage(named: "select_mapchange_right"), for: .normal)
+				self.backImageView.image = UIImage(named: "select_background_05")
+			}
+			
 		}
 	}
 	var maxPage: Int = 0
@@ -91,8 +147,19 @@ class StageSelectViewController: BaseViewController {
 				}
 			}
 		}
+		//ハイスコア
+		let hiscore = UserDefaults.standard.integer(forKey: kHiscore)
+		self.hiScoreLabel.text = "\(hiscore)"
+		
 		self.maxPage = 8//(self.questDatas.count / 10) + (self.questDatas.count % 10)
 		self.currentPage = 1
+		
+		//選択
+		stageButton1.isSelected = true
+		self.stageSelectedButton = stageButton1 
+		let index = stageButton1.tag + self.startIndex
+		self.selectStage(index: index)
+		
     }
 	
 	override func viewWillLayoutSubviews() {
@@ -120,7 +187,96 @@ class StageSelectViewController: BaseViewController {
 	}
 	
 	
-	//左ボタン
+	@IBOutlet weak var stagePageImgView: UIImageView!
+	
+	//MARK: ステージ移動ボタン
+	@IBOutlet weak var stageLeftButton: UIButton!
+	@IBAction func stageLeftButtonAction(_ sender: UIButton) {
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
+		sender.isUserInteractionEnabled = false
+		let x = self.buttonBaseView.center.x
+		UIView.animate(withDuration: 0.25, animations: { 
+			self.buttonBaseView.center = CGPoint(x: x + (self.buttonBaseView.frame.size.width/2), y: self.buttonBaseView.center.y)
+			self.buttonBaseView.alpha = 0
+		}) { [weak self](stop) in
+			guard let s = self else {
+				return
+			}
+			if s.currentPage == 1 || s.currentPage == 2 {
+			}
+			else if s.currentPage == 3 || s.currentPage == 4 {
+				s.currentPage = 1
+			}
+			else if s.currentPage == 5 || s.currentPage == 6 {
+				s.currentPage = 3
+			}
+			else if s.currentPage == 7 || s.currentPage == 8 {
+				s.currentPage = 5
+			}
+			else if s.currentPage == 9  {
+				s.currentPage = 7
+			}
+			
+			s.stageSelectedButton?.isSelected = false
+			s.stageSelectedButton = s.stageButton1
+			s.stageSelectedButton?.isSelected = true
+			//選択
+			let index = s.stageButton1.tag + s.startIndex
+			s.selectStage(index: index)
+			
+			s.buttonBaseView.center = CGPoint(x: -(s.buttonBaseView.frame.size.width/2), y: s.buttonBaseView.center.y)
+			UIView.animate(withDuration: 0.25, animations: { 
+				s.buttonBaseView.center = CGPoint(x: x, y: s.buttonBaseView.center.y)
+				s.buttonBaseView.alpha = 1
+			}) { (stop) in
+				sender.isUserInteractionEnabled = true
+			}
+		}
+	}
+	@IBOutlet weak var stageRightButton: UIButton!
+	@IBAction func stageRightButtonAction(_ sender: UIButton) {
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
+		sender.isUserInteractionEnabled = false
+		let x = self.buttonBaseView.center.x
+		UIView.animate(withDuration: 0.25, animations: { 
+			self.buttonBaseView.center = CGPoint(x: -(self.buttonBaseView.frame.size.width/2), y: self.buttonBaseView.center.y)
+			self.buttonBaseView.alpha = 0
+		}) { [weak self](stop) in
+			guard let s = self else {
+				return
+			}
+			if s.currentPage == 1 || s.currentPage == 2 {
+				s.currentPage = 3
+			}
+			else if s.currentPage == 3 || s.currentPage == 4 {
+				s.currentPage = 5
+			}
+			else if s.currentPage == 5 || s.currentPage == 6 {
+				s.currentPage = 7
+			}
+			else if s.currentPage == 7 || s.currentPage == 8 {
+				s.currentPage = 9
+			}
+			else if s.currentPage == 9  {
+			}
+			s.stageSelectedButton?.isSelected = false
+			s.stageSelectedButton = s.stageButton1
+			s.stageSelectedButton?.isSelected = true
+			//選択
+			let index = s.stageButton1.tag + s.startIndex
+			s.selectStage(index: index)
+			
+			s.buttonBaseView.center = CGPoint(x: x + (s.buttonBaseView.frame.size.width/2), y: s.buttonBaseView.center.y)
+			UIView.animate(withDuration: 0.25, animations: { 
+				s.buttonBaseView.center = CGPoint(x: x, y: s.buttonBaseView.center.y)
+				s.buttonBaseView.alpha = 1
+			}) { (stop) in
+				sender.isUserInteractionEnabled = true
+			}
+		}
+	}
+	
+	//MARK: 左ボタン
 	@IBOutlet weak var leftImageView: UIImageView!
 	@IBOutlet weak var leftButton: UIButton!
 	@IBAction func leftButtonAction(_ sender: UIButton) {
@@ -131,20 +287,28 @@ class StageSelectViewController: BaseViewController {
 		UIView.animate(withDuration: 0.25, animations: { 
 			self.buttonBaseView.center = CGPoint(x: x + (self.buttonBaseView.frame.size.width/2), y: self.buttonBaseView.center.y)
 			self.buttonBaseView.alpha = 0
-		}) { (stop) in
+		}) { [weak self](stop) in
+			guard let s = self else {
+				return
+			}
+			s.currentPage -= 1
+			s.stageSelectedButton?.isSelected = false
+			s.stageSelectedButton = s.stageButton1
+			s.stageSelectedButton?.isSelected = true
+			//選択
+			let index = s.stageButton1.tag + s.startIndex
+			s.selectStage(index: index)
 			
-			self.currentPage -= 1
-			
-			self.buttonBaseView.center = CGPoint(x: -(self.buttonBaseView.frame.size.width/2), y: self.buttonBaseView.center.y)
+			s.buttonBaseView.center = CGPoint(x: -(s.buttonBaseView.frame.size.width/2), y: s.buttonBaseView.center.y)
 			UIView.animate(withDuration: 0.25, animations: { 
-				self.buttonBaseView.center = CGPoint(x: x, y: self.buttonBaseView.center.y)
-				self.buttonBaseView.alpha = 1
+				s.buttonBaseView.center = CGPoint(x: x, y: s.buttonBaseView.center.y)
+				s.buttonBaseView.alpha = 1
 			}) { (stop) in
 				sender.isUserInteractionEnabled = true
 			}
 		}
 	}
-	//右ボタン
+	//MARK: 右ボタン
 	@IBOutlet weak var rightImageView: UIImageView!
 	@IBOutlet weak var rightButton: UIButton!
 	@IBAction func rightButtonAction(_ sender: UIButton) {
@@ -155,14 +319,22 @@ class StageSelectViewController: BaseViewController {
 		UIView.animate(withDuration: 0.25, animations: { 
 			self.buttonBaseView.center = CGPoint(x: -(self.buttonBaseView.frame.size.width/2), y: self.buttonBaseView.center.y)
 			self.buttonBaseView.alpha = 0
-		}) { (stop) in
+		}) { [weak self](stop) in
+			guard let s = self else {
+				return
+			}
+			s.currentPage += 1
+			s.stageSelectedButton?.isSelected = false
+			s.stageSelectedButton = s.stageButton1
+			s.stageSelectedButton?.isSelected = true
+			//選択
+			let index = s.stageButton1.tag + s.startIndex
+			s.selectStage(index: index)
 			
-			self.currentPage += 1
-			
-			self.buttonBaseView.center = CGPoint(x: x + (self.buttonBaseView.frame.size.width/2), y: self.buttonBaseView.center.y)
+			s.buttonBaseView.center = CGPoint(x: x + (s.buttonBaseView.frame.size.width/2), y: s.buttonBaseView.center.y)
 			UIView.animate(withDuration: 0.25, animations: { 
-				self.buttonBaseView.center = CGPoint(x: x, y: self.buttonBaseView.center.y)
-				self.buttonBaseView.alpha = 1
+				s.buttonBaseView.center = CGPoint(x: x, y: s.buttonBaseView.center.y)
+				s.buttonBaseView.alpha = 1
 			}) { (stop) in
 				sender.isUserInteractionEnabled = true
 			}
@@ -172,7 +344,8 @@ class StageSelectViewController: BaseViewController {
 	
 	@IBOutlet weak var buttonBaseView: UIView!
 	
-	//ステージ
+	//MARK: ステージ選択ボタン
+	weak var stageSelectedButton: UIButton!
 	var stageButtons: [UIButton] = []
 	@IBOutlet weak var stageButton1: UIButton!
 	@IBOutlet weak var stageButton2: UIButton!
@@ -188,13 +361,52 @@ class StageSelectViewController: BaseViewController {
 		
 		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let tag = sender.tag + self.startIndex
-		let questData: QuestData = self.questDatas[tag]
-		let gameView = GameViewController.gameViewController(questData: questData)
-		gameView.questIndex = tag
-		gameView.selectCnt = self
-		gameView.present(self) { 
+		if let bt = self.stageSelectedButton, sender == bt {
+			if self.questDatas.count > tag {
+				let questData: QuestData = self.questDatas[tag]
+				let gameView = GameViewController.gameViewController(questData: questData)
+				gameView.questIndex = tag
+				gameView.selectCnt = self
+				gameView.present(self) { 
+				}
+				gameView.baseDelegate = self
+			}
+		} else {
+			self.stageSelectedButton?.isSelected = false
+			if let bt = self.stageSelectedButton {
+				let stageNum = "\(NSString(format: "%02d", self.startIndex + bt.tag + 1))"
+				let image = UIImage(named: "select_icon_\(stageNum)")
+				bt.setImage(image, for: .normal)
+			}
+			self.stageSelectedButton = sender
+			self.stageSelectedButton?.isSelected = true
+			self.selectStage(index: tag)
 		}
-		gameView.baseDelegate = self
+	}
+	
+	func selectStage(index: Int) {
+		
+		if self.questDatas.count <= index {
+			return
+		}
+		let questData: QuestData = self.questDatas[index]
+		//問題名
+		let title = questData.questName
+		let stageNum = "stage\(NSString(format: "%02d", index + 1))" 
+		self.stageTitleLabel.text = "\(stageNum) \(title)"
+		//時間
+		let time = questData.time
+		if time == 0 {
+			self.timeLimitLabel?.text = "無制限"
+		} else {
+			let m = Int(time / 60)
+			let s = Int(time) % 60
+			self.timeLimitLabel?.text = "\(NSString(format: "%02d", m)) : \(NSString(format: "%02d", s))"
+		}
+		//アイコン
+		self.stageSelectedButton?.setImage(nil, for: .normal)
+		//サムネイル
+		self.stageSumbImageView.image = UIImage(named: "select_sumb_\(NSString(format: "%02d", index + 1))")
 	}
 	
 	override func baseViewControllerBack(baseView: BaseViewController) -> Void {
