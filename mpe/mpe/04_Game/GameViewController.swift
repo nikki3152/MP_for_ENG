@@ -2035,6 +2035,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		if isGameEnd {
 			return
 		}
+		self.mojikunTimer?.invalidate()
+		self.mojikunTimer = nil
+		self.hideMojikunString()
 		isEnablePause = false
 		SoundManager.shared.startBGM(type: .bgmStageClear)	//ジングル再生
 		
@@ -2108,6 +2111,10 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
 					case .dict:				//辞書モードで復習！
 						print("辞書モードで復習！")
+						let dictView = DictViewController.dictViewController()
+						dictView.present(self!) { 
+							
+						}
 					}
 				}
 			}
@@ -2179,6 +2186,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		if isGameEnd {
 			return
 		}
+		self.mojikunTimer?.invalidate()
+		self.mojikunTimer = nil
+		self.hideMojikunString()
 		isEnablePause = false
 		SoundManager.shared.startBGM(type: .bgmFail)	//BGM再生
 		
