@@ -513,7 +513,7 @@ class DataManager: NSObject {
 		v.layer.speed = speed
 	}
 	//ジャンプ
-	class func animationJump(v: UIView, height: Float, speed: Float, isRepeat: Bool = true) {
+	class func animationJump(v: UIView, height: Float, speed: Float, isRepeat: Bool = true, finished: (() -> Void)? = nil) {
 		
 		v.layer.removeAllAnimations()
 		let y = v.center.y
@@ -535,7 +535,7 @@ class DataManager: NSObject {
 				v.center.y = y
 			})
 		}) { (stop) in
-			
+			finished?()
 		}
 	}
 	//ふわふわ

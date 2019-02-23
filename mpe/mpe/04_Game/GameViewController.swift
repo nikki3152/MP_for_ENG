@@ -996,7 +996,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				guard let s = self else {
 					return
 				}
-				DataManager.animationJump(v: s.charaImageView, height: 20, speed: 0.5, isRepeat: false)
+				DataManager.animationJump(v: s.charaImageView, height: 15, speed: 0.5, isRepeat: false)
 			})
 		}
 		else if self.customChara == .ouji {
@@ -1005,7 +1005,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				UIImage(named: "\(self.customChara.rawValue)_01")!,
 				UIImage(named: "\(self.customChara.rawValue)_02")!,
 			]
-			self.charaImageView.animationDuration = 3.5
+			self.charaImageView.animationDuration = 7.0
 			self.charaImageView.startAnimating()
 		}
 		else if self.customChara == .driller {
@@ -1014,7 +1014,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				UIImage(named: "\(self.customChara.rawValue)_01")!,
 				UIImage(named: "\(self.customChara.rawValue)_02")!,
 			]
-			self.charaImageView.animationDuration = 3.5
+			self.charaImageView.animationDuration = 7.0
 			self.charaImageView.startAnimating()
 		}
 		else if self.customChara == .galaga {
@@ -1118,7 +1118,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		else if self.customChara == .pack {
 			//パックマン
-			MPEDataManager.animationJump(v: charaImageView, height: 50, speed: 0.25)
+			MPEDataManager.animationJump(v: charaImageView, height: 50, speed: 0.5)
 		}
 		else if self.customChara == .ouji {
 			//王子
@@ -1126,7 +1126,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		else if self.customChara == .driller {
 			//ドリラー
-			MPEDataManager.animationJump(v: charaImageView, height: 50, speed: 0.25)
+			MPEDataManager.animationJump(v: charaImageView, height: 50, speed: 0.5)
 		}
 		else if self.customChara == .galaga {
 			//ギャラガー

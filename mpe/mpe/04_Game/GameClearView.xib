@@ -85,7 +85,7 @@
                     </subviews>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="0.70294744318181823" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="1" alpha="0.84878817471590906" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="TiE-vj-8dO"/>
             <connections>
                 <outlet property="buttonBaseView" destination="bfp-mG-naY" id="6Nv-pk-yno"/>
