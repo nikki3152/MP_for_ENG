@@ -77,6 +77,12 @@ struct QuestData {
 		" "," "," "," "," "," "," "," ",]
 	var cards: [String] = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 	var wildCardLen: Int = 0
+	
+	//巻き戻し記録用
+	var score: Int = 0		//スコア
+	var count: Int = 0		//クリア条件カウント
+	var answerWords: [String:String] = [:]
+	
 	init() {
 		
 	}
@@ -180,7 +186,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	var questIndex: Int = 0
 	let dataMrg = MPEDataManager()
 	var questData: QuestData!
-	var questDataDef: QuestData!
+	//var questDataDef: QuestData!
+	var questDataBKList: [QuestData] = []
+	var questDataBKIndex: Int = 0
 	var cardSelectIndex: Int!
 	var answerWords: [String:String] = [:]
 	var _questCount: Int = 2
@@ -220,7 +228,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		let storyboard = UIStoryboard(name: "GameViewController", bundle: nil)
 		let baseCnt = storyboard.instantiateInitialViewController() as! GameViewController
 		baseCnt.questData = questData 
-		baseCnt.questDataDef = questData 
 		return baseCnt
 	}
 	
@@ -450,9 +457,14 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	//MARK: タイマースタート
 	func startGameTimer() {
 		
+		self.answerWords = [:]
+		self.totalScore = 0
+		self.nowScore = 0
+		
 		self.isEnablePause = false
 		self.isInEffect = false
 		
+		self.undoButton.isHidden = true
 		//手札
 		self.updateCardScroll()
 		//ゲームテーブル
@@ -461,6 +473,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.updateQuestString()
 		//文字くんメッセージ
 		//self.updateMojikunString()
+		
+		self.questData.score = self.totalScore
+		self.questData.count = self.questCount
+		self.questData.answerWords = self.answerWords
+		self.questDataBKList.removeAll()
+		self.questDataBKList.append(questData)
+		self.questDataBKIndex = 0
 		
 		//BGM再生／背景変更
 		if self.questIndex >= 0 && self.questIndex <= 19 {
@@ -561,26 +580,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		self.startGameTimer()
 		
-		self.answerWords = [:]
-		self.totalScore = 0
-		self.nowScore = 0
-		self.questData = self.questDataDef
-		//手札
-		self.updateCardScroll()
-		//ゲームテーブル
-		self.updateGametable()
-		//問題
-		self.updateQuestString()
-		//文字くんメッセージ
-		//self.updateMojikunString()
-		
 	}
 	//MARK: 次の問題
 	func nextQuest() {
 		
 		if self.selectCnt.questDatas.count - 1 > self.questIndex {
 			self.questIndex += 1
-			self.questDataDef = self.selectCnt.questDatas[self.questIndex]
+			self.questData = self.selectCnt.questDatas[self.questIndex]
 			self.retry()
 		} else {
 			self.remove()
@@ -606,14 +612,39 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		if isEnablePause == false || self.isInEffect {
 			return
 		}
-		SoundManager.shared.startSE(type: .seSelect)	//SE再生
+		if questDataBKList.count > 1 {
+			SoundManager.shared.startSE(type: .seSelect)	//SE再生
+			self.questDataBKIndex -= 1
+			self.questData = self.questDataBKList[self.questDataBKIndex]
+			self.questDataBKList.removeLast()
+			//手札
+			self.updateCardScroll()
+			//ゲームテーブル
+			self.updateGametable()
+			//問題
+			self.updateQuestString()
+			//文字くんメッセージ
+			//self.updateMojikunString()
+			
+			self.totalScore = questData.score
+			self.questCount = questData.count
+			self.answerWords = self.questData.answerWords
+			
+			if questDataBKList.count > 1 {
+				self.undoButton.isHidden = false
+			} else {
+				self.undoButton.isHidden = true
+			}
+		} else {
+			
+		}
 	}
 	
 	
 	private func updateScrollInset() {
 		
 	}
-	
+	//MARK: 手札作成
 	func updateCardScroll() {
 		
 		for v in self.cardScrolliew.subviews {
@@ -649,7 +680,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.cardScrolliew.contentSize = CGSize(width: CGFloat(self.questData.cards.count) * 50, height: self.cardScrolliew.frame.size.height / 2)
 		
 	}
-	
+	//MARK: ゲームメインテーブルさ作成
 	func updateGametable() {
 		
 		//ゲームテーブル
@@ -674,7 +705,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.view.sendSubview(toBack: self.mainScrollView)
 		self.view.sendSubview(toBack: self.backImageView)
 	}
-	
+	//クエスト文字作成
 	func updateQuestString() {
 		
 		self.questMainLabel?.removeFromSuperview()
@@ -712,7 +743,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.questCount = count
 		
 	}
-	
+	//MARK: もじくんセリフ作成
 	func updateMojikunString() {
 		
 		self.ballonMainLabel?.removeFromSuperview()
@@ -1040,7 +1071,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		if self.customChara == .mojikun_b || self.customChara == .mojikun_a {
 			//もじくん（新／旧）
 			//回転ジャンプ
-			let height = 140.0
+			let height = 100.0
 			let speed = 0.8
 			let y = self.charaImageView.center.y
 			UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0.0, options: [], animations: { 
@@ -1619,7 +1650,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					var value: String = "---"
 					if values.count > 0 {
 						value = values[0]
-						print(" >【\(key)】\(value)")
+						//print(" >【\(key)】\(value)")
 						infoText.append(value)
 					} else {
 						infoText.append("【\(key)】---")
@@ -1632,7 +1663,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			if hitWords.count > 0 {
 				SoundManager.shared.startSE(type: .seCorrect)	//SE再生
 				//あたり
-				print("単語数: \(hitWords.count)")
+				//print("単語数: \(hitWords.count)")
 				var delay: Double = 0.2
 				var effectCount = 0
 				var okWords = 0
@@ -1658,7 +1689,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						}
 						
 						let mojiCount = hitWord.count
-						print("文字数: \(mojiCount)[\(hitWord)]")
+						//print("文字数: \(mojiCount)[\(hitWord)]")
 						DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
 							if self.isGameEnd == false {
 								
@@ -1683,7 +1714,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 									}
 									if mojiCount >= words {
 										self.questCount -= 1
-										print("\(words)字数以上の英単語を\(self.questCount)個作る")
+										//print("\(words)字数以上の英単語を\(self.questCount)個作る")
 									}
 								}
 								else if self.questData.questType == .useFontMakeCount {
@@ -1703,24 +1734,24 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 									//スコアを○点以上
 									//+++++++++++++++++++++++++
 									self.questCount -= score
-									print("残り\(self.questCount)点")
+									//print("残り\(self.questCount)点")
 								}
 								else {
 									self.questCount -= 1
-									print("残り\(self.questCount)個")
+									//print("残り\(self.questCount)個")
 								}
 								self.tableTapEffect(komas: komas)	//エフェクト
 								let hitView = HitInfoView.hitInfoView()
 								SoundManager.shared.startComboSE(effectCount)	//SE再生
 								self.makeChainAnimation(num: effectCount)		//コンボアニメーション
-								print("effectCount: \(effectCount)")
+								//print("effectCount: \(effectCount)")
 								self.isInEffect = true
 								//MARK: 正解単語表示
 								hitView.open(title: hitWord.uppercased(), info: info, parent: self.view, finished: {[weak self]() in
 									guard let s = self else {
 										return
 									}
-									if effectCount >= okWords {
+									if effectCount >= okWords && s.nowScore > 0 {
 										self?.nowScore = 0
 										self?.isInEffect = false
 										self?.charaImageView.layer.removeAllAnimations()
@@ -1728,6 +1759,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 										//MARK: クリア判定
 										if s.checkGame() {
 											return
+										} else {
+											s.record()
 										}
 									}
 								})
@@ -1743,6 +1776,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 									//ゲームオーバー
 									self.gameOver()
 									return
+								} else {
+									self.record()
 								}
 							}
 						}
@@ -1754,6 +1789,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				if emptyTableCount() == 0 || cardViewList.count == 0 {
 					//ゲームオーバー
 					self.gameOver()
+				} else {
+					self.record()
 				}
 			}
 		}
@@ -1763,7 +1800,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	func checkGame() -> Bool {
 		
 		var ret = false
-		print("クリア判定！！")
 		if self.questData.questType == .makeWords {
 			//+++++++++++++++++++++++++
 			//英単語を◯個作る
@@ -1807,7 +1843,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			//+++++++++++++++++++++++++
 			//すべてのアルファベットを使う
 			//+++++++++++++++++++++++++
-			print("cardViewList count: \(cardViewList.count)")
+			//print("cardViewList count: \(cardViewList.count)")
 			//手札が空
 			if cardViewList.count == 0 {
 				//クリア
@@ -1886,6 +1922,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				}
 			}
 		}
+		print("クリア判定 > \(ret)")
 		return ret
 	}
 	
@@ -2194,5 +2231,17 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}) { (stop) in
 		}
 		
+	}
+	
+	//MARK: ゲーム記録
+	func record() {
+		print("ゲーム記録: SCORE:\(self.totalScore) COUNT:\(questCount)")
+		self.questData.score = self.totalScore
+		self.questData.count = self.questCount
+		self.questData.answerWords = self.answerWords
+		self.questDataBKList.append(self.questData)
+		self.questDataBKIndex += 1
+		
+		self.undoButton.isHidden = false
 	}
 }
