@@ -475,6 +475,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		//文字くんメッセージ
 		self.updateMojikunString()
 		self.showMojikunString()
+		self.mojikunTimer?.invalidate()
+		self.mojikunTimer = Timer.scheduledTimer(withTimeInterval: 7.0, repeats: true, block: { [weak self](t) in
+			if self!.isInEffect == false {
+				self?.nextMojikunString()
+			}
+		})
 		
 		self.questData.score = self.totalScore
 		self.questData.count = self.questCount
@@ -745,6 +751,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	}
 	
 	//MARK: もじくんセリフ作成
+	var mojikunTimer: Timer!
 	var chaMessages: [String] = []
 	var messageIndex: Int = 0
 	func updateMojikunString() {
@@ -780,33 +787,30 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		if bText != "" {
 			let bLabel = makeVerticalLabel(size: self.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 12), text: bText)
 			bLabel.textAlignment = .left
-			bLabel.numberOfLines = 2
+			bLabel.numberOfLines = 3
 			self.ballonDisplayImageView.addSubview(bLabel)
 			bLabel.center = CGPoint(x: self.ballonDisplayImageView.frame.size.width / 2, y: self.ballonDisplayImageView.frame.size.height / 2)
 			self.ballonMainLabel = bLabel
-			messageIndex += 1
-			if messageIndex >= self.chaMessages.count {
-				messageIndex = 0
-			}
-			self.ballonImageView.alpha = 0
-			self.ballonDisplayImageView.alpha = 0
-			UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveLinear, animations: {[weak self]() in 
-				self?.ballonImageView.alpha = 1
-				self?.ballonDisplayImageView.alpha = 1
-			}) { (stop) in
-			}
+			self.ballonImageView.alpha = 1
+			self.ballonDisplayImageView.alpha = 1
 		}
 	}
 	func hideMojikunString() {
 		
-		UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveLinear, animations: {[weak self]() in 
-			self?.ballonImageView.alpha = 0
-			self?.ballonDisplayImageView.alpha = 0
-		}) { [weak self](stop) in
-			self?.ballonMainLabel?.removeFromSuperview()
-			self?.ballonMainLabel = nil
-		}
+		self.ballonImageView.alpha = 0
+		self.ballonDisplayImageView.alpha = 0
+		self.ballonMainLabel?.removeFromSuperview()
+		self.ballonMainLabel = nil
 	}
+	func nextMojikunString() {
+		
+		messageIndex += 1
+		if messageIndex >= self.chaMessages.count {
+			messageIndex = 0
+		}
+		showMojikunString()
+	}
+	
 	
 	//MARK: 横方向の単語検索
 	func checkWordH(startIndex: Int) -> String {
@@ -2009,12 +2013,16 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				self?.gameTimer = nil
 				self?.chaDefTimer?.invalidate()
 				self?.chaDefTimer = nil
+				self?.mojikunTimer?.invalidate()
+				self?.mojikunTimer = nil
 				self?.retry()
 			case .giveup:			//あきらめる
 				self?.gameTimer?.invalidate()
 				self?.gameTimer = nil
 				self?.chaDefTimer?.invalidate()
 				self?.chaDefTimer = nil
+				self?.mojikunTimer?.invalidate()
+				self?.mojikunTimer = nil
 				self?.remove()
 				SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
 			}
