@@ -36,6 +36,7 @@ class TableKomaView: UIView {
 		self.moji = moji
 		if moji != "0" && moji != " " && moji != "" {
 			self.frontImageView.image = UIImage(named: moji)
+			self.backImageView.image = UIImage(named: "table_tap")
 			self.isUserInteractionEnabled = false
 		}
 		if let type = type {
@@ -56,8 +57,8 @@ class TableKomaView: UIView {
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		super.touchesBegan(touches, with: event)
-		self.delegate?.tableKomaViewToucheDown(koma: self)
 		self.backImageView.image = UIImage(named: "table_tap")
+		self.delegate?.tableKomaViewToucheDown(koma: self)
 	}
 	override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
 		super.touchesMoved(touches, with: event)
@@ -67,7 +68,7 @@ class TableKomaView: UIView {
 	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
 		
 		super.touchesEnded(touches, with: event)
-		self.delegate?.tableKomaViewToucheUp(koma: self)
 		self.backImageView.image = UIImage(named: "table")
+		self.delegate?.tableKomaViewToucheUp(koma: self)
 	}
 }
