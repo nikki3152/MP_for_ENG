@@ -462,18 +462,30 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		//文字くんメッセージ
 		//self.updateMojikunString()
 		
-		//BGM再生
-		if self.questIndex >= 0 || self.questIndex <= 19 {
+		//BGM再生／背景変更
+		if self.questIndex >= 0 && self.questIndex <= 19 {
+			//初級
 			SoundManager.shared.startBGM(type: .bgmEasy)		
+			self.backImageView.image = UIImage(named: "stage_01")
 		}
-		else if self.questIndex >= 20 || self.questIndex <= 29 {
+		else if self.questIndex >= 20 && self.questIndex <= 39 {
+			//中級
 			SoundManager.shared.startBGM(type: .bgmNormal)
+			self.backImageView.image = UIImage(named: "stage_02")
 		}
-		else if self.questIndex >= 30 || self.questIndex <= 39 {
+		else if self.questIndex >= 40 && self.questIndex <= 59 {
+			//上級
 			SoundManager.shared.startBGM(type: .bgmHard)
+			self.backImageView.image = UIImage(named: "stage_03")
 		}
-		else if self.questIndex >= 40 || self.questIndex <= 49 {
+		else if self.questIndex >= 60 && self.questIndex <= 79 {
+			//神級
 			SoundManager.shared.startBGM(type: .bgmGod)
+			self.backImageView.image = UIImage(named: "stage_04")
+		}
+		else {
+			SoundManager.shared.startBGM(type: .bgmEasy)		
+			self.backImageView.image = UIImage(named: "stage_01")
 		}
 		
 		self.time = self.questData.time
@@ -607,6 +619,18 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		for v in self.cardScrolliew.subviews {
 			v.removeFromSuperview()
 		}
+		
+		var imageName = "orange_0"
+		if self.questIndex >= 0 && self.questIndex <= 19 {
+			imageName = "orange_0"
+			self.cardRightButton.setBackgroundImage(UIImage(named: "orange_right"), for: .normal)
+			self.cardLeftButton.setBackgroundImage(UIImage(named: "orange_left"), for: .normal)
+		} else {
+			imageName = "blue_0"
+			self.cardRightButton.setBackgroundImage(UIImage(named: "blue_right"), for: .normal)
+			self.cardLeftButton.setBackgroundImage(UIImage(named: "blue_left"), for: .normal)
+		}
+		
 		self.cardViewList = []
 		for i in 0 ..< self.questData.cards.count {
 			let moji = self.questData.cards[i]
@@ -614,10 +638,11 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			cardView.delegate = self
 			cardView.tag = i
 			self.cardScrolliew.addSubview(cardView)
-			//card1.backImageView.image = UIImage(named: "orange_\(i+1)")
 			cardView.center = CGPoint(x: (cardView.frame.size.width / 2) + (CGFloat(i) * cardView.frame.size.width), y: self.cardScrolliew.frame.size.height / 2)
 			if self.questData.wildCardLen > i {
 				cardView.isWildCard = true
+			} else {
+				cardView.backImageView.image = UIImage(named: imageName)
 			}
 			self.cardViewList.append(cardView)
 		}

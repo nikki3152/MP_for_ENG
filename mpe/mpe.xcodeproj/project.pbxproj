@@ -15,7 +15,6 @@
 		5404EA27221A4B23008A8B6D /* obj_leaf_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA25221A4B23008A8B6D /* obj_leaf_02.png */; };
 		5404EA2B221A5329008A8B6D /* obj_down_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA28221A5328008A8B6D /* obj_down_02.png */; };
 		5404EA2C221A5329008A8B6D /* obj_down_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA29221A5328008A8B6D /* obj_down_03.png */; };
-		5404EA2D221A5329008A8B6D /* obj_down_01_.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA2A221A5329008A8B6D /* obj_down_01_.png */; };
 		5404EA31221A5359008A8B6D /* obj_flowerpost_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA2E221A5358008A8B6D /* obj_flowerpost_02.png */; };
 		5404EA33221A5359008A8B6D /* obj_flowerpost_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA30221A5359008A8B6D /* obj_flowerpost_01.png */; };
 		5404EA35221A5769008A8B6D /* obj_cloud_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA34221A5769008A8B6D /* obj_cloud_02.png */; };
@@ -37,6 +36,7 @@
 		5404EA56221AD607008A8B6D /* mojichan_01_c.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA53221AD606008A8B6D /* mojichan_01_c.png */; };
 		5404EA57221AD607008A8B6D /* mojichan_01_a.png in Resources */ = {isa = PBXBuildFile; fileRef = 5404EA54221AD607008A8B6D /* mojichan_01_a.png */; };
 		5412685B221C896500CE3A35 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5412685D221C896500CE3A35 /* InfoPlist.strings */; };
+		5412685F2220C7B900CE3A35 /* obj_down_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5412685E2220C7B900CE3A35 /* obj_down_01.png */; };
 		54140F1C212BAFAB007C753B /* FontCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F1B212BAFAB007C753B /* FontCardView.swift */; };
 		54140F1E212BAFBC007C753B /* FontCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54140F1D212BAFBC007C753B /* FontCardView.xib */; };
 		54140F20212BB2F6007C753B /* GameTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F1F212BB2F6007C753B /* GameTableView.swift */; };
@@ -745,7 +745,6 @@
 		5404EA25221A4B23008A8B6D /* obj_leaf_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_leaf_02.png; sourceTree = "<group>"; };
 		5404EA28221A5328008A8B6D /* obj_down_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_down_02.png; sourceTree = "<group>"; };
 		5404EA29221A5328008A8B6D /* obj_down_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_down_03.png; sourceTree = "<group>"; };
-		5404EA2A221A5329008A8B6D /* obj_down_01_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_down_01_.png; sourceTree = "<group>"; };
 		5404EA2E221A5358008A8B6D /* obj_flowerpost_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_flowerpost_02.png; sourceTree = "<group>"; };
 		5404EA30221A5359008A8B6D /* obj_flowerpost_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_flowerpost_01.png; sourceTree = "<group>"; };
 		5404EA34221A5769008A8B6D /* obj_cloud_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_cloud_02.png; sourceTree = "<group>"; };
@@ -767,6 +766,7 @@
 		5404EA53221AD606008A8B6D /* mojichan_01_c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mojichan_01_c.png; sourceTree = "<group>"; };
 		5404EA54221AD607008A8B6D /* mojichan_01_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mojichan_01_a.png; sourceTree = "<group>"; };
 		5412685C221C896500CE3A35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5412685E2220C7B900CE3A35 /* obj_down_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_down_01.png; sourceTree = "<group>"; };
 		54140F1B212BAFAB007C753B /* FontCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCardView.swift; sourceTree = "<group>"; };
 		54140F1D212BAFBC007C753B /* FontCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontCardView.xib; sourceTree = "<group>"; };
 		54140F1F212BB2F6007C753B /* GameTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableView.swift; sourceTree = "<group>"; };
@@ -1508,7 +1508,7 @@
 				54D550EE21BCA66200980B92 /* obj_parasol_04.png */,
 				54D5515221BCA66200980B92 /* obj_fish_01.png */,
 				54D5513F21BCA66200980B92 /* obj_fish_02.png */,
-				5404EA2A221A5329008A8B6D /* obj_down_01_.png */,
+				5412685E2220C7B900CE3A35 /* obj_down_01.png */,
 				5404EA28221A5328008A8B6D /* obj_down_02.png */,
 				5404EA29221A5328008A8B6D /* obj_down_03.png */,
 				5404EA30221A5359008A8B6D /* obj_flowerpost_01.png */,
@@ -2056,20 +2056,36 @@
 				5429F37B21CF055300E0E50F /* time */,
 				5404EA1B221566AF008A8B6D /* obj */,
 				54D5535A21BCBE2500980B92 /* table_frame.png */,
-				54D5508421BCA66200980B92 /* pink_10.png */,
-				54D5508521BCA66200980B92 /* galaga_01.png */,
+				54D5511421BCA66200980B92 /* orange_left.png */,
+				54D5514B21BCA66200980B92 /* orange_right.png */,
 				54D5509421BCA66200980B92 /* orange_0.png */,
 				54D550A221BCA66200980B92 /* orange_1.png */,
 				54D5509221BCA66200980B92 /* orange_2.png */,
 				54D5508621BCA66200980B92 /* orange_3.png */,
 				54D550AD21BCA66200980B92 /* orange_4.png */,
 				54D550A621BCA66200980B92 /* orange_5.png */,
+				54D5513921BCA66200980B92 /* orange_8.png */,
+				54D550B821BCA66200980B92 /* orange_10.png */,
+				54D5515321BCA66200980B92 /* pink_left.png */,
+				54D5508E21BCA66200980B92 /* pink_right.png */,
 				54D550AC21BCA66200980B92 /* pink_0.png */,
 				54D550A721BCA66200980B92 /* pink_1.png */,
 				54D550B221BCA66200980B92 /* pink_2.png */,
+				54D550BD21BCA66200980B92 /* pink_3.png */,
 				54D5509521BCA66200980B92 /* pink_4.png */,
 				54D550A121BCA66200980B92 /* pink_5.png */,
+				54D5513A21BCA66200980B92 /* pink_8.png */,
+				54D5508421BCA66200980B92 /* pink_10.png */,
+				54D550C221BCA66200980B92 /* blue_left.png */,
+				54D5511521BCA66200980B92 /* blue_right.png */,
+				54D5513521BCA66200980B92 /* blue_0.png */,
+				54D5513421BCA66200980B92 /* blue_1.png */,
+				54D5512321BCA66200980B92 /* blue_2.png */,
+				54D5512521BCA66200980B92 /* blue_3.png */,
+				54D5514121BCA66200980B92 /* blue_4.png */,
+				54D5514321BCA66200980B92 /* blue_5.png */,
 				54D5509821BCA66200980B92 /* blue_8.png */,
+				54D5508F21BCA66200980B92 /* blue_10.png */,
 				548FF99721E18C2B007CD3B0 /* pauce_button_continue_tap.png */,
 				548FF99221E18C2A007CD3B0 /* pauce_button_continue.png */,
 				548FF99621E18C2B007CD3B0 /* pauce_button_giveup_tap.png */,
@@ -2084,6 +2100,13 @@
 				548FF97721E08A8F007CD3B0 /* game_list_head_clear.png */,
 				54D5508721BCA66200980B92 /* gameover_button_retry.png */,
 				54D5508821BCA66200980B92 /* K.png */,
+				54D5512021BCA66200980B92 /* stage_01.png */,
+				54D5512F21BCA66200980B92 /* stage_02.png */,
+				54D5513821BCA66200980B92 /* stage_03.png */,
+				54D5515121BCA66200980B92 /* stage_04.png */,
+				54D5515521BCA66200980B92 /* stage_05.png */,
+				54D5514921BCA66200980B92 /* stage_06.png */,
+				54D5513C21BCA66200980B92 /* stage_07.png */,
 				54D5508921BCA66200980B92 /* stage_08.png */,
 				54D5509B21BCA66200980B92 /* mojikun_b_01.png */,
 				54D5508B21BCA66200980B92 /* mojikun_b_02.png */,
@@ -2113,12 +2136,11 @@
 				54D550AE21BCA66200980B92 /* ouji_03.png */,
 				54D550FC21BCA66200980B92 /* driller_02.png */,
 				54D550FD21BCA66200980B92 /* driller_03.png */,
+				54D5508521BCA66200980B92 /* galaga_01.png */,
+				54D5509321BCA66200980B92 /* galaga_02.png */,
 				54D550A321BCA66200980B92 /* galaga_03.png */,
-				54D5508E21BCA66200980B92 /* pink_right.png */,
-				54D5508F21BCA66200980B92 /* blue_10.png */,
 				54D5509021BCA66200980B92 /* gameover_button_movie.png */,
 				54D5509121BCA66200980B92 /* J.png */,
-				54D5509321BCA66200980B92 /* galaga_02.png */,
 				54D5509621BCA66200980B92 /* H.png */,
 				54D5509721BCA66200980B92 /* bt_back.png */,
 				54D5509921BCA66200980B92 /* double_letter_score.png */,
@@ -2153,14 +2175,11 @@
 				54D550B421BCA66200980B92 /* Y.png */,
 				54D550B521BCA66200980B92 /* N.png */,
 				54D550B621BCA66200980B92 /* gameclear_button_next.png */,
-				54D550B821BCA66200980B92 /* orange_10.png */,
 				54D550B921BCA66200980B92 /* GO!!.png */,
 				54D550BA21BCA66200980B92 /* O.png */,
 				54D550BB21BCA66200980B92 /* X.png */,
-				54D550BD21BCA66200980B92 /* pink_3.png */,
 				54D550C021BCA66200980B92 /* cell_anime12.png */,
 				54D550C121BCA66200980B92 /* anim_H.png */,
-				54D550C221BCA66200980B92 /* blue_left.png */,
 				54D550C421BCA66200980B92 /* anim_I.png */,
 				54D550C521BCA66200980B92 /* cell_anime13.png */,
 				54D550C621BCA66200980B92 /* kumokun_01.png */,
@@ -2217,51 +2236,32 @@
 				54D5511121BCA66200980B92 /* cell_anime6.png */,
 				54D5511221BCA66200980B92 /* gameclear_button_next_tap.png */,
 				54D5511321BCA66200980B92 /* pauce_button_continue_tap.png */,
-				54D5511421BCA66200980B92 /* orange_left.png */,
-				54D5511521BCA66200980B92 /* blue_right.png */,
 				54D5511621BCA66200980B92 /* anim_S.png */,
 				54D5511721BCA66200980B92 /* anim_D.png */,
 				54D5511921BCA66200980B92 /* anim_E.png */,
 				54D5511A21BCA66200980B92 /* anim_R.png */,
 				54D5511C21BCA66200980B92 /* cell_anime7.png */,
 				54D5511F21BCA66200980B92 /* U.png */,
-				54D5512021BCA66200980B92 /* stage_01.png */,
 				54D5512121BCA66200980B92 /* B.png */,
-				54D5512321BCA66200980B92 /* blue_2.png */,
 				54D5512421BCA66200980B92 /* bt_back_tap.png */,
-				54D5512521BCA66200980B92 /* blue_3.png */,
 				54D5512721BCA66200980B92 /* C.png */,
 				54D5512821BCA66200980B92 /* pauce_background.png */,
 				54D5512921BCA66200980B92 /* T.png */,
 				54D5512E21BCA66200980B92 /* pauce_button_giveup.png */,
-				54D5512F21BCA66200980B92 /* stage_02.png */,
 				54D5513121BCA66200980B92 /* V.png */,
 				54D5513221BCA66200980B92 /* A.png */,
-				54D5513421BCA66200980B92 /* blue_1.png */,
-				54D5513521BCA66200980B92 /* blue_0.png */,
 				54D5513621BCA66200980B92 /* W.png */,
-				54D5513821BCA66200980B92 /* stage_03.png */,
-				54D5513921BCA66200980B92 /* orange_8.png */,
-				54D5513A21BCA66200980B92 /* pink_8.png */,
 				54D5513B21BCA66200980B92 /* D.png */,
-				54D5513C21BCA66200980B92 /* stage_07.png */,
 				54D5513E21BCA66200980B92 /* S.png */,
-				54D5514121BCA66200980B92 /* blue_4.png */,
 				54D5514221BCA66200980B92 /* table.png */,
-				54D5514321BCA66200980B92 /* blue_5.png */,
 				54D5514521BCA66200980B92 /* bt_stop.png */,
 				54D5514621BCA66200980B92 /* quest_base.png */,
 				54D5514721BCA66200980B92 /* R.png */,
-				54D5514921BCA66200980B92 /* stage_06.png */,
 				54D5514A21BCA66200980B92 /* E.png */,
-				54D5514B21BCA66200980B92 /* orange_right.png */,
 				54D5514C21BCA66200980B92 /* triple_word_score.png */,
 				54D5514D21BCA66200980B92 /* G.png */,
 				54D5514E21BCA66200980B92 /* gameover_button_giveup.png */,
 				54D5515021BCA66200980B92 /* P.png */,
-				54D5515121BCA66200980B92 /* stage_04.png */,
-				54D5515321BCA66200980B92 /* pink_left.png */,
-				54D5515521BCA66200980B92 /* stage_05.png */,
 				54D5515621BCA66200980B92 /* Q.png */,
 				54D5515821BCA66200980B92 /* F.png */,
 			);
@@ -2995,7 +2995,6 @@
 				548FF99C21E18C2B007CD3B0 /* pauce_button_giveup_tap.png in Resources */,
 				54D5534721BCA66300980B92 /* home_petit_mojikun.png in Resources */,
 				54D552F221BCA66300980B92 /* study_panel_left.png in Resources */,
-				5404EA2D221A5329008A8B6D /* obj_down_01_.png in Resources */,
 				54D5531921BCA66300980B92 /* charge_button_movie.png in Resources */,
 				54D5533C21BCA66300980B92 /* setting_panel_01_tap.png in Resources */,
 				54D5520D21BCA66300980B92 /* select_stagemap_06.png in Resources */,
@@ -3208,6 +3207,7 @@
 				54D551FA21BCA66300980B92 /* select_mojikun.png in Resources */,
 				54D5532021BCA66300980B92 /* taiki_icon_02.png in Resources */,
 				542F446821B57FAD00C51AD6 /* cup（コップ）.plist in Resources */,
+				5412685F2220C7B900CE3A35 /* obj_down_01.png in Resources */,
 				54D552B921BCA66300980B92 /* stage_02.png in Resources */,
 				54D5521321BCA66300980B92 /* stage_08.png in Resources */,
 				54D5526E21BCA66300980B92 /* anim_O.png in Resources */,
