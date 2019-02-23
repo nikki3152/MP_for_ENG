@@ -184,10 +184,18 @@ class StageSelectViewController: BaseViewController {
 		self.remove()
 	}
 	
-	//ポイントボタン
+	//MARK: ポイントボタン
 	@IBOutlet weak var ppButton: UIButton!
 	@IBAction func ppButtonAction(_ sender: Any) {
 		
+		let purchaseView = PurchaseViewController.purchaseViewController()
+		purchaseView.present(self) { 
+			
+		}
+		purchaseView.closeHandler = {[weak self]() in
+			let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+			self?.ppButton.setTitle("\(pp)", for: .normal)
+		}
 	}
 	@IBOutlet weak var ppInfoBallonImageView: UIImageView!
 	

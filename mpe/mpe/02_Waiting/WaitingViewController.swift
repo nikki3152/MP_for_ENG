@@ -94,6 +94,10 @@ class WaitingViewController: BaseViewController {
 		purchaseView.present(self) { 
 			
 		}
+		purchaseView.closeHandler = {[weak self]() in
+			let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+			self?.purchaseButton.setTitle("\(pp)", for: .normal)
+		}
 	}
 	
 }

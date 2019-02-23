@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YZS-8A-24d">
-    <device id="retina5_5" orientation="landscape">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="PurchaseView" id="YZS-8A-24d" customClass="PurchaseViewController" customModule="mpe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ha-kg-vaQ">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="YIq-Wo-hgh">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cei-QI-1Eh">
@@ -31,17 +31,32 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RLK-yH-MwI">
-                                <rect key="frame" x="142" y="56" width="160" height="160"/>
+                                <rect key="frame" x="128" y="32" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_numberbox.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Cq-Uo-jFK">
                                         <rect key="frame" x="5" y="5" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZM-cT-pSC" customClass="OutlineLabel" customModule="mpe" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="52" width="83" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="outlineWidth">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
                                 </subviews>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjv-f5-Uq0">
-                                <rect key="frame" x="46" y="344" width="390" height="50"/>
+                                <rect key="frame" x="26" y="305" width="390" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <state key="normal" backgroundImage="charge_button.png"/>
                                 <connections>
@@ -49,26 +64,51 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpF-M1-wxY">
-                                <rect key="frame" x="46" y="271" width="390" height="50"/>
+                                <rect key="frame" x="26" y="238" width="390" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <state key="normal" backgroundImage="charge_button_movie.png"/>
                                 <connections>
                                     <action selector="videoAdButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="rn2-tP-qSF"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_induction.png" translatesAutoresizingMaskIntoConstraints="NO" id="TB8-TL-Sbw">
+                                <rect key="frame" x="26" y="177" width="390" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="petit_mojikun.png" translatesAutoresizingMaskIntoConstraints="NO" id="h6e-Jb-ceB">
+                                <rect key="frame" x="356" y="119" width="60" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="petit_mojikun.png" translatesAutoresizingMaskIntoConstraints="NO" id="SgF-cb-QyO">
+                                <rect key="frame" x="26" y="119" width="60" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HAZ-jv-smd">
+                                <rect key="frame" x="427" y="0.0" width="240" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="YZS-8A-24d" id="RFb-lt-eo4"/>
+                                    <outlet property="delegate" destination="YZS-8A-24d" id="ucf-JK-rwi"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sa8-eH-4Xz"/>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="Cei-QI-1Eh" id="i0f-Rs-knU"/>
+                        <outlet property="infoImageView" destination="TB8-TL-Sbw" id="tyN-So-Eef"/>
+                        <outlet property="leftCharaImageView" destination="SgF-cb-QyO" id="xQm-hr-DMJ"/>
+                        <outlet property="ppLabel" destination="eZM-cT-pSC" id="OX5-hx-JVf"/>
                         <outlet property="ppPurchaseButton" destination="qjv-f5-Uq0" id="VoR-iM-RKY"/>
+                        <outlet property="rightCharaImageView" destination="h6e-Jb-ceB" id="Z3i-qZ-0JT"/>
                         <outlet property="videoAdButton" destination="cpF-M1-wxY" id="Tij-If-ebd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6u-bD-Ydv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.39130434782609" y="132"/>
+            <point key="canvasLocation" x="117.39130434782609" y="130.40000000000001"/>
         </scene>
     </scenes>
     <resources>
@@ -76,6 +116,8 @@
         <image name="charge_background.png" width="1920" height="1080"/>
         <image name="charge_button.png" width="1102" height="138"/>
         <image name="charge_button_movie.png" width="1102" height="138"/>
+        <image name="charge_induction.png" width="1105" height="65"/>
         <image name="charge_numberbox.png" width="500" height="500"/>
+        <image name="petit_mojikun.png" width="120" height="96"/>
     </resources>
 </document>

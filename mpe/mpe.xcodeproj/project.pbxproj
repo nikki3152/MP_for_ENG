@@ -43,6 +43,9 @@
 		54126867222114F900CE3A35 /* select_sumb_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 54126865222114F900CE3A35 /* select_sumb_02.png */; };
 		54126869222142A300CE3A35 /* mpe_キャラセリフ文言.csv in Resources */ = {isa = PBXBuildFile; fileRef = 54126868222142A300CE3A35 /* mpe_キャラセリフ文言.csv */; };
 		5412686F2221552C00CE3A35 /* quest_base_lose.png in Resources */ = {isa = PBXBuildFile; fileRef = 5412686E2221552C00CE3A35 /* quest_base_lose.png */; };
+		5412687122216EB200CE3A35 /* charge_induction.png in Resources */ = {isa = PBXBuildFile; fileRef = 5412687022216EB200CE3A35 /* charge_induction.png */; };
+		541268742221781200CE3A35 /* PPInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541268722221781200CE3A35 /* PPInfoCell.swift */; };
+		541268752221781200CE3A35 /* PPInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 541268732221781200CE3A35 /* PPInfoCell.xib */; };
 		54140F1C212BAFAB007C753B /* FontCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F1B212BAFAB007C753B /* FontCardView.swift */; };
 		54140F1E212BAFBC007C753B /* FontCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54140F1D212BAFBC007C753B /* FontCardView.xib */; };
 		54140F20212BB2F6007C753B /* GameTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F1F212BB2F6007C753B /* GameTableView.swift */; };
@@ -779,6 +782,9 @@
 		54126865222114F900CE3A35 /* select_sumb_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_sumb_02.png; sourceTree = "<group>"; };
 		54126868222142A300CE3A35 /* mpe_キャラセリフ文言.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "mpe_キャラセリフ文言.csv"; sourceTree = "<group>"; };
 		5412686E2221552C00CE3A35 /* quest_base_lose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quest_base_lose.png; sourceTree = "<group>"; };
+		5412687022216EB200CE3A35 /* charge_induction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_induction.png; sourceTree = "<group>"; };
+		541268722221781200CE3A35 /* PPInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPInfoCell.swift; sourceTree = "<group>"; };
+		541268732221781200CE3A35 /* PPInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PPInfoCell.xib; sourceTree = "<group>"; };
 		54140F1B212BAFAB007C753B /* FontCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCardView.swift; sourceTree = "<group>"; };
 		54140F1D212BAFBC007C753B /* FontCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontCardView.xib; sourceTree = "<group>"; };
 		54140F1F212BB2F6007C753B /* GameTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableView.swift; sourceTree = "<group>"; };
@@ -1963,6 +1969,8 @@
 			children = (
 				54CFB40C20DE3B1F00057F08 /* PurchaseViewController.swift */,
 				54CFB40E20DE3B3100057F08 /* PurchaseViewController.storyboard */,
+				541268722221781200CE3A35 /* PPInfoCell.swift */,
+				541268732221781200CE3A35 /* PPInfoCell.xib */,
 			);
 			path = 99_Purchase;
 			sourceTree = "<group>";
@@ -2378,6 +2386,7 @@
 				54D5519321BCA66200980B92 /* charge_button.png */,
 				54D5519421BCA66200980B92 /* charge_background.png */,
 				54D5519521BCA66200980B92 /* charge_button_movie.png */,
+				5412687022216EB200CE3A35 /* charge_induction.png */,
 				54D5519621BCA66200980B92 /* petit_mojikun.png */,
 			);
 			path = 99_purchase;
@@ -2886,12 +2895,14 @@
 				54D5532D21BCA66300980B92 /* setting_movie_button.png in Resources */,
 				54D552F621BCA66300980B92 /* custom_box_inactive4.png in Resources */,
 				54D551F021BCA66300980B92 /* select_advertise.png in Resources */,
+				541268752221781200CE3A35 /* PPInfoCell.xib in Resources */,
 				5467650021EF24300025A5A9 /* BGM_初級ステージ_hit.wav in Resources */,
 				54D5529B21BCA66300980B92 /* cell_anime6.png in Resources */,
 				5429F3AC21CF06B600E0E50F /* countup_6.png in Resources */,
 				54D5521221BCA66300980B92 /* K.png in Resources */,
 				54D5527F21BCA66300980B92 /* anim_W.png in Resources */,
 				5467652D21F556E00025A5A9 /* politics（政治）.plist in Resources */,
+				5412687122216EB200CE3A35 /* charge_induction.png in Resources */,
 				5404EA49221AC2F1008A8B6D /* obj_stone_01.png in Resources */,
 				5429F3E921CF06E400E0E50F /* chain8_anim.png in Resources */,
 				54D552F421BCA66300980B92 /* study_star.png in Resources */,
@@ -3305,6 +3316,7 @@
 				54CFB40520DE389200057F08 /* DataAggregateViewController.swift in Sources */,
 				5489AF61212B010B00A7D275 /* MPEDataManager.swift in Sources */,
 				54F3A6D92196C9F000A1E01F /* HitInfoView.swift in Sources */,
+				541268742221781200CE3A35 /* PPInfoCell.swift in Sources */,
 				548FF98921E0BEFE007CD3B0 /* OutlineLabel.swift in Sources */,
 				548FF96B21DF843B007CD3B0 /* PauseView.swift in Sources */,
 				54D9AEB620CF6185004FEBA2 /* ViewController.swift in Sources */,

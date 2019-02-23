@@ -81,6 +81,14 @@ class CustomViewController: BaseViewController {
 	@IBOutlet weak var ppButton: UIButton!
 	@IBAction func ppButtonAction(_ sender: Any) {
 		SoundManager.shared.startSE(type: .seDone)	//SE再生
+		let purchaseView = PurchaseViewController.purchaseViewController()
+		purchaseView.present(self) { 
+			
+		}
+		purchaseView.closeHandler = {[weak self]() in
+			let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+			self?.ppButton.setTitle("\(pp)", for: .normal)
+		}
 		
 	}
 	

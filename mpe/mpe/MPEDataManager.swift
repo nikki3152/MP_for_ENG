@@ -17,6 +17,10 @@ let kSelectedCharaType: String = "kSelectedCharaType"
 let kHiscore: String = "kHiscore"
 let kPPPoint: String = "kPPPoint"
 
+//広告ID（アドフリくん）
+let MOV_REWARD_ID = "5c6bed4dda42ff795d00000c"		//動画リワード広告
+let MOV_INTER_ID = "5c6bed01f22ded934000000f"		//動画インステ広告
+
 enum CustomChara: String {
 	case mojikun_b		= "mojikun_b"		//もじくん（新）
 	case mojichan		= "mojichan"		//もじちゃん

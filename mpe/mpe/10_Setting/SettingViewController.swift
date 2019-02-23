@@ -81,10 +81,6 @@ class SettingViewController: BaseViewController {
 	@IBAction func purchaseButtonAction(_ sender: Any) {
 		
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
-		let purchaseView = PurchaseViewController.purchaseViewController()
-		purchaseView.present(self) { 
-			
-		}
 	}
 	
 	// BGM
@@ -128,6 +124,14 @@ class SettingViewController: BaseViewController {
 	@IBAction func ppButtonAction(_ sender: Any) {
 		
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
+		let purchaseView = PurchaseViewController.purchaseViewController()
+		purchaseView.present(self) { 
+			
+		}
+		purchaseView.closeHandler = {[weak self]() in
+			let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+			self?.purchaseButton.setTitle("\(pp)", for: .normal)
+		}
 	}
 	
 	
