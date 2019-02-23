@@ -41,6 +41,8 @@
 		541268632221119E00CE3A35 /* select_sumb_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 541268612221119E00CE3A35 /* select_sumb_01.png */; };
 		54126866222114F900CE3A35 /* select_icon_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 54126864222114F800CE3A35 /* select_icon_02.png */; };
 		54126867222114F900CE3A35 /* select_sumb_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 54126865222114F900CE3A35 /* select_sumb_02.png */; };
+		54126869222142A300CE3A35 /* mpe_キャラセリフ文言.csv in Resources */ = {isa = PBXBuildFile; fileRef = 54126868222142A300CE3A35 /* mpe_キャラセリフ文言.csv */; };
+		5412686F2221552C00CE3A35 /* quest_base_lose.png in Resources */ = {isa = PBXBuildFile; fileRef = 5412686E2221552C00CE3A35 /* quest_base_lose.png */; };
 		54140F1C212BAFAB007C753B /* FontCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F1B212BAFAB007C753B /* FontCardView.swift */; };
 		54140F1E212BAFBC007C753B /* FontCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54140F1D212BAFBC007C753B /* FontCardView.xib */; };
 		54140F20212BB2F6007C753B /* GameTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F1F212BB2F6007C753B /* GameTableView.swift */; };
@@ -775,6 +777,8 @@
 		541268612221119E00CE3A35 /* select_sumb_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_sumb_01.png; sourceTree = "<group>"; };
 		54126864222114F800CE3A35 /* select_icon_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_icon_02.png; sourceTree = "<group>"; };
 		54126865222114F900CE3A35 /* select_sumb_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_sumb_02.png; sourceTree = "<group>"; };
+		54126868222142A300CE3A35 /* mpe_キャラセリフ文言.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "mpe_キャラセリフ文言.csv"; sourceTree = "<group>"; };
+		5412686E2221552C00CE3A35 /* quest_base_lose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quest_base_lose.png; sourceTree = "<group>"; };
 		54140F1B212BAFAB007C753B /* FontCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCardView.swift; sourceTree = "<group>"; };
 		54140F1D212BAFBC007C753B /* FontCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontCardView.xib; sourceTree = "<group>"; };
 		54140F1F212BB2F6007C753B /* GameTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableView.swift; sourceTree = "<group>"; };
@@ -2274,6 +2278,7 @@
 				54D5512E21BCA66200980B92 /* pauce_button_giveup.png */,
 				54D5514521BCA66200980B92 /* bt_stop.png */,
 				54D5514621BCA66200980B92 /* quest_base.png */,
+				5412686E2221552C00CE3A35 /* quest_base_lose.png */,
 				54D5514C21BCA66200980B92 /* triple_word_score.png */,
 				54D5514E21BCA66200980B92 /* gameover_button_giveup.png */,
 			);
@@ -2519,6 +2524,7 @@
 				54612D4E21FE97B00091D7BD /* quickquest */,
 				546764C621EF240A0025A5A9 /* sounds */,
 				5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */,
+				54126868222142A300CE3A35 /* mpe_キャラセリフ文言.csv */,
 				5412685D221C896500CE3A35 /* InfoPlist.strings */,
 				54D9AEBF20CF6186004FEBA2 /* Info.plist */,
 				54F3A6DC2196D53A00A1E01F /* mpe-Bridging-Header.h */,
@@ -2724,6 +2730,7 @@
 				5404EA41221ABDD6008A8B6D /* obj_ghost_01.png in Resources */,
 				54D552BC21BCA66300980B92 /* A.png in Resources */,
 				54D5522721BCA66300980B92 /* table_tap.png in Resources */,
+				54126869222142A300CE3A35 /* mpe_キャラセリフ文言.csv in Resources */,
 				54D552B821BCA66300980B92 /* pauce_button_giveup.png in Resources */,
 				5429F3AD21CF06B600E0E50F /* score_count_6.png in Resources */,
 				54D552EA21BCA66300980B92 /* music_selectbox.png in Resources */,
@@ -2935,6 +2942,7 @@
 				5429F3C021CF06B600E0E50F /* Score_word.png in Resources */,
 				5429F37621CF052800E0E50F /* time5.png in Resources */,
 				54D552B221BCA66300980B92 /* pauce_background.png in Resources */,
+				5412686F2221552C00CE3A35 /* quest_base_lose.png in Resources */,
 				5429F36721CF052800E0E50F /* time2.png in Resources */,
 				54D5534621BCA66300980B92 /* home_taiyokun.png in Resources */,
 				54D552CA21BCA66300980B92 /* obj_star_04.png in Resources */,

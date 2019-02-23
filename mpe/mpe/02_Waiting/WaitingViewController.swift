@@ -26,6 +26,10 @@ class WaitingViewController: BaseViewController {
 		DataManager.animationFuwa(v: studyModeImgView, dy: 12, speed: 2.2)
 		DataManager.animationFuwa(v: customImgView, dy: 13, speed: 3.2)
 		DataManager.animationFuwa(v: settingImgView, dy: 14, speed: 2.6)
+		
+		//ポイント
+		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		self.purchaseButton.setTitle("\(pp)", for: .normal)
     }
 	
 	

@@ -32,6 +32,9 @@ class CustomViewController: BaseViewController {
 			selectedButton = bt
 			selectedButton.isSelected = true
 		}
+		//ポイント
+		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		self.ppButton.setTitle("\(pp)", for: .normal)
 	}
 	
 	//戻る

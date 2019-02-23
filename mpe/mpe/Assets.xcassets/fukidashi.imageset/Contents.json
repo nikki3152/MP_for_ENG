@@ -5,20 +5,6 @@
       "scale" : "1x"
     },
     {
-      "resizing" : {
-        "mode" : "9-part",
-        "center" : {
-          "mode" : "stretch",
-          "width" : 63,
-          "height" : 49
-        },
-        "cap-insets" : {
-          "bottom" : 133,
-          "top" : 76,
-          "right" : 131,
-          "left" : 106
-        }
-      },
       "idiom" : "universal",
       "filename" : "fukidashi@2x.png",
       "scale" : "2x"

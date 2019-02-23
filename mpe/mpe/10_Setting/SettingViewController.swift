@@ -23,6 +23,10 @@ class SettingViewController: BaseViewController {
 		self.switchBGM.isSelected = UserDefaults.standard.bool(forKey: kBGMOn)
 		self.switchSE.isSelected = UserDefaults.standard.bool(forKey: kSEOn)
 		self.switchVoice.isSelected = UserDefaults.standard.bool(forKey: kVoiceOn)
+		
+		//ポイント
+		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		self.ppButton.setTitle("\(pp)", for: .normal)
 	}
 	
 	override func viewDidLayoutSubviews() {

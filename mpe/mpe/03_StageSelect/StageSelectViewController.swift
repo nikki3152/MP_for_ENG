@@ -160,6 +160,10 @@ class StageSelectViewController: BaseViewController {
 		let index = stageButton1.tag + self.startIndex
 		self.selectStage(index: index)
 		
+		//ポイント
+		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		self.ppButton.setTitle("\(pp)", for: .normal)
+		ppInfoBallonImageView.isHidden = true
     }
 	
 	override func viewWillLayoutSubviews() {
@@ -185,6 +189,7 @@ class StageSelectViewController: BaseViewController {
 	@IBAction func ppButtonAction(_ sender: Any) {
 		
 	}
+	@IBOutlet weak var ppInfoBallonImageView: UIImageView!
 	
 	
 	@IBOutlet weak var stagePageImgView: UIImageView!
@@ -344,7 +349,10 @@ class StageSelectViewController: BaseViewController {
 	
 	@IBOutlet weak var buttonBaseView: UIView!
 	
+	var gotoGameFlashCount: Int = 0
+	
 	//MARK: ステージ選択ボタン
+	var selectTimer: Timer!
 	weak var stageSelectedButton: UIButton!
 	var stageButtons: [UIButton] = []
 	@IBOutlet weak var stageButton1: UIButton!
@@ -362,16 +370,39 @@ class StageSelectViewController: BaseViewController {
 		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let tag = sender.tag + self.startIndex
 		if let bt = self.stageSelectedButton, sender == bt {
-			if self.questDatas.count > tag {
-				let questData: QuestData = self.questDatas[tag]
-				let gameView = GameViewController.gameViewController(questData: questData)
-				gameView.questIndex = tag
-				gameView.selectCnt = self
-				gameView.present(self) { 
+			//選択中点滅タイマー
+			let mask = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+			self.view.addSubview(mask)
+			mask.backgroundColor = UIColor.clear
+			mask.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 2)
+			self.selectTimer?.invalidate()
+			self.selectTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true, block: { [weak self](t) in
+				if self!.gotoGameFlashCount % 2 == 0 {
+					self?.stageSelectedButton?.setBackgroundImage(UIImage(named: "select_box_c"), for: .selected)
+				} else {
+					self?.stageSelectedButton?.setBackgroundImage(UIImage(named: "select_box_a"), for: .selected)
 				}
-				gameView.baseDelegate = self
-			}
+				self!.gotoGameFlashCount += 1
+				if self!.gotoGameFlashCount >= 8 {
+					self!.gotoGameFlashCount = 0
+					self!.selectTimer?.invalidate()
+					//選択中、問題へ
+					if self!.questDatas.count > tag {
+						let questData: QuestData = self!.questDatas[tag]
+						let gameView = GameViewController.gameViewController(questData: questData)
+						gameView.questIndex = tag
+						gameView.selectCnt = self
+						gameView.present(self!) { 
+							let index = bt.tag + self!.startIndex
+							self!.selectStage(index: index)
+							mask.removeFromSuperview()
+						}
+						gameView.baseDelegate = self!
+					}
+				}
+			})
 		} else {
+			//選択する
 			self.stageSelectedButton?.isSelected = false
 			if let bt = self.stageSelectedButton {
 				let stageNum = "\(NSString(format: "%02d", self.startIndex + bt.tag + 1))"
@@ -407,10 +438,23 @@ class StageSelectViewController: BaseViewController {
 		self.stageSelectedButton?.setImage(nil, for: .normal)
 		//サムネイル
 		self.stageSumbImageView.image = UIImage(named: "select_sumb_\(NSString(format: "%02d", index + 1))")
+		//選択中点滅タイマー
+		self.selectTimer?.invalidate()
+		self.selectTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { [weak self](t) in
+			if self!.isSelOn {
+				self?.stageSelectedButton?.setBackgroundImage(UIImage(named: "select_box_a"), for: .selected)
+			} else {
+				self?.stageSelectedButton?.setBackgroundImage(UIImage(named: "select_box_b"), for: .selected)
+			}
+			self!.isSelOn = !self!.isSelOn
+		})
 	}
+	var isSelOn: Bool = false
 	
 	override func baseViewControllerBack(baseView: BaseViewController) -> Void {
 		
+		self.selectTimer?.invalidate()
+		self.selectTimer = nil
 		print("ゲームから戻る")
 	}
 	

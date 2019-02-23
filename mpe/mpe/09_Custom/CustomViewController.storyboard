@@ -166,13 +166,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaQ-Bf-OdB">
-                                <rect key="frame" x="549" y="13" width="100" height="60"/>
+                                <rect key="frame" x="549" y="10" width="100" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="85" backgroundImage="taiki_pp_button.png">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <state key="highlighted" title="85" backgroundImage="taiki_pp_button_tap.png"/>
+                                <state key="highlighted" backgroundImage="taiki_pp_button_tap.png"/>
                                 <connections>
                                     <action selector="ppButtonAction:" destination="HDP-pU-hVK" eventType="touchUpInside" id="eFX-fi-3wM"/>
                                 </connections>

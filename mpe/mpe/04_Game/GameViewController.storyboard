@@ -39,19 +39,19 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vbm-bN-Ql4">
-                                <rect key="frame" x="618" y="41" width="120" height="373"/>
+                                <rect key="frame" x="618" y="114" width="118" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fukidashi" translatesAutoresizingMaskIntoConstraints="NO" id="Cwi-8a-QQW">
-                                        <rect key="frame" x="8" y="0.0" width="103" height="278"/>
+                                        <rect key="frame" x="21" y="3" width="77" height="202"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sGA-J1-tgK">
-                                        <rect key="frame" x="30" y="12" width="60" height="237"/>
+                                        <rect key="frame" x="29" y="14" width="69" height="154"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mojikun_a_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="hlP-yQ-Ocs">
-                                        <rect key="frame" x="9" y="262" width="100" height="100"/>
+                                        <rect key="frame" x="7" y="189" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -665,7 +665,7 @@
         <image name="bt_stop_tap.png" width="120" height="120"/>
         <image name="bt_x" width="32" height="32"/>
         <image name="chain2.png" width="500" height="110"/>
-        <image name="fukidashi" width="150" height="129"/>
+        <image name="fukidashi" width="97" height="280"/>
         <image name="mojikun_a_01.png" width="300" height="300"/>
         <image name="orange_left.png" width="150" height="150"/>
         <image name="orange_right.png" width="150" height="150"/>

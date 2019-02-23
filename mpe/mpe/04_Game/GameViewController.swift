@@ -465,6 +465,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.isInEffect = false
 		
 		self.undoButton.isHidden = true
+		self.questBaseImageView.image = UIImage(named: "quest_base")
 		//手札
 		self.updateCardScroll()
 		//ゲームテーブル
@@ -472,7 +473,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		//問題
 		self.updateQuestString()
 		//文字くんメッセージ
-		//self.updateMojikunString()
+		self.updateMojikunString()
+		self.showMojikunString()
 		
 		self.questData.score = self.totalScore
 		self.questData.count = self.questCount
@@ -623,8 +625,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			self.updateGametable()
 			//問題
 			self.updateQuestString()
-			//文字くんメッセージ
-			//self.updateMojikunString()
 			
 			self.totalScore = questData.score
 			self.questCount = questData.count
@@ -743,37 +743,70 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.questCount = count
 		
 	}
+	
 	//MARK: もじくんセリフ作成
+	var chaMessages: [String] = []
+	var messageIndex: Int = 0
 	func updateMojikunString() {
 		
-		self.ballonMainLabel?.removeFromSuperview()
-		var bText: String
-		if self.questData.questName == "" {
-			if self.questData.messages.count > 0 {
-				bText = self.questData.messages[0]
-			} else {
-				bText = ""
-			}
-		} else {
-			bText = self.questData.questName 
+		chaMessages = []
+		let path = Bundle.main.path(forResource: "mpe_キャラセリフ文言", ofType: "csv")
+		do {
+			let csvStringData = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
+			//CSVデータを1行ずつ読み込む
+			csvStringData.enumerateLines(invoking: { (line, stop) -> () in
+				let wordSourceDataArray = line.components(separatedBy: ",")
+				let label = wordSourceDataArray[0]
+				if let num = Int(label) {
+					if num == self.questIndex + 1 {
+						let message = wordSourceDataArray[1]
+						self.chaMessages.append(message)
+					}
+				}
+			})
+		} catch let error {
+			//ファイル読み込みエラー時
+			print(error.localizedDescription)
 		}
-		let bLabel = makeVerticalLabel(size: self.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 14), text: bText)
-		bLabel.textAlignment = .center
-		bLabel.numberOfLines = 2
-		self.ballonDisplayImageView.addSubview(bLabel)
-		bLabel.center = CGPoint(x: self.ballonDisplayImageView.frame.size.width / 2, y: self.ballonDisplayImageView.frame.size.height / 2)
-		self.ballonMainLabel = bLabel
+	
+	}
+	func showMojikunString() {
 		
-		self.ballonImageView.alpha = 1
-		self.ballonDisplayImageView.alpha = 1
-		UIView.animate(withDuration: 0.25, delay: 2.0, options: .curveLinear, animations: { 
+		self.ballonMainLabel?.removeFromSuperview()
+		var bText: String = ""
+		if self.chaMessages.count > 0 {
+			bText = self.chaMessages[messageIndex]
+		}
+		if bText != "" {
+			let bLabel = makeVerticalLabel(size: self.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 12), text: bText)
+			bLabel.textAlignment = .left
+			bLabel.numberOfLines = 2
+			self.ballonDisplayImageView.addSubview(bLabel)
+			bLabel.center = CGPoint(x: self.ballonDisplayImageView.frame.size.width / 2, y: self.ballonDisplayImageView.frame.size.height / 2)
+			self.ballonMainLabel = bLabel
+			messageIndex += 1
+			if messageIndex >= self.chaMessages.count {
+				messageIndex = 0
+			}
 			self.ballonImageView.alpha = 0
 			self.ballonDisplayImageView.alpha = 0
-		}) { (stop) in
-			
+			UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveLinear, animations: {[weak self]() in 
+				self?.ballonImageView.alpha = 1
+				self?.ballonDisplayImageView.alpha = 1
+			}) { (stop) in
+			}
 		}
 	}
-	
+	func hideMojikunString() {
+		
+		UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveLinear, animations: {[weak self]() in 
+			self?.ballonImageView.alpha = 0
+			self?.ballonDisplayImageView.alpha = 0
+		}) { [weak self](stop) in
+			self?.ballonMainLabel?.removeFromSuperview()
+			self?.ballonMainLabel = nil
+		}
+	}
 	
 	//MARK: 横方向の単語検索
 	func checkWordH(startIndex: Int) -> String {
@@ -955,8 +988,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				self?.updateGametable()
 				//問題
 				self?.updateQuestString()
-				//文字くんメッセージ
-				//self?.updateMojikunString()
 			}
 		}
 	}
@@ -1429,6 +1460,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		return star
 	}
 	
+	//MARK: ハイスコア更新
+	func makeHiscoreEffect() {
+		
+		
+	}
+	
 	//MARK: - スコア計算
 	//文字から得点計算
 	func makeScore(moji: [TableInfo]) -> Int {
@@ -1693,7 +1730,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						//print("文字数: \(mojiCount)[\(hitWord)]")
 						DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
 							if self.isGameEnd == false {
-								
+								if effectCount == 0 {
+									self.hideMojikunString()
+								}
 								effectCount += 1
 								
 								//スコア表示更新
@@ -1761,6 +1800,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 										if s.checkGame() {
 											return
 										} else {
+											s.showMojikunString()
 											s.record()
 										}
 									}
@@ -2013,7 +2053,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveEaseInOut, animations: { 
 			gameclear.transform = CGAffineTransform(scaleX: 1, y: 1)
 		}) { (stop) in
-			UIView.animate(withDuration: 0.25, delay: 3.0, options: .curveEaseInOut, animations: { 
+			UIView.animate(withDuration: 0.25, delay: 4.0, options: .curveEaseInOut, animations: { 
 				gameclear.alpha = 0
 			}) { [weak self](stop) in
 				guard let s = self else {
@@ -2072,6 +2112,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		base.addSubview(gameclear_ub)
 		gameclear_ub.center = CGPoint(x: base.frame.size.width/2, y: (base.frame.size.height/2) + (gameclear.frame.size.height / 2) + 40)
 		//文字(game clear!!)
+		var delay: Double = 0
 		for i in 1 ... 11 {
 			let num = NSString(format: "%02d", i)
 			let name = "gameclear_anim_word\(num)"
@@ -2080,9 +2121,10 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			gameclear_logo.image = UIImage(named: name)
 			base.addSubview(gameclear_logo)
 			gameclear_logo.center = CGPoint(x: base.frame.size.width/2, y: (base.frame.size.height/2) + (gameclear.frame.size.height / 2) + 33)
-			DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { 
+			DispatchQueue.main.asyncAfter(deadline: .now() + delay) { 
 				DataManager.animationJump(v: gameclear_logo, height: 25, speed: 0.5)
 			}
+			delay += 0.3
 		}
 		
 		//火花エフェクト
@@ -2121,6 +2163,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			effect.animationDuration = 1.0
 			effect.startAnimating()
 		})
+		
+		self.makeHiscoreEffect()
 	}
 	//MARK: ゲームオーバー
 	func gameOver() {
@@ -2133,6 +2177,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		//ゲームオーバー雲
 		self.timeBackImageView.stopAnimating()
 		self.timeBackImageView.image = UIImage(named: "time_cloud_gameover")
+		
+		self.questBaseImageView.image = UIImage(named: "quest_base_lose")
+		self.hideMojikunString()
 		
 		isGameEnd = true
 		self.gameTimer?.invalidate()
