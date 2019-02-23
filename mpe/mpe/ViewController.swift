@@ -8,12 +8,21 @@
 
 import UIKit
 
+var adVideoInterstitial: ADView!
+var adVideoReward: ADView!
+
 class ViewController: UIViewController {
 
 	let dataMrg = MPEDataManager()
 	//var db: [String:[String]] = [:]
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		//動画インターステイシャル
+		adVideoInterstitial = ADView(adNTType: .adfurikun, adType: .videoInterstitial, size: nil, viewController: self)
+		
+		//動画リワード
+		adVideoReward = ADView(adNTType: .adfurikun, adType: .videoReward, size: nil, viewController: self)
 		
 		UserDefaults.standard.register(defaults: [
 			kBGMOn:true,

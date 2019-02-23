@@ -8,8 +8,30 @@
 
 import UIKit
 
-class PurchaseViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
+class PurchaseViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, ADViewVideoDelegate {
 
+	//MARK: ADViewVideoDelegate
+	func adViewDidPlayVideo(_ adView: ADView, incentive: Bool) {
+		
+		if incentive {
+			//ポイント
+			let pp = UserDefaults.standard.integer(forKey: kPPPoint) + 1
+			self.ppLabel.text = "\(pp)"
+			UserDefaults.standard.set(pp, forKey: kPPPoint)
+			self.ppTableView.reloadData()
+		}
+	}
+	func adViewLoadVideo(_ adView: ADView, canLoad: Bool) {
+		
+	}
+	func adViewDidCloseVideo(_ adView: ADView, incentive: Bool) {
+		
+		if incentive {
+			
+		}
+	}
+	
+	@IBOutlet weak var ppTableView: UITableView!
 	var closeHandler: (() -> Void)?
 	
 	var ppList: [[String:Any]] = [
@@ -76,6 +98,8 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		adVideoReward.videoDelagate = self
+		
 		DataManager.animationFadeFlash(v: infoImageView, speed: 2.0)
 		
 		timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { [weak self](t) in
@@ -108,6 +132,14 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 	@IBOutlet weak var videoAdButton: UIButton!
 	@IBAction func videoAdButtonAction(_ sender: Any) {
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
+		
+		if adVideoReward.isCanPlayVideo {
+			adVideoReward.playVideo()
+		} else {
+			let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
+			self.present(alert, animated: true, completion: nil)
+		}
 	}
 	
 	@IBOutlet weak var ppPurchaseButton: UIButton!

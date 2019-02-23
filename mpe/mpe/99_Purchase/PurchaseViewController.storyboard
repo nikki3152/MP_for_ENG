@@ -102,6 +102,7 @@
                         <outlet property="leftCharaImageView" destination="SgF-cb-QyO" id="xQm-hr-DMJ"/>
                         <outlet property="ppLabel" destination="eZM-cT-pSC" id="OX5-hx-JVf"/>
                         <outlet property="ppPurchaseButton" destination="qjv-f5-Uq0" id="VoR-iM-RKY"/>
+                        <outlet property="ppTableView" destination="HAZ-jv-smd" id="DZi-Kr-wEK"/>
                         <outlet property="rightCharaImageView" destination="h6e-Jb-ceB" id="Z3i-qZ-0JT"/>
                         <outlet property="videoAdButton" destination="cpF-M1-wxY" id="Tij-If-ebd"/>
                     </connections>
