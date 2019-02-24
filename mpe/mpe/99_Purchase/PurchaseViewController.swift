@@ -26,6 +26,7 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 	}
 	func adViewDidCloseVideo(_ adView: ADView, incentive: Bool) {
 		
+		SoundManager.shared.pauseBGM(false)
 		if incentive {
 			
 		}
@@ -129,12 +130,14 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		self.remove()
 	}
 	
+	//動画
 	@IBOutlet weak var videoAdButton: UIButton!
 	@IBAction func videoAdButtonAction(_ sender: Any) {
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		
 		if adVideoReward.isCanPlayVideo {
 			adVideoReward.playVideo()
+			SoundManager.shared.pauseBGM(true)
 		} else {
 			let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
 			alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
@@ -142,9 +145,27 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		}
 	}
 	
+	//購入
 	@IBOutlet weak var ppPurchaseButton: UIButton!
 	@IBAction func ppPurchaseButtonAction(_ sender: UIButton) {
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
+		
+		let actionSheet = UIAlertController(title: "PP購入", message: nil, preferredStyle: .actionSheet)
+		actionSheet.addAction(UIAlertAction(title: "10PP", style: .default, handler: { (action) in
+			
+		}))
+		actionSheet.addAction(UIAlertAction(title: "50PP", style: .default, handler: { (action) in
+			
+		}))
+		actionSheet.addAction(UIAlertAction(title: "100PP", style: .default, handler: { (action) in
+			
+		}))
+		actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: { (action) in
+			
+		}))
+		self.present(actionSheet, animated: true, completion: nil)
 	}
+	
+	
 	
 }

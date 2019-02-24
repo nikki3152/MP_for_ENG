@@ -56,19 +56,11 @@
                                 </subviews>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjv-f5-Uq0">
-                                <rect key="frame" x="26" y="305" width="390" height="50"/>
+                                <rect key="frame" x="26" y="243" width="390" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <state key="normal" backgroundImage="charge_button.png"/>
                                 <connections>
                                     <action selector="ppPurchaseButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="4hq-Tz-H8z"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpF-M1-wxY">
-                                <rect key="frame" x="26" y="238" width="390" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" backgroundImage="charge_button_movie.png"/>
-                                <connections>
-                                    <action selector="videoAdButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="rn2-tP-qSF"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_induction.png" translatesAutoresizingMaskIntoConstraints="NO" id="TB8-TL-Sbw">
@@ -84,7 +76,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HAZ-jv-smd">
-                                <rect key="frame" x="426" y="0.0" width="241" height="375"/>
+                                <rect key="frame" x="427" y="0.0" width="240" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -92,6 +84,14 @@
                                     <outlet property="delegate" destination="YZS-8A-24d" id="ucf-JK-rwi"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpF-M1-wxY">
+                                <rect key="frame" x="26" y="307" width="390" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" backgroundImage="charge_button_movie.png"/>
+                                <connections>
+                                    <action selector="videoAdButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="rn2-tP-qSF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sa8-eH-4Xz"/>
