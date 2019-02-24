@@ -64,14 +64,14 @@ class SoundManager: NSObject, SoundPlayerDelegate {
 			return
 		}
 		self.stopBGM()
-		if type == .bgmStageClear || type == .bgmStageRundom {
+		if type == .bgmStageClear {
 			//ジングル
 			self.currentBGM = type
 			self.bgmPlayState = 0
 			self.soundPlayer.voicePlay(name: self.currentBGM.rawValue, type: "wav")
 		} else {
 			//ループBGM
-			if type == .bgmFail {
+			if type == .bgmFail || type == .bgmStageRundom  {
 				self.currentBGM = type
 				self.bgmPlayState = 2
 				if let path = Bundle.main.path(forResource: self.currentBGM.rawValue, ofType: "wav") {
@@ -83,6 +83,25 @@ class SoundManager: NSObject, SoundPlayerDelegate {
 				self.bgmPlayState = 1
 				self.soundPlayer.voicePlay(name: self.currentBGM.rawValue + "_hit", type: "wav")
 				print("HIT: \(self.currentBGM.rawValue)")
+			}
+		}
+	}
+	func startBGMLoopPlay(type: BGMType) {
+		if UserDefaults.standard.bool(forKey: kBGMOn) == false {
+			return
+		}
+		self.stopBGM()
+		self.currentBGM = type
+		self.bgmPlayState = 2
+		if type == .bgmFail || type == .bgmStageRundom || type == .bgmStageClear {
+			if let path = Bundle.main.path(forResource: self.currentBGM.rawValue, ofType: "wav") {
+				print("LOOP: \(self.currentBGM.rawValue)")
+				self.soundPlayer.setBGMSound(filepath: path)
+			}
+		} else {
+			if let path = Bundle.main.path(forResource: self.currentBGM.rawValue + "_loop", ofType: "wav") {
+				print("LOOP: \(self.currentBGM.rawValue)")
+				self.soundPlayer.setBGMSound(filepath: path)
 			}
 		}
 	}
