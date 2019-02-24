@@ -39,7 +39,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_icon_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="fpW-uo-ZKI">
-                                <rect key="frame" x="166" y="0.0" width="166" height="375"/>
+                                <rect key="frame" x="165" y="0.0" width="166" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_icon_03.png" translatesAutoresizingMaskIntoConstraints="NO" id="vnW-Os-wIh">
@@ -75,7 +75,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdK-Fk-IO2">
-                                <rect key="frame" x="500" y="0.0" width="167" height="375"/>
+                                <rect key="frame" x="499" y="0.0" width="168" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <state key="highlighted" image="taiki_icon_04.png" backgroundImage="taiki_panel_04_tap.png"/>
                                 <connections>
@@ -83,7 +83,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Main Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9F-ev-Qr9">
-                                <rect key="frame" x="10" y="314" width="147" height="41"/>
+                                <rect key="frame" x="10" y="314" width="146" height="41"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,14 +97,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Custom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrR-Mb-JmG">
-                                <rect key="frame" x="348" y="314" width="147" height="41"/>
+                                <rect key="frame" x="347" y="314" width="147" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Setting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBQ-i0-FoY">
-                                <rect key="frame" x="512" y="314" width="147" height="41"/>
+                                <rect key="frame" x="511" y="314" width="148" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -115,6 +115,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="taiki_movie_button.png"/>
                                 <state key="highlighted" backgroundImage="taiki_movie_button_tap.png"/>
+                                <connections>
+                                    <action selector="videoButtonAction:" destination="fDl-of-gCg" eventType="touchUpInside" id="XDO-zQ-Sjq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avu-8d-83k">
                                 <rect key="frame" x="549" y="10" width="100" height="60"/>
@@ -136,7 +139,7 @@
                         <outlet property="customBkImgView" destination="KJ7-c7-ohB" id="DfY-St-Q5b"/>
                         <outlet property="customButton" destination="moz-to-uX4" id="ErF-V6-Scx"/>
                         <outlet property="customImgView" destination="vnW-Os-wIh" id="LIJ-9J-lfW"/>
-                        <outlet property="purchaseButton" destination="Avu-8d-83k" id="Rb1-Mo-c8Y"/>
+                        <outlet property="purchaseButton" destination="Ilt-Rd-VgJ" id="yX3-R2-bBq"/>
                         <outlet property="settingBkImgView" destination="fj2-To-vMb" id="zWu-8d-0eL"/>
                         <outlet property="settingButton" destination="PdK-Fk-IO2" id="Xo1-Za-uUr"/>
                         <outlet property="settingImgView" destination="cCS-Ca-9nd" id="XYb-CR-g5v"/>
@@ -146,6 +149,7 @@
                         <outlet property="studyModeBkImgView" destination="pTz-tI-S2F" id="3v7-xE-1Ws"/>
                         <outlet property="studyModeButton" destination="NYX-XU-YWh" id="pS6-27-TGQ"/>
                         <outlet property="studyModeImgView" destination="fpW-uo-ZKI" id="6en-9x-DFg"/>
+                        <outlet property="videoButton" destination="Ilt-Rd-VgJ" id="pCu-QY-2Oy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGF-P7-H5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
