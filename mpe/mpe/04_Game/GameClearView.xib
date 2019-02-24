@@ -71,11 +71,11 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fukidashi" translatesAutoresizingMaskIntoConstraints="NO" id="C93-0r-n9G">
-                            <rect key="frame" x="12" y="8" width="126" height="253"/>
+                            <rect key="frame" x="29" y="8" width="93" height="253"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4RH-0T-c0P">
-                            <rect key="frame" x="52" y="39" width="44" height="166"/>
+                            <rect key="frame" x="29" y="39" width="93" height="166"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mojikun_b_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="74h-1W-kbo">
@@ -88,14 +88,15 @@
             <color key="backgroundColor" white="1" alpha="0.84878817471590906" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="TiE-vj-8dO"/>
             <connections>
+                <outlet property="ballonDisplayImageView" destination="4RH-0T-c0P" id="2lh-CL-p5U"/>
                 <outlet property="buttonBaseView" destination="bfp-mG-naY" id="6Nv-pk-yno"/>
                 <outlet property="wordTableView" destination="19Z-ml-b2L" id="nUZ-Rm-4Ng"/>
             </connections>
-            <point key="canvasLocation" x="618" y="118"/>
+            <point key="canvasLocation" x="617.54122938530736" y="117.59999999999999"/>
         </view>
     </objects>
     <resources>
-        <image name="fukidashi" width="150" height="129"/>
+        <image name="fukidashi" width="97" height="280"/>
         <image name="game_clear.png" width="720" height="100"/>
         <image name="game_list_head_clear.png" width="370" height="30"/>
         <image name="gameclear_button_backtoselect.png" width="709" height="119"/>

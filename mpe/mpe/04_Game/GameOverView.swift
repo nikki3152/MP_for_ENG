@@ -46,6 +46,7 @@ class GameOverView: UIView, UITableViewDataSource, UITableViewDelegate {
 		self.closeHandler?(res)
 	}
 	
+	@IBOutlet weak var ballonDisplayImageView: UIImageView!
 	@IBOutlet weak var wordTableView: UITableView!
 	
 	var wordList: [[String:String]] = []

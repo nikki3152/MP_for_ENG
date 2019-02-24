@@ -80,11 +80,11 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fukidashi" translatesAutoresizingMaskIntoConstraints="NO" id="lnb-9J-ybf">
-                            <rect key="frame" x="12" y="8" width="126" height="253"/>
+                            <rect key="frame" x="29" y="8" width="93" height="253"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d3u-cB-0bL">
-                            <rect key="frame" x="52" y="39" width="44" height="166"/>
+                            <rect key="frame" x="29" y="39" width="93" height="166"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mojikun_b_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="6mF-aU-qI3">
@@ -97,14 +97,15 @@
             <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="1q8-XN-Qqv"/>
             <connections>
+                <outlet property="ballonDisplayImageView" destination="d3u-cB-0bL" id="GGg-1O-2sG"/>
                 <outlet property="buttonBaseView" destination="UqL-zQ-c6g" id="dAJ-Mv-zfe"/>
                 <outlet property="wordTableView" destination="xXp-dS-cCi" id="bHx-cj-Xhm"/>
             </connections>
-            <point key="canvasLocation" x="110" y="-351"/>
+            <point key="canvasLocation" x="263" y="-382"/>
         </view>
     </objects>
     <resources>
-        <image name="fukidashi" width="150" height="129"/>
+        <image name="fukidashi" width="97" height="280"/>
         <image name="game_list_head.png" width="370" height="30"/>
         <image name="game_over.png" width="600" height="100"/>
         <image name="gameover_button_giveup.png" width="709" height="119"/>

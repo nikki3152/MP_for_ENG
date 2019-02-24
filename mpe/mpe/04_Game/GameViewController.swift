@@ -168,7 +168,38 @@ struct TableInfo {
 
 
 //MARK: -
-class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableViewDelegate, FontCardViewDelegate {
+class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableViewDelegate, FontCardViewDelegate, ADViewVideoDelegate {
+	
+	var gameOverResType: GameOverResType!
+	
+	//MARK: ADViewVideoDelegate
+	func adViewDidPlayVideo(_ adView: ADView, incentive: Bool) {
+		
+		if incentive {
+		}
+	}
+	func adViewLoadVideo(_ adView: ADView, canLoad: Bool) {
+		
+	}
+	func adViewDidCloseVideo(_ adView: ADView, incentive: Bool) {
+		
+		SoundManager.shared.pauseBGM(false)
+		if incentive {
+			if gameOverResType == .timeDouble {
+				//時間を倍にする
+				self.retry()
+				gameOverResType = nil
+			}
+			else if gameOverResType == .next {
+				//次の問題
+				self.nextQuest()
+				gameOverResType = nil
+			}
+		}
+	}
+	
+	//MARK: -
+	
 	
 	weak var selectCnt: StageSelectViewController!
 	
@@ -516,6 +547,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		
 		self.time = self.questData.time
+		
+		//時間を２倍
+		if let resType = gameOverResType {
+			if resType == .timeDouble {
+				self.time *= 2
+			}
+		}
 		
 		//MARK: キャラクターアニメーション（通常）
 		makeDefCharaAnimation()
@@ -2123,6 +2161,14 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				}
 				clear.wordList = wordList
 				s.view.addSubview(clear)
+				
+				let text = "やるやん。"
+				let bLabel = makeVerticalLabel(size: clear.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 14), text: text)
+				bLabel.textAlignment = .left
+				bLabel.numberOfLines = 3
+				clear.ballonDisplayImageView.addSubview(bLabel)
+				bLabel.center = CGPoint(x: clear.ballonDisplayImageView.frame.size.width / 2, y: clear.ballonDisplayImageView.frame.size.height / 2)
+				
 				clear.closeHandler = {[weak self](res) in
 					self?.isGameEnd = false
 					self?.charaBaseView.isHidden = false
@@ -2275,9 +2321,18 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				}
 				over.wordList = wordList
 				s.view.addSubview(over)
+				
+				let text = "あきらめたらそこで試合終了だよ。"
+				let bLabel = makeVerticalLabel(size: over.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 14), text: text)
+				bLabel.textAlignment = .left
+				bLabel.numberOfLines = 3
+				over.ballonDisplayImageView.addSubview(bLabel)
+				bLabel.center = CGPoint(x: over.ballonDisplayImageView.frame.size.width / 2, y: over.ballonDisplayImageView.frame.size.height / 2)
+				
 				over.closeHandler = {[weak self](res) in
 					self?.isGameEnd = false
 					self?.charaBaseView.isHidden = false
+					self?.gameOverResType = res
 					switch res {
 					case .retry:				//やりなおす
 						over.closeHandler = nil
@@ -2285,8 +2340,28 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						self?.retry()
 					case .timeDouble:			//Timeを倍にする（動画）
 						print("Timeを倍にする（動画）")
+						if adVideoReward.isCanPlayVideo {
+							adVideoReward.playVideo()
+							SoundManager.shared.pauseBGM(true)
+							over.closeHandler = nil
+							over.removeFromSuperview()
+						} else {
+							let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
+							alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
+							self?.present(alert, animated: true, completion: nil)
+						}
 					case .next:					//次の問題へ進む（動画）
-						print("Timeを倍にする（動画）")
+						print("次の問題へ進む（動画）")
+						if adVideoReward.isCanPlayVideo {
+							adVideoReward.playVideo()
+							SoundManager.shared.pauseBGM(true)
+							over.closeHandler = nil
+							over.removeFromSuperview()
+						} else {
+							let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
+							alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
+							self?.present(alert, animated: true, completion: nil)
+						}
 					case .giveup:				//諦める
 						self?.gameTimer?.invalidate()
 						self?.gameTimer = nil
@@ -2317,7 +2392,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				self.charaImageView.center.y = y
 				self.charaImageView.center.x = x + 10
 			})
-			UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.4 * Double(speed), animations: { 
+			UIView.addKeyframe(withRelativeStartTime: 0.9, relativeDuration: 0.4 * Double(speed), animations: { 
 				self.charaImageView.center.y = y
 				self.charaImageView.center.x = x
 			})

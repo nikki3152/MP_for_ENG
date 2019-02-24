@@ -47,6 +47,7 @@ class GameClearView: UIView, UITableViewDataSource, UITableViewDelegate {
 	
 	@IBOutlet weak var wordTableView: UITableView!
 	@IBOutlet weak var buttonBaseView: UIView!
+	@IBOutlet weak var ballonDisplayImageView: UIImageView!
 	
 	var wordList: [[String:String]] = []
 	
