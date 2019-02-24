@@ -41,9 +41,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzT-9k-2qR">
-                                <rect key="frame" x="15" y="15" width="40" height="40"/>
+                                <rect key="frame" x="15" y="8" width="50" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="bt_back.png"/>
+                                <state key="normal" backgroundImage="setting_home_button.png"/>
+                                <state key="highlighted" backgroundImage="setting_home_button_tap.png"/>
                                 <connections>
                                     <action selector="backButtonAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="UJs-ob-m4q"/>
                                 </connections>
@@ -77,28 +78,21 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BGM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHF-3L-IvT">
-                                        <rect key="frame" x="8" y="19" width="86" height="28"/>
+                                        <rect key="frame" x="8" y="34" width="86" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6f-cw-F0P">
-                                        <rect key="frame" x="8" y="68" width="86" height="28"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Voice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1Z-yx-R9d">
-                                        <rect key="frame" x="8" y="121" width="86" height="28"/>
+                                        <rect key="frame" x="8" y="105" width="86" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQh-mr-CIu">
-                                        <rect key="frame" x="99" y="13" width="100" height="40"/>
+                                        <rect key="frame" x="99" y="28" width="100" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="setting_button_off.png"/>
                                         <state key="selected" backgroundImage="setting_button_on.png"/>
@@ -107,21 +101,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJz-EU-cWG">
-                                        <rect key="frame" x="99" y="62" width="100" height="40"/>
+                                        <rect key="frame" x="99" y="99" width="100" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="setting_button_off.png"/>
                                         <state key="selected" backgroundImage="setting_button_on.png"/>
                                         <connections>
                                             <action selector="switchSEAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="2fH-C8-CVu"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tga-uY-EEu">
-                                        <rect key="frame" x="99" y="115" width="100" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="setting_button_off.png"/>
-                                        <state key="selected" backgroundImage="setting_button_on.png"/>
-                                        <connections>
-                                            <action selector="switchVoiceAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="Sjo-2T-TxR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -171,7 +156,6 @@
                         <outlet property="soundButton" destination="DV1-PO-hR6" id="GbW-p5-Zdr"/>
                         <outlet property="switchBGM" destination="yQh-mr-CIu" id="jia-J9-U60"/>
                         <outlet property="switchSE" destination="FJz-EU-cWG" id="tvt-gJ-tSs"/>
-                        <outlet property="switchVoice" destination="Tga-uY-EEu" id="cTL-Fx-b6X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gt-zF-oNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -180,7 +164,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bt_back.png" width="70" height="70"/>
         <image name="mojikun_a_01.png" width="300" height="300"/>
         <image name="setting_balloon" width="123.5" height="132.5"/>
         <image name="setting_button_01.png" width="500" height="150"/>
@@ -188,6 +171,8 @@
         <image name="setting_button_03.png" width="500" height="150"/>
         <image name="setting_button_off.png" width="300" height="120"/>
         <image name="setting_button_on.png" width="300" height="120"/>
+        <image name="setting_home_button.png" width="100" height="120"/>
+        <image name="setting_home_button_tap.png" width="100" height="120"/>
         <image name="setting_icon_01.png" width="200" height="249"/>
         <image name="setting_icon_02.png" width="150" height="150"/>
         <image name="setting_panel_01.png" width="480" height="1080"/>

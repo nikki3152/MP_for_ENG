@@ -10,6 +10,10 @@ import UIKit
 
 class SettingViewController: BaseViewController {
 
+	var textList = ["もじぴったん", "文字ピッタン"]
+	var textIndex: Int = 0
+	var textTimer: Timer!
+	
 	class func settingViewController() -> SettingViewController {
 		
 		let storyboard = UIStoryboard(name: "SettingViewController", bundle: nil)
@@ -22,7 +26,6 @@ class SettingViewController: BaseViewController {
 		
 		self.switchBGM.isSelected = UserDefaults.standard.bool(forKey: kBGMOn)
 		self.switchSE.isSelected = UserDefaults.standard.bool(forKey: kSEOn)
-		self.switchVoice.isSelected = UserDefaults.standard.bool(forKey: kVoiceOn)
 		
 		//ポイント
 		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
@@ -32,13 +35,24 @@ class SettingViewController: BaseViewController {
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		
-		self.updateMojikunString(txt: "もじピッタン")
+		if self.textTimer == nil {
+			self.updateMojikunString(txt: textList[textIndex])
+			self.textTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { [weak self](t) in
+				self?.textIndex += 1
+				if self!.textIndex >= self!.textList.count {
+					self!.textIndex = 0
+				}
+				self?.updateMojikunString(txt: self!.textList[self!.textIndex])
+			})
+		}
 	}
 	
 	//戻る
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
 		
+		self.textTimer?.invalidate()
+		self.textTimer = nil
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.remove()
 	}
@@ -76,11 +90,34 @@ class SettingViewController: BaseViewController {
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 	}
 	
-	//ポイント課金
+	//クレジット
 	@IBOutlet weak var purchaseButton: UIButton!
 	@IBAction func purchaseButtonAction(_ sender: Any) {
-		
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
+		
+		let creditView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+		creditView.contentMode = .scaleAspectFill
+		creditView.isUserInteractionEnabled = true
+		creditView.image = UIImage(named: "setting_credit")
+		self.view.addSubview(creditView)
+		let tap = UITapGestureRecognizer(target: self, action: #selector(self.tap(_ :)))
+		creditView.addGestureRecognizer(tap)
+		
+		creditView.alpha = 0
+		UIView.animate(withDuration: 0.25, animations: { 
+			creditView.alpha = 1
+		}, completion: nil)
+	}
+	
+	@objc func tap(_ tap: UITapGestureRecognizer) {
+		
+		if let v = tap.view {
+			UIView.animate(withDuration: 0.25, animations: { 
+				v.alpha = 0
+			}) { (stop) in
+				v.removeFromSuperview()
+			}
+		}
 	}
 	
 	// BGM
@@ -109,16 +146,6 @@ class SettingViewController: BaseViewController {
 		UserDefaults.standard.set(sender.isSelected, forKey: kSEOn)
 	}
 	
-	// Voice
-	@IBOutlet weak var switchVoice: UIButton!
-	@IBAction func switchVoiceAction(_ sender: UIButton) {
-		
-		SoundManager.shared.startSE(type: .seSelect)	//SE再生
-		let on = !sender.isSelected
-		sender.isSelected = on
-		UserDefaults.standard.set(sender.isSelected, forKey: kVoiceOn)
-	}
-	
 	//ポイントボタン
 	@IBOutlet weak var ppButton: UIButton!
 	@IBAction func ppButtonAction(_ sender: Any) {
@@ -143,7 +170,7 @@ class SettingViewController: BaseViewController {
 		self.ballonMainLabel?.removeFromSuperview()
 		let bLabel = makeVerticalLabel(size: self.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 14), text: txt)
 		bLabel.textAlignment = .center
-		bLabel.numberOfLines = 2
+		bLabel.numberOfLines = 3
 		self.ballonDisplayImageView.addSubview(bLabel)
 		bLabel.center = CGPoint(x: self.ballonDisplayImageView.frame.size.width / 2, y: self.ballonDisplayImageView.frame.size.height / 2)
 		self.ballonMainLabel = bLabel
