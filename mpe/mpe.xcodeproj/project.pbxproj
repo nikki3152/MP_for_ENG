@@ -51,57 +51,6 @@
 		5412687C22219D4100CE3A35 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5412687B22219D4100CE3A35 /* SystemConfiguration.framework */; };
 		5412687E22219D4800CE3A35 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5412687D22219D4800CE3A35 /* WebKit.framework */; };
 		5412688022219E3800CE3A35 /* ADView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412687F22219E3800CE3A35 /* ADView.swift */; };
-		541268E22221A19200CE3A35 /* SmaadVideoAdResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 541268842221A19200CE3A35 /* SmaadVideoAdResources.bundle */; };
-		541268E32221A19200CE3A35 /* MovieReward6007.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268852221A19200CE3A35 /* MovieReward6007.m */; };
-		541268E42221A19200CE3A35 /* Version6007.txt in Resources */ = {isa = PBXBuildFile; fileRef = 541268862221A19200CE3A35 /* Version6007.txt */; };
-		541268E52221A19200CE3A35 /* libSmaadVideoAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 541268872221A19200CE3A35 /* libSmaadVideoAd.a */; };
-		541268E62221A19200CE3A35 /* MovieInterstitial6001.m in Sources */ = {isa = PBXBuildFile; fileRef = 5412688A2221A19200CE3A35 /* MovieInterstitial6001.m */; };
-		541268E72221A19200CE3A35 /* Version6001.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5412688B2221A19200CE3A35 /* Version6001.txt */; };
-		541268E82221A19200CE3A35 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5412688D2221A19200CE3A35 /* UnityAds.framework */; };
-		541268E92221A19200CE3A35 /* MovieReward6001.m in Sources */ = {isa = PBXBuildFile; fileRef = 5412688F2221A19200CE3A35 /* MovieReward6001.m */; };
-		541268EA2221A19200CE3A35 /* MovieInterstitial6006.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268922221A19200CE3A35 /* MovieInterstitial6006.m */; };
-		541268EB2221A19200CE3A35 /* Version6006.txt in Resources */ = {isa = PBXBuildFile; fileRef = 541268932221A19200CE3A35 /* Version6006.txt */; };
-		541268EC2221A19200CE3A35 /* MovieNativeAdFlex6006.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268942221A19200CE3A35 /* MovieNativeAdFlex6006.m */; };
-		541268ED2221A19200CE3A35 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541268952221A19200CE3A35 /* VungleSDK.framework */; };
-		541268EE2221A19200CE3A35 /* MovieReward6006.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268962221A19200CE3A35 /* MovieReward6006.m */; };
-		541268EF2221A19200CE3A35 /* MovieReward6010.m in Sources */ = {isa = PBXBuildFile; fileRef = 5412689A2221A19200CE3A35 /* MovieReward6010.m */; };
-		541268F02221A19200CE3A35 /* AMoAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5412689B2221A19200CE3A35 /* AMoAd.framework */; };
-		541268F12221A19200CE3A35 /* Version6010.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5412689D2221A19200CE3A35 /* Version6010.txt */; };
-		541268F22221A19200CE3A35 /* MovieInterstitial6010.m in Sources */ = {isa = PBXBuildFile; fileRef = 5412689F2221A19200CE3A35 /* MovieInterstitial6010.m */; };
-		541268F32221A19200CE3A35 /* MovieNative6009.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268A22221A19200CE3A35 /* MovieNative6009.m */; };
-		541268F42221A19200CE3A35 /* MovieReward6009.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268A32221A19200CE3A35 /* MovieReward6009.m */; };
-		541268F52221A19200CE3A35 /* Version6009.txt in Resources */ = {isa = PBXBuildFile; fileRef = 541268A42221A19200CE3A35 /* Version6009.txt */; };
-		541268F62221A19200CE3A35 /* MovieInterstitial6009.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268A52221A19200CE3A35 /* MovieInterstitial6009.m */; };
-		541268F72221A19200CE3A35 /* NendAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541268A72221A19200CE3A35 /* NendAd.framework */; };
-		541268F82221A19200CE3A35 /* NendAdResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 541268A92221A19200CE3A35 /* NendAdResource.bundle */; };
-		541268F92221A19200CE3A35 /* MovieInterstitial6005.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268AD2221A19200CE3A35 /* MovieInterstitial6005.m */; };
-		541268FA2221A19200CE3A35 /* Tapjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541268AF2221A19200CE3A35 /* Tapjoy.framework */; };
-		541268FB2221A19200CE3A35 /* TapjoyResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 541268B12221A19200CE3A35 /* TapjoyResources.bundle */; };
-		541268FC2221A19200CE3A35 /* Version6005.txt in Resources */ = {isa = PBXBuildFile; fileRef = 541268B22221A19200CE3A35 /* Version6005.txt */; };
-		541268FD2221A19200CE3A35 /* MovieReward6005.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268B52221A19200CE3A35 /* MovieReward6005.m */; };
-		541268FE2221A19200CE3A35 /* MovieReward6000.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268B72221A19200CE3A35 /* MovieReward6000.m */; };
-		541268FF2221A19200CE3A35 /* Version6000.txt in Resources */ = {isa = PBXBuildFile; fileRef = 541268B82221A19200CE3A35 /* Version6000.txt */; };
-		541269002221A19200CE3A35 /* MovieNative6000.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268BA2221A19200CE3A35 /* MovieNative6000.m */; };
-		541269012221A19200CE3A35 /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541268BC2221A19200CE3A35 /* AppLovinSDK.framework */; };
-		541269022221A19200CE3A35 /* MovieInterstitial6000.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268BD2221A19200CE3A35 /* MovieInterstitial6000.m */; };
-		541269032221A19200CE3A35 /* MovieInterstitial6002.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268C12221A19200CE3A35 /* MovieInterstitial6002.m */; };
-		541269042221A19200CE3A35 /* Version6002.txt in Resources */ = {isa = PBXBuildFile; fileRef = 541268C22221A19200CE3A35 /* Version6002.txt */; };
-		541269052221A19200CE3A35 /* MovieReward6002.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268C32221A19200CE3A35 /* MovieReward6002.m */; };
-		541269062221A19200CE3A35 /* AdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541268C52221A19200CE3A35 /* AdColony.framework */; };
-		541269092221A19200CE3A35 /* Version6016.txt in Resources */ = {isa = PBXBuildFile; fileRef = 541268CC2221A19200CE3A35 /* Version6016.txt */; };
-		5412690A2221A19200CE3A35 /* MovieInterstitial6016.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268CD2221A19200CE3A35 /* MovieInterstitial6016.m */; };
-		5412690B2221A19200CE3A35 /* MovieReward6016.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268CE2221A19200CE3A35 /* MovieReward6016.m */; };
-		5412690C2221A19200CE3A35 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541268CF2221A19200CE3A35 /* FBAudienceNetwork.framework */; };
-		5412690D2221A19200CE3A35 /* MovieNative6016.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268D02221A19200CE3A35 /* MovieNative6016.m */; };
-		5412690E2221A19200CE3A35 /* MovieReward6004.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268D32221A19200CE3A35 /* MovieReward6004.m */; };
-		5412690F2221A19200CE3A35 /* Version6004.txt in Resources */ = {isa = PBXBuildFile; fileRef = 541268D52221A19200CE3A35 /* Version6004.txt */; };
-		541269102221A19200CE3A35 /* Maio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541268D72221A19200CE3A35 /* Maio.framework */; };
-		541269112221A19200CE3A35 /* MovieInterstitial6004.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268D82221A19200CE3A35 /* MovieInterstitial6004.m */; };
-		541269122221A19200CE3A35 /* FiveAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541268DA2221A19200CE3A35 /* FiveAd.framework */; };
-		541269132221A19200CE3A35 /* MovieInterstitial6008.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268DC2221A19200CE3A35 /* MovieInterstitial6008.m */; };
-		541269142221A19200CE3A35 /* Version6008.txt in Resources */ = {isa = PBXBuildFile; fileRef = 541268DE2221A19200CE3A35 /* Version6008.txt */; };
-		541269152221A19200CE3A35 /* MovieReward6008.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268DF2221A19200CE3A35 /* MovieReward6008.m */; };
-		541269162221A19200CE3A35 /* MovieNative6008.m in Sources */ = {isa = PBXBuildFile; fileRef = 541268E12221A19200CE3A35 /* MovieNative6008.m */; };
 		541269182221A23600CE3A35 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 541269172221A23600CE3A35 /* libz.1.2.5.tbd */; };
 		5412691A2221A24800CE3A35 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541269192221A24800CE3A35 /* AudioToolbox.framework */; };
 		5412691C2221A25300CE3A35 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5412691B2221A25300CE3A35 /* AVFoundation.framework */; };
@@ -880,84 +829,6 @@
 		5412687B22219D4100CE3A35 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5412687D22219D4800CE3A35 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		5412687F22219E3800CE3A35 /* ADView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADView.swift; sourceTree = "<group>"; };
-		541268832221A19200CE3A35 /* SmaadVideoAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmaadVideoAd.h; sourceTree = "<group>"; };
-		541268842221A19200CE3A35 /* SmaadVideoAdResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SmaadVideoAdResources.bundle; sourceTree = "<group>"; };
-		541268852221A19200CE3A35 /* MovieReward6007.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieReward6007.m; sourceTree = "<group>"; };
-		541268862221A19200CE3A35 /* Version6007.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Version6007.txt; sourceTree = "<group>"; };
-		541268872221A19200CE3A35 /* libSmaadVideoAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSmaadVideoAd.a; sourceTree = "<group>"; };
-		541268882221A19200CE3A35 /* MovieReward6007.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieReward6007.h; sourceTree = "<group>"; };
-		5412688A2221A19200CE3A35 /* MovieInterstitial6001.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieInterstitial6001.m; sourceTree = "<group>"; };
-		5412688B2221A19200CE3A35 /* Version6001.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Version6001.txt; sourceTree = "<group>"; };
-		5412688C2221A19200CE3A35 /* MovieReward6001.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieReward6001.h; sourceTree = "<group>"; };
-		5412688D2221A19200CE3A35 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
-		5412688E2221A19200CE3A35 /* MovieInterstitial6001.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieInterstitial6001.h; sourceTree = "<group>"; };
-		5412688F2221A19200CE3A35 /* MovieReward6001.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieReward6001.m; sourceTree = "<group>"; };
-		541268912221A19200CE3A35 /* MovieReward6006.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieReward6006.h; sourceTree = "<group>"; };
-		541268922221A19200CE3A35 /* MovieInterstitial6006.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieInterstitial6006.m; sourceTree = "<group>"; };
-		541268932221A19200CE3A35 /* Version6006.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Version6006.txt; sourceTree = "<group>"; };
-		541268942221A19200CE3A35 /* MovieNativeAdFlex6006.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieNativeAdFlex6006.m; sourceTree = "<group>"; };
-		541268952221A19200CE3A35 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VungleSDK.framework; sourceTree = "<group>"; };
-		541268962221A19200CE3A35 /* MovieReward6006.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieReward6006.m; sourceTree = "<group>"; };
-		541268972221A19200CE3A35 /* MovieInterstitial6006.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieInterstitial6006.h; sourceTree = "<group>"; };
-		541268982221A19200CE3A35 /* MovieNativeAdFlex6006.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieNativeAdFlex6006.h; sourceTree = "<group>"; };
-		5412689A2221A19200CE3A35 /* MovieReward6010.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieReward6010.m; sourceTree = "<group>"; };
-		5412689B2221A19200CE3A35 /* AMoAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMoAd.framework; sourceTree = "<group>"; };
-		5412689C2221A19200CE3A35 /* MovieInterstitial6010.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieInterstitial6010.h; sourceTree = "<group>"; };
-		5412689D2221A19200CE3A35 /* Version6010.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Version6010.txt; sourceTree = "<group>"; };
-		5412689E2221A19200CE3A35 /* MovieReward6010.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieReward6010.h; sourceTree = "<group>"; };
-		5412689F2221A19200CE3A35 /* MovieInterstitial6010.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieInterstitial6010.m; sourceTree = "<group>"; };
-		541268A12221A19200CE3A35 /* MovieInterstitial6009.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieInterstitial6009.h; sourceTree = "<group>"; };
-		541268A22221A19200CE3A35 /* MovieNative6009.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieNative6009.m; sourceTree = "<group>"; };
-		541268A32221A19200CE3A35 /* MovieReward6009.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieReward6009.m; sourceTree = "<group>"; };
-		541268A42221A19200CE3A35 /* Version6009.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Version6009.txt; sourceTree = "<group>"; };
-		541268A52221A19200CE3A35 /* MovieInterstitial6009.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieInterstitial6009.m; sourceTree = "<group>"; };
-		541268A72221A19200CE3A35 /* NendAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NendAd.framework; sourceTree = "<group>"; };
-		541268A92221A19200CE3A35 /* NendAdResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NendAdResource.bundle; sourceTree = "<group>"; };
-		541268AA2221A19200CE3A35 /* MovieNative6009.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieNative6009.h; sourceTree = "<group>"; };
-		541268AB2221A19200CE3A35 /* MovieReward6009.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieReward6009.h; sourceTree = "<group>"; };
-		541268AD2221A19200CE3A35 /* MovieInterstitial6005.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieInterstitial6005.m; sourceTree = "<group>"; };
-		541268AF2221A19200CE3A35 /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Tapjoy.framework; sourceTree = "<group>"; };
-		541268B12221A19200CE3A35 /* TapjoyResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapjoyResources.bundle; sourceTree = "<group>"; };
-		541268B22221A19200CE3A35 /* Version6005.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Version6005.txt; sourceTree = "<group>"; };
-		541268B32221A19200CE3A35 /* MovieReward6005.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieReward6005.h; sourceTree = "<group>"; };
-		541268B42221A19200CE3A35 /* MovieInterstitial6005.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieInterstitial6005.h; sourceTree = "<group>"; };
-		541268B52221A19200CE3A35 /* MovieReward6005.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieReward6005.m; sourceTree = "<group>"; };
-		541268B72221A19200CE3A35 /* MovieReward6000.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieReward6000.m; sourceTree = "<group>"; };
-		541268B82221A19200CE3A35 /* Version6000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Version6000.txt; sourceTree = "<group>"; };
-		541268B92221A19200CE3A35 /* MovieInterstitial6000.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieInterstitial6000.h; sourceTree = "<group>"; };
-		541268BA2221A19200CE3A35 /* MovieNative6000.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieNative6000.m; sourceTree = "<group>"; };
-		541268BB2221A19200CE3A35 /* MovieReward6000.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieReward6000.h; sourceTree = "<group>"; };
-		541268BC2221A19200CE3A35 /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
-		541268BD2221A19200CE3A35 /* MovieInterstitial6000.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieInterstitial6000.m; sourceTree = "<group>"; };
-		541268BE2221A19200CE3A35 /* MovieNative6000.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieNative6000.h; sourceTree = "<group>"; };
-		541268C02221A19200CE3A35 /* MovieReward6002.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieReward6002.h; sourceTree = "<group>"; };
-		541268C12221A19200CE3A35 /* MovieInterstitial6002.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieInterstitial6002.m; sourceTree = "<group>"; };
-		541268C22221A19200CE3A35 /* Version6002.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Version6002.txt; sourceTree = "<group>"; };
-		541268C32221A19200CE3A35 /* MovieReward6002.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieReward6002.m; sourceTree = "<group>"; };
-		541268C42221A19200CE3A35 /* MovieInterstitial6002.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieInterstitial6002.h; sourceTree = "<group>"; };
-		541268C52221A19200CE3A35 /* AdColony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdColony.framework; sourceTree = "<group>"; };
-		541268CA2221A19200CE3A35 /* MovieReward6016.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieReward6016.h; sourceTree = "<group>"; };
-		541268CB2221A19200CE3A35 /* MovieNative6016.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieNative6016.h; sourceTree = "<group>"; };
-		541268CC2221A19200CE3A35 /* Version6016.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Version6016.txt; sourceTree = "<group>"; };
-		541268CD2221A19200CE3A35 /* MovieInterstitial6016.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieInterstitial6016.m; sourceTree = "<group>"; };
-		541268CE2221A19200CE3A35 /* MovieReward6016.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieReward6016.m; sourceTree = "<group>"; };
-		541268CF2221A19200CE3A35 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
-		541268D02221A19200CE3A35 /* MovieNative6016.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieNative6016.m; sourceTree = "<group>"; };
-		541268D12221A19200CE3A35 /* MovieInterstitial6016.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieInterstitial6016.h; sourceTree = "<group>"; };
-		541268D32221A19200CE3A35 /* MovieReward6004.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieReward6004.m; sourceTree = "<group>"; };
-		541268D42221A19200CE3A35 /* MovieInterstitial6004.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieInterstitial6004.h; sourceTree = "<group>"; };
-		541268D52221A19200CE3A35 /* Version6004.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Version6004.txt; sourceTree = "<group>"; };
-		541268D62221A19200CE3A35 /* MovieReward6004.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieReward6004.h; sourceTree = "<group>"; };
-		541268D72221A19200CE3A35 /* Maio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Maio.framework; sourceTree = "<group>"; };
-		541268D82221A19200CE3A35 /* MovieInterstitial6004.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieInterstitial6004.m; sourceTree = "<group>"; };
-		541268DA2221A19200CE3A35 /* FiveAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FiveAd.framework; sourceTree = "<group>"; };
-		541268DB2221A19200CE3A35 /* MovieReward6008.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieReward6008.h; sourceTree = "<group>"; };
-		541268DC2221A19200CE3A35 /* MovieInterstitial6008.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieInterstitial6008.m; sourceTree = "<group>"; };
-		541268DD2221A19200CE3A35 /* MovieNative6008.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieNative6008.h; sourceTree = "<group>"; };
-		541268DE2221A19200CE3A35 /* Version6008.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Version6008.txt; sourceTree = "<group>"; };
-		541268DF2221A19200CE3A35 /* MovieReward6008.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieReward6008.m; sourceTree = "<group>"; };
-		541268E02221A19200CE3A35 /* MovieInterstitial6008.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieInterstitial6008.h; sourceTree = "<group>"; };
-		541268E12221A19200CE3A35 /* MovieNative6008.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieNative6008.m; sourceTree = "<group>"; };
 		541269172221A23600CE3A35 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		541269192221A24800CE3A35 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5412691B2221A25300CE3A35 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -1735,20 +1606,9 @@
 				5412691A2221A24800CE3A35 /* AudioToolbox.framework in Frameworks */,
 				541269182221A23600CE3A35 /* libz.1.2.5.tbd in Frameworks */,
 				5412687E22219D4800CE3A35 /* WebKit.framework in Frameworks */,
-				541268ED2221A19200CE3A35 /* VungleSDK.framework in Frameworks */,
-				541269122221A19200CE3A35 /* FiveAd.framework in Frameworks */,
 				5412687C22219D4100CE3A35 /* SystemConfiguration.framework in Frameworks */,
-				541268E52221A19200CE3A35 /* libSmaadVideoAd.a in Frameworks */,
-				541268FA2221A19200CE3A35 /* Tapjoy.framework in Frameworks */,
-				541269102221A19200CE3A35 /* Maio.framework in Frameworks */,
-				541268F02221A19200CE3A35 /* AMoAd.framework in Frameworks */,
-				541269062221A19200CE3A35 /* AdColony.framework in Frameworks */,
 				5412687A22219D2F00CE3A35 /* AdSupport.framework in Frameworks */,
-				541268F72221A19200CE3A35 /* NendAd.framework in Frameworks */,
-				541269012221A19200CE3A35 /* AppLovinSDK.framework in Frameworks */,
 				5412687722219D1200CE3A35 /* ADFMovieReward.framework in Frameworks */,
-				541268E82221A19200CE3A35 /* UnityAds.framework in Frameworks */,
-				5412690C2221A19200CE3A35 /* FBAudienceNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1857,211 +1717,6 @@
 				5412687922219D2F00CE3A35 /* AdSupport.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		541268812221A19200CE3A35 /* adnetworks */ = {
-			isa = PBXGroup;
-			children = (
-				541268822221A19200CE3A35 /* SmaAD */,
-				541268892221A19200CE3A35 /* UnityAds */,
-				541268902221A19200CE3A35 /* Vungle */,
-				541268992221A19200CE3A35 /* Afio */,
-				541268A02221A19200CE3A35 /* NendAd */,
-				541268AC2221A19200CE3A35 /* Tapjoy */,
-				541268B62221A19200CE3A35 /* AppLovin */,
-				541268BF2221A19200CE3A35 /* AdColony */,
-				541268C92221A19200CE3A35 /* FAN */,
-				541268D22221A19200CE3A35 /* Maio */,
-				541268D92221A19200CE3A35 /* Five */,
-			);
-			path = adnetworks;
-			sourceTree = "<group>";
-		};
-		541268822221A19200CE3A35 /* SmaAD */ = {
-			isa = PBXGroup;
-			children = (
-				541268832221A19200CE3A35 /* SmaadVideoAd.h */,
-				541268842221A19200CE3A35 /* SmaadVideoAdResources.bundle */,
-				541268852221A19200CE3A35 /* MovieReward6007.m */,
-				541268862221A19200CE3A35 /* Version6007.txt */,
-				541268872221A19200CE3A35 /* libSmaadVideoAd.a */,
-				541268882221A19200CE3A35 /* MovieReward6007.h */,
-			);
-			path = SmaAD;
-			sourceTree = "<group>";
-		};
-		541268892221A19200CE3A35 /* UnityAds */ = {
-			isa = PBXGroup;
-			children = (
-				5412688A2221A19200CE3A35 /* MovieInterstitial6001.m */,
-				5412688B2221A19200CE3A35 /* Version6001.txt */,
-				5412688C2221A19200CE3A35 /* MovieReward6001.h */,
-				5412688D2221A19200CE3A35 /* UnityAds.framework */,
-				5412688E2221A19200CE3A35 /* MovieInterstitial6001.h */,
-				5412688F2221A19200CE3A35 /* MovieReward6001.m */,
-			);
-			path = UnityAds;
-			sourceTree = "<group>";
-		};
-		541268902221A19200CE3A35 /* Vungle */ = {
-			isa = PBXGroup;
-			children = (
-				541268912221A19200CE3A35 /* MovieReward6006.h */,
-				541268922221A19200CE3A35 /* MovieInterstitial6006.m */,
-				541268932221A19200CE3A35 /* Version6006.txt */,
-				541268942221A19200CE3A35 /* MovieNativeAdFlex6006.m */,
-				541268952221A19200CE3A35 /* VungleSDK.framework */,
-				541268962221A19200CE3A35 /* MovieReward6006.m */,
-				541268972221A19200CE3A35 /* MovieInterstitial6006.h */,
-				541268982221A19200CE3A35 /* MovieNativeAdFlex6006.h */,
-			);
-			path = Vungle;
-			sourceTree = "<group>";
-		};
-		541268992221A19200CE3A35 /* Afio */ = {
-			isa = PBXGroup;
-			children = (
-				5412689A2221A19200CE3A35 /* MovieReward6010.m */,
-				5412689B2221A19200CE3A35 /* AMoAd.framework */,
-				5412689C2221A19200CE3A35 /* MovieInterstitial6010.h */,
-				5412689D2221A19200CE3A35 /* Version6010.txt */,
-				5412689E2221A19200CE3A35 /* MovieReward6010.h */,
-				5412689F2221A19200CE3A35 /* MovieInterstitial6010.m */,
-			);
-			path = Afio;
-			sourceTree = "<group>";
-		};
-		541268A02221A19200CE3A35 /* NendAd */ = {
-			isa = PBXGroup;
-			children = (
-				541268A12221A19200CE3A35 /* MovieInterstitial6009.h */,
-				541268A22221A19200CE3A35 /* MovieNative6009.m */,
-				541268A32221A19200CE3A35 /* MovieReward6009.m */,
-				541268A42221A19200CE3A35 /* Version6009.txt */,
-				541268A52221A19200CE3A35 /* MovieInterstitial6009.m */,
-				541268A62221A19200CE3A35 /* NendAd.embeddedframework */,
-				541268AA2221A19200CE3A35 /* MovieNative6009.h */,
-				541268AB2221A19200CE3A35 /* MovieReward6009.h */,
-			);
-			path = NendAd;
-			sourceTree = "<group>";
-		};
-		541268A62221A19200CE3A35 /* NendAd.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				541268A72221A19200CE3A35 /* NendAd.framework */,
-				541268A82221A19200CE3A35 /* Resources */,
-			);
-			path = NendAd.embeddedframework;
-			sourceTree = "<group>";
-		};
-		541268A82221A19200CE3A35 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				541268A92221A19200CE3A35 /* NendAdResource.bundle */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		541268AC2221A19200CE3A35 /* Tapjoy */ = {
-			isa = PBXGroup;
-			children = (
-				541268AD2221A19200CE3A35 /* MovieInterstitial6005.m */,
-				541268AE2221A19200CE3A35 /* Tapjoy.embeddedframework */,
-				541268B22221A19200CE3A35 /* Version6005.txt */,
-				541268B32221A19200CE3A35 /* MovieReward6005.h */,
-				541268B42221A19200CE3A35 /* MovieInterstitial6005.h */,
-				541268B52221A19200CE3A35 /* MovieReward6005.m */,
-			);
-			path = Tapjoy;
-			sourceTree = "<group>";
-		};
-		541268AE2221A19200CE3A35 /* Tapjoy.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				541268AF2221A19200CE3A35 /* Tapjoy.framework */,
-				541268B02221A19200CE3A35 /* Resources */,
-			);
-			path = Tapjoy.embeddedframework;
-			sourceTree = "<group>";
-		};
-		541268B02221A19200CE3A35 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				541268B12221A19200CE3A35 /* TapjoyResources.bundle */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		541268B62221A19200CE3A35 /* AppLovin */ = {
-			isa = PBXGroup;
-			children = (
-				541268B72221A19200CE3A35 /* MovieReward6000.m */,
-				541268B82221A19200CE3A35 /* Version6000.txt */,
-				541268B92221A19200CE3A35 /* MovieInterstitial6000.h */,
-				541268BA2221A19200CE3A35 /* MovieNative6000.m */,
-				541268BB2221A19200CE3A35 /* MovieReward6000.h */,
-				541268BC2221A19200CE3A35 /* AppLovinSDK.framework */,
-				541268BD2221A19200CE3A35 /* MovieInterstitial6000.m */,
-				541268BE2221A19200CE3A35 /* MovieNative6000.h */,
-			);
-			path = AppLovin;
-			sourceTree = "<group>";
-		};
-		541268BF2221A19200CE3A35 /* AdColony */ = {
-			isa = PBXGroup;
-			children = (
-				541268C02221A19200CE3A35 /* MovieReward6002.h */,
-				541268C12221A19200CE3A35 /* MovieInterstitial6002.m */,
-				541268C22221A19200CE3A35 /* Version6002.txt */,
-				541268C32221A19200CE3A35 /* MovieReward6002.m */,
-				541268C42221A19200CE3A35 /* MovieInterstitial6002.h */,
-				541268C52221A19200CE3A35 /* AdColony.framework */,
-			);
-			path = AdColony;
-			sourceTree = "<group>";
-		};
-		541268C92221A19200CE3A35 /* FAN */ = {
-			isa = PBXGroup;
-			children = (
-				541268CA2221A19200CE3A35 /* MovieReward6016.h */,
-				541268CB2221A19200CE3A35 /* MovieNative6016.h */,
-				541268CC2221A19200CE3A35 /* Version6016.txt */,
-				541268CD2221A19200CE3A35 /* MovieInterstitial6016.m */,
-				541268CE2221A19200CE3A35 /* MovieReward6016.m */,
-				541268CF2221A19200CE3A35 /* FBAudienceNetwork.framework */,
-				541268D02221A19200CE3A35 /* MovieNative6016.m */,
-				541268D12221A19200CE3A35 /* MovieInterstitial6016.h */,
-			);
-			path = FAN;
-			sourceTree = "<group>";
-		};
-		541268D22221A19200CE3A35 /* Maio */ = {
-			isa = PBXGroup;
-			children = (
-				541268D32221A19200CE3A35 /* MovieReward6004.m */,
-				541268D42221A19200CE3A35 /* MovieInterstitial6004.h */,
-				541268D52221A19200CE3A35 /* Version6004.txt */,
-				541268D62221A19200CE3A35 /* MovieReward6004.h */,
-				541268D72221A19200CE3A35 /* Maio.framework */,
-				541268D82221A19200CE3A35 /* MovieInterstitial6004.m */,
-			);
-			path = Maio;
-			sourceTree = "<group>";
-		};
-		541268D92221A19200CE3A35 /* Five */ = {
-			isa = PBXGroup;
-			children = (
-				541268DA2221A19200CE3A35 /* FiveAd.framework */,
-				541268DB2221A19200CE3A35 /* MovieReward6008.h */,
-				541268DC2221A19200CE3A35 /* MovieInterstitial6008.m */,
-				541268DD2221A19200CE3A35 /* MovieNative6008.h */,
-				541268DE2221A19200CE3A35 /* Version6008.txt */,
-				541268DF2221A19200CE3A35 /* MovieReward6008.m */,
-				541268E02221A19200CE3A35 /* MovieInterstitial6008.h */,
-				541268E12221A19200CE3A35 /* MovieNative6008.m */,
-			);
-			path = Five;
 			sourceTree = "<group>";
 		};
 		5429F37B21CF055300E0E50F /* time */ = {
@@ -3010,7 +2665,6 @@
 			isa = PBXGroup;
 			children = (
 				5412687F22219E3800CE3A35 /* ADView.swift */,
-				541268812221A19200CE3A35 /* adnetworks */,
 				5412687622219D1100CE3A35 /* ADFMovieReward.framework */,
 				5467650921EF30EF0025A5A9 /* SoundPlayer.swift */,
 				5467653F21F69E0D0025A5A9 /* SoundManager.swift */,
@@ -3122,7 +2776,6 @@
 				546764B421EF1F6F0025A5A9 /* ocupation②（職業）.plist in Resources */,
 				54D552CE21BCA66300980B92 /* obj_star_05.png in Resources */,
 				5429F3A621CF06B600E0E50F /* countup_5.png in Resources */,
-				5412690F2221A19200CE3A35 /* Version6004.txt in Resources */,
 				54D5521621BCA66300980B92 /* mojichan_01.png in Resources */,
 				546764FC21EF24300025A5A9 /* SE_PRESS_to_START.wav in Resources */,
 				5429F36A21CF052800E0E50F /* time5_danger.png in Resources */,
@@ -3180,7 +2833,6 @@
 				5467652F21F556E00025A5A9 /* anthropology（人類学）.plist in Resources */,
 				54D5531321BCA66300980B92 /* data_line.png in Resources */,
 				542F446A21B57FAD00C51AD6 /* used up（使い切り）.plist in Resources */,
-				541268FB2221A19200CE3A35 /* TapjoyResources.bundle in Resources */,
 				54D552FF21BCA66300980B92 /* custom_box_04.png in Resources */,
 				5404EA1F221A4830008A8B6D /* obj_egg_01.png in Resources */,
 				54D552D121BCA66300980B92 /* R.png in Resources */,
@@ -3241,7 +2893,6 @@
 				54D5529621BCA66300980B92 /* gameclear_button_backtoselect.png in Resources */,
 				546764F821EF24300025A5A9 /* SE_正解音.wav in Resources */,
 				54D5526F21BCA66300980B92 /* obj_balloon_02.png in Resources */,
-				541268E72221A19200CE3A35 /* Version6001.txt in Resources */,
 				5429F3B021CF06B600E0E50F /* score_count_7.png in Resources */,
 				54D552B121BCA66300980B92 /* C.png in Resources */,
 				54BCA6E122153BBB0054CEF4 /* gameclear_anim_effect11.png in Resources */,
@@ -3299,7 +2950,6 @@
 				54D5530B21BCA66300980B92 /* custom_box_09_tap.png in Resources */,
 				54D5529721BCA66300980B92 /* obj_flower_05.png in Resources */,
 				546764BF21EF1F6F0025A5A9 /* crossword（クロスワード）⑥.plist in Resources */,
-				541268EB2221A19200CE3A35 /* Version6006.txt in Resources */,
 				54D5526721BCA66300980B92 /* gameclear_button_review.png in Resources */,
 				54BCA6C622144B7A0054CEF4 /* gameclear_anim_word02.png in Resources */,
 				54D5532A21BCA66300980B92 /* taiki_panel_04.png in Resources */,
@@ -3320,7 +2970,6 @@
 				5429F36321CF052800E0E50F /* time4.png in Resources */,
 				54D551FE21BCA66300980B92 /* select_stagemap_03.png in Resources */,
 				54D5533421BCA66300980B92 /* setting_panel_02.png in Resources */,
-				541268E42221A19200CE3A35 /* Version6007.txt in Resources */,
 				54D5532F21BCA66300980B92 /* setting_credit.png in Resources */,
 				54D5521121BCA66300980B92 /* gameover_button_retry.png in Resources */,
 				5467650121EF24300025A5A9 /* BGM_上級ステージ_hit.wav in Resources */,
@@ -3389,7 +3038,6 @@
 				54D5525021BCA66300980B92 /* kumokun_01.png in Resources */,
 				546764F921EF24300025A5A9 /* SE_コンボ⑦.wav in Resources */,
 				54D5530F21BCA66300980B92 /* custom_cursor.png in Resources */,
-				541269042221A19200CE3A35 /* Version6002.txt in Resources */,
 				54D5530121BCA66300980B92 /* custom_box_01.png in Resources */,
 				54D552DA21BCA66300980B92 /* P.png in Resources */,
 				54D552E621BCA66300980B92 /* story_02.png in Resources */,
@@ -3418,7 +3066,6 @@
 				54D5527F21BCA66300980B92 /* anim_W.png in Resources */,
 				5467652D21F556E00025A5A9 /* politics（政治）.plist in Resources */,
 				5412687122216EB200CE3A35 /* charge_induction.png in Resources */,
-				541268F12221A19200CE3A35 /* Version6010.txt in Resources */,
 				5404EA49221AC2F1008A8B6D /* obj_stone_01.png in Resources */,
 				5429F3E921CF06E400E0E50F /* chain8_anim.png in Resources */,
 				54D552F421BCA66300980B92 /* study_star.png in Resources */,
@@ -3475,7 +3122,6 @@
 				54D552CA21BCA66300980B92 /* obj_star_04.png in Resources */,
 				548FF99A21E18C2B007CD3B0 /* pauce_button_retry_tap.png in Resources */,
 				54D5523F21BCA66300980B92 /* N.png in Resources */,
-				541268FF2221A19200CE3A35 /* Version6000.txt in Resources */,
 				54D5526121BCA66300980B92 /* cell_anime8.png in Resources */,
 				54BCA6DF22153BBB0054CEF4 /* gameclear_anim_effect16.png in Resources */,
 				54D5527221BCA66300980B92 /* anim_M.png in Resources */,
@@ -3505,7 +3151,6 @@
 				54612D5421FFBEF90091D7BD /* QuickQuestResultCell.xib in Resources */,
 				54D5527D21BCA66300980B92 /* gameclear_button_review_tap.png in Resources */,
 				5429F3AF21CF06B600E0E50F /* score_get_2.png in Resources */,
-				541269092221A19200CE3A35 /* Version6016.txt in Resources */,
 				54D552F921BCA66300980B92 /* custom_box_07_tap.png in Resources */,
 				548FF96921DF823E007CD3B0 /* GameClearView.xib in Resources */,
 				54D552F721BCA66300980B92 /* custom_box_inactive1.png in Resources */,
@@ -3522,7 +3167,6 @@
 				5429F3E521CF06E400E0E50F /* chain2.png in Resources */,
 				5467653A21F556E00025A5A9 /* dietary supplement（健康補助食品）.plist in Resources */,
 				54D5531A21BCA66300980B92 /* petit_mojikun.png in Resources */,
-				541268F52221A19200CE3A35 /* Version6009.txt in Resources */,
 				54D5527B21BCA66300980B92 /* anim_A.png in Resources */,
 				54D5520621BCA66300980B92 /* select_stagemap_07.png in Resources */,
 				54D5533A21BCA66300980B92 /* setting_button_off.png in Resources */,
@@ -3650,7 +3294,6 @@
 				5412685B221C896500CE3A35 /* InfoPlist.strings in Resources */,
 				54D5525B21BCA66300980B92 /* pack_03.png in Resources */,
 				54D551F621BCA66300980B92 /* select_stagechange_right.png in Resources */,
-				541268E22221A19200CE3A35 /* SmaadVideoAdResources.bundle in Resources */,
 				54BCA6EF22153BBB0054CEF4 /* gameclear_anim_effect18.png in Resources */,
 				54D5528321BCA66300980B92 /* obj_flower_01.png in Resources */,
 				54D5526B21BCA66300980B92 /* bt_stop_tap.png in Resources */,
@@ -3737,7 +3380,6 @@
 				54D551F221BCA66300980B92 /* select_mapchange_left_rondom.png in Resources */,
 				54D5533621BCA66300980B92 /* setting_button_03_tap.png in Resources */,
 				548FF97421E07B4A007CD3B0 /* gameover_button_next_tap.png in Resources */,
-				541268F82221A19200CE3A35 /* NendAdResource.bundle in Resources */,
 				54D551EE21BCA66300980B92 /* select_mapchange_right_biginner.png in Resources */,
 				54BCA6F122153BBB0054CEF4 /* gameclear_anim_effect21.png in Resources */,
 				54D5523021BCA66300980B92 /* orange_5.png in Resources */,
@@ -3786,7 +3428,6 @@
 				54D5525821BCA66300980B92 /* kumokun_03.png in Resources */,
 				54D5523321BCA66300980B92 /* M.png in Resources */,
 				54D552D321BCA66300980B92 /* stage_06.png in Resources */,
-				541269142221A19200CE3A35 /* Version6008.txt in Resources */,
 				54D551F321BCA66300980B92 /* select_mapchange_left_intermediate.png in Resources */,
 				54BCA6EB22153BBB0054CEF4 /* gameclear_anim_effect7.png in Resources */,
 				54D552D421BCA66300980B92 /* E.png in Resources */,
@@ -3796,7 +3437,6 @@
 				54BCA6DD22153BBB0054CEF4 /* gameclear_anim_effect15.png in Resources */,
 				54D9AEB920CF6185004FEBA2 /* Main.storyboard in Resources */,
 				54D5527921BCA66300980B92 /* cell_anime3.png in Resources */,
-				541268FC2221A19200CE3A35 /* Version6005.txt in Resources */,
 				5429F3B521CF06B600E0E50F /* score_get_7.png in Resources */,
 				548FF96521DF8189007CD3B0 /* GameOverView.xib in Resources */,
 				5467650321EF24300025A5A9 /* BGM_中級ステージ_hit.wav in Resources */,
@@ -3833,11 +3473,8 @@
 				54CFB3E920DE293C00057F08 /* GameViewController.swift in Sources */,
 				544271CE218C1CA800622897 /* SaveViewController.swift in Sources */,
 				544271CC218C196B00622897 /* LoadViewController.swift in Sources */,
-				541268FE2221A19200CE3A35 /* MovieReward6000.m in Sources */,
 				54CFB40D20DE3B1F00057F08 /* PurchaseViewController.swift in Sources */,
 				54F3A6D521955AD200A1E01F /* EditPickerView.swift in Sources */,
-				541268EE2221A19200CE3A35 /* MovieReward6006.m in Sources */,
-				541269002221A19200CE3A35 /* MovieNative6000.m in Sources */,
 				54CFB3E120DE229E00057F08 /* WaitingViewController.swift in Sources */,
 				54CFB40520DE389200057F08 /* DataAggregateViewController.swift in Sources */,
 				5489AF61212B010B00A7D275 /* MPEDataManager.swift in Sources */,
@@ -3845,29 +3482,17 @@
 				541268742221781200CE3A35 /* PPInfoCell.swift in Sources */,
 				548FF98921E0BEFE007CD3B0 /* OutlineLabel.swift in Sources */,
 				548FF96B21DF843B007CD3B0 /* PauseView.swift in Sources */,
-				541268F92221A19200CE3A35 /* MovieInterstitial6005.m in Sources */,
 				54D9AEB620CF6185004FEBA2 /* ViewController.swift in Sources */,
 				548FF96721DF8230007CD3B0 /* GameClearView.swift in Sources */,
 				54CFB40920DE39B300057F08 /* SoundViewController.swift in Sources */,
-				541268F42221A19200CE3A35 /* MovieReward6009.m in Sources */,
-				541268E62221A19200CE3A35 /* MovieInterstitial6001.m in Sources */,
 				54CFB40120DE370A00057F08 /* SettingViewController.swift in Sources */,
 				5467650A21EF30EF0025A5A9 /* SoundPlayer.swift in Sources */,
-				541268EA2221A19200CE3A35 /* MovieInterstitial6006.m in Sources */,
 				54F3A6E12197CDAF00A1E01F /* ConditionsPickerView.swift in Sources */,
-				541268F22221A19200CE3A35 /* MovieInterstitial6010.m in Sources */,
-				5412690A2221A19200CE3A35 /* MovieInterstitial6016.m in Sources */,
 				5467654021F69E0D0025A5A9 /* SoundManager.swift in Sources */,
 				54CFB3FD20DE360700057F08 /* CustomViewController.swift in Sources */,
 				54D03E0E21A4EF1D00FD1CC4 /* TimePickerView.swift in Sources */,
-				541268E32221A19200CE3A35 /* MovieReward6007.m in Sources */,
 				54CFB3DF20DE1F0B00057F08 /* BaseViewController.swift in Sources */,
-				541268E92221A19200CE3A35 /* MovieReward6001.m in Sources */,
 				5489AF5F212B00B500A7D275 /* DataManager.swift in Sources */,
-				541269152221A19200CE3A35 /* MovieReward6008.m in Sources */,
-				5412690D2221A19200CE3A35 /* MovieNative6016.m in Sources */,
-				541269032221A19200CE3A35 /* MovieInterstitial6002.m in Sources */,
-				541268F62221A19200CE3A35 /* MovieInterstitial6009.m in Sources */,
 				54140F20212BB2F6007C753B /* GameTableView.swift in Sources */,
 				54612D5321FFBEF90091D7BD /* QuickQuestResultCell.swift in Sources */,
 				54D9AEB420CF6185004FEBA2 /* AppDelegate.swift in Sources */,
@@ -3876,26 +3501,15 @@
 				54612D5021FEDAC60091D7BD /* QuickQuestResultViewController.swift in Sources */,
 				54140F24212BB3E3007C753B /* TableKomaView.swift in Sources */,
 				54CFB3DB20DE162B00057F08 /* HomeViewController.swift in Sources */,
-				5412690E2221A19200CE3A35 /* MovieReward6004.m in Sources */,
-				541268FD2221A19200CE3A35 /* MovieReward6005.m in Sources */,
 				5412688022219E3800CE3A35 /* ADView.swift in Sources */,
-				541269022221A19200CE3A35 /* MovieInterstitial6000.m in Sources */,
-				541268EC2221A19200CE3A35 /* MovieNativeAdFlex6006.m in Sources */,
-				541268EF2221A19200CE3A35 /* MovieReward6010.m in Sources */,
 				548FF96321DF816E007CD3B0 /* GameOverView.swift in Sources */,
 				54CFB3F920DE334600057F08 /* DictViewController.swift in Sources */,
 				54CFB3E520DE25E300057F08 /* StageSelectViewController.swift in Sources */,
-				541269112221A19200CE3A35 /* MovieInterstitial6004.m in Sources */,
 				54CFB3F120DE303800057F08 /* QuickQuestIntoroViewController.swift in Sources */,
 				54140F1C212BAFAB007C753B /* FontCardView.swift in Sources */,
-				5412690B2221A19200CE3A35 /* MovieReward6016.m in Sources */,
-				541269052221A19200CE3A35 /* MovieReward6002.m in Sources */,
 				54433BDB2189D0C600CDBD3D /* EditViewController.swift in Sources */,
-				541269132221A19200CE3A35 /* MovieInterstitial6008.m in Sources */,
 				542F441E21AF59D400C51AD6 /* MessageEditViewController.swift in Sources */,
-				541269162221A19200CE3A35 /* MovieNative6008.m in Sources */,
 				54CFB3F520DE31CE00057F08 /* QuickQuestViewController.swift in Sources */,
-				541268F32221A19200CE3A35 /* MovieNative6009.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
