@@ -152,12 +152,12 @@ class StageSelectViewController: BaseViewController {
 		self.hiScoreLabel.text = "\(hiscore)"
 		
 		self.maxPage = 8//(self.questDatas.count / 10) + (self.questDatas.count % 10)
-		self.currentPage = 1
-		
+//		self.currentPage = 1
 		//選択
 //		stageButton1.isSelected = true
 //		self.stageSelectedButton = stageButton1 
-		let index = stageButton1.tag + self.startIndex
+		//let index = stageButton1.tag + self.startIndex
+		let index = UserDefaults.standard.integer(forKey: kCurrentQuestIndex)
 		self.selectStage(index: index)
 		
 		//ポイント
