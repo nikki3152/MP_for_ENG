@@ -32,6 +32,7 @@ class ViewController: UIViewController {
 			kSelectedCharaType:1,
 			kHiscore:0,
 			kPPPoint:0,
+			kCurrentQuestIndex:0,
 		])
 		
 		//バージョン情報

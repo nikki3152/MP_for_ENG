@@ -595,6 +595,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		if self.selectCnt.questDatas.count - 1 > self.questIndex {
 			self.questIndex += 1
 			self.questData = self.selectCnt.questDatas[self.questIndex]
+			UserDefaults.standard.set(self.questIndex, forKey: kCurrentQuestIndex)
+			self.selectCnt.selectStage(index: questIndex)
 			self.retry()
 		} else {
 			self.remove()
@@ -1465,8 +1467,37 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	}
 	
 	//MARK: ハイスコア更新
-	func makeHiscoreEffect() {
+	func makeHiscoreEffect(base: UIView) {
 		
+		let hiscore = UserDefaults.standard.integer(forKey: kHiscore)
+		if hiscore < totalScore {
+			
+			//ハイスコア更新
+			UserDefaults.standard.set(totalScore, forKey: kHiscore)
+			selectCnt.hiScoreLabel.text = "\(totalScore)"
+			
+			let recImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 250, height: 55))
+			recImageView.image = UIImage(named: "new_record_red")
+			base.addSubview(recImageView)
+			recImageView.center = CGPoint(x: base.frame.size.width / 2, y: base.frame.size.height / 2)
+			recImageView.transform = CGAffineTransform(scaleX: 5, y: 5)
+			recImageView.alpha = 0
+			UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: { 
+				recImageView.alpha = 1
+			}) { (stop) in
+				UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveLinear, animations: { 
+					recImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
+					recImageView.center = CGPoint(x: base.frame.size.width - (recImageView.frame.size.width / 2), y: self.scoreBaseView.center.y + 40)
+				}) { (stop) in
+					recImageView.animationImages = [
+						UIImage(named: "new_record_white")!,
+						UIImage(named: "new_record_red")!,
+					]
+					recImageView.animationDuration = 0.5
+					recImageView.startAnimating()
+				}
+			}
+		}
 		
 	}
 	
@@ -2179,7 +2210,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			effect.startAnimating()
 		})
 		
-		self.makeHiscoreEffect()
+		self.makeHiscoreEffect(base: base)
 	}
 	//MARK: ゲームオーバー
 	func gameOver() {

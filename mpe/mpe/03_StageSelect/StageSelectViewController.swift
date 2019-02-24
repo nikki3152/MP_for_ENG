@@ -155,8 +155,8 @@ class StageSelectViewController: BaseViewController {
 		self.currentPage = 1
 		
 		//選択
-		stageButton1.isSelected = true
-		self.stageSelectedButton = stageButton1 
+//		stageButton1.isSelected = true
+//		self.stageSelectedButton = stageButton1 
 		let index = stageButton1.tag + self.startIndex
 		self.selectStage(index: index)
 		
@@ -180,6 +180,8 @@ class StageSelectViewController: BaseViewController {
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
 		
+		self.selectTimer?.invalidate()
+		self.selectTimer = nil
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.remove()
 	}
@@ -230,9 +232,9 @@ class StageSelectViewController: BaseViewController {
 				s.currentPage = 7
 			}
 			
-			s.stageSelectedButton?.isSelected = false
-			s.stageSelectedButton = s.stageButton1
-			s.stageSelectedButton?.isSelected = true
+//			s.stageSelectedButton?.isSelected = false
+//			s.stageSelectedButton = s.stageButton1
+//			s.stageSelectedButton?.isSelected = true
 			//選択
 			let index = s.stageButton1.tag + s.startIndex
 			s.selectStage(index: index)
@@ -272,9 +274,9 @@ class StageSelectViewController: BaseViewController {
 			}
 			else if s.currentPage == 9  {
 			}
-			s.stageSelectedButton?.isSelected = false
-			s.stageSelectedButton = s.stageButton1
-			s.stageSelectedButton?.isSelected = true
+//			s.stageSelectedButton?.isSelected = false
+//			s.stageSelectedButton = s.stageButton1
+//			s.stageSelectedButton?.isSelected = true
 			//選択
 			let index = s.stageButton1.tag + s.startIndex
 			s.selectStage(index: index)
@@ -305,9 +307,9 @@ class StageSelectViewController: BaseViewController {
 				return
 			}
 			s.currentPage -= 1
-			s.stageSelectedButton?.isSelected = false
-			s.stageSelectedButton = s.stageButton1
-			s.stageSelectedButton?.isSelected = true
+//			s.stageSelectedButton?.isSelected = false
+//			s.stageSelectedButton = s.stageButton1
+//			s.stageSelectedButton?.isSelected = true
 			//選択
 			let index = s.stageButton1.tag + s.startIndex
 			s.selectStage(index: index)
@@ -337,9 +339,9 @@ class StageSelectViewController: BaseViewController {
 				return
 			}
 			s.currentPage += 1
-			s.stageSelectedButton?.isSelected = false
-			s.stageSelectedButton = s.stageButton1
-			s.stageSelectedButton?.isSelected = true
+//			s.stageSelectedButton?.isSelected = false
+//			s.stageSelectedButton = s.stageButton1
+//			s.stageSelectedButton?.isSelected = true
 			//選択
 			let index = s.stageButton1.tag + s.startIndex
 			s.selectStage(index: index)
@@ -428,6 +430,23 @@ class StageSelectViewController: BaseViewController {
 		if self.questDatas.count <= index {
 			return
 		}
+		
+		var btIndex: Int
+		if index < 10 {
+			btIndex = index
+		} else {
+			btIndex = index % 10
+		}
+		let bt = stageButtons[btIndex]
+		self.stageSelectedButton?.isSelected = false
+		self.stageSelectedButton = bt
+		self.stageSelectedButton?.isSelected = true
+		
+		let page = (index / 10) + 1
+		self.currentPage = page
+		
+		UserDefaults.standard.set(index, forKey: kCurrentQuestIndex)
+		
 		let questData: QuestData = self.questDatas[index]
 		//問題名
 		let title = questData.questName

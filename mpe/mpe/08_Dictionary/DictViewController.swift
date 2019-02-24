@@ -61,9 +61,33 @@ class DictViewController: BaseViewController, UITextFieldDelegate, UITableViewDa
 			else if _selectedTag == 4 {
 				name = "quiz_god"
 			}
-			wordList = dataMrg.loadQuickQuest(name: name)
+			let list = dataMrg.loadQuickQuest(name: name)
+			wordList = []
+			indexList = []
+			var wList: [String] = []
+			var chk = ""
+			for word in list {
+				let c = word.prefix(1)
+				if chk == "" {
+					chk = String(c)
+					indexList.append(chk)
+				}
+				else if chk != c {
+					wordList.append(wList)
+					wList = []
+					chk = String(c)
+					indexList.append(chk)
+				}
+				if chk == c {
+					wList.append(word)
+				}
+			}
+			if wList.count > 0 {
+				wordList.append(wList)
+			}
 			selectedWordIndex = nil
 			wordListTableView.reloadData()
+			
 			selectedWordLabel.text = nil
 			wordInfoList = []
 			wordInfoTableView.reloadData()
@@ -85,13 +109,22 @@ class DictViewController: BaseViewController, UITextFieldDelegate, UITableViewDa
 	}
 	
 	var selectedWordIndex: Int?
-	var wordList: [String] = []
+	var wordList: [[String]] = []
 	var wordInfoList: [String] = []
+	var indexList: [String] = []
 	
 	//MARK: - UITableViewDataSource
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func numberOfSections(in tableView: UITableView) -> Int {
 		if tableView.tag == 0 {
 			return wordList.count
+		} else {
+			return 1
+		}
+	}
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		if tableView.tag == 0 {
+			let list = wordList[section]
+			return list.count
 		} else {
 			return wordInfoList.count
 		}
@@ -107,7 +140,8 @@ class DictViewController: BaseViewController, UITextFieldDelegate, UITableViewDa
 			cell.textLabel?.minimumScaleFactor = 0.5
 		}
 		if tableView.tag == 0 {
-			let text = self.wordList[indexPath.row]
+			let list = wordList[indexPath.section]
+			let text = list[indexPath.row]
 			cell.textLabel?.text = text
 			if let index = selectedWordIndex, index == indexPath.row {
 				cell.textLabel?.textColor = UIColor.red
@@ -120,6 +154,17 @@ class DictViewController: BaseViewController, UITextFieldDelegate, UITableViewDa
 		}
 		return cell
 	}
+	func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+		if tableView.tag == 0 {
+			return indexList
+		} else {
+			return nil
+		}
+	}
+	func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+		tableView.scrollToRow(at: IndexPath(row: 0, section: index), at: .top, animated: false)
+		return index
+	}
 	
 	//MARK: - UITableViewDelegate
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -128,7 +173,8 @@ class DictViewController: BaseViewController, UITextFieldDelegate, UITableViewDa
 		if tableView.tag == 0 {
 			selectedWordIndex = indexPath.row
 			wordListTableView.reloadData()
-			let text = self.wordList[indexPath.row]
+			let list = wordList[indexPath.section]
+			let text = list[indexPath.row]
 			selectedWordLabel.text = text
 			let listH = dataMrg.search(word: text.lowercased(), match: .perfect)
 			if listH.count > 0 {
@@ -156,23 +202,33 @@ class DictViewController: BaseViewController, UITextFieldDelegate, UITableViewDa
 	func textFieldDidEndEditing(_ textField: UITextField) {
 		
 		if let text = textField.text {
-			for i in 0 ..< wordList.count {
-				let word = wordList[i]
-				if word == text.lowercased() {
-					selectedWordIndex = i
-					wordListTableView.selectRow(at: IndexPath(row: i, section: 0), animated: false, scrollPosition: .middle)
-					//wordListTableView.reloadData()
-					selectedWordLabel.text = text
-					let listH = dataMrg.search(word: text.lowercased(), match: .perfect)
-					if listH.count > 0 {
-						if let infos = listH[0][text] {
-							wordInfoList = infos
-							wordInfoTableView.reloadData()
+			for section in 0 ..< wordList.count {
+				let list = wordList[section]
+				for row in 0 ..< list.count {
+					let word = list[row]
+					if word == text.lowercased() {
+						selectedWordIndex = row
+						wordListTableView.selectRow(at: IndexPath(row: row, section: section), animated: false, scrollPosition: .middle)
+						//wordListTableView.reloadData()
+						selectedWordLabel.text = text
+						let listH = dataMrg.search(word: text.lowercased(), match: .perfect)
+						if listH.count > 0 {
+							if let infos = listH[0][text] {
+								wordInfoList = infos
+								wordInfoTableView.reloadData()
+							}
 						}
+						return
 					}
-					break
-				}
-			} 
+				} 
+			}
 		}
+		
+		selectedWordIndex = nil
+		wordListTableView.reloadData()
+		
+		selectedWordLabel.text = nil
+		wordInfoList = []
+		wordInfoTableView.reloadData()
 	}
 }
