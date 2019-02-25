@@ -22,8 +22,14 @@ class DictViewController: BaseViewController, UITextFieldDelegate, UITableViewDa
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		selectedButton = biginnerButton
+		selectedButton = allButton
 		selectedTag = selectedButton.tag 
+	}
+	
+	override func viewWillLayoutSubviews() {
+		super.viewWillLayoutSubviews()
+		
+		self.buttonBaseView.center = CGPoint(x: wordInfoTableView.center.x, y: self.buttonBaseView.center.y)
 	}
 	
 	//戻る
@@ -49,7 +55,10 @@ class DictViewController: BaseViewController, UITextFieldDelegate, UITableViewDa
 			textField.text = nil
 			
 			var name = ""
-			if _selectedTag == 1 {
+			if _selectedTag == 0 {
+				name = "quiz_god"
+			}
+			else if _selectedTag == 1 {
 				name = "quiz_bigginer"
 			}
 			else if _selectedTag == 2 {
@@ -95,7 +104,10 @@ class DictViewController: BaseViewController, UITextFieldDelegate, UITableViewDa
 		}
 	}
 	
+	
 	weak var selectedButton: UIButton! 
+	@IBOutlet weak var buttonBaseView: UIView!
+	@IBOutlet weak var allButton: UIButton!
 	@IBOutlet weak var biginnerButton: UIButton!
 	@IBOutlet weak var intermediateButton: UIButton!
 	@IBOutlet weak var advancedButton: UIButton!
