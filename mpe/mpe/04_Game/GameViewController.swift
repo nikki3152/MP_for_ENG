@@ -624,6 +624,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	//MARK: やりなおし
 	func retry() {
 		
+		self.questData = questDataBKList[0]
 		self.startGameTimer()
 		
 	}
@@ -647,7 +648,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	//MARK: ゲームポーズ
 	@IBOutlet weak var pauseButton: UIButton!
 	@IBAction func pauseButtonAction(_ sender: Any) {
-		if isEnablePause == false || self.isInEffect {
+		if isEnablePause == false || self.isInEffect || self.isGameEnd {
 			return
 		}
 		SoundManager.shared.startSE(type: .sePause)	//SE再生
@@ -657,7 +658,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	//MARK: アンドゥ
 	@IBOutlet weak var undoButton: UIButton!
 	@IBAction func undoButtonAction(_ sender: Any) {
-		if isEnablePause == false || self.isInEffect {
+		if isEnablePause == false || self.isInEffect || self.isGameEnd {
 			return
 		}
 		if questDataBKList.count > 1 {
@@ -726,7 +727,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.cardScrolliew.contentSize = CGSize(width: CGFloat(self.questData.cards.count) * 50, height: self.cardScrolliew.frame.size.height / 2)
 		
 	}
-	//MARK: ゲームメインテーブルさ作成
+	//MARK: ゲームメインテーブル作成
 	func updateGametable() {
 		
 		//ゲームテーブル
@@ -1393,7 +1394,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			v.removeFromSuperview()
 		}
 		let size = self.backImageView.frame.size
-		for i in 0 ..< 15 {
+		for i in 0 ..< 10 {
 			let y = Int.random(in: 0 ..< Int(size.height))
 			let x = Int.random(in: 0 ..< Int(size.width))
 			make_obj(x: x, y: y, tag: i + 100, objNames: objNames, animation: animation)
@@ -1670,9 +1671,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	
 	func fontCardViewTap(font: FontCardView) {
 		
-		if self.isInEffect {
-			return
-		}
 		self.cardSelectIndex = font.tag
 		//let moji = self.questData.cards[self.cardSelectIndex]
 		//print("\(moji)")
@@ -2104,13 +2102,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		if isGameEnd {
 			return
 		}
+		isGameEnd = true
 		self.mojikunTimer?.invalidate()
 		self.mojikunTimer = nil
 		self.hideMojikunString()
 		isEnablePause = false
 		SoundManager.shared.startBGM(type: .bgmStageClear)	//ジングル再生
 		
-		isGameEnd = true
 		self.gameTimer?.invalidate()
 		self.gameTimer = nil
 		chaDefTimer?.invalidate()
@@ -2263,6 +2261,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		if isGameEnd {
 			return
 		}
+		isGameEnd = true
 		self.mojikunTimer?.invalidate()
 		self.mojikunTimer = nil
 		self.hideMojikunString()
@@ -2276,7 +2275,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.questBaseImageView.image = UIImage(named: "quest_base_lose")
 		self.hideMojikunString()
 		
-		isGameEnd = true
 		self.gameTimer?.invalidate()
 		self.gameTimer = nil
 		chaDefTimer?.invalidate()

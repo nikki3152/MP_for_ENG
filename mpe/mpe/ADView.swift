@@ -226,6 +226,7 @@ class ADView: UIView, ADFmyMovieRewardDelegate {
 			if ADFmyMovieReward.isSupportedOSVersion() {
 				let appID = ADNetworkType.adfurikun.adVideoInterstisialID()
 				ADFmyMovieInterstitial.initialize(withAppID: appID, viewController: self.rootViewCnt)
+				self.adfurikunMovieInterstitial = ADFmyMovieInterstitial.getInstance(appID, delegate: self)
 			}
 		}
 		else if adType == .videoReward {
@@ -237,7 +238,6 @@ class ADView: UIView, ADFmyMovieRewardDelegate {
 					let appID = adNTType.adVideoID()
 					ADFmyMovieReward.initialize(withAppID: appID, viewController: self.rootViewCnt)
 					self.adfurikunMovieReward = ADFmyMovieReward.getInstance(appID, delegate: self)
-					
 				}
 			}
 		}
