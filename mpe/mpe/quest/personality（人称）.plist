@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -31,7 +31,7 @@
 		<integer>8</integer>
 	</dict>
 	<key>questName</key>
-	<string></string>
+	<string>personality（人称）</string>
 	<key>questType</key>
 	<integer>0</integer>
 	<key>table</key>
