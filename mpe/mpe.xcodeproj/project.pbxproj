@@ -368,6 +368,7 @@
 		54BCA6F122153BBB0054CEF4 /* gameclear_anim_effect21.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6DB22153BBB0054CEF4 /* gameclear_anim_effect21.png */; };
 		54BCA6F222153BBB0054CEF4 /* gameclear_anim_effect5.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6DC22153BBB0054CEF4 /* gameclear_anim_effect5.png */; };
 		54C65F0E2224A064008D6574 /* tefuda_choice.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F0D2224A064008D6574 /* tefuda_choice.png */; };
+		54C65F1022255303008D6574 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C65F0F22255302008D6574 /* StoreKitManager.swift */; };
 		54CFB3DB20DE162B00057F08 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DA20DE162B00057F08 /* HomeViewController.swift */; };
 		54CFB3DD20DE164000057F08 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */; };
 		54CFB3DF20DE1F0B00057F08 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */; };
@@ -1198,6 +1199,7 @@
 		54BCA6DB22153BBB0054CEF4 /* gameclear_anim_effect21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_effect21.png; sourceTree = "<group>"; };
 		54BCA6DC22153BBB0054CEF4 /* gameclear_anim_effect5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_effect5.png; sourceTree = "<group>"; };
 		54C65F0D2224A064008D6574 /* tefuda_choice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tefuda_choice.png; sourceTree = "<group>"; };
+		54C65F0F22255302008D6574 /* StoreKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		54CFB3DA20DE162B00057F08 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -2807,6 +2809,7 @@
 		54D9AEB220CF6185004FEBA2 /* mpe */ = {
 			isa = PBXGroup;
 			children = (
+				54C65F0F22255302008D6574 /* StoreKitManager.swift */,
 				5412687F22219E3800CE3A35 /* ADView.swift */,
 				54F4E81B2223044100B3B710 /* adnetworks */,
 				5412687622219D1100CE3A35 /* ADFMovieReward.framework */,
@@ -3835,6 +3838,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54CFB3E920DE293C00057F08 /* GameViewController.swift in Sources */,
+				54C65F1022255303008D6574 /* StoreKitManager.swift in Sources */,
 				544271CE218C1CA800622897 /* SaveViewController.swift in Sources */,
 				544271CC218C196B00622897 /* LoadViewController.swift in Sources */,
 				54F4E8952223044100B3B710 /* MovieReward6000.m in Sources */,

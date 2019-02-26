@@ -161,6 +161,26 @@ class DataManager: NSObject {
 	}
 	
 	
+	//配列を保存
+	func save(array: [Any], name: String, dir: String) -> Bool {
+		
+		let path = self.libSubPath(dir) + "/" + name
+		if (array as NSArray).write(toFile: path, atomically: true) {
+			return true
+		} else {
+			return false
+		}
+	}
+	//配列を読み込み
+	func load(arrayName: String, dir: String) -> [Any]? {
+		
+		let path = self.libSubPath(dir) + "/" + arrayName
+		if let ary = NSArray(contentsOfFile: path) as? [Any] {
+			return ary
+		} else {
+			return nil
+		}
+	}
 	//辞書を保存
 	func save(dict: [String:Any], name: String, dir: String) -> Bool {
 		

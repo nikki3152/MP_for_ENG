@@ -18,6 +18,11 @@ let kHiscore: String = "kHiscore"
 let kPPPoint: String = "kPPPoint"
 let kCurrentQuestIndex: String = "kCurrentQuestIndex"
 
+//アプリ内課金プロダクトID
+let kProductID10: String = "mpe"
+let kProductID50: String = "mpe50"
+let kProductID100: String = "mpe100"
+
 enum CustomChara: String {
 	case mojikun_b		= "mojikun_b"		//もじくん（新）
 	case mojichan		= "mojichan"		//もじちゃん
@@ -62,16 +67,23 @@ class MPEDataManager: DataManager {
 	func loadAllDBWord() -> [String] {
 		
 		var ret: [String] = []
-		let mojis = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-		for moji in mojis {
-			if let dic = self.load(name: "\(moji).plist", dir: "database") {
-				let keys = dic.keys
-				for key in keys {
-					ret.append(key)
+		let ary = self.load(arrayName: "wordlist.plist", dir: "database")
+		if let list = ary as? [String] {
+			ret = list
+		} else {
+			let mojis = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+			for moji in mojis {
+				if let dic = self.load(name: "\(moji).plist", dir: "database") {
+					let keys = dic.keys
+					for key in keys {
+						ret.append(key)
+					}
 				}
 			}
+			if self.save(array: ret, name: "wordlist.plist", dir: "database") {
+				print("単語リスト保存")
+			}
 		}
-		
 		return ret
 	}
 	
