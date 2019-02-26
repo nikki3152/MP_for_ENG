@@ -59,6 +59,22 @@ class MPEDataManager: DataManager {
 		return ret
 	}
 	
+	func loadAllDBWord() -> [String] {
+		
+		var ret: [String] = []
+		let mojis = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+		for moji in mojis {
+			if let dic = self.load(name: "\(moji).plist", dir: "database") {
+				let keys = dic.keys
+				for key in keys {
+					ret.append(key)
+				}
+			}
+		}
+		
+		return ret
+	}
+	
 	func loadJsonDB() -> [String:[String]] {
 		
 		var db: [String:[String]] = [:]

@@ -56,7 +56,7 @@ class DictViewController: BaseViewController, UITextFieldDelegate, UITableViewDa
 			
 			var name = ""
 			if _selectedTag == 0 {
-				name = "quiz_god"
+				name = "quiz_all"
 			}
 			else if _selectedTag == 1 {
 				name = "quiz_bigginer"
@@ -70,7 +70,12 @@ class DictViewController: BaseViewController, UITextFieldDelegate, UITableViewDa
 			else if _selectedTag == 4 {
 				name = "quiz_god"
 			}
-			let list = dataMrg.loadQuickQuest(name: name)
+			var list: [String]
+			if name == "quiz_all" {
+				list = dataMrg.loadAllDBWord()
+			} else {
+				list = dataMrg.loadQuickQuest(name: name)
+			}
 			wordList = []
 			indexList = []
 			var wList: [String] = []
