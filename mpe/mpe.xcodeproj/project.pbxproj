@@ -369,6 +369,17 @@
 		54BCA6F222153BBB0054CEF4 /* gameclear_anim_effect5.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6DC22153BBB0054CEF4 /* gameclear_anim_effect5.png */; };
 		54C65F0E2224A064008D6574 /* tefuda_choice.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F0D2224A064008D6574 /* tefuda_choice.png */; };
 		54C65F1022255303008D6574 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C65F0F22255302008D6574 /* StoreKitManager.swift */; };
+		54C65F1B2225F7E3008D6574 /* ランダムスコア指定10.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F112225F7E2008D6574 /* ランダムスコア指定10.plist */; };
+		54C65F1C2225F7E3008D6574 /* ランダムスコア指定9.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F122225F7E2008D6574 /* ランダムスコア指定9.plist */; };
+		54C65F1D2225F7E3008D6574 /* ランダムスコア指定8.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F132225F7E2008D6574 /* ランダムスコア指定8.plist */; };
+		54C65F1E2225F7E3008D6574 /* ランダム文字指定5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F142225F7E3008D6574 /* ランダム文字指定5.plist */; };
+		54C65F1F2225F7E3008D6574 /* ランダム文字指定2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F152225F7E3008D6574 /* ランダム文字指定2.plist */; };
+		54C65F202225F7E3008D6574 /* ランダム文字指定1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F162225F7E3008D6574 /* ランダム文字指定1.plist */; };
+		54C65F212225F7E3008D6574 /* ランダムスコア指定6.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F172225F7E3008D6574 /* ランダムスコア指定6.plist */; };
+		54C65F222225F7E3008D6574 /* ランダムスコア指定7.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F182225F7E3008D6574 /* ランダムスコア指定7.plist */; };
+		54C65F232225F7E3008D6574 /* ランダム文字指定4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F192225F7E3008D6574 /* ランダム文字指定4.plist */; };
+		54C65F242225F7E3008D6574 /* ランダム文字指定3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F1A2225F7E3008D6574 /* ランダム文字指定3.plist */; };
+		54C65F262225F811008D6574 /* QuestList_random.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F252225F811008D6574 /* QuestList_random.plist */; };
 		54CFB3DB20DE162B00057F08 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DA20DE162B00057F08 /* HomeViewController.swift */; };
 		54CFB3DD20DE164000057F08 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */; };
 		54CFB3DF20DE1F0B00057F08 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */; };
@@ -1200,6 +1211,17 @@
 		54BCA6DC22153BBB0054CEF4 /* gameclear_anim_effect5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_effect5.png; sourceTree = "<group>"; };
 		54C65F0D2224A064008D6574 /* tefuda_choice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tefuda_choice.png; sourceTree = "<group>"; };
 		54C65F0F22255302008D6574 /* StoreKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
+		54C65F112225F7E2008D6574 /* ランダムスコア指定10.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ランダムスコア指定10.plist"; sourceTree = "<group>"; };
+		54C65F122225F7E2008D6574 /* ランダムスコア指定9.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ランダムスコア指定9.plist"; sourceTree = "<group>"; };
+		54C65F132225F7E2008D6574 /* ランダムスコア指定8.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ランダムスコア指定8.plist"; sourceTree = "<group>"; };
+		54C65F142225F7E3008D6574 /* ランダム文字指定5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ランダム文字指定5.plist"; sourceTree = "<group>"; };
+		54C65F152225F7E3008D6574 /* ランダム文字指定2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ランダム文字指定2.plist"; sourceTree = "<group>"; };
+		54C65F162225F7E3008D6574 /* ランダム文字指定1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ランダム文字指定1.plist"; sourceTree = "<group>"; };
+		54C65F172225F7E3008D6574 /* ランダムスコア指定6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ランダムスコア指定6.plist"; sourceTree = "<group>"; };
+		54C65F182225F7E3008D6574 /* ランダムスコア指定7.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ランダムスコア指定7.plist"; sourceTree = "<group>"; };
+		54C65F192225F7E3008D6574 /* ランダム文字指定4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ランダム文字指定4.plist"; sourceTree = "<group>"; };
+		54C65F1A2225F7E3008D6574 /* ランダム文字指定3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ランダム文字指定3.plist"; sourceTree = "<group>"; };
+		54C65F252225F811008D6574 /* QuestList_random.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuestList_random.plist; sourceTree = "<group>"; };
 		54CFB3DA20DE162B00057F08 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -1974,6 +1996,17 @@
 				542F445021B57F9E00C51AD6 /* QuestList_normal.plist */,
 				546764C221EF21350025A5A9 /* QuestList_hard.plist */,
 				5467651321F555F10025A5A9 /* QuestList_god.plist */,
+				54C65F252225F811008D6574 /* QuestList_random.plist */,
+				54C65F162225F7E3008D6574 /* ランダム文字指定1.plist */,
+				54C65F152225F7E3008D6574 /* ランダム文字指定2.plist */,
+				54C65F1A2225F7E3008D6574 /* ランダム文字指定3.plist */,
+				54C65F192225F7E3008D6574 /* ランダム文字指定4.plist */,
+				54C65F142225F7E3008D6574 /* ランダム文字指定5.plist */,
+				54C65F172225F7E3008D6574 /* ランダムスコア指定6.plist */,
+				54C65F182225F7E3008D6574 /* ランダムスコア指定7.plist */,
+				54C65F132225F7E2008D6574 /* ランダムスコア指定8.plist */,
+				54C65F122225F7E2008D6574 /* ランダムスコア指定9.plist */,
+				54C65F112225F7E2008D6574 /* ランダムスコア指定10.plist */,
 				542F442921B300DA00C51AD6 /* calender（暦）①.plist */,
 				542F442E21B300DB00C51AD6 /* calender（暦）②.plist */,
 				542F443221B300DB00C51AD6 /* county（国）.plist */,
@@ -3169,6 +3202,7 @@
 				54D5530D21BCA66300980B92 /* custom_object_01.png in Resources */,
 				546764E921EF24300025A5A9 /* SE_一時停止ボタン選択音.wav in Resources */,
 				54D5528C21BCA66300980B92 /* cell_anime5.png in Resources */,
+				54C65F242225F7E3008D6574 /* ランダム文字指定3.plist in Resources */,
 				54D5530721BCA66300980B92 /* custom_box_01_tap.png in Resources */,
 				54D5529D21BCA66300980B92 /* pauce_button_continue_tap.png in Resources */,
 				54D552CC21BCA66300980B92 /* table.png in Resources */,
@@ -3211,6 +3245,7 @@
 				546764B221EF1F6F0025A5A9 /* seasoning（調味料）.plist in Resources */,
 				54D5524721BCA66300980B92 /* pink_3.png in Resources */,
 				54D5525F21BCA66300980B92 /* kumokun_02.png in Resources */,
+				54C65F1F2225F7E3008D6574 /* ランダム文字指定2.plist in Resources */,
 				54612D4C21FE97A10091D7BD /* quiz_bigginer.txt in Resources */,
 				54CFB3FB20DE335A00057F08 /* DictViewController.storyboard in Resources */,
 				54D5535521BCB09F00980B92 /* setting_icon_02@2x.png in Resources */,
@@ -3223,6 +3258,7 @@
 				54D5520A21BCA66300980B92 /* select_box_b.png in Resources */,
 				54D5532E21BCA66300980B92 /* setting_icon_01.png in Resources */,
 				54D551EC21BCA66300980B92 /* select_mapchange_right.png in Resources */,
+				54C65F262225F811008D6574 /* QuestList_random.plist in Resources */,
 				54CFB3FF20DE361300057F08 /* CustomViewController.storyboard in Resources */,
 				5429F3BF21CF06B600E0E50F /* countup_1.png in Resources */,
 				548FF99121E164EE007CD3B0 /* new_record_white.png in Resources */,
@@ -3239,6 +3275,7 @@
 				54BCA6BC22144B7A0054CEF4 /* gameclear_anim_word03.png in Resources */,
 				54D552D821BCA66300980B92 /* gameover_button_giveup.png in Resources */,
 				54D5524321BCA66300980B92 /* GO!!.png in Resources */,
+				54C65F232225F7E3008D6574 /* ランダム文字指定4.plist in Resources */,
 				54D5521C21BCA66300980B92 /* orange_2.png in Resources */,
 				54D5520F21BCA66300980B92 /* galaga_01.png in Resources */,
 				5404EA27221A4B23008A8B6D /* obj_leaf_02.png in Resources */,
@@ -3265,6 +3302,7 @@
 				54D552A321BCA66300980B92 /* anim_E.png in Resources */,
 				542F443921B300DC00C51AD6 /* furniture（家具）.plist in Resources */,
 				54D5528621BCA66300980B92 /* driller_02.png in Resources */,
+				54C65F1E2225F7E3008D6574 /* ランダム文字指定5.plist in Resources */,
 				5429F37821CF052800E0E50F /* time8.png in Resources */,
 				54D5528E21BCA66300980B92 /* gameclear_button_backtoselect_tap.png in Resources */,
 				54CFB40720DE38B300057F08 /* DataAggregateViewController.storyboard in Resources */,
@@ -3344,6 +3382,7 @@
 				5429F3AB21CF06B600E0E50F /* countup_4.png in Resources */,
 				54D552D621BCA66300980B92 /* triple_word_score.png in Resources */,
 				54D5522421BCA66300980B92 /* mojichan_02.png in Resources */,
+				54C65F1B2225F7E3008D6574 /* ランダムスコア指定10.plist in Resources */,
 				54D551E721BCA66300980B92 /* select_targetscore.png in Resources */,
 				54D552F321BCA66300980B92 /* study_tsukikun.png in Resources */,
 				5429F3B421CF06B600E0E50F /* score_get_6.png in Resources */,
@@ -3389,6 +3428,7 @@
 				5404EA35221A5769008A8B6D /* obj_cloud_02.png in Resources */,
 				54612D4B21FE97A10091D7BD /* quiz_random.txt in Resources */,
 				5429F3C521CF06B600E0E50F /* 7.png in Resources */,
+				54C65F222225F7E3008D6574 /* ランダムスコア指定7.plist in Resources */,
 				54D552A121BCA66300980B92 /* anim_D.png in Resources */,
 				54D5524D21BCA66300980B92 /* pack_01.png in Resources */,
 				54D5535321BCA66300980B92 /* quiz_answer_tap.png in Resources */,
@@ -3496,9 +3536,11 @@
 				54D5532121BCA66300980B92 /* taiki_icon_03.png in Resources */,
 				54D552BE21BCA66300980B92 /* blue_1.png in Resources */,
 				54D552EF21BCA66300980B92 /* study_panel_right.png in Resources */,
+				54C65F202225F7E3008D6574 /* ランダム文字指定1.plist in Resources */,
 				54D552AF21BCA66300980B92 /* blue_3.png in Resources */,
 				54D552E821BCA66300980B92 /* music_selectbox_tap.png in Resources */,
 				54D5535921BCB5D600980B92 /* dictionary_heda.png in Resources */,
+				54C65F1C2225F7E3008D6574 /* ランダムスコア指定9.plist in Resources */,
 				54D552EE21BCA66300980B92 /* music_background.png in Resources */,
 				54D5530E21BCA66300980B92 /* custom_object_02.png in Resources */,
 				54D5522921BCA66300980B92 /* pauce_button_continue.png in Resources */,
@@ -3705,6 +3747,8 @@
 				5429F36E21CF052800E0E50F /* time7_danger.png in Resources */,
 				54D5524921BCA66300980B92 /* obj_balloon_05.png in Resources */,
 				5404EA3C221AB808008A8B6D /* obj_flash_01.png in Resources */,
+				54C65F1D2225F7E3008D6574 /* ランダムスコア指定8.plist in Resources */,
+				54C65F212225F7E3008D6574 /* ランダムスコア指定6.plist in Resources */,
 				54BCA6E322153BBB0054CEF4 /* gameclear_anim_effect19.png in Resources */,
 				546764F221EF24300025A5A9 /* SE_選択音.wav in Resources */,
 				54D551E921BCA66300980B92 /* select_pleview_left.png in Resources */,

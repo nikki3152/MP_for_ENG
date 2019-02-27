@@ -26,6 +26,54 @@ class StageSelectViewController: BaseViewController {
 	var questDatas: [QuestData] = []
 	var startIndex: Int = 0
 	
+	func questData(at: Int) -> QuestData? {
+		
+		var questData: QuestData!
+		if at < questDatas.count {
+			questData = questDatas[at]
+			if at >= 80 && at <= 89 {
+				//ランダムステージ
+				let cAry: [String] = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+				//テーブル配置
+				var table = questData.table
+				let mojiMax = Int.random(in: 5 ... 20)
+				for _ in 0 ..< mojiMax {
+					let index = Int.random(in: 0 ..< table.count)
+					let r = Int.random(in: 0 ... 25)
+					let moji = cAry[r]
+					table[index] = moji
+				}
+				questData.table = table
+				
+				if at >= 80 && at <= 84 {
+					//文字数ランダム
+					//手札配置
+					var cards = questData.cards
+					//let count = cards.count
+					for _ in 0 ... 44 {
+						let r = Int.random(in: 0 ... 25)
+						let moji = cAry[r]
+						cards.append(moji)
+					}
+					questData.cards = cards
+					questData.wildCardLen = 5
+					//文字数設定
+					let words = Int.random(in: 3 ... 7)
+					let count = Int.random(in: 3 ... 10)
+					questData.questData = ["words":words, "count":count]
+				}
+				else {
+					//スコアランダム
+					//文字数設定
+					let count = Int.random(in: 1 ... 10) * 500
+					questData.questData = ["count":count]
+				}
+			}
+			//print("問題データ:\(questData!)")
+		}
+		return questData
+	}
+	
 	//MARK: ページ
 	var _currentPage: Int = 1
 	var currentPage: Int {
@@ -135,7 +183,8 @@ class StageSelectViewController: BaseViewController {
 		let normal = self.dataMrg.questList(mode: "normal")
 		let hard = self.dataMrg.questList(mode: "hard")
 		let god = self.dataMrg.questList(mode: "god")
-		let list = easy + normal + hard + god
+		let random = self.dataMrg.questList(mode: "random")
+		let list = easy + normal + hard + god + random
 		for dic in list {
 			let filename = dic["filename"]!
 			self.questNames.append(filename)
@@ -151,12 +200,8 @@ class StageSelectViewController: BaseViewController {
 		let hiscore = UserDefaults.standard.integer(forKey: kHiscore)
 		self.hiScoreLabel.text = "\(hiscore)"
 		
-		self.maxPage = 8//(self.questDatas.count / 10) + (self.questDatas.count % 10)
-//		self.currentPage = 1
+		self.maxPage = (self.questDatas.count / 10) + (self.questDatas.count % 10)
 		//選択
-//		stageButton1.isSelected = true
-//		self.stageSelectedButton = stageButton1 
-		//let index = stageButton1.tag + self.startIndex
 		let index = UserDefaults.standard.integer(forKey: kCurrentQuestIndex)
 		self.selectStage(index: index)
 		
@@ -398,7 +443,7 @@ class StageSelectViewController: BaseViewController {
 					self!.selectTimer?.invalidate()
 					//選択中、問題へ
 					if self!.questDatas.count > tag {
-						let questData: QuestData = self!.questDatas[tag]
+						let questData: QuestData = self!.questData(at: tag)!
 						let gameView = GameViewController.gameViewController(questData: questData)
 						gameView.questIndex = tag
 						gameView.selectCnt = self

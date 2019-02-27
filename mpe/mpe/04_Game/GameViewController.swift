@@ -633,10 +633,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		if self.selectCnt.questDatas.count - 1 > self.questIndex {
 			self.questIndex += 1
-			self.questData = self.selectCnt.questDatas[self.questIndex]
-			UserDefaults.standard.set(self.questIndex, forKey: kCurrentQuestIndex)
-			self.selectCnt.selectStage(index: questIndex)
-			self.retry()
+			self.questData = self.selectCnt.questData(at: self.questIndex)
+			if self.questData != nil {
+				UserDefaults.standard.set(self.questIndex, forKey: kCurrentQuestIndex)
+				self.selectCnt.selectStage(index: questIndex)
+				self.retry()
+			}
 		} else {
 			self.remove()
 			SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
@@ -724,6 +726,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			}
 			self.cardViewList.append(cardView)
 		}
+		
 		self.cardScrolliew.contentSize = CGSize(width: CGFloat(self.questData.cards.count) * 50, height: self.cardScrolliew.frame.size.height / 2)
 		
 	}
