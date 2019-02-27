@@ -4,43 +4,15 @@
 <array>
 	<dict>
 		<key>filename</key>
-		<string>ランダム文字指定1</string>
+		<string>ランダム文字指定</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>ランダム文字指定2</string>
+		<string>ランダムスコア指定</string>
 	</dict>
 	<dict>
 		<key>filename</key>
-		<string>ランダム文字指定3</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>ランダム文字指定4</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>ランダム文字指定5</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>ランダムスコア指定6</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>ランダムスコア指定7</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>ランダムスコア指定8</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>ランダムスコア指定9</string>
-	</dict>
-	<dict>
-		<key>filename</key>
-		<string>ランダムスコア指定10</string>
+		<string>アンリミテッド</string>
 	</dict>
 </array>
 </plist>

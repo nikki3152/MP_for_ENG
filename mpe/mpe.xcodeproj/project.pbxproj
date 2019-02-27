@@ -380,6 +380,9 @@
 		54C65F232225F7E3008D6574 /* ランダム文字指定4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F192225F7E3008D6574 /* ランダム文字指定4.plist */; };
 		54C65F242225F7E3008D6574 /* ランダム文字指定3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F1A2225F7E3008D6574 /* ランダム文字指定3.plist */; };
 		54C65F262225F811008D6574 /* QuestList_random.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F252225F811008D6574 /* QuestList_random.plist */; };
+		54C65F2922271067008D6574 /* ランダム文字指定.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F2722271067008D6574 /* ランダム文字指定.plist */; };
+		54C65F2A22271067008D6574 /* ランダムスコア指定.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F2822271067008D6574 /* ランダムスコア指定.plist */; };
+		54C65F2C222715FB008D6574 /* アンリミテッド.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54C65F2B222715FB008D6574 /* アンリミテッド.plist */; };
 		54CFB3DB20DE162B00057F08 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DA20DE162B00057F08 /* HomeViewController.swift */; };
 		54CFB3DD20DE164000057F08 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */; };
 		54CFB3DF20DE1F0B00057F08 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */; };
@@ -1222,6 +1225,9 @@
 		54C65F192225F7E3008D6574 /* ランダム文字指定4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ランダム文字指定4.plist"; sourceTree = "<group>"; };
 		54C65F1A2225F7E3008D6574 /* ランダム文字指定3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ランダム文字指定3.plist"; sourceTree = "<group>"; };
 		54C65F252225F811008D6574 /* QuestList_random.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuestList_random.plist; sourceTree = "<group>"; };
+		54C65F2722271067008D6574 /* ランダム文字指定.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ランダム文字指定.plist"; sourceTree = "<group>"; };
+		54C65F2822271067008D6574 /* ランダムスコア指定.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ランダムスコア指定.plist"; sourceTree = "<group>"; };
+		54C65F2B222715FB008D6574 /* アンリミテッド.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "アンリミテッド.plist"; sourceTree = "<group>"; };
 		54CFB3DA20DE162B00057F08 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		54CFB3DC20DE164000057F08 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		54CFB3DE20DE1F0B00057F08 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -1997,6 +2003,9 @@
 				546764C221EF21350025A5A9 /* QuestList_hard.plist */,
 				5467651321F555F10025A5A9 /* QuestList_god.plist */,
 				54C65F252225F811008D6574 /* QuestList_random.plist */,
+				54C65F2722271067008D6574 /* ランダム文字指定.plist */,
+				54C65F2822271067008D6574 /* ランダムスコア指定.plist */,
+				54C65F2B222715FB008D6574 /* アンリミテッド.plist */,
 				54C65F162225F7E3008D6574 /* ランダム文字指定1.plist */,
 				54C65F152225F7E3008D6574 /* ランダム文字指定2.plist */,
 				54C65F1A2225F7E3008D6574 /* ランダム文字指定3.plist */,
@@ -3206,6 +3215,7 @@
 				54D5530721BCA66300980B92 /* custom_box_01_tap.png in Resources */,
 				54D5529D21BCA66300980B92 /* pauce_button_continue_tap.png in Resources */,
 				54D552CC21BCA66300980B92 /* table.png in Resources */,
+				54C65F2A22271067008D6574 /* ランダムスコア指定.plist in Resources */,
 				54D552AA21BCA66300980B92 /* stage_01.png in Resources */,
 				54D5532321BCA66300980B92 /* taiki_panel_03_tap.png in Resources */,
 				54D5521021BCA66300980B92 /* orange_3.png in Resources */,
@@ -3632,6 +3642,7 @@
 				54D5526521BCA66300980B92 /* bt_playback_tap.png in Resources */,
 				54D5528921BCA66300980B92 /* anim_C.png in Resources */,
 				54D552ED21BCA66300980B92 /* music_stop.png in Resources */,
+				54C65F2922271067008D6574 /* ランダム文字指定.plist in Resources */,
 				54D5523B21BCA66300980B92 /* gameover_button_giveup_tap.png in Resources */,
 				5404EA48221AC2F1008A8B6D /* obj_stone_02.png in Resources */,
 				548FF98B21E1638D007CD3B0 /* gameover_anim_word.png in Resources */,
@@ -3740,6 +3751,7 @@
 				5467653221F556E00025A5A9 /* ten（10文字縛り）.plist in Resources */,
 				54D552D521BCA66300980B92 /* orange_right.png in Resources */,
 				5404EA38221A5859008A8B6D /* obj_yurei_01.png in Resources */,
+				54C65F2C222715FB008D6574 /* アンリミテッド.plist in Resources */,
 				5429F36B21CF052800E0E50F /* time6.png in Resources */,
 				54CFB3EB20DE294700057F08 /* GameViewController.storyboard in Resources */,
 				54D5526621BCA66300980B92 /* anim_N.png in Resources */,

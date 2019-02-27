@@ -25,68 +25,74 @@ class StageSelectViewController: BaseViewController {
 	var questNames: [String] = []
 	var questDatas: [QuestData] = []
 	var startIndex: Int = 0
-	
+	//MARK: 問題データ
 	func questData(at: Int) -> QuestData? {
 		
 		var questData: QuestData!
 		if at < questDatas.count {
 			questData = questDatas[at]
-			if at >= 80 && at <= 89 {
-				//ランダムステージ
-				let cAry: [String] = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-				//テーブル配置
-				var table = questData.table
-				let mojiMax = Int.random(in: 5 ... 20)
-				for _ in 0 ..< mojiMax {
-					let index = Int.random(in: 0 ..< table.count)
-					let r = Int.random(in: 0 ... 25)
-					let moji = cAry[r]
-					table[index] = moji
-				}
-				questData.table = table
-				
-				if at >= 80 && at <= 84 {
-					//文字数ランダム
-					//手札配置
-					var cards = questData.cards
-					//let count = cards.count
-					for _ in 0 ... 44 {
-						let r = Int.random(in: 0 ... 25)
+			if at >= 80 && at <= 82 {
+				if at != 82 {
+					//ランダムステージ
+					let cAry: [String] = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+					//テーブル配置
+					var table = questData.table
+					let mojiMax = Int.random(in: 5 ... 20)
+					for _ in 0 ..< mojiMax {
+						let index = Int.random(in: 0 ..< table.count)
+						let r = Int.random(in: 0 ..< cAry.count)
 						let moji = cAry[r]
-						cards.append(moji)
+						table[index] = moji
 					}
-					questData.cards = cards
-					questData.wildCardLen = 5
-					//文字数設定
-					let words = Int.random(in: 3 ... 7)
-					let count = Int.random(in: 3 ... 10)
-					questData.questData = ["words":words, "count":count]
-				}
-				else {
-					//スコアランダム
-					//文字数設定
-					let count = Int.random(in: 1 ... 10) * 500
-					questData.questData = ["count":count]
-					//特殊マス配置
-					var tableType = questData.tableType
-					var emptyCells: [Int] = []
-					for i in 0 ..< questData.table.count {
-						let moji = questData.table[i]
-						if moji == "0" {
-							emptyCells.append(i)
+					questData.table = table
+					
+					if at == 80 {
+						//文字数ランダム
+						//手札配置
+						let cFont: [String] = ["B","C","D","F","G","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z"]
+						var cards = questData.cards
+						//let count = cards.count
+						for _ in 0 ... 44 {
+							let r = Int.random(in: 0 ..< cFont.count)
+							let moji = cFont[r]
+							cards.append(moji)
 						}
+						questData.cards = cards
+						questData.wildCardLen = 5
+						//文字数設定
+						let words = Int.random(in: 3 ... 7)
+						let count = Int.random(in: 3 ... 10)
+						questData.questData = ["words":words, "count":count]
 					}
-					let spCellMax = Int.random(in: 5 ... 20)
-					let spcell = ["DL","TL","DW","TW"]
-					for _ in 0 ..< spCellMax {
-						let index = Int.random(in: 0 ..< emptyCells.count)
-						if table[index] == "0" {
-							emptyCells.remove(at: index)
-							let sp = spcell[Int.random(in: 0 ..< 4)] 
-							tableType[index] = sp
+					else if at == 81 {
+						//スコアランダム
+						//スコア設定
+						let count = Int.random(in: 1 ... 14) * 500
+						questData.questData = ["count":count]
+						//特殊マス配置
+						var tableType = questData.tableType
+						var emptyCells: [Int] = []
+						for i in 0 ..< questData.table.count {
+							let moji = questData.table[i]
+							if moji == "0" {
+								emptyCells.append(i)
+							}
 						}
+						let spCellMax = Int.random(in: 5 ... 20)
+						let spcell = ["DL","TL","DW","TW"]
+						for _ in 0 ..< spCellMax {
+							let index = Int.random(in: 0 ..< emptyCells.count)
+							if table[index] == "0" {
+								emptyCells.remove(at: index)
+								let sp = spcell[Int.random(in: 0 ..< 4)] 
+								tableType[index] = sp
+							}
+						}
+						questData.tableType = tableType
 					}
-					questData.tableType = tableType
+				} else {
+					//アンリミテッド
+					
 				}
 			}
 			print("問題データ:\(questData!)")
@@ -104,13 +110,18 @@ class StageSelectViewController: BaseViewController {
 			_currentPage = newValue
 			self.startIndex = (_currentPage - 1) * 10
 			for i in 0 ..< self.stageButtons.count {
+				let stageNum = "\(NSString(format: "%02d", self.startIndex + i + 1))"
 				let bt = self.stageButtons[i]
-				if bt.isSelected {
-					bt.setImage(nil, for: .normal)
+				if Int(stageNum)! >= 84 {
+					bt.isHidden = true
 				} else {
-					let stageNum = "\(NSString(format: "%02d", self.startIndex + i + 1))"
-					let image = UIImage(named: "select_icon_\(stageNum)")
-					bt.setImage(image, for: .normal)
+					bt.isHidden = false
+					if bt.isSelected {
+						bt.setImage(nil, for: .normal)
+					} else {
+						let image = UIImage(named: "select_icon_\(stageNum)")
+						bt.setImage(image, for: .normal)
+					}
 				}
 			}
 			if _currentPage == 1 {
@@ -220,7 +231,7 @@ class StageSelectViewController: BaseViewController {
 		let hiscore = UserDefaults.standard.integer(forKey: kHiscore)
 		self.hiScoreLabel.text = "\(hiscore)"
 		
-		self.maxPage = (self.questDatas.count / 10) + (self.questDatas.count % 10)
+		self.maxPage = 9//(self.questDatas.count / 10) + (self.questDatas.count % 10)
 		//選択
 		let index = UserDefaults.standard.integer(forKey: kCurrentQuestIndex)
 		self.selectStage(index: index)

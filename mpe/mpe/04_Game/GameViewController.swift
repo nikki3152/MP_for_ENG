@@ -26,6 +26,7 @@ enum QuestType: Int {
 	case makeWoredsCount		= 3 		//◯字数以上の英単語を◯個作る
 	case hiScore				= 4 		//スコアを○点以上
 	case useFontMakeCount		= 5 		//◯がつく英単語を○個作る
+	case unlimited				= 99 		//アンリミテッド
 	func info(count: Int, words: Int, font: String) -> String {
 		switch self {
 		case .makeWords:
@@ -40,6 +41,8 @@ enum QuestType: Int {
 			return "スコアを\(count)点以上"
 		case .useFontMakeCount:
 			return "\(font)がつく英単語を\(count)個作れ！"
+		case .unlimited:
+			return "無制限！"
 		}
 	}
 }
@@ -228,28 +231,30 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			return _questCount
 		}
 		set {
-			_questCount = newValue
-			if _questCount < 0 {
-				_questCount = 0
+			if self.questData.questType != .unlimited {
+				_questCount = newValue
+				if _questCount < 0 {
+					_questCount = 0
+				}
+				self.questSubLabel?.removeFromSuperview()
+				var unit: String = ""
+				if self.questData.questType == .fillAllCell {
+					unit = "マス"
+				}
+				else if self.questData.questType == .hiScore {
+					unit = "点"
+				}
+				else {
+					unit = "個"
+				}
+				let qTextSub = "残り\(_questCount)\(unit)"
+				let qSubLabel = makeVerticalLabel(size: self.questDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 16), text: qTextSub)
+				qSubLabel.textAlignment = .left
+				qSubLabel.numberOfLines = 1
+				self.questDisplay2ImageView.addSubview(qSubLabel)
+				qSubLabel.center = CGPoint(x: self.questDisplayImageView.frame.size.width / 2, y: self.questDisplayImageView.frame.size.height / 2)
+				self.questSubLabel = qSubLabel
 			}
-			self.questSubLabel?.removeFromSuperview()
-			var unit: String = ""
-			if self.questData.questType == .fillAllCell {
-				unit = "マス"
-			}
-			else if self.questData.questType == .hiScore {
-				unit = "点"
-			}
-			else {
-				unit = "個"
-			}
-			let qTextSub = "残り\(_questCount)\(unit)"
-			let qSubLabel = makeVerticalLabel(size: self.questDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 16), text: qTextSub)
-			qSubLabel.textAlignment = .left
-			qSubLabel.numberOfLines = 1
-			self.questDisplay2ImageView.addSubview(qSubLabel)
-			qSubLabel.center = CGPoint(x: self.questDisplayImageView.frame.size.width / 2, y: self.questDisplayImageView.frame.size.height / 2)
-			self.questSubLabel = qSubLabel
 			
 		}
 	}
@@ -1560,10 +1565,10 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			else if t == "TL" {
 				bc = 3
 			}
-			if t == "DL" {
+			if t == "DW" {
 				bw = 2
 			}
-			else if t == "TL" {
+			else if t == "TW" {
 				bw = 3
 			}
 			
