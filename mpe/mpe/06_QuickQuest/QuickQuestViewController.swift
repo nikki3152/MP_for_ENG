@@ -10,6 +10,11 @@ import UIKit
 
 class QuickQuestViewController: BaseViewController {
 	
+	
+	deinit {
+		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
+	}
+	
 	let dataMrg: MPEDataManager = MPEDataManager()
 	var max: Int = 10
 	var _count: Int = 0

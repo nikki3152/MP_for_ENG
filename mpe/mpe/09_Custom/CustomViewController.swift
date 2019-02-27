@@ -10,6 +10,11 @@ import UIKit
 
 class CustomViewController: BaseViewController {
 
+	
+	deinit {
+		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
+	}
+	
 	class func customViewController() -> CustomViewController {
 		
 		let storyboard = UIStoryboard(name: "CustomViewController", bundle: nil)

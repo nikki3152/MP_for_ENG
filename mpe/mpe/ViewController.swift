@@ -10,13 +10,18 @@ import UIKit
 
 var adVideoInterstitial: ADView!
 var adVideoReward: ADView!
+var skManager: StoreKitManager!
 
 class ViewController: UIViewController {
 
+	
 	let dataMrg = MPEDataManager()
 	//var db: [String:[String]] = [:]
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		//Store Kit Manager
+		skManager = StoreKitManager()
 		
 		//動画インターステイシャル
 		adVideoInterstitial = ADView(adNTType: .adfurikun, adType: .videoInterstitial, size: nil, viewController: self)

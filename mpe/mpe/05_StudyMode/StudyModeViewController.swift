@@ -10,6 +10,11 @@ import UIKit
 
 class StudyModeViewController: BaseViewController {
 	
+	
+	deinit {
+		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
+	}
+	
 	var timer: Timer!
 	
 	class func studyModeViewController() -> StudyModeViewController {

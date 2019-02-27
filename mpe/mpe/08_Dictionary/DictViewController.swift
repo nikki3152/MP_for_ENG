@@ -10,6 +10,11 @@ import UIKit
 
 class DictViewController: BaseViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
 
+	
+	deinit {
+		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
+	}
+	
 	let dataMrg: MPEDataManager = MPEDataManager()
 	
 	class func dictViewController() -> DictViewController {

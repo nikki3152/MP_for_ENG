@@ -10,6 +10,11 @@ import UIKit
 
 class QuickQuestIntoroViewController: BaseViewController {
 	
+	
+	deinit {
+		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
+	}
+	
 	class func quickQuestIntoroViewController() -> QuickQuestIntoroViewController {
 		
 		let storyboard = UIStoryboard(name: "QuickQuestViewController", bundle: nil)

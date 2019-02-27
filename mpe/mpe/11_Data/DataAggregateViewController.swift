@@ -10,6 +10,11 @@ import UIKit
 
 class DataAggregateViewController: BaseViewController {
 
+	
+	deinit {
+		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
+	}
+	
 	class func dataAggregateViewController() -> DataAggregateViewController {
 		
 		let storyboard = UIStoryboard(name: "DataAggregateViewController", bundle: nil)

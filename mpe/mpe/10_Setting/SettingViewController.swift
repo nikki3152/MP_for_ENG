@@ -10,6 +10,11 @@ import UIKit
 
 class SettingViewController: BaseViewController {
 
+	
+	deinit {
+		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
+	}
+	
 	var textList = ["もじぴったん", "文字ピッタン"]
 	var textIndex: Int = 0
 	var textTimer: Timer!

@@ -173,6 +173,11 @@ struct TableInfo {
 //MARK: -
 class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableViewDelegate, FontCardViewDelegate, ADViewVideoDelegate {
 	
+	
+	deinit {
+		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
+	}
+	
 	var gameOverResType: GameOverResType!
 	
 	//MARK: ADViewVideoDelegate

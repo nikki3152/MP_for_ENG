@@ -10,6 +10,11 @@ import UIKit
 
 class SoundViewController: BaseViewController {
 
+	
+	deinit {
+		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
+	}
+	
 	class func soundViewController() -> SoundViewController {
 		
 		let storyboard = UIStoryboard(name: "SoundViewController", bundle: nil)

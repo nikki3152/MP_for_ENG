@@ -8,8 +8,42 @@
 
 import UIKit
 
-class PurchaseViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, ADViewVideoDelegate {
+class PurchaseViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, ADViewVideoDelegate, StoreKitManagerDelegate {
 
+	//MARK: StoreKitManagerDelegate
+		//プロダクトのリストアップ
+	func storeKitManagerProductListUp(shopov: StoreKitManager, products: [[String:Any]]) {
+	}
+		
+	//トランザクションのキャンセル
+	func storeKitManagerCancelTransaction(shopov: StoreKitManager, isRestore: Bool){
+		
+	}
+		
+	//App Storeに製品の支払い処理
+	func storeKitManagerPaymentRequestStart(shopov: StoreKitManager) {
+		
+	}
+		
+	//購入取引は完了
+	func storeKitManagerFinishTransaction(shopov: StoreKitManager, info: [String:Any], isRestore: Bool) {
+		
+	}	
+		
+	//購入取引エラー
+	func storeKitManagerErrorTransactio(shopov: StoreKitManager, message: String) {
+		
+	}
+		
+	//リストアするアイテムはない
+	func storeKitManagerNoRestoreItem(shopov: StoreKitManager) {
+	}
+	
+	
+	deinit {
+		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
+	}
+	
 	//MARK: ADViewVideoDelegate
 	func adViewDidPlayVideo(_ adView: ADView, incentive: Bool) {
 		
@@ -100,6 +134,7 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		super.viewDidLoad()
 		
 		adVideoReward.videoDelagate = self
+		skManager.delegate = self
 		
 		DataManager.animationFadeFlash(v: infoImageView, speed: 2.0)
 		
@@ -122,6 +157,8 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
 		
+		skManager.delegate = nil
+		adVideoReward.videoDelagate = nil
 		timer?.invalidate()
 		timer = nil
 		closeHandler?()
@@ -167,5 +204,49 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 	}
 	
 	
+	
+	//MARK: - 待機インジケーター
+	func makeWaitinfView(parentView: UIView?) {
+		
+		DispatchQueue.main.async {
+			var view: UIView!
+			if let window = parentView {
+				if nil == window.viewWithTag(-1000) {
+					view = window
+				}
+			}
+			else if let window = UIApplication.shared.keyWindow {
+				if nil == window.viewWithTag(-1000) {
+					view = window
+				}
+			}
+			guard let window = view else {return}
+			//インジケーター表示
+			let waitingView = UIView(frame: CGRect(x: 0, y: 0, width: window.bounds.size.width, height: window.bounds.size.height))
+			waitingView.tag = -1000
+			waitingView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
+			window.addSubview(waitingView)
+			let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+			waitingView.addSubview(indicator)
+			indicator.center = CGPoint(x: waitingView.bounds.size.width / 2, y: waitingView.bounds.size.height / 2)
+			indicator.startAnimating()
+			
+		}
+	}
+	func removeWaitingView(parentedView: UIView?) {
+		
+		DispatchQueue.main.async {
+			if let window = parentedView {
+				if let view = window.viewWithTag(-1000) {
+					view.removeFromSuperview()
+				}
+			}
+			if let window = UIApplication.shared.keyWindow {
+				if let view = window.viewWithTag(-1000) {
+					view.removeFromSuperview()
+				}
+			}
+		}
+	}
 	
 }

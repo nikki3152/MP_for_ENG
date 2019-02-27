@@ -10,6 +10,11 @@ import UIKit
 
 class StageSelectViewController: BaseViewController {
 
+	
+	deinit {
+		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
+	}
+	
 	@IBOutlet weak var leftChaImageView: UIImageView!
 	@IBOutlet weak var rightChaImageView: UIImageView!
 	

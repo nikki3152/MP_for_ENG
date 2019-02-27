@@ -10,6 +10,11 @@ import UIKit
 
 class QuickQuestResultViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
 
+	
+	deinit {
+		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
+	}
+	
 	var list: [[String:Any]] = []
 	var handler: (() -> Void)?
 	
