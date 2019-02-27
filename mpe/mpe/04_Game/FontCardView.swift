@@ -39,6 +39,11 @@ class FontCardView: UIView {
 		set {
 			_isSelected = newValue
 			self.frameImageView.isHidden = !_isSelected
+			if _isSelected {
+				DataManager.animationFadeFlash(v: frameImageView, speed: 1.0, minimum: 0.3)
+			} else {
+				frameImageView.layer.removeAllAnimations()
+			}
 		}
 	}
 	

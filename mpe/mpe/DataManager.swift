@@ -602,12 +602,12 @@ class DataManager: NSObject {
 		}
 	}
 	//フェード点滅
-	class func animationFadeFlash(v: UIView, speed: Float) {
+	class func animationFadeFlash(v: UIView, speed: Float, minimum: CGFloat = 0.1) {
 		
 		v.layer.removeAllAnimations()
 		UIView.animateKeyframes(withDuration: 1.0 * Double(speed), delay: 0.0, options: [.repeat, .autoreverse], animations: { 
 			UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5 * Double(speed), animations: { 
-				v.alpha = 0.1
+				v.alpha = minimum
 			})
 			UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5 * Double(speed), animations: { 
 				v.alpha = 1.0
