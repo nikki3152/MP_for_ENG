@@ -67,9 +67,29 @@ class StageSelectViewController: BaseViewController {
 					//文字数設定
 					let count = Int.random(in: 1 ... 10) * 500
 					questData.questData = ["count":count]
+					//特殊マス配置
+					var tableType = questData.tableType
+					var emptyCells: [Int] = []
+					for i in 0 ..< questData.table.count {
+						let moji = questData.table[i]
+						if moji == "0" {
+							emptyCells.append(i)
+						}
+					}
+					let spCellMax = Int.random(in: 5 ... 20)
+					let spcell = ["DL","TL","DW","TW"]
+					for _ in 0 ..< spCellMax {
+						let index = Int.random(in: 0 ..< emptyCells.count)
+						if table[index] == "0" {
+							emptyCells.remove(at: index)
+							let sp = spcell[Int.random(in: 0 ..< 4)] 
+							tableType[index] = sp
+						}
+					}
+					questData.tableType = tableType
 				}
 			}
-			//print("問題データ:\(questData!)")
+			print("問題データ:\(questData!)")
 		}
 		return questData
 	}
