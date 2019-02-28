@@ -13,11 +13,62 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 	//MARK: StoreKitManagerDelegate
 		//プロダクトのリストアップ
 	func storeKitManagerProductListUp(shopov: StoreKitManager, products: [[String:Any]]) {
+		
+		self.removeWaitingView(parentedView: self.view)
+		
+		let actionSheet = UIAlertController(title: "PP購入", message: nil, preferredStyle: .actionSheet)
+		var titles: [String] = ["","",""]
+		var productObjs: [Any] = ["","",""]
+		for product in products {
+			let product_id = product["product_id"] as! String 
+			let price = product["price"] as! String
+			//let description = product["description"] as! String
+			let name = product["name"] as! String
+			let product = product["product"]!
+			let str = "\(name) \(price)"
+			if product_id == kProductID10 {
+				titles[0] = str
+				productObjs[0] = product
+			}
+			else if product_id == kProductID50 {
+				titles[1] = str
+				productObjs[1] = product
+			}
+			else if product_id == kProductID100 {
+				titles[2] = str
+				productObjs[2] = product
+			}
+		}
+		for title in titles {
+			actionSheet.addAction(UIAlertAction(title: title, style: .default, handler: { (action) in
+				var product: Any!
+				if title.hasPrefix("10PP") {
+					product = productObjs[0]
+				}
+				else if title.hasPrefix("50PP") {
+					product = productObjs[1]
+				}
+				else if title.hasPrefix("100PP") {
+					product = productObjs[2]
+				}
+				skManager.paymentRequestStart(productDic: ["product":product], quantity: 1)
+			}))
+		}
+		actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: { (action) in
+			
+		}))
+		self.present(actionSheet, animated: true, completion: nil)
 	}
 		
 	//トランザクションのキャンセル
 	func storeKitManagerCancelTransaction(shopov: StoreKitManager, isRestore: Bool){
 		
+		self.removeWaitingView(parentedView: self.view)
+		let alert = UIAlertController(title: "", message: "購入キャンセル", preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "閉じる", style: .cancel, handler: { (action) in
+			
+		}))
+		self.present(alert, animated: true, completion: nil)
 	}
 		
 	//App Storeに製品の支払い処理
@@ -28,15 +79,48 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 	//購入取引は完了
 	func storeKitManagerFinishTransaction(shopov: StoreKitManager, info: [String:Any], isRestore: Bool) {
 		
+		self.removeWaitingView(parentedView: self.view)
+		if let product_id = info["product_id"] as? String {
+			if product_id == kProductID10 {
+				//ポイント
+				var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 10
+				if pp > 100 {
+					pp = 100
+				}
+				self.ppLabel.text = "\(pp)"
+				UserDefaults.standard.set(pp, forKey: kPPPoint)
+				self.ppTableView.reloadData()
+			}
+			else if product_id == kProductID50 {
+				//ポイント
+				var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 50
+				if pp > 100 {
+					pp = 100
+				}
+				self.ppLabel.text = "\(pp)"
+				UserDefaults.standard.set(pp, forKey: kPPPoint)
+				self.ppTableView.reloadData()
+			}
+			else if product_id == kProductID100 {
+				//ポイント
+				let pp = 100
+				self.ppLabel.text = "\(pp)"
+				UserDefaults.standard.set(pp, forKey: kPPPoint)
+				self.ppTableView.reloadData()
+			}
+		}
 	}	
 		
 	//購入取引エラー
 	func storeKitManagerErrorTransactio(shopov: StoreKitManager, message: String) {
 		
+		self.removeWaitingView(parentedView: self.view)
 	}
 		
 	//リストアするアイテムはない
 	func storeKitManagerNoRestoreItem(shopov: StoreKitManager) {
+		
+		self.removeWaitingView(parentedView: self.view)
 	}
 	
 	
@@ -187,20 +271,8 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 	@IBAction func ppPurchaseButtonAction(_ sender: UIButton) {
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		
-		let actionSheet = UIAlertController(title: "PP購入", message: nil, preferredStyle: .actionSheet)
-		actionSheet.addAction(UIAlertAction(title: "10PP", style: .default, handler: { (action) in
-			
-		}))
-		actionSheet.addAction(UIAlertAction(title: "50PP", style: .default, handler: { (action) in
-			
-		}))
-		actionSheet.addAction(UIAlertAction(title: "100PP", style: .default, handler: { (action) in
-			
-		}))
-		actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: { (action) in
-			
-		}))
-		self.present(actionSheet, animated: true, completion: nil)
+		self.makeWaitinfView(parentView: self.view)
+		skManager.productRequestStart(productIDs: [kProductID10,kProductID50,kProductID100])
 	}
 	
 	
