@@ -1902,16 +1902,18 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 									}
 									if effectCount >= okWords && s.nowScore > 0 {
 										self?.nowScore = 0
-										self?.isInEffect = false
 										self?.charaImageView.layer.removeAllAnimations()
 										self?.makeDefCharaAnimation()
-										//MARK: クリア判定
-										if s.checkGame() {
-											return
-										} else {
-											s.showMojikunString()
-											s.record()
-										}
+										DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { 
+											//MARK: クリア判定
+											if s.checkGame() {
+												return
+											} else {
+												s.showMojikunString()
+												s.record()
+											}
+											self?.isInEffect = false
+										})
 									}
 								})
 								self.makeHitCharaAnimation()	//キャラクターアニメーション
@@ -1922,7 +1924,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						if i == hitWords.count - 1 {
 							DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { 
 								//ハズレ
-								if (self.emptyTableCount() == 0 || self.cardViewList.count == 0) && self.isInEffect == false {
+								if (self.emptyTableCount() == 0 || self.cardViewList.count == 0) && (self.isInEffect == false) {
 									//ゲームオーバー
 									self.gameOver()
 									return

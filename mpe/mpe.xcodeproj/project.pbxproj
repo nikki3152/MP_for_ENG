@@ -204,6 +204,7 @@
 		540DD64A222BE24800326D92 /* mpe_キャラセリフ文言_設定画面.csv in Resources */ = {isa = PBXBuildFile; fileRef = 540DD647222BE24700326D92 /* mpe_キャラセリフ文言_設定画面.csv */; };
 		540DD64B222BE24800326D92 /* mpe_キャラセリフ文言_ゲームオーバー.csv in Resources */ = {isa = PBXBuildFile; fileRef = 540DD648222BE24800326D92 /* mpe_キャラセリフ文言_ゲームオーバー.csv */; };
 		540DD64D222BE86900326D92 /* mpe_ステージ別目標スコア.csv in Resources */ = {isa = PBXBuildFile; fileRef = 540DD64C222BE86900326D92 /* mpe_ステージ別目標スコア.csv */; };
+		540DD64F222C408000326D92 /* select_21.png in Resources */ = {isa = PBXBuildFile; fileRef = 540DD64E222C408000326D92 /* select_21.png */; };
 		5412685B221C896500CE3A35 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5412685D221C896500CE3A35 /* InfoPlist.strings */; };
 		5412685F2220C7B900CE3A35 /* obj_down_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5412685E2220C7B900CE3A35 /* obj_down_01.png */; };
 		541268622221119E00CE3A35 /* select_icon_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 541268602221119D00CE3A35 /* select_icon_01.png */; };
@@ -1218,6 +1219,7 @@
 		540DD647222BE24700326D92 /* mpe_キャラセリフ文言_設定画面.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "mpe_キャラセリフ文言_設定画面.csv"; sourceTree = "<group>"; };
 		540DD648222BE24800326D92 /* mpe_キャラセリフ文言_ゲームオーバー.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "mpe_キャラセリフ文言_ゲームオーバー.csv"; sourceTree = "<group>"; };
 		540DD64C222BE86900326D92 /* mpe_ステージ別目標スコア.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "mpe_ステージ別目標スコア.csv"; sourceTree = "<group>"; };
+		540DD64E222C408000326D92 /* select_21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_21.png; sourceTree = "<group>"; };
 		5412685C221C896500CE3A35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5412685E2220C7B900CE3A35 /* obj_down_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_down_01.png; sourceTree = "<group>"; };
 		541268602221119D00CE3A35 /* select_icon_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_icon_01.png; sourceTree = "<group>"; };
@@ -2298,6 +2300,7 @@
 				540DD5DE222BD79700326D92 /* select_18.png */,
 				540DD5AD222BD78F00326D92 /* select_19.png */,
 				540DD5AC222BD78F00326D92 /* select_20.png */,
+				540DD64E222C408000326D92 /* select_21.png */,
 				540DD5C8222BD79300326D92 /* select_22.png */,
 				540DD5EE222BD79A00326D92 /* select_23.png */,
 				540DD5B5222BD79000326D92 /* select_24.png */,
@@ -4002,6 +4005,7 @@
 				54612D4D21FE97A10091D7BD /* quiz_intermediate.txt in Resources */,
 				546764C521EF24020025A5A9 /* BGM_TOP画面_hit.wav in Resources */,
 				546764EB21EF24300025A5A9 /* SE_コンボ⑤.wav in Resources */,
+				540DD64F222C408000326D92 /* select_21.png in Resources */,
 				54BCA6E422153BBB0054CEF4 /* gameclear_anim_effect4.png in Resources */,
 				54D551DA21BCA66300980B92 /* quizdonyu_background.png in Resources */,
 				5429F3BC21CF06B600E0E50F /* score_get_4.png in Resources */,
