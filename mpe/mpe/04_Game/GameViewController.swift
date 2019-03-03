@@ -2107,6 +2107,16 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
 			}
 		}
+		
+		pause.chaMessages = self.chaMessages
+		pause.updateMojikunString(txt: chaMessages[pause.textIndex])
+		pause.textTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { [weak self](t) in
+			pause.textIndex += 1
+			if pause.textIndex >= self!.chaMessages.count {
+				pause.textIndex = 0
+			}
+			pause.updateMojikunString(txt: self!.chaMessages[pause.textIndex])
+		})
 	}
 	
 	//MARK: ゲームクリア
@@ -2172,13 +2182,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				}
 				clear.wordList = wordList
 				s.view.addSubview(clear)
-				
-				let text = "やるやん。"
-				let bLabel = makeVerticalLabel(size: clear.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 14), text: text)
-				bLabel.textAlignment = .left
-				bLabel.numberOfLines = 3
-				clear.ballonDisplayImageView.addSubview(bLabel)
-				bLabel.center = CGPoint(x: clear.ballonDisplayImageView.frame.size.width / 2, y: clear.ballonDisplayImageView.frame.size.height / 2)
 				
 				clear.closeHandler = {[weak self](res) in
 					self?.isGameEnd = false
@@ -2332,13 +2335,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				}
 				over.wordList = wordList
 				s.view.addSubview(over)
-				
-				let text = "あきらめたらそこで試合終了だよ。"
-				let bLabel = makeVerticalLabel(size: over.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 14), text: text)
-				bLabel.textAlignment = .left
-				bLabel.numberOfLines = 3
-				over.ballonDisplayImageView.addSubview(bLabel)
-				bLabel.center = CGPoint(x: over.ballonDisplayImageView.frame.size.width / 2, y: over.ballonDisplayImageView.frame.size.height / 2)
 				
 				over.closeHandler = {[weak self](res) in
 					self?.isGameEnd = false

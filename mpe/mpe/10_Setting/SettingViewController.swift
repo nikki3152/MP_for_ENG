@@ -15,7 +15,9 @@ class SettingViewController: BaseViewController {
 		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
 	}
 	
-	var textList = ["もじぴったん", "文字ピッタン"]
+	
+	var chaMessages: [String] = []
+	
 	var textIndex: Int = 0
 	var textTimer: Timer!
 	
@@ -41,13 +43,14 @@ class SettingViewController: BaseViewController {
 		super.viewDidLayoutSubviews()
 		
 		if self.textTimer == nil {
-			self.updateMojikunString(txt: textList[textIndex])
+			self.chaMessages = MPEDataManager.loadStringList(name: "mpe_キャラセリフ文言_設定画面", type: "csv")
+			self.updateMojikunString(txt: chaMessages[textIndex])
 			self.textTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { [weak self](t) in
 				self?.textIndex += 1
-				if self!.textIndex >= self!.textList.count {
+				if self!.textIndex >= self!.chaMessages.count {
 					self!.textIndex = 0
 				}
-				self?.updateMojikunString(txt: self!.textList[self!.textIndex])
+				self?.updateMojikunString(txt: self!.chaMessages[self!.textIndex])
 			})
 		}
 	}
@@ -155,7 +158,7 @@ class SettingViewController: BaseViewController {
 	@IBOutlet weak var ppButton: UIButton!
 	@IBAction func ppButtonAction(_ sender: Any) {
 		
-		SoundManager.shared.startSE(type: .seSelect)	//SE再生
+		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let purchaseView = PurchaseViewController.purchaseViewController()
 		purchaseView.present(self) { 
 			

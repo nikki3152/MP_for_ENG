@@ -126,7 +126,7 @@ class WaitingViewController: BaseViewController, ADViewVideoDelegate {
 	@IBOutlet weak var purchaseButton: UIButton!
 	@IBAction func purchaseButtonAction(_ sender: Any) {
 		
-		SoundManager.shared.startSE(type: .seSelect)	//SE再生
+		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let purchaseView = PurchaseViewController.purchaseViewController()
 		purchaseView.present(self) { 
 			

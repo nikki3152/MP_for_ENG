@@ -20,6 +20,10 @@ class PauseView: UIView, UITableViewDataSource, UITableViewDelegate {
 	
 	var closeHandler: ((GamePauseResType) -> Void)?
 	
+	var chaMessages: [String] = []
+	var textIndex: Int = 0
+	var textTimer: Timer!
+	
 	class func pauseView() -> PauseView {
 		
 		let vc = UIViewController(nibName: "PauseView", bundle: nil)
@@ -43,6 +47,8 @@ class PauseView: UIView, UITableViewDataSource, UITableViewDelegate {
 		
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		let res = GamePauseResType(rawValue: sender.tag)!
+		textTimer?.invalidate()
+		textTimer = nil
 		self.closeHandler?(res)
 		self.closeHandler = nil
 		self.removeFromSuperview()
@@ -50,8 +56,20 @@ class PauseView: UIView, UITableViewDataSource, UITableViewDelegate {
 	
 	@IBOutlet weak var wordTableView: UITableView!
 	@IBOutlet weak var buttonBaseView: UIView!
+	@IBOutlet weak var ballonDisplayImageView: UIImageView!
 	
 	var wordList: [[String:String]] = []
+	var ballonMainLabel: TTTAttributedLabel!
+	func updateMojikunString(txt: String) {
+		
+		self.ballonMainLabel?.removeFromSuperview()
+		let bLabel = makeVerticalLabel(size: self.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 14), text: txt)
+		bLabel.textAlignment = .center
+		bLabel.numberOfLines = 3
+		self.ballonDisplayImageView.addSubview(bLabel)
+		bLabel.center = CGPoint(x: self.ballonDisplayImageView.frame.size.width / 2, y: self.ballonDisplayImageView.frame.size.height / 2)
+		self.ballonMainLabel = bLabel
+	}
 	
 	//MARK: - UITableViewDataSource
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

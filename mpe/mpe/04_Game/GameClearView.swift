@@ -19,6 +19,10 @@ class GameClearView: UIView, UITableViewDataSource, UITableViewDelegate {
 	
 	var closeHandler: ((GameClearResType) -> Void)?
 	
+	var chaMessages: [String] = []
+	var textIndex: Int = 0
+	var textTimer: Timer!
+	
 	class func gameClearView() -> GameClearView {
 		
 		let vc = UIViewController(nibName: "GameClearView", bundle: nil)
@@ -36,12 +40,39 @@ class GameClearView: UIView, UITableViewDataSource, UITableViewDelegate {
 		super.awakeFromNib()
 		self.wordTableView.dataSource = self
 		self.wordTableView.delegate = self
+		
+		self.chaMessages = MPEDataManager.loadStringList(name: "mpe_キャラセリフ文言_ゲームクリア", type: "csv")
+		
+		if self.textTimer == nil {
+			self.updateMojikunString(txt: chaMessages[textIndex])
+			self.textTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { [weak self](t) in
+				self?.textIndex += 1
+				if self!.textIndex >= self!.chaMessages.count {
+					self!.textIndex = 0
+				}
+				self?.updateMojikunString(txt: self!.chaMessages[self!.textIndex])
+			})
+		}
+	}
+	
+	var ballonMainLabel: TTTAttributedLabel!
+	func updateMojikunString(txt: String) {
+		
+		self.ballonMainLabel?.removeFromSuperview()
+		let bLabel = makeVerticalLabel(size: self.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 14), text: txt)
+		bLabel.textAlignment = .center
+		bLabel.numberOfLines = 3
+		self.ballonDisplayImageView.addSubview(bLabel)
+		bLabel.center = CGPoint(x: self.ballonDisplayImageView.frame.size.width / 2, y: self.ballonDisplayImageView.frame.size.height / 2)
+		self.ballonMainLabel = bLabel
 	}
 	
 	@IBAction func buttonAction(_ sender: UIButton) {
 		
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		let res = GameClearResType(rawValue: sender.tag)!
+		textTimer?.invalidate()
+		textTimer = nil
 		self.closeHandler?(res)
 	}
 	

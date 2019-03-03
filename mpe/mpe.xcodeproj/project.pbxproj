@@ -203,6 +203,7 @@
 		540DD649222BE24800326D92 /* mpe_キャラセリフ文言_ゲームクリア.csv in Resources */ = {isa = PBXBuildFile; fileRef = 540DD646222BE24700326D92 /* mpe_キャラセリフ文言_ゲームクリア.csv */; };
 		540DD64A222BE24800326D92 /* mpe_キャラセリフ文言_設定画面.csv in Resources */ = {isa = PBXBuildFile; fileRef = 540DD647222BE24700326D92 /* mpe_キャラセリフ文言_設定画面.csv */; };
 		540DD64B222BE24800326D92 /* mpe_キャラセリフ文言_ゲームオーバー.csv in Resources */ = {isa = PBXBuildFile; fileRef = 540DD648222BE24800326D92 /* mpe_キャラセリフ文言_ゲームオーバー.csv */; };
+		540DD64D222BE86900326D92 /* mpe_ステージ別目標スコア.csv in Resources */ = {isa = PBXBuildFile; fileRef = 540DD64C222BE86900326D92 /* mpe_ステージ別目標スコア.csv */; };
 		5412685B221C896500CE3A35 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5412685D221C896500CE3A35 /* InfoPlist.strings */; };
 		5412685F2220C7B900CE3A35 /* obj_down_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5412685E2220C7B900CE3A35 /* obj_down_01.png */; };
 		541268622221119E00CE3A35 /* select_icon_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 541268602221119D00CE3A35 /* select_icon_01.png */; };
@@ -1216,6 +1217,7 @@
 		540DD646222BE24700326D92 /* mpe_キャラセリフ文言_ゲームクリア.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "mpe_キャラセリフ文言_ゲームクリア.csv"; sourceTree = "<group>"; };
 		540DD647222BE24700326D92 /* mpe_キャラセリフ文言_設定画面.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "mpe_キャラセリフ文言_設定画面.csv"; sourceTree = "<group>"; };
 		540DD648222BE24800326D92 /* mpe_キャラセリフ文言_ゲームオーバー.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "mpe_キャラセリフ文言_ゲームオーバー.csv"; sourceTree = "<group>"; };
+		540DD64C222BE86900326D92 /* mpe_ステージ別目標スコア.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "mpe_ステージ別目標スコア.csv"; sourceTree = "<group>"; };
 		5412685C221C896500CE3A35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5412685E2220C7B900CE3A35 /* obj_down_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obj_down_01.png; sourceTree = "<group>"; };
 		541268602221119D00CE3A35 /* select_icon_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_icon_01.png; sourceTree = "<group>"; };
@@ -3406,6 +3408,7 @@
 				540DD648222BE24800326D92 /* mpe_キャラセリフ文言_ゲームオーバー.csv */,
 				540DD646222BE24700326D92 /* mpe_キャラセリフ文言_ゲームクリア.csv */,
 				540DD647222BE24700326D92 /* mpe_キャラセリフ文言_設定画面.csv */,
+				540DD64C222BE86900326D92 /* mpe_ステージ別目標スコア.csv */,
 				5412685D221C896500CE3A35 /* InfoPlist.strings */,
 				54D9AEBF20CF6186004FEBA2 /* Info.plist */,
 				54F3A6DC2196D53A00A1E01F /* mpe-Bridging-Header.h */,
@@ -4052,6 +4055,7 @@
 				54D5535221BCA66300980B92 /* quiz_question.png in Resources */,
 				542F444321B300DC00C51AD6 /* personality（人称）.plist in Resources */,
 				5429F36F21CF052800E0E50F /* time1_danger.png in Resources */,
+				540DD64D222BE86900326D92 /* mpe_ステージ別目標スコア.csv in Resources */,
 				54D5532D21BCA66300980B92 /* setting_movie_button.png in Resources */,
 				54D552F621BCA66300980B92 /* custom_box_inactive4.png in Resources */,
 				54D551F021BCA66300980B92 /* select_advertise.png in Resources */,

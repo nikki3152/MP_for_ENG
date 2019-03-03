@@ -33,9 +33,9 @@ class StageSelectViewController: BaseViewController {
 	//MARK: 問題データ
 	func questData(at: Int) -> QuestData? {
 		
-		var questData: QuestData!
+		var questData = questDatas[at]
 		if at < questDatas.count {
-			questData = questDatas[at]
+			
 			if at >= 80 && at <= 82 {
 				if at != 82 {
 					//ランダムステージ
@@ -100,7 +100,7 @@ class StageSelectViewController: BaseViewController {
 					
 				}
 			}
-			print("問題データ:\(questData!)")
+			//print("問題データ:\(questData!)")
 		}
 		return questData
 	}
@@ -245,6 +245,7 @@ class StageSelectViewController: BaseViewController {
 		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
 		self.ppButton.setTitle("\(pp)", for: .normal)
 		ppInfoBallonImageView.isHidden = true
+		
     }
 	
 	override func viewWillLayoutSubviews() {
@@ -271,6 +272,7 @@ class StageSelectViewController: BaseViewController {
 	@IBOutlet weak var ppButton: UIButton!
 	@IBAction func ppButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let purchaseView = PurchaseViewController.purchaseViewController()
 		purchaseView.present(self) { 
 			
@@ -497,7 +499,7 @@ class StageSelectViewController: BaseViewController {
 			self.stageSelectedButton?.isSelected = false
 			if let bt = self.stageSelectedButton {
 				let stageNum = "\(NSString(format: "%02d", self.startIndex + bt.tag + 1))"
-				let image = UIImage(named: "select_icon_\(stageNum)")
+				let image = UIImage(named: "select_\(stageNum)")
 				bt.setImage(image, for: .normal)
 			}
 			self.stageSelectedButton = sender
@@ -556,6 +558,11 @@ class StageSelectViewController: BaseViewController {
 			}
 			self!.isSelOn = !self!.isSelOn
 		})
+		//ターゲットスコア
+		let strList = MPEDataManager.loadStringList(name: "mpe_ステージ別目標スコア", type: "csv")
+		if let tgScore = Int(strList[index]) {
+			self.targetScoreLabel.text = "\(tgScore)" 
+		}
 	}
 	var isSelOn: Bool = false
 	
