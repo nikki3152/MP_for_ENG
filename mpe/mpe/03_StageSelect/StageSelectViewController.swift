@@ -124,7 +124,7 @@ class StageSelectViewController: BaseViewController {
 					if bt.isSelected {
 						bt.setImage(nil, for: .normal)
 					} else {
-						let image = UIImage(named: "select_icon_\(stageNum)")
+						let image = UIImage(named: "select_\(stageNum)")
 						bt.setImage(image, for: .normal)
 					}
 				}
@@ -545,7 +545,7 @@ class StageSelectViewController: BaseViewController {
 		//アイコン
 		self.stageSelectedButton?.setImage(nil, for: .normal)
 		//サムネイル
-		self.stageSumbImageView.image = UIImage(named: "select_sumb_\(NSString(format: "%02d", index + 1))")
+		self.stageSumbImageView.image = UIImage(named: "prev_\(NSString(format: "%02d", index + 1))")
 		//選択中点滅タイマー
 		self.selectTimer?.invalidate()
 		self.selectTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { [weak self](t) in
