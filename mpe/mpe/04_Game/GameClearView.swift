@@ -60,7 +60,7 @@ class GameClearView: UIView, UITableViewDataSource, UITableViewDelegate {
 		
 		self.ballonMainLabel?.removeFromSuperview()
 		let bLabel = makeVerticalLabel(size: self.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 14), text: txt)
-		bLabel.textAlignment = .center
+		bLabel.textAlignment = .left
 		bLabel.numberOfLines = 3
 		self.ballonDisplayImageView.addSubview(bLabel)
 		bLabel.center = CGPoint(x: self.ballonDisplayImageView.frame.size.width / 2, y: self.ballonDisplayImageView.frame.size.height / 2)
