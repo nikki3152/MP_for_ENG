@@ -320,6 +320,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
     }
 	
+	var chaImagePt: CGPoint!
+	
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
 		
@@ -331,7 +333,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					self.cardBaseView.center = CGPoint(x: self.cardBaseView.center.x, y: self.cardBaseView.center.y - 22)
 				}
 			}
-			
+			self.chaImagePt = self.charaImageView.center 
 			self.startGameTimer()
 
 		}
@@ -1121,6 +1123,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		else if self.customChara == .ouji {
 			//王子
+			self.charaImageView.stopAnimating()
 			self.charaImageView.animationImages = [
 				UIImage(named: "\(self.customChara.rawValue)_01")!,
 				UIImage(named: "\(self.customChara.rawValue)_02")!,
@@ -1139,20 +1142,24 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		else if self.customChara == .galaga {
 			//ギャラガ
-			let x = charaImageView.center.x
-			let y = charaImageView.center.y
-			let animation = CAKeyframeAnimation(keyPath: "position")
-			animation.duration = 2.0
-			animation.repeatCount = 100000
-			animation.keyTimes = [0.0, 0.25, 0.5, 0.75, 0.8]
-			animation.values = [
-				CGPoint(x: x, y: y),
-				CGPoint(x: x + 20, y: y),
-				CGPoint(x: x + 20, y: y + 20),
-				CGPoint(x: x, y: y + 20),
-				CGPoint(x: x, y: y),
-			]
-			self.charaImageView.layer.add(animation, forKey: nil)
+			let x = chaImagePt.x
+			let y = chaImagePt.y
+			var cIndex = 1
+			let pts: [CGPoint] = [CGPoint(x: x, y: y),CGPoint(x: x + 20, y: y),CGPoint(x: x + 20, y: y + 20),CGPoint(x: x, y: y + 20)]
+			self.chaDefTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { [weak self](t) in
+				guard let s = self else {
+					return
+				}
+				UIView.animate(withDuration: 0.5, animations: { 
+					s.charaImageView.center = pts[cIndex]
+					cIndex += 1
+					if cIndex >= pts.count {
+						cIndex = 0
+					}
+				}, completion: { (stop) in
+					
+				})
+			})
 		}
 	}
 	func makeHitCharaAnimation() {
@@ -1242,7 +1249,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		else if self.customChara == .ouji {
 			//王子
-			
+			self.charaImageView.stopAnimating()
+			self.charaImageView.animationImages = [
+				UIImage(named: "\(self.customChara.rawValue)_01")!,
+				UIImage(named: "\(self.customChara.rawValue)_02")!,
+			]
+			self.charaImageView.animationDuration = 0.5
+			self.charaImageView.startAnimating()
 		}
 		else if self.customChara == .driller {
 			//ドリラー
@@ -1250,7 +1263,19 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		else if self.customChara == .galaga {
 			//ギャラガー
-			
+			self.chaDefTimer?.invalidate()
+			self.chaDefTimer = nil
+			self.charaImageView.layer.removeAllAnimations()
+			UIView.animate(withDuration: 0.5, animations: { 
+				self.charaImageView.center = self.chaImagePt
+			}, completion: { (stop) in
+				self.charaImageView.animationImages = [
+					UIImage(named: "\(self.customChara.rawValue)_01")!,
+					UIImage(named: "\(self.customChara.rawValue)_02")!,
+				]
+				self.charaImageView.animationDuration = 0.5
+				self.charaImageView.startAnimating()
+			})
 		}
 		
 	}
