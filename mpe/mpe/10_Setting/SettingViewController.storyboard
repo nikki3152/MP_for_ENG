@@ -22,22 +22,36 @@
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5B-Df-28f">
-                                <rect key="frame" x="0.0" y="0.0" width="165" height="375"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_panel_01.png" highlightedImage="setting_panel_01_tap.png" translatesAutoresizingMaskIntoConstraints="NO" id="WFn-ce-yYX">
+                                <rect key="frame" x="0.0" y="0.0" width="164" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.025098778735632182" green="0.0" blue="0.73347701149425293" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" image="setting_icon_01.png" backgroundImage="setting_panel_01.png"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_panel_02.png" highlightedImage="setting_panel_02_tap.png" translatesAutoresizingMaskIntoConstraints="NO" id="DQ3-df-o1q">
+                                <rect key="frame" x="164" y="0.0" width="166" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="aUn-vL-9cY">
+                                <rect key="frame" x="0.0" y="0.0" width="164" height="375"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="WMg-OX-ELd">
+                                <rect key="frame" x="167" y="0.0" width="159" height="375"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5B-Df-28f">
+                                <rect key="frame" x="0.0" y="0.0" width="164" height="375"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <connections>
                                     <action selector="dataAggregateButtonAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="c3K-1n-VPh"/>
+                                    <action selector="dataAggregateButtonTapAction:" destination="Hbe-z7-lxC" eventType="touchDown" id="gpu-g9-uaT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DV1-PO-hR6">
-                                <rect key="frame" x="165" y="0.0" width="166" height="375"/>
+                                <rect key="frame" x="164" y="0.0" width="166" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.025098778735632182" green="0.58818247126436785" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" image="setting_icon_02.png" backgroundImage="setting_panel_02.png"/>
                                 <connections>
                                     <action selector="soundButtonAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="mTD-yN-Wtb"/>
+                                    <action selector="soundButtonTapAction:" destination="Hbe-z7-lxC" eventType="touchDown" id="h0U-B4-m2J"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzT-9k-2qR">
@@ -112,7 +126,7 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BZ8-wg-ULj">
-                                <rect key="frame" x="541" y="0.0" width="126" height="375"/>
+                                <rect key="frame" x="540" y="0.0" width="127" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mojikun_a_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="j9X-9b-fqp">
@@ -124,11 +138,11 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uAx-rg-cHd">
-                                        <rect key="frame" x="33" y="78" width="60" height="167"/>
+                                        <rect key="frame" x="33" y="78" width="61" height="167"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIk-3n-kgt">
-                                        <rect key="frame" x="9" y="10" width="100" height="60"/>
+                                        <rect key="frame" x="10" y="10" width="100" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="85" backgroundImage="taiki_pp_button.png">
@@ -149,11 +163,15 @@
                         <outlet property="backButton" destination="PzT-9k-2qR" id="tJo-Lu-hEW"/>
                         <outlet property="ballonDisplayImageView" destination="uAx-rg-cHd" id="Pv3-oW-eRL"/>
                         <outlet property="dataAggregateButton" destination="U5B-Df-28f" id="FVX-kQ-EeA"/>
+                        <outlet property="dataIconImageView" destination="aUn-vL-9cY" id="Jie-iY-nGC"/>
+                        <outlet property="databackImageView" destination="WFn-ce-yYX" id="VGX-27-xMw"/>
                         <outlet property="howToPlayButton" destination="XtF-4f-GUT" id="x0H-gU-qvw"/>
                         <outlet property="ppButton" destination="mIk-3n-kgt" id="z5f-KO-JQL"/>
                         <outlet property="purchaseButton" destination="nMq-Hj-HdZ" id="ItS-IV-QeI"/>
                         <outlet property="reviewButton" destination="0X7-uJ-JZI" id="6pZ-1L-mlA"/>
                         <outlet property="soundButton" destination="DV1-PO-hR6" id="GbW-p5-Zdr"/>
+                        <outlet property="soundIconImageView" destination="WMg-OX-ELd" id="nO0-9E-rBS"/>
+                        <outlet property="soundbackImageView" destination="DQ3-df-o1q" id="a6Z-35-kM9"/>
                         <outlet property="switchBGM" destination="yQh-mr-CIu" id="jia-J9-U60"/>
                         <outlet property="switchSE" destination="FJz-EU-cWG" id="tvt-gJ-tSs"/>
                     </connections>
@@ -176,7 +194,9 @@
         <image name="setting_icon_01.png" width="200" height="249"/>
         <image name="setting_icon_02.png" width="150" height="150"/>
         <image name="setting_panel_01.png" width="480" height="1080"/>
+        <image name="setting_panel_01_tap.png" width="480" height="1080"/>
         <image name="setting_panel_02.png" width="480" height="1080"/>
+        <image name="setting_panel_02_tap.png" width="480" height="1080"/>
         <image name="taiki_pp_button.png" width="200" height="120"/>
         <image name="taiki_pp_button_tap.png" width="200" height="120"/>
     </resources>

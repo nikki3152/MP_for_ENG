@@ -37,6 +37,9 @@ class SettingViewController: BaseViewController {
 		//ポイント
 		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
 		self.ppButton.setTitle("\(pp)", for: .normal)
+		
+		DataManager.animationFuwa(v: dataIconImageView, dy: 10, speed: 3.0)
+		DataManager.animationFuwa(v: soundIconImageView, dy: 12, speed: 2.2)
 	}
 	
 	override func viewDidLayoutSubviews() {
@@ -66,24 +69,40 @@ class SettingViewController: BaseViewController {
 	}
 	
 	//データ集計
+	@IBOutlet weak var databackImageView: UIImageView!
+	@IBOutlet weak var dataIconImageView: UIImageView!
 	@IBOutlet weak var dataAggregateButton: UIButton!
+	@IBAction func dataAggregateButtonTapAction(_ sender: Any) {
+		
+		dataIconImageView.layer.removeAllAnimations()
+		databackImageView.isHighlighted = true
+	}
 	@IBAction func dataAggregateButtonAction(_ sender: Any) {
 		
 		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let dataView = DataAggregateViewController.dataAggregateViewController()
-		dataView.present(self) { 
-			
-		}
+		dataView.present(self, completed: {[weak self]() in
+			self?.databackImageView.isHighlighted = false
+			DataManager.animationFuwa(v: self!.dataIconImageView, dy: 10, speed: 3.0)
+		})
 	}
 	//音楽
+	@IBOutlet weak var soundbackImageView: UIImageView!
+	@IBOutlet weak var soundIconImageView: UIImageView!
 	@IBOutlet weak var soundButton: UIButton!
+	@IBAction func soundButtonTapAction(_ sender: Any) {
+		
+		soundIconImageView.layer.removeAllAnimations()
+		soundbackImageView.isHighlighted = true
+	}
 	@IBAction func soundButtonAction(_ sender: Any) {
 		
 		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let soundView = SoundViewController.soundViewController()
-		soundView.present(self) { 
-			
-		}
+		soundView.present(self, completed: {[weak self]() in
+			self?.soundbackImageView.isHighlighted = false
+			DataManager.animationFuwa(v: self!.soundIconImageView, dy: 12, speed: 2.2)
+		})
 	}
 	
 	//遊び方
