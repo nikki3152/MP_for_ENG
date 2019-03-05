@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -10,9 +10,11 @@
 		<string>B</string>
 		<string>C</string>
 		<string>C</string>
+		<string>C</string>
 		<string>D</string>
 		<string>E</string>
 		<string>E</string>
+		<string>I</string>
 		<string>I</string>
 		<string>I</string>
 		<string>I</string>
@@ -37,7 +39,7 @@
 	<key>questData</key>
 	<dict>
 		<key>count</key>
-		<integer>9</integer>
+		<integer>10</integer>
 		<key>words</key>
 		<integer>6</integer>
 	</dict>
