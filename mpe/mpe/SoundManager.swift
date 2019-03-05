@@ -39,6 +39,8 @@ enum SEType: String {
 	case seCorrect				= "SE_正解音"
 	case seSelect				= "SE_選択音"
 	case seFail					= "SE_不正解音"
+	case seReady				= "voice_ready"
+	case seGo					= "voice_go"
 }
 
 class SoundManager: NSObject, SoundPlayerDelegate {

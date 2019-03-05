@@ -555,7 +555,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		else {
 			SoundManager.shared.startBGM(type: .bgmEasy)		
-			self.backImageView.image = UIImage(named: "stage_01")
+			self.backImageView.image = UIImage(named: "stage_05")
 		}
 		
 		self.time = self.questData.time
@@ -589,12 +589,17 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		base.addSubview(ready)
 		ready.center = CGPoint(x: base.frame.size.width/2, y: base.frame.size.height/2)
 		
+		SoundManager.shared.startSE(type: .seReady)	//SE再生
+		
 		UIView.animate(withDuration: 0.25, delay: 1.0, options: .curveEaseIn, animations: { 
 			ready.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
 			ready.alpha = 0
 		}) { (stop) in
 			ready.removeFromSuperview()
 			// Go!!
+			
+			SoundManager.shared.startSE(type: .seGo)	//SE再生
+			
 			let go = UIImageView(frame: CGRect(x: 0, y: 0, width: 257, height: 100))
 			go.contentMode = .scaleAspectFit
 			go.image = UIImage(named: "GO!!")
@@ -1375,7 +1380,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			animation = true
 			direction = "RU"
 		}
-		else if stage == 61 || stage == 66 || stage == 71 || stage == 76 {
+		else if stage == 61 || stage == 66 || stage == 71 || stage == 76 || stage == 81 || stage == 82 || stage == 83 {
 			objNames = ["obj_stripes_01"]
 			direction = "U"
 		}

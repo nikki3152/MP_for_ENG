@@ -961,6 +961,9 @@
 		54D9AEBB20CF6186004FEBA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54D9AEBA20CF6186004FEBA2 /* Assets.xcassets */; };
 		54D9AEBE20CF6186004FEBA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D9AEBC20CF6186004FEBA2 /* LaunchScreen.storyboard */; };
 		54DEAAA121FFD7AE00509CCD /* sports（スポーツ）① .plist in Resources */ = {isa = PBXBuildFile; fileRef = 54DEAAA021FFD7AD00509CCD /* sports（スポーツ）① .plist */; };
+		54ED5820222ED41E00A6BFD1 /* select_detail.png in Resources */ = {isa = PBXBuildFile; fileRef = 54ED581F222ED41E00A6BFD1 /* select_detail.png */; };
+		54ED5823222EDAAF00A6BFD1 /* voice_go.wav in Resources */ = {isa = PBXBuildFile; fileRef = 54ED5821222EDAAF00A6BFD1 /* voice_go.wav */; };
+		54ED5824222EDAAF00A6BFD1 /* voice_ready.wav in Resources */ = {isa = PBXBuildFile; fileRef = 54ED5822222EDAAF00A6BFD1 /* voice_ready.wav */; };
 		54F3A6D521955AD200A1E01F /* EditPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3A6D421955AD200A1E01F /* EditPickerView.swift */; };
 		54F3A6D721955B3800A1E01F /* EditPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F3A6D621955B3800A1E01F /* EditPickerView.xib */; };
 		54F3A6D92196C9F000A1E01F /* HitInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3A6D82196C9F000A1E01F /* HitInfoView.swift */; };
@@ -1978,6 +1981,9 @@
 		54D9AEBD20CF6186004FEBA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54D9AEBF20CF6186004FEBA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54DEAAA021FFD7AD00509CCD /* sports（スポーツ）① .plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sports（スポーツ）① .plist"; sourceTree = "<group>"; };
+		54ED581F222ED41E00A6BFD1 /* select_detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_detail.png; sourceTree = "<group>"; };
+		54ED5821222EDAAF00A6BFD1 /* voice_go.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = voice_go.wav; sourceTree = "<group>"; };
+		54ED5822222EDAAF00A6BFD1 /* voice_ready.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = voice_ready.wav; sourceTree = "<group>"; };
 		54F3A6D421955AD200A1E01F /* EditPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPickerView.swift; sourceTree = "<group>"; };
 		54F3A6D621955B3800A1E01F /* EditPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPickerView.xib; sourceTree = "<group>"; };
 		54F3A6D82196C9F000A1E01F /* HitInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitInfoView.swift; sourceTree = "<group>"; };
@@ -2669,6 +2675,8 @@
 				546764D721EF242C0025A5A9 /* SE_正解音.wav */,
 				546764D121EF24280025A5A9 /* SE_選択音.wav */,
 				546764CB21EF24270025A5A9 /* SE_不正解音.wav */,
+				54ED5821222EDAAF00A6BFD1 /* voice_go.wav */,
+				54ED5822222EDAAF00A6BFD1 /* voice_ready.wav */,
 			);
 			path = sounds;
 			sourceTree = "<group>";
@@ -2890,6 +2898,7 @@
 				541268612221119E00CE3A35 /* select_sumb_01.png */,
 				54126864222114F800CE3A35 /* select_icon_02.png */,
 				54126865222114F900CE3A35 /* select_sumb_02.png */,
+				54ED581F222ED41E00A6BFD1 /* select_detail.png */,
 				54D5506C21BCA66200980B92 /* select_mapchange_left.png */,
 				54D5505B21BCA66200980B92 /* select_mapchange_left_god.png */,
 				54D5506021BCA66200980B92 /* select_mapchange_left_advanced.png */,
@@ -4016,6 +4025,7 @@
 				54D5533221BCA66300980B92 /* setting_home_button_tap.png in Resources */,
 				540DD566222BD71900326D92 /* prev_76.png in Resources */,
 				54D552DF21BCA66300980B92 /* stage_05.png in Resources */,
+				54ED5823222EDAAF00A6BFD1 /* voice_go.wav in Resources */,
 				54D5530821BCA66300980B92 /* custom_box_09.png in Resources */,
 				54D552A721BCA66300980B92 /* tsukikun_02.png in Resources */,
 				54D551E221BCA66300980B92 /* select_clock.png in Resources */,
@@ -4103,6 +4113,7 @@
 				542F444921B300DC00C51AD6 /* number（数字）.plist in Resources */,
 				54D5534321BCA66300980B92 /* home_background.png in Resources */,
 				54D552C821BCA66300980B92 /* S.png in Resources */,
+				54ED5824222EDAAF00A6BFD1 /* voice_ready.wav in Resources */,
 				546764C321EF21350025A5A9 /* QuestList_hard.plist in Resources */,
 				54D5528421BCA66300980B92 /* anim_B.png in Resources */,
 				54D552FD21BCA66300980B92 /* custom_box_05.png in Resources */,
@@ -4451,6 +4462,7 @@
 				54D5524021BCA66300980B92 /* gameclear_button_next.png in Resources */,
 				54D5532421BCA66300980B92 /* taiki_movie_button_tap.png in Resources */,
 				5429F3E121CF06E400E0E50F /* chain8.png in Resources */,
+				54ED5820222ED41E00A6BFD1 /* select_detail.png in Resources */,
 				5467653321F556E00025A5A9 /* biology（生物学）②.plist in Resources */,
 				542F444A21B300DC00C51AD6 /* crossword（クロスワード）②.plist in Resources */,
 				54D5534D21BCA66300980B92 /* quiz_background.png in Resources */,
