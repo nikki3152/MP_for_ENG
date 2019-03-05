@@ -951,8 +951,6 @@
 		54D5535021BCA66300980B92 /* quiz_correct.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551D121BCA66200980B92 /* quiz_correct.png */; };
 		54D5535221BCA66300980B92 /* quiz_question.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551D321BCA66200980B92 /* quiz_question.png */; };
 		54D5535321BCA66300980B92 /* quiz_answer_tap.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D551D421BCA66200980B92 /* quiz_answer_tap.png */; };
-		54D5535521BCB09F00980B92 /* setting_icon_02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D5535421BCB09E00980B92 /* setting_icon_02@2x.png */; };
-		54D5535721BCB0B600980B92 /* setting_icon_01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D5535621BCB0B600980B92 /* setting_icon_01@2x.png */; };
 		54D5535921BCB5D600980B92 /* dictionary_heda.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D5535821BCB5D600980B92 /* dictionary_heda.png */; };
 		54D5535B21BCBE2500980B92 /* table_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D5535A21BCBE2500980B92 /* table_frame.png */; };
 		54D9AEB420CF6185004FEBA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9AEB320CF6185004FEBA2 /* AppDelegate.swift */; };
@@ -1969,8 +1967,6 @@
 		54D551D121BCA66200980B92 /* quiz_correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quiz_correct.png; sourceTree = "<group>"; };
 		54D551D321BCA66200980B92 /* quiz_question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quiz_question.png; sourceTree = "<group>"; };
 		54D551D421BCA66200980B92 /* quiz_answer_tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quiz_answer_tap.png; sourceTree = "<group>"; };
-		54D5535421BCB09E00980B92 /* setting_icon_02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_icon_02@2x.png"; sourceTree = "<group>"; };
-		54D5535621BCB0B600980B92 /* setting_icon_01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_icon_01@2x.png"; sourceTree = "<group>"; };
 		54D5535821BCB5D600980B92 /* dictionary_heda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dictionary_heda.png; sourceTree = "<group>"; };
 		54D5535A21BCBE2500980B92 /* table_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table_frame.png; sourceTree = "<group>"; };
 		54D9AEB020CF6185004FEBA2 /* mpe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mpe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3306,10 +3302,8 @@
 			isa = PBXGroup;
 			children = (
 				54D551AB21BCA66200980B92 /* setting_icon_02.png */,
-				54D5535421BCB09E00980B92 /* setting_icon_02@2x.png */,
 				54D551AC21BCA66200980B92 /* setting_movie_button.png */,
 				54D551AD21BCA66200980B92 /* setting_icon_01.png */,
-				54D5535621BCB0B600980B92 /* setting_icon_01@2x.png */,
 				54D551AE21BCA66200980B92 /* setting_credit.png */,
 				54D551B021BCA66200980B92 /* setting_home_button.png */,
 				54D551B121BCA66200980B92 /* setting_home_button_tap.png */,
@@ -3806,7 +3800,6 @@
 				54C65F1F2225F7E3008D6574 /* ランダム文字指定2.plist in Resources */,
 				54612D4C21FE97A10091D7BD /* quiz_bigginer.txt in Resources */,
 				54CFB3FB20DE335A00057F08 /* DictViewController.storyboard in Resources */,
-				54D5535521BCB09F00980B92 /* setting_icon_02@2x.png in Resources */,
 				540DD610222BD79B00326D92 /* select_57.png in Resources */,
 				54D5529821BCA66300980B92 /* cell_anime4.png in Resources */,
 				540DD649222BE24800326D92 /* mpe_キャラセリフ文言_ゲームクリア.csv in Resources */,
@@ -3950,7 +3943,6 @@
 				54D552B021BCA66300980B92 /* obj_star_03.png in Resources */,
 				5429F3BB21CF06B600E0E50F /* score_get_5.png in Resources */,
 				54D5534F21BCA66300980B92 /* quiz_result_erabukun.png in Resources */,
-				54D5535721BCB0B600980B92 /* setting_icon_01@2x.png in Resources */,
 				542F447421B57FAD00C51AD6 /* dog（犬）.plist in Resources */,
 				5429F36321CF052800E0E50F /* time4.png in Resources */,
 				54D551FE21BCA66300980B92 /* select_stagemap_03.png in Resources */,
