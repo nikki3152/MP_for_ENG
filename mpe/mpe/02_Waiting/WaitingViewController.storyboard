@@ -27,15 +27,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_panel_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="9ul-R9-URv">
-                                <rect key="frame" x="0.0" y="0.0" width="167" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="170" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_panel_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="pTz-tI-S2F">
-                                <rect key="frame" x="167" y="0.0" width="167" height="375"/>
+                                <rect key="frame" x="168" y="0.0" width="168" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_panel_03.png" translatesAutoresizingMaskIntoConstraints="NO" id="KJ7-c7-ohB">
-                                <rect key="frame" x="334" y="0.0" width="167" height="375"/>
+                                <rect key="frame" x="335" y="0.0" width="167" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_panel_04.png" translatesAutoresizingMaskIntoConstraints="NO" id="fj2-To-vMb">
@@ -43,23 +43,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_icon_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="Edy-Ra-BxI">
-                                <rect key="frame" x="4" y="0.0" width="159" height="375"/>
+                                <rect key="frame" x="8" y="0.0" width="150" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_icon_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="fpW-uo-ZKI">
-                                <rect key="frame" x="166" y="0.0" width="166" height="375"/>
+                                <rect key="frame" x="174" y="0.0" width="150" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_icon_03.png" translatesAutoresizingMaskIntoConstraints="NO" id="vnW-Os-wIh">
-                                <rect key="frame" x="334" y="0.0" width="167" height="375"/>
+                                <rect key="frame" x="341" y="0.0" width="150" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_icon_04.png" translatesAutoresizingMaskIntoConstraints="NO" id="cCS-Ca-9nd">
-                                <rect key="frame" x="500" y="0.0" width="170" height="375"/>
+                                <rect key="frame" x="507" y="0.0" width="150" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2z-xo-33f">
-                                <rect key="frame" x="0.0" y="0.0" width="167" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="170" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <state key="highlighted" image="taiki_icon_01.png" backgroundImage="taiki_panel_01_tap.png"/>
                                 <connections>
@@ -67,7 +67,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYX-XU-YWh">
-                                <rect key="frame" x="167" y="0.0" width="170" height="375"/>
+                                <rect key="frame" x="168" y="0.0" width="168" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <state key="highlighted" image="taiki_icon_02.png" backgroundImage="taiki_panel_02_tap.png"/>
                                 <connections>
@@ -75,7 +75,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moz-to-uX4">
-                                <rect key="frame" x="334" y="0.0" width="167" height="375"/>
+                                <rect key="frame" x="335" y="0.0" width="167" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <state key="highlighted" image="taiki_icon_03.png" backgroundImage="taiki_panel_03_tap.png"/>
                                 <connections>
@@ -83,7 +83,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdK-Fk-IO2">
-                                <rect key="frame" x="500" y="0.0" width="167" height="375"/>
+                                <rect key="frame" x="500" y="0.0" width="170" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <state key="highlighted" image="taiki_icon_04.png" backgroundImage="taiki_panel_04_tap.png"/>
                                 <connections>
@@ -199,7 +199,7 @@
     </scenes>
     <resources>
         <image name="taiki_icon_01.png" width="150" height="152"/>
-        <image name="taiki_icon_02.png" width="335" height="340"/>
+        <image name="taiki_icon_02.png" width="150" height="152"/>
         <image name="taiki_icon_03.png" width="150" height="152"/>
         <image name="taiki_icon_04.png" width="150" height="152"/>
         <image name="taiki_movie_button.png" width="200" height="120"/>
