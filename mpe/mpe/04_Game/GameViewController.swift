@@ -253,7 +253,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					unit = "個"
 				}
 				let qTextSub = "残り\(_questCount)\(unit)"
-				let qSubLabel = makeVerticalLabel(size: self.questDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 16), text: qTextSub)
+				let font = UIFont.boldSystemFont(ofSize: 16)
+				let qSubLabel = makeVerticalLabel(size: self.questDisplayImageView.frame.size, font: font, text: qTextSub)
 				qSubLabel.textAlignment = .left
 				qSubLabel.numberOfLines = 1
 				self.questDisplay2ImageView.addSubview(qSubLabel)
@@ -795,12 +796,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			words = v
 		}
 		
-		var font: String = ""
+		var fontStr: String = ""
 		if let v = self.questData.questData["font"] as? String {
-			font = v
+			fontStr = v
 		}
-		let qText = self.questData.questType.info(count: count, words: words, font: font)
-		let qLabel = makeVerticalLabel(size: self.questDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 16), text: qText)
+		let qText = self.questData.questType.info(count: count, words: words, font: fontStr)
+		let font = UIFont.boldSystemFont(ofSize: 16)
+		let qLabel = makeVerticalLabel(size: self.questDisplayImageView.frame.size, font: font, text: qText)
 		qLabel.textAlignment = .left
 		qLabel.numberOfLines = 2
 		self.questDisplayImageView.addSubview(qLabel)
@@ -846,7 +848,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			bText = self.chaMessages[messageIndex]
 		}
 		if bText != "" {
-			let bLabel = makeVerticalLabel(size: self.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 12), text: bText)
+			let font = UIFont(name: "UDDigiKyokashoN-B", size: 12)!
+			let bLabel = makeVerticalLabel(size: self.ballonDisplayImageView.frame.size, font: font, text: bText)
 			bLabel.textAlignment = .left
 			bLabel.numberOfLines = 3
 			self.ballonDisplayImageView.addSubview(bLabel)

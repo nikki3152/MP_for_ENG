@@ -58,7 +58,8 @@ class GameOverView: UIView, UITableViewDataSource, UITableViewDelegate {
 	func updateMojikunString(txt: String) {
 		
 		self.ballonMainLabel?.removeFromSuperview()
-		let bLabel = makeVerticalLabel(size: self.ballonDisplayImageView.frame.size, font: UIFont.boldSystemFont(ofSize: 14), text: txt)
+		let font = UIFont(name: "UDDigiKyokashoN-B", size: 14)!
+		let bLabel = makeVerticalLabel(size: self.ballonDisplayImageView.frame.size, font: font, text: txt)
 		bLabel.textAlignment = .left
 		bLabel.numberOfLines = 3
 		self.ballonDisplayImageView.addSubview(bLabel)

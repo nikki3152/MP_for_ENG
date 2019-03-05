@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="UDDigiKyokashoN-R.ttc">
+            <string>UDDigiKyokashoNK-R</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Study Mode View Controller-->
         <scene sceneID="Eya-gp-a1f">
@@ -33,7 +38,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffw-xf-gXY">
                                 <rect key="frame" x="51" y="82" width="186" height="280"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="20"/>
                                 <state key="normal" title="辞書モード" backgroundImage="study_panel_left.png"/>
                                 <connections>
                                     <action selector="dictModeButtonAction:" destination="cjv-1D-VxT" eventType="touchUpInside" id="fWc-oY-pw1"/>
@@ -42,7 +47,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpf-3q-LLq">
                                 <rect key="frame" x="499" y="82" width="186" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="20"/>
                                 <state key="normal" title="一問一答モード" backgroundImage="study_panel_right.png"/>
                                 <connections>
                                     <action selector="quickQuestModeButtonAction:" destination="cjv-1D-VxT" eventType="touchUpInside" id="NmU-jF-nyM"/>

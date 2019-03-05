@@ -9,6 +9,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="UDDigiKyokashoN-B.ttc">
+            <string>UDDigiKyokashoNK-B</string>
+        </array>
+        <array key="UDDigiKyokashoN-R.ttc">
+            <string>UDDigiKyokashoNK-R</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Setting View Controller-->
         <scene sceneID="fKP-yq-7j5">
@@ -94,14 +102,14 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BGM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHF-3L-IvT">
                                         <rect key="frame" x="8" y="34" width="86" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="UDDigiKyokashoNK-B" family="UD Digi Kyokasho NK-B" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6f-cw-F0P">
                                         <rect key="frame" x="8" y="105" width="86" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="UDDigiKyokashoNK-B" family="UD Digi Kyokasho NK-B" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -144,7 +152,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIk-3n-kgt">
                                         <rect key="frame" x="10" y="10" width="100" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="26"/>
                                         <state key="normal" title="85" backgroundImage="taiki_pp_button.png">
                                             <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -191,8 +199,8 @@
         <image name="setting_button_on.png" width="300" height="120"/>
         <image name="setting_home_button.png" width="100" height="120"/>
         <image name="setting_home_button_tap.png" width="100" height="120"/>
-        <image name="setting_icon_01.png" width="200" height="249"/>
-        <image name="setting_icon_02.png" width="150" height="150"/>
+        <image name="setting_icon_01.png" width="400" height="498"/>
+        <image name="setting_icon_02.png" width="300" height="300"/>
         <image name="setting_panel_01.png" width="480" height="1080"/>
         <image name="setting_panel_01_tap.png" width="480" height="1080"/>
         <image name="setting_panel_02.png" width="480" height="1080"/>
