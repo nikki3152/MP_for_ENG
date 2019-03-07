@@ -1,9 +1,6 @@
 //
 //  ADView.swift
 //
-//  Created by 北村 真二 on 2016/12/23.
-//  Copyright © 2016年 北村 真二. All rights reserved.
-//
 
 import UIKit
 
@@ -38,148 +35,28 @@ protocol ADViewVideoDelegate {
 =====================================================*/
 enum ADType: String {
 	
-	case banner				= "banner"				//バナー
-	case interstitial		= "interstitial"		//インターステイシャル
 	case videoReward		= "videoReward"			//動画リワード
 	case videoInterstitial	= "videoInterstitial"	//動画インターステイシャル
-	case fullscreen			= "fullscreen"			//フルスクリーン
-	case videoNative		= "videoNative"			//動画ネイティヴ
-	case native				= "native"				//ネイティヴ
 }
 
 enum ADNetworkType: String {
 	
-	case appbank			= "appbank"
 	case adfurikun			= "adfurikun"
-	case admob				= "admob"
-	case zucks				= "zucks"
 	
-	//===========================================================
-	// バナー
-	//===========================================================
-	//広告ID
-	func adBannerID()->String {
-		switch self {
-		
-		case .appbank:
-			return ""
-		
-		case .adfurikun:
-			return ""
-		
-		case .admob:
-			return ""
-		
-		case .zucks:
-			return ""
-		}
-	}
-	//===========================================================
-	// インターステイシャル
-	//===========================================================
-	//インターステイシャルID
-	func adInterstisialID()->String {
-		switch self {
-			
-		case .appbank:
-			return ""
-			
-		case .adfurikun:
-			return ""
-			
-		case .admob:
-			return ""
-		
-		case .zucks:
-			return ""
-		}
-	}
-	//フルスクリーンID
-	func adFullscreenID()->String {
-		switch self {
-			
-		case .appbank:
-			return ""
-			
-		case .adfurikun:
-			return ""
-			
-		case .admob:
-			return ""
-			
-		case .zucks:
-			return ""
-		}
-	}
 	//動画インターステイシャルID
 	func adVideoInterstisialID()->String {
 		switch self {
-			
-		case .appbank:
-			return ""
-			
 		case .adfurikun:
 			return "5c6bed01f22ded934000000f"
-			
-		case .admob:
-			return ""
-			
-		case .zucks:
-			return ""
 		}
 	}
-	
-	
-	//===========================================================
 	//動画広告ID
-	//===========================================================
-	//動画広告ID
-	func adVideoID()->String? {
+	func adVideoRewardID()->String? {
 		switch self {
-		
-		case .appbank:
-			return nil
-		
 		case .adfurikun:
 			return "5c6bed4dda42ff795d00000c"
-			
-		case .admob:
-			return ""
-		
-		case .zucks:
-			return nil
 		}
 	}
-	//動画ネイティヴ広告ID
-	func adVideoNativeID()->String? {
-		switch self {
-			
-		case .appbank:
-			return nil
-			
-		case .adfurikun:
-			return ""
-		case .admob:
-			return ""
-		case .zucks:
-			return nil
-		}
-	}
-	
-	//ネイティヴID
-	func adNativeID() -> String {
-		switch self {
-		case .appbank:
-			return ""
-		case .adfurikun:
-			return ""
-		case .admob:
-			return ""
-		case .zucks:
-			return ""
-		}
-	}
-	
 	
 }
 
@@ -235,7 +112,7 @@ class ADView: UIView, ADFmyMovieRewardDelegate {
 			//------------------------------------
 			if adNTType == .adfurikun {
 				if ADFmyMovieReward.isSupportedOSVersion() {
-					let appID = adNTType.adVideoID()
+					let appID = adNTType.adVideoRewardID()
 					ADFmyMovieReward.initialize(withAppID: appID, viewController: self.rootViewCnt)
 					self.adfurikunMovieReward = ADFmyMovieReward.getInstance(appID, delegate: self)
 				}
