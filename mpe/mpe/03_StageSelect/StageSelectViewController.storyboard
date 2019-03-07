@@ -36,7 +36,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3pW-gl-he8" customClass="OutlineLabel" customModule="mpe" customModuleProvider="target">
-                                        <rect key="frame" x="100" y="13" width="283" height="24"/>
+                                        <rect key="frame" x="100" y="14" width="283" height="24"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="17"/>
                                         <nil key="highlightedColor"/>
@@ -211,19 +211,19 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select_crown.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qia-kq-9zM">
-                                        <rect key="frame" x="150" y="105" width="34" height="34"/>
+                                        <rect key="frame" x="138" y="105" width="34" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select_timelimit.png" translatesAutoresizingMaskIntoConstraints="NO" id="xh3-ul-YUl">
-                                        <rect key="frame" x="29" y="59" width="101" height="21"/>
+                                        <rect key="frame" x="17" y="59" width="101" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select_clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="a5O-cb-2x7">
-                                        <rect key="frame" x="29" y="75" width="30" height="30"/>
+                                        <rect key="frame" x="17" y="75" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select_targetscore.png" translatesAutoresizingMaskIntoConstraints="NO" id="2U5-N1-haI">
-                                        <rect key="frame" x="29" y="105" width="126" height="21"/>
+                                        <rect key="frame" x="17" y="105" width="126" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vB-gC-EkX" customClass="OutlineLabel" customModule="mpe" customModuleProvider="target">
@@ -242,7 +242,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCI-eK-iwS" customClass="OutlineLabel" customModule="mpe" customModuleProvider="target">
-                                        <rect key="frame" x="36" y="127" width="113" height="21"/>
+                                        <rect key="frame" x="24" y="127" width="113" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
@@ -292,15 +292,15 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select_stagemap_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="UvB-gt-Oi4">
-                                        <rect key="frame" x="57" y="3" width="124" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="54" y="3" width="130" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ltl-4Y-8Ch">
-                                        <rect key="frame" x="102" y="0.0" width="535" height="196"/>
+                                        <rect key="frame" x="85" y="0.0" width="565" height="196"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="select_pleview_center.png" translatesAutoresizingMaskIntoConstraints="NO" id="h5e-i3-1SP">
-                                                <rect key="frame" x="117" y="0.0" width="300" height="185"/>
+                                                <rect key="frame" x="119" y="0.0" width="326" height="203"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljo-NB-5i4">
@@ -313,7 +313,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91z-Ui-eoV">
-                                                <rect key="frame" x="416" y="172" width="119" height="22"/>
+                                                <rect key="frame" x="446" y="172" width="119" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <state key="normal" backgroundImage="select_mapchange_right_intermediate.png"/>
@@ -401,7 +401,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IjS-va-6tL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-32.608695652173914" y="165.21739130434784"/>
+            <point key="canvasLocation" x="45" y="81"/>
         </scene>
     </scenes>
     <resources>

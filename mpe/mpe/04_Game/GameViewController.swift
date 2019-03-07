@@ -653,9 +653,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			self.questIndex += 1
 			self.questData = self.selectCnt.questData(at: self.questIndex)
 			if self.questData != nil {
+				self.questDataBKList.removeAll()
+				self.questDataBKList.append(questData)
+				self.questDataBKIndex = 0
 				UserDefaults.standard.set(self.questIndex, forKey: kCurrentQuestIndex)
 				self.selectCnt.selectStage(index: questIndex)
-				self.retry()
+				self.startGameTimer()
 			}
 		} else {
 			self.remove()
