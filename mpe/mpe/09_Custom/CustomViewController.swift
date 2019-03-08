@@ -10,6 +10,17 @@ import UIKit
 
 class CustomViewController: BaseViewController {
 
+	var _customChara: CustomChara = .mojikun_b
+	var customChara: CustomChara {
+		get {
+			return _customChara 
+		}
+		set {
+			_customChara = newValue
+			self.charaImageView.image = UIImage(named: "\(_customChara.rawValue)_01")
+		}
+	}
+	
 	
 	deinit {
 		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
@@ -32,14 +43,45 @@ class CustomViewController: BaseViewController {
 		
 		DataManager.animationFuwa(v: charaImageView, dy: 15, speed: 1.8)
 		
-		let sel = UserDefaults.standard.integer(forKey: kSelectedCharaType)
-		if let bt = charBtBaseView.viewWithTag(sel) as? UIButton {
+		let ctype = UserDefaults.standard.integer(forKey: kSelectedCharaType)
+		if let bt = charBtBaseView.viewWithTag(ctype) as? UIButton {
 			selectedButton = bt
 			selectedButton.isSelected = true
 		}
 		//ポイント
 		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
 		self.ppButton.setTitle("\(pp)", for: .normal)
+		
+		if ctype == 1 {
+			self.customChara = .mojikun_b
+		}
+		else if ctype == 2 {
+			self.customChara = .mojichan
+		}
+		else if ctype == 3 {
+			self.customChara = .taiyokun
+		}
+		else if ctype == 4 {
+			self.customChara = .tsukikun
+		}
+		else if ctype == 5 {
+			self.customChara = .kumokun
+		}
+		else if ctype == 6 {
+			self.customChara = .mojikun_a
+		}
+		else if ctype == 7 {
+			self.customChara = .pack
+		}
+		else if ctype == 8 {
+			self.customChara = .ouji
+		}
+		else if ctype == 9 {
+			self.customChara = .driller
+		}
+		else if ctype == 10 {
+			self.customChara = .galaga
+		}
 	}
 	
 	//戻る
@@ -78,6 +120,36 @@ class CustomViewController: BaseViewController {
 			selectedButton = sender 
 			selectedButton?.isSelected = true
 			UserDefaults.standard.set(sender.tag, forKey: kSelectedCharaType)
+			if sender.tag == 1 {
+				self.customChara = .mojikun_b
+			}
+			else if sender.tag == 2 {
+				self.customChara = .mojichan
+			}
+			else if sender.tag == 3 {
+				self.customChara = .taiyokun
+			}
+			else if sender.tag == 4 {
+				self.customChara = .tsukikun
+			}
+			else if sender.tag == 5 {
+				self.customChara = .kumokun
+			}
+			else if sender.tag == 6 {
+				self.customChara = .mojikun_a
+			}
+			else if sender.tag == 7 {
+				self.customChara = .pack
+			}
+			else if sender.tag == 8 {
+				self.customChara = .ouji
+			}
+			else if sender.tag == 9 {
+				self.customChara = .driller
+			}
+			else if sender.tag == 10 {
+				self.customChara = .galaga
+			}
 		}
 	}
 	
