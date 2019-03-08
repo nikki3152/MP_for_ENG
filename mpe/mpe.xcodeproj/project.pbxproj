@@ -477,6 +477,26 @@
 		5467653C21F556E00025A5A9 /* earth（地球）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5467652821F556E00025A5A9 /* earth（地球）.plist */; };
 		5467654021F69E0D0025A5A9 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467653F21F69E0D0025A5A9 /* SoundManager.swift */; };
 		54757D4222322CD300E5E349 /* timecolon_danger.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D4122322CD300E5E349 /* timecolon_danger.png */; };
+		54757D4B2232539B00E5E349 /* dark_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D432232539900E5E349 /* dark_2.png */; };
+		54757D4C2232539B00E5E349 /* dull_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D442232539900E5E349 /* dull_3.png */; };
+		54757D4D2232539B00E5E349 /* dark_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D452232539900E5E349 /* dark_4.png */; };
+		54757D4E2232539B00E5E349 /* dull_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D462232539900E5E349 /* dull_2.png */; };
+		54757D4F2232539B00E5E349 /* dark_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D472232539A00E5E349 /* dark_3.png */; };
+		54757D502232539B00E5E349 /* dull_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D482232539A00E5E349 /* dull_1.png */; };
+		54757D512232539B00E5E349 /* dark_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D492232539B00E5E349 /* dark_1.png */; };
+		54757D522232539B00E5E349 /* dull_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D4A2232539B00E5E349 /* dull_4.png */; };
+		54757D5F223253BB00E5E349 /* vivid_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D53223253B800E5E349 /* vivid_2.png */; };
+		54757D60223253BB00E5E349 /* soft_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D54223253B800E5E349 /* soft_1.png */; };
+		54757D61223253BB00E5E349 /* vivid_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D55223253B900E5E349 /* vivid_1.png */; };
+		54757D62223253BB00E5E349 /* soft_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D56223253B900E5E349 /* soft_4.png */; };
+		54757D63223253BB00E5E349 /* light_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D57223253B900E5E349 /* light_3.png */; };
+		54757D64223253BB00E5E349 /* light_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D58223253B900E5E349 /* light_4.png */; };
+		54757D65223253BB00E5E349 /* soft_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D59223253B900E5E349 /* soft_3.png */; };
+		54757D66223253BB00E5E349 /* vivid_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D5A223253BA00E5E349 /* vivid_3.png */; };
+		54757D67223253BB00E5E349 /* vivid_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D5B223253BA00E5E349 /* vivid_4.png */; };
+		54757D68223253BB00E5E349 /* light_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D5C223253BA00E5E349 /* light_1.png */; };
+		54757D69223253BB00E5E349 /* light_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D5D223253BA00E5E349 /* light_2.png */; };
+		54757D6A223253BB00E5E349 /* soft_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D5E223253BA00E5E349 /* soft_2.png */; };
 		5489AF5D212B007A00A7D275 /* ejdic-hand-utf8.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */; };
 		5489AF5F212B00B500A7D275 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF5E212B00B500A7D275 /* DataManager.swift */; };
 		5489AF61212B010B00A7D275 /* MPEDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF60212B010B00A7D275 /* MPEDataManager.swift */; };
@@ -1496,6 +1516,26 @@
 		5467652821F556E00025A5A9 /* earth（地球）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "earth（地球）.plist"; sourceTree = "<group>"; };
 		5467653F21F69E0D0025A5A9 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		54757D4122322CD300E5E349 /* timecolon_danger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timecolon_danger.png; sourceTree = "<group>"; };
+		54757D432232539900E5E349 /* dark_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark_2.png; sourceTree = "<group>"; };
+		54757D442232539900E5E349 /* dull_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dull_3.png; sourceTree = "<group>"; };
+		54757D452232539900E5E349 /* dark_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark_4.png; sourceTree = "<group>"; };
+		54757D462232539900E5E349 /* dull_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dull_2.png; sourceTree = "<group>"; };
+		54757D472232539A00E5E349 /* dark_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark_3.png; sourceTree = "<group>"; };
+		54757D482232539A00E5E349 /* dull_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dull_1.png; sourceTree = "<group>"; };
+		54757D492232539B00E5E349 /* dark_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark_1.png; sourceTree = "<group>"; };
+		54757D4A2232539B00E5E349 /* dull_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dull_4.png; sourceTree = "<group>"; };
+		54757D53223253B800E5E349 /* vivid_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vivid_2.png; sourceTree = "<group>"; };
+		54757D54223253B800E5E349 /* soft_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soft_1.png; sourceTree = "<group>"; };
+		54757D55223253B900E5E349 /* vivid_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vivid_1.png; sourceTree = "<group>"; };
+		54757D56223253B900E5E349 /* soft_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soft_4.png; sourceTree = "<group>"; };
+		54757D57223253B900E5E349 /* light_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_3.png; sourceTree = "<group>"; };
+		54757D58223253B900E5E349 /* light_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_4.png; sourceTree = "<group>"; };
+		54757D59223253B900E5E349 /* soft_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soft_3.png; sourceTree = "<group>"; };
+		54757D5A223253BA00E5E349 /* vivid_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vivid_3.png; sourceTree = "<group>"; };
+		54757D5B223253BA00E5E349 /* vivid_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vivid_4.png; sourceTree = "<group>"; };
+		54757D5C223253BA00E5E349 /* light_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_1.png; sourceTree = "<group>"; };
+		54757D5D223253BA00E5E349 /* light_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_2.png; sourceTree = "<group>"; };
+		54757D5E223253BA00E5E349 /* soft_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soft_2.png; sourceTree = "<group>"; };
 		5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ejdic-hand-utf8.txt"; sourceTree = "<group>"; };
 		5489AF5E212B00B500A7D275 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5489AF60212B010B00A7D275 /* MPEDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPEDataManager.swift; sourceTree = "<group>"; };
@@ -2963,6 +3003,26 @@
 				54C65F0D2224A064008D6574 /* tefuda_choice.png */,
 				54D5509D21BCA66200980B92 /* table_tap.png */,
 				54D5514221BCA66200980B92 /* table.png */,
+				54757D492232539B00E5E349 /* dark_1.png */,
+				54757D432232539900E5E349 /* dark_2.png */,
+				54757D472232539A00E5E349 /* dark_3.png */,
+				54757D452232539900E5E349 /* dark_4.png */,
+				54757D482232539A00E5E349 /* dull_1.png */,
+				54757D462232539900E5E349 /* dull_2.png */,
+				54757D442232539900E5E349 /* dull_3.png */,
+				54757D4A2232539B00E5E349 /* dull_4.png */,
+				54757D5C223253BA00E5E349 /* light_1.png */,
+				54757D5D223253BA00E5E349 /* light_2.png */,
+				54757D57223253B900E5E349 /* light_3.png */,
+				54757D58223253B900E5E349 /* light_4.png */,
+				54757D54223253B800E5E349 /* soft_1.png */,
+				54757D5E223253BA00E5E349 /* soft_2.png */,
+				54757D59223253B900E5E349 /* soft_3.png */,
+				54757D56223253B900E5E349 /* soft_4.png */,
+				54757D55223253B900E5E349 /* vivid_1.png */,
+				54757D53223253B800E5E349 /* vivid_2.png */,
+				54757D5A223253BA00E5E349 /* vivid_3.png */,
+				54757D5B223253BA00E5E349 /* vivid_4.png */,
 				54D5511421BCA66200980B92 /* orange_left.png */,
 				54D5514B21BCA66200980B92 /* orange_right.png */,
 				54D5509421BCA66200980B92 /* orange_0.png */,
@@ -3713,6 +3773,7 @@
 				54D5521621BCA66300980B92 /* mojichan_01.png in Resources */,
 				540DD626222BD79B00326D92 /* select_74.png in Resources */,
 				546764FC21EF24300025A5A9 /* SE_PRESS_to_START.wav in Resources */,
+				54757D4D2232539B00E5E349 /* dark_4.png in Resources */,
 				5429F36A21CF052800E0E50F /* time5_danger.png in Resources */,
 				54D552B721BCA66300980B92 /* obj_stripes_01.png in Resources */,
 				54D551D621BCA66300980B92 /* quizdonyu_object_gun.png in Resources */,
@@ -3732,6 +3793,7 @@
 				5429F37521CF052800E0E50F /* time9.png in Resources */,
 				5429F3BD21CF06B600E0E50F /* score_count_1.png in Resources */,
 				5467652C21F556E00025A5A9 /* biology（生物学）①.plist in Resources */,
+				54757D4B2232539B00E5E349 /* dark_2.png in Resources */,
 				5489AF5D212B007A00A7D275 /* ejdic-hand-utf8.txt in Resources */,
 				541268622221119E00CE3A35 /* select_icon_01.png in Resources */,
 				54D5535B21BCBE2500980B92 /* table_frame.png in Resources */,
@@ -3854,6 +3916,7 @@
 				54D5526F21BCA66300980B92 /* obj_balloon_02.png in Resources */,
 				54F4E87E2223044100B3B710 /* Version6001.txt in Resources */,
 				5429F3B021CF06B600E0E50F /* score_count_7.png in Resources */,
+				54757D67223253BB00E5E349 /* vivid_4.png in Resources */,
 				54D552B121BCA66300980B92 /* C.png in Resources */,
 				540DD557222BD71900326D92 /* prev_37.png in Resources */,
 				54BCA6E122153BBB0054CEF4 /* gameclear_anim_effect11.png in Resources */,
@@ -3876,6 +3939,7 @@
 				540DD638222BD79B00326D92 /* select_83.png in Resources */,
 				54D552A321BCA66300980B92 /* anim_E.png in Resources */,
 				542F443921B300DC00C51AD6 /* furniture（家具）.plist in Resources */,
+				54757D64223253BB00E5E349 /* light_4.png in Resources */,
 				54D5528621BCA66300980B92 /* driller_02.png in Resources */,
 				540DD59C222BD71900326D92 /* prev_42.png in Resources */,
 				540DD5FD222BD79B00326D92 /* select_16.png in Resources */,
@@ -3901,6 +3965,7 @@
 				540DD5F9222BD79B00326D92 /* select_47.png in Resources */,
 				54BCA6F022153BBB0054CEF4 /* gameclear_anim_effect20.png in Resources */,
 				5429F3C721CF06B600E0E50F /* 2.png in Resources */,
+				54757D5F223253BB00E5E349 /* vivid_2.png in Resources */,
 				54D5523121BCA66300980B92 /* pink_1.png in Resources */,
 				5429F37321CF052800E0E50F /* time3.png in Resources */,
 				54D03E1021A4EF3100FD1CC4 /* TimePickerView.xib in Resources */,
@@ -3989,6 +4054,7 @@
 				54D552D021BCA66300980B92 /* quest_base.png in Resources */,
 				5467651221F554E50025A5A9 /* tutorial（チュートリアル）.plist in Resources */,
 				54D5530421BCA66300980B92 /* custom_background.png in Resources */,
+				54757D66223253BB00E5E349 /* vivid_3.png in Resources */,
 				54D552B521BCA66300980B92 /* tsukikun_03.png in Resources */,
 				54BCA6E222153BBB0054CEF4 /* gameclear_anim_effect1.png in Resources */,
 				5429F3E721CF06E400E0E50F /* chain3_anim.png in Resources */,
@@ -4026,6 +4092,7 @@
 				54D552EB21BCA66300980B92 /* music_cd.png in Resources */,
 				54D5533221BCA66300980B92 /* setting_home_button_tap.png in Resources */,
 				540DD566222BD71900326D92 /* prev_76.png in Resources */,
+				54757D69223253BB00E5E349 /* light_2.png in Resources */,
 				54D552DF21BCA66300980B92 /* stage_05.png in Resources */,
 				54ED5823222EDAAF00A6BFD1 /* voice_go.wav in Resources */,
 				54D5530821BCA66300980B92 /* custom_box_09.png in Resources */,
@@ -4077,6 +4144,7 @@
 				54D551F021BCA66300980B92 /* select_advertise.png in Resources */,
 				541268752221781200CE3A35 /* PPInfoCell.xib in Resources */,
 				5467650021EF24300025A5A9 /* BGM_初級ステージ_hit.wav in Resources */,
+				54757D502232539B00E5E349 /* dull_1.png in Resources */,
 				54D5529B21BCA66300980B92 /* cell_anime6.png in Resources */,
 				5429F3AC21CF06B600E0E50F /* countup_6.png in Resources */,
 				540DD60C222BD79B00326D92 /* select_25.png in Resources */,
@@ -4126,6 +4194,7 @@
 				546764F121EF24300025A5A9 /* BGM_ステージクリアジングル_shot.wav in Resources */,
 				54D5520121BCA66300980B92 /* select_background_02.png in Resources */,
 				54D5534121BCA66300980B92 /* home_catalog_ip.png in Resources */,
+				54757D68223253BB00E5E349 /* light_1.png in Resources */,
 				5467653721F556E00025A5A9 /* planet（惑星）.plist in Resources */,
 				54D5525C21BCA66300980B92 /* pack_02.png in Resources */,
 				542F443D21B300DC00C51AD6 /* calender（暦）①.plist in Resources */,
@@ -4152,6 +4221,7 @@
 				548FF99A21E18C2B007CD3B0 /* pauce_button_retry_tap.png in Resources */,
 				540DD621222BD79B00326D92 /* select_73.png in Resources */,
 				54D5523F21BCA66300980B92 /* N.png in Resources */,
+				54757D6A223253BB00E5E349 /* soft_2.png in Resources */,
 				54F4E8962223044100B3B710 /* Version6000.txt in Resources */,
 				54D5526121BCA66300980B92 /* cell_anime8.png in Resources */,
 				54BCA6DF22153BBB0054CEF4 /* gameclear_anim_effect16.png in Resources */,
@@ -4195,7 +4265,9 @@
 				548FF96921DF823E007CD3B0 /* GameClearView.xib in Resources */,
 				54D552F721BCA66300980B92 /* custom_box_inactive1.png in Resources */,
 				54D5524F21BCA66300980B92 /* cell_anime13.png in Resources */,
+				54757D63223253BB00E5E349 /* light_3.png in Resources */,
 				540DD607222BD79B00326D92 /* select_24.png in Resources */,
+				54757D4E2232539B00E5E349 /* dull_2.png in Resources */,
 				54D5534C21BCA66300980B92 /* quiz_incorrect.png in Resources */,
 				546764F521EF24300025A5A9 /* BGM_上級ステージ_loop.wav in Resources */,
 				54D551DB21BCA66300980B92 /* quizdonyu_button_02.png in Resources */,
@@ -4255,6 +4327,7 @@
 				5404EA1E221A4830008A8B6D /* obj_egg_02.png in Resources */,
 				540DD559222BD71900326D92 /* prev_39.png in Resources */,
 				54BCA6C522144B7A0054CEF4 /* gameclear_anim_word05.png in Resources */,
+				54757D4F2232539B00E5E349 /* dark_3.png in Resources */,
 				54D5524221BCA66300980B92 /* orange_10.png in Resources */,
 				54D5527821BCA66300980B92 /* obj_parasol_04.png in Resources */,
 				540DD59F222BD71900326D92 /* prev_79.png in Resources */,
@@ -4330,6 +4403,7 @@
 				54D552E921BCA66300980B92 /* music_title.png in Resources */,
 				542F447621B57FAD00C51AD6 /* halloween（ハロウィン）.plist in Resources */,
 				54D5522221BCA66300980B92 /* blue_8.png in Resources */,
+				54757D60223253BB00E5E349 /* soft_1.png in Resources */,
 				54D5527A21BCA66300980B92 /* obj_flower_02.png in Resources */,
 				546764F621EF24300025A5A9 /* BGM_神級ステージ_loop.wav in Resources */,
 				54D5526921BCA66300980B92 /* anim_Y.png in Resources */,
@@ -4344,6 +4418,7 @@
 				546764B921EF1F6F0025A5A9 /* Re.plist in Resources */,
 				54D5520321BCA66300980B92 /* select_stagemap_04.png in Resources */,
 				54D5522B21BCA66300980B92 /* pink_5.png in Resources */,
+				54757D61223253BB00E5E349 /* vivid_1.png in Resources */,
 				54F3A6D721955B3800A1E01F /* EditPickerView.xib in Resources */,
 				540DD582222BD71900326D92 /* prev_18.png in Resources */,
 				5467652B21F556E00025A5A9 /* crossword（クロスワード）⑦.plist in Resources */,
@@ -4403,6 +4478,7 @@
 				54D5529F21BCA66300980B92 /* blue_right.png in Resources */,
 				54D551F521BCA66300980B92 /* select_timelimit.png in Resources */,
 				540DD642222BD79B00326D92 /* select_08.png in Resources */,
+				54757D62223253BB00E5E349 /* soft_4.png in Resources */,
 				54D551F421BCA66300980B92 /* select_pleview_right.png in Resources */,
 				54D5523421BCA66300980B92 /* taiyokun_shippo_02.png in Resources */,
 				548FF99D21E18C2B007CD3B0 /* pauce_button_continue_tap.png in Resources */,
@@ -4488,6 +4564,7 @@
 				54D551F221BCA66300980B92 /* select_mapchange_left_rondom.png in Resources */,
 				54D5533621BCA66300980B92 /* setting_button_03_tap.png in Resources */,
 				540DD561222BD71900326D92 /* prev_57.png in Resources */,
+				54757D4C2232539B00E5E349 /* dull_3.png in Resources */,
 				540DD625222BD79B00326D92 /* select_52.png in Resources */,
 				540DD584222BD71900326D92 /* prev_21.png in Resources */,
 				548FF97421E07B4A007CD3B0 /* gameover_button_next_tap.png in Resources */,
@@ -4504,6 +4581,7 @@
 				54D5521921BCA66300980B92 /* blue_10.png in Resources */,
 				54D5534021BCA66300980B92 /* setting_button_01.png in Resources */,
 				5429F3B921CF06B600E0E50F /* 8.png in Resources */,
+				54757D512232539B00E5E349 /* dark_1.png in Resources */,
 				542F443A21B300DC00C51AD6 /* time zone（時間帯）.plist in Resources */,
 				5467653421F556E00025A5A9 /* crossword（クロスワード）⑧.plist in Resources */,
 				546764AF21EF1F6F0025A5A9 /* fish（魚）.plist in Resources */,
@@ -4541,6 +4619,7 @@
 				54D5527C21BCA66300980B92 /* anim_V.png in Resources */,
 				54D5526A21BCA66300980B92 /* pauce_button_giveup_tap.png in Resources */,
 				540DD628222BD79B00326D92 /* select_81.png in Resources */,
+				54757D522232539B00E5E349 /* dull_4.png in Resources */,
 				54D552AC21BCA66300980B92 /* obj_star_02.png in Resources */,
 				540DD62B222BD79B00326D92 /* select_70.png in Resources */,
 				54D5533E21BCA66300980B92 /* setting_button_03.png in Resources */,
@@ -4572,6 +4651,7 @@
 				5467650321EF24300025A5A9 /* BGM_中級ステージ_hit.wav in Resources */,
 				54D5527121BCA66300980B92 /* triple_letter_score.png in Resources */,
 				54D5534921BCA66300980B92 /* home_taiyokun_sippo.png in Resources */,
+				54757D65223253BB00E5E349 /* soft_3.png in Resources */,
 				54D5523721BCA66300980B92 /* orange_4.png in Resources */,
 				5429F3CB21CF06B600E0E50F /* score_count_9.png in Resources */,
 				54BCA6E622153BBB0054CEF4 /* gameclear_anim_effect12.png in Resources */,

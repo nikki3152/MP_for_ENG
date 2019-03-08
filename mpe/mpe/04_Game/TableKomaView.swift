@@ -31,6 +31,30 @@ class TableKomaView: UIView {
 	@IBOutlet weak var frontImageView: UIImageView!
 	@IBOutlet weak var typeImageView: UIImageView!
 	
+	var _backImageName: String?
+	var backImageName: String? {
+		get {
+			return _backImageName
+		}
+		set {
+			_backImageName = newValue
+		}
+	}
+	var _isHit: Bool = false
+	var isHit: Bool {
+		get {
+			return _isHit
+		}
+		set {
+			_isHit = newValue
+			if let name = backImageName, _isHit {
+				self.backImageView.image = UIImage(named: name)
+			} else {
+				self.backImageView.image = UIImage(named: "table_tap")
+			}
+		}
+	}
+	
 	func setFont(moji: String, type: String?) {
 		
 		self.moji = moji

@@ -178,6 +178,15 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
 	}
 	
+	let tableExtCellAll: [[String]] = [
+		["light_1", "light_2", "light_3", "light_4"],
+		["vivid_1", "vivid_2", "vivid_3", "vivid_4"],
+		["soft_1", "soft_2", "soft_3", "soft_4"],
+		["dull_1", "dull_2", "dull_3", "dull_4"],
+		["dark_1",  "dark_2", "dark_3", "dark_4"] 
+	]
+	var tableExtCell: [String] = []
+	
 	var gameOverResType: GameOverResType!
 	
 	//MARK: ADViewVideoDelegate
@@ -568,6 +577,47 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		self.undoButton.isHidden = true
 		self.questBaseImageView.image = UIImage(named: "quest_base")
+		
+		self.questData.score = self.totalScore
+		self.questData.count = self.questCount
+		self.questData.answerWords = self.answerWords
+		self.questDataBKList.removeAll()
+		self.questDataBKList.append(questData)
+		self.questDataBKIndex = 0
+		
+		//BGM再生／背景変更
+		if self.questIndex >= 0 && self.questIndex <= 19 {
+			//初級
+			SoundManager.shared.startBGM(type: .bgmEasy)		
+			self.backImageView.image = UIImage(named: "stage_01")
+			self.tableExtCell = self.tableExtCellAll[0]
+		}
+		else if self.questIndex >= 20 && self.questIndex <= 39 {
+			//中級
+			SoundManager.shared.startBGM(type: .bgmNormal)
+			self.backImageView.image = UIImage(named: "stage_02")
+			self.tableExtCell = self.tableExtCellAll[1]
+		}
+		else if self.questIndex >= 40 && self.questIndex <= 59 {
+			//上級
+			SoundManager.shared.startBGM(type: .bgmHard)
+			self.backImageView.image = UIImage(named: "stage_03")
+			self.tableExtCell = self.tableExtCellAll[2]
+		}
+		else if self.questIndex >= 60 && self.questIndex <= 79 {
+			//神級
+			SoundManager.shared.startBGM(type: .bgmGod)
+			self.backImageView.image = UIImage(named: "stage_04")
+			self.tableExtCell = self.tableExtCellAll[3]
+		}
+		else {
+			SoundManager.shared.startBGM(type: .bgmEasy)		
+			self.backImageView.image = UIImage(named: "stage_05")
+			self.tableExtCell = self.tableExtCellAll[4]
+		}
+		
+		self.time = self.questData.time
+		
 		//手札
 		self.updateCardScroll()
 		//ゲームテーブル
@@ -583,41 +633,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				self?.nextMojikunString()
 			}
 		})
-		
-		self.questData.score = self.totalScore
-		self.questData.count = self.questCount
-		self.questData.answerWords = self.answerWords
-		self.questDataBKList.removeAll()
-		self.questDataBKList.append(questData)
-		self.questDataBKIndex = 0
-		
-		//BGM再生／背景変更
-		if self.questIndex >= 0 && self.questIndex <= 19 {
-			//初級
-			SoundManager.shared.startBGM(type: .bgmEasy)		
-			self.backImageView.image = UIImage(named: "stage_01")
-		}
-		else if self.questIndex >= 20 && self.questIndex <= 39 {
-			//中級
-			SoundManager.shared.startBGM(type: .bgmNormal)
-			self.backImageView.image = UIImage(named: "stage_02")
-		}
-		else if self.questIndex >= 40 && self.questIndex <= 59 {
-			//上級
-			SoundManager.shared.startBGM(type: .bgmHard)
-			self.backImageView.image = UIImage(named: "stage_03")
-		}
-		else if self.questIndex >= 60 && self.questIndex <= 79 {
-			//神級
-			SoundManager.shared.startBGM(type: .bgmGod)
-			self.backImageView.image = UIImage(named: "stage_04")
-		}
-		else {
-			SoundManager.shared.startBGM(type: .bgmEasy)		
-			self.backImageView.image = UIImage(named: "stage_05")
-		}
-		
-		self.time = self.questData.time
 		
 		//時間を２倍
 		if let resType = gameOverResType {
@@ -880,6 +895,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.mainScrollView.contentOffset = CGPoint(x: size.width / 4, y: size.height / 4)
 		self.view.sendSubview(toBack: self.mainScrollView)
 		self.view.sendSubview(toBack: self.backImageView)
+		
+		for koma in gameTable.komas {
+			if koma.moji == "0" {
+				let index = Int.random(in: 0 ..< self.tableExtCell.count)
+				koma.backImageName = self.tableExtCell[index]
+			} 
+		}
 	}
 	//クエスト文字作成
 	func updateQuestString() {
@@ -1137,6 +1159,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					fontImageView.removeFromSuperview()
 					effectImageView.removeFromSuperview()
 					backImageView.removeFromSuperview()
+					koma.isHit = true
 				}
 			}
 		}
