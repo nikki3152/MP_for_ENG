@@ -275,15 +275,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		self.scoreLabel.outlineColor = UIColor.black
-		self.scoreLabel.outlineWidth = 5
 		
-		self.nowScoreLabel.outlineColor = UIColor.black
-		self.nowScoreLabel.outlineWidth = 5
 		self.nowScore = 0
-		
-		self.timeLabel.outlineColor = UIColor.black
-		self.timeLabel.outlineWidth = 5
 		
 		self.ballonImageView.alpha = 0
 		self.ballonDisplayImageView.alpha = 0
@@ -389,7 +382,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	
 	//トータルスコア
 	@IBOutlet weak var scoreBaseView: UIView!
-	@IBOutlet weak var scoreLabel: OutlineLabel!
+	@IBOutlet weak var scoreImgView0: UIImageView!
+	@IBOutlet weak var scoreImgView1: UIImageView!
+	@IBOutlet weak var scoreImgView2: UIImageView!
+	@IBOutlet weak var scoreImgView3: UIImageView!
+	@IBOutlet weak var scoreImgView4: UIImageView!
+	var inScoreUp: Bool = false
 	var _totalScore: Int = 0
 	var totalScore: Int {
 		get {
@@ -397,12 +395,35 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		set {
 			_totalScore = newValue
-			self.scoreLabel.text = NSString(format: "%05d", _totalScore) as String
+			var keta1 = 0
+			var keta2 = 0
+			var keta3 = 0
+			var keta4 = 0
+			let k0 = _totalScore % 10
+			let k4 = _totalScore / 10000
+			if k4 > 9 {keta4 = k4 % 10 } else {keta4 = k4}
+			let k3 = _totalScore / 1000
+			if k3 > 9 {keta3 = k3 % 10 } else {keta3 = k3}
+			let k2 = _totalScore / 100
+			if k2 > 9 {keta2 = k2 % 10 } else {keta2 = k2}
+			let k1 = _totalScore / 10
+			if k1 > 9 {keta1 = k1 % 10 } else {keta1 = k1}
+			var add = ""
+			if inScoreUp {
+				add = "countup_"
+			}
+			scoreImgView0.image = UIImage(named: "\(add)\(k0)")
+			scoreImgView1.image = UIImage(named: "\(add)\(keta1)")
+			scoreImgView2.image = UIImage(named: "\(add)\(keta2)")
+			scoreImgView3.image = UIImage(named: "\(add)\(keta3)")
+			scoreImgView4.image = UIImage(named: "\(add)\(keta4)")
 		}
 	}
 	//スコア
 	@IBOutlet weak var nowScoreBaseView: UIView!
-	@IBOutlet weak var nowScoreLabel: OutlineLabel!
+	@IBOutlet weak var nowScoreImgView0: UIImageView!
+	@IBOutlet weak var nowScoreImgView1: UIImageView!
+	@IBOutlet weak var nowScoreImgView2: UIImageView!
 	var _nowScore: Int = 0
 	var nowScore: Int {
 		get {
@@ -410,28 +431,44 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		set {
 			_nowScore = newValue
-			self.nowScoreLabel.text = NSString(format: "%d", _nowScore) as String
 			if _nowScore == 0 {
-				nowScoreLabel.isHidden = true
+				nowScoreBaseView.isHidden = true
 			} else {
-				nowScoreLabel.isHidden = false
+				nowScoreBaseView.isHidden = false
+				var keta1 = 0
+				var keta2 = 0
+				let k0 = _nowScore % 10
+				let k2 = _nowScore / 100
+				if k2 > 9 {keta2 = k2 % 10 } else {keta2 = k2}
+				let k1 = _nowScore / 10
+				if k1 > 9 {keta1 = k1 % 10 } else {keta1 = k1}
+				var add = ""
+				if nowScoreLast {
+					add = "score_get_"
+				} else {
+					add = "score_count_"
+				}
+				nowScoreImgView0.image = UIImage(named: "\(add)\(k0)")
+				nowScoreImgView1.image = UIImage(named: "\(add)\(keta1)")
+				nowScoreImgView2.image = UIImage(named: "\(add)\(keta2)")
 			}
 		}
 	}
+	var nowScoreLast = false
 	func setNowScore(score: Int, last: Bool) {
 		
+		nowScoreLast = last
 		self.nowScore = score
-		if last {
-			nowScoreLabel.textColor = UIColor(displayP3Red: 250/255, green: 194/255, blue: 27/255, alpha: 1.0)
-		} else {
-			nowScoreLabel.textColor = UIColor.white
-		}
 	}
 	
 	//タイム
 	@IBOutlet weak var timeBaseView: UIView!
 	@IBOutlet weak var timeBackImageView: UIImageView!
-	@IBOutlet weak var timeLabel: OutlineLabel!
+	@IBOutlet weak var timeMin0ImgView4: UIImageView!
+	@IBOutlet weak var timeMin1ImgView4: UIImageView!
+	@IBOutlet weak var timeClonImgView4: UIImageView!
+	@IBOutlet weak var timeSec0ImgView4: UIImageView!
+	@IBOutlet weak var timeSec1ImgView4: UIImageView!
 	var gameTimer: Timer!
 	var _time: Double = 99
 	var time: Double {
@@ -442,13 +479,34 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			_time = newValue
 			if _time == 0 {
 				self.timeBaseView.isHidden = true
+				self.timeMin0ImgView4.layer.removeAllAnimations()
+				self.timeMin1ImgView4.layer.removeAllAnimations()
+				self.timeClonImgView4.layer.removeAllAnimations()
+				self.timeSec0ImgView4.layer.removeAllAnimations()
+				self.timeSec1ImgView4.layer.removeAllAnimations()
+				self.timeMin0ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+				self.timeMin1ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+				self.timeClonImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+				self.timeSec0ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+				self.timeSec1ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
 			} else {
 				self.timeBaseView.isHidden = false
 			}
 			let m = Int(_time / 60)
+			let m0 = m % 10
+			let m1 = m / 10
 			let s = Int(_time) % 60
-			self.timeLabel?.text = "\(NSString(format: "%02d", m)) : \(NSString(format: "%02d", s))"
-			//self.timeLabel.text = "\(Int(_time))"
+			let s0 = s % 10
+			let s1 = s / 10
+			var add = ""
+			if Int(_time) == 30 || Int(_time) <= 10 {
+				add = "_danger"
+			}
+			self.timeSec0ImgView4.image = UIImage(named: "time\(s0)\(add)")
+			self.timeSec1ImgView4.image = UIImage(named: "time\(s1)\(add)")
+			self.timeClonImgView4.image = UIImage(named: "timecolon\(add)")
+			self.timeMin0ImgView4.image = UIImage(named: "time\(m0)\(add)")
+			self.timeMin1ImgView4.image = UIImage(named: "time\(m1)\(add)")
 		}
 	}
 	
@@ -614,6 +672,16 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {[weak self]() -> Void in
 					self?.isEnablePause = true
 				})
+				self?.timeMin0ImgView4.layer.removeAllAnimations()
+				self?.timeMin1ImgView4.layer.removeAllAnimations()
+				self?.timeClonImgView4.layer.removeAllAnimations()
+				self?.timeSec0ImgView4.layer.removeAllAnimations()
+				self?.timeSec1ImgView4.layer.removeAllAnimations()
+				self?.timeMin0ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+				self?.timeMin1ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+				self?.timeClonImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+				self?.timeSec0ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+				self?.timeSec1ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
 				self?.gameTimer?.invalidate()
 				if self!.time > 0 {
 					self?.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self](t) in
@@ -624,7 +692,44 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 							if s.isGamePause == false {
 								s.time -= 0.1
 								if s.time <= 0 {
+									s.timeMin0ImgView4.layer.removeAllAnimations()
+									s.timeMin1ImgView4.layer.removeAllAnimations()
+									s.timeClonImgView4.layer.removeAllAnimations()
+									s.timeSec0ImgView4.layer.removeAllAnimations()
+									s.timeSec1ImgView4.layer.removeAllAnimations()
+									s.timeMin0ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+									s.timeMin1ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+									s.timeClonImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+									s.timeSec0ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+									s.timeSec1ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
 									s.gameOver()
+								} else {
+									if Int(s.time) == 30 || Int(s.time) == 10 {
+										UIView.animate(withDuration: 0.5, delay: 0, options: .repeat, animations: { 
+											s.timeMin0ImgView4.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+											s.timeMin1ImgView4.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+											s.timeClonImgView4.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+											s.timeSec0ImgView4.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+											s.timeSec1ImgView4.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+										}) { (stop) in
+											
+										}
+									}
+									else if Int(s.time) == 29 {
+										s.timeMin0ImgView4.layer.removeAllAnimations()
+										s.timeMin1ImgView4.layer.removeAllAnimations()
+										s.timeClonImgView4.layer.removeAllAnimations()
+										s.timeSec0ImgView4.layer.removeAllAnimations()
+										s.timeSec1ImgView4.layer.removeAllAnimations()
+										s.timeMin0ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+										s.timeMin1ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+										s.timeClonImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+										s.timeSec0ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+										s.timeSec1ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+									}
+									else {
+										
+									}
 								}
 							}
 						}
@@ -1822,7 +1927,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				SoundManager.shared.startSE(type: .seCorrect)	//SE再生
 				//あたり
 				//print("単語数: \(hitWords.count)")
-				var delay: Double = 0.2
+				var delay: Double = 0.55
 				var effectCount = 0
 				var okWords = 0
 				var scores: [Int] = []
@@ -1861,7 +1966,25 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 									isLast = true
 								}
 								let nScore = scores[effectCount - 1]
-								self.totalScore += nScore
+								
+								//self.totalScore += nScore
+								
+								//スコアアニメーション
+								self.inScoreUp = true
+								let afterScore = self.totalScore + nScore
+								Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: { [weak self](t) in
+									var s = self!.totalScore + 10
+									if s >= afterScore {
+										s = afterScore
+										t.invalidate()
+										self?.inScoreUp = false
+										self?.totalScore = afterScore
+									} else {
+										self?.totalScore += 10
+									}
+								})
+								
+								
 								self.setNowScore(score: self.nowScore + nScore, last: isLast)
 								
 								if self.questData.questType == .makeWoredsCount {

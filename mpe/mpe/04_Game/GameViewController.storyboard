@@ -96,15 +96,28 @@
                                 <rect key="frame" x="590" y="70" width="124" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIh-yc-cei" customClass="OutlineLabel" customModule="mpe" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="19" width="119" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
-                                        <color key="textColor" red="0.97966056034482762" green="0.75899876322492155" blue="0.10582386363636363" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Score_word.png" translatesAutoresizingMaskIntoConstraints="NO" id="jCy-VO-eE2">
                                         <rect key="frame" x="0.0" y="0.0" width="53" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="mH3-np-5c9">
+                                        <rect key="frame" x="101" y="19" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="0PL-ya-Dm4">
+                                        <rect key="frame" x="77" y="19" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="sGQ-6T-koL">
+                                        <rect key="frame" x="53" y="19" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="e1Z-kt-S7v">
+                                        <rect key="frame" x="29" y="19" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="PxQ-lh-PuX">
+                                        <rect key="frame" x="5" y="19" width="24" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -117,13 +130,26 @@
                                         <rect key="frame" x="0.0" y="0.0" width="146" height="70"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVv-bz-7zf" customClass="OutlineLabel" customModule="mpe" customModuleProvider="target">
-                                        <rect key="frame" x="19" y="22" width="107" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
-                                        <color key="textColor" red="1" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timecolon.png" translatesAutoresizingMaskIntoConstraints="NO" id="gar-lt-Iwq">
+                                        <rect key="frame" x="63" y="23" width="20" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="time0.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nge-fN-FPS">
+                                        <rect key="frame" x="42" y="23" width="20" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="time0.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z34-4T-VUj">
+                                        <rect key="frame" x="21" y="23" width="20" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="time0.png" translatesAutoresizingMaskIntoConstraints="NO" id="7tb-Gd-0YZ">
+                                        <rect key="frame" x="105" y="23" width="20" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="time0.png" translatesAutoresizingMaskIntoConstraints="NO" id="kYg-Sn-Y0L">
+                                        <rect key="frame" x="84" y="23" width="20" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddX-NF-YT9">
@@ -156,17 +182,22 @@
                                 <rect key="frame" x="553" y="114" width="166" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxe-YI-2pN">
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxe-YI-2pN">
                                 <rect key="frame" x="590" y="159" width="126" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpI-od-cYW" customClass="OutlineLabel" customModule="mpe" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="5" width="116" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
-                                        <color key="textColor" red="0.97966056030000004" green="0.75899876320000004" blue="0.1058238636" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="afV-mk-Eee">
+                                        <rect key="frame" x="75" y="5" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="SyU-oQ-hbw">
+                                        <rect key="frame" x="51" y="5" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="xIo-e3-Cds">
+                                        <rect key="frame" x="27" y="5" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                             </view>
                         </subviews>
@@ -187,17 +218,27 @@
                         <outlet property="editButton" destination="MLx-ej-Tbt" id="JAI-4k-oWR"/>
                         <outlet property="mainScrollView" destination="Epb-1z-iO6" id="Y1N-Po-MOg"/>
                         <outlet property="nowScoreBaseView" destination="gxe-YI-2pN" id="Iwy-K1-5OL"/>
-                        <outlet property="nowScoreLabel" destination="jpI-od-cYW" id="YuM-S9-xJa"/>
+                        <outlet property="nowScoreImgView0" destination="afV-mk-Eee" id="hBZ-XF-R02"/>
+                        <outlet property="nowScoreImgView1" destination="SyU-oQ-hbw" id="pMP-vx-VDI"/>
+                        <outlet property="nowScoreImgView2" destination="xIo-e3-Cds" id="ADq-UA-1ki"/>
                         <outlet property="pauseButton" destination="JSe-yj-Dfs" id="fbp-O2-QzD"/>
                         <outlet property="questBaseImageView" destination="tae-oi-Zh4" id="PxA-Ur-ADd"/>
                         <outlet property="questBaseView" destination="1cO-p3-EVK" id="tl5-37-OX9"/>
                         <outlet property="questDisplay2ImageView" destination="72F-JO-kSd" id="bLf-Ue-gL3"/>
                         <outlet property="questDisplayImageView" destination="ViA-KF-CoJ" id="R2U-jV-95i"/>
                         <outlet property="scoreBaseView" destination="SsC-t5-QhI" id="yXt-ji-boF"/>
-                        <outlet property="scoreLabel" destination="UIh-yc-cei" id="egI-Yb-M7Q"/>
+                        <outlet property="scoreImgView0" destination="mH3-np-5c9" id="sqg-2N-71Z"/>
+                        <outlet property="scoreImgView1" destination="0PL-ya-Dm4" id="yCr-VG-4nW"/>
+                        <outlet property="scoreImgView2" destination="sGQ-6T-koL" id="k0w-AX-4qX"/>
+                        <outlet property="scoreImgView3" destination="e1Z-kt-S7v" id="HgN-rM-jxn"/>
+                        <outlet property="scoreImgView4" destination="PxQ-lh-PuX" id="DGZ-I0-f1H"/>
                         <outlet property="timeBackImageView" destination="M9B-Cy-E7U" id="Hch-2H-yOt"/>
                         <outlet property="timeBaseView" destination="uPG-Bq-3tn" id="WgR-kQ-Tse"/>
-                        <outlet property="timeLabel" destination="pVv-bz-7zf" id="UEr-Hf-ENa"/>
+                        <outlet property="timeClonImgView4" destination="gar-lt-Iwq" id="SwM-UU-Mtt"/>
+                        <outlet property="timeMin0ImgView4" destination="Nge-fN-FPS" id="i36-eV-ABu"/>
+                        <outlet property="timeMin1ImgView4" destination="Z34-4T-VUj" id="bLL-c6-o9j"/>
+                        <outlet property="timeSec0ImgView4" destination="7tb-Gd-0YZ" id="Y7q-Vq-uXm"/>
+                        <outlet property="timeSec1ImgView4" destination="kYg-Sn-Y0L" id="4zM-F5-oV6"/>
                         <outlet property="undoButton" destination="s3W-PF-kYR" id="0gg-fu-Ty7"/>
                     </connections>
                 </viewController>
@@ -658,6 +699,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="0.png" width="80" height="80"/>
         <image name="Score_word.png" width="106" height="38"/>
         <image name="bt_playback.png" width="70" height="70"/>
         <image name="bt_playback_tap.png" width="70" height="70"/>
@@ -671,6 +713,8 @@
         <image name="orange_right.png" width="150" height="150"/>
         <image name="quest_base.png" width="213" height="974"/>
         <image name="stage_01.png" width="1920" height="1080"/>
+        <image name="time0.png" width="41" height="51"/>
         <image name="time_cloud_01.png" width="292" height="139"/>
+        <image name="timecolon.png" width="41" height="51"/>
     </resources>
 </document>
