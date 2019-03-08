@@ -48,10 +48,6 @@ class CustomViewController: BaseViewController {
 			selectedButton = bt
 			selectedButton.isSelected = true
 		}
-		//ポイント
-		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
-		self.ppButton.setTitle("\(pp)", for: .normal)
-		
 		if ctype == 1 {
 			self.customChara = .mojikun_b
 		}
@@ -81,6 +77,79 @@ class CustomViewController: BaseViewController {
 		}
 		else if ctype == 10 {
 			self.customChara = .galaga
+		}
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		updatePP()
+	}
+	
+	func updatePP() {
+		
+		//ポイント
+		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		self.ppButton.setTitle("\(pp)", for: .normal)
+		
+		if pp >= 70 {
+			charCustomButton1.isEnabled = true
+			charCustomButton2.isEnabled = true
+			charCustomButton3.isEnabled = true
+			charCustomButton4.isEnabled = true
+			charCustomButton5.isEnabled = true
+			charCustomButton6.isEnabled = true
+			charCustomButton7.isEnabled = true
+			charCustomButton8.isEnabled = true
+			charCustomButton9.isEnabled = true
+			charCustomButton10.isEnabled = true
+		}
+		else if pp >= 50 {
+			charCustomButton1.isEnabled = true
+			charCustomButton2.isEnabled = true
+			charCustomButton3.isEnabled = true
+			charCustomButton4.isEnabled = true
+			charCustomButton5.isEnabled = true
+			charCustomButton6.isEnabled = true
+			charCustomButton7.isEnabled = true
+			charCustomButton8.isEnabled = false
+			charCustomButton9.isEnabled = false
+			charCustomButton10.isEnabled = false
+		}
+		else if pp >= 30 {
+			charCustomButton1.isEnabled = true
+			charCustomButton2.isEnabled = true
+			charCustomButton3.isEnabled = true
+			charCustomButton4.isEnabled = true
+			charCustomButton5.isEnabled = true
+			charCustomButton6.isEnabled = false
+			charCustomButton7.isEnabled = false
+			charCustomButton8.isEnabled = false
+			charCustomButton9.isEnabled = false
+			charCustomButton10.isEnabled = false
+		}
+		else if pp >= 10 {
+			charCustomButton1.isEnabled = true
+			charCustomButton2.isEnabled = true
+			charCustomButton3.isEnabled = true
+			charCustomButton4.isEnabled = false
+			charCustomButton5.isEnabled = false
+			charCustomButton6.isEnabled = false
+			charCustomButton7.isEnabled = false
+			charCustomButton8.isEnabled = false
+			charCustomButton9.isEnabled = false
+			charCustomButton10.isEnabled = false
+		}
+		else {
+			charCustomButton1.isEnabled = true
+			charCustomButton2.isEnabled = false
+			charCustomButton3.isEnabled = false
+			charCustomButton4.isEnabled = false
+			charCustomButton5.isEnabled = false
+			charCustomButton6.isEnabled = false
+			charCustomButton7.isEnabled = false
+			charCustomButton8.isEnabled = false
+			charCustomButton9.isEnabled = false
+			charCustomButton10.isEnabled = false
 		}
 	}
 	
@@ -163,8 +232,7 @@ class CustomViewController: BaseViewController {
 			
 		}
 		purchaseView.closeHandler = {[weak self]() in
-			let pp = UserDefaults.standard.integer(forKey: kPPPoint)
-			self?.ppButton.setTitle("\(pp)", for: .normal)
+			self?.updatePP()
 		}
 		
 	}
