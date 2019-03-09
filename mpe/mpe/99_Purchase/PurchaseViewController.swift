@@ -133,7 +133,10 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		
 		if incentive {
 			//ポイント
-			let pp = UserDefaults.standard.integer(forKey: kPPPoint) + 1
+			var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 1
+			if pp > 100 {
+				pp = 100
+			}
 			self.ppLabel.text = "\(pp)"
 			MPEDataManager.updatePP(pp: pp)
 			self.ppTableView.reloadData()

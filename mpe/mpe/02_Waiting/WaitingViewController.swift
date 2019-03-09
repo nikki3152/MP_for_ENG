@@ -15,7 +15,10 @@ class WaitingViewController: BaseViewController, ADViewVideoDelegate {
 		
 		if incentive {
 			//ポイント
-			let pp = UserDefaults.standard.integer(forKey: kPPPoint) + 1
+			var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 1
+			if pp > 100 {
+				pp = 100
+			}
 			self.purchaseButton.setTitle("\(pp)", for: .normal)
 			MPEDataManager.updatePP(pp: pp)
 		}
