@@ -895,13 +895,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.mainScrollView.contentOffset = CGPoint(x: size.width / 4, y: size.height / 4)
 		self.view.sendSubview(toBack: self.mainScrollView)
 		self.view.sendSubview(toBack: self.backImageView)
-		
-		for koma in gameTable.komas {
-			if koma.moji == "0" {
-				let index = Int.random(in: 0 ..< self.tableExtCell.count)
-				koma.backImageName = self.tableExtCell[index]
-			} 
-		}
 	}
 	//クエスト文字作成
 	func updateQuestString() {
@@ -1112,8 +1105,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			}
 			
 			let backImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: koma.frame.size.width, height: koma.frame.size.height))
-			backImageView.image = UIImage(named: "orange_0")
+			if let name = koma.backImageName {
+				backImageView.image = UIImage(named: name)
+			} else {
+				backImageView.image = UIImage(named: "orange_0")
+			}
 			koma.addSubview(backImageView)
+			koma.isHit = true
 			//フォント
 			let fontImageView =  UIImageView(frame: CGRect(x: 0, y: 0, width: koma.frame.size.width, height: koma.frame.size.height))
 			fontImageView.image = UIImage(named: "anim_\(koma.moji)")
@@ -1947,6 +1945,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			
 			
 			if hitWords.count > 0 {
+				let bkKomaIndex = Int.random(in: 0 ..< self.tableExtCell.count)
 				SoundManager.shared.startSE(type: .seCorrect)	//SE再生
 				//あたり
 				//print("単語数: \(hitWords.count)")
@@ -1971,6 +1970,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						var komas: [TableKomaView] = []
 						for info in infoData {
 							let koma = self.gameTable.komas[info.index]
+							koma.backImageName = self.tableExtCell[bkKomaIndex]
 							komas.append(koma)
 						}
 						

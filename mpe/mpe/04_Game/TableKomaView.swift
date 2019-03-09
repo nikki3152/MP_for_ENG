@@ -24,9 +24,15 @@ class TableKomaView: UIView {
 		v.frame = frame
 		v.isExclusiveTouch = false
 		v.setFont(moji: moji, type: type)
+		if moji == "0" || moji == " " || moji == "" {
+			v.isEmpty = true
+		} else {
+			v.isEmpty = false
+		}
 		return v
 	}
 	var moji: String = ""
+	var isEmpty: Bool = false
 	@IBOutlet weak var backImageView: UIImageView!
 	@IBOutlet weak var frontImageView: UIImageView!
 	@IBOutlet weak var typeImageView: UIImageView!
@@ -40,6 +46,7 @@ class TableKomaView: UIView {
 			_backImageName = newValue
 		}
 	}
+	
 	var _isHit: Bool = false
 	var isHit: Bool {
 		get {
@@ -50,7 +57,11 @@ class TableKomaView: UIView {
 			if let name = backImageName, _isHit {
 				self.backImageView.image = UIImage(named: name)
 			} else {
-				self.backImageView.image = UIImage(named: "table_tap")
+				if isEmpty {
+					self.backImageView.image = UIImage(named: "table")
+				} else {
+					self.backImageView.image = UIImage(named: "table_tap")
+				}
 			}
 		}
 	}
