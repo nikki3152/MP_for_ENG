@@ -497,6 +497,14 @@
 		54757D68223253BB00E5E349 /* light_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D5C223253BA00E5E349 /* light_1.png */; };
 		54757D69223253BB00E5E349 /* light_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D5D223253BA00E5E349 /* light_2.png */; };
 		54757D6A223253BB00E5E349 /* soft_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D5E223253BA00E5E349 /* soft_2.png */; };
+		54757D83223487A600E5E349 /* howto_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D7B223487A500E5E349 /* howto_7.png */; };
+		54757D84223487A600E5E349 /* howto_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D7C223487A500E5E349 /* howto_3.png */; };
+		54757D85223487A600E5E349 /* howto_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D7D223487A500E5E349 /* howto_1.png */; };
+		54757D86223487A600E5E349 /* howto_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D7E223487A500E5E349 /* howto_8.png */; };
+		54757D87223487A600E5E349 /* howto_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D7F223487A600E5E349 /* howto_4.png */; };
+		54757D88223487A600E5E349 /* howto_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D80223487A600E5E349 /* howto_5.png */; };
+		54757D89223487A600E5E349 /* howto_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D81223487A600E5E349 /* howto_2.png */; };
+		54757D8A223487A600E5E349 /* howto_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 54757D82223487A600E5E349 /* howto_6.png */; };
 		5489AF5D212B007A00A7D275 /* ejdic-hand-utf8.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */; };
 		5489AF5F212B00B500A7D275 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF5E212B00B500A7D275 /* DataManager.swift */; };
 		5489AF61212B010B00A7D275 /* MPEDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489AF60212B010B00A7D275 /* MPEDataManager.swift */; };
@@ -1536,6 +1544,14 @@
 		54757D5C223253BA00E5E349 /* light_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_1.png; sourceTree = "<group>"; };
 		54757D5D223253BA00E5E349 /* light_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_2.png; sourceTree = "<group>"; };
 		54757D5E223253BA00E5E349 /* soft_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soft_2.png; sourceTree = "<group>"; };
+		54757D7B223487A500E5E349 /* howto_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = howto_7.png; sourceTree = "<group>"; };
+		54757D7C223487A500E5E349 /* howto_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = howto_3.png; sourceTree = "<group>"; };
+		54757D7D223487A500E5E349 /* howto_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = howto_1.png; sourceTree = "<group>"; };
+		54757D7E223487A500E5E349 /* howto_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = howto_8.png; sourceTree = "<group>"; };
+		54757D7F223487A600E5E349 /* howto_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = howto_4.png; sourceTree = "<group>"; };
+		54757D80223487A600E5E349 /* howto_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = howto_5.png; sourceTree = "<group>"; };
+		54757D81223487A600E5E349 /* howto_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = howto_2.png; sourceTree = "<group>"; };
+		54757D82223487A600E5E349 /* howto_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = howto_6.png; sourceTree = "<group>"; };
 		5489AF5C212B007A00A7D275 /* ejdic-hand-utf8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ejdic-hand-utf8.txt"; sourceTree = "<group>"; };
 		5489AF5E212B00B500A7D275 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5489AF60212B010B00A7D275 /* MPEDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPEDataManager.swift; sourceTree = "<group>"; };
@@ -3368,6 +3384,14 @@
 		54D551AA21BCA66200980B92 /* 10_setting */ = {
 			isa = PBXGroup;
 			children = (
+				54757D7D223487A500E5E349 /* howto_1.png */,
+				54757D81223487A600E5E349 /* howto_2.png */,
+				54757D7C223487A500E5E349 /* howto_3.png */,
+				54757D7F223487A600E5E349 /* howto_4.png */,
+				54757D80223487A600E5E349 /* howto_5.png */,
+				54757D82223487A600E5E349 /* howto_6.png */,
+				54757D7B223487A500E5E349 /* howto_7.png */,
+				54757D7E223487A500E5E349 /* howto_8.png */,
 				54D551AB21BCA66200980B92 /* setting_icon_02.png */,
 				54D551AC21BCA66200980B92 /* setting_movie_button.png */,
 				54D551AD21BCA66200980B92 /* setting_icon_01.png */,
@@ -3793,6 +3817,7 @@
 				5429F37521CF052800E0E50F /* time9.png in Resources */,
 				5429F3BD21CF06B600E0E50F /* score_count_1.png in Resources */,
 				5467652C21F556E00025A5A9 /* biology（生物学）①.plist in Resources */,
+				54757D86223487A600E5E349 /* howto_8.png in Resources */,
 				54757D4B2232539B00E5E349 /* dark_2.png in Resources */,
 				5489AF5D212B007A00A7D275 /* ejdic-hand-utf8.txt in Resources */,
 				541268622221119E00CE3A35 /* select_icon_01.png in Resources */,
@@ -3849,6 +3874,7 @@
 				5429F3EF21CF06E400E0E50F /* chainmax.png in Resources */,
 				5429F36421CF052800E0E50F /* time4_danger.png in Resources */,
 				54D5526D21BCA66300980B92 /* cell_anime15.png in Resources */,
+				54757D83223487A600E5E349 /* howto_7.png in Resources */,
 				54D5527421BCA66300980B92 /* anim_L.png in Resources */,
 				540DD583222BD71900326D92 /* prev_19.png in Resources */,
 				542F447821B57FAD00C51AD6 /* behavior（行動）.plist in Resources */,
@@ -3916,6 +3942,7 @@
 				54D5526F21BCA66300980B92 /* obj_balloon_02.png in Resources */,
 				54F4E87E2223044100B3B710 /* Version6001.txt in Resources */,
 				5429F3B021CF06B600E0E50F /* score_count_7.png in Resources */,
+				54757D89223487A600E5E349 /* howto_2.png in Resources */,
 				54757D67223253BB00E5E349 /* vivid_4.png in Resources */,
 				54D552B121BCA66300980B92 /* C.png in Resources */,
 				540DD557222BD71900326D92 /* prev_37.png in Resources */,
@@ -4329,6 +4356,7 @@
 				54BCA6C522144B7A0054CEF4 /* gameclear_anim_word05.png in Resources */,
 				54757D4F2232539B00E5E349 /* dark_3.png in Resources */,
 				54D5524221BCA66300980B92 /* orange_10.png in Resources */,
+				54757D84223487A600E5E349 /* howto_3.png in Resources */,
 				54D5527821BCA66300980B92 /* obj_parasol_04.png in Resources */,
 				540DD59F222BD71900326D92 /* prev_79.png in Resources */,
 				5404EA47221AC2F1008A8B6D /* obj_up_01.png in Resources */,
@@ -4512,6 +4540,7 @@
 				54D5524921BCA66300980B92 /* obj_balloon_05.png in Resources */,
 				5404EA3C221AB808008A8B6D /* obj_flash_01.png in Resources */,
 				54C65F1D2225F7E3008D6574 /* ランダムスコア指定8.plist in Resources */,
+				54757D87223487A600E5E349 /* howto_4.png in Resources */,
 				54C65F212225F7E3008D6574 /* ランダムスコア指定6.plist in Resources */,
 				540DD63D222BD79B00326D92 /* select_10.png in Resources */,
 				54BCA6E322153BBB0054CEF4 /* gameclear_anim_effect19.png in Resources */,
@@ -4531,6 +4560,7 @@
 				54F4E8A42223044100B3B710 /* Version6004.txt in Resources */,
 				54D5529921BCA66300980B92 /* obj_parasol_03.png in Resources */,
 				5467650521EF24300025A5A9 /* SE_コマ配置音_通常.wav in Resources */,
+				54757D8A223487A600E5E349 /* howto_6.png in Resources */,
 				54D5533321BCA66300980B92 /* setting_panel_03.png in Resources */,
 				54D5527321BCA66300980B92 /* anim_Z.png in Resources */,
 				540DD56A222BD71900326D92 /* prev_62.png in Resources */,
@@ -4612,6 +4642,7 @@
 				54D5532621BCA66300980B92 /* taiki_panel_02.png in Resources */,
 				548FF98F21E164EE007CD3B0 /* gameclear_anim_logo.png in Resources */,
 				540DD5F7222BD79B00326D92 /* select_72.png in Resources */,
+				54757D88223487A600E5E349 /* howto_5.png in Resources */,
 				54D5528121BCA66300980B92 /* gameover_background.png in Resources */,
 				540DD602222BD79B00326D92 /* select_53.png in Resources */,
 				54D5525921BCA66300980B92 /* cell_anime11.png in Resources */,
@@ -4661,6 +4692,7 @@
 				5467650221EF24300025A5A9 /* BGM_神級ステージ_hit.wav in Resources */,
 				546764EF21EF24300025A5A9 /* SE_コンボ⑨.wav in Resources */,
 				54D552C321BCA66300980B92 /* orange_8.png in Resources */,
+				54757D85223487A600E5E349 /* howto_1.png in Resources */,
 				54D5522E21BCA66300980B92 /* ouji_02.png in Resources */,
 				540DD58F222BD71900326D92 /* prev_41.png in Resources */,
 				540DD623222BD79B00326D92 /* select_76.png in Resources */,

@@ -106,9 +106,33 @@ class SettingViewController: BaseViewController {
 	}
 	
 	//遊び方
+	var howtoNum: Int = 1
 	@IBOutlet weak var  howToPlayButton: UIButton!
 	@IBAction func howToPlayButtonAction(_ sender: UIButton) {
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
+		
+		let backView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+		backView.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.5)
+		self.view.addSubview(backView)
+		let tap_remove = UITapGestureRecognizer(target: self, action: #selector(self.tapRemove(_ :)))
+		backView.addGestureRecognizer(tap_remove)
+		
+		howtoNum = 1
+		let howtoView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width - 40, height: self.view.bounds.size.height - 40))
+		let name = "howto_\(howtoNum)"
+		let image = UIImage(named: name)
+		howtoView.image = image
+		howtoView.contentMode = .scaleAspectFit
+		howtoView.isUserInteractionEnabled = true
+		backView.addSubview(howtoView)
+		howtoView.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.bounds.size.height / 2)
+		let tap_next = UITapGestureRecognizer(target: self, action: #selector(self.tapNext(_ :)))
+		howtoView.addGestureRecognizer(tap_next)
+		
+		backView.alpha = 0
+		UIView.animate(withDuration: 0.25, animations: { 
+			backView.alpha = 1
+		}, completion: nil)
 	}
 	
 	//評価する
@@ -127,7 +151,7 @@ class SettingViewController: BaseViewController {
 		creditView.isUserInteractionEnabled = true
 		creditView.image = UIImage(named: "setting_credit")
 		self.view.addSubview(creditView)
-		let tap = UITapGestureRecognizer(target: self, action: #selector(self.tap(_ :)))
+		let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapRemove(_ :)))
 		creditView.addGestureRecognizer(tap)
 		
 		creditView.alpha = 0
@@ -136,13 +160,32 @@ class SettingViewController: BaseViewController {
 		}, completion: nil)
 	}
 	
-	@objc func tap(_ tap: UITapGestureRecognizer) {
+	@objc func tapRemove(_ tap: UITapGestureRecognizer) {
 		
 		if let v = tap.view {
 			UIView.animate(withDuration: 0.25, animations: { 
 				v.alpha = 0
 			}) { (stop) in
 				v.removeFromSuperview()
+			}
+		}
+	}
+	
+	@objc func tapNext(_ tap: UITapGestureRecognizer) {
+		
+		if let v = tap.view as? UIImageView {
+			howtoNum += 1
+			if howtoNum >= 9 {
+				howtoNum = 1
+				if let sv = v.superview {
+					UIView.animate(withDuration: 0.25, animations: { 
+						sv.alpha = 0
+					}) { (stop) in
+						sv.removeFromSuperview()
+					}
+				}
+			} else {
+				v.image = UIImage(named: "howto_\(howtoNum)")
 			}
 		}
 	}
