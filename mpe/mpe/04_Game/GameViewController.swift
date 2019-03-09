@@ -817,7 +817,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			self.updateQuestString()
 			
 			self.totalScore = questData.score
-			self.questCount = questData.count
+			//self.questCount = questData.count
 			self.answerWords = self.questData.answerWords
 			
 			if questDataBKList.count > 1 {
@@ -841,13 +841,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			v.removeFromSuperview()
 		}
 		
-		var imageName = "orange_0"
+		var imageName = "orange_1"
 		if self.questIndex >= 0 && self.questIndex <= 19 {
-			imageName = "orange_0"
+			imageName = "orange_1"
 			self.cardRightButton.setBackgroundImage(UIImage(named: "orange_right"), for: .normal)
 			self.cardLeftButton.setBackgroundImage(UIImage(named: "orange_left"), for: .normal)
 		} else {
-			imageName = "blue_0"
+			imageName = "blue_1"
 			self.cardRightButton.setBackgroundImage(UIImage(named: "blue_right"), for: .normal)
 			self.cardLeftButton.setBackgroundImage(UIImage(named: "blue_left"), for: .normal)
 		}
