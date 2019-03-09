@@ -90,6 +90,7 @@
             <connections>
                 <outlet property="ballonDisplayImageView" destination="4RH-0T-c0P" id="2lh-CL-p5U"/>
                 <outlet property="buttonBaseView" destination="bfp-mG-naY" id="6Nv-pk-yno"/>
+                <outlet property="dictModeButton" destination="nPo-Ke-VSS" id="2ay-0e-U17"/>
                 <outlet property="wordTableView" destination="19Z-ml-b2L" id="nUZ-Rm-4Ng"/>
             </connections>
             <point key="canvasLocation" x="617.54122938530736" y="117.59999999999999"/>

@@ -27,7 +27,14 @@ class StudyModeViewController: BaseViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		// Do any additional setup after loading the view.
+		if UserDefaults.standard.bool(forKey: kEnableQuickQuest) == false {
+			//一問一答未開放
+			self.quickQuestModeButton.isEnabled = false
+		}
+		if UserDefaults.standard.bool(forKey: kEnableDictionary) == false {
+			//辞書未開放
+			self.dictModeButton.isEnabled = false
+		}
 	}
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()

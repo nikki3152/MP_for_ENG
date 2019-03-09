@@ -114,18 +114,67 @@ class StageSelectViewController: BaseViewController {
 		set {
 			_currentPage = newValue
 			self.startIndex = (_currentPage - 1) * 10
+			//ポイント
+			let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+			//ステージ有効フラグ
+			let stageEnableAry = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
 			for i in 0 ..< self.stageButtons.count {
-				let stageNum = "\(NSString(format: "%02d", self.startIndex + i + 1))"
+				let stageIndex = self.startIndex + i
+				let stageNum = "\(NSString(format: "%02d", stageIndex + 1))"
 				let bt = self.stageButtons[i]
 				if Int(stageNum)! >= 84 {
 					bt.isHidden = true
 				} else {
 					bt.isHidden = false
-					if bt.isSelected {
-						bt.setImage(nil, for: .normal)
+					var pageEnabled = false
+					if stageIndex >= 0 && stageIndex <= 19 {
+						//初級
+						pageEnabled = true
+					}
+					if stageIndex >= 20 && stageIndex <= 39 {
+						//中級
+						if pp >= 20 {
+							pageEnabled = true
+						}
+					}
+					if stageIndex >= 40 && stageIndex <= 59 {
+						//上級
+						if pp >= 40 {
+							pageEnabled = true
+						}
+					}
+					if stageIndex >= 60 && stageIndex <= 79 {
+						//神級
+						if pp >= 60 {
+							pageEnabled = true
+						}
+					}
+					if stageIndex >= 80 && stageIndex <= 82 {
+						//ランダム
+						if pp >= 100 {
+							pageEnabled = true
+						}
+					}
+					
+					if pageEnabled {
+						//解放
+						let enable = stageEnableAry[stageIndex]
+						bt.isEnabled = enable
+						if enable {
+							if bt.isSelected {
+								bt.setImage(nil, for: .normal)
+							} else {
+								let image = UIImage(named: "select_\(stageNum)")
+								bt.setImage(image, for: .normal)
+							}
+						} else {
+							bt.isSelected = false
+							bt.setImage(nil, for: .normal)
+						}
 					} else {
-						let image = UIImage(named: "select_\(stageNum)")
-						bt.setImage(image, for: .normal)
+						//未解放
+						bt.isEnabled = false
+						bt.isSelected = false
 					}
 				}
 			}
@@ -280,6 +329,9 @@ class StageSelectViewController: BaseViewController {
 		purchaseView.closeHandler = {[weak self]() in
 			let pp = UserDefaults.standard.integer(forKey: kPPPoint)
 			self?.ppButton.setTitle("\(pp)", for: .normal)
+			self?.currentPage = self!._currentPage
+			let index = self!.stageButton1.tag + self!.startIndex
+			self?.selectStage(index: index)
 		}
 	}
 	@IBOutlet weak var ppInfoBallonImageView: UIImageView!
@@ -529,12 +581,19 @@ class StageSelectViewController: BaseViewController {
 		self.currentPage = page
 		
 		UserDefaults.standard.set(index, forKey: kCurrentQuestIndex)
+		//ステージ有効フラグ
+		let stageEnableAry = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
+		let stageEnabled = stageEnableAry[index] 
 		
 		let questData: QuestData = self.questDatas[index]
-		//問題名
-		let title = questData.questName
-		let stageNum = "stage\(NSString(format: "%02d", index + 1))" 
-		self.stageTitleLabel.text = "\(stageNum) \(title)"
+		if stageEnabled {
+			//問題名
+			let title = questData.questName
+			let stageNum = "stage\(NSString(format: "%02d", index + 1))" 
+			self.stageTitleLabel.text = "\(stageNum) \(title)"
+		} else {
+			self.stageTitleLabel.text = nil
+		}
 		//時間
 		let time = questData.time
 		if time == 0 {
@@ -544,20 +603,27 @@ class StageSelectViewController: BaseViewController {
 			let s = Int(time) % 60
 			self.timeLimitLabel?.text = "\(NSString(format: "%02d", m)) : \(NSString(format: "%02d", s))"
 		}
-		//アイコン
-		self.stageSelectedButton?.setImage(nil, for: .normal)
-		//サムネイル
-		self.stageSumbImageView.image = UIImage(named: "prev_\(NSString(format: "%02d", index + 1))")
-		//選択中点滅タイマー
-		self.selectTimer?.invalidate()
-		self.selectTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { [weak self](t) in
-			if self!.isSelOn {
-				self?.stageSelectedButton?.setBackgroundImage(UIImage(named: "select_box_a"), for: .selected)
-			} else {
-				self?.stageSelectedButton?.setBackgroundImage(UIImage(named: "select_box_b"), for: .selected)
-			}
-			self!.isSelOn = !self!.isSelOn
-		})
+		if stageEnabled {
+			//アイコン
+			self.stageSelectedButton?.setImage(nil, for: .normal)
+			//サムネイル
+			self.stageSumbImageView.image = UIImage(named: "prev_\(NSString(format: "%02d", index + 1))")
+			//選択中点滅タイマー
+			self.selectTimer?.invalidate()
+			self.selectTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { [weak self](t) in
+				if self!.isSelOn {
+					self?.stageSelectedButton?.setBackgroundImage(UIImage(named: "select_box_a"), for: .selected)
+				} else {
+					self?.stageSelectedButton?.setBackgroundImage(UIImage(named: "select_box_b"), for: .selected)
+				}
+				self!.isSelOn = !self!.isSelOn
+			})
+		} else {
+			//アイコン
+			self.stageSelectedButton?.setImage(nil, for: .normal)
+			//サムネイル
+			self.stageSumbImageView.image = UIImage(named: "select_pleview_center_inactive")
+		}
 		//ターゲットスコア
 		let strList = MPEDataManager.loadStringList(name: "mpe_ステージ別目標スコア", type: "csv")
 		if let tgScore = Int(strList[index]) {

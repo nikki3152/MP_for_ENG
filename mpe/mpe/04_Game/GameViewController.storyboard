@@ -43,11 +43,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fukidashi" translatesAutoresizingMaskIntoConstraints="NO" id="Cwi-8a-QQW">
-                                        <rect key="frame" x="21" y="3" width="77" height="202"/>
+                                        <rect key="frame" x="21" y="3" width="76" height="202"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sGA-J1-tgK">
-                                        <rect key="frame" x="29" y="14" width="69" height="154"/>
+                                        <rect key="frame" x="28" y="14" width="69" height="154"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mojikun_a_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="hlP-yQ-Ocs">

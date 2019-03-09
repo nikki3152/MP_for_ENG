@@ -2316,6 +2316,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		isEnablePause = false
 		SoundManager.shared.startBGM(type: .bgmStageClear)	//ジングル再生
 		
+		if self.questIndex < 82 {
+			//クリアフラグ設定
+			var stageEnableAry = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
+			stageEnableAry[self.questIndex + 1] = true
+			UserDefaults.standard.set(stageEnableAry, forKey: kEnableStageArry)
+		}
+		
 		self.gameTimer?.invalidate()
 		self.gameTimer = nil
 		chaDefTimer?.invalidate()
@@ -2531,28 +2538,40 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						self?.retry()
 					case .timeDouble:			//Timeを倍にする（動画）
 						print("Timeを倍にする（動画）")
-						if adVideoReward.isCanPlayVideo {
-							adVideoReward.playVideo()
-							SoundManager.shared.pauseBGM(true)
-							over.closeHandler = nil
-							over.removeFromSuperview()
-						} else {
-							let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
-							alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
-							self?.present(alert, animated: true, completion: nil)
-						}
+						
+						//MARK: 動画デバッグ
+						self!.adViewDidCloseVideo(adVideoReward, incentive: true)
+						over.closeHandler = nil
+						over.removeFromSuperview()
+						
+//						if adVideoReward.isCanPlayVideo {
+//							adVideoReward.playVideo()
+//							SoundManager.shared.pauseBGM(true)
+//							over.closeHandler = nil
+//							over.removeFromSuperview()
+//						} else {
+//							let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
+//							alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
+//							self?.present(alert, animated: true, completion: nil)
+//						}
 					case .next:					//次の問題へ進む（動画）
 						print("次の問題へ進む（動画）")
-						if adVideoReward.isCanPlayVideo {
-							adVideoReward.playVideo()
-							SoundManager.shared.pauseBGM(true)
-							over.closeHandler = nil
-							over.removeFromSuperview()
-						} else {
-							let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
-							alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
-							self?.present(alert, animated: true, completion: nil)
-						}
+						
+						//MARK: 動画デバッグ
+						self!.adViewDidCloseVideo(adVideoReward, incentive: true)
+						over.closeHandler = nil
+						over.removeFromSuperview()
+						
+//						if adVideoReward.isCanPlayVideo {
+//							adVideoReward.playVideo()
+//							SoundManager.shared.pauseBGM(true)
+//							over.closeHandler = nil
+//							over.removeFromSuperview()
+//						} else {
+//							let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
+//							alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
+//							self?.present(alert, animated: true, completion: nil)
+//						}
 					case .giveup:				//諦める
 						self?.gameTimer?.invalidate()
 						self?.gameTimer = nil

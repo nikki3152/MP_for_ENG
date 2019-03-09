@@ -17,7 +17,7 @@ class WaitingViewController: BaseViewController, ADViewVideoDelegate {
 			//ポイント
 			let pp = UserDefaults.standard.integer(forKey: kPPPoint) + 1
 			self.purchaseButton.setTitle("\(pp)", for: .normal)
-			UserDefaults.standard.set(pp, forKey: kPPPoint)
+			MPEDataManager.updatePP(pp: pp)
 		}
 	}
 	func adViewLoadVideo(_ adView: ADView, canLoad: Bool) {
@@ -112,14 +112,18 @@ class WaitingViewController: BaseViewController, ADViewVideoDelegate {
 	@IBAction func videoButtonAction(_ sender: Any) {
 		
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
-		if adVideoReward.isCanPlayVideo {
-			adVideoReward.playVideo()
-			SoundManager.shared.pauseBGM(true)
-		} else {
-			let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
-			alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
-			self.present(alert, animated: true, completion: nil)
-		}
+		
+		//MARK: 動画デバッグ
+		self.adViewDidPlayVideo(adVideoReward, incentive: true)
+
+//		if adVideoReward.isCanPlayVideo {
+//			adVideoReward.playVideo()
+//			SoundManager.shared.pauseBGM(true)
+//		} else {
+//			let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
+//			alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
+//			self.present(alert, animated: true, completion: nil)
+//		}
 	}
 	
 	//ポイント課金

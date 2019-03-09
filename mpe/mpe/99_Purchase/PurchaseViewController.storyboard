@@ -92,6 +92,16 @@
                                     <action selector="videoAdButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="rn2-tP-qSF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX6-0x-ZnG">
+                                <rect key="frame" x="59" y="15" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.051735617897727272" blue="0.058749112215909088" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="RESET"/>
+                                <connections>
+                                    <action selector="ppResetButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="cLq-12-hBl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sa8-eH-4Xz"/>
@@ -102,6 +112,7 @@
                         <outlet property="leftCharaImageView" destination="SgF-cb-QyO" id="xQm-hr-DMJ"/>
                         <outlet property="ppLabel" destination="eZM-cT-pSC" id="OX5-hx-JVf"/>
                         <outlet property="ppPurchaseButton" destination="qjv-f5-Uq0" id="VoR-iM-RKY"/>
+                        <outlet property="ppResetButton" destination="UX6-0x-ZnG" id="zwH-98-2HU"/>
                         <outlet property="ppTableView" destination="HAZ-jv-smd" id="DZi-Kr-wEK"/>
                         <outlet property="rightCharaImageView" destination="h6e-Jb-ceB" id="Z3i-qZ-0JT"/>
                         <outlet property="videoAdButton" destination="cpF-M1-wxY" id="Tij-If-ebd"/>

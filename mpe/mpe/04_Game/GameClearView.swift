@@ -41,6 +41,10 @@ class GameClearView: UIView, UITableViewDataSource, UITableViewDelegate {
 		self.wordTableView.dataSource = self
 		self.wordTableView.delegate = self
 		
+		if UserDefaults.standard.bool(forKey: kEnableDictionary) == false {
+			//辞書未開放
+			self.dictModeButton.isEnabled = false
+		}
 		self.chaMessages = MPEDataManager.loadStringList(name: "mpe_キャラセリフ文言_ゲームクリア", type: "csv")
 		
 		if self.textTimer == nil {
@@ -68,6 +72,7 @@ class GameClearView: UIView, UITableViewDataSource, UITableViewDelegate {
 		self.ballonMainLabel = bLabel
 	}
 	
+	@IBOutlet weak var dictModeButton: UIButton!
 	@IBAction func buttonAction(_ sender: UIButton) {
 		
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生

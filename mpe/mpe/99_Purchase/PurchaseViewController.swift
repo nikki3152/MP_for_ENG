@@ -88,7 +88,7 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 					pp = 100
 				}
 				self.ppLabel.text = "\(pp)"
-				UserDefaults.standard.set(pp, forKey: kPPPoint)
+				MPEDataManager.updatePP(pp: pp)
 				self.ppTableView.reloadData()
 			}
 			else if product_id == kProductID50 {
@@ -98,14 +98,14 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 					pp = 100
 				}
 				self.ppLabel.text = "\(pp)"
-				UserDefaults.standard.set(pp, forKey: kPPPoint)
+				MPEDataManager.updatePP(pp: pp)
 				self.ppTableView.reloadData()
 			}
 			else if product_id == kProductID100 {
 				//ポイント
 				let pp = 100
 				self.ppLabel.text = "\(pp)"
-				UserDefaults.standard.set(pp, forKey: kPPPoint)
+				MPEDataManager.updatePP(pp: pp)
 				self.ppTableView.reloadData()
 			}
 		}
@@ -135,7 +135,7 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 			//ポイント
 			let pp = UserDefaults.standard.integer(forKey: kPPPoint) + 1
 			self.ppLabel.text = "\(pp)"
-			UserDefaults.standard.set(pp, forKey: kPPPoint)
+			MPEDataManager.updatePP(pp: pp)
 			self.ppTableView.reloadData()
 		}
 	}
@@ -256,14 +256,17 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 	@IBAction func videoAdButtonAction(_ sender: Any) {
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		
-		if adVideoReward.isCanPlayVideo {
-			adVideoReward.playVideo()
-			SoundManager.shared.pauseBGM(true)
-		} else {
-			let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
-			alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
-			self.present(alert, animated: true, completion: nil)
-		}
+		//MARK: 動画デバッグ
+		self.adViewDidPlayVideo(adVideoReward, incentive: true)
+		
+//		if adVideoReward.isCanPlayVideo {
+//			adVideoReward.playVideo()
+//			SoundManager.shared.pauseBGM(true)
+//		} else {
+//			let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
+//			alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
+//			self.present(alert, animated: true, completion: nil)
+//		}
 	}
 	
 	//購入
@@ -321,4 +324,15 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		}
 	}
 	
+	
+	//PPリセットぼボタン
+	@IBOutlet weak var ppResetButton: UIButton!
+	@IBAction func ppResetButtonAction(_ sender: Any) {
+		
+		MPEDataManager.updatePP(pp: 0)
+		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		self.ppLabel.text = "\(pp)"
+		MPEDataManager.updatePP(pp: pp)
+		self.ppTableView.reloadData()
+	}
 }

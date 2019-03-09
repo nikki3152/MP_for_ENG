@@ -13,6 +13,9 @@ let kBGMOn: String = "kBGMOn"
 let kSEOn: String = "kSEOn"
 let kVoiceOn: String = "kVoiceOn"
 let kEnableCharaArry: String = "kEnableCharaArry"
+let kEnableStageArry: String = "kEnableStageArry"
+let kEnableQuickQuest: String = "kEnableQuickQuest"
+let kEnableDictionary: String = "kEnableDictionary"
 let kSelectedCharaType: String = "kSelectedCharaType"
 let kHiscore: String = "kHiscore"
 let kPPPoint: String = "kPPPoint"
@@ -45,6 +48,75 @@ enum MatchType: Int {
 }
 
 class MPEDataManager: DataManager {
+	
+	class func updatePP(pp: Int) {
+		
+		var setPP = pp
+		if setPP > 100 {
+			setPP = 100
+		}
+		UserDefaults.standard.set(setPP, forKey: kPPPoint)
+		if setPP >= 100 {
+			var stageFlgs = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
+			stageFlgs[0] = true		//初級
+			stageFlgs[20] = true	//中級
+			stageFlgs[40] = true	//上級
+			stageFlgs[60] = true	//神級
+			stageFlgs[80] = true	//ランダム
+			UserDefaults.standard.set(stageFlgs, forKey: kEnableStageArry)
+			UserDefaults.standard.set(true, forKey: kEnableQuickQuest)
+			UserDefaults.standard.set(true, forKey: kEnableDictionary)
+		}
+		else if setPP >= 90 {
+			var stageFlgs = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
+			stageFlgs[0] = true		//初級
+			stageFlgs[20] = true	//中級
+			stageFlgs[40] = true	//上級
+			stageFlgs[60] = true	//神級
+			UserDefaults.standard.set(stageFlgs, forKey: kEnableStageArry)
+			UserDefaults.standard.set(true, forKey: kEnableQuickQuest)
+			UserDefaults.standard.set(true, forKey: kEnableDictionary)
+		}
+		else if setPP >= 80 {
+			var stageFlgs = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
+			stageFlgs[0] = true		//初級
+			stageFlgs[20] = true	//中級
+			stageFlgs[40] = true	//上級
+			stageFlgs[60] = true	//神級
+			UserDefaults.standard.set(stageFlgs, forKey: kEnableStageArry)
+			UserDefaults.standard.set(true, forKey: kEnableDictionary)
+		}
+		else if setPP >= 60 {
+			var stageFlgs = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
+			stageFlgs[0] = true		//初級
+			stageFlgs[20] = true	//中級
+			stageFlgs[40] = true	//上級
+			stageFlgs[60] = true	//神級
+			UserDefaults.standard.set(stageFlgs, forKey: kEnableStageArry)
+		}
+		else if setPP >= 40 {
+			var stageFlgs = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
+			stageFlgs[0] = true		//初級
+			stageFlgs[20] = true	//中級
+			stageFlgs[40] = true	//上級
+			UserDefaults.standard.set(stageFlgs, forKey: kEnableStageArry)
+		}
+		else if setPP >= 20 {
+			var stageFlgs = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
+			stageFlgs[0] = true		//初級
+			stageFlgs[20] = true	//中級
+			UserDefaults.standard.set(stageFlgs, forKey: kEnableStageArry)
+		}
+		else if setPP == 0 {
+			var stageFlgs = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
+			for i in 1 ..< stageFlgs.count {
+				stageFlgs[i] = false
+			}
+			UserDefaults.standard.set(stageFlgs, forKey: kEnableStageArry)
+			UserDefaults.standard.set(false, forKey: kEnableQuickQuest)
+			UserDefaults.standard.set(false, forKey: kEnableDictionary)
+		}
+	}
 	
 	class func loadStringList(name: String, type: String) -> [String] {
 		
