@@ -26,19 +26,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_panel_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="9ul-R9-URv">
+                            <imageView tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_panel_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="9ul-R9-URv">
                                 <rect key="frame" x="0.0" y="0.0" width="188" height="414"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
-                            <imageView tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_panel_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="pTz-tI-S2F">
+                            <imageView tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_panel_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="pTz-tI-S2F">
                                 <rect key="frame" x="185" y="0.0" width="186" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
-                            <imageView tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_panel_03.png" translatesAutoresizingMaskIntoConstraints="NO" id="KJ7-c7-ohB">
+                            <imageView tag="3" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_panel_03.png" translatesAutoresizingMaskIntoConstraints="NO" id="KJ7-c7-ohB">
                                 <rect key="frame" x="370" y="0.0" width="184" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
-                            <imageView tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_panel_04.png" translatesAutoresizingMaskIntoConstraints="NO" id="fj2-To-vMb">
+                            <imageView tag="4" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taiki_panel_04.png" translatesAutoresizingMaskIntoConstraints="NO" id="fj2-To-vMb">
                                 <rect key="frame" x="551" y="0.0" width="188" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
