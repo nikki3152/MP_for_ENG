@@ -14,7 +14,6 @@ let kSEOn: String = "kSEOn"
 let kVoiceOn: String = "kVoiceOn"
 let kEnableCharaArry: String = "kEnableCharaArry"
 let kEnableStageArry: String = "kEnableStageArry"
-let kEnableQuickQuest: String = "kEnableQuickQuest"
 let kEnableDictionary: String = "kEnableDictionary"
 let kSelectedCharaType: String = "kSelectedCharaType"
 let kHiscore: String = "kHiscore"
@@ -64,7 +63,6 @@ class MPEDataManager: DataManager {
 			stageFlgs[60] = true	//神級
 			stageFlgs[80] = true	//ランダム
 			UserDefaults.standard.set(stageFlgs, forKey: kEnableStageArry)
-			UserDefaults.standard.set(true, forKey: kEnableQuickQuest)
 			UserDefaults.standard.set(true, forKey: kEnableDictionary)
 		}
 		else if setPP >= 90 {
@@ -74,7 +72,6 @@ class MPEDataManager: DataManager {
 			stageFlgs[40] = true	//上級
 			stageFlgs[60] = true	//神級
 			UserDefaults.standard.set(stageFlgs, forKey: kEnableStageArry)
-			UserDefaults.standard.set(true, forKey: kEnableQuickQuest)
 			UserDefaults.standard.set(true, forKey: kEnableDictionary)
 		}
 		else if setPP >= 80 {
@@ -113,7 +110,6 @@ class MPEDataManager: DataManager {
 				stageFlgs[i] = false
 			}
 			UserDefaults.standard.set(stageFlgs, forKey: kEnableStageArry)
-			UserDefaults.standard.set(false, forKey: kEnableQuickQuest)
 			UserDefaults.standard.set(false, forKey: kEnableDictionary)
 		}
 	}

@@ -27,10 +27,6 @@ class StudyModeViewController: BaseViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		if UserDefaults.standard.bool(forKey: kEnableQuickQuest) == false {
-			//一問一答未開放
-			self.quickQuestModeButton.isEnabled = false
-		}
 		if UserDefaults.standard.bool(forKey: kEnableDictionary) == false {
 			//辞書未開放
 			self.dictModeButton.isEnabled = false

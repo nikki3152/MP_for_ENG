@@ -33,7 +33,6 @@ class ViewController: UIViewController {
 			kBGMOn:true,
 			kSEOn:true,
 			kVoiceOn:true,
-			kEnableQuickQuest:false,
 			kEnableDictionary:false,
 			kEnableCharaArry:[true,false,false,false,false,false,false,false,false,false],
 			kEnableStageArry:[true,false,false,false,false,false,false,false,false,false,

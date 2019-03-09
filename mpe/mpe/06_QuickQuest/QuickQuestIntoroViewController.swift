@@ -29,6 +29,43 @@ class QuickQuestIntoroViewController: BaseViewController {
 		DataManager.animationFuwa(v: fire2, dy: 10, speed: 2.2)
 		DataManager.animationFuwa(v: fire3, dy: 10, speed: 2.3)
 		DataManager.animationFuwa(v: fire4, dy: 10, speed: 1.8)
+		//ポイント
+		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		if pp >= 90 {
+			self.button1.isEnabled = true
+			self.button2.isEnabled = true
+			self.button3.isEnabled = true
+			self.button4.isEnabled = true
+			self.button5.isEnabled = true
+		}
+		else if pp >= 60 {
+			self.button1.isEnabled = true
+			self.button2.isEnabled = true
+			self.button3.isEnabled = true
+			self.button4.isEnabled = true
+			self.button5.isEnabled = false
+		}
+		else if pp >= 40 {
+			self.button1.isEnabled = true
+			self.button2.isEnabled = true
+			self.button3.isEnabled = true
+			self.button4.isEnabled = false
+			self.button5.isEnabled = false
+		}
+		else if pp >= 20 {
+			self.button1.isEnabled = true
+			self.button2.isEnabled = true
+			self.button3.isEnabled = false
+			self.button4.isEnabled = false
+			self.button5.isEnabled = false
+		}
+		else {
+			self.button1.isEnabled = true
+			self.button2.isEnabled = false
+			self.button3.isEnabled = false
+			self.button4.isEnabled = false
+			self.button5.isEnabled = false
+		}
 	}
 	
 	
@@ -46,6 +83,11 @@ class QuickQuestIntoroViewController: BaseViewController {
 	}
 	
 	//スタート
+	@IBOutlet weak var button1: UIButton!
+	@IBOutlet weak var button2: UIButton!
+	@IBOutlet weak var button3: UIButton!
+	@IBOutlet weak var button4: UIButton!
+	@IBOutlet weak var button5: UIButton!
 	@IBAction func startButtonAction(_ sender: UIButton) {
 		
 		let tag = sender.tag

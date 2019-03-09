@@ -259,6 +259,11 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="D0P-Qz-tt3" id="UH6-sp-zc3"/>
+                        <outlet property="button1" destination="pnj-Kg-UJ0" id="BhC-1N-zIk"/>
+                        <outlet property="button2" destination="IKv-k5-KU5" id="qRQ-dH-MxG"/>
+                        <outlet property="button3" destination="PyC-Z6-nOp" id="OdV-YK-lt6"/>
+                        <outlet property="button4" destination="B8X-bo-0XD" id="7j1-1T-RUP"/>
+                        <outlet property="button5" destination="2UX-LQ-4Rs" id="8nY-Yz-tse"/>
                         <outlet property="fire1" destination="qBR-fn-11G" id="mPv-fb-ra9"/>
                         <outlet property="fire2" destination="pzF-wv-6xD" id="XhP-3v-1Ar"/>
                         <outlet property="fire3" destination="qqo-qa-TGh" id="Rjd-ON-7bq"/>
