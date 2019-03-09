@@ -2388,6 +2388,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						self?.chaDefTimer?.invalidate()
 						self?.chaDefTimer = nil
 						clear.closeHandler = nil
+						self?.selectCnt.selectStage(index: self!.questIndex)
 						clear.removeFromSuperview()
 						self?.remove()
 						SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
