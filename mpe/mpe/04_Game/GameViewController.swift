@@ -1750,7 +1750,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			else if c == "b" || c == "c" || c == "m" || c == "p" {
 				score += 3 * bc
 			}
-			else if c == "f" || c == "h" || c == "v" || c == "m" || c == "y" {
+			else if c == "f" || c == "h" || c == "v" || c == "w" || c == "y" {
 				score += 4 * bc 
 			}
 			else if c == "k" {
@@ -1995,15 +1995,15 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 								//スコアアニメーション
 								self.inScoreUp = true
 								let afterScore = self.totalScore + nScore
-								Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: { [weak self](t) in
-									var s = self!.totalScore + 10
+								Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true, block: { [weak self](t) in
+									var s = self!.totalScore + 50
 									if s >= afterScore {
 										s = afterScore
 										t.invalidate()
 										self?.inScoreUp = false
 										self?.totalScore = afterScore
 									} else {
-										self?.totalScore += 10
+										self?.totalScore += 50
 									}
 								})
 								
