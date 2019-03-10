@@ -85,6 +85,9 @@ struct QuestData {
 	var score: Int = 0		//スコア
 	var count: Int = 0		//クリア条件カウント
 	var answerWords: [String:String] = [:]
+	var backImageNames: [String?] = []
+	var isHits: [Bool] = []
+	var isEmpty: [Bool] = []
 	
 	init() {
 		
@@ -240,7 +243,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	var questIndex: Int = 0
 	let dataMrg = MPEDataManager()
 	var questData: QuestData!
-	//var questDataDef: QuestData!
 	var questDataBKList: [QuestData] = []
 	var questDataBKIndex: Int = 0
 	var cardSelectIndex: Int!
@@ -578,18 +580,14 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.totalScore = 0
 		self.nowScore = 0
 		
+		self.questData.score = self.totalScore
+		self.questData.answerWords = self.answerWords
+		
 		self.isEnablePause = false
 		self.isInEffect = false
 		
 		self.undoButton.isHidden = true
 		self.questBaseImageView.image = UIImage(named: "quest_base")
-		
-		self.questData.score = self.totalScore
-		self.questData.count = self.questCount
-		self.questData.answerWords = self.answerWords
-		self.questDataBKList.removeAll()
-		self.questDataBKList.append(questData)
-		self.questDataBKIndex = 0
 		
 		//BGM再生／背景変更
 		if self.questIndex >= 0 && self.questIndex <= 19 {
@@ -628,8 +626,21 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.updateCardScroll()
 		//ゲームテーブル
 		self.updateGametable()
+		for koma in self.gameTable.komas {
+			if koma.moji == "0" {
+				koma.isEmpty = true
+			}
+		}
 		//問題
 		self.updateQuestString()
+		self.questData.count = self.questCount
+		
+		//バックアップデータ初期化
+		self.questDataBKList.removeAll()
+		self.record()
+		self.undoButton.isHidden = true
+		self.questDataBKIndex = 0
+		
 		//文字くんメッセージ
 		self.updateMojikunString()
 		self.showMojikunString()
@@ -779,9 +790,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			self.questIndex += 1
 			self.questData = self.selectCnt.questData(at: self.questIndex)
 			if self.questData != nil {
-				self.questDataBKList.removeAll()
-				self.questDataBKList.append(questData)
-				self.questDataBKIndex = 0
+//				self.questDataBKList.removeAll()
+//				self.record()
+//				self.questDataBKIndex = 0
 				UserDefaults.standard.set(self.questIndex, forKey: kCurrentQuestIndex)
 				self.selectCnt.selectStage(index: questIndex)
 				self.startGameTimer()
@@ -818,12 +829,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			//手札
 			self.updateCardScroll()
 			//ゲームテーブル
-			self.updateGametable()
+			self.updateGametable(questData.backImageNames, questData.isHits, questData.isEmpty)
 			//問題
 			self.updateQuestString()
 			
+			self.questCount = questData.count
 			self.totalScore = questData.score
-			//self.questCount = questData.count
 			self.answerWords = self.questData.answerWords
 			
 			if questDataBKList.count > 1 {
@@ -878,7 +889,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 	}
 	//MARK: ゲームメインテーブル作成
-	func updateGametable() {
+	func updateGametable(_ backImageNames: [String?]? = nil, _ isHits: [Bool]? = nil, _ isEmpty: [Bool]? = nil) {
 		
 		//ゲームテーブル
 		for v in self.mainScrollView.subviews {
@@ -890,7 +901,10 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 													 height: self.questData.height,
 													 cellTypes: self.questData.table,
 													 types: self.questData.tableType,
-													 edit: false)
+													 edit: false,
+													 backImageNames: backImageNames,
+													 isHits: isHits, 
+													 isEmpty: isEmpty)
 		let size = self.gameTable.frame.size
 		self.gameTable.delegate = self
 		self.mainScrollView.addSubview(self.gameTable)
@@ -1117,7 +1131,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				backImageView.image = UIImage(named: "orange_0")
 			}
 			koma.addSubview(backImageView)
-			koma.isHit = true
+			
 			//フォント
 			let fontImageView =  UIImageView(frame: CGRect(x: 0, y: 0, width: koma.frame.size.width, height: koma.frame.size.height))
 			fontImageView.image = UIImage(named: "anim_\(koma.moji)")
@@ -1163,8 +1177,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					fontImageView.removeFromSuperview()
 					effectImageView.removeFromSuperview()
 					backImageView.removeFromSuperview()
-					koma.isHit = true
 				}
+				koma.isHit = true
 			}
 		}
 	}
@@ -2379,9 +2393,23 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				}
 				clear.wordList = wordList
 				s.view.addSubview(clear)
+				
+				//次のステージボタンの無効化
+				let pp = UserDefaults.standard.integer(forKey: kPPPoint)
 				if s.questIndex >= 82 {
 					clear.nextQuestButton.isEnabled = false
+				} else if s.questIndex == 79 && pp < 100 {
+					clear.nextQuestButton.isEnabled = false
+				} else if s.questIndex == 59 && pp < 80 {
+					clear.nextQuestButton.isEnabled = false
+				} else if s.questIndex == 39 && pp < 60 {
+					clear.nextQuestButton.isEnabled = false
+				} else if s.questIndex == 29 && pp < 40 {
+					clear.nextQuestButton.isEnabled = false
+				} else if s.questIndex == 19 && pp < 20 {
+					clear.nextQuestButton.isEnabled = false
 				}
+				
 				clear.closeHandler = {[weak self](res) in
 					self?.isGameEnd = false
 					self?.charaBaseView.isHidden = false
@@ -2535,9 +2563,23 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				}
 				over.wordList = wordList
 				s.view.addSubview(over)
+				
+				//次のステージボタンの無効化
+				let pp = UserDefaults.standard.integer(forKey: kPPPoint)
 				if s.questIndex >= 82 {
 					over.nextQuestButton.isEnabled = false
+				} else if s.questIndex == 79 && pp < 100 {
+					over.nextQuestButton.isEnabled = false
+				} else if s.questIndex == 59 && pp < 80 {
+					over.nextQuestButton.isEnabled = false
+				} else if s.questIndex == 39 && pp < 60 {
+					over.nextQuestButton.isEnabled = false
+				} else if s.questIndex == 29 && pp < 40 {
+					over.nextQuestButton.isEnabled = false
+				} else if s.questIndex == 19 && pp < 20 {
+					over.nextQuestButton.isEnabled = false
 				}
+				
 				if s.questData.time == 0 {
 					over.timeDoubleButton.isEnabled = false
 				}
@@ -2635,6 +2677,14 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.questData.score = self.totalScore
 		self.questData.count = self.questCount
 		self.questData.answerWords = self.answerWords
+		self.questData.isHits = []
+		self.questData.backImageNames = []
+		for i in 0 ..< self.gameTable.komas.count {
+			let koma = self.gameTable.komas[i]
+			self.questData.backImageNames.append(koma.backImageName)
+			self.questData.isHits.append(koma.isHit)
+			self.questData.isEmpty.append(koma.isEmpty)
+		}
 		self.questDataBKList.append(self.questData)
 		self.questDataBKIndex += 1
 		

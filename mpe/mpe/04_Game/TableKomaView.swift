@@ -24,11 +24,6 @@ class TableKomaView: UIView {
 		v.frame = frame
 		v.isExclusiveTouch = false
 		v.setFont(moji: moji, type: type)
-		if moji == "0" || moji == " " || moji == "" {
-			v.isEmpty = true
-		} else {
-			v.isEmpty = false
-		}
 		return v
 	}
 	var moji: String = ""
@@ -58,7 +53,11 @@ class TableKomaView: UIView {
 				self.backImageView.image = UIImage(named: name)
 			} else {
 				if isEmpty {
-					self.backImageView.image = UIImage(named: "table")
+					if let name = backImageName {
+						self.backImageView.image = UIImage(named: name)
+					} else {
+						self.backImageView.image = UIImage(named: "table")
+					}
 				} else {
 					self.backImageView.image = UIImage(named: "table_tap")
 				}
@@ -71,8 +70,19 @@ class TableKomaView: UIView {
 		self.moji = moji
 		if moji != "0" && moji != " " && moji != "" {
 			self.frontImageView.image = UIImage(named: moji)
-			self.backImageView.image = UIImage(named: "table_tap")
+			if isEmpty {
+				self.backImageView.image = UIImage(named: "table")
+			} else {
+				self.backImageView.image = UIImage(named: "table_tap")
+			}
 			self.isUserInteractionEnabled = false
+		} else {
+			self.frontImageView.image = nil
+//			if isEmpty {
+//				self.backImageView.image = UIImage(named: "table")
+//			} else {
+//				self.backImageView.image = UIImage(named: "table_tap")
+//			}
 		}
 		if let type = type {
 			if type == "DL" {

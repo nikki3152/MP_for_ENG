@@ -21,7 +21,7 @@ class GameTableView: UIView, TableKomaViewDelegate {
 	
 	var komas: [TableKomaView] = []
 	
-	class func gameTableView(size: CGSize, width: Int, height: Int, cellTypes: [String], types: [String], edit: Bool) -> GameTableView {
+	class func gameTableView(size: CGSize, width: Int, height: Int, cellTypes: [String], types: [String], edit: Bool, backImageNames: [String?]? = nil, isHits: [Bool]? = nil, isEmpty: [Bool]? = nil) -> GameTableView {
 		
 		let komaSize: CGFloat = 30
 		let tableW: CGFloat = size.width * 2
@@ -63,6 +63,15 @@ class GameTableView: UIView, TableKomaViewDelegate {
 				}
 				count += 1
 				table.komas.append(koma)
+			}
+		}
+		
+		if let names = backImageNames, let hits = isHits, let empty = isEmpty {
+			for i in 0 ..< table.komas.count {
+				let koma = table.komas[i]
+				koma.backImageName = names[i]
+				koma.isEmpty = empty[i]
+				koma.isHit = hits[i]
 			}
 		}
 		

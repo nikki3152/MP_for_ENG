@@ -258,7 +258,6 @@
 		54140F1C212BAFAB007C753B /* FontCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F1B212BAFAB007C753B /* FontCardView.swift */; };
 		54140F1E212BAFBC007C753B /* FontCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54140F1D212BAFBC007C753B /* FontCardView.xib */; };
 		54140F20212BB2F6007C753B /* GameTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F1F212BB2F6007C753B /* GameTableView.swift */; };
-		54140F22212BB302007C753B /* GameTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54140F21212BB302007C753B /* GameTableView.xib */; };
 		54140F24212BB3E3007C753B /* TableKomaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54140F23212BB3E3007C753B /* TableKomaView.swift */; };
 		54140F26212BB3EF007C753B /* TableKomaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54140F25212BB3EF007C753B /* TableKomaView.xib */; };
 		5429F36221CF052800E0E50F /* time6_danger.png in Resources */ = {isa = PBXBuildFile; fileRef = 5429F34921CF052400E0E50F /* time6_danger.png */; };
@@ -385,7 +384,6 @@
 		542F447721B57FAD00C51AD6 /* TTT（T縛り）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F446321B57FAC00C51AD6 /* TTT（T縛り）.plist */; };
 		542F447821B57FAD00C51AD6 /* behavior（行動）.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F446421B57FAD00C51AD6 /* behavior（行動）.plist */; };
 		542F447921B57FAD00C51AD6 /* crossword（クロスワード）③.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542F446521B57FAD00C51AD6 /* crossword（クロスワード）③.plist */; };
-		544271CA218BCC6F00622897 /* GameTableView-15.xib in Resources */ = {isa = PBXBuildFile; fileRef = 544271C9218BCC6F00622897 /* GameTableView-15.xib */; };
 		544271CC218C196B00622897 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544271CB218C196B00622897 /* LoadViewController.swift */; };
 		544271CE218C1CA800622897 /* SaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544271CD218C1CA800622897 /* SaveViewController.swift */; };
 		54433BDB2189D0C600CDBD3D /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54433BDA2189D0C600CDBD3D /* EditViewController.swift */; };
@@ -1305,7 +1303,6 @@
 		54140F1B212BAFAB007C753B /* FontCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCardView.swift; sourceTree = "<group>"; };
 		54140F1D212BAFBC007C753B /* FontCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontCardView.xib; sourceTree = "<group>"; };
 		54140F1F212BB2F6007C753B /* GameTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableView.swift; sourceTree = "<group>"; };
-		54140F21212BB302007C753B /* GameTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableView.xib; sourceTree = "<group>"; };
 		54140F23212BB3E3007C753B /* TableKomaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableKomaView.swift; sourceTree = "<group>"; };
 		54140F25212BB3EF007C753B /* TableKomaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableKomaView.xib; sourceTree = "<group>"; };
 		5429F34921CF052400E0E50F /* time6_danger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = time6_danger.png; sourceTree = "<group>"; };
@@ -1432,7 +1429,6 @@
 		542F446321B57FAC00C51AD6 /* TTT（T縛り）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TTT（T縛り）.plist"; sourceTree = "<group>"; };
 		542F446421B57FAD00C51AD6 /* behavior（行動）.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "behavior（行動）.plist"; sourceTree = "<group>"; };
 		542F446521B57FAD00C51AD6 /* crossword（クロスワード）③.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "crossword（クロスワード）③.plist"; sourceTree = "<group>"; };
-		544271C9218BCC6F00622897 /* GameTableView-15.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GameTableView-15.xib"; sourceTree = "<group>"; };
 		544271CB218C196B00622897 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		544271CD218C1CA800622897 /* SaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveViewController.swift; sourceTree = "<group>"; };
 		54433BDA2189D0C600CDBD3D /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
@@ -2822,8 +2818,6 @@
 				54140F1B212BAFAB007C753B /* FontCardView.swift */,
 				54140F1D212BAFBC007C753B /* FontCardView.xib */,
 				54140F1F212BB2F6007C753B /* GameTableView.swift */,
-				54140F21212BB302007C753B /* GameTableView.xib */,
-				544271C9218BCC6F00622897 /* GameTableView-15.xib */,
 				54140F23212BB3E3007C753B /* TableKomaView.swift */,
 				54140F25212BB3EF007C753B /* TableKomaView.xib */,
 			);
@@ -3808,7 +3802,6 @@
 				5429F3CA21CF06B600E0E50F /* 1.png in Resources */,
 				5429F3C221CF06B600E0E50F /* score_get_9.png in Resources */,
 				54D5526221BCA66300980B92 /* obj_balloon_03.png in Resources */,
-				54140F22212BB302007C753B /* GameTableView.xib in Resources */,
 				54CFB3E320DE22AF00057F08 /* WaitingViewController.storyboard in Resources */,
 				54D552E421BCA66300980B92 /* story_04.png in Resources */,
 				542F443B21B300DC00C51AD6 /* weather（天候）.plist in Resources */,
@@ -4337,7 +4330,6 @@
 				540DD57E222BD71900326D92 /* prev_53.png in Resources */,
 				540DD56D222BD71900326D92 /* prev_04.png in Resources */,
 				54D551EA21BCA66300980B92 /* select_mapchange_right_random.png in Resources */,
-				544271CA218BCC6F00622897 /* GameTableView-15.xib in Resources */,
 				542F446C21B57FAD00C51AD6 /* body（体）.plist in Resources */,
 				546764BE21EF1F6F0025A5A9 /* suffix（接尾辞）②.plist in Resources */,
 				540DD60B222BD79B00326D92 /* select_04.png in Resources */,
