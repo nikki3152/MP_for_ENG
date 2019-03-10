@@ -1901,7 +1901,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		if self.isInEffect {
 			return
 		}
-		//MARK: 得点計算
+		
 		let tableIndex = koma.tag
 		self.checkKomaSet = []
 		self.checkTableInfoH = []
@@ -1983,14 +1983,17 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						//!!!!!!!!!!!!!!
 						okWords += 1
 						self.answerWords[hitWord] = info	//回答済み単語入り
-						//スコア計算
+						//MARK: スコア計算
 						let score = self.makeScore(moji: infoData)
 						scores.append(score)
 						//コマの特定
 						var komas: [TableKomaView] = []
 						for info in infoData {
 							let koma = self.gameTable.komas[info.index]
-							koma.backImageName = self.tableExtCell[bkKomaIndex]
+							//print("[\(info.index)] \(koma.moji) : \(String(describing: koma.backImageName))")
+							if koma.backImageName == nil {
+								koma.backImageName = self.tableExtCell[bkKomaIndex]
+							}
 							komas.append(koma)
 						}
 						
@@ -2003,7 +2006,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 								}
 								effectCount += 1
 								
-								//スコア表示更新
+								//MARK: スコア表示更新
 								var isLast = false
 								if effectCount >= okWords {
 									isLast = true
@@ -2012,7 +2015,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 								
 								//self.totalScore += nScore
 								
-								//スコアアニメーション
+								//MARK: スコアアニメーション
 								self.inScoreUp = true
 								let afterScore = self.totalScore + nScore
 								Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true, block: { [weak self](t) in
