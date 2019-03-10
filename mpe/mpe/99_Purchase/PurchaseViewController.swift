@@ -327,8 +327,24 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		}
 	}
 	
+	//オールクリアボタン
+	@IBOutlet weak var allClearButton: UIButton!
+	@IBAction func allClearButtonAction(_ sender: Any) {
+		
+		MPEDataManager.updatePP(pp: 100)
+		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		self.ppLabel.text = "\(pp)"
+		MPEDataManager.updatePP(pp: pp)
+		self.ppTableView.reloadData()
+		
+		var stageEnableAry = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
+		for i in 0 ..< stageEnableAry.count {
+			stageEnableAry[i] = true
+		}
+		UserDefaults.standard.set(stageEnableAry, forKey: kEnableStageArry)
+	}
 	
-	//PPリセットぼボタン
+	//PPリセットボタン
 	@IBOutlet weak var ppResetButton: UIButton!
 	@IBAction func ppResetButtonAction(_ sender: Any) {
 		

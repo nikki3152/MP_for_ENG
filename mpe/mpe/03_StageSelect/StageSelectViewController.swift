@@ -116,8 +116,10 @@ class StageSelectViewController: BaseViewController {
 			self.startIndex = (_currentPage - 1) * 10
 			//ポイント
 			let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+			var pageEnabled = false
 			//ステージ有効フラグ
 			let stageEnableAry = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
+			let page1StStageEnable = stageEnableAry[startIndex]
 			for i in 0 ..< self.stageButtons.count {
 				let stageIndex = self.startIndex + i
 				let stageNum = "\(NSString(format: "%02d", stageIndex + 1))"
@@ -126,7 +128,6 @@ class StageSelectViewController: BaseViewController {
 					bt.isHidden = true
 				} else {
 					bt.isHidden = false
-					var pageEnabled = false
 					if stageIndex >= 0 && stageIndex <= 19 {
 						//初級
 						pageEnabled = true
@@ -201,14 +202,35 @@ class StageSelectViewController: BaseViewController {
 			let pageImage = UIImage(named: "select_stagemap_\(num)")
 			self.stagePageImgView.image = pageImage
 			
+			//先頭ステージ解放
+			if page1StStageEnable {
+				//時間を表示
+				targetScoreLabel.isHidden = false
+				timeLimitLabel.isHidden = false
+			} else {
+				//時間を隠す
+				targetScoreLabel.isHidden = true
+				timeLimitLabel.isHidden = true
+			}
+			
 			if _currentPage == 1 || _currentPage == 2 {
+				//初級
 				self.stageLeftButton.isHidden = true
 				self.stageRightButton.isHidden = false
 				self.stageLeftButton.setBackgroundImage(UIImage(named: "select_mapchange_left"), for: .normal)
 				self.stageRightButton.setBackgroundImage(UIImage(named: "select_mapchange_right_intermediate"), for: .normal)
 				self.backImageView.image = UIImage(named: "select_background_01")
+				ppInfoBallonImageView.isHidden = true
+				ppInfoBallonImageView.layer.removeAllAnimations()
 			}
 			else if _currentPage == 3 || _currentPage == 4 {
+				//中級
+				if page1StStageEnable == false && pp < 20 {
+					ppInfoBallonImageView.isHidden = false
+					MPEDataManager.animationFuwa(v: ppInfoBallonImageView, dy: 8, speed: 2.5)
+				} else {
+					ppInfoBallonImageView.isHidden = true
+				}
 				self.stageLeftButton.isHidden = false
 				self.stageRightButton.isHidden = false
 				self.stageLeftButton.setBackgroundImage(UIImage(named: "select_mapchange_left_biginner"), for: .normal)
@@ -216,6 +238,13 @@ class StageSelectViewController: BaseViewController {
 				self.backImageView.image = UIImage(named: "select_background_02")
 			}
 			else if _currentPage == 5 || _currentPage == 6 {
+				//上級
+				if page1StStageEnable == false && pp < 40 {
+					ppInfoBallonImageView.isHidden = false
+					MPEDataManager.animationFuwa(v: ppInfoBallonImageView, dy: 8, speed: 2.5)
+				} else {
+					ppInfoBallonImageView.isHidden = true
+				}
 				self.stageLeftButton.isHidden = false
 				self.stageRightButton.isHidden = false
 				self.stageLeftButton.setBackgroundImage(UIImage(named: "select_mapchange_left_intermediate"), for: .normal)
@@ -223,6 +252,13 @@ class StageSelectViewController: BaseViewController {
 				self.backImageView.image = UIImage(named: "select_background_03")
 			}
 			else if _currentPage == 7 || _currentPage == 8 {
+				//神級
+				if page1StStageEnable == false && pp < 60 {
+					ppInfoBallonImageView.isHidden = false
+					MPEDataManager.animationFuwa(v: ppInfoBallonImageView, dy: 8, speed: 2.5)
+				} else {
+					ppInfoBallonImageView.isHidden = true
+				}
 				self.stageLeftButton.isHidden = false
 				self.stageRightButton.isHidden = false
 				self.stageLeftButton.setBackgroundImage(UIImage(named: "select_mapchange_left_advanced"), for: .normal)
@@ -230,6 +266,13 @@ class StageSelectViewController: BaseViewController {
 				self.backImageView.image = UIImage(named: "select_background_04")
 			}
 			else if _currentPage == 9  {
+				//ランダム
+				if page1StStageEnable == false && pp < 100 {
+					ppInfoBallonImageView.isHidden = false
+					MPEDataManager.animationFuwa(v: ppInfoBallonImageView, dy: 8, speed: 2.5)
+				} else {
+					ppInfoBallonImageView.isHidden = true
+				}
 				self.stageLeftButton.isHidden = false
 				self.stageRightButton.isHidden = true
 				self.stageLeftButton.setBackgroundImage(UIImage(named: "select_mapchange_left_god"), for: .normal)
@@ -293,7 +336,6 @@ class StageSelectViewController: BaseViewController {
 		//ポイント
 		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
 		self.ppButton.setTitle("\(pp)", for: .normal)
-		ppInfoBallonImageView.isHidden = true
 		
     }
 	
@@ -305,6 +347,10 @@ class StageSelectViewController: BaseViewController {
 		
 		DataManager.animationFuwa(v: leftImageView, dx: 10, speed: 2.2)
 		DataManager.animationFuwa(v: rightImageView, dx: 10, speed: 2.0)
+		
+		let sumbFrame = stageSumbImageView.frame
+		stageLeftButton.center = CGPoint(x: sumbFrame.origin.x - (stageLeftButton.frame.size.width / 2), y: stageLeftButton.center.y)
+		stageRightButton.center = CGPoint(x: sumbFrame.origin.x + sumbFrame.size.width + (stageLeftButton.frame.size.width / 2), y: stageRightButton.center.y)
 	}
 	
 	//戻る

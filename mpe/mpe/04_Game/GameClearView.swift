@@ -73,6 +73,7 @@ class GameClearView: UIView, UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	@IBOutlet weak var dictModeButton: UIButton!
+	@IBOutlet weak var nextQuestButton: UIButton!
 	@IBAction func buttonAction(_ sender: UIButton) {
 		
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生

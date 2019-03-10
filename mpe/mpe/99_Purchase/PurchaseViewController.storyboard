@@ -76,7 +76,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HAZ-jv-smd">
-                                <rect key="frame" x="427" y="0.0" width="240" height="375"/>
+                                <rect key="frame" x="426" y="0.0" width="241" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -93,13 +93,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX6-0x-ZnG">
-                                <rect key="frame" x="59" y="15" width="62" height="30"/>
+                                <rect key="frame" x="59" y="15" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.051735617897727272" blue="0.058749112215909088" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="RESET"/>
                                 <connections>
                                     <action selector="ppResetButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="cLq-12-hBl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvI-ua-TfE">
+                                <rect key="frame" x="59" y="60" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.02849786931818182" green="0.012917258522727272" blue="0.95525568181818177" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="ALL CLEAR"/>
+                                <connections>
+                                    <action selector="allClearButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="2RS-0W-HyS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -107,6 +117,7 @@
                         <viewLayoutGuide key="safeArea" id="sa8-eH-4Xz"/>
                     </view>
                     <connections>
+                        <outlet property="allClearButton" destination="yvI-ua-TfE" id="WAP-ax-Gdj"/>
                         <outlet property="backButton" destination="Cei-QI-1Eh" id="i0f-Rs-knU"/>
                         <outlet property="infoImageView" destination="TB8-TL-Sbw" id="tyN-So-Eef"/>
                         <outlet property="leftCharaImageView" destination="SgF-cb-QyO" id="xQm-hr-DMJ"/>

@@ -68,6 +68,8 @@ class GameOverView: UIView, UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	@IBOutlet weak var buttonBaseView: UIView!
+	@IBOutlet weak var timeDoubleButton: UIButton!
+	@IBOutlet weak var nextQuestButton: UIButton!
 	@IBAction func buttonAction(_ sender: UIButton) {
 		
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生

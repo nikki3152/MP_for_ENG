@@ -99,6 +99,8 @@
             <connections>
                 <outlet property="ballonDisplayImageView" destination="d3u-cB-0bL" id="GGg-1O-2sG"/>
                 <outlet property="buttonBaseView" destination="UqL-zQ-c6g" id="dAJ-Mv-zfe"/>
+                <outlet property="nextQuestButton" destination="B2U-9T-Jp4" id="w0P-s0-v9g"/>
+                <outlet property="timeDoubleButton" destination="XfE-6n-0V8" id="ATM-GU-VXx"/>
                 <outlet property="wordTableView" destination="xXp-dS-cCi" id="bHx-cj-Xhm"/>
             </connections>
             <point key="canvasLocation" x="263" y="-382"/>

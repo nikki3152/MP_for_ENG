@@ -209,6 +209,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			}
 			else if gameOverResType == .next {
 				//次の問題
+				if self.questIndex < 82 {
+					//クリアフラグ設定
+					var stageEnableAry = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
+					stageEnableAry[self.questIndex + 1] = true
+					UserDefaults.standard.set(stageEnableAry, forKey: kEnableStageArry)
+				}
 				self.nextQuest()
 				gameOverResType = nil
 			}
@@ -2373,7 +2379,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				}
 				clear.wordList = wordList
 				s.view.addSubview(clear)
-				
+				if s.questIndex >= 82 {
+					clear.nextQuestButton.isEnabled = false
+				}
 				clear.closeHandler = {[weak self](res) in
 					self?.isGameEnd = false
 					self?.charaBaseView.isHidden = false
@@ -2527,7 +2535,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				}
 				over.wordList = wordList
 				s.view.addSubview(over)
-				
+				if s.questIndex >= 82 {
+					over.nextQuestButton.isEnabled = false
+				}
+				if s.questData.time == 0 {
+					over.timeDoubleButton.isEnabled = false
+				}
 				over.closeHandler = {[weak self](res) in
 					self?.isGameEnd = false
 					self?.charaBaseView.isHidden = false
