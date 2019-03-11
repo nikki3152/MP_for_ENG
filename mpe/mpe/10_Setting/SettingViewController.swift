@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class SettingViewController: BaseViewController {
 
@@ -139,6 +140,8 @@ class SettingViewController: BaseViewController {
 	@IBOutlet weak var reviewButton: UIButton!
 	@IBAction func reviewButtonAcgtion(_ sender: UIButton) {
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
+		
+		SKStoreReviewController.requestReview()
 	}
 	
 	//クレジット
