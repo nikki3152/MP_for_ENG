@@ -1991,9 +1991,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						for info in infoData {
 							let koma = self.gameTable.komas[info.index]
 							//print("[\(info.index)] \(koma.moji) : \(String(describing: koma.backImageName))")
-							if koma.backImageName == nil {
-								koma.backImageName = self.tableExtCell[bkKomaIndex]
-							}
+							koma.backImageName = self.tableExtCell[bkKomaIndex]
 							komas.append(koma)
 						}
 						
