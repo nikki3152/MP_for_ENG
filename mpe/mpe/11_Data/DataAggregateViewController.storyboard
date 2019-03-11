@@ -27,6 +27,49 @@
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="data_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="SpB-5Z-R0t">
+                                <rect key="frame" x="308" y="45" width="50" height="284"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h7r-nG-nIw">
+                                <rect key="frame" x="83" y="40" width="498" height="293"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="はいすこあ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i39-SC-x6S">
+                                        <rect key="frame" x="3" y="3" width="114" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="23"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3nX-97-LYF">
+                                        <rect key="frame" x="118" y="23" width="120" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="0eo-Qz-gdY">
+                                                <rect key="frame" x="98" y="10" width="24" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="cpW-y8-rZd">
+                                                <rect key="frame" x="74" y="10" width="24" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fpm-KK-dPI">
+                                                <rect key="frame" x="50" y="10" width="24" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="wIS-PT-R6x">
+                                                <rect key="frame" x="26" y="10" width="24" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="eoa-Ny-mu5">
+                                                <rect key="frame" x="2" y="10" width="24" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YA9-cE-8rJ">
                                 <rect key="frame" x="15" y="15" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -35,38 +78,63 @@
                                     <action selector="backButtonAction:" destination="zUL-F4-Wsj" eventType="touchUpInside" id="whc-1c-UJC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="はいすこあ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i39-SC-x6S">
-                                <rect key="frame" x="67" y="45" width="129" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="data_mojichan.png" translatesAutoresizingMaskIntoConstraints="NO" id="5t7-cE-ZED">
+                                <rect key="frame" x="537" y="245" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0A-Om-iHv">
+                                <rect key="frame" x="20" y="162" width="46" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="data_next.png"/>
+                                <connections>
+                                    <action selector="leftButtonAction:" destination="zUL-F4-Wsj" eventType="touchUpInside" id="x7t-um-q7K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4Y-BB-S0g">
+                                <rect key="frame" x="601" y="162" width="46" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="data_back.png"/>
+                                <connections>
+                                    <action selector="rightButtonAction:" destination="zUL-F4-Wsj" eventType="touchUpInside" id="pKf-Ic-HQo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2f-UM-eN7">
+                                <rect key="frame" x="299" y="344" width="69" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="23"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="data_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="SpB-5Z-R0t">
-                                <rect key="frame" x="308" y="45" width="50" height="284"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="data_mojichan.png" translatesAutoresizingMaskIntoConstraints="NO" id="5t7-cE-ZED">
-                                <rect key="frame" x="517" y="225" width="130" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LDI-LC-QuE"/>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="YA9-cE-8rJ" id="ZZZ-xV-OgG"/>
+                        <outlet property="baseView" destination="h7r-nG-nIw" id="O7U-9G-x7o"/>
+                        <outlet property="leftButton" destination="G0A-Om-iHv" id="mJx-LX-BWr"/>
+                        <outlet property="pageInfoLabel" destination="p2f-UM-eN7" id="txW-Uh-uiu"/>
+                        <outlet property="rightButton" destination="Z4Y-BB-S0g" id="NXA-SK-tmE"/>
+                        <outlet property="scoreBaseView" destination="3nX-97-LYF" id="qyx-Zk-wNT"/>
+                        <outlet property="scoreImgView0" destination="0eo-Qz-gdY" id="9eM-mc-0cv"/>
+                        <outlet property="scoreImgView1" destination="cpW-y8-rZd" id="68Z-o9-1yn"/>
+                        <outlet property="scoreImgView2" destination="Fpm-KK-dPI" id="dFV-2O-0E1"/>
+                        <outlet property="scoreImgView3" destination="wIS-PT-R6x" id="kK4-bc-47X"/>
+                        <outlet property="scoreImgView4" destination="eoa-Ny-mu5" id="3ap-QX-ebW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87M-Xh-ZyL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="185.75712143928038" y="135.19999999999999"/>
+            <point key="canvasLocation" x="184.82142857142856" y="133.33333333333334"/>
         </scene>
     </scenes>
     <resources>
+        <image name="0.png" width="80" height="80"/>
         <image name="bt_back.png" width="70" height="70"/>
+        <image name="data_back.png" width="93" height="101"/>
         <image name="data_background.png" width="1920" height="1080"/>
         <image name="data_line.png" width="100" height="789"/>
         <image name="data_mojichan.png" width="301" height="301"/>
+        <image name="data_next.png" width="93" height="101"/>
     </resources>
 </document>
