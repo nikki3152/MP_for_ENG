@@ -71,7 +71,7 @@
                     </subviews>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xXp-dS-cCi">
-                    <rect key="frame" x="0.0" y="31" width="153" height="344"/>
+                    <rect key="frame" x="0.0" y="31" width="154" height="344"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
@@ -80,11 +80,11 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fukidashi" translatesAutoresizingMaskIntoConstraints="NO" id="lnb-9J-ybf">
-                            <rect key="frame" x="29" y="8" width="92" height="253"/>
+                            <rect key="frame" x="29" y="8" width="93" height="253"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d3u-cB-0bL">
-                            <rect key="frame" x="29" y="39" width="92" height="166"/>
+                            <rect key="frame" x="29" y="39" width="93" height="166"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mojikun_b_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="6mF-aU-qI3">

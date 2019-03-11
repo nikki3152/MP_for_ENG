@@ -23,10 +23,11 @@ class FontCardView: UIView {
 		}
 		set {
 			_isWildCard = newValue
+			let val = MPEDataManager.mojiValue(c: _moji)
 			if _isWildCard {
-				self.backImageView.image = UIImage(named: "pink_1")
+				self.backImageView.image = UIImage(named: "pink_\(val)")
 			} else {
-				self.backImageView.image = UIImage(named: "orange_1")
+				self.backImageView.image = UIImage(named: "orange_\(val)")
 			}
 		}
 	}
@@ -55,6 +56,12 @@ class FontCardView: UIView {
 		set {
 			_moji = newValue
 			self.frontImageView.image = UIImage(named: moji)
+			let val = MPEDataManager.mojiValue(c: _moji)
+			if _isWildCard {
+				self.backImageView.image = UIImage(named: "pink_\(val)")
+			} else {
+				self.backImageView.image = UIImage(named: "orange_\(val)")
+			}
 		}
 	}
 	

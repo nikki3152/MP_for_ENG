@@ -858,13 +858,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			v.removeFromSuperview()
 		}
 		
-		var imageName = "orange_1"
+		//var imageName = "orange_1"
 		if self.questIndex >= 0 && self.questIndex <= 19 {
-			imageName = "orange_1"
+			//imageName = "orange_1"
 			self.cardRightButton.setBackgroundImage(UIImage(named: "orange_right"), for: .normal)
 			self.cardLeftButton.setBackgroundImage(UIImage(named: "orange_left"), for: .normal)
 		} else {
-			imageName = "blue_1"
+			//imageName = "blue_1"
 			self.cardRightButton.setBackgroundImage(UIImage(named: "blue_right"), for: .normal)
 			self.cardLeftButton.setBackgroundImage(UIImage(named: "blue_left"), for: .normal)
 		}
@@ -880,7 +880,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			if self.questData.wildCardLen > i {
 				cardView.isWildCard = true
 			} else {
-				cardView.backImageView.image = UIImage(named: imageName)
+				cardView.isWildCard = false
+				//cardView.backImageView.image = UIImage(named: imageName)
 			}
 			self.cardViewList.append(cardView)
 		}

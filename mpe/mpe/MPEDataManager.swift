@@ -48,6 +48,34 @@ enum MatchType: Int {
 
 class MPEDataManager: DataManager {
 	
+	class func mojiValue(c: String) -> Int {
+		
+		let cc = c.lowercased()
+		var value: Int = 0
+		if cc == "a" || cc == "e" || cc == "i" || cc == "l" || cc == "n" || cc == "o" || cc == "r" || cc == "s" || cc == "t" || cc == "u" {
+			value = 1
+		}
+		else if cc == "d" || cc == "g" {
+			value = 2
+		}
+		else if cc == "b" || cc == "c" || cc == "m" || cc == "p" {
+			value = 3
+		}
+		else if cc == "f" || cc == "h" || cc == "v" || cc == "w" || cc == "y" {
+			value = 4 
+		}
+		else if cc == "k" {
+			value = 5 
+		}
+		else if cc == "j" || cc == "x" {
+			value = 8 
+		}
+		else if cc == "q" || cc == "z" {
+			value = 10 
+		}
+		return value
+	}
+	
 	class func updatePP(pp: Int) {
 		
 		var setPP = pp
