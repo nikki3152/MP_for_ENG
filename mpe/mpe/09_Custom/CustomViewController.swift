@@ -17,7 +17,18 @@ class CustomViewController: BaseViewController {
 		}
 		set {
 			_customChara = newValue
+			if let shippo = charaImageView.viewWithTag(99) {
+				shippo.removeFromSuperview()
+			}
 			self.charaImageView.image = UIImage(named: "\(_customChara.rawValue)_01")
+			if _customChara == .taiyokun {
+				let shippoView = UIImageView(frame: CGRect(x: 0, y: 0, width: charaImageView.frame.size.width, height: charaImageView.frame.size.height))
+				shippoView.contentMode = .scaleAspectFit
+				shippoView.image = UIImage(named: "taiyokun_shippo_01")
+				shippoView.tag = 99
+				charaImageView.addSubview(shippoView)
+				DataManager.animationInfinityRotate(v: shippoView, speed: 0.1)
+			}
 		}
 	}
 	
