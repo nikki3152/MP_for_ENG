@@ -198,8 +198,6 @@ class ADView: UIView, ADFmyMovieRewardDelegate {
 	// 広告の表示を最後まで終わったか 
 	func adsDidCompleteShow() {
 		
-		self.adfurikunMovieInterstitial?.load()
-		self.adfurikunMovieReward?.load()
 		print("ADF 動画の表示を最後まで終わった")
 		if self.adViewType == .videoReward {
 			self.videoIncentive = true
@@ -223,6 +221,8 @@ class ADView: UIView, ADFmyMovieRewardDelegate {
 	// 広告を閉じた時のイベント 
 	func adsDidHide() {
 		
+		self.adfurikunMovieInterstitial?.load()
+		self.adfurikunMovieReward?.load()
 		print("ADF 動画を閉じた")
 		if self.adViewType == .videoReward {
 			self.videoDelagate?.adViewDidCloseVideo(self, incentive: self.videoIncentive)
