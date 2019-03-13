@@ -117,16 +117,16 @@ class WaitingViewController: BaseViewController, ADViewVideoDelegate {
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		
 		//MARK: 動画デバッグ
-		self.adViewDidPlayVideo(adVideoReward, incentive: true)
+		//self.adViewDidPlayVideo(adVideoReward, incentive: true)
 
-//		if adVideoReward.isCanPlayVideo {
-//			adVideoReward.playVideo()
-//			SoundManager.shared.pauseBGM(true)
-//		} else {
-//			let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
-//			alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
-//			self.present(alert, animated: true, completion: nil)
-//		}
+		if adVideoReward.isCanPlayVideo {
+			adVideoReward.playVideo()
+			SoundManager.shared.pauseBGM(true)
+		} else {
+			let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
+			self.present(alert, animated: true, completion: nil)
+		}
 	}
 	
 	//ポイント課金

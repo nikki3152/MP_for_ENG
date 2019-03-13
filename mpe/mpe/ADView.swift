@@ -104,6 +104,7 @@ class ADView: UIView, ADFmyMovieRewardDelegate {
 				let appID = ADNetworkType.adfurikun.adVideoInterstisialID()
 				ADFmyMovieInterstitial.initialize(withAppID: appID, viewController: self.rootViewCnt)
 				self.adfurikunMovieInterstitial = ADFmyMovieInterstitial.getInstance(appID, delegate: self)
+				self.adfurikunMovieInterstitial?.load()
 			}
 		}
 		else if adType == .videoReward {
@@ -115,6 +116,7 @@ class ADView: UIView, ADFmyMovieRewardDelegate {
 					let appID = adNTType.adVideoRewardID()
 					ADFmyMovieReward.initialize(withAppID: appID, viewController: self.rootViewCnt)
 					self.adfurikunMovieReward = ADFmyMovieReward.getInstance(appID, delegate: self)
+					self.adfurikunMovieReward?.load()
 				}
 			}
 		}
@@ -176,7 +178,13 @@ class ADView: UIView, ADFmyMovieRewardDelegate {
 		} else {
 			
 		}
-	}   
+	}
+	// 広告の表示準備が失敗した
+	func AdsFetchFailed(appID: String, error: NSError) {
+		
+		print("ADF 広告の表示準備が失敗: \(error.localizedDescription)")
+		
+	} 
 	// 広告の表示が開始したか 
 	func adsDidShow(_ adnetworkKey: String) {
 		
@@ -190,6 +198,8 @@ class ADView: UIView, ADFmyMovieRewardDelegate {
 	// 広告の表示を最後まで終わったか 
 	func adsDidCompleteShow() {
 		
+		self.adfurikunMovieInterstitial?.load()
+		self.adfurikunMovieReward?.load()
 		print("ADF 動画の表示を最後まで終わった")
 		if self.adViewType == .videoReward {
 			self.videoIncentive = true
