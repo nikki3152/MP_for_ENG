@@ -588,6 +588,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.answerWords = [:]
 		self.totalScore = 0
 		self.nowScore = 0
+		self.messageIndex = 0
 		
 		self.questData.score = self.totalScore
 		self.questData.answerWords = self.answerWords
@@ -2682,7 +2683,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					case .timeDouble:			//Timeを倍にする（動画）
 						print("Timeを倍にする（動画）")
 						
-						//MARK: 動画デバッグ
+						// 動画デバッグ
 //						self!.adViewDidCloseVideo(adVideoReward, incentive: true)
 //						over.closeHandler = nil
 //						over.removeFromSuperview()
@@ -2700,12 +2701,13 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					case .next:					//次の問題へ進む（動画）
 						print("次の問題へ進む（動画）")
 						
-						//MARK: 動画デバッグ
+						// 動画デバッグ
 //						self!.adViewDidCloseVideo(adVideoReward, incentive: true)
 //						over.closeHandler = nil
 //						over.removeFromSuperview()
 						
 						if adVideoReward.isCanPlayVideo {
+							adVideoReward.videoDelagate = self
 							adVideoReward.playVideo()
 							SoundManager.shared.pauseBGM(true)
 							over.closeHandler = nil
