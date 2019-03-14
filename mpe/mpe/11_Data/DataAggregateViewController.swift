@@ -79,34 +79,93 @@ class DataAggregateViewController: BaseViewController {
 			
 			let userDef = UserDefaults.standard
 			//トータルスコア
-			let hiScore = userDef.integer(forKey: kHiscore)
+			let hiScore = userDef.integer(forKey: kTotalScore)
 			self.page1.totalScore = hiScore
 			//プレイ時間
-			self.page1.playTimeLabel.text = "00:00:00"
+			let time = userDef.double(forKey: kAlllPlayTimes)
+			let h = Int(time / 3600)
+			var m = Int(time / 60)
+			if m >= 60 {
+				m = m - (h * 60) 
+			}
+			let s = Int(time) % 60
+			self.page1.playTimeLabel.text = "\(NSString(format: "%02d", h)):\(NSString(format: "%02d", m)):\(NSString(format: "%02d", s))"
 			//ゲームクリア回数
-			self.page1.gameClearLabel.text = "---回"
+			let gameClearCount = userDef.integer(forKey: kGameClearCount)
+			self.page1.gameClearLabel.text = "\(gameClearCount)回"
 			//ゲームオーバー回数
-			self.page1.gameOverLabel.text = "---回"
+			let gameOverCount = userDef.integer(forKey: kGameOverCount)
+			self.page1.gameOverLabel.text = "\(gameOverCount)回"
 			//揃えた英単語数
-			self.page1.gameWordsLabel.text = "---個"
+			let gameWordsCount = userDef.integer(forKey: kGameWordsCount)
+			self.page1.gameWordsLabel.text = "\(gameWordsCount)個"
 			
 			//ランダムモード（クリア回数／挑戦回数）
 			//文字数
-			self.page1.gandomWordsLabel.text = "-- / --"
+			let randomWordPlayCount = userDef.integer(forKey: kRandomWordPlayCount)
+			let randomWordClearCount = userDef.integer(forKey: kRandomWordClearCount)
+			self.page1.gandomWordsLabel.text = "\(randomWordClearCount) 回 / \(randomWordPlayCount) 回"
 			//スコア
-			self.page1.gandomScoreLabel.text = "-- / --"
+			let randomScorePlayCount = userDef.integer(forKey: kRandomScorePlayCount)
+			let randomScoreClearCount = userDef.integer(forKey: kRandomScoreClearCount)
+			self.page1.gandomScoreLabel.text = "\(randomScoreClearCount) 回 / \(randomScorePlayCount) 回"
 			
 			//一問一答（正答率／平均解答時間）
 			//初級
-			self.page1.qqBiginnerLabel.text = "-- / --"
+			let biginnerTimes = userDef.double(forKey: kQuickBiginnerTimes)
+			if biginnerTimes == 0 {
+				self.page1.qqBiginnerLabel.text = "0 ％ / 0.0 Sec"
+			} else {
+				let biginnerCount = userDef.double(forKey: kQuickBiginnerCount)
+				let biginnerCorrectCount = userDef.double(forKey: kQuickBiginnerCorrectCount)
+				let bigginerTimeAvr: Double =  biginnerTimes / biginnerCount
+				let bigginerCorrectPer: Double =  (biginnerCorrectCount / biginnerCount) * 100
+				self.page1.qqBiginnerLabel.text = "\(NSString(format: "%.0f", bigginerCorrectPer))％ / \(NSString(format: "%.1f", bigginerTimeAvr)) Sec"
+			}
 			//中級
-			self.page1.qqIntermediateLabel.text = "-- / --"
+			let intermediateTimes = userDef.double(forKey: kQuickIntermediateTimes)
+			if intermediateTimes == 0 {
+				self.page1.qqIntermediateLabel.text = "0 ％ / 0.0 Sec"
+			} else {
+				let intermediateCount = userDef.double(forKey: kQuickBiginnerCount)
+				let intermediateCorrectCount = userDef.double(forKey: kQuickBiginnerCorrectCount)
+				let intermediateTimeAvr: Double =  intermediateTimes / intermediateCount
+				let intermediateCorrectPer: Double =  (intermediateCorrectCount / intermediateCount) * 100
+				self.page1.qqIntermediateLabel.text = "\(NSString(format: "%.0f", intermediateCorrectPer))％ / \(NSString(format: "%.1f", intermediateTimeAvr)) Sec"
+			}
 			//上級
-			self.page1.qqAdvancedLabel.text = "-- / --"
+			let advancedTimes = userDef.double(forKey: kQuickAdvancedTimes)
+			if advancedTimes == 0 {
+				self.page1.qqAdvancedLabel.text = "0 ％ / 0.0 Sec"
+			} else {
+				let advancedCount = userDef.double(forKey: kQuickAdvancedCount)
+				let advancedCorrectCount = userDef.double(forKey: kQuickAdvancedCorrectCount)
+				let advancedTimeAvr: Double =  advancedTimes / advancedCount
+				let advancedCorrectPer: Double =  (advancedCorrectCount / advancedCount) * 100
+				self.page1.qqAdvancedLabel.text = "\(NSString(format: "%.0f", advancedCorrectPer))％ / \(NSString(format: "%.1f", advancedTimeAvr)) Sec"
+			}
 			//神級
-			self.page1.qqGodLabel.text = "-- / --"
+			let godTimes = userDef.double(forKey: kQuickGodTimes)
+			if godTimes == 0 {
+				self.page1.qqGodLabel.text = "0 ％ / 0.0 Sec"
+			} else {
+				let godCount = userDef.double(forKey: kQuickGodCount)
+				let godCorrectCount = userDef.double(forKey: kQuickGodCorrectCount)
+				let godTimeAvr: Double =  godTimes / godCount
+				let godCorrectPer: Double =  (godCorrectCount / godCount) * 100
+				self.page1.qqGodLabel.text = "\(NSString(format: "%.0f", godCorrectPer))％ / \(NSString(format: "%.1f", godTimeAvr)) Sec"
+			}
 			//ランダム
-			self.page1.qqRandomLabel.text = "-- / --"
+			let randomTimes = userDef.double(forKey: kQuickRandomTimes)
+			if randomTimes == 0 {
+				self.page1.qqRandomLabel.text = "0 ％ / 0.0 Sec"
+			} else {
+				let randomCount = userDef.double(forKey: kQuickRandomCount)
+				let randomCorrectCount = userDef.double(forKey: kQuickRandomCorrectCount)
+				let randomTimeAvr: Double =  randomTimes / randomCount
+				let tandomCorrectPer: Double =  (randomCorrectCount / randomCount) * 100
+				self.page1.qqRandomLabel.text = "\(NSString(format: "%.0f", tandomCorrectPer))％ / \(NSString(format: "%.1f", randomTimeAvr)) Sec"
+			}
 			
 			
 			self.currentPage = 1

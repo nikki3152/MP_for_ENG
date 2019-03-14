@@ -176,6 +176,7 @@ struct TableInfo {
 //MARK: -
 class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableViewDelegate, FontCardViewDelegate, ADViewVideoDelegate {
 	
+	var gamePlayTime: Double = 0
 	
 	deinit {
 		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
@@ -347,6 +348,14 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			self.chaImagePt = self.charaImageView.center 
 			self.startGameTimer()
 
+			if questIndex == 80 {
+				let c = UserDefaults.standard.integer(forKey: kRandomWordPlayCount) + 1
+				UserDefaults.standard.set(c, forKey: kRandomWordPlayCount)
+			}
+			else if questIndex == 81 {
+				let c = UserDefaults.standard.integer(forKey: kRandomScorePlayCount) + 1
+				UserDefaults.standard.set(c, forKey: kRandomScorePlayCount)
+			}
 		}
 	}
 	
@@ -615,6 +624,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			self.tableExtCell = self.tableExtCellAll[3]
 		}
 		else {
+			//ランダム
 			SoundManager.shared.startBGM(type: .bgmEasy)		
 			self.backImageView.image = UIImage(named: "stage_05")
 			self.tableExtCell = self.tableExtCellAll[4]
@@ -714,14 +724,20 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				self?.timeClonImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
 				self?.timeSec0ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
 				self?.timeSec1ImgView4.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+				
+				self?.gamePlayTime = 0	//ゲーム時間
+				
 				self?.gameTimer?.invalidate()
-				if self!.time > 0 {
-					self?.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self](t) in
-						guard let s = self else {
-							return
-						}
-						if s.isInEditMode == false {
-							if s.isGamePause == false {
+				self?.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self](t) in
+					guard let s = self else {
+						return
+					}
+					if s.isInEditMode == false {
+						if s.isGamePause == false {
+							
+							self?.gamePlayTime += 0.1	//ゲーム時間
+							
+							if self!.time > 0 {
 								s.time -= 0.1
 								if s.time <= 0 {
 									s.timeMin0ImgView4.layer.removeAllAnimations()
@@ -765,10 +781,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 								}
 							}
 						}
-					})
-				} else {
-					self?.gameTimer = nil
-				}
+					}
+				})
 			}
 		}
 		
@@ -790,9 +804,6 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			self.questIndex += 1
 			self.questData = self.selectCnt.questData(at: self.questIndex)
 			if self.questData != nil {
-//				self.questDataBKList.removeAll()
-//				self.record()
-//				self.questDataBKIndex = 0
 				UserDefaults.standard.set(self.questIndex, forKey: kCurrentQuestIndex)
 				self.selectCnt.selectStage(index: questIndex)
 				self.startGameTimer()
@@ -823,6 +834,14 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		if questDataBKList.count > 1 {
 			SoundManager.shared.startSE(type: .seSelect)	//SE再生
+			
+			//揃えた英単語数更新（のべ数）
+			var c = UserDefaults.standard.integer(forKey: kGameWordsCount) - self.questData.answerWords.count
+			if c < 0 {
+				c = 0
+			}
+			UserDefaults.standard.set(c, forKey: kGameWordsCount)
+			
 			self.questDataBKIndex -= 1
 			self.questData = self.questDataBKList[self.questDataBKIndex]
 			self.questDataBKList.removeLast()
@@ -2092,6 +2111,10 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 												s.record()
 											}
 											self?.isInEffect = false
+											
+											//揃えた英単語数更新（のべ数）
+											let c = UserDefaults.standard.integer(forKey: kGameWordsCount) + s.answerWords.count
+											UserDefaults.standard.set(c, forKey: kGameWordsCount)
 										})
 									}
 								})
@@ -2303,6 +2326,10 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				self?.mojikunTimer = nil
 				self?.retry()
 			case .giveup:			//あきらめる
+				//ゲーム時間記録
+				let time = UserDefaults.standard.double(forKey: kAlllPlayTimes) + self!.gamePlayTime
+				UserDefaults.standard.set(time, forKey: kAlllPlayTimes)
+				
 				self?.gameTimer?.invalidate()
 				self?.gameTimer = nil
 				self?.chaDefTimer?.invalidate()
@@ -2338,17 +2365,46 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		isEnablePause = false
 		SoundManager.shared.startBGM(type: .bgmStageClear)	//ジングル再生
 		
+		self.gameTimer?.invalidate()
+		self.gameTimer = nil
+		
+		self.chaDefTimer?.invalidate()
+		self.chaDefTimer = nil
+		
+		//トータルスコア保存
+		var allScore = UserDefaults.standard.integer(forKey: kTotalScore) + self.totalScore
+		if allScore > 99999999 {
+			allScore = 99999999
+		}
+		UserDefaults.standard.set(allScore, forKey: kTotalScore)
+		
+		//ゲームクリア回数
+		var gameClearCount = UserDefaults.standard.integer(forKey: kGameClearCount) + 1
+		if gameClearCount > 99999999 {
+			gameClearCount = 99999999
+		}
+		UserDefaults.standard.set(gameClearCount, forKey: kGameClearCount)
+		
+		//ゲーム時間記録
+		let time = UserDefaults.standard.double(forKey: kAlllPlayTimes) + self.gamePlayTime
+		UserDefaults.standard.set(time, forKey: kAlllPlayTimes)
+		
+		
 		if self.questIndex < 82 {
 			//クリアフラグ設定
 			var stageEnableAry = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
 			stageEnableAry[self.questIndex + 1] = true
 			UserDefaults.standard.set(stageEnableAry, forKey: kEnableStageArry)
+			
+			if questIndex == 80 {
+				let c = UserDefaults.standard.integer(forKey: kRandomWordClearCount) + 1
+				UserDefaults.standard.set(c, forKey: kRandomWordClearCount)
+			}
+			else if questIndex == 81 {
+				let c = UserDefaults.standard.integer(forKey: kRandomScoreClearCount) + 1
+				UserDefaults.standard.set(c, forKey: kRandomScoreClearCount)
+			}
 		}
-		
-		self.gameTimer?.invalidate()
-		self.gameTimer = nil
-		chaDefTimer?.invalidate()
-		chaDefTimer = nil
 		
 		var effectTimer: Timer!
 		DataManager.animationJump(v: charaImageView, height: 40, speed: 1.0)	//ジャンプアニメーション
@@ -2514,17 +2570,36 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		isEnablePause = false
 		SoundManager.shared.startBGM(type: .bgmFail)	//BGM再生
 		
+		self.gameTimer?.invalidate()
+		self.gameTimer = nil
+		
+		self.chaDefTimer?.invalidate()
+		self.chaDefTimer = nil
+		
+		//トータルスコア保存
+		var allScore = UserDefaults.standard.integer(forKey: kTotalScore) + self.totalScore
+		if allScore > 99999999 {
+			allScore = 99999999
+		}
+		UserDefaults.standard.set(allScore, forKey: kTotalScore)
+		
+		//ゲームオーバー回数
+		var gameOverCount = UserDefaults.standard.integer(forKey: kGameOverCount) + 1
+		if gameOverCount > 99999999 {
+			gameOverCount = 99999999
+		}
+		UserDefaults.standard.set(gameOverCount, forKey: kGameOverCount)
+		
+		//ゲーム時間記録
+		let time = UserDefaults.standard.double(forKey: kAlllPlayTimes) + self.gamePlayTime
+		UserDefaults.standard.set(time, forKey: kAlllPlayTimes)
+		
 		//ゲームオーバー雲
 		self.timeBackImageView.stopAnimating()
 		self.timeBackImageView.image = UIImage(named: "time_cloud_gameover")
 		
 		self.questBaseImageView.image = UIImage(named: "quest_base_lose")
 		self.hideMojikunString()
-		
-		self.gameTimer?.invalidate()
-		self.gameTimer = nil
-		chaDefTimer?.invalidate()
-		chaDefTimer = nil
 		
 		let base = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
 		self.view.addSubview(base)

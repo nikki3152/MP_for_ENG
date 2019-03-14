@@ -57,12 +57,89 @@ class QuickQuestViewController: BaseViewController {
 		self.backButton.isExclusiveTouch = true
 	}
 	
+	//データ集計
+	func recTime() {
+		
+		var corrects: Int = 0
+		var totalTime: Double = 0
+		for dic in resultList {
+			if let time = dic["time"] as? Double {
+				totalTime += time
+			}
+			if let correct = dic["correct"] as? Bool {
+				if correct {
+					corrects += 1
+				}
+			}
+			
+		}
+		if mode == 1 {
+			//時間
+			let t = UserDefaults.standard.double(forKey: kQuickBiginnerTimes)
+			UserDefaults.standard.set(t + totalTime, forKey: kQuickBiginnerTimes)
+			//問題数
+			let c = UserDefaults.standard.integer(forKey: kQuickBiginnerCount)
+			UserDefaults.standard.set(c + resultList.count, forKey: kQuickBiginnerCount)
+			//正解数
+			let s = UserDefaults.standard.integer(forKey: kQuickBiginnerCorrectCount)
+			UserDefaults.standard.set(s + corrects, forKey: kQuickBiginnerCorrectCount)
+		}
+		else if mode == 2 {
+			//時間
+			let t = UserDefaults.standard.double(forKey: kQuickIntermediateTimes)
+			UserDefaults.standard.set(t + totalTime, forKey: kQuickIntermediateTimes)
+			//問題数
+			let c = UserDefaults.standard.integer(forKey: kQuickIntermediateCount)
+			UserDefaults.standard.set(c + resultList.count, forKey: kQuickIntermediateCount)
+			//正解数
+			let s = UserDefaults.standard.integer(forKey: kQuickIntermediateCorrectCount)
+			UserDefaults.standard.set(s + corrects, forKey: kQuickIntermediateCorrectCount)
+		}
+		else if mode == 3 {
+			//時間
+			let t = UserDefaults.standard.double(forKey: kQuickAdvancedTimes)
+			UserDefaults.standard.set(t + totalTime, forKey: kQuickAdvancedTimes)
+			//問題数
+			let c = UserDefaults.standard.integer(forKey: kQuickAdvancedCount)
+			UserDefaults.standard.set(c + resultList.count, forKey: kQuickAdvancedCount)
+			//正解数
+			let s = UserDefaults.standard.integer(forKey: kQuickAdvancedCorrectCount)
+			UserDefaults.standard.set(s + corrects, forKey: kQuickAdvancedCorrectCount)
+		}
+		else if mode == 4 {
+			//時間
+			let t = UserDefaults.standard.double(forKey: kQuickGodTimes)
+			UserDefaults.standard.set(t + totalTime, forKey: kQuickGodTimes)
+			//問題数
+			let c = UserDefaults.standard.integer(forKey: kQuickGodCount)
+			UserDefaults.standard.set(c + resultList.count, forKey: kQuickGodCount)
+			//正解数
+			let s = UserDefaults.standard.integer(forKey: kQuickGodCorrectCount)
+			UserDefaults.standard.set(s + corrects, forKey: kQuickGodCorrectCount)
+		}
+		else if mode == 5 {
+			//時間
+			let t = UserDefaults.standard.double(forKey: kQuickRandomTimes)
+			UserDefaults.standard.set(t + totalTime, forKey: kQuickRandomTimes)
+			//問題数
+			let c = UserDefaults.standard.integer(forKey: kQuickRandomCount)
+			UserDefaults.standard.set(c + resultList.count, forKey: kQuickRandomCount)
+			//正解数
+			let s = UserDefaults.standard.integer(forKey: kQuickRandomCorrectCount)
+			UserDefaults.standard.set(s + corrects, forKey: kQuickRandomCorrectCount)
+		}
+		
+	}
+	
 	//戻る
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {
 		
 		self.timer?.invalidate()
 		self.timer = nil
+		
+		self.recTime()
+		
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.remove()
 		SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
@@ -200,14 +277,17 @@ class QuickQuestViewController: BaseViewController {
 	//MARK: 最終結果表示
 	func openLastResult() {
 		
+		self.timer?.invalidate()
+		self.timer = nil
+		
+		self.recTime()
+		
 		let result = QuickQuestResultViewController.quickQuestResultViewController()
 		result.list = resultList
 		result.present(self) { 
 			
 		}
 		result.handler = {[weak self]() in
-			self?.timer?.invalidate()
-			self?.timer = nil
 			self?.remove()
 			SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
 		}

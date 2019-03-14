@@ -353,5 +353,37 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		self.ppLabel.text = "\(pp)"
 		MPEDataManager.updatePP(pp: pp)
 		self.ppTableView.reloadData()
+		
+		UserDefaults.standard.removeObject(forKey: kTotalScore)
+		UserDefaults.standard.removeObject(forKey: kAlllPlayTimes)
+		UserDefaults.standard.removeObject(forKey: kGameClearCount)
+		UserDefaults.standard.removeObject(forKey: kGameOverCount)
+		UserDefaults.standard.removeObject(forKey: kGameWordsCount)
+		
+		UserDefaults.standard.removeObject(forKey: kRandomWordPlayCount)
+		UserDefaults.standard.removeObject(forKey: kRandomWordClearCount)
+		UserDefaults.standard.removeObject(forKey: kRandomScorePlayCount)
+		UserDefaults.standard.removeObject(forKey: kRandomScoreClearCount)
+		
+		UserDefaults.standard.removeObject(forKey: kQuickBiginnerTimes)
+		UserDefaults.standard.removeObject(forKey: kQuickBiginnerCount)
+		UserDefaults.standard.removeObject(forKey: kQuickBiginnerCorrectCount)
+		
+		UserDefaults.standard.removeObject(forKey: kQuickIntermediateTimes)
+		UserDefaults.standard.removeObject(forKey: kQuickIntermediateCount)
+		UserDefaults.standard.removeObject(forKey: kQuickIntermediateCorrectCount)
+		
+		UserDefaults.standard.removeObject(forKey: kQuickAdvancedTimes)
+		UserDefaults.standard.removeObject(forKey: kQuickAdvancedCount)
+		UserDefaults.standard.removeObject(forKey: kQuickAdvancedCorrectCount)
+		
+		UserDefaults.standard.removeObject(forKey: kQuickGodTimes)
+		UserDefaults.standard.removeObject(forKey: kQuickGodCount)
+		UserDefaults.standard.removeObject(forKey: kQuickGodCorrectCount)
+		
+		UserDefaults.standard.removeObject(forKey: kQuickRandomTimes)
+		UserDefaults.standard.removeObject(forKey: kQuickRandomCount)
+		UserDefaults.standard.removeObject(forKey: kQuickRandomCorrectCount)
+		
 	}
 }

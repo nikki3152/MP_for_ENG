@@ -32,42 +32,42 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7G5-ef-zlz">
                     <rect key="frame" x="170" y="48" width="93" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="0.63043767760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99/99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHJ-MQ-AnG">
-                    <rect key="frame" x="431" y="70" width="93" height="22"/>
+                    <rect key="frame" x="388" y="70" width="136" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="0.63043767760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99/99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ON1-Jf-E3g">
-                    <rect key="frame" x="431" y="163" width="93" height="22"/>
+                    <rect key="frame" x="388" y="163" width="136" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="0.63043767760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99/99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIP-54-6w3">
-                    <rect key="frame" x="431" y="186" width="93" height="22"/>
+                    <rect key="frame" x="388" y="186" width="136" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="0.63043767760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999回" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Why-Zx-RMT">
                     <rect key="frame" x="170" y="94" width="93" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="0.63043767760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999回" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uZ-mF-4VC">
                     <rect key="frame" x="170" y="141" width="93" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="0.63043767760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -112,35 +112,35 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999個" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLg-U9-36f">
                     <rect key="frame" x="170" y="190" width="93" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="0.63043767760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99/99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1st-rY-eD0">
-                    <rect key="frame" x="431" y="94" width="93" height="22"/>
+                    <rect key="frame" x="388" y="94" width="136" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="0.63043767760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99/99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbZ-4a-7KG">
-                    <rect key="frame" x="431" y="209" width="93" height="22"/>
+                    <rect key="frame" x="388" y="209" width="136" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="0.63043767760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99/99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8A-Cb-CdS">
-                    <rect key="frame" x="431" y="232" width="93" height="22"/>
+                    <rect key="frame" x="388" y="232" width="136" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="0.63043767760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99/99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqt-M3-f6M">
-                    <rect key="frame" x="431" y="255" width="93" height="22"/>
+                    <rect key="frame" x="388" y="255" width="136" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="UDDigiKyokashoNK-R" family="UD Digi Kyokasho NK-R" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="0.63043767760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -170,7 +170,7 @@
                 <outlet property="scoreImgView6" destination="A78-We-rK7" id="9LL-7g-rlx"/>
                 <outlet property="scoreImgView7" destination="1PG-y7-PaW" id="ysc-3K-k3A"/>
             </connections>
-            <point key="canvasLocation" x="906" y="11"/>
+            <point key="canvasLocation" x="905.60000000000002" y="10.794602698650676"/>
         </view>
     </objects>
     <resources>
