@@ -1929,6 +1929,16 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		self.mainScrollView.isScrollEnabled = true
 		if let index = self.cardSelectIndex {
 			let moji = self.questData.cards[index]
+			
+			//使用文字カウント記録
+			if var dic = UserDefaults.standard.object(forKey: kUsedFontDict) as? [String:Int] {
+				let mKey = moji.lowercased()
+				if let count = dic[mKey] {
+					dic[mKey] = count + 1
+					UserDefaults.standard.set(dic, forKey: kUsedFontDict)
+				}
+			}
+			
 			koma.setFont(moji: moji, type: nil)
 			self.questData.table[tableIndex] = moji
 			if self.questData.wildCardLen < index + 1 {

@@ -48,6 +48,9 @@ let kQuickRandomTimes: String = "kQuickRandomTimes"
 let kQuickRandomCount: String = "kQuickRandomCount"
 let kQuickRandomCorrectCount: String = "kQuickRandomCorrectCount"
 
+let kUsedFontDict: String = "kUsedFontDict"
+
+
 //アプリ内課金プロダクトID
 let kProductID10: String = "mpe"
 let kProductID50: String = "mpe50"

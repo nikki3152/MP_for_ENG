@@ -45,6 +45,8 @@ class DataPanelView: UIView {
 	@IBOutlet weak var qqRandomLabel: UILabel!
 	
 	
+	@IBOutlet weak var graphView: GraphDisplayView!
+	
 	@IBOutlet weak var panelImageView: UIImageView!
 	
 	//スコア

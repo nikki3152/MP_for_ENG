@@ -536,6 +536,8 @@
 		549EE163223A181E0070CD08 /* DataPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549EE162223A181E0070CD08 /* DataPanelView.swift */; };
 		549EE165223A18420070CD08 /* DataPanelView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 549EE164223A18420070CD08 /* DataPanelView1.xib */; };
 		549EE167223A20240070CD08 /* DataPanelView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 549EE166223A20240070CD08 /* DataPanelView2.xib */; };
+		549EE16A223AC8E40070CD08 /* GraphDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549EE168223AC8E30070CD08 /* GraphDisplayView.swift */; };
+		549EE16B223AC8E40070CD08 /* GraphDrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549EE169223AC8E40070CD08 /* GraphDrawView.swift */; };
 		54BCA6BB22144B7A0054CEF4 /* gameclear_anim_underbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6AF22144B790054CEF4 /* gameclear_anim_underbar.png */; };
 		54BCA6BC22144B7A0054CEF4 /* gameclear_anim_word03.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6B022144B790054CEF4 /* gameclear_anim_word03.png */; };
 		54BCA6BD22144B7A0054CEF4 /* gameclear_anim_word07.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6B122144B790054CEF4 /* gameclear_anim_word07.png */; };
@@ -1587,6 +1589,8 @@
 		549EE162223A181E0070CD08 /* DataPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPanelView.swift; sourceTree = "<group>"; };
 		549EE164223A18420070CD08 /* DataPanelView1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataPanelView1.xib; sourceTree = "<group>"; };
 		549EE166223A20240070CD08 /* DataPanelView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataPanelView2.xib; sourceTree = "<group>"; };
+		549EE168223AC8E30070CD08 /* GraphDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphDisplayView.swift; sourceTree = "<group>"; };
+		549EE169223AC8E40070CD08 /* GraphDrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphDrawView.swift; sourceTree = "<group>"; };
 		54BCA6AF22144B790054CEF4 /* gameclear_anim_underbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_underbar.png; sourceTree = "<group>"; };
 		54BCA6B022144B790054CEF4 /* gameclear_anim_word03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_word03.png; sourceTree = "<group>"; };
 		54BCA6B122144B790054CEF4 /* gameclear_anim_word07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_word07.png; sourceTree = "<group>"; };
@@ -2893,6 +2897,8 @@
 				549EE162223A181E0070CD08 /* DataPanelView.swift */,
 				549EE164223A18420070CD08 /* DataPanelView1.xib */,
 				549EE166223A20240070CD08 /* DataPanelView2.xib */,
+				549EE168223AC8E30070CD08 /* GraphDisplayView.swift */,
+				549EE169223AC8E40070CD08 /* GraphDrawView.swift */,
 			);
 			path = 11_Data;
 			sourceTree = "<group>";
@@ -4758,6 +4764,8 @@
 				5467650A21EF30EF0025A5A9 /* SoundPlayer.swift in Sources */,
 				54F4E8812223044100B3B710 /* MovieInterstitial6006.m in Sources */,
 				54F3A6E12197CDAF00A1E01F /* ConditionsPickerView.swift in Sources */,
+				549EE16A223AC8E40070CD08 /* GraphDisplayView.swift in Sources */,
+				549EE16B223AC8E40070CD08 /* GraphDrawView.swift in Sources */,
 				54F4E8892223044100B3B710 /* MovieInterstitial6010.m in Sources */,
 				54F4E89F2223044100B3B710 /* MovieInterstitial6016.m in Sources */,
 				5467654021F69E0D0025A5A9 /* SoundManager.swift in Sources */,

@@ -9,7 +9,6 @@
 import UIKit
 
 class DataAggregateViewController: BaseViewController {
-
 	
 	var page1: DataPanelView!
 	var page2: DataPanelView!
@@ -78,6 +77,9 @@ class DataAggregateViewController: BaseViewController {
 			self.page2 = DataPanelView.dataPanelView(2)
 			
 			let userDef = UserDefaults.standard
+			//=========================================
+			//１ページ
+			//=========================================
 			//トータルスコア
 			let hiScore = userDef.integer(forKey: kTotalScore)
 			self.page1.totalScore = hiScore
@@ -167,6 +169,42 @@ class DataAggregateViewController: BaseViewController {
 				self.page1.qqRandomLabel.text = "\(NSString(format: "%.0f", tandomCorrectPer))％ / \(NSString(format: "%.1f", randomTimeAvr)) Sec"
 			}
 			
+			//=========================================
+			//２ページ
+			//=========================================
+			self.page2.graphView.rightPixelMargin = 0
+			self.page2.graphView.backgroundColor = UIColor.clear
+			//self.page2.graphView.bottomMargin = 12
+			self.page2.graphView.makeGraph()
+			self.page2.graphView.isDrawVLines = false
+			self.page2.graphView.lineColor = UIColor.black
+			//self.page2.graphView.isDrawPoints = true
+			self.page2.graphView.graphType = .bar
+			self.page2.graphView.isDrawBottomInfo = true
+			
+			var grathData: [(info: String?, value: CGFloat)] = []
+			var max: CGFloat = 0
+			let min: CGFloat = 0
+			let keys: [String] = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+			if var dic = UserDefaults.standard.object(forKey: kUsedFontDict) as? [String:Int] {
+				for key in keys {
+					if let count = dic[key] {
+						grathData.append((info:key, value:CGFloat(count)))
+						if Int(max) < count {
+							max = CGFloat(count)
+						}
+						print("\(key) = \(count)")
+					}
+				}
+			}
+			if max < 10 {
+				max = 10
+			}
+			else {
+				max += max / 10
+			}
+			self.page2.graphView.drawLineGraph(datas: grathData, valMax: max, valMin: min, valSp: nil)
+			self.page2.graphView.update()
 			
 			self.currentPage = 1
 		}

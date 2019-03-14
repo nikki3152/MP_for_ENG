@@ -24,13 +24,18 @@
                     <rect key="frame" x="0.0" y="0.0" width="580" height="321"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAP-lQ-5n5" customClass="GraphDisplayView" customModule="mpe" customModuleProvider="target">
+                    <rect key="frame" x="20" y="56" width="515" height="244"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </view>
             </subviews>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="inr-Ge-4gi"/>
             <connections>
+                <outlet property="graphView" destination="cAP-lQ-5n5" id="WHN-Cb-ttS"/>
                 <outlet property="panelImageView" destination="XZu-z9-bdk" id="VIY-8b-Fmp"/>
             </connections>
-            <point key="canvasLocation" x="-111" y="22"/>
+            <point key="canvasLocation" x="-278.39999999999998" y="-86.35682158920541"/>
         </view>
     </objects>
     <resources>
