@@ -20,6 +20,14 @@ let kHiscore: String = "kHiscore"
 let kPPPoint: String = "kPPPoint"
 let kCurrentQuestIndex: String = "kCurrentQuestIndex"
 
+//データ集計
+let kTotlaScore: String = "kTotlaScore"
+let kPlayTimesScore: String = "kPlayTimesScore"
+let kGameClearCount: String = "kGameClearCount"
+let kGameOverCount: String = "kGameOverCount"
+let kGameWordsCount: String = "kGameWordsCount"
+let kRandomWordsCount: String = "kRandomWordsCount"
+
 //アプリ内課金プロダクトID
 let kProductID10: String = "mpe"
 let kProductID50: String = "mpe50"

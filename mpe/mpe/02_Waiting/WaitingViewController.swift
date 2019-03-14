@@ -120,6 +120,7 @@ class WaitingViewController: BaseViewController, ADViewVideoDelegate {
 		//self.adViewDidPlayVideo(adVideoReward, incentive: true)
 
 		if adVideoReward.isCanPlayVideo {
+			adVideoReward.videoDelagate = self
 			adVideoReward.playVideo()
 			SoundManager.shared.pauseBGM(true)
 		} else {

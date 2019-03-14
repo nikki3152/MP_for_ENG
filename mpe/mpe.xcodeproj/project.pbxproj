@@ -530,6 +530,12 @@
 		548FF99B21E18C2B007CD3B0 /* pauce_button_retry.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FF99521E18C2B007CD3B0 /* pauce_button_retry.png */; };
 		548FF99C21E18C2B007CD3B0 /* pauce_button_giveup_tap.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FF99621E18C2B007CD3B0 /* pauce_button_giveup_tap.png */; };
 		548FF99D21E18C2B007CD3B0 /* pauce_button_continue_tap.png in Resources */ = {isa = PBXBuildFile; fileRef = 548FF99721E18C2B007CD3B0 /* pauce_button_continue_tap.png */; };
+		549EE15D223942F00070CD08 /* data_panel.png in Resources */ = {isa = PBXBuildFile; fileRef = 549EE15C223942F00070CD08 /* data_panel.png */; };
+		549EE1602239DAB20070CD08 /* data_note_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 549EE15E2239DAB10070CD08 /* data_note_2.png */; };
+		549EE1612239DAB20070CD08 /* data_note_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 549EE15F2239DAB20070CD08 /* data_note_1.png */; };
+		549EE163223A181E0070CD08 /* DataPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549EE162223A181E0070CD08 /* DataPanelView.swift */; };
+		549EE165223A18420070CD08 /* DataPanelView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 549EE164223A18420070CD08 /* DataPanelView1.xib */; };
+		549EE167223A20240070CD08 /* DataPanelView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 549EE166223A20240070CD08 /* DataPanelView2.xib */; };
 		54BCA6BB22144B7A0054CEF4 /* gameclear_anim_underbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6AF22144B790054CEF4 /* gameclear_anim_underbar.png */; };
 		54BCA6BC22144B7A0054CEF4 /* gameclear_anim_word03.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6B022144B790054CEF4 /* gameclear_anim_word03.png */; };
 		54BCA6BD22144B7A0054CEF4 /* gameclear_anim_word07.png in Resources */ = {isa = PBXBuildFile; fileRef = 54BCA6B122144B790054CEF4 /* gameclear_anim_word07.png */; };
@@ -1575,6 +1581,12 @@
 		548FF99521E18C2B007CD3B0 /* pauce_button_retry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauce_button_retry.png; sourceTree = "<group>"; };
 		548FF99621E18C2B007CD3B0 /* pauce_button_giveup_tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauce_button_giveup_tap.png; sourceTree = "<group>"; };
 		548FF99721E18C2B007CD3B0 /* pauce_button_continue_tap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauce_button_continue_tap.png; sourceTree = "<group>"; };
+		549EE15C223942F00070CD08 /* data_panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = data_panel.png; sourceTree = "<group>"; };
+		549EE15E2239DAB10070CD08 /* data_note_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = data_note_2.png; sourceTree = "<group>"; };
+		549EE15F2239DAB20070CD08 /* data_note_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = data_note_1.png; sourceTree = "<group>"; };
+		549EE162223A181E0070CD08 /* DataPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPanelView.swift; sourceTree = "<group>"; };
+		549EE164223A18420070CD08 /* DataPanelView1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataPanelView1.xib; sourceTree = "<group>"; };
+		549EE166223A20240070CD08 /* DataPanelView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataPanelView2.xib; sourceTree = "<group>"; };
 		54BCA6AF22144B790054CEF4 /* gameclear_anim_underbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_underbar.png; sourceTree = "<group>"; };
 		54BCA6B022144B790054CEF4 /* gameclear_anim_word03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_word03.png; sourceTree = "<group>"; };
 		54BCA6B122144B790054CEF4 /* gameclear_anim_word07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameclear_anim_word07.png; sourceTree = "<group>"; };
@@ -2878,6 +2890,9 @@
 			children = (
 				54CFB40420DE389200057F08 /* DataAggregateViewController.swift */,
 				54CFB40620DE38B300057F08 /* DataAggregateViewController.storyboard */,
+				549EE162223A181E0070CD08 /* DataPanelView.swift */,
+				549EE164223A18420070CD08 /* DataPanelView1.xib */,
+				549EE166223A20240070CD08 /* DataPanelView2.xib */,
 			);
 			path = 11_Data;
 			sourceTree = "<group>";
@@ -3322,6 +3337,9 @@
 			isa = PBXGroup;
 			children = (
 				54D5518C21BCA66200980B92 /* data_background.png */,
+				549EE15C223942F00070CD08 /* data_panel.png */,
+				549EE15F2239DAB20070CD08 /* data_note_1.png */,
+				549EE15E2239DAB10070CD08 /* data_note_2.png */,
 				54D5518D21BCA66200980B92 /* data_next.png */,
 				54D5518E21BCA66200980B92 /* data_line.png */,
 				54D5518F21BCA66200980B92 /* data_back.png */,
@@ -3935,6 +3953,7 @@
 				54D5526F21BCA66300980B92 /* obj_balloon_02.png in Resources */,
 				54F4E87E2223044100B3B710 /* Version6001.txt in Resources */,
 				5429F3B021CF06B600E0E50F /* score_count_7.png in Resources */,
+				549EE1602239DAB20070CD08 /* data_note_2.png in Resources */,
 				54757D89223487A600E5E349 /* howto_2.png in Resources */,
 				54757D67223253BB00E5E349 /* vivid_4.png in Resources */,
 				54D552B121BCA66300980B92 /* C.png in Resources */,
@@ -3959,6 +3978,7 @@
 				540DD638222BD79B00326D92 /* select_83.png in Resources */,
 				54D552A321BCA66300980B92 /* anim_E.png in Resources */,
 				542F443921B300DC00C51AD6 /* furniture（家具）.plist in Resources */,
+				549EE1612239DAB20070CD08 /* data_note_1.png in Resources */,
 				54757D64223253BB00E5E349 /* light_4.png in Resources */,
 				54D5528621BCA66300980B92 /* driller_02.png in Resources */,
 				540DD59C222BD71900326D92 /* prev_42.png in Resources */,
@@ -4048,6 +4068,7 @@
 				540DD60E222BD79B00326D92 /* select_35.png in Resources */,
 				54D5521121BCA66300980B92 /* gameover_button_retry.png in Resources */,
 				540DD59A222BD71900326D92 /* prev_20.png in Resources */,
+				549EE15D223942F00070CD08 /* data_panel.png in Resources */,
 				5467650121EF24300025A5A9 /* BGM_上級ステージ_hit.wav in Resources */,
 				5429F3B821CF06B600E0E50F /* countup_0.png in Resources */,
 				54D5533921BCA66300980B92 /* setting_panel_02_tap.png in Resources */,
@@ -4211,6 +4232,7 @@
 				54D5530221BCA66300980B92 /* custom_box_04_tap.png in Resources */,
 				54D5523821BCA66300980B92 /* ouji_03.png in Resources */,
 				5429F3B221CF06B600E0E50F /* countup_3.png in Resources */,
+				549EE167223A20240070CD08 /* DataPanelView2.xib in Resources */,
 				546764F121EF24300025A5A9 /* BGM_ステージクリアジングル_shot.wav in Resources */,
 				54D5520121BCA66300980B92 /* select_background_02.png in Resources */,
 				54D5534121BCA66300980B92 /* home_catalog_ip.png in Resources */,
@@ -4297,6 +4319,7 @@
 				54D5523221BCA66300980B92 /* Z.png in Resources */,
 				540DD568222BD71900326D92 /* prev_80.png in Resources */,
 				540DD5F4222BD79B00326D92 /* select_43.png in Resources */,
+				549EE165223A18420070CD08 /* DataPanelView1.xib in Resources */,
 				542F447121B57FAD00C51AD6 /* fruit（果物）.plist in Resources */,
 				54D5520221BCA66300980B92 /* select_background_03.png in Resources */,
 				5429F3E521CF06E400E0E50F /* chain2.png in Resources */,
@@ -4776,6 +4799,7 @@
 				54F4E8AB2223044100B3B710 /* MovieNative6008.m in Sources */,
 				54CFB3F520DE31CE00057F08 /* QuickQuestViewController.swift in Sources */,
 				54F4E88A2223044100B3B710 /* MovieNative6009.m in Sources */,
+				549EE163223A181E0070CD08 /* DataPanelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
