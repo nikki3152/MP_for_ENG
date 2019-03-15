@@ -16,8 +16,9 @@ class WaitingViewController: BaseViewController, ADViewVideoDelegate {
 		if incentive {
 			//ポイント
 			var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 1
-			if pp > 100 {
+			if pp >= 100 {
 				pp = 100
+				self.videoButton.isEnabled = false
 			}
 			self.purchaseButton.setTitle("\(pp)", for: .normal)
 			MPEDataManager.updatePP(pp: pp)
@@ -55,6 +56,9 @@ class WaitingViewController: BaseViewController, ADViewVideoDelegate {
 		//ポイント
 		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
 		self.purchaseButton.setTitle("\(pp)", for: .normal)
+		if pp >= 100 {
+			self.videoButton.isEnabled = false
+		}
     }
 	
 	
@@ -140,7 +144,13 @@ class WaitingViewController: BaseViewController, ADViewVideoDelegate {
 			
 		}
 		purchaseView.closeHandler = {[weak self]() in
-			let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+			var pp = UserDefaults.standard.integer(forKey: kPPPoint)
+			if pp >= 100 {
+				pp = 100
+				self?.videoButton.isEnabled = false
+			} else {
+				self?.videoButton.isEnabled = true
+			}
 			self?.purchaseButton.setTitle("\(pp)", for: .normal)
 		}
 	}
