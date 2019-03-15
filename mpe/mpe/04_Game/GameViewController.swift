@@ -330,6 +330,10 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		else if ctype == 10 {
 			self.customChara = .galaga
 		}
+		
+		//デバッグ表示
+		self.editButton.isHidden = !gDEBUG_FLAG
+
     }
 	
 	var chaImagePt: CGPoint!
@@ -349,11 +353,17 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			self.startGameTimer()
 
 			if questIndex == 80 {
-				let c = UserDefaults.standard.integer(forKey: kRandomWordPlayCount) + 1
+				var c = UserDefaults.standard.integer(forKey: kRandomWordPlayCount) + 1
+				if c > 99999999 {
+					c = 99999999
+				}
 				UserDefaults.standard.set(c, forKey: kRandomWordPlayCount)
 			}
 			else if questIndex == 81 {
-				let c = UserDefaults.standard.integer(forKey: kRandomScorePlayCount) + 1
+				var c = UserDefaults.standard.integer(forKey: kRandomScorePlayCount) + 1
+				if c > 99999999 {
+					c = 99999999
+				}
 				UserDefaults.standard.set(c, forKey: kRandomScorePlayCount)
 			}
 		}
@@ -2124,7 +2134,10 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 											self?.isInEffect = false
 											
 											//揃えた英単語数更新（のべ数）
-											let c = UserDefaults.standard.integer(forKey: kGameWordsCount) + s.answerWords.count
+											var c = UserDefaults.standard.integer(forKey: kGameWordsCount) + s.answerWords.count
+											if c > 99999999 {
+												c = 99999999
+											}
 											UserDefaults.standard.set(c, forKey: kGameWordsCount)
 										})
 									}
@@ -2408,11 +2421,17 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			UserDefaults.standard.set(stageEnableAry, forKey: kEnableStageArry)
 			
 			if questIndex == 80 {
-				let c = UserDefaults.standard.integer(forKey: kRandomWordClearCount) + 1
+				var c = UserDefaults.standard.integer(forKey: kRandomWordClearCount) + 1
+				if c > 99999999 {
+					c = 99999999
+				}
 				UserDefaults.standard.set(c, forKey: kRandomWordClearCount)
 			}
 			else if questIndex == 81 {
-				let c = UserDefaults.standard.integer(forKey: kRandomScoreClearCount) + 1
+				var c = UserDefaults.standard.integer(forKey: kRandomScoreClearCount) + 1
+				if c > 99999999 {
+					c = 99999999
+				}
 				UserDefaults.standard.set(c, forKey: kRandomScoreClearCount)
 			}
 		}

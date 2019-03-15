@@ -258,6 +258,7 @@ class DataAggregateViewController: BaseViewController {
 	@IBOutlet weak var leftButton: UIButton!
 	@IBAction func leftButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.currentPage -= 1
 	}
 	
@@ -265,6 +266,7 @@ class DataAggregateViewController: BaseViewController {
 	@IBOutlet weak var rightButton: UIButton!
 	@IBAction func rightButtonAction(_ sender: Any) {
 		
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		self.currentPage += 1
 	}
 	

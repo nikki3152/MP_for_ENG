@@ -232,6 +232,10 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		//ポイント
 		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
 		self.ppLabel.text = "\(pp)"
+		
+		//デバッグ表示
+		self.ppResetButton.isHidden = !gDEBUG_FLAG
+		self.allClearButton.isHidden = !gDEBUG_FLAG
 	}
 	
 	@IBOutlet weak var ppLabel: OutlineLabel!
