@@ -4992,6 +4992,7 @@
 					"-fobjc-arc",
 					"-ObjC",
 				);
+				OTHER_SWIFT_FLAGS = "-D __DEBUG__";
 				PRODUCT_BUNDLE_IDENTIFIER = shop.flowerpost.mpe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mpe/mpe-Bridging-Header.h";

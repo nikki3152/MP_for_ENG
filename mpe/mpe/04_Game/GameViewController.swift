@@ -332,7 +332,11 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		
 		//デバッグ表示
-		self.editButton.isHidden = !gDEBUG_FLAG
+		#if __DEBUG__
+			self.editButton.isHidden = false
+		#else
+			self.editButton.isHidden = true
+		#endif
 
     }
 	

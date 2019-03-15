@@ -247,8 +247,13 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		}
 		
 		//デバッグ表示
-		self.ppResetButton.isHidden = !gDEBUG_FLAG
-		self.allClearButton.isHidden = !gDEBUG_FLAG
+		#if __DEBUG__
+			self.ppResetButton.isHidden = false
+			self.allClearButton.isHidden = false
+		#else
+			self.ppResetButton.isHidden = true
+			self.allClearButton.isHidden = true
+		#endif
 	}
 	
 	@IBOutlet weak var ppLabel: OutlineLabel!
