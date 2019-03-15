@@ -8,7 +8,7 @@
 
 import UIKit
 
-let gDEBUG_FLAG: Bool = false		//デバッグフラグ
+let gDEBUG_FLAG: Bool = true		//デバッグフラグ
 
 //初期設定
 let kBGMOn: String = "kBGMOn"

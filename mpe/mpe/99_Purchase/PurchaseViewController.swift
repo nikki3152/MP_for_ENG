@@ -84,8 +84,10 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 			if product_id == kProductID10 {
 				//ポイント
 				var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 10
-				if pp > 100 {
+				if pp >= 100 {
 					pp = 100
+					self.videoAdButton.isEnabled = false
+					self.ppPurchaseButton.isEnabled = false
 				}
 				self.ppLabel.text = "\(pp)"
 				MPEDataManager.updatePP(pp: pp)
@@ -94,8 +96,10 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 			else if product_id == kProductID50 {
 				//ポイント
 				var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 50
-				if pp > 100 {
+				if pp >= 100 {
 					pp = 100
+					self.videoAdButton.isEnabled = false
+					self.ppPurchaseButton.isEnabled = false
 				}
 				self.ppLabel.text = "\(pp)"
 				MPEDataManager.updatePP(pp: pp)
@@ -104,6 +108,8 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 			else if product_id == kProductID100 {
 				//ポイント
 				let pp = 100
+				self.videoAdButton.isEnabled = false
+				self.ppPurchaseButton.isEnabled = false
 				self.ppLabel.text = "\(pp)"
 				MPEDataManager.updatePP(pp: pp)
 				self.ppTableView.reloadData()
@@ -134,8 +140,10 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		if incentive {
 			//ポイント
 			var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 1
-			if pp > 100 {
+			if pp >= 100 {
 				pp = 100
+				self.videoAdButton.isEnabled = false
+				self.ppPurchaseButton.isEnabled = false
 			}
 			self.ppLabel.text = "\(pp)"
 			MPEDataManager.updatePP(pp: pp)
@@ -232,6 +240,11 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		//ポイント
 		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
 		self.ppLabel.text = "\(pp)"
+		
+		if pp >= 100 {
+			self.videoAdButton.isEnabled = false
+			self.ppPurchaseButton.isEnabled = false
+		}
 		
 		//デバッグ表示
 		self.ppResetButton.isHidden = !gDEBUG_FLAG
