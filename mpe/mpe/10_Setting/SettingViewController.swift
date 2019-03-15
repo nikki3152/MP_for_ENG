@@ -41,6 +41,38 @@ class SettingViewController: BaseViewController {
 		
 		DataManager.animationFuwa(v: dataIconImageView, dy: 10, speed: 3.0)
 		DataManager.animationFuwa(v: soundIconImageView, dy: 12, speed: 2.2)
+		
+		let ctype = UserDefaults.standard.integer(forKey: kSelectedCharaType)
+		if ctype == 1 {
+			self.customChara = .mojikun_b
+		}
+		else if ctype == 2 {
+			self.customChara = .mojichan
+		}
+		else if ctype == 3 {
+			self.customChara = .taiyokun
+		}
+		else if ctype == 4 {
+			self.customChara = .tsukikun
+		}
+		else if ctype == 5 {
+			self.customChara = .kumokun
+		}
+		else if ctype == 6 {
+			self.customChara = .mojikun_a
+		}
+		else if ctype == 7 {
+			self.customChara = .pack
+		}
+		else if ctype == 8 {
+			self.customChara = .ouji
+		}
+		else if ctype == 9 {
+			self.customChara = .driller
+		}
+		else if ctype == 10 {
+			self.customChara = .galaga
+		}
 	}
 	
 	override func viewDidLayoutSubviews() {
@@ -56,6 +88,29 @@ class SettingViewController: BaseViewController {
 				}
 				self?.updateMojikunString(txt: self!.chaMessages[self!.textIndex])
 			})
+		}
+	}
+	
+	@IBOutlet weak var charaImageView: UIImageView!
+	var _customChara: CustomChara = .mojikun_b
+	var customChara: CustomChara {
+		get {
+			return _customChara 
+		}
+		set {
+			_customChara = newValue
+			if let shippo = charaImageView.viewWithTag(99) {
+				shippo.removeFromSuperview()
+			}
+			self.charaImageView.image = UIImage(named: "\(_customChara.rawValue)_01")
+			if _customChara == .taiyokun {
+				let shippoView = UIImageView(frame: CGRect(x: 0, y: 0, width: charaImageView.frame.size.width, height: charaImageView.frame.size.height))
+				shippoView.contentMode = .scaleAspectFit
+				shippoView.image = UIImage(named: "taiyokun_shippo_01")
+				shippoView.tag = 99
+				charaImageView.addSubview(shippoView)
+				DataManager.animationInfinityRotate(v: shippoView, speed: 0.1)
+			}
 		}
 	}
 	
