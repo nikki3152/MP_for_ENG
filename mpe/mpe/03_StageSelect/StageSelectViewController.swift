@@ -604,9 +604,9 @@ class StageSelectViewController: BaseViewController {
 	@IBOutlet weak var stageButton10: UIButton!
 	@IBAction func stageButtonAction(_ sender: UIButton) {
 		
-		SoundManager.shared.startSE(type: .seDone)	//SE再生
 		let tag = sender.tag + self.startIndex
 		if let bt = self.stageSelectedButton, sender == bt {
+			SoundManager.shared.startSE(type: .sePressStart)	//SE再生
 			//選択中点滅タイマー
 			let mask = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
 			self.view.addSubview(mask)
@@ -639,6 +639,7 @@ class StageSelectViewController: BaseViewController {
 				}
 			})
 		} else {
+			SoundManager.shared.startSE(type: .seDone)	//SE再生
 			//選択する
 			self.stageSelectedButton?.isSelected = false
 			if let bt = self.stageSelectedButton {
