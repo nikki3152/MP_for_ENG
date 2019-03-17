@@ -82,7 +82,7 @@ class ViewController: UIViewController {
 			dataMrg.makeDB()
 		}
 		
-		self.timer = Timer.scheduledTimer(withTimeInterval: 14.0, repeats: true, block: { [weak self](t) in
+		self.timer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true, block: { [weak self](t) in
 			guard let s = self else {
 				return
 			}

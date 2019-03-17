@@ -30,7 +30,7 @@ class HomeViewController: BaseViewController {
 		DataManager.animationInfinityRotate(v: sunSippoImageView, speed: 0.1)
 		//もじくん（ふわふわ）
 		DataManager.animationFuwa(v: mojikunImageView, dx: 40, speed: 8.0)
-		DataManager.animationFuwa(v: mojikunBaseView, dy: 20, speed: 6.0)
+		DataManager.animationFuwa(v: mojikunBaseView, dy: 15, speed: 6.0)
 		//もじじちゃん（ジャンプ）
 		DataManager.animationJump(v: mojichanImageView, height: 40, speed: 1.0)
 		//雲くん（ふわふわ）

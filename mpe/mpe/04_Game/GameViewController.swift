@@ -643,7 +643,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		else {
 			//ランダム
-			SoundManager.shared.startBGM(type: .bgmEasy)		
+			SoundManager.shared.startBGM(type: .bgmHard)		
 			self.backImageView.image = UIImage(named: "stage_05")
 			self.tableExtCell = self.tableExtCellAll[4]
 		}
