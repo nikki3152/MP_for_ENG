@@ -234,6 +234,7 @@ class SettingViewController: BaseViewController {
 		if let v = tap.view as? UIImageView {
 			howtoNum += 1
 			if howtoNum >= 9 {
+				SoundManager.shared.startSE(type: .seSelect)	//SE再生
 				howtoNum = 1
 				if let sv = v.superview {
 					UIView.animate(withDuration: 0.25, animations: { 
@@ -243,6 +244,7 @@ class SettingViewController: BaseViewController {
 					}
 				}
 			} else {
+				SoundManager.shared.startSE(type: .seSelect)	//SE再生
 				v.image = UIImage(named: "howto_\(howtoNum)")
 			}
 		}
