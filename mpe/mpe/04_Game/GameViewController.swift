@@ -404,12 +404,25 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	@IBAction func cardLeftButtonAction(_ sender: UIButton) {
 		
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
+		let w = cardScrolliew.frame.size.width
+		var x = cardScrolliew.contentOffset.x - w
+		if x < 0 {
+			x = 0
+		}
+		cardScrolliew.setContentOffset(CGPoint(x: x, y: 0), animated: true)
 	}
 	//MARK: 手札右
 	@IBOutlet weak var cardRightButton: UIButton!
 	@IBAction func cardRightButtonAction(_ sender: UIButton) {
 		
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
+		let w = cardScrolliew.frame.size.width
+		let content_w = cardScrolliew.contentSize.width 
+		var x = cardScrolliew.contentOffset.x + w
+		if x > content_w - w {
+			x = content_w - w
+		}
+		cardScrolliew.setContentOffset(CGPoint(x: x, y: 0), animated: true)
 	}
 	
 	//キャラクター
@@ -895,21 +908,20 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 			v.removeFromSuperview()
 		}
 		
-		//var imageName = "orange_1"
+		var baseCol: String
 		if self.questIndex >= 0 && self.questIndex <= 19 {
-			//imageName = "orange_1"
-			self.cardRightButton.setBackgroundImage(UIImage(named: "orange_right"), for: .normal)
-			self.cardLeftButton.setBackgroundImage(UIImage(named: "orange_left"), for: .normal)
+			baseCol = "orange"
 		} else {
-			//imageName = "blue_1"
-			self.cardRightButton.setBackgroundImage(UIImage(named: "blue_right"), for: .normal)
-			self.cardLeftButton.setBackgroundImage(UIImage(named: "blue_left"), for: .normal)
+			baseCol = "blue"
 		}
+		self.cardRightButton.setBackgroundImage(UIImage(named: "\(baseCol)_right"), for: .normal)
+		self.cardLeftButton.setBackgroundImage(UIImage(named: "\(baseCol)_left"), for: .normal)
 		
 		self.cardViewList = []
 		for i in 0 ..< self.questData.cards.count {
 			let moji = self.questData.cards[i]
 			let cardView = FontCardView.fontCardView(moji: moji)
+			cardView.baseCol = baseCol
 			cardView.delegate = self
 			cardView.tag = i
 			self.cardScrolliew.addSubview(cardView)
@@ -918,13 +930,15 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				cardView.isWildCard = true
 			} else {
 				cardView.isWildCard = false
-				//cardView.backImageView.image = UIImage(named: imageName)
 			}
 			self.cardViewList.append(cardView)
 		}
 		
 		self.cardScrolliew.contentSize = CGSize(width: CGFloat(self.questData.cards.count) * 50, height: self.cardScrolliew.frame.size.height / 2)
-		
+		if self.cardScrolliew.contentSize.width <= cardScrolliew.frame.size.width {
+			cardLeftButton.isHidden = true
+			cardRightButton.isHidden = true
+		}
 	}
 	//MARK: ゲームメインテーブル作成
 	func updateGametable(_ backImageNames: [String?]? = nil, _ isHits: [Bool]? = nil, _ isEmpty: [Bool]? = nil) {

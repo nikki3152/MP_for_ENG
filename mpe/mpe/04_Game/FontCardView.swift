@@ -15,7 +15,7 @@ protocol FontCardViewDelegate {
 class FontCardView: UIView {
 	
 	var delegate: FontCardViewDelegate?
-	
+	var baseCol: String = "orange"
 	var _isWildCard: Bool = false
 	var isWildCard: Bool {
 		get {
@@ -27,7 +27,7 @@ class FontCardView: UIView {
 			if _isWildCard {
 				self.backImageView.image = UIImage(named: "pink_\(val)")
 			} else {
-				self.backImageView.image = UIImage(named: "orange_\(val)")
+				self.backImageView.image = UIImage(named: "\(baseCol)_\(val)")
 			}
 		}
 	}
@@ -60,7 +60,7 @@ class FontCardView: UIView {
 			if _isWildCard {
 				self.backImageView.image = UIImage(named: "pink_\(val)")
 			} else {
-				self.backImageView.image = UIImage(named: "orange_\(val)")
+				self.backImageView.image = UIImage(named: "\(baseCol)_\(val)")
 			}
 		}
 	}
