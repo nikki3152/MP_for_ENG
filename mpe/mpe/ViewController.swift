@@ -8,6 +8,7 @@
 
 import UIKit
 
+var gInterstitialCounter = 0
 var adVideoInterstitial: ADView!
 var adVideoReward: ADView!
 var skManager: StoreKitManager!

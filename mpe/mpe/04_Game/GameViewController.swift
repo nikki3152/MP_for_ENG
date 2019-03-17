@@ -599,6 +599,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	//MARK: タイマースタート
 	func startGameTimer() {
 		
+		gInterstitialCounter += 1	//インターステイシャル動画カウンター
+		
 		self.answerWords = [:]
 		self.totalScore = 0
 		self.nowScore = 0
@@ -2382,10 +2384,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	
 	//MARK: ゲームクリア
 	var isGameEnd = false
+	var isGameClear = false
 	func gameClear() {
 		if isGameEnd {
 			return
 		}
+		isGameClear = true
 		isGameEnd = true
 		self.mojikunTimer?.invalidate()
 		self.mojikunTimer = nil
@@ -2457,7 +2461,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveEaseInOut, animations: { 
 			gameclear.transform = CGAffineTransform(scaleX: 1, y: 1)
 		}) { (stop) in
-			UIView.animate(withDuration: 0.25, delay: 4.0, options: .curveEaseInOut, animations: { 
+			UIView.animate(withDuration: 0.25, delay: 4.5, options: .curveEaseInOut, animations: { 
 				gameclear.alpha = 0
 			}) { [weak self](stop) in
 				guard let s = self else {
@@ -2472,6 +2476,12 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				effectTimer.invalidate()
 				effectTimer = nil
 				s.charaImageView.layer.removeAllAnimations()	//アニメーション停止
+				
+				//インターステイシャル動画
+				if gInterstitialCounter >= 3 {
+					gInterstitialCounter = 0
+					adVideoInterstitial.playInterstitialVideo()
+				}
 				
 				s.charaBaseView.isHidden = true
 				let clear = GameClearView.gameClearView()
@@ -2504,6 +2514,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				
 				clear.closeHandler = {[weak self](res) in
 					self?.isGameEnd = false
+					self?.isGameClear = false
 					self?.charaBaseView.isHidden = false
 					switch res {
 					case .next:				//次の問題へ進む
@@ -2528,6 +2539,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						}
 					}
 				}
+				
 			}
 		}
 		
@@ -2712,6 +2724,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 //						over.removeFromSuperview()
 						
 						if adVideoReward.isCanPlayVideo {
+							adVideoReward.videoDelagate = self
 							adVideoReward.playVideo()
 							SoundManager.shared.pauseBGM(true)
 							over.closeHandler = nil
