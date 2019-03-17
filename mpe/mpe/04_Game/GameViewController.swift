@@ -371,6 +371,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				UserDefaults.standard.set(c, forKey: kRandomScorePlayCount)
 			}
 		}
+		
 	}
 	
 	//背景
@@ -1740,11 +1741,14 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	//MARK: ハイスコア更新
 	func makeHiscoreEffect(base: UIView) {
 		
-		let hiscore = UserDefaults.standard.integer(forKey: kHiscore)
+		var hiscores = UserDefaults.standard.object(forKey: kStageHiscores) as! [Int]
+		let hiscore = hiscores[questIndex]
+		//let hiscore = UserDefaults.standard.integer(forKey: kHiscore)
 		if hiscore < totalScore {
 			
 			//ハイスコア更新
-			UserDefaults.standard.set(totalScore, forKey: kHiscore)
+			hiscores[questIndex] = totalScore
+			UserDefaults.standard.set(hiscores, forKey: kStageHiscores)
 			selectCnt.hiScoreLabel.text = "\(totalScore)"
 			
 			let recImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 250, height: 55))
@@ -2452,11 +2456,11 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		base.center = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2)
 		base.backgroundColor = UIColor.clear
 		
-		let gameclear = UIImageView(frame: CGRect(x: 0, y: 0, width: 520, height: 200))
+		let gameclear = UIImageView(frame: CGRect(x: 0, y: 0, width: 440, height: 200))
 		gameclear.contentMode = .scaleAspectFit
 		gameclear.image = UIImage(named: "gameclear_anim_logo.png")
 		base.addSubview(gameclear)
-		gameclear.center = CGPoint(x: base.frame.size.width/2, y: base.frame.size.height/2 - 20)
+		gameclear.center = CGPoint(x: base.frame.size.width/2, y: base.frame.size.height/2 - 60)
 		gameclear.transform = CGAffineTransform(scaleX: 0, y: 0)
 		UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveEaseInOut, animations: { 
 			gameclear.transform = CGAffineTransform(scaleX: 1, y: 1)
@@ -2544,21 +2548,21 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		}
 		
 		//アンダーバー
-		let gameclear_ub = UIImageView(frame: CGRect(x: 0, y: 0, width: 520, height: 80))
+		let gameclear_ub = UIImageView(frame: CGRect(x: 0, y: 0, width: 380, height: 80))
 		gameclear_ub.contentMode = .scaleAspectFit
 		gameclear_ub.image = UIImage(named: "gameclear_anim_underbar")
 		base.addSubview(gameclear_ub)
-		gameclear_ub.center = CGPoint(x: base.frame.size.width/2, y: (base.frame.size.height/2) + (gameclear.frame.size.height / 2) + 40)
+		gameclear_ub.center = CGPoint(x: base.frame.size.width/2, y: gameclear.center.y + (gameclear.frame.size.height / 2) + (gameclear_ub.frame.size.height / 2) + 20)
 		//文字(game clear!!)
 		var delay: Double = 0
 		for i in 1 ... 11 {
 			let num = NSString(format: "%02d", i)
 			let name = "gameclear_anim_word\(num)"
-			let gameclear_logo = UIImageView(frame: CGRect(x: 0, y: 0, width: 510, height: 66))
+			let gameclear_logo = UIImageView(frame: CGRect(x: 0, y: 0, width: 380, height: 66))
 			gameclear_logo.contentMode = .scaleAspectFit
 			gameclear_logo.image = UIImage(named: name)
 			base.addSubview(gameclear_logo)
-			gameclear_logo.center = CGPoint(x: base.frame.size.width/2, y: (base.frame.size.height/2) + (gameclear.frame.size.height / 2) + 33)
+			gameclear_logo.center = CGPoint(x: base.frame.size.width/2, y: gameclear.center.y + (gameclear.frame.size.height / 2) + (gameclear_logo.frame.size.height / 2) + 20)
 			DispatchQueue.main.asyncAfter(deadline: .now() + delay) { 
 				DataManager.animationJump(v: gameclear_logo, height: 25, speed: 0.5)
 			}
@@ -2594,8 +2598,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		effectTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { (t) in
 			let effect = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 			base.addSubview(effect)
-			let y = Int.random(in: 50 ..< Int(size.height - 50))
-			let x = Int.random(in: 50 ..< Int(size.width - 50))
+			let y = Int.random(in: 10 ..< Int(size.height - 10))
+			let x = Int.random(in: 10 ..< Int(size.width - 10))
 			effect.center = CGPoint(x: x, y: y)
 			effect.animationImages = images
 			effect.animationDuration = 1.0

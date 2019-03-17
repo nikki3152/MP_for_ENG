@@ -346,9 +346,9 @@ class StageSelectViewController: BaseViewController {
 				}
 			}
 		}
-		//ハイスコア
-		let hiscore = UserDefaults.standard.integer(forKey: kHiscore)
-		self.hiScoreLabel.text = "\(hiscore)"
+//		//ハイスコア
+//		let hiscore = UserDefaults.standard.integer(forKey: kHiscore)
+//		self.hiScoreLabel.text = "\(hiscore)"
 		
 		self.maxPage = 9//(self.questDatas.count / 10) + (self.questDatas.count % 10)
 		//選択
@@ -677,6 +677,13 @@ class StageSelectViewController: BaseViewController {
 		//ステージ有効フラグ
 		let stageEnableAry = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
 		let stageEnabled = stageEnableAry[index] 
+		
+		//ステージハイスコア
+		hiScoreLabel.isHidden = !stageEnabled
+		if let hiscores = UserDefaults.standard.object(forKey: kStageHiscores) as? [Int] {
+			let hiscore = hiscores[index]
+			self.hiScoreLabel.text = "\(hiscore)"
+		}
 		
 		let questData: QuestData = self.questDatas[index]
 		if stageEnabled {
