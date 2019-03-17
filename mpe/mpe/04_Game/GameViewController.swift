@@ -2140,7 +2140,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 											self?.isInEffect = false
 											
 											//揃えた英単語数更新（のべ数）
-											var c = UserDefaults.standard.integer(forKey: kGameWordsCount) + s.answerWords.count
+											var c = UserDefaults.standard.integer(forKey: kGameWordsCount) + okWords
 											if c > 99999999 {
 												c = 99999999
 											}
