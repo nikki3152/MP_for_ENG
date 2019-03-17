@@ -81,13 +81,23 @@ class ViewController: UIViewController {
 			dataMrg.makeDB()
 		}
 		
-		self.timer = Timer.scheduledTimer(withTimeInterval: 7.0, repeats: true, block: { (t) in
-			
-			self.imageIndex += 1
-			self.backImageView.image = UIImage(named: "story_0\(self.imageIndex)")
-			if self.imageIndex > 3 {
-				self.timer?.invalidate()
-				self.timer = nil
+		self.timer = Timer.scheduledTimer(withTimeInterval: 14.0, repeats: true, block: { [weak self](t) in
+			guard let s = self else {
+				return
+			}
+			s.imageIndex += 1
+			let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: s.backImageView.frame.size.width, height: s.backImageView.frame.size.height))
+			imageView.image = s.backImageView.image
+			s.backImageView.addSubview(imageView)
+			s.backImageView.image = UIImage(named: "story_0\(s.imageIndex)")
+			UIView.animate(withDuration: 0.75, animations: { 
+				imageView.alpha = 0
+			}, completion: { (stop) in
+				imageView.removeFromSuperview()
+			})
+			if s.imageIndex > 3 {
+				s.timer?.invalidate()
+				s.timer = nil
 			}
 		})
 		
@@ -127,7 +137,7 @@ class ViewController: UIViewController {
 					SoundManager.shared.startBGM(type: .bgmTop)		//BGM再生
 				}
 				self.textView.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height + (self.textView.frame.size.height / 2))
-				UIView.animate(withDuration: 20.0, delay: 0, options: .curveLinear, animations: { 
+				UIView.animate(withDuration: 40.0, delay: 0, options: .curveLinear, animations: { 
 					self.textView.center = CGPoint(x: self.view.frame.size.width / 2, y: (self.view.frame.size.height / 2))
 				}) { (stop) in
 				}

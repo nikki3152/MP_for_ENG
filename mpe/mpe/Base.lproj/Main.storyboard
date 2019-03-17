@@ -53,7 +53,7 @@
 
 さあ、ぼうけんのはじまりはじまり……。</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="UDDigiKyokashoNP-R" family="UD Digi Kyokasho NP-R" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="UDDigiKyokashoNP-R" family="UD Digi Kyokasho NP-R" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
