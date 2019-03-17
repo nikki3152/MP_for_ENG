@@ -176,6 +176,7 @@ class StageSelectViewController: BaseViewController {
 						//未解放
 						bt.isEnabled = false
 						bt.isSelected = false
+						bt.setImage(nil, for: .normal)
 					}
 				}
 			}
@@ -464,10 +465,6 @@ class StageSelectViewController: BaseViewController {
 			else if s.currentPage == 9  {
 				s.currentPage = 7
 			}
-			
-//			s.stageSelectedButton?.isSelected = false
-//			s.stageSelectedButton = s.stageButton1
-//			s.stageSelectedButton?.isSelected = true
 			//選択
 			let index = s.stageButton1.tag + s.startIndex
 			s.selectStage(index: index)
@@ -507,9 +504,6 @@ class StageSelectViewController: BaseViewController {
 			}
 			else if s.currentPage == 9  {
 			}
-//			s.stageSelectedButton?.isSelected = false
-//			s.stageSelectedButton = s.stageButton1
-//			s.stageSelectedButton?.isSelected = true
 			//選択
 			let index = s.stageButton1.tag + s.startIndex
 			s.selectStage(index: index)
