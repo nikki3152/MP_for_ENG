@@ -291,8 +291,13 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		//self.adViewDidPlayVideo(adVideoReward, incentive: true)
 		
 		if adVideoReward.isCanPlayVideo {
-			adVideoReward.playVideo()
-			SoundManager.shared.pauseBGM(true)
+			if adVideoReward.playVideo() {
+				SoundManager.shared.pauseBGM(true)
+			} else {
+				let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
+				alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
+				self.present(alert, animated: true, completion: nil)
+			}
 		} else {
 			let alert = UIAlertController(title: nil, message: "動画を再生できませんでした！！", preferredStyle: .alert)
 			alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))

@@ -137,17 +137,19 @@ class ADView: UIView, ADFmyMovieRewardDelegate {
 	var videoIncentive: Bool = false
 	var videoDelagate: ADViewVideoDelegate?
 	
-	func playVideo() {
+	func playVideo() -> Bool {
 		
 		if self.adNetworkType == .adfurikun {
 			if  self.adfurikunMovieReward!.isPrepared() == true {
 				self.videoIncentive = false
 				self.isCanPlayVideo = false
 				self.adfurikunMovieReward?.play()
+				return true
 			} else {
 				print("ADF 広告の取得が完了していません")
 			}
 		}
+		return false
 	}
 	//------------------------------------
 	//MARK: - アドフリくん
