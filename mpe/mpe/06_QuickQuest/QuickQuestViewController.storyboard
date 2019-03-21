@@ -264,6 +264,7 @@
                         <outlet property="button3" destination="PyC-Z6-nOp" id="OdV-YK-lt6"/>
                         <outlet property="button4" destination="B8X-bo-0XD" id="7j1-1T-RUP"/>
                         <outlet property="button5" destination="2UX-LQ-4Rs" id="8nY-Yz-tse"/>
+                        <outlet property="buttonBaseView" destination="XRg-dR-Kof" id="WJ4-8y-jJr"/>
                         <outlet property="fire1" destination="qBR-fn-11G" id="mPv-fb-ra9"/>
                         <outlet property="fire2" destination="pzF-wv-6xD" id="XhP-3v-1Ar"/>
                         <outlet property="fire3" destination="qqo-qa-TGh" id="Rjd-ON-7bq"/>

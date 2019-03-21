@@ -59,6 +59,12 @@ class WaitingViewController: BaseViewController, ADViewVideoDelegate {
 		if pp >= 100 {
 			self.videoButton.isEnabled = false
 		}
+		
+		for v in self.view.subviews {
+			if let bt = v as? UIButton {
+				bt.isExclusiveTouch = true
+			}
+		}
     }
 	
 	

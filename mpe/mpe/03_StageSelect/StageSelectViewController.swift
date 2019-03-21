@@ -390,6 +390,16 @@ class StageSelectViewController: BaseViewController {
 		else if ctype == 10 {
 			self.customChara = .galaga
 		}
+		
+		self.ppButton.isExclusiveTouch = true
+		self.stageLeftButton.isExclusiveTouch = true
+		self.stageRightButton.isExclusiveTouch = true
+		self.leftButton.isExclusiveTouch = true
+		self.rightButton.isExclusiveTouch = true
+		self.backButton.isExclusiveTouch = true
+		for bt in stageButtons {
+			bt.isExclusiveTouch = true
+		}
     }
 	
 	override func viewWillLayoutSubviews() {
@@ -635,6 +645,13 @@ class StageSelectViewController: BaseViewController {
 							mask.removeFromSuperview()
 						}
 						gameView.baseDelegate = self!
+						gameView.closeHandler = {[weak self]() in
+							let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+							self?.ppButton.setTitle("\(pp)", for: .normal)
+							self?.currentPage = self!._currentPage
+							let index = self!.stageButton1.tag + self!.startIndex
+							self?.selectStage(index: index)
+						}
 					}
 				}
 			})

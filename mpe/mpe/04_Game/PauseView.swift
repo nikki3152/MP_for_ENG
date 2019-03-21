@@ -73,6 +73,12 @@ class PauseView: UIView, UITableViewDataSource, UITableViewDelegate {
 		else if ctype == 10 {
 			self.customChara = .galaga
 		}
+		
+		for v in self.buttonBaseView.subviews {
+			if let bt = v as? UIButton {
+				bt.isExclusiveTouch = true
+			}
+		}
 	}
 	
 	@IBAction func buttonAction(_ sender: UIButton) {

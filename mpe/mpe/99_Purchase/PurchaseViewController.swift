@@ -254,6 +254,12 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 			self.ppResetButton.isHidden = true
 			self.allClearButton.isHidden = true
 		#endif
+		
+		for v in self.view.subviews {
+			if let bt = v as? UIButton {
+				bt.isExclusiveTouch = true
+			}
+		}
 	}
 	
 	@IBOutlet weak var ppLabel: OutlineLabel!

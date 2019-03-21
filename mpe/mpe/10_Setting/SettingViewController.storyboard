@@ -32,23 +32,23 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_panel_01.png" highlightedImage="setting_panel_01_tap.png" translatesAutoresizingMaskIntoConstraints="NO" id="WFn-ce-yYX">
-                                <rect key="frame" x="0.0" y="0.0" width="179" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="178" height="414"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_panel_02.png" highlightedImage="setting_panel_02_tap.png" translatesAutoresizingMaskIntoConstraints="NO" id="DQ3-df-o1q">
-                                <rect key="frame" x="179" y="0.0" width="183" height="414"/>
+                                <rect key="frame" x="178" y="0.0" width="183" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="aUn-vL-9cY">
-                                <rect key="frame" x="0.0" y="0.0" width="179" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="178" height="414"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="WMg-OX-ELd">
-                                <rect key="frame" x="181" y="0.0" width="174" height="414"/>
+                                <rect key="frame" x="180" y="0.0" width="174" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1eo-zW-801" customClass="OutlineLabel" customModule="mpe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="352" width="179" height="41"/>
+                                <rect key="frame" x="0.0" y="352" width="178" height="41"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="UDDigiKyokashoNP-B" family="UD Digi Kyokasho NP-B" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -63,7 +63,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5sx-lx-98Z" customClass="OutlineLabel" customModule="mpe" customModuleProvider="target">
-                                <rect key="frame" x="179" y="352" width="179" height="41"/>
+                                <rect key="frame" x="178" y="352" width="179" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="UDDigiKyokashoNP-B" family="UD Digi Kyokasho NP-B" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,7 +78,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5B-Df-28f">
-                                <rect key="frame" x="0.0" y="0.0" width="179" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="178" height="414"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <connections>
                                     <action selector="dataAggregateButtonAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="c3K-1n-VPh"/>
@@ -86,7 +86,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DV1-PO-hR6">
-                                <rect key="frame" x="179" y="0.0" width="183" height="414"/>
+                                <rect key="frame" x="178" y="0.0" width="183" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <connections>
                                     <action selector="soundButtonAction:" destination="Hbe-z7-lxC" eventType="touchUpInside" id="mTD-yN-Wtb"/>
@@ -103,7 +103,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BDw-Qb-dGP">
-                                <rect key="frame" x="373" y="0.0" width="237" height="414"/>
+                                <rect key="frame" x="372" y="0.0" width="238" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtF-4f-GUT">
@@ -145,7 +145,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQh-mr-CIu">
-                                        <rect key="frame" x="126" y="28" width="100" height="40"/>
+                                        <rect key="frame" x="127" y="28" width="100" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="setting_button_off.png"/>
                                         <state key="selected" backgroundImage="setting_button_on.png"/>
@@ -154,7 +154,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJz-EU-cWG">
-                                        <rect key="frame" x="126" y="99" width="100" height="40"/>
+                                        <rect key="frame" x="127" y="99" width="100" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="setting_button_off.png"/>
                                         <state key="selected" backgroundImage="setting_button_on.png"/>
@@ -173,11 +173,11 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_balloon" translatesAutoresizingMaskIntoConstraints="NO" id="JKp-F9-Z2E">
-                                        <rect key="frame" x="12" y="72" width="113" height="253"/>
+                                        <rect key="frame" x="12" y="72" width="112" height="253"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uAx-rg-cHd">
-                                        <rect key="frame" x="36" y="78" width="67" height="206"/>
+                                        <rect key="frame" x="35" y="78" width="67" height="206"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIk-3n-kgt">
@@ -201,6 +201,7 @@
                     <connections>
                         <outlet property="backButton" destination="PzT-9k-2qR" id="tJo-Lu-hEW"/>
                         <outlet property="ballonDisplayImageView" destination="uAx-rg-cHd" id="Pv3-oW-eRL"/>
+                        <outlet property="buttonBaseView" destination="BDw-Qb-dGP" id="VEZ-Me-uNF"/>
                         <outlet property="charaImageView" destination="j9X-9b-fqp" id="avM-nk-zpf"/>
                         <outlet property="dataAggregateButton" destination="U5B-Df-28f" id="FVX-kQ-EeA"/>
                         <outlet property="dataIconImageView" destination="aUn-vL-9cY" id="Jie-iY-nGC"/>

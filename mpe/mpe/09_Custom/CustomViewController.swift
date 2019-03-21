@@ -89,6 +89,14 @@ class CustomViewController: BaseViewController {
 		else if ctype == 10 {
 			self.customChara = .galaga
 		}
+		
+		self.backButton.isExclusiveTouch = true
+		self.ppButton.isExclusiveTouch = true
+		for v in self.charaImageView.subviews {
+			if let bt = v as? UIButton {
+				bt.isExclusiveTouch = true
+			}
+		}
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {

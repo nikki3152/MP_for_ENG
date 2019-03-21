@@ -55,6 +55,13 @@ class SoundViewController: BaseViewController {
 				bt.setTitle(text, for: .normal)
 			}
 		}
+		
+		self.backButton.isExclusiveTouch = true
+		for v in self.baseView.subviews {
+			if let bt = v as? UIButton {
+				bt.isExclusiveTouch = true
+			}
+		}
 	}
 	
 	override func viewWillLayoutSubviews() {

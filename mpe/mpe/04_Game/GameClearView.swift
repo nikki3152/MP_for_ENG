@@ -88,6 +88,12 @@ class GameClearView: UIView, UITableViewDataSource, UITableViewDelegate {
 		else if ctype == 10 {
 			self.customChara = .galaga
 		}
+		
+		for v in self.buttonBaseView.subviews {
+			if let bt = v as? UIButton {
+				bt.isExclusiveTouch = true
+			}
+		}
 	}
 	
 	var ballonMainLabel: TTTAttributedLabel!

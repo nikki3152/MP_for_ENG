@@ -31,6 +31,12 @@ class StudyModeViewController: BaseViewController {
 			//辞書未開放
 			self.dictModeButton.isEnabled = false
 		}
+		
+		for v in self.view.subviews {
+			if let bt = v as? UIButton {
+				bt.isExclusiveTouch = true
+			}
+		}
 	}
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()

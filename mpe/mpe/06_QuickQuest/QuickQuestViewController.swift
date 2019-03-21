@@ -55,6 +55,13 @@ class QuickQuestViewController: BaseViewController {
 		self.answerButton3.isExclusiveTouch = true
 		self.answerButton4.isExclusiveTouch = true
 		self.backButton.isExclusiveTouch = true
+		
+		self.backButton.isExclusiveTouch = true
+		for v in self.buttonBaseView.subviews {
+			if let bt = v as? UIButton {
+				bt.isExclusiveTouch = true
+			}
+		}
 	}
 	
 	//データ集計

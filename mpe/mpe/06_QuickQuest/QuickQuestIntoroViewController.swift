@@ -66,6 +66,13 @@ class QuickQuestIntoroViewController: BaseViewController {
 			self.button4.isEnabled = false
 			self.button5.isEnabled = false
 		}
+		
+		self.backButton.isExclusiveTouch = true
+		for v in self.buttonBaseView.subviews {
+			if let bt = v as? UIButton {
+				bt.isExclusiveTouch = true
+			}
+		}
 	}
 	
 	
@@ -83,6 +90,7 @@ class QuickQuestIntoroViewController: BaseViewController {
 	}
 	
 	//スタート
+	@IBOutlet weak var buttonBaseView: UIView!
 	@IBOutlet weak var button1: UIButton!
 	@IBOutlet weak var button2: UIButton!
 	@IBOutlet weak var button3: UIButton!

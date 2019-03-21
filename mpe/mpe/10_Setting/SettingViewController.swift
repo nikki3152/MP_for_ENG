@@ -73,6 +73,18 @@ class SettingViewController: BaseViewController {
 		else if ctype == 10 {
 			self.customChara = .galaga
 		}
+		
+		for v in self.view.subviews {
+			if let bt = v as? UIButton {
+				bt.isExclusiveTouch = true
+			}
+		}
+		
+		for v in self.buttonBaseView.subviews {
+			if let bt = v as? UIButton {
+				bt.isExclusiveTouch = true
+			}
+		}
 	}
 	
 	override func viewDidLayoutSubviews() {
@@ -114,6 +126,7 @@ class SettingViewController: BaseViewController {
 		}
 	}
 	
+	@IBOutlet weak var buttonBaseView: UIView!
 	//戻る
 	@IBOutlet weak var backButton: UIButton!
 	@IBAction func backButtonAction(_ sender: Any) {

@@ -67,6 +67,12 @@ class DataAggregateViewController: BaseViewController {
 		else if ctype == 10 {
 			self.customChara = .galaga
 		}
+		
+		for v in self.view.subviews {
+			if let bt = v as? UIButton {
+				bt.isExclusiveTouch = true
+			}
+		}
 	}
 	
 	override func viewWillLayoutSubviews() {

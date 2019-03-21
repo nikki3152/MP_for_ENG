@@ -178,6 +178,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 	
 	var gamePlayTime: Double = 0
 	
+	var closeHandler: (() -> Void)?
+	
 	deinit {
 		print(">>>>>>>> deinit \(String(describing: type(of: self))) <<<<<<<<")
 	}
@@ -206,21 +208,23 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		
 		SoundManager.shared.pauseBGM(false)
 		if incentive {
-			if gameOverResType == .timeDouble {
-				//時間を倍にする
-				self.retry()
-				gameOverResType = nil
-			}
-			else if gameOverResType == .next {
-				//次の問題
-				if self.questIndex < 82 {
-					//クリアフラグ設定
-					var stageEnableAry = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
-					stageEnableAry[self.questIndex + 1] = true
-					UserDefaults.standard.set(stageEnableAry, forKey: kEnableStageArry)
+			if gameOverResType != nil {
+				if gameOverResType == .timeDouble {
+					//時間を倍にする
+					self.retry()
+					gameOverResType = nil
 				}
-				self.nextQuest()
-				gameOverResType = nil
+				else if gameOverResType == .next {
+					//次の問題
+					if self.questIndex < 82 {
+						//クリアフラグ設定
+						var stageEnableAry = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
+						stageEnableAry[self.questIndex + 1] = true
+						UserDefaults.standard.set(stageEnableAry, forKey: kEnableStageArry)
+					}
+					self.nextQuest()
+					gameOverResType = nil
+				}
 			}
 		}
 	}
@@ -840,6 +844,14 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				self.startGameTimer()
 			}
 		} else {
+			self.gameTimer?.invalidate()
+			self.gameTimer = nil
+			self.chaDefTimer?.invalidate()
+			self.chaDefTimer = nil
+			self.mojikunTimer?.invalidate()
+			self.mojikunTimer = nil
+			self.closeHandler?()
+			self.closeHandler = nil
 			self.remove()
 			SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
 		}
@@ -938,6 +950,9 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 		if self.cardScrolliew.contentSize.width <= cardScrolliew.frame.size.width {
 			cardLeftButton.isHidden = true
 			cardRightButton.isHidden = true
+		} else {
+			cardLeftButton.isHidden = false
+			cardRightButton.isHidden = false
 		}
 	}
 	//MARK: ゲームメインテーブル作成
@@ -2384,6 +2399,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				self?.chaDefTimer = nil
 				self?.mojikunTimer?.invalidate()
 				self?.mojikunTimer = nil
+				self?.closeHandler?()
+				self?.closeHandler = nil
 				self?.remove()
 				SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
 			}
@@ -2499,6 +2516,16 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				if gInterstitialCounter >= 3 {
 					gInterstitialCounter = 0
 					adVideoInterstitial.playInterstitialVideo()
+					adVideoInterstitial.resultHandler = {(result) in
+						if result == .show {
+							//ポイント
+							var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 1
+							if pp >= 100 {
+								pp = 100
+							}
+							MPEDataManager.updatePP(pp: pp)
+						}
+					}
 				}
 				
 				s.charaBaseView.isHidden = true
@@ -2547,6 +2574,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						clear.closeHandler = nil
 						self?.selectCnt.selectStage(index: self!.questIndex)
 						clear.removeFromSuperview()
+						self?.closeHandler?()
+						self?.closeHandler = nil
 						self?.remove()
 						SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
 					case .dict:				//辞書モードで復習！
@@ -2775,6 +2804,8 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 						self?.gameTimer?.invalidate()
 						self?.gameTimer = nil
 						over.closeHandler = nil
+						self?.closeHandler?()
+						self?.closeHandler = nil
 						over.removeFromSuperview()
 						self?.remove()
 						SoundManager.shared.startBGM(type: .bgmWait)		//BGM再生
