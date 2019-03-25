@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YZS-8A-24d">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,13 +15,101 @@
             <objects>
                 <viewController storyboardIdentifier="PurchaseView" id="YZS-8A-24d" customClass="PurchaseViewController" customModule="mpe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ha-kg-vaQ">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="YIq-Wo-hgh">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bmv-nB-kHH">
+                                <rect key="frame" x="0.0" y="0.0" width="469" height="414"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kot-iq-afU">
+                                        <rect key="frame" x="232" y="13" width="226" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="charge_restore_button.png"/>
+                                        <connections>
+                                            <action selector="restoreButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="Nsc-Eh-I2r"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX6-0x-ZnG">
+                                        <rect key="frame" x="363" y="50" width="88" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.051735617897727272" blue="0.058749112215909088" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="RESET"/>
+                                        <connections>
+                                            <action selector="ppResetButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="cLq-12-hBl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvI-ua-TfE">
+                                        <rect key="frame" x="363" y="85" width="88" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.02849786931818182" green="0.012917258522727272" blue="0.95525568181818177" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="ALL CLEAR"/>
+                                        <connections>
+                                            <action selector="allClearButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="2RS-0W-HyS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjv-f5-Uq0">
+                                        <rect key="frame" x="23" y="284" width="390" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <state key="normal" backgroundImage="charge_button.png"/>
+                                        <connections>
+                                            <action selector="ppPurchaseButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="4hq-Tz-H8z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpF-M1-wxY">
+                                        <rect key="frame" x="23" y="348" width="390" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <state key="normal" backgroundImage="charge_button_movie.png"/>
+                                        <connections>
+                                            <action selector="videoAdButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="rn2-tP-qSF"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_induction.png" translatesAutoresizingMaskIntoConstraints="NO" id="TB8-TL-Sbw">
+                                        <rect key="frame" x="39" y="217" width="389" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="petit_mojikun.png" translatesAutoresizingMaskIntoConstraints="NO" id="h6e-Jb-ceB">
+                                        <rect key="frame" x="368" y="159" width="60" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="petit_mojikun.png" translatesAutoresizingMaskIntoConstraints="NO" id="SgF-cb-QyO">
+                                        <rect key="frame" x="39" y="159" width="60" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RLK-yH-MwI">
+                                        <rect key="frame" x="154" y="33" width="160" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_numberbox.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Cq-Uo-jFK">
+                                                <rect key="frame" x="5" y="5" width="150" height="150"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZM-cT-pSC" customClass="OutlineLabel" customModule="mpe" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="52" width="83" height="51"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="35"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="outlineWidth">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cei-QI-1Eh">
                                 <rect key="frame" x="15" y="15" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -30,53 +118,8 @@
                                     <action selector="backButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="fmV-Hz-0cP"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RLK-yH-MwI">
-                                <rect key="frame" x="128" y="32" width="160" height="160"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_numberbox.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Cq-Uo-jFK">
-                                        <rect key="frame" x="5" y="5" width="150" height="150"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZM-cT-pSC" customClass="OutlineLabel" customModule="mpe" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="52" width="83" height="51"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="35"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="outlineWidth">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                </subviews>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjv-f5-Uq0">
-                                <rect key="frame" x="26" y="243" width="390" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" backgroundImage="charge_button.png"/>
-                                <connections>
-                                    <action selector="ppPurchaseButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="4hq-Tz-H8z"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_induction.png" translatesAutoresizingMaskIntoConstraints="NO" id="TB8-TL-Sbw">
-                                <rect key="frame" x="26" y="177" width="390" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="petit_mojikun.png" translatesAutoresizingMaskIntoConstraints="NO" id="h6e-Jb-ceB">
-                                <rect key="frame" x="356" y="119" width="60" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="petit_mojikun.png" translatesAutoresizingMaskIntoConstraints="NO" id="SgF-cb-QyO">
-                                <rect key="frame" x="26" y="119" width="60" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HAZ-jv-smd">
-                                <rect key="frame" x="426" y="0.0" width="241" height="375"/>
+                                <rect key="frame" x="470" y="0.0" width="265" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -84,34 +127,6 @@
                                     <outlet property="delegate" destination="YZS-8A-24d" id="ucf-JK-rwi"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpF-M1-wxY">
-                                <rect key="frame" x="26" y="307" width="390" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" backgroundImage="charge_button_movie.png"/>
-                                <connections>
-                                    <action selector="videoAdButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="rn2-tP-qSF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX6-0x-ZnG">
-                                <rect key="frame" x="321" y="15" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.051735617897727272" blue="0.058749112215909088" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="RESET"/>
-                                <connections>
-                                    <action selector="ppResetButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="cLq-12-hBl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvI-ua-TfE">
-                                <rect key="frame" x="321" y="60" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.02849786931818182" green="0.012917258522727272" blue="0.95525568181818177" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="ALL CLEAR"/>
-                                <connections>
-                                    <action selector="allClearButtonAction:" destination="YZS-8A-24d" eventType="touchUpInside" id="2RS-0W-HyS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sa8-eH-4Xz"/>
@@ -125,13 +140,14 @@
                         <outlet property="ppPurchaseButton" destination="qjv-f5-Uq0" id="VoR-iM-RKY"/>
                         <outlet property="ppResetButton" destination="UX6-0x-ZnG" id="zwH-98-2HU"/>
                         <outlet property="ppTableView" destination="HAZ-jv-smd" id="DZi-Kr-wEK"/>
+                        <outlet property="restoreButton" destination="Kot-iq-afU" id="8L5-5I-agJ"/>
                         <outlet property="rightCharaImageView" destination="h6e-Jb-ceB" id="Z3i-qZ-0JT"/>
                         <outlet property="videoAdButton" destination="cpF-M1-wxY" id="Tij-If-ebd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6u-bD-Ydv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.39130434782609" y="130.40000000000001"/>
+            <point key="canvasLocation" x="117.1875" y="128.98550724637681"/>
         </scene>
     </scenes>
     <resources>
@@ -141,6 +157,7 @@
         <image name="charge_button_movie.png" width="1102" height="138"/>
         <image name="charge_induction.png" width="1105" height="65"/>
         <image name="charge_numberbox.png" width="500" height="500"/>
+        <image name="charge_restore_button.png" width="452" height="65"/>
         <image name="petit_mojikun.png" width="120" height="96"/>
     </resources>
 </document>

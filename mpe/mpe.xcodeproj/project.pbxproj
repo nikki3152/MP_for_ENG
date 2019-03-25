@@ -387,6 +387,7 @@
 		544271CC218C196B00622897 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544271CB218C196B00622897 /* LoadViewController.swift */; };
 		544271CE218C1CA800622897 /* SaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544271CD218C1CA800622897 /* SaveViewController.swift */; };
 		54433BDB2189D0C600CDBD3D /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54433BDA2189D0C600CDBD3D /* EditViewController.swift */; };
+		5443EDF72248F54A00D75417 /* charge_restore_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5443EDF62248F54A00D75417 /* charge_restore_button.png */; };
 		54612D4921FE97A10091D7BD /* quiz_god.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54612D4421FE97A00091D7BD /* quiz_god.txt */; };
 		54612D4A21FE97A10091D7BD /* quiz_advanced.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54612D4521FE97A10091D7BD /* quiz_advanced.txt */; };
 		54612D4B21FE97A10091D7BD /* quiz_random.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54612D4621FE97A10091D7BD /* quiz_random.txt */; };
@@ -1440,6 +1441,7 @@
 		544271CB218C196B00622897 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		544271CD218C1CA800622897 /* SaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveViewController.swift; sourceTree = "<group>"; };
 		54433BDA2189D0C600CDBD3D /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		5443EDF62248F54A00D75417 /* charge_restore_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_restore_button.png; sourceTree = "<group>"; };
 		54612D4421FE97A00091D7BD /* quiz_god.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quiz_god.txt; sourceTree = "<group>"; };
 		54612D4521FE97A10091D7BD /* quiz_advanced.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quiz_advanced.txt; sourceTree = "<group>"; };
 		54612D4621FE97A10091D7BD /* quiz_random.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quiz_random.txt; sourceTree = "<group>"; };
@@ -3358,6 +3360,7 @@
 			isa = PBXGroup;
 			children = (
 				54D5519221BCA66200980B92 /* charge_numberbox.png */,
+				5443EDF62248F54A00D75417 /* charge_restore_button.png */,
 				54D5519321BCA66200980B92 /* charge_button.png */,
 				54D5519421BCA66200980B92 /* charge_background.png */,
 				54D5519521BCA66200980B92 /* charge_button_movie.png */,
@@ -3857,6 +3860,7 @@
 				54D5523A21BCA66300980B92 /* gameover_button_movie_tap.png in Resources */,
 				54D5530D21BCA66300980B92 /* custom_object_01.png in Resources */,
 				546764E921EF24300025A5A9 /* SE_一時停止ボタン選択音.wav in Resources */,
+				5443EDF72248F54A00D75417 /* charge_restore_button.png in Resources */,
 				54D5528C21BCA66300980B92 /* cell_anime5.png in Resources */,
 				54C65F242225F7E3008D6574 /* ランダム文字指定3.plist in Resources */,
 				54D5530721BCA66300980B92 /* custom_box_01_tap.png in Resources */,

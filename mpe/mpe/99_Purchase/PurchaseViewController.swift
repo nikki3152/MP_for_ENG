@@ -127,6 +127,9 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 	func storeKitManagerNoRestoreItem(shopov: StoreKitManager) {
 		
 		self.removeWaitingView(parentedView: self.view)
+		let alert = UIAlertController(title: nil, message: "復元可能なアイテムはありません。", preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
+		self.present(alert, animated: true, completion: nil)
 	}
 	
 	
@@ -314,6 +317,14 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		skManager.productRequestStart(productIDs: [kProductID10,kProductID50,kProductID100])
 	}
 	
+	//復元
+	@IBOutlet weak var restoreButton: UIButton!
+	@IBAction func restoreButtonAction(_ sender: UIButton) {
+		SoundManager.shared.startSE(type: .seSelect)	//SE再生
+		
+		self.makeWaitinfView(parentView: self.view)
+		skManager.restore()
+	}
 	
 	
 	//MARK: - 待機インジケーター
