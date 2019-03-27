@@ -23,24 +23,33 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 			let product_id = product["product_id"] as! String 
 			let price = product["price"] as! String
 			//let description = product["description"] as! String
-			let name = product["name"] as! String
+			var name: String = ""
 			let product = product["product"]!
-			let str = "\(name) \(price)"
+			var str: String = ""
 			if product_id == kProductID10 {
+				name = "10PP"
+				str = "\(name) \(price)"
 				titles[0] = str
 				productObjs[0] = product
 			}
 			else if product_id == kProductID50 {
+				name = "50PP"
+				str = "\(name) \(price)"
 				titles[1] = str
 				productObjs[1] = product
 			}
 			else if product_id == kProductID100 {
+				name = "100PP"
+				str = "\(name) \(price)"
 				titles[2] = str
 				productObjs[2] = product
 			}
 		}
 		for title in titles {
-			actionSheet.addAction(UIAlertAction(title: title, style: .default, handler: { (action) in
+			actionSheet.addAction(UIAlertAction(title: title, style: .default, handler: { [weak self](action) in
+				guard let s = self else {
+					return
+				}
 				var product: Any!
 				if title.hasPrefix("10PP") {
 					product = productObjs[0]
@@ -52,6 +61,8 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 					product = productObjs[2]
 				}
 				skManager.paymentRequestStart(productDic: ["product":product], quantity: 1)
+				
+				s.makeWaitinfView(parentView: s.view)
 			}))
 		}
 		actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: { (action) in
@@ -79,11 +90,15 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 	//購入取引は完了
 	func storeKitManagerFinishTransaction(shopov: StoreKitManager, info: [String:Any], isRestore: Bool) {
 		
+		if isStartRestore {
+			isStartRestore = false
+		}
 		self.removeWaitingView(parentedView: self.view)
 		if let product_id = info["product_id"] as? String {
 			if product_id == kProductID10 {
 				//ポイント
 				var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 10
+				print("購入:\(pp)")
 				if pp >= 100 {
 					pp = 100
 					self.videoAdButton.isEnabled = false
@@ -96,6 +111,7 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 			else if product_id == kProductID50 {
 				//ポイント
 				var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 50
+				print("購入:\(pp)")
 				if pp >= 100 {
 					pp = 100
 					self.videoAdButton.isEnabled = false
@@ -108,6 +124,7 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 			else if product_id == kProductID100 {
 				//ポイント
 				let pp = 100
+				print("購入:\(pp)")
 				self.videoAdButton.isEnabled = false
 				self.ppPurchaseButton.isEnabled = false
 				self.ppLabel.text = "\(pp)"
@@ -126,10 +143,13 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 	//リストアするアイテムはない
 	func storeKitManagerNoRestoreItem(shopov: StoreKitManager) {
 		
+		print("リストアするアイテムはない")
 		self.removeWaitingView(parentedView: self.view)
-		let alert = UIAlertController(title: nil, message: "復元可能なアイテムはありません。", preferredStyle: .alert)
-		alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
-		self.present(alert, animated: true, completion: nil)
+		if isStartRestore {
+			let alert = UIAlertController(title: nil, message: "復元可能なアイテムはありません。", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
+			self.present(alert, animated: true, completion: nil)
+		}
 	}
 	
 	
@@ -318,12 +338,13 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 	}
 	
 	//復元
+	var isStartRestore = false
 	@IBOutlet weak var restoreButton: UIButton!
 	@IBAction func restoreButtonAction(_ sender: UIButton) {
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
-		
 		self.makeWaitinfView(parentView: self.view)
 		skManager.restore()
+		isStartRestore = true
 	}
 	
 	
