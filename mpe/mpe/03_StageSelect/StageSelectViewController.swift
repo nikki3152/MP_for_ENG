@@ -115,7 +115,7 @@ class StageSelectViewController: BaseViewController {
 			_currentPage = newValue
 			self.startIndex = (_currentPage - 1) * 10
 			//ポイント
-			let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+			let pp = MPEDataManager.getPP()
 			var pageEnabled = false
 			//ステージ有効フラグ
 			let stageEnableAry = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
@@ -356,7 +356,7 @@ class StageSelectViewController: BaseViewController {
 		self.selectStage(index: index)
 		
 		//ポイント
-		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		let pp = MPEDataManager.getPP()
 		self.ppButton.setTitle("\(pp)", for: .normal)
 		
 		let ctype = UserDefaults.standard.integer(forKey: kSelectedCharaType)
@@ -436,7 +436,7 @@ class StageSelectViewController: BaseViewController {
 			
 		}
 		purchaseView.closeHandler = {[weak self]() in
-			let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+			let pp = MPEDataManager.getPP()
 			self?.ppButton.setTitle("\(pp)", for: .normal)
 			self?.currentPage = self!._currentPage
 			let index = self!.stageButton1.tag + self!.startIndex
@@ -646,7 +646,7 @@ class StageSelectViewController: BaseViewController {
 						}
 						gameView.baseDelegate = self!
 						gameView.closeHandler = {[weak self]() in
-							let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+							let pp = MPEDataManager.getPP()
 							self?.ppButton.setTitle("\(pp)", for: .normal)
 							self?.currentPage = self!._currentPage
 							let index = self!.stageButton1.tag + self!.startIndex

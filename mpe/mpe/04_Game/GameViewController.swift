@@ -2519,10 +2519,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 					adVideoInterstitial.resultHandler = {(result) in
 						if result == .show {
 							//ポイント
-							var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 1
-							if pp >= 100 {
-								pp = 100
-							}
+							let pp = UserDefaults.standard.integer(forKey: kPPPoint) + 1
 							MPEDataManager.updatePP(pp: pp)
 						}
 					}
@@ -2542,7 +2539,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				s.view.addSubview(clear)
 				
 				//次のステージボタンの無効化
-				let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+				let pp = MPEDataManager.getPP()
 				if s.questIndex >= 82 {
 					clear.nextQuestButton.isEnabled = false
 				} else if s.questIndex == 79 && pp < 100 {
@@ -2735,7 +2732,7 @@ class GameViewController: BaseViewController, UIScrollViewDelegate, GameTableVie
 				s.view.addSubview(over)
 				
 				//次のステージボタンの無効化
-				let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+				let pp = MPEDataManager.getPP()
 				if s.questIndex >= 82 {
 					over.nextQuestButton.isEnabled = false
 				} else if s.questIndex == 79 && pp < 100 {

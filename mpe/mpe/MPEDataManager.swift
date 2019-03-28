@@ -16,9 +16,11 @@ let kEnableCharaArry: String = "kEnableCharaArry"
 let kEnableStageArry: String = "kEnableStageArry"
 let kEnableDictionary: String = "kEnableDictionary"
 let kSelectedCharaType: String = "kSelectedCharaType"
-//let kHiscore: String = "kHiscore"
 let kStageHiscores: String = "kStageHiscores"
 let kPPPoint: String = "kPPPoint"
+let kIsPurchase10PP: String = "kIsPurchase10PP"
+let kIsPurchase50PP: String = "kIsPurchase50PP"
+let kIsPurchase100PP: String = "kIsPurchase100PP"
 let kCurrentQuestIndex: String = "kCurrentQuestIndex"
 
 //データ集計
@@ -108,6 +110,24 @@ class MPEDataManager: DataManager {
 		return value
 	}
 	
+	class func getPP() -> Int {
+	
+		var pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		if UserDefaults.standard.bool(forKey: kIsPurchase10PP) {
+			pp += 10
+		}
+		if UserDefaults.standard.bool(forKey: kIsPurchase50PP) {
+			pp += 50
+		}
+		if UserDefaults.standard.bool(forKey: kIsPurchase100PP) {
+			pp += 100
+		}
+		if pp > 100 {
+			pp = 100
+		}
+		return pp
+	}
+	
 	class func updatePP(pp: Int) {
 		
 		var setPP = pp
@@ -115,6 +135,7 @@ class MPEDataManager: DataManager {
 			setPP = 100
 		}
 		UserDefaults.standard.set(setPP, forKey: kPPPoint)
+		setPP = MPEDataManager.getPP() 
 		if setPP >= 100 {
 			var stageFlgs = UserDefaults.standard.object(forKey: kEnableStageArry) as! [Bool]
 			stageFlgs[0] = true		//初級

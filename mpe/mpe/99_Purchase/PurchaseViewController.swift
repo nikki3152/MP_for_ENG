@@ -11,10 +11,14 @@ import UIKit
 class PurchaseViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, ADViewVideoDelegate, StoreKitManagerDelegate {
 
 	//MARK: StoreKitManagerDelegate
-		//プロダクトのリストアップ
+	//プロダクトのリストアップ
 	func storeKitManagerProductListUp(shopov: StoreKitManager, products: [[String:Any]]) {
 		
 		self.removeWaitingView(parentedView: self.view)
+		
+		let is10PP = UserDefaults.standard.bool(forKey: kIsPurchase10PP)
+		let is50PP = UserDefaults.standard.bool(forKey: kIsPurchase50PP)
+		let is100PP = UserDefaults.standard.bool(forKey: kIsPurchase100PP)
 		
 		let actionSheet = UIAlertController(title: "PP購入", message: nil, preferredStyle: .actionSheet)
 		var titles: [String] = ["","",""]
@@ -28,19 +32,31 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 			var str: String = ""
 			if product_id == kProductID10 {
 				name = "10PP"
-				str = "\(name) \(price)"
+				if is10PP {
+					str = "\(name) \(price)（購入済）"
+				} else {
+					str = "\(name) \(price)"
+				}
 				titles[0] = str
 				productObjs[0] = product
 			}
 			else if product_id == kProductID50 {
 				name = "50PP"
-				str = "\(name) \(price)"
+				if is50PP {
+					str = "\(name) \(price)（購入済）"
+				} else {
+					str = "\(name) \(price)"
+				}
 				titles[1] = str
 				productObjs[1] = product
 			}
 			else if product_id == kProductID100 {
 				name = "100PP"
-				str = "\(name) \(price)"
+				if is100PP {
+					str = "\(name) \(price)（購入済）"
+				} else {
+					str = "\(name) \(price)"
+				}
 				titles[2] = str
 				productObjs[2] = product
 			}
@@ -52,17 +68,30 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 				}
 				var product: Any!
 				if title.hasPrefix("10PP") {
-					product = productObjs[0]
+					if is10PP == false {
+						product = productObjs[0]
+					}
 				}
 				else if title.hasPrefix("50PP") {
-					product = productObjs[1]
+					if is50PP == false {
+						product = productObjs[1]
+					}
 				}
 				else if title.hasPrefix("100PP") {
-					product = productObjs[2]
+					if is100PP == false {
+						product = productObjs[2]
+					}
 				}
-				skManager.paymentRequestStart(productDic: ["product":product], quantity: 1)
 				
-				s.makeWaitinfView(parentView: s.view)
+				if product != nil {
+					skManager.paymentRequestStart(productDic: ["product":product], quantity: 1)
+					s.makeWaitinfView(parentView: s.view)
+				} else {
+					let alert = UIAlertController(title: "", message: "このアイテムはすでに購入済みです。", preferredStyle: .alert)
+					alert.addAction(UIAlertAction(title: "閉じる", style: .cancel, handler: { (action) in
+					}))
+					s.present(alert, animated: true, completion: nil)
+				}
 			}))
 		}
 		actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: { (action) in
@@ -97,7 +126,8 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		if let product_id = info["product_id"] as? String {
 			if product_id == kProductID10 {
 				//ポイント
-				var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 10
+				UserDefaults.standard.set(true, forKey: kIsPurchase10PP)
+				var pp = MPEDataManager.getPP()
 				print("購入:\(pp)")
 				if pp >= 100 {
 					pp = 100
@@ -105,12 +135,12 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 					self.ppPurchaseButton.isEnabled = false
 				}
 				self.ppLabel.text = "\(pp)"
-				MPEDataManager.updatePP(pp: pp)
 				self.ppTableView.reloadData()
 			}
 			else if product_id == kProductID50 {
 				//ポイント
-				var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 50
+				UserDefaults.standard.set(true, forKey: kIsPurchase50PP)
+				var pp = MPEDataManager.getPP()
 				print("購入:\(pp)")
 				if pp >= 100 {
 					pp = 100
@@ -118,17 +148,16 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 					self.ppPurchaseButton.isEnabled = false
 				}
 				self.ppLabel.text = "\(pp)"
-				MPEDataManager.updatePP(pp: pp)
 				self.ppTableView.reloadData()
 			}
 			else if product_id == kProductID100 {
 				//ポイント
-				let pp = 100
+				UserDefaults.standard.set(true, forKey: kIsPurchase100PP)
+				let pp = MPEDataManager.getPP()
 				print("購入:\(pp)")
 				self.videoAdButton.isEnabled = false
 				self.ppPurchaseButton.isEnabled = false
 				self.ppLabel.text = "\(pp)"
-				MPEDataManager.updatePP(pp: pp)
 				self.ppTableView.reloadData()
 			}
 		}
@@ -163,13 +192,13 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		if incentive {
 			//ポイント
 			var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 1
+			MPEDataManager.updatePP(pp: pp)
+			pp = MPEDataManager.getPP()
 			if pp >= 100 {
-				pp = 100
 				self.videoAdButton.isEnabled = false
 				self.ppPurchaseButton.isEnabled = false
 			}
 			self.ppLabel.text = "\(pp)"
-			MPEDataManager.updatePP(pp: pp)
 			self.ppTableView.reloadData()
 		}
 	}
@@ -220,7 +249,7 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 			cell.ppLabel?.text = "\(pp)PP"
 		}
 		cell.infoLabel?.text = "\(text)"
-		let p = UserDefaults.standard.integer(forKey: kPPPoint)
+		let p = MPEDataManager.getPP()
 		if p >= pp {
 			cell.ppLabel?.textColor = UIColor.yellow
 			cell.infoLabel?.textColor = UIColor.yellow
@@ -261,7 +290,7 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 			DataManager.animationJump(v: self!.rightCharaImageView, height: 20, speed: 0.5, isRepeat: false, finished: nil)
 		}
 		//ポイント
-		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		let pp = MPEDataManager.getPP()
 		self.ppLabel.text = "\(pp)"
 		
 		if pp >= 100 {
@@ -397,7 +426,7 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 	@IBAction func allClearButtonAction(_ sender: Any) {
 		
 		MPEDataManager.updatePP(pp: 100)
-		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		let pp = MPEDataManager.getPP()
 		self.ppLabel.text = "\(pp)"
 		MPEDataManager.updatePP(pp: pp)
 		self.ppTableView.reloadData()
@@ -414,11 +443,6 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 	@IBAction func ppResetButtonAction(_ sender: Any) {
 		
 		MPEDataManager.updatePP(pp: 0)
-		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
-		self.ppLabel.text = "\(pp)"
-		MPEDataManager.updatePP(pp: pp)
-		self.ppTableView.reloadData()
-		
 		UserDefaults.standard.removeObject(forKey: kTotalScore)
 		UserDefaults.standard.removeObject(forKey: kAlllPlayTimes)
 		UserDefaults.standard.removeObject(forKey: kGameClearCount)
@@ -451,6 +475,14 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		UserDefaults.standard.removeObject(forKey: kQuickRandomCorrectCount)
 		
 		UserDefaults.standard.set(["a":0, "b":0, "c":0, "d":0, "e":0, "f":0, "g":0, "h":0, "i":0, "j":0, "k":0, "l":0, "m":0, "n":0, "o":0, "p":0, "q":0, "r":0, "s":0, "t":0, "u":0, "v":0, "w":0, "x":0, "y":0, "z":0], forKey: kUsedFontDict)
+		
+		UserDefaults.standard.set(false, forKey: kIsPurchase10PP)
+		UserDefaults.standard.set(false, forKey: kIsPurchase50PP)
+		UserDefaults.standard.set(false, forKey: kIsPurchase100PP)
+		
+		let pp = MPEDataManager.getPP()
+		self.ppLabel.text = "\(pp)"
+		self.ppTableView.reloadData()
 		
 	}
 }

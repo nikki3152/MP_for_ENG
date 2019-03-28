@@ -30,7 +30,7 @@ class QuickQuestIntoroViewController: BaseViewController {
 		DataManager.animationFuwa(v: fire3, dy: 10, speed: 2.3)
 		DataManager.animationFuwa(v: fire4, dy: 10, speed: 1.8)
 		//ポイント
-		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		let pp = MPEDataManager.getPP()
 		if pp >= 90 {
 			self.button1.isEnabled = true
 			self.button2.isEnabled = true

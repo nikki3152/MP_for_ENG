@@ -16,12 +16,12 @@ class WaitingViewController: BaseViewController, ADViewVideoDelegate {
 		if incentive {
 			//ポイント
 			var pp = UserDefaults.standard.integer(forKey: kPPPoint) + 1
+			MPEDataManager.updatePP(pp: pp)
+			pp = MPEDataManager.getPP()
 			if pp >= 100 {
-				pp = 100
 				self.videoButton.isEnabled = false
 			}
 			self.purchaseButton.setTitle("\(pp)", for: .normal)
-			MPEDataManager.updatePP(pp: pp)
 		}
 	}
 	func adViewLoadVideo(_ adView: ADView, canLoad: Bool) {
@@ -54,7 +54,7 @@ class WaitingViewController: BaseViewController, ADViewVideoDelegate {
 		DataManager.animationFuwa(v: settingImgView, dy: 14, speed: 2.6)
 		
 		//ポイント
-		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		let pp = MPEDataManager.getPP()
 		self.purchaseButton.setTitle("\(pp)", for: .normal)
 		if pp >= 100 {
 			self.videoButton.isEnabled = false
@@ -155,7 +155,7 @@ class WaitingViewController: BaseViewController, ADViewVideoDelegate {
 			
 		}
 		purchaseView.closeHandler = {[weak self]() in
-			var pp = UserDefaults.standard.integer(forKey: kPPPoint)
+			var pp = MPEDataManager.getPP()
 			if pp >= 100 {
 				pp = 100
 				self?.videoButton.isEnabled = false

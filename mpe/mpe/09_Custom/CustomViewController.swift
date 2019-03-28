@@ -107,7 +107,7 @@ class CustomViewController: BaseViewController {
 	func updatePP() {
 		
 		//ポイント
-		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		let pp = MPEDataManager.getPP()
 		self.ppButton.setTitle("\(pp)", for: .normal)
 		
 		if pp >= 70 {

@@ -36,7 +36,7 @@ class SettingViewController: BaseViewController {
 		self.switchSE.isSelected = UserDefaults.standard.bool(forKey: kSEOn)
 		
 		//ポイント
-		let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+		let pp = MPEDataManager.getPP()
 		self.ppButton.setTitle("\(pp)", for: .normal)
 		
 		DataManager.animationFuwa(v: dataIconImageView, dy: 10, speed: 3.0)
@@ -299,7 +299,7 @@ class SettingViewController: BaseViewController {
 			
 		}
 		purchaseView.closeHandler = {[weak self]() in
-			let pp = UserDefaults.standard.integer(forKey: kPPPoint)
+			let pp = MPEDataManager.getPP()
 			self?.purchaseButton.setTitle("\(pp)", for: .normal)
 		}
 	}
