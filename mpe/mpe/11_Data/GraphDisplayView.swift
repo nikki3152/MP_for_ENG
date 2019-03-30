@@ -447,33 +447,15 @@ class GraphDisplayView: UIView {
 				label.font = UIFont.boldSystemFont(ofSize: 10.0)
 				label.sizeToFit()
 				self.addSubview(label)
-				let y: CGFloat = self.bounds.size.height - self.bottomMargin - ((value - self.graphDrawView.min) * self.graphDrawView.valPerPix) - self.graphDrawView.bottomMargin
+				let min = self.graphDrawView.min!
+				let a = (value - min) * self.graphDrawView.valPerPix
+				let y: CGFloat = self.bounds.size.height - self.bottomMargin - a - self.graphDrawView.bottomMargin
 				label.center = CGPoint(x: self.leftPixelMargin / 2, y: y)
 				value = value + self.graphDrawView.memoriYMargin
 				if y < self.topMargin {
 					label.isHidden = true
 				}
 				if value > self.graphDrawView.max {
-					break
-				}
-			}
-		}
-		
-		//体脂肪率の値(％)
-		if self.graphDrawView.graph2ndDatas.count > 0 {
-			var value: CGFloat = self.graphDrawView.min2
-			for _ in 0 ... 100 {
-				let label = UILabel()
-				label.textAlignment = .left
-				label.text = "\(String(Int(value)))%"
-				label.font = UIFont.boldSystemFont(ofSize: 10.0)
-				label.textColor = self.graphDrawView.line2ndColor
-				label.sizeToFit()
-				self.addSubview(label)
-				let y: CGFloat = self.bounds.size.height - self.bottomMargin - ((value - self.graphDrawView.min2) * self.graphDrawView.val2ndPerPix) - self.graphDrawView.bottomMargin
-				label.center = CGPoint(x: self.leftPixelMargin + self.graphWidth + (self.rightPixelMargin / 2), y: y)
-				value = value + self.graphDrawView.memori2ndYMargin
-				if value > self.graphDrawView.max2 {
 					break
 				}
 			}
