@@ -1058,6 +1058,7 @@
 		54F4E8A92223044100B3B710 /* Version6008.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54F4E8752223044100B3B710 /* Version6008.txt */; };
 		54F4E8AA2223044100B3B710 /* MovieReward6008.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F4E8762223044100B3B710 /* MovieReward6008.m */; };
 		54F4E8AB2223044100B3B710 /* MovieNative6008.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F4E8782223044100B3B710 /* MovieNative6008.m */; };
+		54FDE1E5225192B50021475B /* PurchaseItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FDE1E4225192B50021475B /* PurchaseItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -2143,6 +2144,7 @@
 		54F4E8762223044100B3B710 /* MovieReward6008.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieReward6008.m; sourceTree = "<group>"; };
 		54F4E8772223044100B3B710 /* MovieInterstitial6008.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieInterstitial6008.h; sourceTree = "<group>"; };
 		54F4E8782223044100B3B710 /* MovieNative6008.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieNative6008.m; sourceTree = "<group>"; };
+		54FDE1E4225192B50021475B /* PurchaseItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2917,8 +2919,9 @@
 		54CFB41B20DE3F4100057F08 /* 99_Purchase */ = {
 			isa = PBXGroup;
 			children = (
-				54CFB40C20DE3B1F00057F08 /* PurchaseViewController.swift */,
 				54CFB40E20DE3B3100057F08 /* PurchaseViewController.storyboard */,
+				54CFB40C20DE3B1F00057F08 /* PurchaseViewController.swift */,
+				54FDE1E4225192B50021475B /* PurchaseItemViewController.swift */,
 				541268722221781200CE3A35 /* PPInfoCell.swift */,
 				541268732221781200CE3A35 /* PPInfoCell.xib */,
 			);
@@ -4765,6 +4768,7 @@
 				54F4E88B2223044100B3B710 /* MovieReward6009.m in Sources */,
 				54F4E87D2223044100B3B710 /* MovieInterstitial6001.m in Sources */,
 				54CFB40120DE370A00057F08 /* SettingViewController.swift in Sources */,
+				54FDE1E5225192B50021475B /* PurchaseItemViewController.swift in Sources */,
 				5467650A21EF30EF0025A5A9 /* SoundPlayer.swift in Sources */,
 				54F4E8812223044100B3B710 /* MovieInterstitial6006.m in Sources */,
 				54F3A6E12197CDAF00A1E01F /* ConditionsPickerView.swift in Sources */,

@@ -17,12 +17,19 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		self.removeWaitingView(parentedView: self.view)
 		
 		let is10PP = UserDefaults.standard.bool(forKey: kIsPurchase10PP)
+		let is20PP = UserDefaults.standard.bool(forKey: kIsPurchase20PP)
+		let is30PP = UserDefaults.standard.bool(forKey: kIsPurchase30PP)
+		let is40PP = UserDefaults.standard.bool(forKey: kIsPurchase40PP)
 		let is50PP = UserDefaults.standard.bool(forKey: kIsPurchase50PP)
+		let is60PP = UserDefaults.standard.bool(forKey: kIsPurchase60PP)
+		let is70PP = UserDefaults.standard.bool(forKey: kIsPurchase70PP)
+		let is80PP = UserDefaults.standard.bool(forKey: kIsPurchase80PP)
+		let is90PP = UserDefaults.standard.bool(forKey: kIsPurchase90PP)
 		let is100PP = UserDefaults.standard.bool(forKey: kIsPurchase100PP)
 		
 		let actionSheet = UIAlertController(title: "PP購入", message: nil, preferredStyle: .actionSheet)
-		var titles: [String] = ["","",""]
-		var productObjs: [Any] = ["","",""]
+		var titles: [String] = ["","","","","","","","","",""]
+		var productObjs: [Any] = ["","","","","","","","","",""]
 		for product in products {
 			let product_id = product["product_id"] as! String 
 			let price = product["price"] as! String
@@ -33,32 +40,102 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 			if product_id == kProductID10 {
 				name = "10PP"
 				if is10PP {
-					str = "\(name) \(price)（購入済）"
+					str = "\(name) （購入済）"
 				} else {
 					str = "\(name) \(price)"
 				}
 				titles[0] = str
 				productObjs[0] = product
 			}
-			else if product_id == kProductID50 {
-				name = "50PP"
-				if is50PP {
-					str = "\(name) \(price)（購入済）"
+			else if product_id == kProductID20 {
+				name = "20PP"
+				if is20PP {
+					str = "\(name) （購入済）"
 				} else {
 					str = "\(name) \(price)"
 				}
 				titles[1] = str
 				productObjs[1] = product
 			}
-			else if product_id == kProductID100 {
-				name = "100PP"
-				if is100PP {
-					str = "\(name) \(price)（購入済）"
+			else if product_id == kProductID30 {
+				name = "30PP"
+				if is30PP {
+					str = "\(name) （購入済）"
 				} else {
 					str = "\(name) \(price)"
 				}
 				titles[2] = str
 				productObjs[2] = product
+			}
+			else if product_id == kProductID40 {
+				name = "40PP"
+				if is40PP {
+					str = "\(name) （購入済）"
+				} else {
+					str = "\(name) \(price)"
+				}
+				titles[3] = str
+				productObjs[3] = product
+			}
+			else if product_id == kProductID50 {
+				name = "50PP"
+				if is50PP {
+					str = "\(name) （購入済）"
+				} else {
+					str = "\(name) \(price)"
+				}
+				titles[4] = str
+				productObjs[4] = product
+			}
+			else if product_id == kProductID60 {
+				name = "60PP"
+				if is60PP {
+					str = "\(name) （購入済）"
+				} else {
+					str = "\(name) \(price)"
+				}
+				titles[5] = str
+				productObjs[5] = product
+			}
+			else if product_id == kProductID70 {
+				name = "70PP"
+				if is70PP {
+					str = "\(name) （購入済）"
+				} else {
+					str = "\(name) \(price)"
+				}
+				titles[6] = str
+				productObjs[6] = product
+			}
+			else if product_id == kProductID80 {
+				name = "80PP"
+				if is80PP {
+					str = "\(name) （購入済）"
+				} else {
+					str = "\(name) \(price)"
+				}
+				titles[7] = str
+				productObjs[7] = product
+			}
+			else if product_id == kProductID90 {
+				name = "90PP"
+				if is90PP {
+					str = "\(name) （購入済）"
+				} else {
+					str = "\(name) \(price)"
+				}
+				titles[8] = str
+				productObjs[8] = product
+			}
+			else if product_id == kProductID100 {
+				name = "100PP"
+				if is100PP {
+					str = "\(name) （購入済）"
+				} else {
+					str = "\(name) \(price)"
+				}
+				titles[9] = str
+				productObjs[9] = product
 			}
 		}
 		for title in titles {
@@ -72,14 +149,49 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 						product = productObjs[0]
 					}
 				}
+				else if title.hasPrefix("20PP") {
+					if is20PP == false {
+						product = productObjs[1]
+					}
+				}
+				else if title.hasPrefix("30PP") {
+					if is30PP == false {
+						product = productObjs[2]
+					}
+				}
+				else if title.hasPrefix("40PP") {
+					if is40PP == false {
+						product = productObjs[3]
+					}
+				}
 				else if title.hasPrefix("50PP") {
 					if is50PP == false {
-						product = productObjs[1]
+						product = productObjs[4]
+					}
+				}
+				else if title.hasPrefix("60PP") {
+					if is60PP == false {
+						product = productObjs[5]
+					}
+				}
+				else if title.hasPrefix("70PP") {
+					if is70PP == false {
+						product = productObjs[6]
+					}
+				}
+				else if title.hasPrefix("80PP") {
+					if is80PP == false {
+						product = productObjs[7]
+					}
+				}
+				else if title.hasPrefix("90PP") {
+					if is90PP == false {
+						product = productObjs[8]
 					}
 				}
 				else if title.hasPrefix("100PP") {
 					if is100PP == false {
-						product = productObjs[2]
+						product = productObjs[9]
 					}
 				}
 				
@@ -138,9 +250,107 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 				self.ppTableView.reloadData()
 				MPEDataManager.updatePP(pp: UserDefaults.standard.integer(forKey: kPPPoint))
 			}
+			else if product_id == kProductID20 {
+				//ポイント
+				UserDefaults.standard.set(true, forKey: kIsPurchase20PP)
+				var pp = MPEDataManager.getPP()
+				print("購入:\(pp)")
+				if pp >= 100 {
+					pp = 100
+					self.videoAdButton.isEnabled = false
+					self.ppPurchaseButton.isEnabled = false
+				}
+				self.ppLabel.text = "\(pp)"
+				self.ppTableView.reloadData()
+				MPEDataManager.updatePP(pp: UserDefaults.standard.integer(forKey: kPPPoint))
+			}
+			else if product_id == kProductID30 {
+				//ポイント
+				UserDefaults.standard.set(true, forKey: kIsPurchase30PP)
+				var pp = MPEDataManager.getPP()
+				print("購入:\(pp)")
+				if pp >= 100 {
+					pp = 100
+					self.videoAdButton.isEnabled = false
+					self.ppPurchaseButton.isEnabled = false
+				}
+				self.ppLabel.text = "\(pp)"
+				self.ppTableView.reloadData()
+				MPEDataManager.updatePP(pp: UserDefaults.standard.integer(forKey: kPPPoint))
+			}
+			else if product_id == kProductID40 {
+				//ポイント
+				UserDefaults.standard.set(true, forKey: kIsPurchase40PP)
+				var pp = MPEDataManager.getPP()
+				print("購入:\(pp)")
+				if pp >= 100 {
+					pp = 100
+					self.videoAdButton.isEnabled = false
+					self.ppPurchaseButton.isEnabled = false
+				}
+				self.ppLabel.text = "\(pp)"
+				self.ppTableView.reloadData()
+				MPEDataManager.updatePP(pp: UserDefaults.standard.integer(forKey: kPPPoint))
+			}
 			else if product_id == kProductID50 {
 				//ポイント
 				UserDefaults.standard.set(true, forKey: kIsPurchase50PP)
+				var pp = MPEDataManager.getPP()
+				print("購入:\(pp)")
+				if pp >= 100 {
+					pp = 100
+					self.videoAdButton.isEnabled = false
+					self.ppPurchaseButton.isEnabled = false
+				}
+				self.ppLabel.text = "\(pp)"
+				self.ppTableView.reloadData()
+				MPEDataManager.updatePP(pp: UserDefaults.standard.integer(forKey: kPPPoint))
+			}
+			else if product_id == kProductID60 {
+				//ポイント
+				UserDefaults.standard.set(true, forKey: kIsPurchase60PP)
+				var pp = MPEDataManager.getPP()
+				print("購入:\(pp)")
+				if pp >= 100 {
+					pp = 100
+					self.videoAdButton.isEnabled = false
+					self.ppPurchaseButton.isEnabled = false
+				}
+				self.ppLabel.text = "\(pp)"
+				self.ppTableView.reloadData()
+				MPEDataManager.updatePP(pp: UserDefaults.standard.integer(forKey: kPPPoint))
+			}
+			else if product_id == kProductID70 {
+				//ポイント
+				UserDefaults.standard.set(true, forKey: kIsPurchase70PP)
+				var pp = MPEDataManager.getPP()
+				print("購入:\(pp)")
+				if pp >= 100 {
+					pp = 100
+					self.videoAdButton.isEnabled = false
+					self.ppPurchaseButton.isEnabled = false
+				}
+				self.ppLabel.text = "\(pp)"
+				self.ppTableView.reloadData()
+				MPEDataManager.updatePP(pp: UserDefaults.standard.integer(forKey: kPPPoint))
+			}
+			else if product_id == kProductID80 {
+				//ポイント
+				UserDefaults.standard.set(true, forKey: kIsPurchase80PP)
+				var pp = MPEDataManager.getPP()
+				print("購入:\(pp)")
+				if pp >= 100 {
+					pp = 100
+					self.videoAdButton.isEnabled = false
+					self.ppPurchaseButton.isEnabled = false
+				}
+				self.ppLabel.text = "\(pp)"
+				self.ppTableView.reloadData()
+				MPEDataManager.updatePP(pp: UserDefaults.standard.integer(forKey: kPPPoint))
+			}
+			else if product_id == kProductID90 {
+				//ポイント
+				UserDefaults.standard.set(true, forKey: kIsPurchase90PP)
 				var pp = MPEDataManager.getPP()
 				print("購入:\(pp)")
 				if pp >= 100 {
@@ -366,7 +576,7 @@ class PurchaseViewController: BaseViewController, UITableViewDataSource, UITable
 		SoundManager.shared.startSE(type: .seSelect)	//SE再生
 		
 		self.makeWaitinfView(parentView: self.view)
-		skManager.productRequestStart(productIDs: [kProductID10,kProductID50,kProductID100])
+		skManager.productRequestStart(productIDs: kProductIDs)
 	}
 	
 	//復元

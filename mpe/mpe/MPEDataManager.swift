@@ -19,7 +19,14 @@ let kSelectedCharaType: String = "kSelectedCharaType"
 let kStageHiscores: String = "kStageHiscores"
 let kPPPoint: String = "kPPPoint"
 let kIsPurchase10PP: String = "kIsPurchase10PP"
+let kIsPurchase20PP: String = "kIsPurchase20PP"
+let kIsPurchase30PP: String = "kIsPurchase30PP"
+let kIsPurchase40PP: String = "kIsPurchase40PP"
 let kIsPurchase50PP: String = "kIsPurchase50PP"
+let kIsPurchase60PP: String = "kIsPurchase60PP"
+let kIsPurchase70PP: String = "kIsPurchase70PP"
+let kIsPurchase80PP: String = "kIsPurchase80PP"
+let kIsPurchase90PP: String = "kIsPurchase90PP"
 let kIsPurchase100PP: String = "kIsPurchase100PP"
 let kCurrentQuestIndex: String = "kCurrentQuestIndex"
 
@@ -56,8 +63,16 @@ let kUsedFontDict: String = "kUsedFontDict"
 
 //アプリ内課金プロダクトID
 let kProductID10: String = "mpe"
+let kProductID20: String = "mpe20"
+let kProductID30: String = "mpe30"
+let kProductID40: String = "mpe40"
 let kProductID50: String = "mpe50"
+let kProductID60: String = "mpe60"
+let kProductID70: String = "mpe70"
+let kProductID80: String = "mpe80"
+let kProductID90: String = "mpe90"
 let kProductID100: String = "mpe100"
+let kProductIDs: [String] = [kProductID10,kProductID20,kProductID30,kProductID40,kProductID50,kProductID60,kProductID70,kProductID80,kProductID90,kProductID100]
 
 enum CustomChara: String {
 	case mojikun_b		= "mojikun_b"		//もじくん（新）
@@ -116,8 +131,29 @@ class MPEDataManager: DataManager {
 		if UserDefaults.standard.bool(forKey: kIsPurchase10PP) {
 			pp += 10
 		}
+		if UserDefaults.standard.bool(forKey: kIsPurchase20PP) {
+			pp += 20
+		}
+		if UserDefaults.standard.bool(forKey: kIsPurchase30PP) {
+			pp += 30
+		}
+		if UserDefaults.standard.bool(forKey: kIsPurchase40PP) {
+			pp += 40
+		}
 		if UserDefaults.standard.bool(forKey: kIsPurchase50PP) {
 			pp += 50
+		}
+		if UserDefaults.standard.bool(forKey: kIsPurchase60PP) {
+			pp += 60
+		}
+		if UserDefaults.standard.bool(forKey: kIsPurchase70PP) {
+			pp += 70
+		}
+		if UserDefaults.standard.bool(forKey: kIsPurchase80PP) {
+			pp += 80
+		}
+		if UserDefaults.standard.bool(forKey: kIsPurchase90PP) {
+			pp += 90
 		}
 		if UserDefaults.standard.bool(forKey: kIsPurchase100PP) {
 			pp += 100
